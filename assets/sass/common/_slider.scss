@@ -1,0 +1,460 @@
+/*================================================================
+  08. Slider
+==================================================================*/
+.cs_slider {
+  position: relative;
+}
+
+.slick-arrow {
+  cursor: pointer;
+}
+
+.draggable {
+  cursor: url(../img/drag.png) 16 9, ew-resize !important;
+}
+
+.slick-slide>div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs_remove_overflow {
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+
+    &.slick-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.slick-active {
+  .cs_hero.cs_style_2 {
+    .cs_hero_thumbnail {
+      transform: translateY(10px) scale(1.06);
+    }
+
+    .cs_hero_content {
+      transform: scale(1, 1);
+      opacity: 1;
+
+      .cs_hero_text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  }
+
+  .cs_hero.cs_style_3 {
+    .cs_hero_thumbnail {
+      transform: scale(1.06);
+    }
+
+    .cs_hero_title {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .cs_hero.cs_style_5 {
+
+    .cs_hero_thumbnail {
+      transform: scale(1.05);
+    }
+
+    .cs_hero_content {
+      clip-path: inset(0 0 0 0);
+
+    }
+  }
+
+  .cs_hero.cs_style_6 {
+    .cs_hero_thumbnail {
+      transform: scale(1.05);
+    }
+
+    .cs_property_title,
+    .cs_property_price {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs_property_view_btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.cs_slider_gap_24 {
+  .slick-slide {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .slick-list {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+.cs_slider_gap_20 {
+  .slick-slide {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .slick-list {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.cs_slider_gap_30 {
+  .slick-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .slick-list {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  @media (max-width: 991px) {
+    .slick-slide {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .slick-list {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+}
+
+.cs_hover_show_arrows {
+
+  &:hover {
+    .cs_slider_arrows.cs_style_1 {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: none;
+
+      .cs_left_arrow,
+      .cs_right_arrow {
+        transform: initial;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+/*=================================================
+ Slider Arrows
+===================================================*/
+.cs_slider_arrows.cs_style_1 {
+  width: calc(100vw - 15%);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+
+  .cs_left_arrow,
+  .cs_right_arrow {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .cs_left_arrow {
+    transform: translateX(40px);
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .cs_right_arrow {
+    transform: translateX(-40px);
+  }
+
+  &.cs_type_1 {
+    width: calc(100vw - 10%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .cs_left_arrow,
+    .cs_right_arrow {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+
+      &:hover {
+        color: var(--white-color);
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+
+  &.cs_type_2 {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width:1199px) {
+    &.cs_type_1 {
+      width: calc(100vw - 3%);
+    }
+  }
+
+  @media (max-width: 991px) {
+    position: initial;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+    visibility: visible;
+    opacity: 1;
+    transform: initial;
+
+    .cs_left_arrow,
+    .cs_right_arrow {
+      transform: initial;
+    }
+
+    &.cs_type_1 {
+      position: absolute;
+      top: calc(100% - 185px);
+    }
+
+    &.cs_type_2 {
+      position: initial;
+      transform: initial;
+    }
+  }
+}
+
+.cs_slider_arrows.cs_style_2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &.cs_type_1 {
+    .slick-arrow:hover {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+
+  .slick-arrow {
+    width: 50px;
+    height: 45px;
+    border: 1px solid currentColor;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: var(--white-color);
+      color: var(--primary-color);
+    }
+  }
+}
+
+/*=================================================
+ Slider Paginations
+===================================================*/
+.cs_pagination.cs_style_1 {
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background-color: var(--primary-color);
+      opacity: 0.2;
+      font-size: 0;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .slick-active {
+      opacity: 1;
+    }
+  }
+}
+
+.cs_pagination.cs_style_2 {
+
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--white-color);
+      border: 1px solid var(--white-color);
+      font-size: 0;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .slick-active {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.cs_pagination.cs_style_3 {
+
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    li {
+      width: 30px;
+      height: 8px;
+      border-radius: 5px;
+      background-color: var(--white-color);
+      border: 1px solid var(--white-color);
+      font-size: 0;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .slick-active {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.cs_pagination.cs_style_4 {
+  position: absolute;
+  left: 50%;
+  bottom: 74px;
+  transform: translateX(-50%);
+
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: var(--white-color);
+      font-size: 0;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 31px;
+        height: 31px;
+        border: 1px solid var(--white-color);
+        border-radius: inherit;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: all 0.4s ease;
+      }
+    }
+
+    .slick-active {
+      &::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}
+
+/*=======================================================
+ Horizontal Slider
+=========================================================*/
+.cs_horizontal_slider_wrapper {
+  overflow-x: hidden;
+
+  &:hover {
+
+    .cs_location_list,
+    .cs_slider_text_wrapper {
+      animation-play-state: paused;
+    }
+  }
+
+  &.cs_type_1 {
+    .cs_slider_text_wrapper {
+      animation-direction: reverse;
+    }
+  }
+}
+
+.cs_horizontal_slider_in {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+}
+
+.cs_location_list {
+  height: max-content;
+  display: flex;
+  gap: 24px;
+  margin: 0 12px;
+  animation: infinite-slide 50s linear infinite;
+
+  .cs_card.cs_style_2 {
+    &:nth-child(odd) {
+      margin-top: 70px;
+    }
+  }
+
+}
+
+.cs_slider_text_wrapper {
+  margin: 0 10px;
+  animation: infinite-slide 80s linear infinite;
+}
+
+@keyframes infinite-slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

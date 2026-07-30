@@ -1,0 +1,28 @@
+/*================================================================
+  01. Variables
+==================================================================*/
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-color: #1D1D1D;
+  --accent-color: #00CC61;
+  --secondary-color: #434343;
+  --border-color: #D1D1D1;
+  --gray-color: #E2E2E2;
+  --gray2-color: #F9F4F1;
+  --gray3-color: #FAFAFA;
+  --gray4-color: #FFFAF6;
+  --danger-color: #FF0000;
+  --primary-font: "Cabin", sans-serif;
+  --secondary-font: "Raleway", sans-serif;
+  --ternary-font: "Carattere", cursive;
+}
+
+.cs_dark {
+  --white-color: #1d1d1d;
+  --primary-color: #fff;
+  --secondary-color: #E2E2E2;
+  --border-color: #434343;
+  --gray-color: #262626;
+  --gray2-color: #434343;
+}

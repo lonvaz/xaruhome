@@ -1,0 +1,291 @@
+/*===============================================================
+  15. Iconbox
+=================================================================*/
+.cs_iconbox.cs_style_1 {
+  width: min(100%, 377px);
+
+  .cs_iconbox_icon {
+    width: 70px;
+    height: 70px;
+    flex: none;
+
+    svg {
+      transition: all 1s ease;
+    }
+  }
+
+  &:hover {
+    .cs_iconbox_icon svg {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @media (max-width: 991px) {
+    width: 100%;
+    display: flex;
+    gap: 20px 25px;
+
+    .cs_iconbox_icon {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+}
+
+.cs_iconbox.cs_style_2 {
+  display: flex;
+  gap: 20px 28px;
+
+  .cs_iconbox_icon {
+    width: 80px;
+    height: 80px;
+    flex: none;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.4s ease;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-color);
+      border-radius: inherit;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: all 0.4s ease;
+    }
+
+    >* {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &:hover {
+    .cs_iconbox_icon {
+      border-color: var(--primary-color);
+      color: var(--white-color);
+
+      &::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+    .cs_iconbox_icon {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.cs_iconbox.cs_style_3 {
+  width: min(100%, 336px);
+  height: 100%;
+  margin: 0 auto;
+
+  .cs_iconbox_icon {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--white-color);
+    transition: all 0.3s ease;
+
+    img {
+      transition: inherit;
+    }
+  }
+
+  a {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.4s cubic-bezier(0.49, 0.49, 0.08, 1);
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 1px;
+
+    &:hover {
+      background-size: 100% 1px;
+      background-position: 0 calc(100% - 0px);
+    }
+  }
+
+  &.cs_type_1 {
+    max-width: 100%;
+    margin: 0;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+
+    .cs_iconbox_bg {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      left: 0;
+      top: 0;
+      transition: all 0.8s ease;
+    }
+
+    >* {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &.cs_type_2 {
+    .cs_iconbox_icon {
+      border-color: var(--primary-color);
+    }
+
+    .cs_arrow_shape_1 {
+      left: 77%;
+      top: 22px;
+      overflow: hidden;
+    }
+  }
+
+  &:hover {
+    .cs_iconbox_icon {
+      background-color: transparent;
+      color: var(--white-color);
+
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%) hue-rotate(55deg) brightness(107%) contrast(101%);
+      }
+    }
+
+    .cs_iconbox_bg {
+      transform: scale(1.03);
+    }
+
+    &.cs_type_2 {
+      .cs_iconbox_icon {
+        background-color: transparent;
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  @media (max-width: 1399px) {
+    &.cs_type_2 {
+      .cs_arrow_shape_1 {
+        left: 67%;
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    &.cs_type_2 {
+      .cs_arrow_shape_1 {
+        top: 32px;
+        left: 77%;
+
+        svg {
+          margin-left: -120px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    &.cs_type_2 {
+      .cs_arrow_shape_1 {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.cs_iconbox.cs_style_4 {
+  width: min(100%, 320px);
+
+  .cs_iconbox_icon {
+    width: 73px;
+    height: 73px;
+    flex: none;
+    border: 1px solid var(--gray-color);
+    transition: all 0.4s ease;
+
+    &::before {
+      content: "";
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      background-color: var(--primary-color);
+      border-radius: inherit;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    >* {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &:hover {
+    .cs_iconbox_icon {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+
+      &::before {
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  }
+
+  @media (max-width: 1399px) {
+    width: 100%;
+  }
+}
+
+.cs_iconbox.cs_style_5 {
+  display: flex;
+  gap: 20px 45px;
+
+  .cs_iconbox_icon {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    flex: none;
+  }
+
+  @media (max-width: 991px) {
+    gap: 20px 25px;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+}
+
+.cs_iconbox.cs_style_6 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  .cs_iconbox_icon {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    flex: none;
+  }
+
+  .cs_iconbox_info {
+    text-wrap: nowrap;
+  }
+}

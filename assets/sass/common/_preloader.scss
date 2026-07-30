@@ -1,0 +1,56 @@
+/*===============================================================
+ 10. Preloader
+==================================================================*/
+.cs_preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100000000;
+
+  .cs_preloader_in {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--white-color);
+  }
+
+  .cs_preloader_icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--gray-color);
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-color);
+      border-radius: inherit;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(0);
+      animation: preloaderAnimation 3s linear infinite;
+    }
+
+    &::after {
+      animation-delay: 1.5s;
+    }
+  }
+
+  p {
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes preloaderAnimation {
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

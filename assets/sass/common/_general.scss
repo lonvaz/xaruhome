@@ -1,0 +1,407 @@
+/*=================================================================
+  04. General
+===================================================================*/
+
+/*=====================================  
+  Classess for Fonts Size  
+=======================================*/
+.cs_fs_14 {
+  font-size: 14px;
+  line-height: 1.786em;
+}
+
+.cs_fs_16 {
+  font-size: 16px;
+  line-height: 1.563em;
+}
+
+.cs_fs_18 {
+  font-size: 18px;
+  line-height: 1.56em;
+}
+
+.cs_fs_20 {
+  font-size: 20px;
+  line-height: 1.25em;
+}
+
+.cs_fs_25 {
+  font-size: 25px;
+  line-height: 1.4em;
+
+  @media (max-width:1399px) {
+    font-size: 22px;
+  }
+}
+
+.cs_fs_31 {
+  font-size: 31px;
+  line-height: 1.291em;
+
+  @media (max-width:1199px) {
+    font-size: 28px;
+  }
+
+  @media (max-width:575px) {
+    font-size: 25px;
+  }
+}
+
+.cs_fs_39 {
+  font-size: 39px;
+  line-height: 1.28em;
+
+  @media (max-width:1199px) {
+    font-size: 36px;
+  }
+
+  @media (max-width:991px) {
+    font-size: 30px;
+  }
+}
+
+.cs_fs_49 {
+  font-size: 49px;
+  line-height: 1.327em;
+
+  @media (max-width:1199px) {
+    font-size: 42px;
+  }
+
+  @media (max-width:575px) {
+    font-size: 39px;
+  }
+}
+
+.cs_fs_61 {
+  font-size: 61px;
+  line-height: 1.23em;
+
+  @media (max-width:1399px) {}
+
+  @media (max-width:991px) {
+    font-size: 56px;
+  }
+
+  @media (max-width:575px) {
+    font-size: 49px;
+  }
+}
+
+.cs_fs_90 {
+  font-size: 90px;
+  line-height: 1.11em;
+
+  @media (max-width:575px) {
+    font-size: 75px;
+  }
+}
+
+.cs_fs_110 {
+  font-size: 110px;
+  line-height: 1.364em;
+
+  @media (max-width:1399px) {
+    font-size: 90px;
+  }
+
+  @media (max-width:1199px) {
+    font-size: 75px;
+  }
+
+  @media (max-width:991px) {
+    font-size: 54px;
+  }
+}
+
+/*=====================================  
+  Classess for Fonts Weight
+=======================================*/
+.cs_light {
+  font-weight: 300;
+}
+
+.cs_normal {
+  font-weight: 400;
+}
+
+.cs_medium {
+  font-weight: 500;
+}
+
+.cs_semibold {
+  font-weight: 600;
+}
+
+.cs_bold {
+  font-weight: 700;
+}
+
+.cs_extrabold {
+  font-weight: 800;
+}
+
+.cs_black {
+  font-weight: 900;
+}
+
+/*=====================================  
+  Classess for Fonts Color
+=======================================*/
+.cs_accent_color {
+  color: var(--accent-color);
+}
+
+.cs_primary_color {
+  color: var(--primary-color);
+}
+
+.cs_body_color {
+  color: var(--secondary-color);
+}
+
+.cs_white_color {
+  color: #fff;
+}
+
+.cs_gray_color {
+  color: var(--gray-color);
+}
+
+.cs_black_color {
+  color: var(--black-color);
+}
+
+.cs_danger_color {
+  color: var(--danger-color);
+}
+
+/*=====================================  
+  Classess for Fonts Family 
+=======================================*/
+.cs_primary_font {
+  font-family: var(--primary-font);
+}
+
+.cs_secondary_font {
+  font-family: var(--secondary-font);
+}
+
+.cs_ternary_font {
+  font-family: var(--ternary-font);
+}
+
+/*=============================================  
+  Classess for Background Size & Colors
+===============================================*/
+.cs_accent_bg {
+  background-color: var(--accent-color);
+}
+
+.cs_primary_bg {
+  background-color: var(--primary-color);
+}
+
+.cs_body_bg {
+  background-color: var(--secondary-color);
+}
+
+.cs_white_bg {
+  background-color: var(--white-color);
+}
+
+.cs_gray_bg {
+  background-color: var(--gray-color);
+}
+
+.cs_gray2_bg {
+  background-color: var(--gray2-color);
+}
+
+.cs_gray3_bg {
+  background-color: var(--gray3-color);
+}
+
+.cs_gray4_bg {
+  background-color: var(--gray4-color);
+}
+
+.cs_black_bg {
+  background-color: var(--black-color);
+}
+
+.cs_bg_filed {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cs_bg_fixed {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.cs_bg_shape_1 {
+  width: 100%;
+  height: 30%;
+  min-height: 344px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.cs_gradient_text {
+  background: linear-gradient(180deg, #1D1D1D 0%, rgba(255, 255, 255, 0.00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*=============================================  
+  Classess for Border Radius
+===============================================*/
+.cs_radius_5 {
+  border-radius: 5px;
+}
+
+.cs_radius_7 {
+  border-radius: 7px;
+}
+
+.cs_radius_8 {
+  border-radius: 8px;
+}
+
+.cs_radius_10 {
+  border-radius: 10px;
+}
+
+.cs_radius_15 {
+  border-radius: 15px;
+}
+
+.cs_radius_20 {
+  border-radius: 20px;
+}
+
+
+.cs_radius_50 {
+  border-radius: 50px;
+}
+
+.cs_radius_100 {
+  border-radius: 50%;
+}
+
+/*=============================================  
+  Classes for Utility Components
+===============================================*/
+.cs_mp_0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cs_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs_center_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs_hyphen {
+  width: 6px;
+  height: 1px;
+}
+
+.cs_width_left_50_vw {
+  height: 100%;
+  width: 50vw;
+  margin-left: calc(101.8% - 50vw);
+
+  @media (max-width:991px) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.cs_width_right_50_vw {
+  width: calc(50vw - 1.8%);
+
+  @media (max-width:991px) {
+    width: 100%;
+  }
+}
+
+/*=============================================  
+  Bootstrap Classess 
+===============================================*/
+@media (min-width:1400px) {
+  .container {
+    max-width: 1416px;
+  }
+}
+
+.cs_gap_y_50 {
+  gap: 50px 0;
+
+  @media (max-width:991px) {
+    gap: 30px 0;
+  }
+}
+
+.cs_gap_y_45 {
+  gap: 45px 0;
+
+  @media (max-width:991px) {
+    gap: 30px 0;
+  }
+}
+
+.cs_gap_y_40 {
+  gap: 40px 0;
+
+  @media (max-width:991px) {
+    gap: 30px 0;
+  }
+}
+
+.cs_gap_y_30 {
+  gap: 30px 0;
+}
+
+.cs_gap_y_24 {
+  gap: 24px 0;
+}
+
+.cs_gap_y_60 {
+  gap: 60px 0;
+
+  @media (max-width:991px) {
+    gap: 30px 0;
+  }
+}
+
+
+/*===========================================================  
+  Responsive For Common Component & Hide Elements
+=============================================================*/
+
+@media (max-width:991px) {
+
+  br,
+  .cs_counter_shape_1,
+  .cs_vector_1,
+  .cs_vector_2,
+  .cs_counter_shape_2 {
+    display: none;
+  }
+
+}

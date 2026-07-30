@@ -1,0 +1,520 @@
+/*==============================================================
+  20. Profile
+================================================================*/
+.cs_or_login span {
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+
+  &::before,
+  &::after {
+    background-color: var(--border-color);
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 35px;
+  }
+
+  &::before {
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+  }
+}
+
+/*------------------------------------------
+ Profile page
+--------------------------------------------*/
+.cs_profile_menu {
+  padding: 30px;
+  border: 1px solid var(--border-color);
+
+  .cs_profile_thumbnail {
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--gray-color);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+}
+
+.cs_dashboard_nav {
+  li {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    padding-left: 26px;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+
+    &:last-child {
+      border-bottom: 0;
+
+      a {
+        padding-bottom: 0;
+      }
+    }
+
+    &.active,
+    &:hover {
+      opacity: 0.75;
+    }
+
+    a {
+      display: block;
+      padding: 12px 0;
+    }
+
+    span:first-child {
+      position: absolute;
+      left: 0;
+      top: 12px;
+    }
+  }
+}
+
+.cs_profile {
+  width: min(100%, 860px);
+  padding: 30px 30px 40px;
+  margin: 0 auto;
+
+  .cs_avatar.cs_style_2 {
+    display: flex;
+    align-items: center;
+    gap: 20px 25px;
+    flex-wrap: wrap;
+
+    .cs_avatar_icon {
+      width: 120px;
+      height: 120px;
+      background-color: transparent;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+      }
+
+      .cs_thumb_edit {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+        background-color: var(--primary-color);
+        font-size: 14px;
+        color: var(--white-color);
+        bottom: 0;
+        right: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.cs_admin_iconbox {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  box-shadow: 0 0 15px 0 rgba(27, 27, 27, 0.1);
+
+  .cs_admin_iconbox_icon {
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    flex: none;
+    font-size: 31px;
+    height: 65px;
+    width: 65px;
+  }
+}
+
+/*------------------------------------------
+ Property Table 
+--------------------------------------------*/
+.cs_property_list {
+  padding: 30px;
+
+  @media (max-width: 991px) {
+    padding: 30px 15px;
+  }
+}
+
+.cs_property_table {
+  min-width: 800px;
+
+  thead {
+    background-color: var(--gray3-color);
+    padding-left: 20px;
+  }
+
+  td,
+  th {
+    border-top: 0;
+    padding-left: 20px;
+  }
+
+  td {
+    border-top: 0;
+    padding: 20px 20px 20px 0;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  tr {
+    .property_thumbnail {
+      padding-left: 20px;
+    }
+
+    &:nth-child(even) {
+      background-color: var(--gray3-color);
+    }
+  }
+
+  .cs_property_item {
+    display: none;
+  }
+
+  .cs_property_info {
+    text-align: left;
+
+    a {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(90deg,
+          currentColor 0,
+          currentColor 100%);
+      transition: background-size 0.4s cubic-bezier(0.49, 0.49, 0.08, 1);
+      background-position: 100% calc(100% - 0px);
+      background-size: 0 1px;
+
+      &:hover {
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+  }
+
+  .property_thumbnail {
+    width: 160px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      transition: all 0.5s ease-in-out;
+    }
+
+    a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  .cs_rating {
+    font-size: 14px;
+  }
+}
+
+.cs_change_password_form_wraper {
+  padding: 30px;
+}
+
+.cs_password_change_quote {
+  padding: 30px;
+  position: relative;
+
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--accent-color);
+    opacity: 0.07;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+/*------------------------------------------
+ Dashboard Styling
+--------------------------------------------*/
+.cs_dashboard_contentbox {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 991px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.cs_reviews_list {
+  li:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.cs_customer_review {
+  max-width: 650px;
+
+  .cs_review_header {
+    display: flex;
+    gap: 20px;
+  }
+
+  .cs_customer_icon {
+    flex: none;
+    width: 72px;
+    height: 72px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+
+  .cs_actions_btns {
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
+
+  @media (max-width: 400px) {
+    .cs_review_header {
+      flex-direction: column;
+    }
+
+    .cs_actions_btns {
+      top: 115px;
+    }
+  }
+}
+
+/*======================================================================
+ Add New Property Styling
+========================================================================*/
+.cs_add_property_container {
+  max-width: 860px;
+  padding: 40px 30px;
+  margin: 0 auto;
+
+  .cs_custom_select,
+  .cs_form_field {
+    color: var(--heading-color);
+  }
+
+  .cs_custom_select {
+    border-color: var(--heading-color);
+    background-image: linear-gradient(45deg, transparent 50%, #152046 50%),
+      linear-gradient(135deg, #152046 50%, transparent 50%),
+      linear-gradient(to right, #ccc, #ccc);
+  }
+
+  .cs_notification_wrapper {
+    padding: 20px 30px 24px;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background-color: var(--accent-color);
+      opacity: 0.07;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    >* {
+      position: relative;
+      z-index: 1;
+      color: var(--accent-color);
+    }
+  }
+
+  .cs_submit_section:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  .cs_other_features_list {
+    display: flex;
+    gap: 20px 30px;
+    flex-wrap: wrap;
+  }
+
+  .cs_file_input_wrapper {
+    border: 2px dashed var(--accent-color);
+
+    .cs_file_load {
+      width: 100%;
+      height: 100%;
+      padding: 60px 20px;
+      appearance: none;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    label {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    i {
+      font-size: 28px;
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .cs_submit_section:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    padding: 40px 20px;
+
+    .cs_notification_wrapper {
+      padding: 20px 15px 24px;
+    }
+  }
+}
+
+/*======================================================================
+ Client list table Styling
+========================================================================*/
+.cs_clients_wrapper {
+  padding: 30px 0px;
+  text-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.cs_user_data_table {
+  .form-check {
+    margin-bottom: 0;
+    min-height: 28px;
+
+    label {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+
+  .form-check-input {
+    width: 15px;
+    height: 15px;
+    box-shadow: none;
+    border-color: var(--primary-color);
+    background-color: transparent;
+    border-radius: 2px;
+    margin-top: 6px;
+    cursor: pointer;
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+  }
+
+  .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: none;
+  }
+
+  tr {
+    &.even {
+      background-color: var(--gray3-color);
+    }
+
+    th {
+      background-color: var(--gray3-color);
+      padding: 12px 20px !important;
+    }
+
+    .sorting_1,
+    td {
+      border-color: var(--border-color) !important;
+      box-shadow: none !important;
+    }
+  }
+
+  tbody td {
+    padding: 12px 20px !important;
+  }
+
+  td button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.dataTables_length {
+  padding-left: 20px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid var(--border-color);
+  outline: 0;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: transparent;
+  color: inherit;
+  margin-left: 10px;
+
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+.dataTables_filter {
+  padding-right: 20px;
+}
+
+.dataTables_wrapper .dataTables_info {
+  padding-top: 20px !important;
+  margin-left: 20px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  padding-top: 20px !important;
+
+  .paginate_button {
+    line-height: 1.6em;
+    margin-left: 10px;
+    padding: 5px 15px !important;
+  }
+}

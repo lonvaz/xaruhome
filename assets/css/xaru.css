@@ -1,0 +1,1210 @@
+/*--------------------------------------------------------------
+  XARU HOME — brand skin over Xproperty base
+  Palette: sand #F5F1E8 · gold #C9A876/#A98B5F/#8B6E45 · carbon #1C1B19
+----------------------------------------------------------------*/
+
+/* ============ Self-hosted brand fonts (Playfair Display + Poppins) ============ */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/xaru/playfair-display-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/xaru/playfair-display-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/xaru/playfair-display-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/xaru/playfair-display-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/xaru/playfair-display-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/xaru/poppins-latin-400-italic.woff2") format("woff2");
+}
+
+/* ============ General luxury tone ============ */
+body {
+  background-color: #fff;
+}
+h1, h2, h3.cs_section_title, .cs_hero_title, .cs_cta_title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.cs_section_title {
+  font-weight: 600;
+}
+
+/* Gold accents on primary buttons */
+.cs_btn.cs_style_1.cs_primary_bg {
+  background-color: var(--primary-color);
+}
+.cs_btn.cs_style_1.cs_primary_bg:hover {
+  background-color: var(--accent2-color);
+  color: #fff;
+}
+.cs_btn.xr_gold_btn {
+  background: linear-gradient(120deg, #C9A876, #A98B5F 55%, #8B6E45);
+  color: #fff !important;
+}
+.cs_btn.xr_gold_btn:hover {
+  background: #1C1B19;
+  color: #fff !important;
+}
+
+/* Iconboxes: gold icon chips */
+.cs_iconbox.cs_style_1 .cs_iconbox_icon.cs_primary_bg {
+  background: linear-gradient(135deg, #C9A876, #8B6E45);
+  color: #fff;
+}
+.cs_iconbox.cs_style_2 .cs_iconbox_icon {
+  color: var(--accent3-color);
+}
+.cs_property_price.cs_primary_bg {
+  background-color: rgba(28, 27, 25, 0.88) !important;
+  border: 1px solid rgba(201, 168, 118, 0.6);
+}
+.cs_counter_icon {
+  filter: sepia(0.4) hue-rotate(-15deg) saturate(1.4);
+}
+a:hover {
+  color: var(--accent3-color);
+}
+.cs_site_header a:hover {
+  color: var(--accent3-color);
+}
+
+/* ============ Header ============ */
+.cs_site_header .cs_site_brand img {
+  height: 42px;
+  width: auto;
+}
+.cs_site_header.cs_style_1 {
+  background-color: rgba(245, 241, 232, 0.96);
+}
+
+/* ============ Preloader — Hompark double curtain ============ */
+.cs_preloader {
+  background-color: var(--sand-color);
+  transition: transform 700ms cubic-bezier(0.86, 0, 0.07, 1) 0.95s;
+  overflow: hidden;
+}
+.cs_preloader .xr_preloader_layer {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-color);
+  transition: transform 700ms cubic-bezier(0.86, 0, 0.07, 1) 0.3s;
+}
+.cs_preloader .cs_preloader_in {
+  background-color: transparent;
+  z-index: 2;
+}
+.cs_preloader .xr_preloader_logo {
+  width: 84px;
+  height: auto;
+  animation: xr_breathe 1.8s ease-in-out infinite;
+  transition: all 700ms cubic-bezier(0.86, 0, 0.07, 1) 0.1s;
+}
+.cs_preloader p {
+  color: var(--accent-color);
+  font-family: var(--primary-font);
+  letter-spacing: 6px;
+  transition: all 700ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+@keyframes xr_breathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.97); }
+  50% { opacity: 1; transform: scale(1); }
+}
+body.page-loaded .cs_preloader {
+  transform: translateX(100%);
+  pointer-events: none;
+}
+body.page-loaded .cs_preloader .xr_preloader_layer {
+  transform: translateX(-100%);
+}
+body.page-loaded .cs_preloader .xr_preloader_logo {
+  opacity: 0;
+  transform: scale(1.5);
+  animation: none;
+}
+body.page-loaded .cs_preloader p {
+  opacity: 0 !important;
+  transform: translateY(20px);
+}
+
+/* ============ Entrance choreography (post-preloader cascade) ============ */
+.cs_site_header.cs_style_1 {
+  transform: translateY(-80px);
+  opacity: 0;
+}
+body.page-loaded .cs_site_header.cs_style_1 {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 700ms cubic-bezier(0.86, 0, 0.07, 1) 1.2s,
+    opacity 700ms cubic-bezier(0.86, 0, 0.07, 1) 1.2s,
+    background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap {
+  opacity: 0;
+}
+body.page-loaded .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap {
+  opacity: 1;
+  transition: opacity 700ms cubic-bezier(0.86, 0, 0.07, 1) 1.4s;
+}
+.xr_hero_slider_wrap {
+  transform: scale(1.3);
+  opacity: 0;
+}
+body.page-loaded .xr_hero_slider_wrap {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 700ms cubic-bezier(0.86, 0, 0.07, 1) 1.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs_site_header.cs_style_1,
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap,
+  .xr_hero_slider_wrap {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* ============ Page transition overlay (ported from Hompark) ============ */
+.xr_transition_overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 100000001;
+  background: var(--accent-color);
+  transition: all 0.5s ease;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  overflow: hidden;
+  pointer-events: none;
+}
+.xr_transition_overlay .xr_layer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  background: var(--primary-color);
+  transition: all 0.5s ease;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  transition-delay: 0.6s;
+}
+.xr_transition_overlay.active {
+  left: 0;
+  pointer-events: all;
+}
+.xr_transition_overlay.active .xr_layer {
+  right: 0;
+}
+
+/* ============ Hero — fullscreen Hompark style ============ */
+.cs_hero.cs_style_1.xr_hero {
+  padding: 200px 0 140px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cs_hero.cs_style_1.xr_hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 27, 25, 0.62) 0%, rgba(28, 27, 25, 0.35) 45%, rgba(28, 27, 25, 0.72) 100%);
+}
+.cs_hero.cs_style_1.xr_hero .container {
+  position: relative;
+  z-index: 2;
+}
+.xr_hero .cs_hero_title {
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.15em;
+}
+.xr_hero .cs_hero_subtitle_text {
+  color: rgba(245, 241, 232, 0.92);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+}
+.xr_hero .xr_hero_divider {
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A876, transparent);
+  margin: 0 auto;
+}
+.xr_hero_scroll {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(245, 241, 232, 0.75);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* ============ Sections rhythm ============ */
+/* Iconbox grids outside .cs_about scope (Investment, Relocation) */
+.xr_features_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 40px;
+}
+@media (max-width: 991px) {
+  .xr_features_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+.xr_dark_section {
+  background-color: var(--primary-color);
+}
+.xr_dark_section .cs_section_title,
+.xr_dark_section h2, .xr_dark_section h3 {
+  color: #fff;
+}
+.xr_dark_section p {
+  color: rgba(245, 241, 232, 0.78);
+}
+.xr_eyebrow {
+  display: inline-block;
+  color: var(--accent3-color);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  font-family: var(--secondary-font);
+}
+.xr_dark_section .xr_eyebrow {
+  color: var(--accent-color);
+}
+.xr_pillar {
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px 22px;
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.xr_pillar:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+.xr_pillar i {
+  font-size: 26px;
+  color: var(--accent2-color);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+.xr_pillar h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.xr_pillar p {
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-bottom: 0;
+}
+.xr_region_list span {
+  display: inline-block;
+  border: 1px solid rgba(201, 168, 118, 0.5);
+  color: var(--accent-color);
+  border-radius: 40px;
+  padding: 6px 18px;
+  margin: 5px 6px 5px 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.xr_digital_quote {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 1.85em;
+  color: rgba(245, 241, 232, 0.88);
+}
+.xr_digital_assets_badges span {
+  display: inline-block;
+  border: 1px solid rgba(201, 168, 118, 0.55);
+  color: var(--accent-color);
+  border-radius: 8px;
+  padding: 4px 16px;
+  margin: 0 6px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* Footer */
+.cs_footer .cs_logo img {
+  max-width: 170px;
+  height: auto;
+}
+.cs_footer_bottom .cs_footer_text {
+  color: rgba(245, 241, 232, 0.75);
+}
+
+/* Project feature */
+.xr_project_tag {
+  display: inline-block;
+  background: rgba(201, 168, 118, 0.14);
+  color: var(--accent3-color);
+  border-radius: 6px;
+  padding: 4px 14px;
+  margin: 0 8px 8px 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 991px) {
+  .cs_hero.cs_style_1.xr_hero {
+    min-height: 92vh;
+    padding: 160px 0 110px;
+  }
+  .cs_site_header .cs_site_brand img {
+    height: 34px;
+  }
+}
+
+/* ============ Phase 3 — CTA background overlay ============ */
+.cs_cta.cs_style_1.cs_bg_filed {
+  position: relative;
+  overflow: hidden;
+}
+.cs_cta.cs_style_1.cs_bg_filed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(161deg, #1c1b19 0%, #26282b 49%, #8b6e45 100%);
+  opacity: 0.72;
+}
+.cs_cta.cs_style_1.cs_bg_filed > * {
+  position: relative;
+  z-index: 2;
+}
+
+/*==============================================================
+  HOMPARK EFFECTS LAYER — XARU adaptation
+================================================================*/
+
+/* ---- Signature curve + section rhythm (150px -> 80px mobile) ---- */
+.xr_section {
+  padding: 150px 0;
+}
+@media (max-width: 991px) {
+  .xr_section {
+    padding: 80px 0;
+  }
+}
+
+/* ---- Angular language (Hompark radius 0) ---- */
+.cs_card.cs_style_1 .cs_card_thumbnail,
+.cs_card.cs_style_1 .cs_card_thumbnail.cs_radius_20,
+.cs_property_price.cs_radius_10,
+.cs_btn.cs_style_1.cs_radius_20,
+.xr_pillar,
+.cs_iconbox.cs_style_1 .cs_iconbox_icon.cs_radius_20,
+.cs_cta.cs_style_1.cs_radius_20,
+.xr_land_card_img,
+.cs_form_field.cs_radius_10 {
+  border-radius: 0 !important;
+}
+
+/* ---- Section numbering + Playfair eyebrow (Hompark header pattern) ---- */
+.xr_sec_num {
+  display: block;
+  font-size: 30px;
+  line-height: 1em;
+  font-weight: 800;
+  font-family: var(--secondary-font);
+  color: var(--primary-color);
+  opacity: 0.2;
+  margin-bottom: 10px;
+}
+.xr_dark_section .xr_sec_num {
+  color: #fff;
+}
+.xr_eyebrow_serif {
+  display: block;
+  font-family: var(--primary-font);
+  font-size: 30px;
+  line-height: 1.2em;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+.xr_eyebrow_serif span {
+  color: var(--accent3-color);
+}
+.xr_dark_section .xr_eyebrow_serif {
+  color: #fff;
+}
+.xr_dark_section .xr_eyebrow_serif span {
+  color: var(--accent-color);
+}
+.xr_small_line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0.55;
+  font-family: var(--secondary-font);
+}
+.xr_small_line::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* ---- Duotone 161deg overlay (carbon -> gold), Hompark signature ---- */
+.xr_duotone_overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(161deg, #1c1b19 0%, #26282b 49%, #8b6e45 100%);
+  opacity: 0.65;
+}
+
+/* ---- HERO SLIDER (Swiper, Hompark spec) ---- */
+.xr_hero_slider_wrap {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+}
+.xr_hero_slider {
+  height: 100%;
+}
+.xr_hero_slider .swiper-slide {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.xr_slide_bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, 0, 0);
+  scale: 1.2;
+  will-change: transform;
+}
+.xr_hero_slider .swiper-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(161deg, #1c1b19 0%, #26282b 49%, #8b6e45 100%);
+  opacity: 0.65;
+}
+.xr_hero_slider .xr_slide_content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: 120px 100px 60px;
+}
+.xr_slide_content .xr_hero_divider {
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a876, transparent);
+  margin: 0 auto 24px;
+}
+.xr_slide_content h1 {
+  font-family: var(--primary-font);
+  color: var(--sand-color);
+  font-size: 4.2vw;
+  line-height: 1.15em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.xr_slide_content .xr_hero_sub {
+  color: rgba(245, 241, 232, 0.92);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+.xr_hero_rotater_line {
+  font-family: var(--primary-font);
+  color: var(--accent-color);
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 34px;
+  min-height: 1.4em;
+}
+.xr_hero_rotater_line .xr_text_rotater {
+  display: inline-block;
+}
+/* CTA outline glow (Hompark hero button) */
+.xr_hero_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 38px;
+  border: 2px solid var(--sand-color);
+  color: var(--sand-color);
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: 0 0 20px rgba(201, 168, 118, 0.4);
+  transition: all 0.25s ease-in-out;
+}
+.xr_hero_btn:hover {
+  background-color: var(--accent3-color);
+  border-color: var(--accent3-color);
+  color: #fff;
+}
+/* Fraction 1 / N (bottom right) */
+.xr_hero_fraction {
+  position: absolute;
+  z-index: 5;
+  right: 100px;
+  bottom: 44px;
+  left: auto;
+  top: auto;
+  width: auto;
+  color: rgba(245, 241, 232, 0.85);
+  font-family: var(--secondary-font);
+}
+.xr_hero_fraction .swiper-pagination-current {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--sand-color);
+}
+.xr_hero_fraction .swiper-pagination-total {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+/* PREV / NEXT rotated 90deg on the right */
+.xr_hero_nav {
+  position: absolute;
+  z-index: 5;
+  right: 44px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.xr_hero_nav button {
+  background: none;
+  border: 0;
+  color: rgba(245, 241, 232, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--secondary-font);
+  cursor: pointer;
+  transition: color 0.25s ease-in-out;
+  padding: 6px 2px;
+}
+.xr_hero_nav button:hover {
+  color: var(--accent-color);
+}
+.xr_hero_nav .xr_nav_sep {
+  width: 42px;
+  height: 1px;
+  background: rgba(245, 241, 232, 0.4);
+  display: inline-block;
+}
+/* Vertical social column on the left */
+.xr_hero_social {
+  position: absolute;
+  z-index: 5;
+  left: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.xr_hero_social .xr_social_title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: rgba(245, 241, 232, 0.75);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+}
+.xr_hero_social .xr_social_line {
+  width: 1px;
+  height: 42px;
+  background: rgba(245, 241, 232, 0.4);
+}
+.xr_hero_social a {
+  color: rgba(245, 241, 232, 0.8);
+  font-size: 12px;
+  transition: color 0.25s ease-in-out;
+}
+.xr_hero_social a:hover {
+  color: var(--accent-color);
+}
+/* Scroll indicator */
+.xr_hero_scroll {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: rgba(245, 241, 232, 0.75);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.xr_hero_scroll::after {
+  content: "";
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(180deg, var(--accent-color), transparent);
+  animation: xr_scrollcue 1.8s ease-in-out infinite;
+}
+@keyframes xr_scrollcue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+@media (max-width: 991px) {
+  .xr_hero_slider_wrap {
+    min-height: 560px;
+  }
+  .xr_hero_slider .xr_slide_content {
+    padding: 110px 24px 90px;
+  }
+  .xr_slide_content h1 {
+    font-size: 34px;
+  }
+  .xr_hero_social,
+  .xr_hero_nav {
+    display: none;
+  }
+  .xr_hero_fraction {
+    right: 24px;
+    bottom: 24px;
+  }
+  .xr_hero_rotater_line {
+    font-size: 17px;
+  }
+}
+
+/* ---- LAND & LARGE-SCALE DEVELOPMENTS — signature cards ---- */
+.xr_land_card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease-in-out;
+}
+.xr_land_card:hover {
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+}
+.xr_land_card_img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+}
+.xr_land_card_img .xr_px_img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  scale: 1.14;
+  will-change: transform;
+}
+.xr_land_card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.14;
+  will-change: transform;
+}
+.xr_land_badge {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 24px;
+  background: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  font-family: var(--secondary-font);
+}
+.xr_land_card_body {
+  padding: 30px 28px 34px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.xr_land_card_body h3 {
+  font-family: var(--primary-font);
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+.xr_land_card_meta {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: var(--accent3-color);
+  margin-bottom: 14px;
+  font-family: var(--secondary-font);
+}
+.xr_land_card_body p {
+  margin-bottom: 22px;
+}
+.xr_land_price {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 18px;
+  font-family: var(--secondary-font);
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+/* ---- Signature link: underline 60px -> 100% ---- */
+.xr_link {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+}
+.xr_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 60px;
+  background: var(--accent3-color);
+  transition: width 0.25s ease-in-out;
+}
+.xr_link:hover::after {
+  width: 100%;
+}
+.xr_link i {
+  margin-left: 8px;
+  font-size: 11px;
+}
+
+/* ---- Signature side-image composition (sand block + pattern + overflow) ---- */
+.xr_side_composition {
+  position: relative;
+  padding: 60px 0 65px 0;
+}
+.xr_side_composition .xr_sand_block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+  right: 120px;
+  background-color: var(--gray-color);
+}
+.xr_side_composition .xr_sand_block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 50vw;
+  background-color: inherit;
+}
+.xr_side_composition .xr_pattern_bg {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 120%;
+  height: 110%;
+  background-image: radial-gradient(rgba(139, 110, 69, 0.35) 1px, transparent 1.6px);
+  background-size: 18px 18px;
+  will-change: transform;
+}
+.xr_side_composition .xr_img_holder {
+  position: relative;
+  transform: translate(85px, -65px);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+}
+.xr_side_composition .xr_img_holder img {
+  width: 100%;
+  display: block;
+}
+@media (max-width: 991px) {
+  .xr_side_composition {
+    padding: 30px 0;
+  }
+  .xr_side_composition .xr_sand_block {
+    left: -12px;
+    right: 30px;
+  }
+  .xr_side_composition .xr_img_holder {
+    transform: translate(24px, -12px);
+  }
+}
+
+/* ---- Benefits zig-zag + circle hover (pillars) ---- */
+.xr_pillar_col:nth-child(odd) .xr_pillar {
+  margin-top: 50px;
+}
+@media (max-width: 991px) {
+  .xr_pillar_col:nth-child(odd) .xr_pillar {
+    margin-top: 0;
+  }
+}
+.xr_pillar {
+  border: 0;
+  border-right: 1px solid #e7e0d1;
+  background: transparent;
+  position: relative;
+}
+.xr_pillar_col:last-child .xr_pillar {
+  border-right: 0;
+}
+.xr_pillar:hover {
+  transform: none;
+  border-color: #e7e0d1;
+}
+.xr_pillar i {
+  position: relative;
+  z-index: 1;
+  transition: color 0.25s ease-in-out;
+}
+.xr_pillar .xr_pillar_icon {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.xr_pillar .xr_pillar_icon::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--gray-color);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 0;
+}
+.xr_pillar:hover .xr_pillar_icon::after {
+  opacity: 1;
+}
+.xr_pillar .xr_pillar_icon i {
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .xr_pillar {
+    border-right: 0;
+  }
+}
+
+/* ---- Social squares inverted hover (footer) ---- */
+.xr_social_squares {
+  display: flex;
+  gap: 10px;
+}
+.xr_social_squares a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.25s ease-in-out;
+}
+.xr_social_squares a:hover {
+  background: var(--accent-color);
+  color: var(--primary-color) !important;
+}
+
+/* ---- Stats band (Odometer, elevated suffix like Hompark) ---- */
+.xr_stats_row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.xr_stat {
+  padding: 40px 20px;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+}
+.xr_stat:last-child {
+  border-right: 0;
+}
+.xr_stat .odometer,
+.xr_stat .xr_stat_number {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1em;
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+}
+.xr_stat .xr_stat_extra {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent3-color);
+  transform: translateY(10px);
+  margin-left: 4px;
+}
+.xr_stat .xr_stat_label {
+  display: block;
+  margin-top: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+@media (max-width: 991px) {
+  .xr_stats_row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .xr_stat:nth-child(2) {
+    border-right: 0;
+  }
+  .xr_stat:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border-color);
+  }
+  .xr_stat .odometer,
+  .xr_stat .xr_stat_number {
+    font-size: 36px;
+  }
+}
+
+/* ---- Dark section video background (opacity .15 over 161deg) ---- */
+.xr_video_section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(161deg, #1c1b19 0%, #26282b 49%, #8b6e45 100%);
+}
+.xr_video_section .xr_video_bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.xr_video_section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- Floating labels ---- */
+.xr_float_field {
+  position: relative;
+}
+.xr_float_field .xr_float_label {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  line-height: 54px;
+  color: rgba(28, 27, 25, 0.55);
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+  font-size: 15px;
+}
+.xr_float_field .xr_float_label.label-up {
+  top: -34px;
+  left: 0;
+  line-height: 20px;
+  font-size: 13px;
+  color: var(--accent3-color);
+}
+.xr_float_field textarea ~ .xr_float_label {
+  line-height: 20px;
+  top: 16px;
+}
+.xr_float_field textarea ~ .xr_float_label.label-up {
+  top: -24px;
+}
+
+/* ---- Peek gallery slider (80% / opacity .6) ---- */
+.xr_peek .slick-slide {
+  opacity: 0.6;
+  transition: opacity 0.25s ease-in-out;
+}
+.xr_peek .slick-slide.slick-center {
+  opacity: 1;
+}
+
+/* ---- Overflowed gold box (footer-bar style CTA) ---- */
+.xr_cta_overlap {
+  margin-bottom: -100px;
+  position: relative;
+  z-index: 3;
+}
+.xr_cta_overlap .cs_cta {
+  background-color: var(--primary-color);
+}
+.xr_footer_pushed {
+  padding-top: 180px !important;
+}
+.xr_cta_triangle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 200px 0 0;
+  border-color: rgba(235, 207, 167, 0.15) transparent transparent transparent;
+  pointer-events: none;
+}
+
+/* ---- Nav hover: top border underline (Hompark menu) ---- */
+@media (min-width: 1200px) {
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a {
+    position: relative;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -6px;
+    width: 100%;
+    height: 1px;
+    background: var(--accent3-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+/* ---- Listing land-card price tag ---- */
+.xr_poa_price {
+  font-size: 15px !important;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Interior page headers: duotone + Playfair sand title ---- */
+.cs_page_header.xr_duotone_overlay .container {
+  position: relative;
+  z-index: 2;
+}
+.cs_page_header.xr_duotone_overlay .cs_page_header_title {
+  font-family: var(--primary-font);
+  color: var(--sand-color);
+}
+.cs_page_header.xr_duotone_overlay .breadcrumb,
+.cs_page_header.xr_duotone_overlay .breadcrumb a {
+  color: rgba(245, 241, 232, 0.85);
+}
+
+/* Footer bottom social vs scroll-up button clearance */
+.cs_footer_bottom .xr_social_squares {
+  margin-right: 76px;
+}

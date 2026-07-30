@@ -1,0 +1,314 @@
+/*===============================================================
+  19. Tabs
+=================================================================*/
+
+/*====================================================
+  Tab Links Styling
+ ======================================================*/
+.cs_tab_links.cs_style_1 {
+  display: flex;
+  transform: translateY(1px);
+
+  li {
+    position: relative;
+    transition: all 0.2s ease;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--white-color);
+      opacity: 0.95;
+      border-radius: inherit;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.4s ease;
+    }
+
+    &.active,
+    &:hover {
+      color: var(--white-color);
+
+      &::before {
+        background-color: var(--primary-color);
+      }
+    }
+
+    &:first-child {
+      border-radius: 10px 0 0 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 9px 25px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &.cs_type_1 {
+    li {
+      &:first-child {
+        border-radius: 10px 0 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 10px 0 0;
+      }
+    }
+  }
+}
+
+.cs_tab_links.cs_style_2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  li {
+    a {
+      display: inline-block;
+      border: 1px solid var(--primary-color);
+      border-radius: 20px;
+      height: 45px;
+      padding: 8px 25px;
+      text-wrap: nowrap;
+    }
+
+    &.active,
+    &:hover {
+      a {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+      }
+    }
+  }
+
+  &.cs_type_1 {
+    padding: 7px;
+    border-radius: 10px;
+    gap: 3px;
+    border: 1px solid var(--gray-color);
+
+    li {
+      a {
+        border: 0;
+        border-radius: 7px;
+        padding: 7px 20px;
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    justify-content: center;
+  }
+}
+
+.cs_tab_links.cs_style_3 {
+  gap: 20px;
+
+  li {
+    a {
+      display: inline-block;
+      height: 72px;
+      width: 72px;
+      padding: 4px;
+      border: 2px solid var(--gray-color);
+      border-radius: 50%;
+    }
+
+    img {
+      border-radius: inherit;
+    }
+
+    &.active,
+    &:hover {
+      a {
+        border-color: var(--primary-color);
+      }
+    }
+  }
+
+  &.cs_type_1 {
+    padding: 7px;
+    border-radius: 10px;
+    gap: 3px;
+    border: 1px solid var(--gray-color);
+
+    li {
+      a {
+        border: 0;
+        border-radius: 7px;
+        padding: 7px 20px;
+      }
+    }
+  }
+
+  &.cs_type_2 {
+    li {
+      a {
+        border: 2px solid var(--secondary-color);
+      }
+
+      &.active,
+      &:hover {
+        a {
+          border-color: var(--gray-color);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    justify-content: center;
+  }
+}
+
+.cs_tab_links.cs_style_4 {
+  counter-reset: section;
+  transition: all 0.3s ease;
+
+  li {
+    padding-left: 64px;
+    position: relative;
+    font-size: 39px;
+    line-height: 1.28em;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    border-bottom: 1px solid var(--gray-color);
+
+    &::before,
+    &::after {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+    }
+
+    &::before {
+      counter-increment: section;
+      content: counters(section, "") ".";
+      left: 30px;
+    }
+
+    &:not(:empty):not(:nth-child(n + 10))::after {
+      content: counter(item);
+      left: 0;
+    }
+
+    &:nth-child(n + 10)::before {
+      left: 0;
+    }
+
+    &:first-child {
+      a {
+        padding-top: 0;
+      }
+    }
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+
+  a {
+    display: block;
+    padding: 30px 0 40px;
+  }
+
+  @media (max-width: 1199px) {
+    li {
+      font-size: 31px;
+      padding-left: 50px;
+
+      &::before,
+      &::after {
+        bottom: 20px;
+      }
+
+      &::before {
+        left: 20px;
+      }
+
+      a {
+        padding: 15px 0 20px;
+      }
+    }
+  }
+}
+
+.cs_tab_links.cs_style_5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-block;
+    padding: 9px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  li {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    position: relative;
+    border-radius: 10px;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-color);
+      opacity: 0.05;
+      border-radius: inherit;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.3s ease;
+    }
+
+    &.active,
+    &:hover {
+      color: var(--primary-color);
+
+      &::before {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+/*====================================================
+ Tab Content Styling
+======================================================*/
+.cs_tabs {
+  position: relative;
+
+  .cs_tab_body {
+    position: relative;
+
+    &.cs_type_1 {
+      border-radius: 0 10px 10px 10px;
+    }
+  }
+
+  .cs_tab {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      position: initial;
+      pointer-events: initial;
+      top: 0;
+    }
+  }
+}

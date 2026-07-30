@@ -1,0 +1,125 @@
+/*===============================================================
+ 21. Dark Version
+=================================================================*/
+.cs_dark {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .cs_counter_number {
+    color: var(--primary-color);
+  }
+
+  p {
+    color: var(--secondary-color);
+  }
+
+  .cs_player_btn.cs_style_1 {
+
+    &::before,
+    &::after {
+      border-color: var(--primary-color);
+    }
+  }
+
+  .cs_player_btn.cs_style_3 {
+    background-color: var(--primary-color);
+
+    &::before {
+      background-color: var(--primary-color);
+    }
+  }
+
+  section,
+  footer {
+    &.cs_primary_bg {
+      background-color: var(--white-color);
+
+      .cs_gray_color {
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  .cs_btn.cs_style_1 {
+    &.cs_primary_bg.cs_white_color {
+      color: var(--white-color);
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+
+    &.cs_white_bg.cs_primary_color {
+      color: var(--white-color);
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+
+      &::before {
+        background-color: var(--white-color);
+      }
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .cs_footer.cs_style_2 {
+    .cs_social_btns.cs_style_1 {
+      a {
+        background-color: var(--gray2-color);
+        border-color: var(--gray2-color);
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .cs_about.cs_style_2 {
+    .cs_video_block.cs_style_2 {
+      box-shadow: 0px 0px 50px 0px rgba(143, 143, 143, 0.15);
+
+      .cs_player_btn.cs_style_2 {
+        background-color: var(--white-color);
+      }
+    }
+
+    .cs_offerbox {
+      .cs_video_info {
+        box-shadow: 0px 0px 50px 0px rgba(143, 143, 143, 0.15);
+      }
+
+      .cs_offerbox_icon {
+        background-color: var(--white-color);
+        border-color: var(--secondary-color);
+      }
+    }
+  }
+
+  .cs_about.cs_style_3 {
+    .cs_text_logo_wrapper {
+      .cs_player_btn.cs_style_3 {
+        color: var(--white-color);
+      }
+    }
+  }
+
+  .cs_pagination.cs_style_2 {
+    .slick-dots {
+      li {
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+      }
+
+      .slick-active {
+        background-color: var(--white-color);
+      }
+    }
+  }
+}
