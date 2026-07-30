@@ -225,6 +225,7 @@
 
         // Slick Active Code
         $slickActive.slick({
+          rtl: $("html").attr("dir") === "rtl",
           autoplay: autoPlayVar,
           dots: paginaiton,
           centerPadding: "28%",
@@ -273,25 +274,18 @@
     06. Language Select
   ========================================================================*/
   function quantityInit() {
-    // Language Update Functionality
-    $(".cs_language_switcher").on("click", function () {
+    // Language switcher: open/close the dropdown. The items are now real
+    // <a> links to the per-language folder index (see /es/, /ar/), so no
+    // decorative flag-swap is performed — navigation handles the change.
+    $(".cs_language_switcher").on("click", function (e) {
+      e.stopPropagation();
       $(".cs_language_dropdown").slideToggle(250);
     });
-
-    // Handle flag click
-    $(".cs_language_dropdown button").on("click", function () {
-      const selectedLang = $(this).data("lang");
-      const selectedFlagClass = $(this).children(".flag-btn").attr("class");
-      // Replace the selected flag in switcher
-      $(".cs_language_switcher").html(
-        '<span class="' +
-          selectedFlagClass +
-          '" data-lang="' +
-          selectedLang +
-          '"></span>'
-      );
-      // Hide dropdown
-      $(".cs_language_dropdown").hide();
+    // Close the dropdown when clicking outside of it.
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".cs_language_select").length) {
+        $(".cs_language_dropdown").slideUp(200);
+      }
     });
   }
   /*======================================================================

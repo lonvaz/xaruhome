@@ -1,0 +1,202 @@
+/* ==========================================================================
+   XARU HOME — Right-to-Left (Arabic) mirror sheet.
+   Loaded ONLY on /ar/ pages, AFTER style.css + xaru.css.
+   The base sheets are physical-property (left/right) based, so this file
+   mirrors every load-bearing horizontal offset, margin/padding and icon
+   direction. Digits (prices, 11,000,000+ m²) stay Western — no override.
+   Scope: everything is guarded by [dir="rtl"].
+   ========================================================================== */
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Keep intentionally-centered blocks centered (headings, CTA, badges…) */
+[dir="rtl"] .text-center,
+[dir="rtl"] .cs_center_column,
+[dir="rtl"] .xr_slide_content,
+[dir="rtl"] .cs_section_heading.cs_style_1.text-center {
+  text-align: center;
+}
+
+/* ============ Header / navigation ============ */
+[dir="rtl"] .cs_site_header.cs_style_1 .cs_nav_list > li {
+  margin-right: 0;
+}
+@media (min-width: 1400px) {
+  [dir="rtl"] .cs_site_header.cs_style_1 .cs_nav_list > li {
+    margin-right: 0;
+    margin-left: 40px;
+  }
+  [dir="rtl"] .cs_site_header.cs_style_1 .cs_nav_list > li:last-child {
+    margin-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  [dir="rtl"] .cs_site_header.cs_style_1 .cs_nav_list > li:last-child {
+    margin-left: 0;
+  }
+}
+
+/* Language switcher caret + dropdown flip */
+[dir="rtl"] .cs_site_header.cs_style_1 .cs_language_switcher::after {
+  right: auto;
+  left: 0;
+}
+[dir="rtl"] .cs_site_header.cs_style_1 .cs_language_switcher {
+  padding-left: 14px;
+  padding-right: 0;
+}
+[dir="rtl"] .cs_site_header.cs_style_1 .cs_language_dropdown {
+  left: auto;
+  right: 0;
+}
+
+/* Mobile hamburger toggle → mirror to the left edge */
+[dir="rtl"] .cs_menu_toggle {
+  right: auto;
+  left: 15px;
+}
+[dir="rtl"] .cs_menu_dropdown_toggle {
+  left: auto;
+  right: 0;
+}
+@media (max-width: 1199px) {
+  [dir="rtl"] .cs_site_header.cs_style_1 .cs_main_header_right {
+    padding-right: 0;
+    padding-left: 60px;
+  }
+}
+
+/* ============ Directional icons (arrows / chevrons) ============ */
+[dir="rtl"] .cs_btn .cs_btn_arrow i,
+[dir="rtl"] .xr_link i,
+[dir="rtl"] .cs_slider_arrows i,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-arrow-right {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+[dir="rtl"] .xr_link i {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* ============ Hero — mirror the side furniture ============ */
+[dir="rtl"] .xr_hero_social {
+  left: auto;
+  right: 44px;
+}
+[dir="rtl"] .xr_hero_social .xr_social_title {
+  writing-mode: vertical-rl;
+  transform: rotate(0deg);
+}
+[dir="rtl"] .xr_hero_nav {
+  right: auto;
+  left: 44px;
+}
+[dir="rtl"] .xr_hero_fraction {
+  right: auto;
+  left: 100px;
+}
+
+/* ============ Section headings (flex mirrors automatically via dir) ====== */
+[dir="rtl"] .cs_section_heading.cs_style_1 span svg {
+  left: auto;
+  right: 0;
+}
+
+/* ============ Land cards / property cards ============ */
+[dir="rtl"] .xr_land_card_body,
+[dir="rtl"] .xr_land_card_meta,
+[dir="rtl"] .cs_card_content,
+[dir="rtl"] .cs_property_title {
+  text-align: right;
+}
+[dir="rtl"] .cs_property_features {
+  padding-right: 0;
+}
+/* Price badge sits top-left in RTL instead of top-right */
+[dir="rtl"] .cs_property_price.position-absolute {
+  right: auto;
+  left: 20px;
+}
+[dir="rtl"] .xr_land_badge {
+  right: auto;
+  left: 16px;
+}
+
+/* ============ Bootstrap start/end padding utilities (lg) ============ */
+@media (min-width: 992px) {
+  [dir="rtl"] .ps-lg-4 {
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+  }
+  [dir="rtl"] .pe-lg-5 {
+    padding-right: 0 !important;
+    padding-left: 3rem !important;
+  }
+}
+
+/* ============ Signature Projects — lateral signature composition ======== */
+[dir="rtl"] .xr_side_composition .xr_sand_block {
+  left: 120px;
+  right: -40px;
+}
+[dir="rtl"] .xr_side_composition .xr_sand_block::before {
+  right: auto;
+  left: 100%;
+}
+[dir="rtl"] .xr_side_composition .xr_pattern_bg {
+  left: auto;
+  right: -5%;
+}
+[dir="rtl"] .xr_side_composition .xr_img_holder {
+  transform: translate(-85px, -65px);
+}
+@media (max-width: 991px) {
+  [dir="rtl"] .xr_side_composition .xr_sand_block {
+    left: 30px;
+    right: -12px;
+  }
+  [dir="rtl"] .xr_side_composition .xr_img_holder {
+    transform: translate(-24px, -12px);
+  }
+}
+
+/* ============ Region tags / stats ============ */
+[dir="rtl"] .xr_region_list {
+  direction: rtl;
+}
+[dir="rtl"] .xr_stat_extra {
+  margin-left: 0;
+  margin-right: 4px;
+}
+
+/* ============ Footer ============ */
+[dir="rtl"] .cs_footer .cs_footer_widget,
+[dir="rtl"] .cs_footer_menu,
+[dir="rtl"] .cs_text_widget {
+  text-align: right;
+}
+[dir="rtl"] .cs_footer_bottom .xr_social_squares {
+  margin-right: 0;
+  margin-left: 76px;
+}
+/* Newsletter submit icon moves to the left edge */
+[dir="rtl"] .cs_newsletter_form.cs_style_1 .cs_send_icon {
+  right: auto;
+  left: 0;
+}
+[dir="rtl"] .cs_newsletter_form.cs_style_1::before {
+  left: auto;
+  right: 0;
+}
+
+/* ============ Generic list padding reset (ul indent flips) ============ */
+[dir="rtl"] .cs_footer_menu,
+[dir="rtl"] .cs_property_features,
+[dir="rtl"] .cs_right_nav_list,
+[dir="rtl"] .cs_nav_list {
+  padding-right: 0;
+}
