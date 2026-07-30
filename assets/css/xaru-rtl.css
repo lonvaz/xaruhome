@@ -66,6 +66,11 @@
     padding-right: 0;
     padding-left: 60px;
   }
+  /* Mobile language selector — flex reverses via dir=rtl; keep items readable. */
+  [dir="rtl"] .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang_item {
+    flex-direction: row;
+    text-align: right;
+  }
 }
 
 /* ============ Directional icons (arrows / chevrons) ============ */

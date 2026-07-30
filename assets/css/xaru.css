@@ -1248,3 +1248,69 @@ body.page-loaded .xr_hero_slider_wrap {
   text-transform: uppercase;
   opacity: .8;
 }
+
+/* ==========================================================================
+   Mobile language selector (inside the hamburger menu)
+   Injected at the end of the slide-out nav by gen_i18n.py. Hidden on desktop;
+   only shown at the mobile-menu breakpoint (<=1199px). RTL handled in
+   xaru-rtl.css. The desktop header switcher is untouched.
+   ========================================================================== */
+.cs_mobile_lang { display: none; }
+
+@media (max-width: 1199px) {
+  /* Turn the slide-out panel into a column so the nav list scrolls and the
+     language row is pinned at the very bottom (end of navigation), visible. */
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_nav_list {
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 15px 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(28, 27, 25, .12);
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang_item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid rgba(28, 27, 25, .16);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    line-height: 1;
+    font-size: 13px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    transition: border-color .25s ease, background-color .25s ease, color .25s ease;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang_item .flag-icon {
+    width: 20px;
+    height: 15px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(28, 27, 25, .08);
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang_item:hover {
+    border-color: #C9A876;
+    color: #8B6E45;
+  }
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list_wrap .cs_mobile_lang_item.is-active {
+    border-color: #C9A876;
+    background: linear-gradient(135deg, rgba(201, 168, 118, .16), rgba(139, 110, 69, .12));
+    color: #8B6E45;
+    font-weight: 700;
+  }
+}

@@ -287,6 +287,21 @@
         $(".cs_language_dropdown").slideUp(200);
       }
     });
+    // Persist the manual choice so the auto-detector never overrides it.
+    // Desktop dropdown + mobile-menu language row share this handler; the
+    // href navigation is left intact (we only write localStorage first).
+    $(document).on(
+      "click",
+      ".cs_language_dropdown a, .cs_mobile_lang a",
+      function () {
+        var lang = ($(this).attr("data-lang") || "").toLowerCase();
+        if (lang) {
+          try {
+            localStorage.setItem("xaru_lang", lang);
+          } catch (e) {}
+        }
+      }
+    );
   }
   /*======================================================================
     07. Search Modal Toggle
