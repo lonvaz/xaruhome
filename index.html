@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="Home page link"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -728,13 +728,25 @@
         </div>
         <div class="cs_height_60 cs_height_lg_40"></div>
         <div class="row cs_gap_y_30"><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/real-estate/private-properties/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/07_villa_dubai.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/07_villa_dubai.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-coastal-residence-aerial.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-coastal-residence-aerial.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-coastal-residence-aerial.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>Private Real Estate</h3><p>Villas, estates, castles, private islands and branded residences.</p>
           <span class="xr_link">View division<i class="fa-solid fa-angle-right"></i></span></div></a></div><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/real-estate/commercial-hospitality/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/05_hotel_project.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/05_hotel_project.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-hospitality-resort-beachfront.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-hospitality-resort-beachfront.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-hospitality-resort-beachfront.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>Commercial & Hospitality</h3><p>Operating hotels, resorts and income assets — presented with their P&L state.</p>
           <span class="xr_link">View division<i class="fa-solid fa-angle-right"></i></span></div></a></div><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/developments/land-master-developments/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/06_masterplan_ashima.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/06_masterplan_ashima.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-land-development-coastal.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-land-development-coastal.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-land-development-coastal.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>Land & Master Developments</h3><p>Territorial land, master plans and signature destinations at scale.</p>
           <span class="xr_link">View division<i class="fa-solid fa-angle-right"></i></span></div></a></div></div>
       </div>
@@ -1060,6 +1072,15 @@
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     <script>
     (function(){var s=document.getElementById("featured");if(!s)return;
       var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");

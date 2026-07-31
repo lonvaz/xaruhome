@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="首页链接"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="../assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -727,13 +727,25 @@
         </div>
         <div class="cs_height_60 cs_height_lg_40"></div>
         <div class="row cs_gap_y_30"><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/zh/real-estate/private-properties/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/07_villa_dubai.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/07_villa_dubai.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-coastal-residence-aerial.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-coastal-residence-aerial.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-coastal-residence-aerial.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>私人房产</h3><p>别墅、庄园、城堡、私人岛屿与品牌住宅。</p>
           <span class="xr_link">查看板块<i class="fa-solid fa-angle-right"></i></span></div></a></div><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/zh/real-estate/commercial-hospitality/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/05_hotel_project.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/05_hotel_project.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-hospitality-resort-beachfront.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-hospitality-resort-beachfront.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-hospitality-resort-beachfront.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>商业与酒店</h3><p>运营中的酒店、度假村与收益资产——附带其损益状态。</p>
           <span class="xr_link">查看板块<i class="fa-solid fa-angle-right"></i></span></div></a></div><div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="/zh/developments/land-master-developments/">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/06_masterplan_ashima.jpg')"></div>
+          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/06_masterplan_ashima.jpg')"><video class="xr_card_video" muted loop playsinline preload="none"
+                    poster="/assets/img/xaru/video-posters/xaru-land-development-coastal.jpg" aria-hidden="true" data-xr-lazyvideo="1">
+                    <source data-src="/assets/video/xaru-land-development-coastal.webm" type="video/webm" />
+                    <source data-src="/assets/video/xaru-land-development-coastal.mp4" type="video/mp4" />
+                  </video></div>
           <div class="xr_market_body"><h3>土地与总体开发</h3><p>区域性土地、总体规划与大规模标志性目的地。</p>
           <span class="xr_link">查看板块<i class="fa-solid fa-angle-right"></i></span></div></a></div></div>
       </div>
@@ -1059,6 +1071,15 @@
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     <script>
     (function(){var s=document.getElementById("featured");if(!s)return;
       var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");

@@ -1695,6 +1695,16 @@ body.page-loaded .xr_hero_slider_wrap {
 .xr_market_card { display: block; background: #fff; border: 1px solid var(--border-color); height: 100%; transition: all .25s; }
 .xr_market_card:hover { box-shadow: 10px 10px 50px rgba(0,0,0,.18); }
 .xr_market_card .xr_px_img { position: relative; height: 260px; background-size: cover; background-position: center; }
+/* Card video — sits inside the existing 260px image box; the background image of
+   .xr_px_img stays as the poster underneath, so nothing shifts if video is off. */
+.xr_market_card .xr_px_img { overflow: hidden; }
+.xr_card_video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
+  opacity: 0; transition: opacity .6s ease;
+}
+.xr_card_video.is-ready { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .xr_card_video { display: none; } }
 .xr_market_body { padding: 30px 28px 34px; }
 .xr_market_body h3 { font-family: var(--primary-font); font-size: 26px; margin-bottom: 10px; }
 .xr_market_body p { color: var(--secondary-color); margin-bottom: 18px; }
