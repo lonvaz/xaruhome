@@ -205,3 +205,14 @@
 [dir="rtl"] .cs_nav_list {
   padding-right: 0;
 }
+
+/* ============ Mega-menu (Phase 1 architecture) — RTL mirror ============ */
+[dir="rtl"] .xr_mega_col_title,
+[dir="rtl"] .xr_mega_sub,
+[dir="rtl"] .xr_mega_lead,
+[dir="rtl"] .xr_mega_lead_sub { text-align: right; }
+[dir="rtl"] .xr_mega_sub:hover { padding-left: 0; padding-right: 6px; }
+@media (max-width: 1199px) {
+  [dir="rtl"] .xr_mega_panel { padding: 4px 12px 14px 0; }
+  [dir="rtl"] .xr_mega_toggle span::before { left: auto; right: 6.25px; }
+}
