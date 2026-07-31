@@ -1,250 +1,776 @@
 {
-  "$schema": "./SCHEMA.md",
-  "version": "1.0.0",
-  "phase": "Phase 1 — architecture (seed data, non-published capability figures only)",
-  "generatedNote": "Separated from HTML per DERROTERO §10. Feeds the three catalogs and the ficha models. Figures are illustrative seeds, NOT verified regulatory or financial data.",
-
-  "catalogs": {
-    "private-properties": {
-      "label": { "en": "Private Properties", "es": "Propiedades Privadas", "ar": "العقارات الخاصة", "zh": "私人房产" },
-      "search": ["location", "price", "lifestyle", "bedrooms", "area"]
-    },
-    "commercial-hospitality": {
-      "label": { "en": "Commercial & Hospitality", "es": "Comercial y Hostelería", "ar": "التجاري والضيافة", "zh": "商业与酒店" },
-      "search": ["assetType", "operatingState", "structure", "region", "ticket"]
-    },
-    "land-projects": {
-      "label": { "en": "Land, Projects & Opportunities", "es": "Suelo, Proyectos y Oportunidades", "ar": "الأراضي والمشاريع والفرص", "zh": "土地、项目与机会" },
-      "search": ["area", "phase", "permits", "use", "capitalRequired", "opportunity"]
-    }
+ "$schema": "./SCHEMA.md",
+ "version": "1.0.0",
+ "phase": "Phase 1 — architecture (seed data, non-published capability figures only)",
+ "generatedNote": "Separated from HTML per DERROTERO §10. Feeds the three catalogs and the ficha models. Figures are illustrative seeds, NOT verified regulatory or financial data.",
+ "catalogs": {
+  "private-properties": {
+   "label": {
+    "en": "Private Properties",
+    "es": "Propiedades Privadas",
+    "ar": "العقارات الخاصة",
+    "zh": "私人房产"
+   },
+   "search": [
+    "location",
+    "price",
+    "lifestyle",
+    "bedrooms",
+    "area"
+   ]
   },
-
-  "fichaModels": ["residential", "commercial-hospitality", "land-development", "confidential-teaser"],
-
-  "statuses": {
-    "available":            { "en": "Available",            "es": "Disponible",              "ar": "متاح",              "zh": "可售" },
-    "off-market":           { "en": "Off-market",           "es": "Off-market",              "ar": "خارج السوق",        "zh": "非公开" },
-    "exclusive-mandate":    { "en": "Exclusive mandate",    "es": "Mandato exclusivo",       "ar": "تفويض حصري",        "zh": "独家委托" },
-    "open-mandate":         { "en": "Open mandate",         "es": "Mandato abierto",         "ar": "تفويض مفتوح",       "zh": "公开委托" },
-    "in-validation":        { "en": "In validation",        "es": "En validación",           "ar": "قيد التحقّق",       "zh": "验证中" },
-    "seeking-capital":      { "en": "Seeking capital",      "es": "Buscando capital",        "ar": "يبحث عن رأس مال",   "zh": "寻求资本" },
-    "seeking-buyer":        { "en": "Seeking buyer",        "es": "Buscando comprador",      "ar": "يبحث عن مشترٍ",     "zh": "寻求买家" },
-    "seeking-developer":    { "en": "Seeking developer",    "es": "Buscando desarrollador",  "ar": "يبحث عن مطوّر",     "zh": "寻求开发商" },
-    "seeking-operator":     { "en": "Seeking operator",     "es": "Buscando operador",       "ar": "يبحث عن مشغّل",     "zh": "寻求运营商" },
-    "development-ready":     { "en": "Development-ready",    "es": "Listo para desarrollo",   "ar": "جاهز للتطوير",      "zh": "开发就绪" },
-    "under-construction":   { "en": "Under construction",   "es": "En construcción",         "ar": "قيد الإنشاء",       "zh": "在建" },
-    "halted-restructuring": { "en": "Halted / restructuring","es": "Detenido / reestructuración","ar": "متوقف / إعادة هيكلة","zh": "停滞 / 重组" },
-    "operational":          { "en": "Operational",          "es": "Operativo",               "ar": "تشغيلي",            "zh": "运营中" },
-    "under-negotiation":    { "en": "Under negotiation",    "es": "Bajo negociación",        "ar": "قيد التفاوض",       "zh": "洽谈中" },
-    "closed":               { "en": "Closed",               "es": "Cerrado",                 "ar": "مغلق",              "zh": "已成交" }
+  "commercial-hospitality": {
+   "label": {
+    "en": "Commercial & Hospitality",
+    "es": "Comercial y Hostelería",
+    "ar": "التجاري والضيافة",
+    "zh": "商业与酒店"
+   },
+   "search": [
+    "assetType",
+    "operatingState",
+    "structure",
+    "region",
+    "ticket"
+   ]
   },
-
-  "opportunities": [
-    {
-      "id": "pp-samana-island",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "exclusive-mandate",
-      "title": { "en": "Private Island, Samaná Bay", "es": "Isla privada, Bahía de Samaná", "ar": "جزيرة خاصة، خليج سامانا", "zh": "萨马纳湾私人岛屿" },
-      "location": { "country": "Dominican Republic", "region": "Samaná", "city": "Samaná Bay" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "specs": { "bedrooms": null, "bathrooms": null, "builtAreaSqm": null, "plotAreaSqm": 640000, "style": "Private island / beachfront" },
-      "images": ["assets/img/xaru/gen2/02_island_rd.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["island", "trophy", "one-of-one", "coastal"]
+  "land-projects": {
+   "label": {
+    "en": "Land, Projects & Opportunities",
+    "es": "Suelo, Proyectos y Oportunidades",
+    "ar": "الأراضي والمشاريع والفرص",
+    "zh": "土地、项目与机会"
+   },
+   "search": [
+    "area",
+    "phase",
+    "permits",
+    "use",
+    "capitalRequired",
+    "opportunity"
+   ]
+  }
+ },
+ "fichaModels": [
+  "residential",
+  "commercial-hospitality",
+  "land-development",
+  "confidential-teaser",
+  "productive-asset"
+ ],
+ "statuses": {
+  "available": {
+   "en": "Available",
+   "es": "Disponible",
+   "ar": "متاح",
+   "zh": "可售"
+  },
+  "off-market": {
+   "en": "Off-market",
+   "es": "Off-market",
+   "ar": "خارج السوق",
+   "zh": "非公开"
+  },
+  "exclusive-mandate": {
+   "en": "Exclusive mandate",
+   "es": "Mandato exclusivo",
+   "ar": "تفويض حصري",
+   "zh": "独家委托"
+  },
+  "open-mandate": {
+   "en": "Open mandate",
+   "es": "Mandato abierto",
+   "ar": "تفويض مفتوح",
+   "zh": "公开委托"
+  },
+  "in-validation": {
+   "en": "In validation",
+   "es": "En validación",
+   "ar": "قيد التحقّق",
+   "zh": "验证中"
+  },
+  "seeking-capital": {
+   "en": "Seeking capital",
+   "es": "Buscando capital",
+   "ar": "يبحث عن رأس مال",
+   "zh": "寻求资本"
+  },
+  "seeking-buyer": {
+   "en": "Seeking buyer",
+   "es": "Buscando comprador",
+   "ar": "يبحث عن مشترٍ",
+   "zh": "寻求买家"
+  },
+  "seeking-developer": {
+   "en": "Seeking developer",
+   "es": "Buscando desarrollador",
+   "ar": "يبحث عن مطوّر",
+   "zh": "寻求开发商"
+  },
+  "seeking-operator": {
+   "en": "Seeking operator",
+   "es": "Buscando operador",
+   "ar": "يبحث عن مشغّل",
+   "zh": "寻求运营商"
+  },
+  "development-ready": {
+   "en": "Development-ready",
+   "es": "Listo para desarrollo",
+   "ar": "جاهز للتطوير",
+   "zh": "开发就绪"
+  },
+  "under-construction": {
+   "en": "Under construction",
+   "es": "En construcción",
+   "ar": "قيد الإنشاء",
+   "zh": "在建"
+  },
+  "halted-restructuring": {
+   "en": "Halted / restructuring",
+   "es": "Detenido / reestructuración",
+   "ar": "متوقف / إعادة هيكلة",
+   "zh": "停滞 / 重组"
+  },
+  "operational": {
+   "en": "Operational",
+   "es": "Operativo",
+   "ar": "تشغيلي",
+   "zh": "运营中"
+  },
+  "under-negotiation": {
+   "en": "Under negotiation",
+   "es": "Bajo negociación",
+   "ar": "قيد التفاوض",
+   "zh": "洽谈中"
+  },
+  "closed": {
+   "en": "Closed",
+   "es": "Cerrado",
+   "ar": "مغلق",
+   "zh": "已成交"
+  }
+ },
+ "opportunities": [
+  {
+   "id": "pp-samana-island",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "exclusive-mandate",
+   "title": {
+    "en": "Private Island, Samaná Bay",
+    "es": "Isla privada, Bahía de Samaná",
+    "ar": "جزيرة خاصة، خليج سامانا",
+    "zh": "萨马纳湾私人岛屿"
+   },
+   "location": {
+    "country": "Dominican Republic",
+    "region": "Samaná",
+    "city": "Samaná Bay"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "specs": {
+    "bedrooms": null,
+    "bathrooms": null,
+    "builtAreaSqm": null,
+    "plotAreaSqm": 640000,
+    "style": "Private island / beachfront"
+   },
+   "images": [
+    "assets/img/xaru/gen2/02_island_rd.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "island",
+    "trophy",
+    "one-of-one",
+    "coastal"
+   ]
+  },
+  {
+   "id": "pp-villa-dubai",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "available",
+   "title": {
+    "en": "Signature Villa, Dubai",
+    "es": "Villa de autor, Dubái",
+    "ar": "فيلا مميّزة، دبي",
+    "zh": "迪拜臻品别墅"
+   },
+   "location": {
+    "country": "United Arab Emirates",
+    "region": "Dubai",
+    "city": "Dubai"
+   },
+   "price": {
+    "display": "AED 95,000,000",
+    "currency": "AED",
+    "poa": false
+   },
+   "specs": {
+    "bedrooms": 7,
+    "bathrooms": 9,
+    "builtAreaSqm": 1850,
+    "plotAreaSqm": 3200,
+    "style": "Contemporary villa"
+   },
+   "images": [
+    "assets/img/xaru/gen2/07_villa_dubai.jpg"
+   ],
+   "mandate": "open",
+   "confidential": false,
+   "tags": [
+    "villa",
+    "waterfront",
+    "branded"
+   ]
+  },
+  {
+   "id": "pp-penthouse-london",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "exclusive-mandate",
+   "title": {
+    "en": "Penthouse, Central London",
+    "es": "Ático, Londres centro",
+    "ar": "بنتهاوس، وسط لندن",
+    "zh": "伦敦中心顶层公寓"
+   },
+   "location": {
+    "country": "United Kingdom",
+    "region": "London",
+    "city": "London"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "GBP",
+    "poa": true
+   },
+   "specs": {
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "builtAreaSqm": 520,
+    "plotAreaSqm": null,
+    "style": "Penthouse / branded residence"
+   },
+   "images": [
+    "assets/img/xaru/gen2/08_penthouse_london.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "penthouse",
+    "branded-residence",
+    "prime-central"
+   ]
+  },
+  {
+   "id": "pp-villa-como",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "off-market",
+   "title": {
+    "en": "Lakefront Estate, Lake Como",
+    "es": "Finca junto al lago, Lago de Como",
+    "ar": "حوزة على البحيرة، بحيرة كومو",
+    "zh": "科莫湖畔庄园"
+   },
+   "location": {
+    "country": "Italy",
+    "region": "Lombardy",
+    "city": "Lake Como"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "EUR",
+    "poa": true
+   },
+   "specs": {
+    "bedrooms": 8,
+    "bathrooms": 8,
+    "builtAreaSqm": 1400,
+    "plotAreaSqm": 12000,
+    "style": "Historic estate"
+   },
+   "images": [
+    "assets/img/xaru/gen2/09_villa_como.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": true,
+   "tags": [
+    "estate",
+    "historic",
+    "lakefront",
+    "off-market"
+   ]
+  },
+  {
+   "id": "pp-casa-tulum",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "available",
+   "title": {
+    "en": "Beachfront Residence, Tulum",
+    "es": "Residencia frente al mar, Tulum",
+    "ar": "مسكن على الشاطئ، تولوم",
+    "zh": "图卢姆海滨住宅"
+   },
+   "location": {
+    "country": "Mexico",
+    "region": "Quintana Roo",
+    "city": "Tulum"
+   },
+   "price": {
+    "display": "USD 6,900,000",
+    "currency": "USD",
+    "poa": false
+   },
+   "specs": {
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "builtAreaSqm": 620,
+    "plotAreaSqm": 1800,
+    "style": "Contemporary beachfront"
+   },
+   "images": [
+    "assets/img/xaru/gen2/10_casa_tulum.jpg"
+   ],
+   "mandate": "open",
+   "confidential": false,
+   "tags": [
+    "beachfront",
+    "new-residential"
+   ]
+  },
+  {
+   "id": "pp-villa-marbella",
+   "catalog": "private-properties",
+   "model": "residential",
+   "status": "under-negotiation",
+   "title": {
+    "en": "Villa, Marbella Golden Mile",
+    "es": "Villa, Milla de Oro de Marbella",
+    "ar": "فيلا، الميل الذهبي بماربيا",
+    "zh": "马贝拉黄金一英里别墅"
+   },
+   "location": {
+    "country": "Spain",
+    "region": "Andalusia",
+    "city": "Marbella"
+   },
+   "price": {
+    "display": "EUR 18,500,000",
+    "currency": "EUR",
+    "poa": false
+   },
+   "specs": {
+    "bedrooms": 6,
+    "bathrooms": 7,
+    "builtAreaSqm": 980,
+    "plotAreaSqm": 2400,
+    "style": "Mediterranean villa"
+   },
+   "images": [
+    "assets/img/xaru/gen2/11_villa_marbella.jpg"
+   ],
+   "mandate": "open",
+   "confidential": false,
+   "tags": [
+    "villa",
+    "golden-mile"
+   ]
+  },
+  {
+   "id": "ch-hotel-operational",
+   "catalog": "commercial-hospitality",
+   "model": "commercial-hospitality",
+   "status": "operational",
+   "title": {
+    "en": "Operating Boutique Hotel",
+    "es": "Hotel boutique en operación",
+    "ar": "فندق بوتيك تشغيلي",
+    "zh": "运营中精品酒店"
+   },
+   "location": {
+    "country": "Mexico",
+    "region": "Quintana Roo",
+    "city": "Riviera Maya"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "operating": {
+    "state": "operational",
+    "keys": 88,
+    "occupancyTeaser": "Stabilised, high-60s % (teaser)",
+    "noiTeaser": "Disclosed under NDA",
+    "operator": "Independent",
+    "structure": "Asset + management contract"
+   },
+   "ticket": {
+    "band": "USD 40-60M (indicative)"
+   },
+   "images": [
+    "assets/img/xaru/gen2/05_hotel_project.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "hotel",
+    "operational",
+    "income",
+    "P&L"
+   ]
+  },
+  {
+   "id": "ch-hotel-halted",
+   "catalog": "commercial-hospitality",
+   "model": "commercial-hospitality",
+   "status": "halted-restructuring",
+   "title": {
+    "en": "Halted Hotel Project Seeking Capital",
+    "es": "Proyecto hotelero detenido en busca de capital",
+    "ar": "مشروع فندقي متوقف يبحث عن رأس مال",
+    "zh": "停滞酒店项目寻求资本"
+   },
+   "location": {
+    "country": "Panama",
+    "region": "Panamá",
+    "city": "Panama City"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "operating": {
+    "state": "halted",
+    "keys": 210,
+    "occupancyTeaser": "Pre-opening",
+    "noiTeaser": "Projected — under review",
+    "operator": "To be appointed",
+    "structure": "Recapitalisation / JV"
+   },
+   "ticket": {
+    "band": "USD 70-90M to complete (indicative)"
+   },
+   "images": [
+    "assets/img/xaru/gen2/05_hotel_project.jpg"
+   ],
+   "mandate": "open",
+   "confidential": false,
+   "tags": [
+    "halted",
+    "seeking-capital",
+    "repositioning",
+    "restructuring"
+   ],
+   "secondaryStatus": [
+    "seeking-capital",
+    "seeking-operator"
+   ]
+  },
+  {
+   "id": "ch-resort-development",
+   "catalog": "commercial-hospitality",
+   "model": "commercial-hospitality",
+   "status": "seeking-operator",
+   "title": {
+    "en": "Beach Resort, Development Stage",
+    "es": "Resort de playa, en desarrollo",
+    "ar": "منتجع شاطئي، مرحلة التطوير",
+    "zh": "海滨度假村，开发阶段"
+   },
+   "location": {
+    "country": "Dominican Republic",
+    "region": "La Altagracia",
+    "city": "Punta Cana"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "operating": {
+    "state": "development",
+    "keys": 320,
+    "occupancyTeaser": "n/a — pre-development",
+    "noiTeaser": "Modelled",
+    "operator": "Selection in progress",
+    "structure": "Development + operator agreement"
+   },
+   "ticket": {
+    "band": "USD 120-160M (indicative)"
+   },
+   "images": [
+    "assets/img/xaru/gen2/04_resort_dev.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "resort",
+    "development",
+    "operator-selection"
+   ]
+  },
+  {
+   "id": "lp-land-11m",
+   "catalog": "land-projects",
+   "model": "land-development",
+   "status": "development-ready",
+   "title": {
+    "en": "Territorial Land Holding, 11M+ m²",
+    "es": "Reserva territorial, 11M+ m²",
+    "ar": "حيازة أرضية إقليمية، +11 مليون م²",
+    "zh": "区域性土地储备，1100 万+ 平方米"
+   },
+   "location": {
+    "country": "Mexico",
+    "region": "Oaxaca",
+    "city": "Oaxaca coast"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "land": {
+    "areaSqm": 11000000,
+    "tenure": "Consolidated — verified under mandate",
+    "currentUse": "Agricultural / natural",
+    "projectedUse": "Mixed-use master development",
+    "access": "Road + proximity to regional airport",
+    "water": "Under study",
+    "environmental": "Baseline assessment in progress",
+    "planning": "Master-plan stage",
+    "permits": "In structuring",
+    "phase": "master-plan",
+    "counterpartySought": [
+     "developer",
+     "capital",
+     "operator"
+    ],
+    "capitalRequired": "Phased — disclosed under NDA"
+   },
+   "images": [
+    "assets/img/xaru/gen2/03_land_mega.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "land",
+    "11M-m2",
+    "master-development",
+    "thesis"
+   ],
+   "secondaryStatus": [
+    "seeking-developer",
+    "seeking-capital"
+   ]
+  },
+  {
+   "id": "lp-ashima-masterplan",
+   "catalog": "land-projects",
+   "model": "land-development",
+   "status": "in-validation",
+   "title": {
+    "en": "ASHIMA — Signature Master Development",
+    "es": "ASHIMA — Desarrollo maestro emblemático",
+    "ar": "ASHIMA — تطوير رئيسي مميّز",
+    "zh": "ASHIMA — 标志性总体开发"
+   },
+   "location": {
+    "country": "Mexico",
+    "region": "Oaxaca",
+    "city": "Oaxaca"
+   },
+   "price": {
+    "display": "Price upon application",
+    "currency": "USD",
+    "poa": true
+   },
+   "land": {
+    "areaSqm": 4200000,
+    "tenure": "Under structuring",
+    "currentUse": "Natural / cultural landscape",
+    "projectedUse": "Experiential destination (health, culture, eco, innovation, sustainability)",
+    "access": "Regional road network",
+    "water": "Feasibility stage",
+    "environmental": "Regenerative framework",
+    "planning": "Concept master plan",
+    "permits": "Early stage",
+    "phase": "concept",
+    "counterpartySought": [
+     "capital",
+     "operator"
+    ],
+    "capitalRequired": "Phased — under NDA"
+   },
+   "images": [
+    "assets/img/xaru/gen2/06_masterplan_ashima.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": false,
+   "tags": [
+    "ASHIMA",
+    "signature",
+    "experiential",
+    "master-development"
+   ],
+   "secondaryStatus": [
+    "seeking-capital"
+   ]
+  },
+  {
+   "id": "cf-confidential-portfolio",
+   "catalog": "land-projects",
+   "model": "confidential-teaser",
+   "status": "off-market",
+   "title": {
+    "en": "Confidential Portfolio — Private Market",
+    "es": "Portafolio confidencial — Mercado privado",
+    "ar": "محفظة سرّية — السوق الخاص",
+    "zh": "保密资产组合——私人市场"
+   },
+   "location": {
+    "country": "Undisclosed",
+    "region": null,
+    "city": null
+   },
+   "price": {
+    "display": "Undisclosed",
+    "currency": null,
+    "poa": true
+   },
+   "teaser": {
+    "teaserOnly": true,
+    "summary": {
+     "en": "A sizeable off-market position, released only through the Private Deal Room.",
+     "es": "Una posición off-market de envergadura, liberada solo a través de la Sala de Operaciones Privada.",
+     "ar": "مركز كبير خارج السوق، يُتاح فقط عبر غرفة الصفقات الخاصة.",
+     "zh": "一处大型非公开资产，仅通过私人交易室释放。"
     },
-    {
-      "id": "pp-villa-dubai",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "available",
-      "title": { "en": "Signature Villa, Dubai", "es": "Villa de autor, Dubái", "ar": "فيلا مميّزة، دبي", "zh": "迪拜臻品别墅" },
-      "location": { "country": "United Arab Emirates", "region": "Dubai", "city": "Dubai" },
-      "price": { "display": "AED 95,000,000", "currency": "AED", "poa": false },
-      "specs": { "bedrooms": 7, "bathrooms": 9, "builtAreaSqm": 1850, "plotAreaSqm": 3200, "style": "Contemporary villa" },
-      "images": ["assets/img/xaru/gen2/07_villa_dubai.jpg"],
-      "mandate": "open",
-      "confidential": false,
-      "tags": ["villa", "waterfront", "branded"]
+    "masked": [
+     "owner",
+     "coordinates",
+     "financials",
+     "licenses",
+     "legal-docs",
+     "sensitive-price"
+    ],
+    "dealRoomProcess": [
+     "public-teaser",
+     "access-request",
+     "identity-verification",
+     "nda",
+     "kyc-aml",
+     "internal-approval",
+     "data-room",
+     "adviser-assignment",
+     "transaction"
+    ]
+   },
+   "images": [
+    "assets/img/xaru/gen2/13_investment_bg.jpg"
+   ],
+   "mandate": "confidential",
+   "confidential": true,
+   "tags": [
+    "confidential",
+    "private-market",
+    "deal-room",
+    "off-market"
+   ],
+   "secondaryStatus": [
+    "seeking-buyer"
+   ]
+  },
+  {
+   "id": "pa-quarry-license",
+   "catalog": "land-projects",
+   "model": "productive-asset",
+   "status": "in-validation",
+   "title": {
+    "en": "Quarry Licence & Aggregates Production",
+    "es": "Licencia de cantera y producción de áridos",
+    "ar": "رخصة محجر وإنتاج ركام",
+    "zh": "采石许可与骨料生产"
+   },
+   "location": {
+    "country": "Dominican Republic",
+    "region": "Caribbean",
+    "city": null
+   },
+   "price": {
+    "display": "Undisclosed",
+    "currency": null,
+    "poa": true
+   },
+   "productive": {
+    "category": {
+     "en": "Quarry — construction aggregates",
+     "es": "Cantera — áridos de construcción",
+     "ar": "محجر — ركام البناء",
+     "zh": "采石场——建筑骨料"
     },
-    {
-      "id": "pp-penthouse-london",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "exclusive-mandate",
-      "title": { "en": "Penthouse, Central London", "es": "Ático, Londres centro", "ar": "بنتهاوس، وسط لندن", "zh": "伦敦中心顶层公寓" },
-      "location": { "country": "United Kingdom", "region": "London", "city": "London" },
-      "price": { "display": "Price upon application", "currency": "GBP", "poa": true },
-      "specs": { "bedrooms": 4, "bathrooms": 5, "builtAreaSqm": 520, "plotAreaSqm": null, "style": "Penthouse / branded residence" },
-      "images": ["assets/img/xaru/gen2/08_penthouse_london.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["penthouse", "branded-residence", "prime-central"]
+    "scale": {
+     "en": "Industrial scale — detail under NDA",
+     "es": "Escala industrial — detalle bajo NDA",
+     "ar": "نطاق صناعي — التفاصيل بموجب اتفاقية سرية",
+     "zh": "工业规模——细节在保密协议下提供"
     },
-    {
-      "id": "pp-villa-como",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "off-market",
-      "title": { "en": "Lakefront Estate, Lake Como", "es": "Finca junto al lago, Lago de Como", "ar": "حوزة على البحيرة، بحيرة كومو", "zh": "科莫湖畔庄园" },
-      "location": { "country": "Italy", "region": "Lombardy", "city": "Lake Como" },
-      "price": { "display": "Price upon application", "currency": "EUR", "poa": true },
-      "specs": { "bedrooms": 8, "bathrooms": 8, "builtAreaSqm": 1400, "plotAreaSqm": 12000, "style": "Historic estate" },
-      "images": ["assets/img/xaru/gen2/09_villa_como.jpg"],
-      "mandate": "exclusive",
-      "confidential": true,
-      "tags": ["estate", "historic", "lakefront", "off-market"]
+    "permitsTeaser": {
+     "en": "Extraction licence and permits in place — verified under mandate",
+     "es": "Licencia de extracción y permisos vigentes — verificados bajo mandato",
+     "ar": "رخصة استخراج وتصاريح سارية — موثّقة بموجب التفويض",
+     "zh": "开采许可与批文齐备——已在委托下核实"
     },
-    {
-      "id": "pp-casa-tulum",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "available",
-      "title": { "en": "Beachfront Residence, Tulum", "es": "Residencia frente al mar, Tulum", "ar": "مسكن على الشاطئ، تولوم", "zh": "图卢姆海滨住宅" },
-      "location": { "country": "Mexico", "region": "Quintana Roo", "city": "Tulum" },
-      "price": { "display": "USD 6,900,000", "currency": "USD", "poa": false },
-      "specs": { "bedrooms": 5, "bathrooms": 6, "builtAreaSqm": 620, "plotAreaSqm": 1800, "style": "Contemporary beachfront" },
-      "images": ["assets/img/xaru/gen2/10_casa_tulum.jpg"],
-      "mandate": "open",
-      "confidential": false,
-      "tags": ["beachfront", "new-residential"]
+    "productionTeaser": {
+     "en": "Production available — volumes disclosed under NDA",
+     "es": "Producción disponible — volúmenes revelados bajo NDA",
+     "ar": "إنتاج متاح — تُكشف الأحجام بموجب اتفاقية سرية",
+     "zh": "产量可供——具体数量在保密协议下披露"
     },
-    {
-      "id": "pp-villa-marbella",
-      "catalog": "private-properties",
-      "model": "residential",
-      "status": "under-negotiation",
-      "title": { "en": "Villa, Marbella Golden Mile", "es": "Villa, Milla de Oro de Marbella", "ar": "فيلا، الميل الذهبي بماربيا", "zh": "马贝拉黄金一英里别墅" },
-      "location": { "country": "Spain", "region": "Andalusia", "city": "Marbella" },
-      "price": { "display": "EUR 18,500,000", "currency": "EUR", "poa": false },
-      "specs": { "bedrooms": 6, "bathrooms": 7, "builtAreaSqm": 980, "plotAreaSqm": 2400, "style": "Mediterranean villa" },
-      "images": ["assets/img/xaru/gen2/11_villa_marbella.jpg"],
-      "mandate": "open",
-      "confidential": false,
-      "tags": ["villa", "golden-mile"]
+    "offtakeTeaser": {
+     "en": "Offtake and international placement being structured",
+     "es": "Offtake y colocación internacional en estructuración",
+     "ar": "اتفاقيات الشراء المسبق والتصريف الدولي قيد الهيكلة",
+     "zh": "承购与国际配售架构中"
     },
-    {
-      "id": "ch-hotel-operational",
-      "catalog": "commercial-hospitality",
-      "model": "commercial-hospitality",
-      "status": "operational",
-      "title": { "en": "Operating Boutique Hotel", "es": "Hotel boutique en operación", "ar": "فندق بوتيك تشغيلي", "zh": "运营中精品酒店" },
-      "location": { "country": "Mexico", "region": "Quintana Roo", "city": "Riviera Maya" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "operating": { "state": "operational", "keys": 88, "occupancyTeaser": "Stabilised, high-60s % (teaser)", "noiTeaser": "Disclosed under NDA", "operator": "Independent", "structure": "Asset + management contract" },
-      "ticket": { "band": "USD 40-60M (indicative)" },
-      "images": ["assets/img/xaru/gen2/05_hotel_project.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["hotel", "operational", "income", "P&L"]
+    "oppType": {
+     "en": "Productive asset — teaser only, detail under NDA",
+     "es": "Activo productivo — solo teaser, detalle bajo NDA",
+     "ar": "أصل إنتاجي — موجز فقط، والتفاصيل بموجب اتفاقية سرية",
+     "zh": "生产性资产——仅限简报，细节在保密协议下提供"
     },
-    {
-      "id": "ch-hotel-halted",
-      "catalog": "commercial-hospitality",
-      "model": "commercial-hospitality",
-      "status": "halted-restructuring",
-      "title": { "en": "Halted Hotel Project Seeking Capital", "es": "Proyecto hotelero detenido en busca de capital", "ar": "مشروع فندقي متوقف يبحث عن رأس مال", "zh": "停滞酒店项目寻求资本" },
-      "location": { "country": "Panama", "region": "Panamá", "city": "Panama City" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "operating": { "state": "halted", "keys": 210, "occupancyTeaser": "Pre-opening", "noiTeaser": "Projected — under review", "operator": "To be appointed", "structure": "Recapitalisation / JV" },
-      "ticket": { "band": "USD 70-90M to complete (indicative)" },
-      "images": ["assets/img/xaru/gen2/05_hotel_project.jpg"],
-      "mandate": "open",
-      "confidential": false,
-      "tags": ["halted", "seeking-capital", "repositioning", "restructuring"],
-      "secondaryStatus": ["seeking-capital", "seeking-operator"]
-    },
-    {
-      "id": "ch-resort-development",
-      "catalog": "commercial-hospitality",
-      "model": "commercial-hospitality",
-      "status": "seeking-operator",
-      "title": { "en": "Beach Resort, Development Stage", "es": "Resort de playa, en desarrollo", "ar": "منتجع شاطئي، مرحلة التطوير", "zh": "海滨度假村，开发阶段" },
-      "location": { "country": "Dominican Republic", "region": "La Altagracia", "city": "Punta Cana" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "operating": { "state": "development", "keys": 320, "occupancyTeaser": "n/a — pre-development", "noiTeaser": "Modelled", "operator": "Selection in progress", "structure": "Development + operator agreement" },
-      "ticket": { "band": "USD 120-160M (indicative)" },
-      "images": ["assets/img/xaru/gen2/04_resort_dev.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["resort", "development", "operator-selection"]
-    },
-    {
-      "id": "lp-land-11m",
-      "catalog": "land-projects",
-      "model": "land-development",
-      "status": "development-ready",
-      "title": { "en": "Territorial Land Holding, 11M+ m²", "es": "Reserva territorial, 11M+ m²", "ar": "حيازة أرضية إقليمية، +11 مليون م²", "zh": "区域性土地储备，1100 万+ 平方米" },
-      "location": { "country": "Mexico", "region": "Oaxaca", "city": "Oaxaca coast" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "land": {
-        "areaSqm": 11000000,
-        "tenure": "Consolidated — verified under mandate",
-        "currentUse": "Agricultural / natural",
-        "projectedUse": "Mixed-use master development",
-        "access": "Road + proximity to regional airport",
-        "water": "Under study",
-        "environmental": "Baseline assessment in progress",
-        "planning": "Master-plan stage",
-        "permits": "In structuring",
-        "phase": "master-plan",
-        "counterpartySought": ["developer", "capital", "operator"],
-        "capitalRequired": "Phased — disclosed under NDA"
-      },
-      "images": ["assets/img/xaru/gen2/03_land_mega.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["land", "11M-m2", "master-development", "thesis"],
-      "secondaryStatus": ["seeking-developer", "seeking-capital"]
-    },
-    {
-      "id": "lp-ashima-masterplan",
-      "catalog": "land-projects",
-      "model": "land-development",
-      "status": "in-validation",
-      "title": { "en": "ASHIMA — Signature Master Development", "es": "ASHIMA — Desarrollo maestro emblemático", "ar": "ASHIMA — تطوير رئيسي مميّز", "zh": "ASHIMA — 标志性总体开发" },
-      "location": { "country": "Mexico", "region": "Oaxaca", "city": "Oaxaca" },
-      "price": { "display": "Price upon application", "currency": "USD", "poa": true },
-      "land": {
-        "areaSqm": 4200000,
-        "tenure": "Under structuring",
-        "currentUse": "Natural / cultural landscape",
-        "projectedUse": "Experiential destination (health, culture, eco, innovation, sustainability)",
-        "access": "Regional road network",
-        "water": "Feasibility stage",
-        "environmental": "Regenerative framework",
-        "planning": "Concept master plan",
-        "permits": "Early stage",
-        "phase": "concept",
-        "counterpartySought": ["capital", "operator"],
-        "capitalRequired": "Phased — under NDA"
-      },
-      "images": ["assets/img/xaru/gen2/06_masterplan_ashima.jpg"],
-      "mandate": "exclusive",
-      "confidential": false,
-      "tags": ["ASHIMA", "signature", "experiential", "master-development"],
-      "secondaryStatus": ["seeking-capital"]
-    },
-    {
-      "id": "cf-confidential-portfolio",
-      "catalog": "land-projects",
-      "model": "confidential-teaser",
-      "status": "off-market",
-      "title": { "en": "Confidential Portfolio — Private Market", "es": "Portafolio confidencial — Mercado privado", "ar": "محفظة سرّية — السوق الخاص", "zh": "保密资产组合——私人市场" },
-      "location": { "country": "Undisclosed", "region": null, "city": null },
-      "price": { "display": "Undisclosed", "currency": null, "poa": true },
-      "teaser": {
-        "teaserOnly": true,
-        "summary": { "en": "A sizeable off-market position, released only through the Private Deal Room.", "es": "Una posición off-market de envergadura, liberada solo a través de la Sala de Operaciones Privada.", "ar": "مركز كبير خارج السوق، يُتاح فقط عبر غرفة الصفقات الخاصة.", "zh": "一处大型非公开资产，仅通过私人交易室释放。" },
-        "masked": ["owner", "coordinates", "financials", "licenses", "legal-docs", "sensitive-price"],
-        "dealRoomProcess": ["public-teaser", "access-request", "identity-verification", "nda", "kyc-aml", "internal-approval", "data-room", "adviser-assignment", "transaction"]
-      },
-      "images": ["assets/img/xaru/gen2/13_investment_bg.jpg"],
-      "mandate": "confidential",
-      "confidential": true,
-      "tags": ["confidential", "private-market", "deal-room", "off-market"],
-      "secondaryStatus": ["seeking-buyer"]
-    }
-  ]
+    "phase": "production",
+    "counterpartySought": [
+     "buyer",
+     "operator"
+    ]
+   },
+   "images": [
+    "assets/img/xaru/gen2/03_land_mega.jpg"
+   ],
+   "mandate": "exclusive",
+   "confidential": true,
+   "tags": [
+    "productive-asset",
+    "commodities",
+    "quarry",
+    "teaser",
+    "nda"
+   ],
+   "secondaryStatus": [
+    "seeking-buyer"
+   ]
+  }
+ ]
 }
