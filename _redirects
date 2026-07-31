@@ -1,0 +1,5 @@
+# Force clean home URLs (real 301) — Cloudflare Pages
+/index.html            /            301
+/es/index.html         /es/         301
+/ar/index.html         /ar/         301
+/zh/index.html         /zh/         301
