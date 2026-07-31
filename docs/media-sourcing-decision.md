@@ -44,9 +44,15 @@ Y bajo el bloque de ASHIMA, con redacción distinta porque el problema es distin
 
 La marca tipográfica reutiliza el estilo existente (`xr_phase0`), de modo que la nota es discreta y **no altera el diseño**.
 
-## Hallazgo crítico corregido
+## Hallazgo crítico corregido — C-03 del informe de auditoría
 
-`08_penthouse_london.jpg` contenía **una casa de Tulum** y se servía en **44 páginas de Londres**. Ahora contiene el skyline de la City de Londres a la hora azul. Todas las geografías se han verificado imagen por imagen: Dubái es Dubái, Como es Como, Marbella es Puerto Banús, Tulum es Quintana Roo, CDMX es Paseo de la Reforma.
+El defecto real no era el que parecía. **Todas las fichas de los tres listados llevaban la misma imagen trasera en el efecto hover**: `10_casa_tulum.jpg` en `buy` y `rent`, `09_villa_como.jpg` en `search`. Al pasar el ratón sobre «The Thames Penthouse · Westminster, London · $12,5 M» aparecía **una casa de selva en Tulum**. Lo mismo en Dubái, Marbella y CDMX. 29 fichas × 4 idiomas.
+
+Al sustituir el material por fotografía real, el problema **empeoraba** en lugar de mejorar: una foto auténtica de Tulum detrás de un ático de Londres es más creíble, y por tanto más engañosa, que un render sintético.
+
+Corregido igualando la imagen trasera a la delantera en las 29 fichas. El efecto hover se conserva —no se toca ni el CSS ni la estructura— pero deja de afirmar que una propiedad es otra.
+
+Además, todas las geografías del banco se han verificado imagen por imagen: Dubái es Palm Jumeirah, Como es el lago de Como, Marbella es Puerto Banús, Tulum es Quintana Roo, CDMX es Paseo de la Reforma. `08_penthouse_london.jpg`, que antes era una terraza generada con un puente deforme al fondo, es ahora la City de Londres a la hora azul.
 
 ## Lo que sigue sin resolverse (y no se disimula)
 
