@@ -78,3 +78,26 @@ inmueble. Se agrupan por familia y se comparten dentro de la familia, nunca entr
 mediterránea · tropical · colonial · castillo/piedra · contemporánea · alpina · urbana ·
 ecuestre · marina · territorio. Prohibido cruzarlas: ni interior de rascacielos en una villa
 mediterránea, ni mobiliario futurista en una hacienda colonial.
+
+## Lote 1 ejecutado (31-jul-2026, sesión principal)
+
+**9 integradas** en `assets/img/xaru/catalog/`: los 5 castillos (medieval, château con foso,
+restaurado, con viñedo —viñas verificadas con zoom—, palacio rural) y 4 islas (mediterránea,
+tropical asiática —Wayag, coincide con la ubicación de la ficha—, con resort, sin desarrollar).
+
+**3 rechazadas en revisión visual** (registradas en el CSV): la fortaleza de Rimetea por ser
+una ruina; la isla del muelle por ser **la misma foto que la diapositiva 2 del hero** (reusarla
+para otro activo recrearía el defecto C-03); y la de Palau por no ser un archipiélago.
+
+**Huecos pendientes de este lote**: `pr-castles-chateaux-fortress`, `pr-private-islands-caribbean`,
+`pr-private-islands-archipelago`. Buscar: fortaleza habitable (no ruina), isla caribeña distinta
+de la del hero, y vista con MÚLTIPLES islotes.
+
+**Vía de descarga sin teclado (nueva, probada)**: cuando el Mac está en uso y el foco salta entre
+apps, NO teclear en Terminal. En su lugar: navegar pestañas de Chrome a las downloadUrl
+(`mcp__claude-in-chrome__navigate`); Chrome descarga a `~/Downloads` como temporales
+`.com.google.Chrome.*`; hay acceso concedido a esa carpeta; identificar cada archivo por
+CONTENIDO en hoja de contacto (los nombres temporales no conservan el orden). El `fetch` por
+JavaScript NO funciona (CORS).
+
+**Progreso: 9/144.**
