@@ -198,3 +198,33 @@ dehesa arbolada con sierra al fondo para el estate de olivar.
 
 **Progreso: 47/144.** Haciendas 5/6 (falta ecuestre) · estates 5/6 · casas 5/6 · villas 4/6 ·
 mansiones 4/6 · waterfront 4/6 · ecuestres 4/6 · castillos, islas y penthouses completos.
+
+---
+
+## 31-jul-2026 — PARADA POR LÍMITE DE GASTO DE LA CUENTA
+
+**Estado:** 47/144 imágenes integradas. Rama `agent/xaru-stock-media-video-rebuild`.
+
+**Bloqueo real y medido:** los cuatro agentes de scouting murieron con
+`You've hit your org's monthly spend limit`. No es un fallo técnico del proceso
+ni de las fuentes; es el tope de gasto mensual de la cuenta. No hay forma de
+rodearlo desde aquí: sólo Josep puede subirlo en claude.ai/settings/usage.
+
+**Lo que SÍ se salvó antes de morir** (`docs/scout/`):
+- `out-residential.txt` — 13 slots, 3 candidatos cada uno ✅ completo
+- `out-hosp-a.txt` — 24 slots ✅ completo
+- `out-hosp-b.txt` — 24 slots ✅ completo
+- `out-land.txt` — ❌ no llegó a escribirse (36 slots de suelo sin explorar)
+- `SHORTLIST.txt` — 183 líneas consolidadas, formato `slot|stock_id|preview_url|descripción`
+
+**Verificado en esta sesión:** la salida de red del contenedor sigue bloqueada
+tanto para `downloadscdn6.magnific.com` (403 CONNECT) como para
+`img.magnific.com`. El puente por Chrome sigue siendo la única vía de descarga.
+
+**Al reanudar, en este orden:**
+1. Construir hoja de contactos en Chrome con las `preview_url` de `SHORTLIST.txt`
+   (data:text/html, las imágenes las carga Chrome directamente) y revisar a ojo.
+2. `stock_download` de los aprobados → `browser_batch` navigate → `device_stage_files`.
+3. Integrar a 1600px en `assets/img/xaru/catalog/`, registrar en
+   `docs/xaru-stock-media-map.csv`, commit y push por lote.
+4. Volver a lanzar el scouting de los 36 slots de suelo (`ld-*`).
