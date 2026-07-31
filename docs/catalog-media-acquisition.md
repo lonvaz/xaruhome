@@ -164,3 +164,16 @@ salón de bodas y no a residencia. El criterio que queda vivo es el **registro**
 
 **Progreso: 31/144.** Casas contemporáneas 5/6 · villas 4/6 · mansiones 1/6 · haciendas 1/6 ·
 waterfront 2/6 · ecuestres 4/6 · estates 4/6 · castillos 6/6 · islas 6/6.
+
+## Lote 5 — mansiones y frente al mar
+
+**5 de 6.** Mansiones sobre canal con embarcaderos privados, mansión con columnata tras palmeras
+maduras, palacete histórico sobre lago con jardines aterrazados; y para frente al mar, residencia
+sobre promontorio calizo del Egeo y casa contemporánea con muelle propio.
+
+**1 rechazada por la regla de monumentos identificables**, que sigue viva y no la toca la enmienda
+de renders: la Villa Ephrussi de Rothschild es un **museo abierto al público**. Ofrecerla como
+mansión privada sería una afirmación falsa.
+
+**Progreso: 36/144.** Mansiones 4/6 · waterfront 4/6 · casas 5/6 · villas 4/6 · castillos 6/6 ·
+islas 6/6 · ecuestres 4/6 · estates 4/6 · haciendas 1/6 · penthouses 0/6.
