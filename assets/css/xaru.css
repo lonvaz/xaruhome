@@ -1584,3 +1584,157 @@ body.page-loaded .xr_hero_slider_wrap {
   .cs_site_header.cs_style_1 .cs_nav_list.cs_mp_0 > li > .xr_mega_link { font-size: 11.5px; }
   .cs_site_header.cs_style_1 .cs_right_nav_list .cs_btn.cs_style_1 { padding: 8px 12px !important; font-size: 11px !important; }
 }
+
+/* ================================================================ Phase 2 — property core */
+.xr_hero_eyebrow {
+  font-family: var(--secondary-font);
+  letter-spacing: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 18px;
+}
+.xr_block { position: relative; }
+
+/* ---- status badges ---- */
+.xr_badge_stack { position: absolute; z-index: 3; left: 0; top: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.xr_status_badge {
+  display: inline-block;
+  font-family: var(--secondary-font);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 15px;
+  background: var(--primary-color);
+  color: var(--accent-color);
+  border-left: 3px solid var(--accent-color);
+}
+.xr_status_badge.is-live { background: #1f3d2b; color: #cfe8d4; border-left-color: #7fbf8f; }
+.xr_status_badge.is-gold { background: var(--primary-color); color: var(--accent-color); border-left-color: var(--accent-color); }
+.xr_status_badge.is-warn { background: #4a3410; color: #f0d9a8; border-left-color: var(--accent-color); }
+.xr_status_badge.is-off  { background: #2a2926; color: #bdb6a6; border-left-color: #7d7666; }
+.xr_status_badge.xr_badge_sm { font-size: 10px; padding: 5px 12px; letter-spacing: 1.5px; }
+
+.xr_opp_card { text-align: left; }
+.xr_opp_desc { color: var(--secondary-color); font-size: 15px; }
+
+/* ---- catalog filter bar ---- */
+.xr_filter_bar {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 18px;
+  padding: 26px 28px; background: var(--gray3-color); border: 1px solid var(--border-color);
+}
+.xr_filter_label { font-family: var(--primary-font); font-size: 20px; margin-right: 6px; align-self: center; }
+.xr_filter_field { display: flex; flex-direction: column; min-width: 190px; }
+.xr_filter_field label {
+  font-family: var(--secondary-font); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent3-color); margin-bottom: 6px;
+}
+.xr_filter_select {
+  padding: 11px 14px; border: 1px solid var(--border-color); background: #fff;
+  font-family: var(--secondary-font); font-size: 14px; color: var(--primary-color);
+}
+.xr_filter_reset {
+  padding: 11px 22px; border: 1px solid var(--primary-color); background: transparent;
+  font-family: var(--secondary-font); font-size: 12px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--primary-color); cursor: pointer; transition: all .2s;
+}
+.xr_filter_reset:hover { background: var(--primary-color); color: var(--accent-color); }
+.xr_catalog_count { font-family: var(--secondary-font); font-size: 13px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--accent3-color); margin-top: 20px; }
+.xr_no_results { font-family: var(--primary-font); font-size: 22px; text-align: center; padding: 40px 0; }
+
+/* ---- journey selector ---- */
+.xr_journey_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.xr_journey_card {
+  display: flex; align-items: center; gap: 16px; padding: 28px 26px;
+  border: 1px solid var(--border-color); background: #fff; transition: all .25s;
+  font-family: var(--primary-font); font-size: 21px; color: var(--primary-color);
+}
+.xr_journey_card:hover { box-shadow: 10px 10px 40px rgba(0,0,0,.12); border-color: var(--accent-color); color: var(--primary-color); }
+.xr_journey_i {
+  width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--primary-color); color: var(--accent-color); transition: all .25s;
+}
+.xr_journey_card:hover .xr_journey_i { background: var(--accent-color); color: var(--primary-color); }
+
+/* ---- three markets ---- */
+.xr_market_card { display: block; background: #fff; border: 1px solid var(--border-color); height: 100%; transition: all .25s; }
+.xr_market_card:hover { box-shadow: 10px 10px 50px rgba(0,0,0,.18); }
+.xr_market_card .xr_px_img { position: relative; height: 260px; background-size: cover; background-position: center; }
+.xr_market_body { padding: 30px 28px 34px; }
+.xr_market_body h3 { font-family: var(--primary-font); font-size: 26px; margin-bottom: 10px; }
+.xr_market_body p { color: var(--secondary-color); margin-bottom: 18px; }
+
+/* ---- featured tabs ---- */
+.xr_tabs { display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid var(--border-color); }
+.xr_tab_btn {
+  padding: 12px 22px; background: transparent; border: 0; border-bottom: 2px solid transparent;
+  font-family: var(--secondary-font); font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent3-color); cursor: pointer; transition: all .2s;
+}
+.xr_tab_btn.is-active { color: var(--primary-color); border-bottom-color: var(--accent-color); }
+.xr_tab_pane { display: none; }
+.xr_tab_pane.is-active { display: block; }
+
+/* ---- capability strip (dark) ---- */
+.xr_cap_item { padding: 30px 26px; border: 1px solid rgba(201,168,118,.28); height: 100%; }
+.xr_cap_item h3 { font-family: var(--primary-font); font-size: 26px; margin-bottom: 10px; color: var(--accent-color); }
+
+/* ---- ASHIMA facets ---- */
+.xr_ashima_facet { padding: 26px 22px; background: #fff; border: 1px solid var(--border-color); height: 100%; }
+.xr_ashima_facet h4 { font-family: var(--primary-font); font-size: 21px; margin-bottom: 8px; }
+.xr_ashima_facet p { font-size: 14px; color: var(--secondary-color); margin: 0; }
+
+/* ---- infra cards ---- */
+.xr_infra_card { display: block; padding: 32px 26px; background: #fff; border: 1px solid var(--border-color); height: 100%; transition: all .25s; }
+.xr_infra_card:hover { box-shadow: 10px 10px 40px rgba(0,0,0,.12); border-color: var(--accent-color); }
+.xr_infra_card h3 { font-family: var(--primary-font); font-size: 23px; margin-bottom: 10px; }
+.xr_infra_card p { font-size: 14px; color: var(--secondary-color); margin-bottom: 18px; }
+
+/* ---- presence / governance ---- */
+.xr_presence_item { padding: 26px 22px; border-top: 2px solid var(--accent-color); background: #fff; height: 100%; }
+.xr_presence_item h4 { font-family: var(--primary-font); font-size: 20px; margin-bottom: 8px; }
+.xr_presence_item p { font-size: 14px; color: var(--secondary-color); margin: 0; }
+.xr_phase0 { font-family: var(--secondary-font); font-size: 12px; letter-spacing: 1px; color: var(--accent3-color); font-style: italic; }
+
+/* ---- insights chips ---- */
+.xr_insight_chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.xr_insight_chip {
+  padding: 12px 22px; border: 1px solid var(--border-color); background: #fff;
+  font-family: var(--secondary-font); font-size: 13px; letter-spacing: 1px; color: var(--primary-color); transition: all .2s;
+}
+.xr_insight_chip:hover { background: var(--primary-color); color: var(--accent-color); border-color: var(--primary-color); }
+
+/* ---- pillar lists / process / faq ---- */
+.xr_pillar_list { list-style: none; padding: 0; margin: 16px 0 0; }
+.xr_pillar_list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--secondary-color); }
+.xr_pillar_list li::before { content: ""; position: absolute; left: 0; top: 10px; width: 10px; height: 1px; background: var(--accent-color); }
+.xr_process { list-style: none; counter-reset: xrp; padding: 0; margin: 16px 0 0; }
+.xr_process li { display: flex; gap: 16px; align-items: baseline; margin-bottom: 14px; color: var(--secondary-color); }
+.xr_process li span { font-family: var(--primary-font); font-size: 20px; color: var(--accent-color); min-width: 34px; }
+.xr_faq_block { margin-top: 16px; }
+.xr_faq_item { border-top: 1px solid var(--border-color); padding: 18px 0; }
+.xr_faq_item h4 { font-family: var(--primary-font); font-size: 20px; margin-bottom: 8px; }
+.xr_faq_item p { color: var(--secondary-color); margin: 0; }
+
+/* ---- ficha (detail) ---- */
+.xr_ficha_img { height: 460px; background-size: cover; background-position: center; }
+.xr_ficha_price { font-family: var(--secondary-font); font-weight: 600; font-size: 18px; color: var(--accent3-color); letter-spacing: .5px; }
+.xr_facts { border-top: 1px solid var(--border-color); }
+.xr_fact { display: flex; justify-content: space-between; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+.xr_fact_l { font-family: var(--secondary-font); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent3-color); flex: 0 0 42%; }
+.xr_fact_v { text-align: right; color: var(--primary-color); }
+.xr_nda_line { font-family: var(--secondary-font); font-size: 14px; color: var(--accent3-color); letter-spacing: .5px; margin: 6px 0 16px; }
+.xr_nda_line i { margin-right: 8px; color: var(--accent-color); }
+.xr_dealroom { counter-reset: dr; list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.xr_dealroom li { counter-increment: dr; position: relative; padding: 12px 18px 12px 42px; background: var(--gray3-color); border: 1px solid var(--border-color); font-size: 14px; font-family: var(--secondary-font); }
+.xr_dealroom li::before { content: counter(dr); position: absolute; left: 14px; top: 12px; font-family: var(--primary-font); color: var(--accent-color); }
+
+@media (max-width: 991px) {
+  .xr_journey_grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 575px) {
+  .xr_filter_field { min-width: 100%; }
+}
+.xr_badge_row { display: flex; flex-wrap: wrap; gap: 8px; }
