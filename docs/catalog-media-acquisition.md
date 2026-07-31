@@ -275,3 +275,64 @@ después contra el fichero y contra el navegador, AVIF, WebP y JPEG dan los tres
 **Pendiente:** 96 imágenes (12 residenciales, 48 hostelería, 36 suelo), el
 scouting de los 36 slots `ld-*`, la reestructuración de la portada (§16), y la
 auditoría final de 30 puntos.
+
+---
+
+## 31-jul-2026 (noche) — ENVATO DESBLOQUEADO por navegador
+
+Instrucción de Josep: nada de MCP para esto —no existe conector de Envato en el
+registro, lo comprobé— sino descarga por navegador con su sesión ya iniciada.
+Confirmado: hay sesión activa en Envato (usuario `trustwise`) con biblioteca de
+Fotos y Vídeos. Es su suscripción usada como se usa: **no es scraping, no son
+previsualizaciones con marca de agua, no es hotlinking.**
+
+### Lo que costó y la trampa que hay que evitar
+
+`elements.envato.com` ya **redirige** a `app.envato.com`, una SPA distinta.
+Dos callejones sin salida, documentados para no repetirlos:
+
+1. `app.envato.com/photos?terms=<query>` **NO busca**. Devuelve siempre el mismo
+   feed por defecto. Lo detecté porque tres búsquedas distintas (santorini,
+   caribe, kitzbühel) devolvían los mismos UUID. Si no se comprueba eso, se
+   acaba descargando ruido creyendo que es el resultado de la búsqueda.
+2. El campo de búsqueda **no es un `<input>`**: es un
+   `div[contenteditable="true"][role="combobox"]`. Por eso `type` no entraba y
+   los únicos `input` de la página son las casillas del panel de Filtros.
+
+### URL de búsqueda REAL (esto es lo que desbloquea todo)
+
+    https://app.envato.com/search?itemType=photos&term=<palabras+con+mas>
+
+Se puede navegar directamente, sin teclear. Verificado: consultas distintas
+devuelven resultados distintos.
+
+### Extracción de resultados (DOM)
+
+    [...document.querySelectorAll('a[href*="/photos/"]')]
+      .filter(a => /\/photos\/[0-9a-f-]{36}/.test(a.getAttribute('href')||''))
+
+Cada `<a>` lleva el UUID en el href y un `<img>` dentro. **El `alt` es inútil**
+(`"Foto <uuid>"`): no hay título descriptivo, así que la revisión es
+obligatoriamente visual, por hoja de contactos.
+
+**AVISO:** al construir la hoja de contactos hay que conservar la **URL completa
+de la miniatura, con su query string**. Si se corta por `?` la imagen no carga
+—la firma va en el query—. Me pasó y perdí una iteración.
+
+### Ficha de artículo y descarga
+
+    https://app.envato.com/photos/<uuid>
+
+Un único botón verde **Descargar**. Origen a 6000×4000. Licencia comercial de
+por vida. Cada descarga registra una licencia en la cuenta de Josep; lo autorizó
+expresamente para cerrar el catálogo.
+
+**Pendiente de verificar de punta a punta:** el clic en «Descargar» y su llegada
+a `~/Downloads`. La ficha y el botón están vistos; la descarga en sí **todavía
+no la he ejecutado**, así que no la doy por buena.
+
+### Ritmo acordado
+
+Una descarga cada 8–10 s. Decisión de Josep, y coherente con el error de ayer:
+lanzar en paralelo quemó la cuota de la otra fuente porque **las llamadas
+rechazadas cuentan igual**.
