@@ -3,3 +3,13 @@
 /es/index.html         /es/         301
 /ar/index.html         /ar/         301
 /zh/index.html         /zh/         301
+
+# Legacy blog -> Insights hub (Phase 5)
+/blog.html             /insights/       301
+/blog-details.html     /insights/       301
+/es/blog.html          /es/insights/    301
+/es/blog-details.html  /es/insights/    301
+/ar/blog.html          /ar/insights/    301
+/ar/blog-details.html  /ar/insights/    301
+/zh/blog.html          /zh/insights/    301
+/zh/blog-details.html  /zh/insights/    301

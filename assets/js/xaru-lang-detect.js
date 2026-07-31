@@ -67,11 +67,8 @@
   var path = location.pathname;
   var rawSegs = path.split("/");
   var file = rawSegs[rawSegs.length - 1];
-  if (!file) file = "index.html";                 // trailing slash -> directory index
+  var isDir = !file;                              // trailing slash -> clean directory URL
   var segs = rawSegs.filter(function (s) { return s.length; });
-
-  // (c) Only redirect the 12 fully-translated pages.
-  if (!TRANSLATABLE[file]) return;
 
   var cur = currentLang(segs);
   var want = detectDeviceLang();
@@ -79,9 +76,19 @@
   // (b/c) Device language already matches the page, or unsupported -> stop.
   if (want === cur) return;
 
-  // Build the equivalent URL in the detected language, keeping the filename.
-  var target = (want === "en" ? "/" + file : "/" + want + "/" + file)
-             + location.search + location.hash;
+  var target;
+  if (isDir) {
+    // Clean directory URLs (doors, divisions, company, insights, fichas…) are
+    // generated in all four languages with the SAME path under /es/ /ar/ /zh/.
+    var rest = segs.slice(cur === "en" ? 0 : 1);  // path without the lang prefix
+    target = (want === "en" ? "/" : "/" + want + "/") + rest.join("/")
+           + (rest.length ? "/" : "") + location.search + location.hash;
+  } else {
+    // (c) Only redirect the 12 fully-translated legacy .html pages.
+    if (!TRANSLATABLE[file]) return;
+    target = (want === "en" ? "/" + file : "/" + want + "/" + file)
+           + location.search + location.hash;
+  }
 
   // Mark the session and redirect once (replace: no history entry, no back-loop).
   try { sessionStorage.setItem("xaru_autoredir", "1"); } catch (e) { return; }

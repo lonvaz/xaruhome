@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="首页链接"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="../assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -493,16 +493,16 @@
                         <div class="xr_mega_cols">
                       <div class="xr_mega_col xr_mega_col_wide">
                         <a class="xr_mega_col_title" href="/zh/company/">公司</a>
-                          <a class="xr_mega_sub" href="/zh/company/">关于我们</a>
-                          <a class="xr_mega_sub" href="/zh/company/">运营模式</a>
-                          <a class="xr_mega_sub" href="/zh/company/">办公网络</a>
-                          <a class="xr_mega_sub" href="/zh/company/">团队</a>
-                          <a class="xr_mega_sub" href="/zh/company/">实体与范围</a>
-                          <a class="xr_mega_sub" href="/zh/company/">治理与标准</a>
-                          <a class="xr_mega_sub" href="/zh/company/">项目与案例</a>
-                          <a class="xr_mega_sub" href="/zh/company/">国际网络</a>
-                          <a class="xr_mega_sub" href="/zh/company/">洞察</a>
-                          <a class="xr_mega_sub" href="/zh/company/">联系我们</a>
+                          <a class="xr_mega_sub" href="/zh/company/#who-we-are">关于我们</a>
+                          <a class="xr_mega_sub" href="/zh/company/#operating-model">运营模式</a>
+                          <a class="xr_mega_sub" href="/zh/company/#offices">办公网络</a>
+                          <a class="xr_mega_sub" href="/zh/company/#team">团队</a>
+                          <a class="xr_mega_sub" href="/zh/company/#entities">实体与范围</a>
+                          <a class="xr_mega_sub" href="/zh/company/#governance">治理与标准</a>
+                          <a class="xr_mega_sub" href="/zh/company/#projects">项目与案例</a>
+                          <a class="xr_mega_sub" href="/zh/company/#network">国际网络</a>
+                          <a class="xr_mega_sub" href="/zh/insights/">洞察</a>
+                          <a class="xr_mega_sub" href="/zh/company/#contact">联系我们</a>
                       </div>
                         </div>
                       </div>
@@ -520,13 +520,13 @@
                         <div class="xr_mega_cols">
                       <div class="xr_mega_col xr_mega_col_wide">
                         <a class="xr_mega_col_title" href="/zh/insights/">洞察</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">奢华住宅</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">酒店业</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">土地</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">资本</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">开发</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">大宗商品</a>
-                          <a class="xr_mega_sub" href="/zh/insights/">国际落地</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#luxury-residential">奢华住宅</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#hospitality">酒店业</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#land">土地</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#capital">资本</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#development">开发</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#commodities">大宗商品</a>
+                          <a class="xr_mega_sub" href="/zh/insights/#international-establishment">国际落地</a>
                       </div>
                         </div>
                       </div>
@@ -1088,6 +1088,15 @@
         ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
     })();
     </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     
     
     
@@ -1220,6 +1229,8 @@
         <p class="xr_phase0">[第0阶段] 办公城市、实体细节、团队规模与网络数字于第0阶段确认。</p>
         <div class="cs_height_40 cs_height_lg_30"></div>
         <div class="row cs_gap_y_30"><div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="xr_presence_item"><h4>办公网络</h4><p>已确认市场发布于公司页面。</p></div></div><div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="xr_presence_item"><h4>实体与范围</h4><p>NEXARU GLOBAL 旗下持牌品牌。</p></div></div><div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="xr_presence_item"><h4>活跃市场</h4><p>欧洲、美洲、海湾地区与亚洲。</p></div></div><div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="xr_presence_item"><h4>团队与网络</h4><p>岗位与国际网络——数字于第0阶段确认。</p></div></div></div>
+        <div class="cs_height_40 cs_height_lg_30"></div>
+        <a href="/zh/company/" class="cs_btn cs_style_1 xr_btn_ghost cs_radius_20"><span>公司——办公网络、实体、团队与网络</span></a>
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
@@ -1237,6 +1248,11 @@
         <div class="cs_height_40 cs_height_lg_30"></div>
         <div class="row"><div class="col-lg-6"><ul class="xr_pillar_list"><li>保密与信息保护</li><li>尽职调查与已核实委托</li><li>反洗钱／通过受监管渠道合规</li><li>法律与税务协调</li></ul></div>
         <div class="col-lg-6"><p class="xr_pillar_note">视项目、司法管辖区、可行性与授权而定，XARU 可担任顾问、架构方、整合方、发起方、管理方或参与方。当业务需要时，XARU 通过获授权的实体与合作伙伴设计、整合并协调金融与技术基础设施。</p></div></div>
+        <div class="cs_height_40 cs_height_lg_30"></div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="/zh/company/#governance" class="cs_btn cs_style_1 xr_btn_ghost cs_radius_20"><span>治理与标准——公司</span></a>
+          <a href="/zh/company/#entities" class="cs_btn cs_style_1 xr_btn_ghost cs_radius_20"><span>实体与范围——公司</span></a>
+        </div>
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>

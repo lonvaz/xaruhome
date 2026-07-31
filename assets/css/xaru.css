@@ -336,6 +336,11 @@ body.page-loaded .xr_hero_slider_wrap {
 .xr_dark_section p {
   color: rgba(245, 241, 232, 0.78);
 }
+/* Phase 5 — primary buttons were invisible (dark on dark) inside dark
+   sections: give them a gold hairline so the CTA reads as a button. */
+.xr_dark_section .cs_btn.cs_primary_bg {
+  border: 1px solid var(--accent-color);
+}
 .xr_eyebrow {
   display: inline-block;
   color: var(--accent3-color);
