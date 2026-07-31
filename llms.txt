@@ -1,37 +1,124 @@
 # XARU HOME
 
-> XARU HOME is the global luxury real estate structure of NEXARU GLOBAL (UAE-licensed, Dubai). For 20+ years its senior team has guided private clients, families and institutions through significant cross-border real estate decisions: acquisition and sale of ultra-prime property (private islands, large-scale land, hotels and resorts, luxury villas), investment and fund structuring, developer capital, and complete relocation and corporate services. Property can also be acquired with digital assets (USDC, USDT, BTC) exclusively through regulated channels with full KYC/AML verification. Operates in English, Spanish, Arabic and Chinese across the UAE, Middle East, Europe, Asia, the United States and Latin America.
+> XARU HOME is the international real estate, development and business-infrastructure
+> structure of NEXARU GLOBAL (UAE-licensed, based in Dubai). It reads on three levels:
+> a clear real estate house at the surface; development, financing and execution beneath
+> it; and a complete business platform underneath that. Four doors, seven autonomous
+> divisions, three catalogues, a private deal room and a research desk — one structure,
+> worldwide, in English, Spanish, Arabic and Chinese.
 
-## About
+## The three levels
 
-- [About XARU HOME](https://xaruhome.com/about-us.html): The company, its NEXARU GLOBAL parent, the five pillars (health & wellness, ancestral local culture, eco-friendly practice, innovation, sustainable development) and global network.
-- [Contact](https://xaruhome.com/contact.html): Private enquiries by appointment. Office in Dubai, United Arab Emirates. Email contact@xaruhome.com / support@xaruhome.com. Private line shared upon qualified enquiry.
-- [FAQ](https://xaruhome.com/faq.html): Common questions on services, acquisition process, fees and digital-asset transactions.
+- Level 1 — Real estate, clearly: acquisition and sale of private islands, villas,
+  castles, estates, branded residences, operating hotels, resorts and income assets.
+- Level 2 — Development, financing and execution: territorial land, master plans,
+  project structuring (feasibility, legal and fiduciary structuring, SPVs, licensing,
+  operator selection, development management), capital and transactions.
+- Level 3 — Business platform: corporate infrastructure, company formation, international
+  relocation, commodities offtake and placement, and the governance behind all of it.
 
-## Services
+## The four doors
 
-- [Luxury property acquisition & sale](https://xaruhome.com/property-listing-buy.html): Brokerage of exceptional homes, private islands, large-scale development land, hotels and resorts, and luxury villas worldwide.
-- [Investment & fund structuring](https://xaruhome.com/index.html#investment): Real estate investment opportunities, fund structuring and residency-by-investment / golden visa guidance for private clients and institutions.
-- [Developer capital](https://xaruhome.com/index.html#developers): Capital and structuring for developers of master-planned and large-scale projects.
-- [Relocation & corporate services (CSP)](https://xaruhome.com/index.html#relocation): End-to-end relocation, corporate structuring and company services provider support across jurisdictions.
-- [Acquisition with digital assets](https://xaruhome.com/index.html): Property purchase using digital assets (USDC, USDT, BTC) for qualifying clients, exclusively through regulated channels, with full KYC/AML verification and legal counsel in every jurisdiction.
+- [Real Estate](https://xaruhome.com/real-estate/): the property division — private
+  islands, villas, estates and operating hospitality assets, curated worldwide.
+- [Developments](https://xaruhome.com/developments/): land and master developments, from
+  territory and feasibility to structuring, execution and delivery.
+- [Capital & Transactions](https://xaruhome.com/capital/): a two-way structure — projects
+  that seek capital, capital that seeks projects — under XARU's own diligence.
+- [Business Infrastructure](https://xaruhome.com/business-infrastructure/): the corporate
+  layer that continues after the transaction closes.
 
-## Properties
+## The seven divisions
 
-- [Properties for sale](https://xaruhome.com/property-listing-buy.html): Curated global listings — private islands, beachfront land, estates and branded residences.
-- [Property search](https://xaruhome.com/property-listing-search.html): Search the global portfolio by type, location and scale.
+- [Private Properties](https://xaruhome.com/real-estate/private-properties/): villas,
+  mansions, castles, estates, private islands, branded residences, private search by mandate.
+- [Commercial & Hospitality](https://xaruhome.com/real-estate/commercial-hospitality/):
+  operational hotels, repositioning, resorts, serviced residences, marinas, income
+  commercial, halted or incomplete projects, confidential portfolio.
+- [Land & Master Developments](https://xaruhome.com/developments/land-master-developments/):
+  large, coastal, resort, permitted and regularizing land; master plans; planned
+  communities; signature destinations including ASHIMA.
+- [Project Structuring & Development](https://xaruhome.com/developments/project-structuring/):
+  feasibility, legal and fiduciary structuring, SPVs, master plan and business model,
+  licensing, operator selection, development management, commercialization.
+- [Capital & Strategic Partnerships](https://xaruhome.com/capital/strategic-partnerships/):
+  projects seeking capital, capital seeking projects, joint ventures, funds and family
+  offices, due diligence, deal origination, transaction management.
+- [Trade & Financial Infrastructure](https://xaruhome.com/business-infrastructure/trade-financial/):
+  commodities offtake and placement, productive assets, and financial infrastructure
+  designed, integrated and coordinated through authorised entities and partners.
+- [Corporate Services & Relocation](https://xaruhome.com/business-infrastructure/corporate-services/):
+  company formation in the UAE and elsewhere, entities, licensing, banking introductions,
+  residency and international relocation for families and operations.
+
+## The three catalogues
+
+- [Private Properties catalogue](https://xaruhome.com/real-estate/private-properties/):
+  private islands, villas, estates and branded residences for sale worldwide.
+- [Commercial & Hospitality catalogue](https://xaruhome.com/real-estate/commercial-hospitality/):
+  operational hotels for sale, resorts, halted projects and income assets, presented with
+  their operating state — never as static listings.
+- [Land, Projects & Opportunities](https://xaruhome.com/opportunities/): development land
+  for sale, master plans, halted projects and capital opportunities under live mandate.
+
+## Private Deal Room
+
+- [Private Deal Room](https://xaruhome.com/capital/deal-room/): off-market real estate
+  opportunities that are too large, too sensitive or too strategic for a public listing.
+  Public teasers show region, category, scale and status only. Everything beyond the
+  teaser travels a nine-step private route: access request, verification, NDA, approval,
+  data room, adviser, transaction.
+- [Submit an opportunity](https://xaruhome.com/opportunities/submit/): two-way intake for
+  an asset, a project or capital.
+- [Private Enquiry](https://xaruhome.com/private-enquiry/): one conversation, one
+  structure, total confidentiality.
+
+## Company & Insights
+
+- [Company](https://xaruhome.com/company/): three levels, seven autonomous divisions, the
+  entities XARU operates under, governance, offices, specialities and network.
+- [Insights](https://xaruhome.com/insights/): research from XARU HOME Research across seven
+  sectors. Foundational analyses (2026):
+  [operational hospitality](https://xaruhome.com/insights/operational-hospitality/),
+  [territorial land](https://xaruhome.com/insights/territorial-land/),
+  [private capital and halted projects](https://xaruhome.com/insights/capital-halted-projects/),
+  [establishing internationally](https://xaruhome.com/insights/international-establishment/).
+
+## Legacy pages
+
+- [About XARU HOME](https://xaruhome.com/about-us.html): the company, its NEXARU GLOBAL
+  parent, the five pillars and the global network.
+- [Contact](https://xaruhome.com/contact.html): private enquiries by appointment. Office in
+  Dubai, United Arab Emirates. Email contact@xaruhome.com / support@xaruhome.com.
+- [FAQ](https://xaruhome.com/faq.html): services, acquisition process, fees and
+  digital-asset transactions.
+- [Properties for sale](https://xaruhome.com/property-listing-buy.html) and
+  [property search](https://xaruhome.com/property-listing-search.html).
+
+## Languages
+
+- English (root), Spanish (/es/), Arabic (/ar/, right-to-left), Chinese (/zh/).
+  Every page declares reciprocal hreflang for en, es, ar, zh-CN plus x-default.
 
 ## Entity
 
 - Brand: XARU HOME, a brand of NEXARU GLOBAL.
 - Licensing: UAE-licensed; registered office in Dubai, United Arab Emirates.
 - Experience: 20+ years advising private clients, families and institutions.
-- Reach: United Arab Emirates, Middle East, China, India, Pakistan, Europe, United States, Mexico, Colombia, Ecuador, Peru, Panama, Dominican Republic, El Salvador, Nicaragua.
+- Capacity: depending on the project, jurisdiction, feasibility and mandate, XARU may act
+  as adviser, structurer, integrator, sponsor, manager or participant. XARU designs,
+  integrates and coordinates financial and technological infrastructure through authorised
+  entities and partners where the activity requires it.
+- Reach: United Arab Emirates, Middle East, China, India, Pakistan, Europe, United States,
+  Mexico, Colombia, Ecuador, Peru, Panama, Dominican Republic, El Salvador, Nicaragua.
 - Languages: English, Spanish, Arabic, Chinese.
 
 ## Compliance
 
-- Digital-asset transactions are conducted exclusively through regulated channels, with full KYC/AML verification and legal counsel in each jurisdiction. XARU HOME does not offer unregulated crypto services and does not provide financial or tax advice; all figures and availability are subject to due diligence.
+- Digital-asset transactions are conducted exclusively through regulated channels, with full
+  KYC/AML verification and legal counsel in each jurisdiction. XARU HOME does not offer
+  unregulated crypto services and does not provide financial or tax advice; all figures and
+  availability are subject to due diligence.
 
 ## Contact
 
