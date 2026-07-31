@@ -1,0 +1,3689 @@
+{
+ "$schema": "../SCHEMA.md",
+ "version": 3,
+ "demo": true,
+ "note": "Demonstrative portfolio built per docs/BIBLIA_VISUAL_V3.md. Names, locations and figures are illustrative.",
+ "demo_note": {
+  "en": "Demonstrative portfolio for presentation.",
+  "es": "Portafolio demostrativo para presentación.",
+  "ar": "محفظة توضيحية لأغراض العرض.",
+  "zh": "用于演示的示范性资产组合。"
+ },
+ "ui": {
+  "demo_note": {
+   "en": "Demonstrative portfolio for presentation.",
+   "es": "Portafolio demostrativo para presentación.",
+   "ar": "محفظة توضيحية لأغراض العرض.",
+   "zh": "用于演示的示范性资产组合。"
+  },
+  "beds": {
+   "en": "Bedrooms",
+   "es": "Dormitorios",
+   "ar": "غرف النوم",
+   "zh": "卧室"
+  },
+  "baths": {
+   "en": "Bathrooms",
+   "es": "Baños",
+   "ar": "الحمامات",
+   "zh": "浴室"
+  },
+  "built": {
+   "en": "Built area",
+   "es": "Superficie construida",
+   "ar": "المساحة المبنية",
+   "zh": "建筑面积"
+  },
+  "land": {
+   "en": "Land",
+   "es": "Terreno",
+   "ar": "مساحة الأرض",
+   "zh": "土地面积"
+  },
+  "hectares": {
+   "en": "Area",
+   "es": "Superficie",
+   "ar": "المساحة",
+   "zh": "面积"
+  },
+  "keys": {
+   "en": "Keys",
+   "es": "Llaves",
+   "ar": "المفاتيح",
+   "zh": "客房数"
+  },
+  "berths": {
+   "en": "Berths",
+   "es": "Amarres",
+   "ar": "مراسٍ",
+   "zh": "泊位"
+  },
+  "use": {
+   "en": "Projected use",
+   "es": "Uso proyectado",
+   "ar": "الاستخدام المتوقع",
+   "zh": "规划用途"
+  },
+  "access": {
+   "en": "Access",
+   "es": "Acceso",
+   "ar": "الوصول",
+   "zh": "交通"
+  },
+  "price": {
+   "en": "Price",
+   "es": "Precio",
+   "ar": "السعر",
+   "zh": "价格"
+  },
+  "view": {
+   "en": "View details",
+   "es": "Ver ficha",
+   "ar": "عرض التفاصيل",
+   "zh": "查看详情"
+  }
+ },
+ "catalog": "private-real-estate",
+ "items": [
+  {
+   "id": "pr-contemporary-houses-urban",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "urban",
+   "title": "Casa Serrano",
+   "country": "Spain",
+   "region": "Catalonia",
+   "city": "Barcelona",
+   "price_usd": 4200000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 5,
+   "built_area_m2": 620,
+   "land_area_m2": 1100,
+   "hectares": 0.1,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A contemporary house of 620 m² in Barcelona, Spain, on a plot of 1,100 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 620 m² en Barcelona, España, sobre una parcela de 1,100 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 620 م² في برشلونة، إسبانيا، على قطعة أرض 1,100 م²، ويضم 5 غرف نوم.",
+    "zh": "位于西班牙·巴塞罗那的当代住宅，建筑面积 620 平方米，地块 1,100 平方米，5 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 620 m² in Barcelona, Spain, on a plot of 1,100 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 620 m² en Barcelona, España, sobre una parcela de 1,100 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 620 م² في برشلونة، إسبانيا، على قطعة أرض 1,100 م²، ويضم 5 غرف نوم.",
+    "zh": "位于西班牙·巴塞罗那的当代住宅，建筑面积 620 平方米，地块 1,100 平方米，5 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-urban.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Urban",
+     "es": "Urbana",
+     "ar": "حضري",
+     "zh": "城市"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-contemporary-houses-mountain",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "mountain",
+   "title": "Haus Arlberg",
+   "country": "Austria",
+   "region": "Tyrol",
+   "city": "Lech",
+   "price_usd": 8900000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 6,
+   "built_area_m2": 740,
+   "land_area_m2": 2400,
+   "hectares": 0.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A contemporary house of 740 m² in Lech, Austria, on a plot of 2,400 m², with 6 bedrooms.",
+    "es": "Casa contemporánea de 740 m² en Lech, Austria, sobre una parcela de 2,400 m², con 6 dormitorios.",
+    "ar": "منزل معاصر بمساحة 740 م² في ليش، النمسا، على قطعة أرض 2,400 م²، ويضم 6 غرف نوم.",
+    "zh": "位于奥地利·莱希的当代住宅，建筑面积 740 平方米，地块 2,400 平方米，6 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 740 m² in Lech, Austria, on a plot of 2,400 m², with 6 bedrooms.",
+    "es": "Casa contemporánea de 740 m² en Lech, Austria, sobre una parcela de 2,400 m², con 6 dormitorios.",
+    "ar": "منزل معاصر بمساحة 740 م² في ليش، النمسا، على قطعة أرض 2,400 م²، ويضم 6 غرف نوم.",
+    "zh": "位于奥地利·莱希的当代住宅，建筑面积 740 平方米，地块 2,400 平方米，6 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-mountain.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Mountain",
+     "es": "De montaña",
+     "ar": "جبلي",
+     "zh": "山地"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-contemporary-houses-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "tropical",
+   "title": "Casa Palmar",
+   "country": "Costa Rica",
+   "region": "Guanacaste",
+   "city": "Nosara",
+   "price_usd": 3400000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 5,
+   "built_area_m2": 510,
+   "land_area_m2": 3800,
+   "hectares": 0.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A contemporary house of 510 m² in Nosara, Costa Rica, on a plot of 3,800 m², with 4 bedrooms.",
+    "es": "Casa contemporánea de 510 m² en Nosara, Costa Rica, sobre una parcela de 3,800 m², con 4 dormitorios.",
+    "ar": "منزل معاصر بمساحة 510 م² في نوسارا، كوستاريكا، على قطعة أرض 3,800 م²، ويضم 4 غرف نوم.",
+    "zh": "位于哥斯达黎加·诺萨拉的当代住宅，建筑面积 510 平方米，地块 3,800 平方米，4 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 510 m² in Nosara, Costa Rica, on a plot of 3,800 m², with 4 bedrooms.",
+    "es": "Casa contemporánea de 510 m² en Nosara, Costa Rica, sobre una parcela de 3,800 m², con 4 dormitorios.",
+    "ar": "منزل معاصر بمساحة 510 م² في نوسارا، كوستاريكا، على قطعة أرض 3,800 م²، ويضم 4 غرف نوم.",
+    "zh": "位于哥斯达黎加·诺萨拉的当代住宅，建筑面积 510 平方米，地块 3,800 平方米，4 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Tropical",
+     "es": "Tropical",
+     "ar": "استوائي",
+     "zh": "热带"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-contemporary-houses-lakefront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "lakefront",
+   "title": "Villa Seeblick",
+   "country": "Switzerland",
+   "region": "Lucerne",
+   "city": "Weggis",
+   "price_usd": 12500000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 830,
+   "land_area_m2": 2900,
+   "hectares": 0.3,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A contemporary house of 830 m² in Weggis, Switzerland, on a plot of 2,900 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 830 m² en Weggis, Suiza, sobre una parcela de 2,900 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 830 م² في فيغيس، سويسرا، على قطعة أرض 2,900 م²، ويضم 5 غرف نوم.",
+    "zh": "位于瑞士·韦吉斯的当代住宅，建筑面积 830 平方米，地块 2,900 平方米，5 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 830 m² in Weggis, Switzerland, on a plot of 2,900 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 830 m² en Weggis, Suiza, sobre una parcela de 2,900 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 830 م² في فيغيس، سويسرا، على قطعة أرض 2,900 م²، ويضم 5 غرف نوم.",
+    "zh": "位于瑞士·韦吉斯的当代住宅，建筑面积 830 平方米，地块 2,900 平方米，5 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-lakefront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Lakefront",
+     "es": "Frente al lago",
+     "ar": "على البحيرة",
+     "zh": "湖畔"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-contemporary-houses-golf",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "golf",
+   "title": "The Fairway House",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Quinta do Lago",
+   "price_usd": 6100000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 5,
+   "built_area_m2": 690,
+   "land_area_m2": 2100,
+   "hectares": 0.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A contemporary house of 690 m² in Quinta do Lago, Portugal, on a plot of 2,100 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 690 m² en Quinta do Lago, Portugal, sobre una parcela de 2,100 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 690 م² في كينتا دو لاغو، البرتغال، على قطعة أرض 2,100 م²، ويضم 5 غرف نوم.",
+    "zh": "位于葡萄牙·金塔杜拉戈的当代住宅，建筑面积 690 平方米，地块 2,100 平方米，5 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 690 m² in Quinta do Lago, Portugal, on a plot of 2,100 m², with 5 bedrooms.",
+    "es": "Casa contemporánea de 690 m² en Quinta do Lago, Portugal, sobre una parcela de 2,100 m², con 5 dormitorios.",
+    "ar": "منزل معاصر بمساحة 690 م² في كينتا دو لاغو، البرتغال، على قطعة أرض 2,100 م²، ويضم 5 غرف نوم.",
+    "zh": "位于葡萄牙·金塔杜拉戈的当代住宅，建筑面积 690 平方米，地块 2,100 平方米，5 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-golf.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Golf",
+     "es": "De golf",
+     "ar": "ملاعب غولف",
+     "zh": "高尔夫"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-contemporary-houses-desert",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "contemporary-houses",
+   "variant": "desert",
+   "title": "Casa Cardón",
+   "country": "Mexico",
+   "region": "Baja California Sur",
+   "city": "San José del Cabo",
+   "price_usd": 5500000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 5,
+   "built_area_m2": 580,
+   "land_area_m2": 4600,
+   "hectares": 0.5,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A contemporary house of 580 m² in San José del Cabo, Mexico, on a plot of 4,600 m², with 4 bedrooms.",
+    "es": "Casa contemporánea de 580 m² en San José del Cabo, México, sobre una parcela de 4,600 m², con 4 dormitorios.",
+    "ar": "منزل معاصر بمساحة 580 م² في سان خوسيه ديل كابو، المكسيك، على قطعة أرض 4,600 م²، ويضم 4 غرف نوم.",
+    "zh": "位于墨西哥·圣何塞德尔卡沃的当代住宅，建筑面积 580 平方米，地块 4,600 平方米，4 间卧室。"
+   },
+   "long_description": {
+    "en": "A contemporary house of 580 m² in San José del Cabo, Mexico, on a plot of 4,600 m², with 4 bedrooms.",
+    "es": "Casa contemporánea de 580 m² en San José del Cabo, México, sobre una parcela de 4,600 m², con 4 dormitorios.",
+    "ar": "منزل معاصر بمساحة 580 م² في سان خوسيه ديل كابو، المكسيك، على قطعة أرض 4,600 م²، ويضم 4 غرف نوم.",
+    "zh": "位于墨西哥·圣何塞德尔卡沃的当代住宅，建筑面积 580 平方米，地块 4,600 平方米，4 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-contemporary-houses-desert.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Contemporary Houses",
+     "es": "Casas contemporáneas",
+     "ar": "منازل معاصرة",
+     "zh": "当代住宅"
+    },
+    "variant": {
+     "en": "Desert",
+     "es": "De desierto",
+     "ar": "صحراوي",
+     "zh": "沙漠"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-beachfront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "beachfront",
+   "title": "Villa Alba",
+   "country": "Greece",
+   "region": "Cyclades",
+   "city": "Paros",
+   "price_usd": 11800000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 7,
+   "built_area_m2": 880,
+   "land_area_m2": 5200,
+   "hectares": 0.5,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A 880 m² villa in Paros, Greece, set on 5,200 m² of grounds, with 6 bedrooms and 7 bathrooms.",
+    "es": "Villa de 880 m² en Paros, Grecia, sobre 5,200 m² de terreno, con 6 dormitorios y 7 baños.",
+    "ar": "فيلا بمساحة 880 م² في باروس، اليونان، على أرض 5,200 م²، بـ 6 غرف نوم و7 حمامات.",
+    "zh": "位于希腊·帕罗斯的别墅，建筑面积 880 平方米，占地 5,200 平方米，6 间卧室、7 间浴室。"
+   },
+   "long_description": {
+    "en": "A 880 m² villa in Paros, Greece, set on 5,200 m² of grounds, with 6 bedrooms and 7 bathrooms.",
+    "es": "Villa de 880 m² en Paros, Grecia, sobre 5,200 m² de terreno, con 6 dormitorios y 7 baños.",
+    "ar": "فيلا بمساحة 880 م² في باروس، اليونان، على أرض 5,200 م²، بـ 6 غرف نوم و7 حمامات.",
+    "zh": "位于希腊·帕罗斯的别墅，建筑面积 880 平方米，占地 5,200 平方米，6 间卧室、7 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-beachfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Beachfront",
+     "es": "Frente al mar",
+     "ar": "على الشاطئ",
+     "zh": "海滨"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-mountain",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "mountain",
+   "title": "Chalet Bellevue",
+   "country": "France",
+   "region": "Auvergne-Rhône-Alpes",
+   "city": "Megève",
+   "price_usd": 16400000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 8,
+   "built_area_m2": 1050,
+   "land_area_m2": 3100,
+   "hectares": 0.3,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A 1,050 m² villa in Megève, France, set on 3,100 m² of grounds, with 7 bedrooms and 8 bathrooms.",
+    "es": "Villa de 1,050 m² en Megève, Francia, sobre 3,100 m² de terreno, con 7 dormitorios y 8 baños.",
+    "ar": "فيلا بمساحة 1,050 م² في ميجيف، فرنسا، على أرض 3,100 م²، بـ 7 غرف نوم و8 حمامات.",
+    "zh": "位于法国·梅杰夫的别墅，建筑面积 1,050 平方米，占地 3,100 平方米，7 间卧室、8 间浴室。"
+   },
+   "long_description": {
+    "en": "A 1,050 m² villa in Megève, France, set on 3,100 m² of grounds, with 7 bedrooms and 8 bathrooms.",
+    "es": "Villa de 1,050 m² en Megève, Francia, sobre 3,100 m² de terreno, con 7 dormitorios y 8 baños.",
+    "ar": "فيلا بمساحة 1,050 م² في ميجيف، فرنسا، على أرض 3,100 م²، بـ 7 غرف نوم و8 حمامات.",
+    "zh": "位于法国·梅杰夫的别墅，建筑面积 1,050 平方米，占地 3,100 平方米，7 间卧室、8 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-mountain.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Mountain",
+     "es": "De montaña",
+     "ar": "جبلي",
+     "zh": "山地"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-mediterranean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "mediterranean",
+   "title": "Villa Faro",
+   "country": "Spain",
+   "region": "Balearic Islands",
+   "city": "Ibiza",
+   "price_usd": 14200000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 7,
+   "built_area_m2": 940,
+   "land_area_m2": 6400,
+   "hectares": 0.6,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A 940 m² villa in Ibiza, Spain, set on 6,400 m² of grounds, with 6 bedrooms and 7 bathrooms.",
+    "es": "Villa de 940 m² en Ibiza, España, sobre 6,400 m² de terreno, con 6 dormitorios y 7 baños.",
+    "ar": "فيلا بمساحة 940 م² في إيبيزا، إسبانيا، على أرض 6,400 م²، بـ 6 غرف نوم و7 حمامات.",
+    "zh": "位于西班牙·伊维萨的别墅，建筑面积 940 平方米，占地 6,400 平方米，6 间卧室、7 间浴室。"
+   },
+   "long_description": {
+    "en": "A 940 m² villa in Ibiza, Spain, set on 6,400 m² of grounds, with 6 bedrooms and 7 bathrooms.",
+    "es": "Villa de 940 m² en Ibiza, España, sobre 6,400 m² de terreno, con 6 dormitorios y 7 baños.",
+    "ar": "فيلا بمساحة 940 م² في إيبيزا، إسبانيا، على أرض 6,400 م²، بـ 6 غرف نوم و7 حمامات.",
+    "zh": "位于西班牙·伊维萨的别墅，建筑面积 940 平方米，占地 6,400 平方米，6 间卧室、7 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-mediterranean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Mediterranean",
+     "es": "Mediterránea",
+     "ar": "متوسطي",
+     "zh": "地中海"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "tropical",
+   "title": "Villa Ubud Sari",
+   "country": "Indonesia",
+   "region": "Bali",
+   "city": "Ubud",
+   "price_usd": 4900000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 720,
+   "land_area_m2": 4100,
+   "hectares": 0.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A 720 m² villa in Ubud, Indonesia, set on 4,100 m² of grounds, with 5 bedrooms and 6 bathrooms.",
+    "es": "Villa de 720 m² en Ubud, Indonesia, sobre 4,100 m² de terreno, con 5 dormitorios y 6 baños.",
+    "ar": "فيلا بمساحة 720 م² في أوبود، إندونيسيا، على أرض 4,100 م²، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于印度尼西亚·乌布的别墅，建筑面积 720 平方米，占地 4,100 平方米，5 间卧室、6 间浴室。"
+   },
+   "long_description": {
+    "en": "A 720 m² villa in Ubud, Indonesia, set on 4,100 m² of grounds, with 5 bedrooms and 6 bathrooms.",
+    "es": "Villa de 720 m² en Ubud, Indonesia, sobre 4,100 m² de terreno, con 5 dormitorios y 6 baños.",
+    "ar": "فيلا بمساحة 720 م² في أوبود، إندونيسيا، على أرض 4,100 م²، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于印度尼西亚·乌布的别墅，建筑面积 720 平方米，占地 4,100 平方米，5 间卧室、6 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Tropical",
+     "es": "Tropical",
+     "ar": "استوائي",
+     "zh": "热带"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-urban",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "urban",
+   "title": "Villa Recoleta",
+   "country": "Argentina",
+   "region": "Buenos Aires",
+   "city": "Buenos Aires",
+   "price_usd": 3800000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 5,
+   "built_area_m2": 660,
+   "land_area_m2": 1400,
+   "hectares": 0.1,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A 660 m² villa in Buenos Aires, Argentina, set on 1,400 m² of grounds, with 5 bedrooms and 5 bathrooms.",
+    "es": "Villa de 660 m² en Buenos Aires, Argentina, sobre 1,400 m² de terreno, con 5 dormitorios y 5 baños.",
+    "ar": "فيلا بمساحة 660 م² في بوينس آيرس، الأرجنتين، على أرض 1,400 م²، بـ 5 غرف نوم و5 حمامات.",
+    "zh": "位于阿根廷·布宜诺斯艾利斯的别墅，建筑面积 660 平方米，占地 1,400 平方米，5 间卧室、5 间浴室。"
+   },
+   "long_description": {
+    "en": "A 660 m² villa in Buenos Aires, Argentina, set on 1,400 m² of grounds, with 5 bedrooms and 5 bathrooms.",
+    "es": "Villa de 660 m² en Buenos Aires, Argentina, sobre 1,400 m² de terreno, con 5 dormitorios y 5 baños.",
+    "ar": "فيلا بمساحة 660 م² في بوينس آيرس، الأرجنتين، على أرض 1,400 م²، بـ 5 غرف نوم و5 حمامات.",
+    "zh": "位于阿根廷·布宜诺斯艾利斯的别墅，建筑面积 660 平方米，占地 1,400 平方米，5 间卧室、5 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-urban.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Urban",
+     "es": "Urbana",
+     "ar": "حضري",
+     "zh": "城市"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-villas-resort",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "villas",
+   "variant": "resort",
+   "title": "Villa Anantara Bay",
+   "country": "Thailand",
+   "region": "Phuket",
+   "city": "Phuket",
+   "price_usd": 9600000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 810,
+   "land_area_m2": 3300,
+   "hectares": 0.3,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A 810 m² villa in Phuket, Thailand, set on 3,300 m² of grounds, with 5 bedrooms and 6 bathrooms.",
+    "es": "Villa de 810 m² en Phuket, Tailandia, sobre 3,300 m² de terreno, con 5 dormitorios y 6 baños.",
+    "ar": "فيلا بمساحة 810 م² في بوكيت، تايلاند، على أرض 3,300 م²، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于泰国·普吉的别墅，建筑面积 810 平方米，占地 3,300 平方米，5 间卧室、6 间浴室。"
+   },
+   "long_description": {
+    "en": "A 810 m² villa in Phuket, Thailand, set on 3,300 m² of grounds, with 5 bedrooms and 6 bathrooms.",
+    "es": "Villa de 810 m² en Phuket, Tailandia, sobre 3,300 m² de terreno, con 5 dormitorios y 6 baños.",
+    "ar": "فيلا بمساحة 810 م² في بوكيت، تايلاند، على أرض 3,300 م²، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于泰国·普吉的别墅，建筑面积 810 平方米，占地 3,300 平方米，5 间卧室、6 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-villas-resort.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Villas",
+     "es": "Villas",
+     "ar": "فلل",
+     "zh": "别墅"
+    },
+    "variant": {
+     "en": "Within a resort",
+     "es": "Dentro de resort",
+     "ar": "داخل منتجع",
+     "zh": "度假村内"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-waterfront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "waterfront",
+   "title": "Bayshore House",
+   "country": "United States",
+   "region": "Florida",
+   "city": "Miami Beach",
+   "price_usd": 38500000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 10,
+   "built_area_m2": 1640,
+   "land_area_m2": 4200,
+   "hectares": 0.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A principal residence of 1,640 m² in Miami Beach, United States, on 4,200 m², with 8 bedrooms.",
+    "es": "Residencia principal de 1,640 m² en Miami Beach, Estados Unidos, sobre 4,200 m², con 8 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,640 م² في ميامي بيتش، الولايات المتحدة، على 4,200 م²، ويضم 8 غرف نوم.",
+    "zh": "位于美国·迈阿密海滩的主宅，建筑面积 1,640 平方米，占地 4,200 平方米，8 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 1,640 m² in Miami Beach, United States, on 4,200 m², with 8 bedrooms.",
+    "es": "Residencia principal de 1,640 m² en Miami Beach, Estados Unidos, sobre 4,200 m², con 8 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,640 م² في ميامي بيتش، الولايات المتحدة، على 4,200 م²، ويضم 8 غرف نوم.",
+    "zh": "位于美国·迈阿密海滩的主宅，建筑面积 1,640 平方米，占地 4,200 平方米，8 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-waterfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Waterfront",
+     "es": "Waterfront",
+     "ar": "على الواجهة المائية",
+     "zh": "滨水"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-urban",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "urban",
+   "title": "Kensington House",
+   "country": "United Kingdom",
+   "region": "London",
+   "city": "London",
+   "price_usd": 62000000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 11,
+   "built_area_m2": 1850,
+   "land_area_m2": 1900,
+   "hectares": 0.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A principal residence of 1,850 m² in London, United Kingdom, on 1,900 m², with 9 bedrooms.",
+    "es": "Residencia principal de 1,850 m² en Londres, Reino Unido, sobre 1,900 m², con 9 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,850 م² في لندن، المملكة المتحدة، على 1,900 م²، ويضم 9 غرف نوم.",
+    "zh": "位于英国·伦敦的主宅，建筑面积 1,850 平方米，占地 1,900 平方米，9 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 1,850 m² in London, United Kingdom, on 1,900 m², with 9 bedrooms.",
+    "es": "Residencia principal de 1,850 m² en Londres, Reino Unido, sobre 1,900 m², con 9 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,850 م² في لندن، المملكة المتحدة، على 1,900 م²، ويضم 9 غرف نوم.",
+    "zh": "位于英国·伦敦的主宅，建筑面积 1,850 平方米，占地 1,900 平方米，9 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-urban.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Urban",
+     "es": "Urbana",
+     "ar": "حضري",
+     "zh": "城市"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-mediterranean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "mediterranean",
+   "title": "Villa Corallo",
+   "country": "Italy",
+   "region": "Liguria",
+   "city": "Portofino",
+   "price_usd": 27400000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 9,
+   "built_area_m2": 1420,
+   "land_area_m2": 5800,
+   "hectares": 0.6,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A principal residence of 1,420 m² in Portofino, Italy, on 5,800 m², with 8 bedrooms.",
+    "es": "Residencia principal de 1,420 m² en Portofino, Italia, sobre 5,800 m², con 8 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,420 م² في بورتوفينو، إيطاليا، على 5,800 م²، ويضم 8 غرف نوم.",
+    "zh": "位于意大利·波托菲诺的主宅，建筑面积 1,420 平方米，占地 5,800 平方米，8 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 1,420 m² in Portofino, Italy, on 5,800 m², with 8 bedrooms.",
+    "es": "Residencia principal de 1,420 m² en Portofino, Italia, sobre 5,800 m², con 8 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,420 م² في بورتوفينو، إيطاليا، على 5,800 م²، ويضم 8 غرف نوم.",
+    "zh": "位于意大利·波托菲诺的主宅，建筑面积 1,420 平方米，占地 5,800 平方米，8 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-mediterranean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Mediterranean",
+     "es": "Mediterránea",
+     "ar": "متوسطي",
+     "zh": "地中海"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "tropical",
+   "title": "Casa Bougainvillea",
+   "country": "Dominican Republic",
+   "region": "La Altagracia",
+   "city": "Punta Cana",
+   "price_usd": 14900000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 8,
+   "built_area_m2": 1180,
+   "land_area_m2": 8600,
+   "hectares": 0.9,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A principal residence of 1,180 m² in Punta Cana, Dominican Republic, on 8,600 m², with 7 bedrooms.",
+    "es": "Residencia principal de 1,180 m² en Punta Cana, República Dominicana, sobre 8,600 m², con 7 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,180 م² في بونتا كانا، جمهورية الدومينيكان، على 8,600 م²، ويضم 7 غرف نوم.",
+    "zh": "位于多米尼加共和国·蓬塔卡纳的主宅，建筑面积 1,180 平方米，占地 8,600 平方米，7 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 1,180 m² in Punta Cana, Dominican Republic, on 8,600 m², with 7 bedrooms.",
+    "es": "Residencia principal de 1,180 m² en Punta Cana, República Dominicana, sobre 8,600 m², con 7 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,180 م² في بونتا كانا، جمهورية الدومينيكان، على 8,600 م²، ويضم 7 غرف نوم.",
+    "zh": "位于多米尼加共和国·蓬塔卡纳的主宅，建筑面积 1,180 平方米，占地 8,600 平方米，7 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Tropical",
+     "es": "Tropical",
+     "ar": "استوائي",
+     "zh": "热带"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-historic",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "historic",
+   "title": "Palazzo Vendramin",
+   "country": "Italy",
+   "region": "Veneto",
+   "city": "Venice",
+   "price_usd": 46000000,
+   "currency": "USD",
+   "bedrooms": 10,
+   "bathrooms": 11,
+   "built_area_m2": 2100,
+   "land_area_m2": 2400,
+   "hectares": 0.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A principal residence of 2,100 m² in Venice, Italy, on 2,400 m², with 10 bedrooms.",
+    "es": "Residencia principal de 2,100 m² en Venecia, Italia, sobre 2,400 m², con 10 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 2,100 م² في البندقية، إيطاليا، على 2,400 م²، ويضم 10 غرف نوم.",
+    "zh": "位于意大利·威尼斯的主宅，建筑面积 2,100 平方米，占地 2,400 平方米，10 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 2,100 m² in Venice, Italy, on 2,400 m², with 10 bedrooms.",
+    "es": "Residencia principal de 2,100 m² en Venecia, Italia, sobre 2,400 m², con 10 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 2,100 م² في البندقية، إيطاليا، على 2,400 م²، ويضم 10 غرف نوم.",
+    "zh": "位于意大利·威尼斯的主宅，建筑面积 2,100 平方米，占地 2,400 平方米，10 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-historic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Historic",
+     "es": "Histórica",
+     "ar": "تاريخي",
+     "zh": "历史"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-mansions-gated",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "mansions",
+   "variant": "gated",
+   "title": "Hacienda del Bosque",
+   "country": "Mexico",
+   "region": "Ciudad de México",
+   "city": "Ciudad de México",
+   "price_usd": 18700000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 8,
+   "built_area_m2": 1290,
+   "land_area_m2": 3500,
+   "hectares": 0.3,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A principal residence of 1,290 m² in Mexico City, Mexico, on 3,500 m², with 7 bedrooms.",
+    "es": "Residencia principal de 1,290 m² en Ciudad de México, México, sobre 3,500 m², con 7 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,290 م² في مدينة مكسيكو، المكسيك، على 3,500 م²، ويضم 7 غرف نوم.",
+    "zh": "位于墨西哥·墨西哥城的主宅，建筑面积 1,290 平方米，占地 3,500 平方米，7 间卧室。"
+   },
+   "long_description": {
+    "en": "A principal residence of 1,290 m² in Mexico City, Mexico, on 3,500 m², with 7 bedrooms.",
+    "es": "Residencia principal de 1,290 m² en Ciudad de México, México, sobre 3,500 m², con 7 dormitorios.",
+    "ar": "مسكن رئيسي بمساحة 1,290 م² في مدينة مكسيكو، المكسيك، على 3,500 م²، ويضم 7 غرف نوم.",
+    "zh": "位于墨西哥·墨西哥城的主宅，建筑面积 1,290 平方米，占地 3,500 平方米，7 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-mansions-gated.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mansions",
+     "es": "Mansiones",
+     "ar": "قصور سكنية",
+     "zh": "豪宅"
+    },
+    "variant": {
+     "en": "Gated community",
+     "es": "En comunidad privada",
+     "ar": "مجمّع مغلق",
+     "zh": "封闭社区"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-medieval",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "medieval",
+   "title": "Château de Vaubrun",
+   "country": "France",
+   "region": "Occitanie",
+   "city": "Carcassonne",
+   "price_usd": 22000000,
+   "currency": "USD",
+   "bedrooms": 14,
+   "bathrooms": 12,
+   "built_area_m2": 3200,
+   "land_area_m2": 180000,
+   "hectares": 18.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A historic property of 3,200 m² in Carcassonne, France, with 18.0 hectares of land and 14 bedrooms.",
+    "es": "Propiedad histórica de 3,200 m² en Carcasona, Francia, con 18.0 hectáreas de terreno y 14 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,200 م² في كاركاسون، فرنسا، مع 18.0 هكتاراً من الأرض و14 غرفة نوم.",
+    "zh": "位于法国·卡尔卡松的历史建筑，建筑面积 3,200 平方米，土地 18.0 公顷，14 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 3,200 m² in Carcassonne, France, with 18.0 hectares of land and 14 bedrooms.",
+    "es": "Propiedad histórica de 3,200 m² en Carcasona, Francia, con 18.0 hectáreas de terreno y 14 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,200 م² في كاركاسون، فرنسا، مع 18.0 هكتاراً من الأرض و14 غرفة نوم.",
+    "zh": "位于法国·卡尔卡松的历史建筑，建筑面积 3,200 平方米，土地 18.0 公顷，14 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-medieval.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "Medieval",
+     "es": "Medieval",
+     "ar": "من العصور الوسطى",
+     "zh": "中世纪"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-french-chateau",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "french-chateau",
+   "title": "Château de Laroche",
+   "country": "France",
+   "region": "Centre-Val de Loire",
+   "city": "Amboise",
+   "price_usd": 31500000,
+   "currency": "USD",
+   "bedrooms": 18,
+   "bathrooms": 14,
+   "built_area_m2": 4100,
+   "land_area_m2": 260000,
+   "hectares": 26.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A historic property of 4,100 m² in Amboise, France, with 26.0 hectares of land and 18 bedrooms.",
+    "es": "Propiedad histórica de 4,100 m² en Amboise, Francia, con 26.0 hectáreas de terreno y 18 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 4,100 م² في أمبواز، فرنسا، مع 26.0 هكتاراً من الأرض و18 غرفة نوم.",
+    "zh": "位于法国·昂布瓦兹的历史建筑，建筑面积 4,100 平方米，土地 26.0 公顷，18 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 4,100 m² in Amboise, France, with 26.0 hectares of land and 18 bedrooms.",
+    "es": "Propiedad histórica de 4,100 m² en Amboise, Francia, con 26.0 hectáreas de terreno y 18 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 4,100 م² في أمبواز، فرنسا، مع 26.0 هكتاراً من الأرض و18 غرفة نوم.",
+    "zh": "位于法国·昂布瓦兹的历史建筑，建筑面积 4,100 平方米，土地 26.0 公顷，18 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-french-chateau.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "French château",
+     "es": "Château francés",
+     "ar": "قصر فرنسي",
+     "zh": "法式庄园"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-restored",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "restored",
+   "title": "Schloss Falkenstein",
+   "country": "Germany",
+   "region": "Bavaria",
+   "city": "Füssen",
+   "price_usd": 27800000,
+   "currency": "USD",
+   "bedrooms": 16,
+   "bathrooms": 13,
+   "built_area_m2": 3600,
+   "land_area_m2": 145000,
+   "hectares": 14.5,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A historic property of 3,600 m² in Füssen, Germany, with 14.5 hectares of land and 16 bedrooms.",
+    "es": "Propiedad histórica de 3,600 m² en Füssen, Alemania, con 14.5 hectáreas de terreno y 16 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,600 م² في فوسن، ألمانيا، مع 14.5 هكتاراً من الأرض و16 غرفة نوم.",
+    "zh": "位于德国·菲森的历史建筑，建筑面积 3,600 平方米，土地 14.5 公顷，16 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 3,600 m² in Füssen, Germany, with 14.5 hectares of land and 16 bedrooms.",
+    "es": "Propiedad histórica de 3,600 m² en Füssen, Alemania, con 14.5 hectáreas de terreno y 16 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,600 م² في فوسن، ألمانيا، مع 14.5 هكتاراً من الأرض و16 غرفة نوم.",
+    "zh": "位于德国·菲森的历史建筑，建筑面积 3,600 平方米，土地 14.5 公顷，16 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-restored.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "Restored",
+     "es": "Restaurado",
+     "ar": "مُرمَّم",
+     "zh": "修复"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-vineyard",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "vineyard",
+   "title": "Castello di Vernazza",
+   "country": "Italy",
+   "region": "Tuscany",
+   "city": "Montalcino",
+   "price_usd": 48000000,
+   "currency": "USD",
+   "bedrooms": 20,
+   "bathrooms": 16,
+   "built_area_m2": 4800,
+   "land_area_m2": 420000,
+   "hectares": 42.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A historic property of 4,800 m² in Montalcino, Italy, with 42.0 hectares of land and 20 bedrooms.",
+    "es": "Propiedad histórica de 4,800 m² en Montalcino, Italia, con 42.0 hectáreas de terreno y 20 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 4,800 م² في مونتالتشينو، إيطاليا، مع 42.0 هكتاراً من الأرض و20 غرفة نوم.",
+    "zh": "位于意大利·蒙塔尔奇诺的历史建筑，建筑面积 4,800 平方米，土地 42.0 公顷，20 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 4,800 m² in Montalcino, Italy, with 42.0 hectares of land and 20 bedrooms.",
+    "es": "Propiedad histórica de 4,800 m² en Montalcino, Italia, con 42.0 hectáreas de terreno y 20 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 4,800 م² في مونتالتشينو، إيطاليا، مع 42.0 هكتاراً من الأرض و20 غرفة نوم.",
+    "zh": "位于意大利·蒙塔尔奇诺的历史建筑，建筑面积 4,800 平方米，土地 42.0 公顷，20 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-vineyard.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "With vineyard",
+     "es": "Con viñedo",
+     "ar": "مع كروم",
+     "zh": "酒庄"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-rural-palace",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "rural-palace",
+   "title": "Palacio de Almenara",
+   "country": "Spain",
+   "region": "Castile and León",
+   "city": "Segovia",
+   "price_usd": 19400000,
+   "currency": "USD",
+   "bedrooms": 15,
+   "bathrooms": 12,
+   "built_area_m2": 3400,
+   "land_area_m2": 210000,
+   "hectares": 21.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A historic property of 3,400 m² in Segovia, Spain, with 21.0 hectares of land and 15 bedrooms.",
+    "es": "Propiedad histórica de 3,400 m² en Segovia, España, con 21.0 hectáreas de terreno y 15 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,400 م² في سيغوفيا، إسبانيا، مع 21.0 هكتاراً من الأرض و15 غرفة نوم.",
+    "zh": "位于西班牙·塞哥维亚的历史建筑，建筑面积 3,400 平方米，土地 21.0 公顷，15 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 3,400 m² in Segovia, Spain, with 21.0 hectares of land and 15 bedrooms.",
+    "es": "Propiedad histórica de 3,400 m² en Segovia, España, con 21.0 hectáreas de terreno y 15 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 3,400 م² في سيغوفيا، إسبانيا، مع 21.0 هكتاراً من الأرض و15 غرفة نوم.",
+    "zh": "位于西班牙·塞哥维亚的历史建筑，建筑面积 3,400 平方米，土地 21.0 公顷，15 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-rural-palace.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "Rural palace",
+     "es": "Palacio rural",
+     "ar": "قصر ريفي",
+     "zh": "乡村宫邸"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-castles-chateaux-fortress",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "castles-chateaux",
+   "variant": "fortress",
+   "title": "Castelo do Cabo",
+   "country": "Portugal",
+   "region": "Alentejo",
+   "city": "Évora",
+   "price_usd": 112000000,
+   "currency": "USD",
+   "bedrooms": 24,
+   "bathrooms": 20,
+   "built_area_m2": 6200,
+   "land_area_m2": 680000,
+   "hectares": 68.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A historic property of 6,200 m² in Évora, Portugal, with 68.0 hectares of land and 24 bedrooms.",
+    "es": "Propiedad histórica de 6,200 m² en Évora, Portugal, con 68.0 hectáreas de terreno y 24 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 6,200 م² في إيفورا، البرتغال، مع 68.0 هكتاراً من الأرض و24 غرفة نوم.",
+    "zh": "位于葡萄牙·埃武拉的历史建筑，建筑面积 6,200 平方米，土地 68.0 公顷，24 间卧室。"
+   },
+   "long_description": {
+    "en": "A historic property of 6,200 m² in Évora, Portugal, with 68.0 hectares of land and 24 bedrooms.",
+    "es": "Propiedad histórica de 6,200 m² en Évora, Portugal, con 68.0 hectáreas de terreno y 24 dormitorios.",
+    "ar": "عقار تاريخي بمساحة 6,200 م² في إيفورا، البرتغال، مع 68.0 هكتاراً من الأرض و24 غرفة نوم.",
+    "zh": "位于葡萄牙·埃武拉的历史建筑，建筑面积 6,200 平方米，土地 68.0 公顷，24 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-castles-chateaux-fortress.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Castles & Châteaux",
+     "es": "Castillos y châteaux",
+     "ar": "قلاع وقصور تاريخية",
+     "zh": "城堡与庄园府邸"
+    },
+    "variant": {
+     "en": "Converted fortress",
+     "es": "Fortaleza convertida",
+     "ar": "حصن مُحوَّل",
+     "zh": "改建要塞"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-colonial",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "colonial",
+   "title": "Hacienda San Rafael",
+   "country": "Mexico",
+   "region": "Yucatán",
+   "city": "Mérida",
+   "price_usd": 6800000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 8,
+   "built_area_m2": 1650,
+   "land_area_m2": 240000,
+   "hectares": 24.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A working hacienda of 1,650 m² in Mérida, Mexico, with 24.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,650 m² en Mérida, México, con 24.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,650 م² في ميريدا، المكسيك، مع 24.0 هكتاراً من الأرض.",
+    "zh": "位于墨西哥·梅里达的运营中庄园，建筑面积 1,650 平方米，土地 24.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 1,650 m² in Mérida, Mexico, with 24.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,650 m² en Mérida, México, con 24.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,650 م² في ميريدا، المكسيك، مع 24.0 هكتاراً من الأرض.",
+    "zh": "位于墨西哥·梅里达的运营中庄园，建筑面积 1,650 平方米，土地 24.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-colonial.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "Colonial",
+     "es": "Colonial",
+     "ar": "استعماري",
+     "zh": "殖民风格"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-coffee",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "coffee",
+   "title": "Hacienda La Esperanza",
+   "country": "Colombia",
+   "region": "Quindío",
+   "city": "Salento",
+   "price_usd": 4200000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 7,
+   "built_area_m2": 1180,
+   "land_area_m2": 380000,
+   "hectares": 38.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A working hacienda of 1,180 m² in Salento, Colombia, with 38.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,180 m² en Salento, Colombia, con 38.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,180 م² في سالينتو، كولومبيا، مع 38.0 هكتاراً من الأرض.",
+    "zh": "位于哥伦比亚·萨伦托的运营中庄园，建筑面积 1,180 平方米，土地 38.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 1,180 m² in Salento, Colombia, with 38.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,180 m² en Salento, Colombia, con 38.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,180 م² في سالينتو، كولومبيا، مع 38.0 هكتاراً من الأرض.",
+    "zh": "位于哥伦比亚·萨伦托的运营中庄园，建筑面积 1,180 平方米，土地 38.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-coffee.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "Coffee",
+     "es": "Cafetera",
+     "ar": "بنّية",
+     "zh": "咖啡"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-equestrian",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "equestrian",
+   "title": "Hacienda Los Robles",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Jerez",
+   "price_usd": 12400000,
+   "currency": "USD",
+   "bedrooms": 10,
+   "bathrooms": 9,
+   "built_area_m2": 1920,
+   "land_area_m2": 560000,
+   "hectares": 56.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A working hacienda of 1,920 m² in Jerez, Spain, with 56.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,920 m² en Jerez, España, con 56.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,920 م² في خيريث، إسبانيا، مع 56.0 هكتاراً من الأرض.",
+    "zh": "位于西班牙·赫雷斯的运营中庄园，建筑面积 1,920 平方米，土地 56.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 1,920 m² in Jerez, Spain, with 56.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,920 m² en Jerez, España, con 56.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,920 م² في خيريث، إسبانيا، مع 56.0 هكتاراً من الأرض.",
+    "zh": "位于西班牙·赫雷斯的运营中庄园，建筑面积 1,920 平方米，土地 56.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-equestrian.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "Equestrian",
+     "es": "Ecuestre",
+     "ar": "للخيول",
+     "zh": "马术"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-agricultural",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "agricultural",
+   "title": "Hacienda El Trapiche",
+   "country": "Guatemala",
+   "region": "Sacatepéquez",
+   "city": "Antigua",
+   "price_usd": 3600000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 6,
+   "built_area_m2": 1040,
+   "land_area_m2": 720000,
+   "hectares": 72.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A working hacienda of 1,040 m² in Antigua, Guatemala, with 72.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,040 m² en Antigua, Guatemala, con 72.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,040 م² في أنتيغوا، غواتيمالا، مع 72.0 هكتاراً من الأرض.",
+    "zh": "位于危地马拉·安提瓜的运营中庄园，建筑面积 1,040 平方米，土地 72.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 1,040 m² in Antigua, Guatemala, with 72.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,040 m² en Antigua, Guatemala, con 72.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,040 م² في أنتيغوا، غواتيمالا، مع 72.0 هكتاراً من الأرض.",
+    "zh": "位于危地马拉·安提瓜的运营中庄园，建筑面积 1,040 平方米，土地 72.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-agricultural.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "Agricultural",
+     "es": "Agrícola",
+     "ar": "زراعي",
+     "zh": "农业"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-vineyard",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "vineyard",
+   "title": "Hacienda Valle Alto",
+   "country": "Chile",
+   "region": "Valparaíso",
+   "city": "Casablanca",
+   "price_usd": 16900000,
+   "currency": "USD",
+   "bedrooms": 11,
+   "bathrooms": 9,
+   "built_area_m2": 2100,
+   "land_area_m2": 940000,
+   "hectares": 94.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A working hacienda of 2,100 m² in Casablanca, Chile, with 94.0 hectares of land.",
+    "es": "Hacienda en explotación de 2,100 m² en Casablanca, Chile, con 94.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 2,100 م² في كازابلانكا، تشيلي، مع 94.0 هكتاراً من الأرض.",
+    "zh": "位于智利·卡萨布兰卡的运营中庄园，建筑面积 2,100 平方米，土地 94.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 2,100 m² in Casablanca, Chile, with 94.0 hectares of land.",
+    "es": "Hacienda en explotación de 2,100 m² en Casablanca, Chile, con 94.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 2,100 م² في كازابلانكا، تشيلي، مع 94.0 هكتاراً من الأرض.",
+    "zh": "位于智利·卡萨布兰卡的运营中庄园，建筑面积 2,100 平方米，土地 94.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-vineyard.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "With vineyard",
+     "es": "Con viñedo",
+     "ar": "مع كروم",
+     "zh": "酒庄"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-haciendas-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "haciendas",
+   "variant": "tropical",
+   "title": "Hacienda Cayo Verde",
+   "country": "Dominican Republic",
+   "region": "Samaná",
+   "city": "Las Terrenas",
+   "price_usd": 8100000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 8,
+   "built_area_m2": 1380,
+   "land_area_m2": 310000,
+   "hectares": 31.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A working hacienda of 1,380 m² in Las Terrenas, Dominican Republic, with 31.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,380 m² en Las Terrenas, República Dominicana, con 31.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,380 م² في لاس تيريناس، جمهورية الدومينيكان، مع 31.0 هكتاراً من الأرض.",
+    "zh": "位于多米尼加共和国·拉斯特雷纳斯的运营中庄园，建筑面积 1,380 平方米，土地 31.0 公顷。"
+   },
+   "long_description": {
+    "en": "A working hacienda of 1,380 m² in Las Terrenas, Dominican Republic, with 31.0 hectares of land.",
+    "es": "Hacienda en explotación de 1,380 m² en Las Terrenas, República Dominicana, con 31.0 hectáreas de terreno.",
+    "ar": "حاسيندا عاملة بمساحة 1,380 م² في لاس تيريناس، جمهورية الدومينيكان، مع 31.0 هكتاراً من الأرض.",
+    "zh": "位于多米尼加共和国·拉斯特雷纳斯的运营中庄园，建筑面积 1,380 平方米，土地 31.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-haciendas-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Haciendas",
+     "es": "Haciendas",
+     "ar": "حاسيندات",
+     "zh": "庄园"
+    },
+    "variant": {
+     "en": "Tropical",
+     "es": "Tropical",
+     "ar": "استوائي",
+     "zh": "热带"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-equestrian",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "equestrian",
+   "title": "Ballycroy Estate",
+   "country": "Ireland",
+   "region": "County Wicklow",
+   "city": "Wicklow",
+   "price_usd": 14600000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 8,
+   "built_area_m2": 1540,
+   "land_area_m2": 480000,
+   "hectares": 48.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "An estate of 48.0 hectares in Wicklow, Ireland, with a principal house of 1,540 m².",
+    "es": "Finca de 48.0 hectáreas en Wicklow, Irlanda, con casa principal de 1,540 m².",
+    "ar": "ضيعة بمساحة 48.0 هكتاراً في ويكلو، أيرلندا، مع منزل رئيسي 1,540 م².",
+    "zh": "位于爱尔兰·威克洛的地产，占地 48.0 公顷，主宅 1,540 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 48.0 hectares in Wicklow, Ireland, with a principal house of 1,540 m².",
+    "es": "Finca de 48.0 hectáreas en Wicklow, Irlanda, con casa principal de 1,540 m².",
+    "ar": "ضيعة بمساحة 48.0 هكتاراً في ويكلو، أيرلندا، مع منزل رئيسي 1,540 م².",
+    "zh": "位于爱尔兰·威克洛的地产，占地 48.0 公顷，主宅 1,540 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-equestrian.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "Equestrian",
+     "es": "Ecuestre",
+     "ar": "للخيول",
+     "zh": "马术"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-mountain",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "mountain",
+   "title": "Val Sereno Estate",
+   "country": "Switzerland",
+   "region": "Grisons",
+   "city": "Klosters",
+   "price_usd": 34000000,
+   "currency": "USD",
+   "bedrooms": 10,
+   "bathrooms": 10,
+   "built_area_m2": 1980,
+   "land_area_m2": 260000,
+   "hectares": 26.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "An estate of 26.0 hectares in Klosters, Switzerland, with a principal house of 1,980 m².",
+    "es": "Finca de 26.0 hectáreas en Klosters, Suiza, con casa principal de 1,980 m².",
+    "ar": "ضيعة بمساحة 26.0 هكتاراً في كلوسترز، سويسرا، مع منزل رئيسي 1,980 م².",
+    "zh": "位于瑞士·克洛斯特斯的地产，占地 26.0 公顷，主宅 1,980 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 26.0 hectares in Klosters, Switzerland, with a principal house of 1,980 m².",
+    "es": "Finca de 26.0 hectáreas en Klosters, Suiza, con casa principal de 1,980 m².",
+    "ar": "ضيعة بمساحة 26.0 هكتاراً في كلوسترز، سويسرا، مع منزل رئيسي 1,980 م².",
+    "zh": "位于瑞士·克洛斯特斯的地产，占地 26.0 公顷，主宅 1,980 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-mountain.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "Mountain",
+     "es": "De montaña",
+     "ar": "جبلي",
+     "zh": "山地"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-hunting",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "hunting",
+   "title": "Glenmoor Estate",
+   "country": "United Kingdom",
+   "region": "Scotland",
+   "city": "Perthshire",
+   "price_usd": 21800000,
+   "currency": "USD",
+   "bedrooms": 12,
+   "bathrooms": 10,
+   "built_area_m2": 2240,
+   "land_area_m2": 1600000,
+   "hectares": 160.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "An estate of 160.0 hectares in Perthshire, United Kingdom, with a principal house of 2,240 m².",
+    "es": "Finca de 160.0 hectáreas en Perthshire, Reino Unido, con casa principal de 2,240 m².",
+    "ar": "ضيعة بمساحة 160.0 هكتاراً في بيرثشاير، المملكة المتحدة، مع منزل رئيسي 2,240 م².",
+    "zh": "位于英国·珀斯郡的地产，占地 160.0 公顷，主宅 2,240 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 160.0 hectares in Perthshire, United Kingdom, with a principal house of 2,240 m².",
+    "es": "Finca de 160.0 hectáreas en Perthshire, Reino Unido, con casa principal de 2,240 m².",
+    "ar": "ضيعة بمساحة 160.0 هكتاراً في بيرثشاير، المملكة المتحدة، مع منزل رئيسي 2,240 م².",
+    "zh": "位于英国·珀斯郡的地产，占地 160.0 公顷，主宅 2,240 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-hunting.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "Hunting",
+     "es": "De caza",
+     "ar": "للصيد",
+     "zh": "狩猎"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-olive-grove",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "olive-grove",
+   "title": "Tenuta degli Ulivi",
+   "country": "Italy",
+   "region": "Apulia",
+   "city": "Ostuni",
+   "price_usd": 9400000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 7,
+   "built_area_m2": 1310,
+   "land_area_m2": 620000,
+   "hectares": 62.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "An estate of 62.0 hectares in Ostuni, Italy, with a principal house of 1,310 m².",
+    "es": "Finca de 62.0 hectáreas en Ostuni, Italia, con casa principal de 1,310 m².",
+    "ar": "ضيعة بمساحة 62.0 هكتاراً في أوستوني، إيطاليا، مع منزل رئيسي 1,310 م².",
+    "zh": "位于意大利·奥斯图尼的地产，占地 62.0 公顷，主宅 1,310 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 62.0 hectares in Ostuni, Italy, with a principal house of 1,310 m².",
+    "es": "Finca de 62.0 hectáreas en Ostuni, Italia, con casa principal de 1,310 m².",
+    "ar": "ضيعة بمساحة 62.0 هكتاراً في أوستوني، إيطاليا، مع منزل رئيسي 1,310 م².",
+    "zh": "位于意大利·奥斯图尼的地产，占地 62.0 公顷，主宅 1,310 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-olive-grove.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "Olive grove",
+     "es": "Con olivar",
+     "ar": "بساتين زيتون",
+     "zh": "橄榄园"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-vineyard",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "vineyard",
+   "title": "Domaine de Roquevert",
+   "country": "France",
+   "region": "Provence",
+   "city": "Aix-en-Provence",
+   "price_usd": 28500000,
+   "currency": "USD",
+   "bedrooms": 11,
+   "bathrooms": 9,
+   "built_area_m2": 1870,
+   "land_area_m2": 840000,
+   "hectares": 84.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "An estate of 84.0 hectares in Aix-en-Provence, France, with a principal house of 1,870 m².",
+    "es": "Finca de 84.0 hectáreas en Aix-en-Provence, Francia, con casa principal de 1,870 m².",
+    "ar": "ضيعة بمساحة 84.0 هكتاراً في إكس أن بروفانس، فرنسا، مع منزل رئيسي 1,870 م².",
+    "zh": "位于法国·普罗旺斯艾克斯的地产，占地 84.0 公顷，主宅 1,870 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 84.0 hectares in Aix-en-Provence, France, with a principal house of 1,870 m².",
+    "es": "Finca de 84.0 hectáreas en Aix-en-Provence, Francia, con casa principal de 1,870 m².",
+    "ar": "ضيعة بمساحة 84.0 هكتاراً في إكس أن بروفانس، فرنسا، مع منزل رئيسي 1,870 م².",
+    "zh": "位于法国·普罗旺斯艾克斯的地产，占地 84.0 公顷，主宅 1,870 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-vineyard.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "With vineyard",
+     "es": "Con viñedo",
+     "ar": "مع كروم",
+     "zh": "酒庄"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-estates-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "estates",
+   "variant": "tropical",
+   "title": "Rio Verde Estate",
+   "country": "Brazil",
+   "region": "Bahia",
+   "city": "Trancoso",
+   "price_usd": 11200000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 8,
+   "built_area_m2": 1460,
+   "land_area_m2": 720000,
+   "hectares": 72.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "An estate of 72.0 hectares in Trancoso, Brazil, with a principal house of 1,460 m².",
+    "es": "Finca de 72.0 hectáreas en Trancoso, Brasil, con casa principal de 1,460 m².",
+    "ar": "ضيعة بمساحة 72.0 هكتاراً في ترانكوسو، البرازيل، مع منزل رئيسي 1,460 م².",
+    "zh": "位于巴西·特兰科苏的地产，占地 72.0 公顷，主宅 1,460 平方米。"
+   },
+   "long_description": {
+    "en": "An estate of 72.0 hectares in Trancoso, Brazil, with a principal house of 1,460 m².",
+    "es": "Finca de 72.0 hectáreas en Trancoso, Brasil, con casa principal de 1,460 m².",
+    "ar": "ضيعة بمساحة 72.0 هكتاراً في ترانكوسو، البرازيل، مع منزل رئيسي 1,460 م².",
+    "zh": "位于巴西·特兰科苏的地产，占地 72.0 公顷，主宅 1,460 平方米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-estates-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Estates",
+     "es": "Fincas y estates",
+     "ar": "ضياع وعزب",
+     "zh": "大型地产"
+    },
+    "variant": {
+     "en": "Tropical",
+     "es": "Tropical",
+     "ar": "استوائي",
+     "zh": "热带"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-dubai",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "dubai",
+   "title": "Marina Sky Penthouse",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai",
+   "price_usd": 41000000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 920,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A 920 m² penthouse in Dubai, United Arab Emirates, with 5 bedrooms and 6 bathrooms.",
+    "es": "Penthouse de 920 m² en Dubái, Emiratos Árabes Unidos, con 5 dormitorios y 6 baños.",
+    "ar": "بنتهاوس بمساحة 920 م² في دبي، الإمارات العربية المتحدة، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于阿联酋·迪拜的顶层公寓，920 平方米，5 间卧室、6 间浴室。"
+   },
+   "long_description": {
+    "en": "A 920 m² penthouse in Dubai, United Arab Emirates, with 5 bedrooms and 6 bathrooms.",
+    "es": "Penthouse de 920 m² en Dubái, Emiratos Árabes Unidos, con 5 dormitorios y 6 baños.",
+    "ar": "بنتهاوس بمساحة 920 م² في دبي، الإمارات العربية المتحدة، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于阿联酋·迪拜的顶层公寓，920 平方米，5 间卧室、6 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-dubai.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Dubai",
+     "es": "Dubái",
+     "ar": "دبي",
+     "zh": "迪拜"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-oceanfront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "oceanfront",
+   "title": "Ocean Crest Penthouse",
+   "country": "United States",
+   "region": "Florida",
+   "city": "Miami",
+   "price_usd": 26500000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 5,
+   "built_area_m2": 740,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A 740 m² penthouse in Miami, United States, with 4 bedrooms and 5 bathrooms.",
+    "es": "Penthouse de 740 m² en Miami, Estados Unidos, con 4 dormitorios y 5 baños.",
+    "ar": "بنتهاوس بمساحة 740 م² في ميامي، الولايات المتحدة، بـ 4 غرف نوم و5 حمامات.",
+    "zh": "位于美国·迈阿密的顶层公寓，740 平方米，4 间卧室、5 间浴室。"
+   },
+   "long_description": {
+    "en": "A 740 m² penthouse in Miami, United States, with 4 bedrooms and 5 bathrooms.",
+    "es": "Penthouse de 740 m² en Miami, Estados Unidos, con 4 dormitorios y 5 baños.",
+    "ar": "بنتهاوس بمساحة 740 م² في ميامي، الولايات المتحدة، بـ 4 غرف نوم و5 حمامات.",
+    "zh": "位于美国·迈阿密的顶层公寓，740 平方米，4 间卧室、5 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-oceanfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Oceanfront",
+     "es": "Frente al océano",
+     "ar": "على المحيط",
+     "zh": "面海"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-urban",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "urban",
+   "title": "Reforma Sky Residence",
+   "country": "Mexico",
+   "region": "Ciudad de México",
+   "city": "Ciudad de México",
+   "price_usd": 7900000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 4,
+   "built_area_m2": 610,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A 610 m² penthouse in Mexico City, Mexico, with 4 bedrooms and 4 bathrooms.",
+    "es": "Penthouse de 610 m² en Ciudad de México, México, con 4 dormitorios y 4 baños.",
+    "ar": "بنتهاوس بمساحة 610 م² في مدينة مكسيكو، المكسيك، بـ 4 غرف نوم و4 حمامات.",
+    "zh": "位于墨西哥·墨西哥城的顶层公寓，610 平方米，4 间卧室、4 间浴室。"
+   },
+   "long_description": {
+    "en": "A 610 m² penthouse in Mexico City, Mexico, with 4 bedrooms and 4 bathrooms.",
+    "es": "Penthouse de 610 m² en Ciudad de México, México, con 4 dormitorios y 4 baños.",
+    "ar": "بنتهاوس بمساحة 610 م² في مدينة مكسيكو، المكسيك، بـ 4 غرف نوم و4 حمامات.",
+    "zh": "位于墨西哥·墨西哥城的顶层公寓，610 平方米，4 间卧室、4 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-urban.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Urban",
+     "es": "Urbana",
+     "ar": "حضري",
+     "zh": "城市"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-historic",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "historic",
+   "title": "Attico Barberini",
+   "country": "Italy",
+   "region": "Lazio",
+   "city": "Rome",
+   "price_usd": 18200000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 5,
+   "built_area_m2": 580,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A 580 m² penthouse in Rome, Italy, with 4 bedrooms and 5 bathrooms.",
+    "es": "Penthouse de 580 m² en Roma, Italia, con 4 dormitorios y 5 baños.",
+    "ar": "بنتهاوس بمساحة 580 م² في روما، إيطاليا، بـ 4 غرف نوم و5 حمامات.",
+    "zh": "位于意大利·罗马的顶层公寓，580 平方米，4 间卧室、5 间浴室。"
+   },
+   "long_description": {
+    "en": "A 580 m² penthouse in Rome, Italy, with 4 bedrooms and 5 bathrooms.",
+    "es": "Penthouse de 580 m² en Roma, Italia, con 4 dormitorios y 5 baños.",
+    "ar": "بنتهاوس بمساحة 580 م² في روما، إيطاليا، بـ 4 غرف نوم و5 حمامات.",
+    "zh": "位于意大利·罗马的顶层公寓，580 平方米，4 间卧室、5 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-historic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Historic",
+     "es": "Histórica",
+     "ar": "تاريخي",
+     "zh": "历史"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-duplex",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "duplex",
+   "title": "The Ashworth Duplex",
+   "country": "United Kingdom",
+   "region": "London",
+   "city": "London",
+   "price_usd": 33400000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 810,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A 810 m² penthouse in London, United Kingdom, with 5 bedrooms and 6 bathrooms.",
+    "es": "Penthouse de 810 m² en Londres, Reino Unido, con 5 dormitorios y 6 baños.",
+    "ar": "بنتهاوس بمساحة 810 م² في لندن، المملكة المتحدة، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于英国·伦敦的顶层公寓，810 平方米，5 间卧室、6 间浴室。"
+   },
+   "long_description": {
+    "en": "A 810 m² penthouse in London, United Kingdom, with 5 bedrooms and 6 bathrooms.",
+    "es": "Penthouse de 810 m² en Londres, Reino Unido, con 5 dormitorios y 6 baños.",
+    "ar": "بنتهاوس بمساحة 810 م² في لندن، المملكة المتحدة، بـ 5 غرف نوم و6 حمامات.",
+    "zh": "位于英国·伦敦的顶层公寓，810 平方米，5 间卧室、6 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-duplex.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Two-level",
+     "es": "De dos niveles",
+     "ar": "من مستويين",
+     "zh": "复式"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-penthouses-panoramic",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "penthouses",
+   "variant": "panoramic",
+   "title": "Ático Diagonal Mar",
+   "country": "Spain",
+   "region": "Catalonia",
+   "city": "Barcelona",
+   "price_usd": 9600000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 4,
+   "built_area_m2": 520,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A 520 m² penthouse in Barcelona, Spain, with 4 bedrooms and 4 bathrooms.",
+    "es": "Penthouse de 520 m² en Barcelona, España, con 4 dormitorios y 4 baños.",
+    "ar": "بنتهاوس بمساحة 520 م² في برشلونة، إسبانيا، بـ 4 غرف نوم و4 حمامات.",
+    "zh": "位于西班牙·巴塞罗那的顶层公寓，520 平方米，4 间卧室、4 间浴室。"
+   },
+   "long_description": {
+    "en": "A 520 m² penthouse in Barcelona, Spain, with 4 bedrooms and 4 bathrooms.",
+    "es": "Penthouse de 520 m² en Barcelona, España, con 4 dormitorios y 4 baños.",
+    "ar": "بنتهاوس بمساحة 520 م² في برشلونة، إسبانيا، بـ 4 غرف نوم و4 حمامات.",
+    "zh": "位于西班牙·巴塞罗那的顶层公寓，520 平方米，4 间卧室、4 间浴室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-penthouses-panoramic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Penthouses",
+     "es": "Penthouses",
+     "ar": "بنتهاوس",
+     "zh": "顶层公寓"
+    },
+    "variant": {
+     "en": "Panoramic terrace",
+     "es": "Con terraza panorámica",
+     "ar": "بشرفة بانورامية",
+     "zh": "全景露台"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-beach-house",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "beach-house",
+   "title": "Casa Ola",
+   "country": "Mexico",
+   "region": "Oaxaca",
+   "city": "Puerto Escondido",
+   "price_usd": 3900000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 4,
+   "built_area_m2": 480,
+   "land_area_m2": 2400,
+   "hectares": 0.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A waterfront residence of 480 m² in Puerto Escondido, Mexico, on 2,400 m², with 4 bedrooms.",
+    "es": "Residencia frente al mar de 480 m² en Puerto Escondido, México, sobre 2,400 m², con 4 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 480 م² في بويرتو إسكونديدو، المكسيك، على 2,400 م²، بـ 4 غرف نوم.",
+    "zh": "位于墨西哥·埃斯孔迪多港的海滨住宅，建筑面积 480 平方米，占地 2,400 平方米，4 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 480 m² in Puerto Escondido, Mexico, on 2,400 m², with 4 bedrooms.",
+    "es": "Residencia frente al mar de 480 m² en Puerto Escondido, México, sobre 2,400 m², con 4 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 480 م² في بويرتو إسكونديدو، المكسيك، على 2,400 م²، بـ 4 غرف نوم.",
+    "zh": "位于墨西哥·埃斯孔迪多港的海滨住宅，建筑面积 480 平方米，占地 2,400 平方米，4 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-beach-house.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Beach house",
+     "es": "Casa de playa",
+     "ar": "بيت شاطئ",
+     "zh": "海滩别墅"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-clifftop",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "clifftop",
+   "title": "Villa Acantilado",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Lagos",
+   "price_usd": 13700000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 760,
+   "land_area_m2": 3900,
+   "hectares": 0.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A waterfront residence of 760 m² in Lagos, Portugal, on 3,900 m², with 5 bedrooms.",
+    "es": "Residencia frente al mar de 760 m² en Lagos, Portugal, sobre 3,900 m², con 5 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 760 م² في لاغوس، البرتغال، على 3,900 م²، بـ 5 غرف نوم.",
+    "zh": "位于葡萄牙·拉古什的海滨住宅，建筑面积 760 平方米，占地 3,900 平方米，5 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 760 m² in Lagos, Portugal, on 3,900 m², with 5 bedrooms.",
+    "es": "Residencia frente al mar de 760 m² en Lagos, Portugal, sobre 3,900 m², con 5 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 760 م² في لاغوس، البرتغال، على 3,900 م²، بـ 5 غرف نوم.",
+    "zh": "位于葡萄牙·拉古什的海滨住宅，建筑面积 760 平方米，占地 3,900 平方米，5 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-clifftop.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Clifftop",
+     "es": "Sobre acantilado",
+     "ar": "على جرف",
+     "zh": "崖顶"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-island",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "island",
+   "title": "Villa Coralina",
+   "country": "Bahamas",
+   "region": "Exuma",
+   "city": "Great Exuma",
+   "price_usd": 24800000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 7,
+   "built_area_m2": 980,
+   "land_area_m2": 12400,
+   "hectares": 1.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A waterfront residence of 980 m² in Great Exuma, Bahamas, on 12,400 m², with 6 bedrooms.",
+    "es": "Residencia frente al mar de 980 m² en Gran Exuma, Bahamas, sobre 12,400 m², con 6 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 980 م² في غريت إكزوما، جزر البهاما، على 12,400 م²، بـ 6 غرف نوم.",
+    "zh": "位于巴哈马·大埃克苏马的海滨住宅，建筑面积 980 平方米，占地 12,400 平方米，6 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 980 m² in Great Exuma, Bahamas, on 12,400 m², with 6 bedrooms.",
+    "es": "Residencia frente al mar de 980 m² en Gran Exuma, Bahamas, sobre 12,400 m², con 6 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 980 م² في غريت إكزوما، جزر البهاما، على 12,400 م²، بـ 6 غرف نوم.",
+    "zh": "位于巴哈马·大埃克苏马的海滨住宅，建筑面积 980 平方米，占地 12,400 平方米，6 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Island",
+     "es": "En isla",
+     "ar": "في جزيرة",
+     "zh": "岛屿"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-caribbean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "caribbean",
+   "title": "Villa Marigot",
+   "country": "Saint Barthélemy",
+   "region": "Saint Barthélemy",
+   "city": "Gustavia",
+   "price_usd": 46000000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 7,
+   "built_area_m2": 1040,
+   "land_area_m2": 6800,
+   "hectares": 0.7,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A waterfront residence of 1,040 m² in Gustavia, Saint Barthélemy, on 6,800 m², with 6 bedrooms.",
+    "es": "Residencia frente al mar de 1,040 m² en Gustavia, San Bartolomé, sobre 6,800 m², con 6 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 1,040 م² في غوستافيا، سان بارتيلمي، على 6,800 م²، بـ 6 غرف نوم.",
+    "zh": "位于圣巴泰勒米·古斯塔维亚的海滨住宅，建筑面积 1,040 平方米，占地 6,800 平方米，6 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 1,040 m² in Gustavia, Saint Barthélemy, on 6,800 m², with 6 bedrooms.",
+    "es": "Residencia frente al mar de 1,040 m² en Gustavia, San Bartolomé, sobre 6,800 m², con 6 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 1,040 م² في غوستافيا، سان بارتيلمي، على 6,800 م²، بـ 6 غرف نوم.",
+    "zh": "位于圣巴泰勒米·古斯塔维亚的海滨住宅，建筑面积 1,040 平方米，占地 6,800 平方米，6 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-caribbean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Caribbean",
+     "es": "Caribeña",
+     "ar": "كاريبي",
+     "zh": "加勒比"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-mediterranean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "mediterranean",
+   "title": "Villa Cap Ferrat",
+   "country": "France",
+   "region": "Provence-Alpes-Côte d'Azur",
+   "city": "Saint-Jean-Cap-Ferrat",
+   "price_usd": 58000000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 8,
+   "built_area_m2": 1240,
+   "land_area_m2": 9200,
+   "hectares": 0.9,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A waterfront residence of 1,240 m² in Saint-Jean-Cap-Ferrat, France, on 9,200 m², with 7 bedrooms.",
+    "es": "Residencia frente al mar de 1,240 m² en Saint-Jean-Cap-Ferrat, Francia, sobre 9,200 m², con 7 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 1,240 م² في سان جان كاب فيرا، فرنسا، على 9,200 م²، بـ 7 غرف نوم.",
+    "zh": "位于法国·圣让卡弗尔拉的海滨住宅，建筑面积 1,240 平方米，占地 9,200 平方米，7 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 1,240 m² in Saint-Jean-Cap-Ferrat, France, on 9,200 m², with 7 bedrooms.",
+    "es": "Residencia frente al mar de 1,240 m² en Saint-Jean-Cap-Ferrat, Francia, sobre 9,200 m², con 7 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 1,240 م² في سان جان كاب فيرا، فرنسا، على 9,200 م²، بـ 7 غرف نوم.",
+    "zh": "位于法国·圣让卡弗尔拉的海滨住宅，建筑面积 1,240 平方米，占地 9,200 平方米，7 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-mediterranean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Mediterranean",
+     "es": "Mediterránea",
+     "ar": "متوسطي",
+     "zh": "地中海"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-waterfront-asian-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "waterfront",
+   "variant": "asian-tropical",
+   "title": "Villa Bulan Biru",
+   "country": "Indonesia",
+   "region": "Bali",
+   "city": "Uluwatu",
+   "price_usd": 7400000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 820,
+   "land_area_m2": 4600,
+   "hectares": 0.5,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A waterfront residence of 820 m² in Uluwatu, Indonesia, on 4,600 m², with 5 bedrooms.",
+    "es": "Residencia frente al mar de 820 m² en Uluwatu, Indonesia, sobre 4,600 m², con 5 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 820 م² في أولواتو، إندونيسيا، على 4,600 م²، بـ 5 غرف نوم.",
+    "zh": "位于印度尼西亚·乌鲁瓦图的海滨住宅，建筑面积 820 平方米，占地 4,600 平方米，5 间卧室。"
+   },
+   "long_description": {
+    "en": "A waterfront residence of 820 m² in Uluwatu, Indonesia, on 4,600 m², with 5 bedrooms.",
+    "es": "Residencia frente al mar de 820 m² en Uluwatu, Indonesia, sobre 4,600 m², con 5 dormitorios.",
+    "ar": "مسكن على الواجهة البحرية بمساحة 820 م² في أولواتو، إندونيسيا، على 4,600 م²، بـ 5 غرف نوم.",
+    "zh": "位于印度尼西亚·乌鲁瓦图的海滨住宅，建筑面积 820 平方米，占地 4,600 平方米，5 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-waterfront-asian-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Waterfront Residences",
+     "es": "Residencias frente al mar",
+     "ar": "مساكن على الواجهة البحرية",
+     "zh": "海滨住宅"
+    },
+    "variant": {
+     "en": "Asian tropical",
+     "es": "Tropical asiática",
+     "ar": "استوائي آسيوي",
+     "zh": "亚洲热带"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-stables",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "stables",
+   "title": "Highfield Stud",
+   "country": "United Kingdom",
+   "region": "Newmarket",
+   "city": "Newmarket",
+   "price_usd": 18900000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 7,
+   "built_area_m2": 1420,
+   "land_area_m2": 1200000,
+   "hectares": 120.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "An equestrian property in Newmarket, United Kingdom, with 120.0 hectares, stabling and a residence of 1,420 m².",
+    "es": "Propiedad ecuestre en Newmarket, Reino Unido, con 120.0 hectáreas, cuadras y vivienda de 1,420 m².",
+    "ar": "عقار للخيول في نيوماركت، المملكة المتحدة، بمساحة 120.0 هكتاراً وإسطبلات ومسكن 1,420 م².",
+    "zh": "位于英国·纽马基特的马术地产，占地 120.0 公顷，含马厩与 1,420 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Newmarket, United Kingdom, with 120.0 hectares, stabling and a residence of 1,420 m².",
+    "es": "Propiedad ecuestre en Newmarket, Reino Unido, con 120.0 hectáreas, cuadras y vivienda de 1,420 m².",
+    "ar": "عقار للخيول في نيوماركت، المملكة المتحدة، بمساحة 120.0 هكتاراً وإسطبلات ومسكن 1,420 م².",
+    "zh": "位于英国·纽马基特的马术地产，占地 120.0 公顷，含马厩与 1,420 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-stables.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "With stables",
+     "es": "Con establos",
+     "ar": "بإسطبلات",
+     "zh": "含马厩"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-riding-centre",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "riding-centre",
+   "title": "Centro Ecuestre Doñana",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Seville",
+   "price_usd": 12100000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 6,
+   "built_area_m2": 1180,
+   "land_area_m2": 860000,
+   "hectares": 86.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "An equestrian property in Seville, Spain, with 86.0 hectares, stabling and a residence of 1,180 m².",
+    "es": "Propiedad ecuestre en Sevilla, España, con 86.0 hectáreas, cuadras y vivienda de 1,180 m².",
+    "ar": "عقار للخيول في إشبيلية، إسبانيا، بمساحة 86.0 هكتاراً وإسطبلات ومسكن 1,180 م².",
+    "zh": "位于西班牙·塞维利亚的马术地产，占地 86.0 公顷，含马厩与 1,180 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Seville, Spain, with 86.0 hectares, stabling and a residence of 1,180 m².",
+    "es": "Propiedad ecuestre en Sevilla, España, con 86.0 hectáreas, cuadras y vivienda de 1,180 m².",
+    "ar": "عقار للخيول في إشبيلية، إسبانيا، بمساحة 86.0 هكتاراً وإسطبلات ومسكن 1,180 م².",
+    "zh": "位于西班牙·塞维利亚的马术地产，占地 86.0 公顷，含马厩与 1,180 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-riding-centre.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "Riding centre",
+     "es": "Centro ecuestre",
+     "ar": "مركز فروسية",
+     "zh": "骑术中心"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-competition",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "competition",
+   "title": "Haras de Bellevue",
+   "country": "France",
+   "region": "Normandy",
+   "city": "Deauville",
+   "price_usd": 26400000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 8,
+   "built_area_m2": 1640,
+   "land_area_m2": 1400000,
+   "hectares": 140.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "An equestrian property in Deauville, France, with 140.0 hectares, stabling and a residence of 1,640 m².",
+    "es": "Propiedad ecuestre en Deauville, Francia, con 140.0 hectáreas, cuadras y vivienda de 1,640 m².",
+    "ar": "عقار للخيول في دوفيل، فرنسا، بمساحة 140.0 هكتاراً وإسطبلات ومسكن 1,640 م².",
+    "zh": "位于法国·多维尔的马术地产，占地 140.0 公顷，含马厩与 1,640 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Deauville, France, with 140.0 hectares, stabling and a residence of 1,640 m².",
+    "es": "Propiedad ecuestre en Deauville, Francia, con 140.0 hectáreas, cuadras y vivienda de 1,640 m².",
+    "ar": "عقار للخيول في دوفيل، فرنسا، بمساحة 140.0 هكتاراً وإسطبلات ومسكن 1,640 م².",
+    "zh": "位于法国·多维尔的马术地产，占地 140.0 公顷，含马厩与 1,640 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-competition.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "Competition",
+     "es": "De competición",
+     "ar": "للمنافسات",
+     "zh": "竞赛级"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-hacienda",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "hacienda",
+   "title": "Hacienda El Potrero",
+   "country": "Mexico",
+   "region": "Jalisco",
+   "city": "Guadalajara",
+   "price_usd": 9700000,
+   "currency": "USD",
+   "bedrooms": 8,
+   "bathrooms": 7,
+   "built_area_m2": 1320,
+   "land_area_m2": 940000,
+   "hectares": 94.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "An equestrian property in Guadalajara, Mexico, with 94.0 hectares, stabling and a residence of 1,320 m².",
+    "es": "Propiedad ecuestre en Guadalajara, México, con 94.0 hectáreas, cuadras y vivienda de 1,320 m².",
+    "ar": "عقار للخيول في غوادالاخارا، المكسيك، بمساحة 94.0 هكتاراً وإسطبلات ومسكن 1,320 م².",
+    "zh": "位于墨西哥·瓜达拉哈拉的马术地产，占地 94.0 公顷，含马厩与 1,320 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Guadalajara, Mexico, with 94.0 hectares, stabling and a residence of 1,320 m².",
+    "es": "Propiedad ecuestre en Guadalajara, México, con 94.0 hectáreas, cuadras y vivienda de 1,320 m².",
+    "ar": "عقار للخيول في غوادالاخارا، المكسيك، بمساحة 94.0 هكتاراً وإسطبلات ومسكن 1,320 م².",
+    "zh": "位于墨西哥·瓜达拉哈拉的马术地产，占地 94.0 公顷，含马厩与 1,320 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-hacienda.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "Hacienda",
+     "es": "Hacienda",
+     "ar": "حاسيندا",
+     "zh": "庄园"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-polo",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "polo",
+   "title": "Estancia La Martina",
+   "country": "Argentina",
+   "region": "Buenos Aires",
+   "city": "Pilar",
+   "price_usd": 16800000,
+   "currency": "USD",
+   "bedrooms": 9,
+   "bathrooms": 8,
+   "built_area_m2": 1510,
+   "land_area_m2": 2100000,
+   "hectares": 210.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "An equestrian property in Pilar, Argentina, with 210.0 hectares, stabling and a residence of 1,510 m².",
+    "es": "Propiedad ecuestre en Pilar, Argentina, con 210.0 hectáreas, cuadras y vivienda de 1,510 m².",
+    "ar": "عقار للخيول في بيلار، الأرجنتين، بمساحة 210.0 هكتاراً وإسطبلات ومسكن 1,510 م².",
+    "zh": "位于阿根廷·皮拉尔的马术地产，占地 210.0 公顷，含马厩与 1,510 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Pilar, Argentina, with 210.0 hectares, stabling and a residence of 1,510 m².",
+    "es": "Propiedad ecuestre en Pilar, Argentina, con 210.0 hectáreas, cuadras y vivienda de 1,510 m².",
+    "ar": "عقار للخيول في بيلار، الأرجنتين، بمساحة 210.0 هكتاراً وإسطبلات ومسكن 1,510 م².",
+    "zh": "位于阿根廷·皮拉尔的马术地产，占地 210.0 公顷，含马厩与 1,510 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-polo.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "Polo",
+     "es": "De polo",
+     "ar": "بولو",
+     "zh": "马球"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-equestrian-rural",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "equestrian",
+   "variant": "rural",
+   "title": "Quinta dos Cavalos",
+   "country": "Portugal",
+   "region": "Alentejo",
+   "city": "Estremoz",
+   "price_usd": 6200000,
+   "currency": "USD",
+   "bedrooms": 7,
+   "bathrooms": 6,
+   "built_area_m2": 1060,
+   "land_area_m2": 680000,
+   "hectares": 68.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "An equestrian property in Estremoz, Portugal, with 68.0 hectares, stabling and a residence of 1,060 m².",
+    "es": "Propiedad ecuestre en Estremoz, Portugal, con 68.0 hectáreas, cuadras y vivienda de 1,060 m².",
+    "ar": "عقار للخيول في إستريموز، البرتغال، بمساحة 68.0 هكتاراً وإسطبلات ومسكن 1,060 م².",
+    "zh": "位于葡萄牙·埃斯特雷莫斯的马术地产，占地 68.0 公顷，含马厩与 1,060 平方米住宅。"
+   },
+   "long_description": {
+    "en": "An equestrian property in Estremoz, Portugal, with 68.0 hectares, stabling and a residence of 1,060 m².",
+    "es": "Propiedad ecuestre en Estremoz, Portugal, con 68.0 hectáreas, cuadras y vivienda de 1,060 m².",
+    "ar": "عقار للخيول في إستريموز، البرتغال، بمساحة 68.0 هكتاراً وإسطبلات ومسكن 1,060 م².",
+    "zh": "位于葡萄牙·埃斯特雷莫斯的马术地产，占地 68.0 公顷，含马厩与 1,060 平方米住宅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-equestrian-rural.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Equestrian Properties",
+     "es": "Propiedades ecuestres",
+     "ar": "عقارات للخيول",
+     "zh": "马术地产"
+    },
+    "variant": {
+     "en": "Rural",
+     "es": "Rural",
+     "ar": "ريفي",
+     "zh": "乡村"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-caribbean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "caribbean",
+   "title": "Cayo Sirena",
+   "country": "Bahamas",
+   "region": "Exuma",
+   "city": "Exuma Cays",
+   "price_usd": 68000000,
+   "currency": "USD",
+   "bedrooms": 6,
+   "bathrooms": 7,
+   "built_area_m2": 1200,
+   "land_area_m2": 340000,
+   "hectares": 34.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A private island of 34.0 hectares in Exuma Cays, Bahamas.",
+    "es": "Isla privada de 34.0 hectáreas en Cayos de Exuma, Bahamas.",
+    "ar": "جزيرة خاصة بمساحة 34.0 هكتاراً في جزر إكزوما، جزر البهاما.",
+    "zh": "位于巴哈马·埃克苏马群岛的私人岛屿，面积 34.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 34.0 hectares in Exuma Cays, Bahamas.",
+    "es": "Isla privada de 34.0 hectáreas en Cayos de Exuma, Bahamas.",
+    "ar": "جزيرة خاصة بمساحة 34.0 هكتاراً في جزر إكزوما، جزر البهاما.",
+    "zh": "位于巴哈马·埃克苏马群岛的私人岛屿，面积 34.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-caribbean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "Caribbean",
+     "es": "Caribeña",
+     "ar": "كاريبي",
+     "zh": "加勒比"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-mediterranean",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "mediterranean",
+   "title": "Isola del Faro",
+   "country": "Italy",
+   "region": "Sicily",
+   "city": "Aeolian Islands",
+   "price_usd": 42000000,
+   "currency": "USD",
+   "bedrooms": 5,
+   "bathrooms": 6,
+   "built_area_m2": 980,
+   "land_area_m2": 180000,
+   "hectares": 18.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A private island of 18.0 hectares in Aeolian Islands, Italy.",
+    "es": "Isla privada de 18.0 hectáreas en Islas Eolias, Italia.",
+    "ar": "جزيرة خاصة بمساحة 18.0 هكتاراً في جزر إيولي، إيطاليا.",
+    "zh": "位于意大利·伊奥利亚群岛的私人岛屿，面积 18.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 18.0 hectares in Aeolian Islands, Italy.",
+    "es": "Isla privada de 18.0 hectáreas en Islas Eolias, Italia.",
+    "ar": "جزيرة خاصة بمساحة 18.0 هكتاراً في جزر إيولي، إيطاليا.",
+    "zh": "位于意大利·伊奥利亚群岛的私人岛屿，面积 18.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-mediterranean.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "Mediterranean",
+     "es": "Mediterránea",
+     "ar": "متوسطي",
+     "zh": "地中海"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-asian-tropical",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "asian-tropical",
+   "title": "Pulau Selatan",
+   "country": "Indonesia",
+   "region": "Raja Ampat",
+   "city": "Raja Ampat",
+   "price_usd": 31500000,
+   "currency": "USD",
+   "bedrooms": 4,
+   "bathrooms": 5,
+   "built_area_m2": 740,
+   "land_area_m2": 620000,
+   "hectares": 62.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A private island of 62.0 hectares in Raja Ampat, Indonesia.",
+    "es": "Isla privada de 62.0 hectáreas en Raja Ampat, Indonesia.",
+    "ar": "جزيرة خاصة بمساحة 62.0 هكتاراً في راجا أمبات، إندونيسيا.",
+    "zh": "位于印度尼西亚·四王群岛的私人岛屿，面积 62.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 62.0 hectares in Raja Ampat, Indonesia.",
+    "es": "Isla privada de 62.0 hectáreas en Raja Ampat, Indonesia.",
+    "ar": "جزيرة خاصة بمساحة 62.0 هكتاراً في راجا أمبات، إندونيسيا.",
+    "zh": "位于印度尼西亚·四王群岛的私人岛屿，面积 62.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-asian-tropical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "Asian tropical",
+     "es": "Tropical asiática",
+     "ar": "استوائي آسيوي",
+     "zh": "亚洲热带"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-with-resort",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "with-resort",
+   "title": "Isla Bonita Resort Island",
+   "country": "Belize",
+   "region": "Stann Creek",
+   "city": "Placencia",
+   "price_usd": 145000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1240000,
+   "hectares": 124.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A private island of 124.0 hectares in Placencia, Belize.",
+    "es": "Isla privada de 124.0 hectáreas en Placencia, Belice.",
+    "ar": "جزيرة خاصة بمساحة 124.0 هكتاراً في بلاسينسيا، بليز.",
+    "zh": "位于伯利兹·普拉森西亚的私人岛屿，面积 124.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 124.0 hectares in Placencia, Belize.",
+    "es": "Isla privada de 124.0 hectáreas en Placencia, Belice.",
+    "ar": "جزيرة خاصة بمساحة 124.0 هكتاراً في بلاسينسيا، بليز.",
+    "zh": "位于伯利兹·普拉森西亚的私人岛屿，面积 124.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-with-resort.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "With resort",
+     "es": "Con resort",
+     "ar": "مع منتجع",
+     "zh": "含度假村"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-undeveloped",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "undeveloped",
+   "title": "Cayo Esmeralda",
+   "country": "Dominican Republic",
+   "region": "Samaná",
+   "city": "Samaná Bay",
+   "price_usd": 26000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1860000,
+   "hectares": 186.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A private island of 186.0 hectares in Samaná Bay, Dominican Republic.",
+    "es": "Isla privada de 186.0 hectáreas en Bahía de Samaná, República Dominicana.",
+    "ar": "جزيرة خاصة بمساحة 186.0 هكتاراً في خليج سامانا، جمهورية الدومينيكان.",
+    "zh": "位于多米尼加共和国·萨马纳湾的私人岛屿，面积 186.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 186.0 hectares in Samaná Bay, Dominican Republic.",
+    "es": "Isla privada de 186.0 hectáreas en Bahía de Samaná, República Dominicana.",
+    "ar": "جزيرة خاصة بمساحة 186.0 هكتاراً في خليج سامانا، جمهورية الدومينيكان.",
+    "zh": "位于多米尼加共和国·萨马纳湾的私人岛屿，面积 186.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-undeveloped.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "Undeveloped",
+     "es": "Sin desarrollar",
+     "ar": "غير مطوَّرة",
+     "zh": "未开发"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-private-islands-archipelago",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "private-islands",
+   "variant": "archipelago",
+   "title": "Archipiélago Las Ánimas",
+   "country": "Panama",
+   "region": "Guna Yala",
+   "city": "Guna Yala",
+   "price_usd": 410000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 7400000,
+   "hectares": 740.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A private island of 740.0 hectares in Guna Yala, Panama.",
+    "es": "Isla privada de 740.0 hectáreas en Guna Yala, Panamá.",
+    "ar": "جزيرة خاصة بمساحة 740.0 هكتاراً في غونا يالا، بنما.",
+    "zh": "位于巴拿马·库纳雅拉的私人岛屿，面积 740.0 公顷。"
+   },
+   "long_description": {
+    "en": "A private island of 740.0 hectares in Guna Yala, Panama.",
+    "es": "Isla privada de 740.0 hectáreas en Guna Yala, Panamá.",
+    "ar": "جزيرة خاصة بمساحة 740.0 هكتاراً في غونا يالا، بنما.",
+    "zh": "位于巴拿马·库纳雅拉的私人岛屿，面积 740.0 公顷。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-private-islands-archipelago.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Private Islands",
+     "es": "Islas privadas",
+     "ar": "جزر خاصة",
+     "zh": "私人岛屿"
+    },
+    "variant": {
+     "en": "Archipelago",
+     "es": "Archipiélago",
+     "ar": "أرخبيل",
+     "zh": "群岛"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  }
+ ]
+}
