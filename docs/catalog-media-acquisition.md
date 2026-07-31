@@ -115,5 +115,21 @@ y segundo intento de Palau que sigue sin leer como archipiélago.
 **Hueco abierto**: `pr-private-islands-archipelago` — hace falta una vista con MÚLTIPLES islotes
 inequívocos (buscar «Exuma cays aerial» o «San Blas islands aerial»).
 
-**Progreso: 18/144.** Categorías completas: castillos 6/6. Islas 5/6. Ecuestres 4/6 (faltan
-competition y polo). Estates 4/6 (faltan mountain, olive-grove... revisar contra el JSON).
+**Progreso: 18/144.**
+
+## Lote 3 ejecutado (31-jul-2026, misma sesión)
+
+**3 integradas de 12** — y esa proporción es el dato importante: las búsquedas de casa moderna
+y villa están MINADAS de renders. Aceptadas: el archipiélago de Exuma (múltiples cayos con
+canales turquesa — tercera tentativa, esta sí), un estate caribeño frente a playa (drone real),
+y la villa mediterránea blanca (verificada real con zoom: refracción del agua sobre gresite,
+mobiliario con uso, skyline verdadero).
+
+**9 rechazadas**: dos renders (resplandor imposible, edificio vacío perfecto), un HDR de
+catálogo inmobiliario, una casa suburbana, un aparthotel con LED duro, y cuatro sin sujeto o
+de familia equivocada (detalle de madera, claustro italiano ofrecido como hacienda, banco de
+arena y arrecife — válidas solo como complementarias de galería, apuntadas para esa fase).
+
+**Progreso: 21/144.** Completas: castillos 6/6, **islas 6/6**. Ecuestres 4/6, estates 4/6,
+villas 1/6, waterfront 1/6. Para casas/villas: buscar por REGIÓN REAL («Ibiza villa aerial»,
+«Mallorca finca») y no por «modern luxury house», que trae renders.
