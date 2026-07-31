@@ -79,8 +79,11 @@
   // (b/c) Device language already matches the page, or unsupported -> stop.
   if (want === cur) return;
 
-  // Build the equivalent URL in the detected language, keeping the filename.
-  var target = (want === "en" ? "/" + file : "/" + want + "/" + file)
+  // Build the equivalent URL in the detected language. The home page uses a
+  // CLEAN directory URL ("/", "/es/", "/ar/", "/zh/") with no index.html;
+  // inner pages keep their filename (e.g. "/es/contact.html").
+  var langBase = (want === "en") ? "/" : "/" + want + "/";
+  var target = (file === "index.html" ? langBase : langBase + file)
              + location.search + location.hash;
 
   // Mark the session and redirect once (replace: no history entry, no back-loop).
