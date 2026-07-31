@@ -31,8 +31,10 @@ que la biblia prohíbe — fotografía genérica, renders y repetición del mism
 
 ## Criterios de descarte ya aplicados (no volver a evaluarlos)
 
-- **Renders 3D** — se cuelan como fotografía. Descartar por título (`3D rendering`,
-  `3D visualization`, `illustration`) y por vista.
+- ~~**Renders 3D**~~ — **REGLA DEROGADA el 31-jul-2026 por instrucción de Josep.** Los renders
+  hechos por humanos SÍ se admiten si son realistas, están bien ejecutados y la arquitectura es
+  construible. Ver la enmienda en `BIBLIA_VISUAL_V3.md` §6. Se sigue rechazando: IA, arquitectura
+  imposible, resplandores irreales y renders de baja factura.
 - **Monumentos identificables** — Neuschwanstein, Peleș, Bran, Chateau de Blois, Villa del
   Balbianello, Marina Bay Sands. Usarlos insinuaría que XARU comercializa un monumento
   nacional o una propiedad museística. Preferir castillos y villas anónimos.
@@ -133,3 +135,19 @@ arena y arrecife — válidas solo como complementarias de galería, apuntadas p
 **Progreso: 21/144.** Completas: castillos 6/6, **islas 6/6**. Ecuestres 4/6, estates 4/6,
 villas 1/6, waterfront 1/6. Para casas/villas: buscar por REGIÓN REAL («Ibiza villa aerial»,
 «Mallorca finca») y no por «modern luxury house», que trae renders.
+
+## Enmienda de los renders y rescate (31-jul-2026)
+
+Josep deroga la prohibición de renders: **los hechos por humanos se admiten** si son realistas,
+bien ejecutados y la arquitectura es construible. Sigue prohibida la IA.
+
+Consecuencia inmediata: se **rescatan 3 de los 9 rechazos del lote 3** sin volver a descargarlos
+—seguían en el área de trabajo— y se reclasifican en el CSV como aprobados:
+`pr-contemporary-houses-lakefront`, `-desert` y `-golf`. Se suman dos que había descartado por
+exceso de celo: el claustro con columnas como hacienda colonial y la laguna de Tikehau como
+residencia insular.
+
+Siguen rechazados de aquel lote: la casa suburbana (mercado equivocado) y el aparthotel con LED
+duro (registro equivocado). Ninguno de los dos por ser render.
+
+**Progreso: 26/144.** Casas contemporáneas 3/6, haciendas 1/6, waterfront 2/6.

@@ -138,7 +138,22 @@ Usos válidos: hero de página, bloque editorial a todo ancho, composición part
 
 **Buscar:** luz natural · arquitectura real · materiales auténticos · paisaje real · escala · profundidad · movimiento de cámara profesional · drone cinematográfico · interiores habitables · oficinas contemporáneas · personas en situaciones naturales · hoteles en operación · construcción real · reuniones reales · actividad empresarial real.
 
-**Rechazar:** apariencia generada · arquitectura imposible · mansiones artificiales · exceso de HDR · cielos irreales · personas plásticas · hologramas · monedas flotando · robots · lujo de champán, joyas y coches · gente posando de millonario · apretones de manos como única idea empresarial · pantallas financieras falsas · ambientes vacíos sin vida · fotografía demasiado genérica · repetición del mismo edificio, la misma modelo o el mismo lugar.
+**Rechazar:** arquitectura imposible · mansiones artificiales · exceso de HDR · cielos irreales · personas plásticas · hologramas · monedas flotando · robots · lujo de champán, joyas y coches · gente posando de millonario · apretones de manos como única idea empresarial · pantallas financieras falsas · ambientes vacíos sin vida · fotografía demasiado genérica · repetición del mismo edificio, la misma modelo o el mismo lugar.
+
+### ENMIENDA (31-jul-2026, instrucción de Josep): los renders humanos SÍ se permiten
+La prohibición sigue siendo de **inteligencia artificial**, no de trabajo humano. Un render
+arquitectónico hecho por un estudio —visualización 3D, infografía de promoción— es obra de una
+persona y es **exactamente** como se comercializan las promociones antes de existir. Se admite.
+
+Se admite un render cuando: es **realista** (materiales, luz e implantación creíbles), está
+**bien ejecutado** (no amateur), y su arquitectura **podría construirse**.
+
+Se sigue rechazando: material generado por IA, arquitectura físicamente imposible, resplandores
+irreales, personas de aspecto plástico y renders torpes o de baja factura.
+
+Nota de honestidad, no de estética: un render no es una fotografía de un activo existente. En un
+catálogo demostrativo esto es irrelevante —todo está declarado como demostrativo— pero el día que
+haya activos reales, un render nunca podrá ilustrar uno de ellos sin decirlo.
 
 ---
 
