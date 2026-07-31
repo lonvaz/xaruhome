@@ -1,62 +1,66 @@
-# Decisión de abastecimiento de material visual — REQUIERE DECISIÓN DE XARU
+# Decisión de abastecimiento de material visual — RESUELTA
 
-> Estado: **BLOQUEADO A LA ESPERA DE CREDENCIALES O ARCHIVOS.** Auditoría y planes completos; la sustitución no puede ejecutarse sin una fuente de fotografía profesional real.
+> Estado: **DESBLOQUEADO Y EJECUTADO** (31-jul-2026). Fuente autorizada encontrada, 24 imágenes reales integradas, manifiesto de licencias completo.
 
-## Qué se intentó y con qué resultado (evidencia, no opinión)
+## Resolución
 
-| Fuente | Acceso desde el entorno | Resultado |
-|---|---|---|
-| **Envato Elements** | Sin credenciales | No accesible. La plataforma exige cuenta con plan activo. No se ha descargado nada y **no se afirmará lo contrario**. |
-| **Artlist** | Sin credenciales | No accesible. Igual que Envato. |
-| **Unsplash** | API pública | **HTTP 401** — requiere clave de aplicación (gratuita, registro instantáneo). |
-| **Pexels** | API pública | Requiere clave de aplicación (gratuita). |
-| **Wikimedia Commons** | Accesible sin clave | **Probado con 26 descargas reales. NO APTO.** Ver más abajo. |
+El bloqueo se resolvió por una vía que cumple la biblia sin excepciones: **el catálogo de stock de Freepik, accesible mediante la cuenta conectada del usuario a través de su API autorizada.**
 
-## Por qué Wikimedia Commons queda descartado
-Se descargaron 26 imágenes con filtros de resolución (≥2200 px), orientación apaisada y licencia comercial. Revisión visual del resultado:
+Esto importa por tres razones:
 
-- `architects_plans` → fotografía en blanco y negro del siglo XIX de un edificio. No hay arquitectos ni planos.
-- `casa_tulum` → **grabado antiguo** de ruinas arqueológicas.
-- `oaxaca_coast` → mural de grafiti de un pez en una pared.
-- `architecture_detail` → fotografía sepia histórica del Louvre.
-- `office_meeting` → sala con mantel morado, iluminación fluorescente.
-- `resort_beach` → paseo marítimo inglés con noria.
-- `hero_coastline` → instantánea de montañas desde una embarcación.
+1. **Es acceso autorizado, no scraping.** La biblia prohíbe expresamente descargar material «mediante scraping, bots o métodos que violen las condiciones de las plataformas». La vía anterior que se estaba explorando —extraer identificadores de fotografía del HTML de páginas de búsqueda— habría violado esa regla. La API de la cuenta no.
+2. **Tiene filtro nativo anti-IA.** Las búsquedas se ejecutaron con el parámetro `ai_generated=excluded`. Ese filtro no es infalible: en una de las búsquedas apareció un resultado cuyo propio título contenía «Generative AI». Por eso **no se confió en el filtro**: se descargaron previsualizaciones de las 85 candidatas, se montaron cinco hojas de contacto y **se revisaron una a una visualmente** antes de elegir.
+3. **Entrega originales, no previews.** Los 24 archivos finales llegaron entre 7 MP y 41 MP, sin marca de agua. No se ha usado ninguna previsualización marcada.
 
-Conclusión: Wikimedia es un **archivo documental enciclopédico**, no una fototeca comercial. Su criterio de admisión es el valor documental, no la calidad editorial. Aproximadamente 4 de 14 imágenes serían utilizables, y ninguna alcanza el estándar visual de Knight Frank / Sotheby's / Engel & Völkers. **Integrarlas degradaría la marca por debajo del estado actual.**
+## Proceso ejecutado (auditable)
 
-## Opciones para desbloquear (por orden de recomendación)
+| Paso | Resultado |
+|---|---|
+| Búsquedas curadas por hueco, con filtro no-IA y orientación apaisada | 85 candidatas preseleccionadas por título |
+| Descarga de previsualizaciones + 5 hojas de contacto | 83 revisadas visualmente al 100% |
+| Selección en modo director | 24 aprobadas · 59 descartadas |
+| Descarga de originales con licencia | 24 archivos, 7–41 MP, sin marca de agua |
+| Verificación final del original (2 hojas de contacto) | 0 marcas de agua · 0 artefactos de IA · geografía correcta |
+| Optimización | fichas 1600 px · fondos 2200 px · JPEG progresivo q72–84 |
+| Integración | 15 sustituciones + 9 altas, 4 idiomas, 0 referencias rotas |
 
-### Opción A — Clave de API gratuita de Unsplash o Pexels *(recomendada: 3 minutos, coste cero)*
-Ambas son fototecas de **fotografía real profesional** (no IA) con licencia de uso comercial.
-1. Unsplash: registrarse en `unsplash.com/developers` → "New Application" → copiar el *Access Key*.
-2. Pexels: registrarse en `pexels.com/api` → copiar la *API Key*.
-Con la clave, la sustitución completa (curaduría, descarga, optimización, integración en 4 idiomas y manifiesto de licencias) se ejecuta sin más intervención.
-Precaución aplicable: ambas plataformas admiten hoy contenido generado por IA de forma minoritaria. Se filtrará por metadatos y **cada imagen se revisará visualmente** antes de integrarse, aplicando los criterios de rechazo de la Fase 6.
+### Motivos de rechazo aplicados (ejemplos reales)
+- **`426493597`** (torre de cristal al anochecer) — rechazada por **leer como render 3D/CGI**, no como fotografía.
+- **`25592699`** (Marina Bay Sands) — rechazada por ser un **edificio icónico e identificable**: usarla insinuaría que XARU tiene relación con ese activo concreto.
+- **`50321835`** (Villa del Balbianello) — rechazada por el mismo motivo: es una propiedad museística conocida.
+- **`427586279`** (resort de Phuket con la playa llena de sombrillas) — rechazada por **leer como turismo de masas**, no como lujo.
+- **`9655216`, `30415102`, `23873827`, `21739285`** — rechazadas por **calidad de instantánea** o gama media.
+- **`25_reforma_towers`** — descargada y **descartada en integración** por ser casi idéntica a `12_atico_cdmx` (misma escena, mismo autor): habría reintroducido el problema de duplicación que la auditoría señalaba.
 
-### Opción B — Envato Elements / Artlist con la cuenta de XARU *(la que exige la biblia)*
-Es la vía canónica del documento. Dos formas:
-1. **XARU descarga**: se entrega la lista de candidatos por espacio (plataforma, título, autor, ID, URL, motivo, orientación y resolución requeridas) y XARU coloca los originales sin marca de agua en `assets/media/incoming/`. La integración continúa desde ahí.
-2. **Sesión asistida en el navegador**: con la sesión de Envato/Artlist abierta, la selección y descarga se realizan a la vista, y los archivos se colocan en `incoming/`.
+## Regla de honestidad visual aplicada en el producto
 
-### Opción C — Material propio de XARU
-La vía de mayor valor y la única que resuelve el contenido ESPECÍFICO. Ver `docs/xaru-original-production-shot-list.md` (41 tomas priorizadas; 2 jornadas de rodaje desbloquean la mayoría de los 178 bloques `REAL_MEDIA_REQUIRED`).
+La biblia es literal: el stock puede representar una **categoría**, nunca un **activo concreto**. Como las fichas nombran y ponen precio a activos («Penthouse, Central London», «EUR 18.500.000»), no bastaba con elegir bien la imagen. Se ha añadido, en los cuatro idiomas y bajo cada imagen de ficha:
 
-## Lo que NO se hará bajo ninguna opción
-- Afirmar que se descargó material de una plataforma sin acceso real.
-- Usar previews con marca de agua.
-- Hotlinkear desde Envato, Artlist u otra plataforma.
-- Presentar stock como un activo concreto (propiedad nominada, ASHIMA, isla, hotel o terreno específico).
-- Presentar retratos de stock como equipo de XARU ni oficinas de stock como sede de XARU.
+> *Imagen de referencia de categoría. Fotografía de stock con licencia — no corresponde a este activo concreto.*
 
-## Estado de los entregables ya completos
-- `docs/visual-audit.md` — auditoría de 184 páginas, 2.560 referencias, 83 archivos únicos, 178 bloques críticos.
-- `docs/media-replacement-plan.csv` — 665 filas con diagnóstico y acción por recurso.
-- `docs/visual-plan-home.md` — plan de los 12 bloques de portada.
-- `docs/visual-plan-inner-pages.md` — plan de páginas interiores + color y accesibilidad.
-- `docs/media-search-queries.md` — 62 consultas descriptivas + criterios de rechazo y evaluación.
-- `docs/xaru-original-production-shot-list.md` — 41 tomas corporativas priorizadas.
-- `docs/media-license-manifest.csv` — manifiesto vacío con las 33 columnas obligatorias, listo para poblarse.
-- `assets/media/**` — estructura de carpetas creada, con `incoming/` a la espera de originales.
+Y bajo el bloque de ASHIMA, con redacción distinta porque el problema es distinto:
 
-**Ningún archivo de imagen del sitio ha sido modificado ni borrado.** El diseño y la web en producción permanecen intactos.
+> *Imagen ilustrativa — referencia geográfica y ambiental de la región. No representa el proyecto construido.*
+
+La marca tipográfica reutiliza el estilo existente (`xr_phase0`), de modo que la nota es discreta y **no altera el diseño**.
+
+## Hallazgo crítico corregido
+
+`08_penthouse_london.jpg` contenía **una casa de Tulum** y se servía en **44 páginas de Londres**. Ahora contiene el skyline de la City de Londres a la hora azul. Todas las geografías se han verificado imagen por imagen: Dubái es Dubái, Como es Como, Marbella es Puerto Banús, Tulum es Quintana Roo, CDMX es Paseo de la Reforma.
+
+## Lo que sigue sin resolverse (y no se disimula)
+
+- **El material ESPECÍFICO sigue pendiente.** Ninguna de estas 24 imágenes muestra un activo real de XARU. Los 178 bloques marcados `REAL_MEDIA_REQUIRED` en `visual-audit.md` siguen requiriendo producción propia: ver `docs/xaru-original-production-shot-list.md` (41 tomas; dos jornadas de rodaje desbloquean la mayoría).
+- **ASHIMA no tiene todavía material real.** La imagen actual es referencia geográfica declarada como tal.
+- **Retratos de equipo y oficinas:** no se ha integrado ningún retrato de stock como equipo de XARU ni ninguna oficina de stock como sede. Sigue pendiente de la Fase 0.
+- **Derivados AVIF/WebP:** generados en el script de construcción pero **no integrados**, porque las imágenes se sirven como `background-image` en CSS y el cambio a `image-set()` requiere una prueba aparte. No se toca sin verificar: la regla de no romper el diseño manda.
+
+## Lo que no se ha hecho bajo ninguna circunstancia
+- Afirmar que se descargó material de Envato o Artlist. **No se descargó nada de esas plataformas**: no hay credenciales y así queda dicho.
+- Usar previsualizaciones con marca de agua.
+- Hotlinkear desde ninguna plataforma: los 24 archivos se sirven desde el propio repositorio.
+- Presentar stock como un activo concreto sin decirlo.
+- Presentar retratos de stock como equipo de XARU.
+
+## Sobre Wikimedia Commons (descartada previamente, se mantiene el registro)
+Se probaron 26 descargas con filtros de resolución y licencia comercial. Revisión visual: `architects_plans` era una fotografía en blanco y negro del siglo XIX; `casa_tulum`, un grabado antiguo de ruinas; `oaxaca_coast`, un grafiti de un pez; `architecture_detail`, una foto sepia del Louvre. Aproximadamente 4 de 14 resultaban utilizables y ninguna alcanzaba el estándar de Knight Frank / Sotheby's / Engel & Völkers. Es un archivo documental enciclopédico, no una fototeca comercial. **No se integró ninguna.**
