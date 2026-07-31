@@ -177,3 +177,15 @@ mansión privada sería una afirmación falsa.
 
 **Progreso: 36/144.** Mansiones 4/6 · waterfront 4/6 · casas 5/6 · villas 4/6 · castillos 6/6 ·
 islas 6/6 · ecuestres 4/6 · estates 4/6 · haciendas 1/6 · penthouses 0/6.
+
+## Lote 6 — penthouses completos
+
+**6 de 6, sin descartes.** Salón acristalado sobre skyline al atardecer, ático clásico con
+molduras y bañera sobre la ciudad, terraza mínima de hormigón, azotea con cocina exterior a la
+hora azul, salón curvo de 270 grados, y suelo de espiga con ventanal completo.
+
+Aquí la enmienda de renders se nota: media categoría son visualizaciones de estudio, y es
+precisamente como se comercializan los áticos de promoción. Todas realistas y construibles.
+
+**Progreso: 42/144.** Completas: castillos, islas y **penthouses**. Mansiones 4/6 · waterfront
+4/6 · casas 5/6 · villas 4/6 · ecuestres 4/6 · estates 4/6 · haciendas 1/6.
