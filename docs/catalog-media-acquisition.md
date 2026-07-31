@@ -189,3 +189,12 @@ precisamente como se comercializan los áticos de promoción. Todas realistas y 
 
 **Progreso: 42/144.** Completas: castillos, islas y **penthouses**. Mansiones 4/6 · waterfront
 4/6 · casas 5/6 · villas 4/6 · ecuestres 4/6 · estates 4/6 · haciendas 1/6.
+
+## Lote 7 — haciendas
+
+**5 de 6.** Casona blanca con viñedo y jardín de setos, casa de teja roja en el centro de un
+palmeral, casona sobre colinas verdes con caminos de tierra roja, valle cultivado en mosaico, y
+dehesa arbolada con sierra al fondo para el estate de olivar.
+
+**Progreso: 47/144.** Haciendas 5/6 (falta ecuestre) · estates 5/6 · casas 5/6 · villas 4/6 ·
+mansiones 4/6 · waterfront 4/6 · ecuestres 4/6 · castillos, islas y penthouses completos.
