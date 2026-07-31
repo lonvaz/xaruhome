@@ -1182,6 +1182,10 @@ body.page-loaded .xr_hero_slider_wrap {
   .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a:hover::before {
     transform: scaleX(1);
   }
+  /* Active page: persistent underline (same treatment as hover) */
+  .cs_site_header.cs_style_1 .cs_nav .cs_nav_list > li > a[aria-current="page"]::before {
+    transform: scaleX(1);
+  }
 }
 
 /* ---- Listing land-card price tag ---- */
