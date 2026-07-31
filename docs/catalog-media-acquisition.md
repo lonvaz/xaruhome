@@ -228,3 +228,50 @@ tanto para `downloadscdn6.magnific.com` (403 CONNECT) como para
 3. Integrar a 1600px en `assets/img/xaru/catalog/`, registrar en
    `docs/xaru-stock-media-map.csv`, commit y push por lote.
 4. Volver a lanzar el scouting de los 36 slots de suelo (`ld-*`).
+
+---
+
+## 31-jul-2026 (tarde) — el catálogo ya se ve; las descargas topan cuota
+
+**Imágenes:** 48/144. Sólo entró una nueva (Barcelona contemporánea).
+
+**Bloqueo medido:** `stock_download` responde `rate_limit_exceeded` de forma
+sostenida durante más de 25 minutos, con reintentos espaciados. No son los
+créditos —quedan 41.675 de 45.000— sino la cuota de descargas de la fuente,
+agotada por el trabajo de hoy. Un error propio contribuyó: lancé 13 descargas
+en paralelo y las 12 rechazadas cuentan igual contra la ventana. **A partir de
+ahora las descargas van estrictamente en serie, con 35 s entre una y otra.**
+
+**Verificado hoy:** la ruta Chrome → `~/Downloads` → `device_stage_files` sigue
+funcionando (los ficheros llegan como `.com.google.Chrome.*`, hay que listarlos
+con `ls -a` y localizarlos por `mtime`). La salida de red del contenedor sigue
+cerrada para el CDN y para el servidor de previsualizaciones.
+
+**Hecho con el tiempo de espera (todo offline, sin red):**
+- `tools_derivatives.py` — 432 derivadas AVIF/WebP/JPEG en 480/768/1280/1920/2560.
+  No se generan anchos por encima del original: no se inventa resolución.
+  AVIF pesa ~46 % menos que el JPEG equivalente.
+- `assets/js/xaru-catalog.js` — renderiza los 144 activos desde
+  `data/properties/*.json` **con el marcado propio de la plantilla**
+  (`cs_card cs_style_1`), de modo que diseño, efectos y animaciones no se tocan.
+  `<picture>` + `srcset`, `loading=lazy`, `decoding=async`, i18n por `lang`.
+- Filtros por tipología (25 en la página de búsqueda, 11 en cada pilar).
+- La barra lateral heredada (dormitorios / baños / precio) **ya funciona** contra
+  los datos reales. Las opciones de 1, 2 y 3 dormitorios se ocultan solas: en
+  esta banda de precio no pueden devolver nada, y una casilla que nunca acierta
+  es peor que ninguna casilla.
+- `gen_i18n.py` inyecta el montaje en buy / rent / search × en·es·ar·zh.
+
+**Comprobado en navegador** (Playwright, Chromium): 60 fichas en buy, 48 en rent,
+144 en search; árabe en RTL real (`dir=rtl`, la etiqueta de estado se refleja al
+lado correcto); tipología villas 60→6; «más de 4 dormitorios» 60→49; mínimo
+20 M USD 60→25. Las derivadas AVIF sirven con dimensiones correctas (480×310).
+
+**Nota honesta sobre la nota anterior:** en el corte previo dije que la primera
+imagen cargaba a 419 px. Era un artefacto de medir durante la carga; comprobado
+después contra el fichero y contra el navegador, AVIF, WebP y JPEG dan los tres
+480×310. No había defecto.
+
+**Pendiente:** 96 imágenes (12 residenciales, 48 hostelería, 36 suelo), el
+scouting de los 36 slots `ld-*`, la reestructuración de la portada (§16), y la
+auditoría final de 30 puntos.
