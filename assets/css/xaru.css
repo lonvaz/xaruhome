@@ -1702,6 +1702,7 @@ body.page-loaded .xr_hero_slider_wrap {
 .xr_presence_item h4 { font-family: var(--primary-font); font-size: 20px; margin-bottom: 8px; }
 .xr_presence_item p { font-size: 14px; color: var(--secondary-color); margin: 0; }
 .xr_phase0 { font-family: var(--secondary-font); font-size: 12px; letter-spacing: 1px; color: var(--accent3-color); font-style: italic; }
+.xr_img_note { font-family: var(--secondary-font); font-size: 12px; letter-spacing: .6px; color: var(--accent3-color); font-style: italic; opacity: .85; margin: 10px 0 0; line-height: 1.5; }
 
 /* ---- insights chips ---- */
 .xr_insight_chips { display: flex; flex-wrap: wrap; gap: 12px; }
