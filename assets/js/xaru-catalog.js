@@ -126,7 +126,9 @@
       '<div class="col-md-6 col-xl-4 xr_cat_item" ' +
       'data-subcategory="' + esc(item.subcategory) + '" ' +
       'data-variant="' + esc(item.variant) + '" ' +
-      'data-price="' + Number(item.price_usd || 0) + '">' +
+      'data-price="' + Number(item.price_usd || 0) + '" ' +
+      'data-beds="' + Number(item.bedrooms || 0) + '" ' +
+      'data-baths="' + Number(item.bathrooms || 0) + '">' +
         '<div class="cs_card cs_style_1">' +
           '<a href="' + esc(detail) + '" aria-label="' + esc(title) +
           '" class="cs_card_thumbnail cs_radius_20 cs_mb_17 position-relative">' +
@@ -175,11 +177,103 @@
       mount.querySelectorAll(".xr_cat_filter").forEach(function (x) {
         x.classList.toggle("is-active", x === b);
       });
-      document.querySelectorAll(".xr_cat_item").forEach(function (el) {
-        var show = f === "*" || el.getAttribute("data-subcategory") === f;
-        el.hidden = !show;
+      STATE.typology = f;
+      applyFilters();
+    });
+  }
+
+  /* ---------- barra lateral heredada de la plantilla ----------
+   * La plantilla trae filtros de dormitorios, baños y precio. Al pasar el
+   * listado a datos, esos controles quedarían decorativos: se conectan aquí
+   * para que hagan lo que dicen que hacen. Si la página no los trae, no pasa
+   * nada — todo es opcional.                                               */
+
+  var STATE = { typology: "*", beds: [], baths: [], min: 0, max: Infinity };
+
+  function applyFilters() {
+    document.querySelectorAll(".xr_cat_item").forEach(function (el) {
+      var beds = +el.getAttribute("data-beds");
+      var baths = +el.getAttribute("data-baths");
+      var p = +el.getAttribute("data-price");
+      var ok =
+        (STATE.typology === "*" || el.getAttribute("data-subcategory") === STATE.typology) &&
+        (!STATE.beds.length || STATE.beds.some(function (n) { return n === 5 ? beds > 4 : beds === n; })) &&
+        (!STATE.baths.length || STATE.baths.some(function (n) { return n === 5 ? baths > 4 : baths === n; })) &&
+        p >= STATE.min && p <= STATE.max;
+      el.hidden = !ok;
+    });
+    var vis = document.querySelectorAll(".xr_cat_item:not([hidden])").length;
+    var out = document.querySelector("[data-catalog-count]");
+    if (out) out.textContent = vis;
+  }
+
+  function checkedNums(labels) {
+    var out = [];
+    labels.forEach(function (lb) {
+      var box = lb.querySelector('input[type="checkbox"]');
+      if (!box || !box.checked) return;
+      var txt = (lb.textContent || "").trim();
+      out.push(/more|más|mas|أكثر|以上/i.test(txt) ? 5 : parseInt(txt, 10));
+    });
+    return out.filter(function (n) { return !isNaN(n); });
+  }
+
+  function bindSidebar() {
+    // Agrupa los checkboxes por el encabezado de su bloque.
+    var groups = { beds: [], baths: [] };
+    document.querySelectorAll("h2, h3, h4, .cs_widget_title").forEach(function (h) {
+      var txt = (h.textContent || "").toLowerCase();
+      var key = /bedroom|dormitor|غرف النوم|卧室/.test(txt) ? "beds"
+              : /bathroom|baño|bano|الحمامات|浴室/.test(txt) ? "baths" : null;
+      if (!key) return;
+      var box = h.parentElement;
+      if (box) groups[key] = Array.prototype.slice.call(box.querySelectorAll("li, label"));
+    });
+
+    // Valores que realmente existen en el catálogo. La plantilla ofrece
+    // 1/2/3 dormitorios, que en una cartera de este rango no se dan nunca:
+    // dejar esas casillas sería ofrecer un filtro que no puede devolver nada.
+    var present = { beds: {}, baths: {} };
+    document.querySelectorAll(".xr_cat_item").forEach(function (el) {
+      var b = +el.getAttribute("data-beds"), t2 = +el.getAttribute("data-baths");
+      if (b) present.beds[b > 4 ? 5 : b] = 1;
+      if (t2) present.baths[t2 > 4 ? 5 : t2] = 1;
+    });
+
+    Object.keys(groups).forEach(function (k) {
+      groups[k].forEach(function (lb) {
+        var input = lb.querySelector('input[type="checkbox"]');
+        if (!input) return;
+        var n = checkedNums([lb].map(function (x) {
+          var c = x.cloneNode(true);
+          var cb = c.querySelector('input[type="checkbox"]');
+          if (cb) cb.checked = true;
+          return c;
+        }))[0];
+        if (n && !present[k][n]) { lb.hidden = true; return; }
+        input.addEventListener("change", function () {
+          STATE[k] = checkedNums(groups[k]);
+          applyFilters();
+        });
       });
     });
+
+    var priceInputs = Array.prototype.slice.call(
+      document.querySelectorAll('input[placeholder^="$"]'));
+    if (priceInputs.length >= 2) {
+      // La plantilla trae rangos de vivienda corriente; el catálogo arranca
+      // por encima del millón. Se reetiquetan para no mentir sobre el rango.
+      priceInputs[0].placeholder = "$1,000,000";
+      priceInputs[1].placeholder = "$500,000,000";
+      priceInputs.slice(0, 2).forEach(function (inp, i) {
+        inp.addEventListener("input", function () {
+          var v = parseFloat((inp.value || "").replace(/[^0-9.]/g, ""));
+          if (i === 0) STATE.min = isNaN(v) ? 0 : v;
+          else STATE.max = isNaN(v) ? Infinity : v;
+          applyFilters();
+        });
+      });
+    }
   }
 
   /* ---------- arranque ---------- */
@@ -206,6 +300,9 @@
 
       var fmount = document.querySelector("[data-catalog-filters]");
       if (fmount) filters(items, l, fmount);
+
+      bindSidebar();
+      applyFilters();
 
       var note = document.querySelector("[data-catalog-note]");
       if (note) note.textContent = t(packs[0].demo_note, l);
