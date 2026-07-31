@@ -151,3 +151,16 @@ Siguen rechazados de aquel lote: la casa suburbana (mercado equivocado) y el apa
 duro (registro equivocado). Ninguno de los dos por ser render.
 
 **Progreso: 26/144.** Casas contemporáneas 3/6, haciendas 1/6, waterfront 2/6.
+
+## Lote 4 — primer lote con la enmienda de renders vigente
+
+**5 aprobadas de 6.** Tres fotografías reales (villa de piedra a hora dorada, casa de madera
+sobre pilotes en selva, villa urbana de ladrillo y vidrio al anochecer) y **dos renders humanos**
+admitidos ya por la enmienda: mansión en voladizo para comunidad privada, y pabellón sobre
+lámina de agua para casa de montaña. Ambos realistas, bien ejecutados y construibles.
+
+**1 rechazada** — y no por ser render: fachada clásica envuelta en tiras de LED frío, que lee a
+salón de bodas y no a residencia. El criterio que queda vivo es el **registro**, no la técnica.
+
+**Progreso: 31/144.** Casas contemporáneas 5/6 · villas 4/6 · mansiones 1/6 · haciendas 1/6 ·
+waterfront 2/6 · ecuestres 4/6 · estates 4/6 · castillos 6/6 · islas 6/6.
