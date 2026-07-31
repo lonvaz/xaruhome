@@ -101,3 +101,19 @@ CONTENIDO en hoja de contacto (los nombres temporales no conservan el orden). El
 JavaScript NO funciona (CORS).
 
 **Progreso: 9/144.**
+
+## Lote 2 ejecutado (31-jul-2026, misma sesión)
+
+**9 integradas**: fortaleza habitable (cierra el hueco del lote 1), isla caribeña de Bocas del
+Toro (distinta de la del hero), y 7 de ecuestres/estates: establos aéreos con paddocks, pista
+rural, centro de doma cubierto (jinete trabajando — situación natural permitida), manada en
+campo abierto, finca con caballos y casa señorial, palacete forestal (caza), y finca con viñas.
+
+**3 rechazadas**: hombre sin camiseta dando cuerda (instantánea), pradera plana sin fuerza,
+y segundo intento de Palau que sigue sin leer como archipiélago.
+
+**Hueco abierto**: `pr-private-islands-archipelago` — hace falta una vista con MÚLTIPLES islotes
+inequívocos (buscar «Exuma cays aerial» o «San Blas islands aerial»).
+
+**Progreso: 18/144.** Categorías completas: castillos 6/6. Islas 5/6. Ecuestres 4/6 (faltan
+competition y polo). Estates 4/6 (faltan mountain, olive-grove... revisar contra el JSON).
