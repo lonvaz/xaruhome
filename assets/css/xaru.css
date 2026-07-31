@@ -1781,3 +1781,72 @@ body.page-loaded .xr_hero_slider_wrap {
   .xr_filter_field { min-width: 100%; }
 }
 .xr_badge_row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ============ Catálogo demostrativo (xaru-catalog.js) ============ */
+/* Los estilos reutilizan los mismos tokens de marca que el resto del sitio:
+   no introducen colores, tipografías ni radios nuevos. */
+
+.xr_cat_kind {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: var(--accent3-color);
+  font-family: var(--secondary-font);
+  margin-bottom: 0;
+}
+
+/* Etiqueta de estado sobre la miniatura. Mismo tratamiento que el precio,
+   en el lado opuesto, para no romper la composición de la tarjeta. */
+.xr_demo_flag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+  color: #fff;
+  background-color: rgba(28, 27, 25, 0.88);
+  border: 1px solid rgba(201, 168, 118, 0.6);
+}
+[dir="rtl"] .xr_demo_flag { left: auto; right: 16px; }
+
+/* Filtros por tipología, en sustitución de los genéricos de la plantilla. */
+[data-catalog-filters] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+.xr_cat_filter {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 118, 0.45);
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.xr_cat_filter:hover { border-color: var(--accent3-color); color: var(--accent3-color); }
+.xr_cat_filter.is-active {
+  background-color: rgba(28, 27, 25, 0.88);
+  border-color: rgba(201, 168, 118, 0.6);
+  color: #fff;
+}
+
+/* La etiqueta de estado se ancla a la miniatura, no al viewport: no dependemos
+   de que la utilidad .position-relative de Bootstrap esté presente. */
+.cs_card_thumbnail { position: relative; }
+
+/* El <picture> no debe alterar el encuadre heredado de la plantilla. */
+.cs_card_thumbnail picture { display: block; }
+.cs_card_thumbnail picture img { width: 100%; display: block; }
+
+.xr_cat_item[hidden] { display: none !important; }
