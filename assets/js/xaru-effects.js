@@ -175,3 +175,42 @@
     requestAnimationFrame(rafLoop);
   });
 })();
+
+/* ------------------------------------------------------------------
+   Lazy video (Biblia Visual V3 §12).
+   Sources carry data-src and are only attached when the card is near the
+   viewport, so nothing downloads above the fold and the videos never all
+   load at once. Playback pauses when the card leaves the viewport, and the
+   whole thing stands down under prefers-reduced-motion, leaving the poster.
+------------------------------------------------------------------- */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids = [].slice.call(document.querySelectorAll('video[data-xr-lazyvideo]'));
+  if (!vids.length || reduce || !('IntersectionObserver' in window)) return;
+
+  function attach(v) {
+    if (v.dataset.xrLoaded) return;
+    v.dataset.xrLoaded = '1';
+    [].slice.call(v.querySelectorAll('source[data-src]')).forEach(function (s) {
+      s.src = s.getAttribute('data-src');
+      s.removeAttribute('data-src');
+    });
+    v.load();
+    v.addEventListener('loadeddata', function () { v.classList.add('is-ready'); }, { once: true });
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        attach(v);
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '200px 0px', threshold: 0.15 });
+
+  vids.forEach(function (v) { io.observe(v); });
+})();

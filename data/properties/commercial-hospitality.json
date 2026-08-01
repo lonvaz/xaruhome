@@ -1,0 +1,2969 @@
+{
+ "$schema": "../SCHEMA.md",
+ "version": 3,
+ "demo": true,
+ "note": "Demonstrative portfolio built per docs/BIBLIA_VISUAL_V3.md. Names, locations and figures are illustrative.",
+ "demo_note": {
+  "en": "Demonstrative portfolio for presentation.",
+  "es": "Portafolio demostrativo para presentación.",
+  "ar": "محفظة توضيحية لأغراض العرض.",
+  "zh": "用于演示的示范性资产组合。"
+ },
+ "ui": {
+  "demo_note": {
+   "en": "Demonstrative portfolio for presentation.",
+   "es": "Portafolio demostrativo para presentación.",
+   "ar": "محفظة توضيحية لأغراض العرض.",
+   "zh": "用于演示的示范性资产组合。"
+  },
+  "beds": {
+   "en": "Bedrooms",
+   "es": "Dormitorios",
+   "ar": "غرف النوم",
+   "zh": "卧室"
+  },
+  "baths": {
+   "en": "Bathrooms",
+   "es": "Baños",
+   "ar": "الحمامات",
+   "zh": "浴室"
+  },
+  "built": {
+   "en": "Built area",
+   "es": "Superficie construida",
+   "ar": "المساحة المبنية",
+   "zh": "建筑面积"
+  },
+  "land": {
+   "en": "Land",
+   "es": "Terreno",
+   "ar": "مساحة الأرض",
+   "zh": "土地面积"
+  },
+  "hectares": {
+   "en": "Area",
+   "es": "Superficie",
+   "ar": "المساحة",
+   "zh": "面积"
+  },
+  "keys": {
+   "en": "Keys",
+   "es": "Llaves",
+   "ar": "المفاتيح",
+   "zh": "客房数"
+  },
+  "berths": {
+   "en": "Berths",
+   "es": "Amarres",
+   "ar": "مراسٍ",
+   "zh": "泊位"
+  },
+  "use": {
+   "en": "Projected use",
+   "es": "Uso proyectado",
+   "ar": "الاستخدام المتوقع",
+   "zh": "规划用途"
+  },
+  "access": {
+   "en": "Access",
+   "es": "Acceso",
+   "ar": "الوصول",
+   "zh": "交通"
+  },
+  "price": {
+   "en": "Price",
+   "es": "Precio",
+   "ar": "السعر",
+   "zh": "价格"
+  },
+  "view": {
+   "en": "View details",
+   "es": "Ver ficha",
+   "ar": "عرض التفاصيل",
+   "zh": "查看详情"
+  }
+ },
+ "catalog": "commercial-hospitality",
+ "items": [
+  {
+   "id": "ch-operating-hotels-city-5star",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "city-5star",
+   "title": "Hotel Almirante",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Seville",
+   "price_usd": 48000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 11400,
+   "land_area_m2": 4200,
+   "hectares": 0.4,
+   "hotel_keys": 142,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "5-star, city centre. 142 keys. Built area 11,400 m² on a site of 4,200 m², in Seville, Spain.",
+    "es": "5-star, city centre. 142 llaves. Superficie construida de 11,400 m² sobre una parcela de 4,200 m², en Sevilla, España.",
+    "ar": "5-star, city centre. 142 مفتاحاً. مساحة مبنية 11,400 م² على موقع 4,200 م²، في إشبيلية، إسبانيا.",
+    "zh": "5-star, city centre。142 间客房。建筑面积 11,400 平方米，用地 4,200 平方米，位于西班牙塞维利亚。"
+   },
+   "long_description": {
+    "en": "5-star, city centre. 142 keys. Built area 11,400 m² on a site of 4,200 m², in Seville, Spain.",
+    "es": "5-star, city centre. 142 llaves. Superficie construida de 11,400 m² sobre una parcela de 4,200 m², en Sevilla, España.",
+    "ar": "5-star, city centre. 142 مفتاحاً. مساحة مبنية 11,400 م² على موقع 4,200 م²، في إشبيلية، إسبانيا.",
+    "zh": "5-star, city centre。142 间客房。建筑面积 11,400 平方米，用地 4,200 平方米，位于西班牙塞维利亚。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-city-5star.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "city-5star",
+     "es": "city-5star",
+     "ar": "city-5star",
+     "zh": "city-5star"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-operating-hotels-beach-resort",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "beach-resort",
+   "title": "Playa Dorada Hotel",
+   "country": "Dominican Republic",
+   "region": "Puerto Plata",
+   "city": "Puerto Plata",
+   "price_usd": 96000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 28600,
+   "land_area_m2": 62000,
+   "hectares": 6.2,
+   "hotel_keys": 310,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "5-star, 480 m beachfront. 310 keys. Built area 28,600 m² on a site of 62,000 m², in Puerto Plata, Dominican Republic.",
+    "es": "5-star, 480 m beachfront. 310 llaves. Superficie construida de 28,600 m² sobre una parcela de 62,000 m², en Puerto Plata, República Dominicana.",
+    "ar": "5-star, 480 m beachfront. 310 مفتاحاً. مساحة مبنية 28,600 م² على موقع 62,000 م²، في بويرتو بلاتا، جمهورية الدومينيكان.",
+    "zh": "5-star, 480 m beachfront。310 间客房。建筑面积 28,600 平方米，用地 62,000 平方米，位于多米尼加共和国银港。"
+   },
+   "long_description": {
+    "en": "5-star, 480 m beachfront. 310 keys. Built area 28,600 m² on a site of 62,000 m², in Puerto Plata, Dominican Republic.",
+    "es": "5-star, 480 m beachfront. 310 llaves. Superficie construida de 28,600 m² sobre una parcela de 62,000 m², en Puerto Plata, República Dominicana.",
+    "ar": "5-star, 480 m beachfront. 310 مفتاحاً. مساحة مبنية 28,600 م² على موقع 62,000 م²، في بويرتو بلاتا، جمهورية الدومينيكان.",
+    "zh": "5-star, 480 m beachfront。310 间客房。建筑面积 28,600 平方米，用地 62,000 平方米，位于多米尼加共和国银港。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-beach-resort.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "beach-resort",
+     "es": "beach-resort",
+     "ar": "beach-resort",
+     "zh": "beach-resort"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-operating-hotels-mountain",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "mountain",
+   "title": "Alpenhof Grand",
+   "country": "Austria",
+   "region": "Tyrol",
+   "city": "Kitzbühel",
+   "price_usd": 62500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 9800,
+   "land_area_m2": 12400,
+   "hectares": 1.2,
+   "hotel_keys": 118,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "Ski-in, ski-out. 118 keys. Built area 9,800 m² on a site of 12,400 m², in Kitzbühel, Austria.",
+    "es": "Ski-in, ski-out. 118 llaves. Superficie construida de 9,800 m² sobre una parcela de 12,400 m², en Kitzbühel, Austria.",
+    "ar": "Ski-in, ski-out. 118 مفتاحاً. مساحة مبنية 9,800 م² على موقع 12,400 م²، في كيتسبوهيل، النمسا.",
+    "zh": "Ski-in, ski-out。118 间客房。建筑面积 9,800 平方米，用地 12,400 平方米，位于奥地利基茨比厄尔。"
+   },
+   "long_description": {
+    "en": "Ski-in, ski-out. 118 keys. Built area 9,800 m² on a site of 12,400 m², in Kitzbühel, Austria.",
+    "es": "Ski-in, ski-out. 118 llaves. Superficie construida de 9,800 m² sobre una parcela de 12,400 m², en Kitzbühel, Austria.",
+    "ar": "Ski-in, ski-out. 118 مفتاحاً. مساحة مبنية 9,800 م² على موقع 12,400 م²، في كيتسبوهيل، النمسا.",
+    "zh": "Ski-in, ski-out。118 间客房。建筑面积 9,800 平方米，用地 12,400 平方米，位于奥地利基茨比厄尔。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-mountain.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "Mountain",
+     "es": "De montaña",
+     "ar": "جبلي",
+     "zh": "山地"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-operating-hotels-historic",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "historic",
+   "title": "Palazzo Reale Hotel",
+   "country": "Italy",
+   "region": "Campania",
+   "city": "Naples",
+   "price_usd": 74000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 12900,
+   "land_area_m2": 3100,
+   "hectares": 0.3,
+   "hotel_keys": 96,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Listed 18th-c building. 96 keys. Built area 12,900 m² on a site of 3,100 m², in Naples, Italy.",
+    "es": "Listed 18th-c building. 96 llaves. Superficie construida de 12,900 m² sobre una parcela de 3,100 m², en Nápoles, Italia.",
+    "ar": "Listed 18th-c building. 96 مفتاحاً. مساحة مبنية 12,900 م² على موقع 3,100 م²، في نابولي، إيطاليا.",
+    "zh": "Listed 18th-c building。96 间客房。建筑面积 12,900 平方米，用地 3,100 平方米，位于意大利那不勒斯。"
+   },
+   "long_description": {
+    "en": "Listed 18th-c building. 96 keys. Built area 12,900 m² on a site of 3,100 m², in Naples, Italy.",
+    "es": "Listed 18th-c building. 96 llaves. Superficie construida de 12,900 m² sobre una parcela de 3,100 m², en Nápoles, Italia.",
+    "ar": "Listed 18th-c building. 96 مفتاحاً. مساحة مبنية 12,900 م² على موقع 3,100 م²، في نابولي، إيطاليا.",
+    "zh": "Listed 18th-c building。96 间客房。建筑面积 12,900 平方米，用地 3,100 平方米，位于意大利那不勒斯。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-historic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "Historic",
+     "es": "Histórica",
+     "ar": "تاريخي",
+     "zh": "历史"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-operating-hotels-airport",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "airport",
+   "title": "Aerotower Business Hotel",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai",
+   "price_usd": 83000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 19700,
+   "land_area_m2": 8600,
+   "hectares": 0.9,
+   "hotel_keys": 264,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Airport corridor. 264 keys. Built area 19,700 m² on a site of 8,600 m², in Dubai, United Arab Emirates.",
+    "es": "Airport corridor. 264 llaves. Superficie construida de 19,700 m² sobre una parcela de 8,600 m², en Dubái, Emiratos Árabes Unidos.",
+    "ar": "Airport corridor. 264 مفتاحاً. مساحة مبنية 19,700 م² على موقع 8,600 م²، في دبي، الإمارات العربية المتحدة.",
+    "zh": "Airport corridor。264 间客房。建筑面积 19,700 平方米，用地 8,600 平方米，位于阿联酋迪拜。"
+   },
+   "long_description": {
+    "en": "Airport corridor. 264 keys. Built area 19,700 m² on a site of 8,600 m², in Dubai, United Arab Emirates.",
+    "es": "Airport corridor. 264 llaves. Superficie construida de 19,700 m² sobre una parcela de 8,600 m², en Dubái, Emiratos Árabes Unidos.",
+    "ar": "Airport corridor. 264 مفتاحاً. مساحة مبنية 19,700 م² على موقع 8,600 م²، في دبي، الإمارات العربية المتحدة.",
+    "zh": "Airport corridor。264 间客房。建筑面积 19,700 平方米，用地 8,600 平方米，位于阿联酋迪拜。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-airport.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "airport",
+     "es": "airport",
+     "ar": "airport",
+     "zh": "airport"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-operating-hotels-island",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "operating-hotels",
+   "variant": "island",
+   "title": "Isla Azul Hotel",
+   "country": "Greece",
+   "region": "Cyclades",
+   "city": "Santorini",
+   "price_usd": 57400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 6900,
+   "land_area_m2": 14800,
+   "hectares": 1.5,
+   "hotel_keys": 84,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Caldera frontage. 84 keys. Built area 6,900 m² on a site of 14,800 m², in Santorini, Greece.",
+    "es": "Caldera frontage. 84 llaves. Superficie construida de 6,900 m² sobre una parcela de 14,800 m², en Santorini, Grecia.",
+    "ar": "Caldera frontage. 84 مفتاحاً. مساحة مبنية 6,900 م² على موقع 14,800 م²، في سانتوريني، اليونان.",
+    "zh": "Caldera frontage。84 间客房。建筑面积 6,900 平方米，用地 14,800 平方米，位于希腊圣托里尼。"
+   },
+   "long_description": {
+    "en": "Caldera frontage. 84 keys. Built area 6,900 m² on a site of 14,800 m², in Santorini, Greece.",
+    "es": "Caldera frontage. 84 llaves. Superficie construida de 6,900 m² sobre una parcela de 14,800 m², en Santorini, Grecia.",
+    "ar": "Caldera frontage. 84 مفتاحاً. مساحة مبنية 6,900 م² على موقع 14,800 م²، في سانتوريني، اليونان.",
+    "zh": "Caldera frontage。84 间客房。建筑面积 6,900 平方米，用地 14,800 平方米，位于希腊圣托里尼。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-operating-hotels-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Operating Hotels",
+     "es": "Hoteles operativos",
+     "ar": "فنادق عاملة",
+     "zh": "在营酒店"
+    },
+    "variant": {
+     "en": "Island",
+     "es": "En isla",
+     "ar": "في جزيرة",
+     "zh": "岛屿"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-design",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "design",
+   "title": "Casa Nueve",
+   "country": "Mexico",
+   "region": "Oaxaca",
+   "city": "Oaxaca de Juárez",
+   "price_usd": 14800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 3400,
+   "land_area_m2": 1900,
+   "hectares": 0.2,
+   "hotel_keys": 32,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Design-led, 32 keys. 32 keys. Built area 3,400 m² on a site of 1,900 m², in Oaxaca, Mexico.",
+    "es": "Design-led, 32 keys. 32 llaves. Superficie construida de 3,400 m² sobre una parcela de 1,900 m², en Oaxaca, México.",
+    "ar": "Design-led, 32 keys. 32 مفتاحاً. مساحة مبنية 3,400 م² على موقع 1,900 م²، في واهاكا، المكسيك.",
+    "zh": "Design-led, 32 keys。32 间客房。建筑面积 3,400 平方米，用地 1,900 平方米，位于墨西哥瓦哈卡。"
+   },
+   "long_description": {
+    "en": "Design-led, 32 keys. 32 keys. Built area 3,400 m² on a site of 1,900 m², in Oaxaca, Mexico.",
+    "es": "Design-led, 32 keys. 32 llaves. Superficie construida de 3,400 m² sobre una parcela de 1,900 m², en Oaxaca, México.",
+    "ar": "Design-led, 32 keys. 32 مفتاحاً. مساحة مبنية 3,400 م² على موقع 1,900 م²، في واهاكا، المكسيك.",
+    "zh": "Design-led, 32 keys。32 间客房。建筑面积 3,400 平方米，用地 1,900 平方米，位于墨西哥瓦哈卡。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-design.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "design",
+     "es": "design",
+     "ar": "design",
+     "zh": "design"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-heritage",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "heritage",
+   "title": "Riad Assafar",
+   "country": "Morocco",
+   "region": "Marrakech-Safi",
+   "city": "Marrakech",
+   "price_usd": 9600000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 2800,
+   "land_area_m2": 1400,
+   "hectares": 0.1,
+   "hotel_keys": 24,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "Restored riad. 24 keys. Built area 2,800 m² on a site of 1,400 m², in Marrakech, Morocco.",
+    "es": "Restored riad. 24 llaves. Superficie construida de 2,800 m² sobre una parcela de 1,400 m², en Marrakech, Marruecos.",
+    "ar": "Restored riad. 24 مفتاحاً. مساحة مبنية 2,800 م² على موقع 1,400 م²، في مراكش، المغرب.",
+    "zh": "Restored riad。24 间客房。建筑面积 2,800 平方米，用地 1,400 平方米，位于摩洛哥马拉喀什。"
+   },
+   "long_description": {
+    "en": "Restored riad. 24 keys. Built area 2,800 m² on a site of 1,400 m², in Marrakech, Morocco.",
+    "es": "Restored riad. 24 llaves. Superficie construida de 2,800 m² sobre una parcela de 1,400 m², en Marrakech, Marruecos.",
+    "ar": "Restored riad. 24 مفتاحاً. مساحة مبنية 2,800 م² على موقع 1,400 م²، في مراكش، المغرب.",
+    "zh": "Restored riad。24 间客房。建筑面积 2,800 平方米，用地 1,400 平方米，位于摩洛哥马拉喀什。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-heritage.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "heritage",
+     "es": "heritage",
+     "ar": "heritage",
+     "zh": "heritage"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-vineyard",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "vineyard",
+   "title": "Bodega Hotel Valdemar",
+   "country": "Spain",
+   "region": "La Rioja",
+   "city": "Haro",
+   "price_usd": 18200000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 4100,
+   "land_area_m2": 86000,
+   "hectares": 8.6,
+   "hotel_keys": 28,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "Working winery. 28 keys. Built area 4,100 m² on a site of 86,000 m², in Haro, Spain.",
+    "es": "Working winery. 28 llaves. Superficie construida de 4,100 m² sobre una parcela de 86,000 m², en Haro, España.",
+    "ar": "Working winery. 28 مفتاحاً. مساحة مبنية 4,100 م² على موقع 86,000 م²، في هارو، إسبانيا.",
+    "zh": "Working winery。28 间客房。建筑面积 4,100 平方米，用地 86,000 平方米，位于西班牙阿罗。"
+   },
+   "long_description": {
+    "en": "Working winery. 28 keys. Built area 4,100 m² on a site of 86,000 m², in Haro, Spain.",
+    "es": "Working winery. 28 llaves. Superficie construida de 4,100 m² sobre una parcela de 86,000 m², en Haro, España.",
+    "ar": "Working winery. 28 مفتاحاً. مساحة مبنية 4,100 م² على موقع 86,000 م²، في هارو، إسبانيا.",
+    "zh": "Working winery。28 间客房。建筑面积 4,100 平方米，用地 86,000 平方米，位于西班牙阿罗。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-vineyard.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "With vineyard",
+     "es": "Con viñedo",
+     "ar": "مع كروم",
+     "zh": "酒庄"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-jungle",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "jungle",
+   "title": "Selva Lodge",
+   "country": "Costa Rica",
+   "region": "Puntarenas",
+   "city": "Osa",
+   "price_usd": 12400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 2600,
+   "land_area_m2": 240000,
+   "hectares": 24.0,
+   "hotel_keys": 26,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Private reserve. 26 keys. Built area 2,600 m² on a site of 240,000 m², in Osa, Costa Rica.",
+    "es": "Private reserve. 26 llaves. Superficie construida de 2,600 m² sobre una parcela de 240,000 m², en Osa, Costa Rica.",
+    "ar": "Private reserve. 26 مفتاحاً. مساحة مبنية 2,600 م² على موقع 240,000 م²، في أوسا، كوستاريكا.",
+    "zh": "Private reserve。26 间客房。建筑面积 2,600 平方米，用地 240,000 平方米，位于哥斯达黎加奥萨。"
+   },
+   "long_description": {
+    "en": "Private reserve. 26 keys. Built area 2,600 m² on a site of 240,000 m², in Osa, Costa Rica.",
+    "es": "Private reserve. 26 llaves. Superficie construida de 2,600 m² sobre una parcela de 240,000 m², en Osa, Costa Rica.",
+    "ar": "Private reserve. 26 مفتاحاً. مساحة مبنية 2,600 م² على موقع 240,000 م²، في أوسا، كوستاريكا.",
+    "zh": "Private reserve。26 间客房。建筑面积 2,600 平方米，用地 240,000 平方米，位于哥斯达黎加奥萨。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-jungle.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "jungle",
+     "es": "jungle",
+     "ar": "jungle",
+     "zh": "jungle"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-coastal",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "coastal",
+   "title": "Casa del Acantilado",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Sagres",
+   "price_usd": 21600000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 3900,
+   "land_area_m2": 6200,
+   "hectares": 0.6,
+   "hotel_keys": 34,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Clifftop. 34 keys. Built area 3,900 m² on a site of 6,200 m², in Sagres, Portugal.",
+    "es": "Clifftop. 34 llaves. Superficie construida de 3,900 m² sobre una parcela de 6,200 m², en Sagres, Portugal.",
+    "ar": "Clifftop. 34 مفتاحاً. مساحة مبنية 3,900 م² على موقع 6,200 م²، في ساغريس، البرتغال.",
+    "zh": "Clifftop。34 间客房。建筑面积 3,900 平方米，用地 6,200 平方米，位于葡萄牙萨格里什。"
+   },
+   "long_description": {
+    "en": "Clifftop. 34 keys. Built area 3,900 m² on a site of 6,200 m², in Sagres, Portugal.",
+    "es": "Clifftop. 34 llaves. Superficie construida de 3,900 m² sobre una parcela de 6,200 m², en Sagres, Portugal.",
+    "ar": "Clifftop. 34 مفتاحاً. مساحة مبنية 3,900 م² على موقع 6,200 م²، في ساغريس، البرتغال.",
+    "zh": "Clifftop。34 间客房。建筑面积 3,900 平方米，用地 6,200 平方米，位于葡萄牙萨格里什。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-coastal.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "coastal",
+     "es": "coastal",
+     "ar": "coastal",
+     "zh": "coastal"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-boutique-hotels-urban-loft",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "boutique-hotels",
+   "variant": "urban-loft",
+   "title": "The Foundry Rooms",
+   "country": "United Kingdom",
+   "region": "Greater Manchester",
+   "city": "Manchester",
+   "price_usd": 16900000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 4600,
+   "land_area_m2": 1800,
+   "hectares": 0.2,
+   "hotel_keys": 41,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Converted industrial. 41 keys. Built area 4,600 m² on a site of 1,800 m², in Manchester, United Kingdom.",
+    "es": "Converted industrial. 41 llaves. Superficie construida de 4,600 m² sobre una parcela de 1,800 m², en Mánchester, Reino Unido.",
+    "ar": "Converted industrial. 41 مفتاحاً. مساحة مبنية 4,600 م² على موقع 1,800 م²، في مانشستر، المملكة المتحدة.",
+    "zh": "Converted industrial。41 间客房。建筑面积 4,600 平方米，用地 1,800 平方米，位于英国曼彻斯特。"
+   },
+   "long_description": {
+    "en": "Converted industrial. 41 keys. Built area 4,600 m² on a site of 1,800 m², in Manchester, United Kingdom.",
+    "es": "Converted industrial. 41 llaves. Superficie construida de 4,600 m² sobre una parcela de 1,800 m², en Mánchester, Reino Unido.",
+    "ar": "Converted industrial. 41 مفتاحاً. مساحة مبنية 4,600 م² على موقع 1,800 م²، في مانشستر، المملكة المتحدة.",
+    "zh": "Converted industrial。41 间客房。建筑面积 4,600 平方米，用地 1,800 平方米，位于英国曼彻斯特。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-boutique-hotels-urban-loft.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Boutique Hotels",
+     "es": "Boutique hotels",
+     "ar": "فنادق بوتيك",
+     "zh": "精品酒店"
+    },
+    "variant": {
+     "en": "urban-loft",
+     "es": "urban-loft",
+     "ar": "urban-loft",
+     "zh": "urban-loft"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-all-inclusive",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "all-inclusive",
+   "title": "Bahía Serena Resort",
+   "country": "Mexico",
+   "region": "Quintana Roo",
+   "city": "Riviera Maya",
+   "price_usd": 184000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 62000,
+   "land_area_m2": 148000,
+   "hectares": 14.8,
+   "hotel_keys": 486,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "1.1 km beachfront. 486 keys. Built area 62,000 m² on a site of 148,000 m², in Riviera Maya, Mexico.",
+    "es": "1.1 km beachfront. 486 llaves. Superficie construida de 62,000 m² sobre una parcela de 148,000 m², en Riviera Maya, México.",
+    "ar": "1.1 km beachfront. 486 مفتاحاً. مساحة مبنية 62,000 م² على موقع 148,000 م²، في ريفييرا مايا، المكسيك.",
+    "zh": "1.1 km beachfront。486 间客房。建筑面积 62,000 平方米，用地 148,000 平方米，位于墨西哥玛雅海岸。"
+   },
+   "long_description": {
+    "en": "1.1 km beachfront. 486 keys. Built area 62,000 m² on a site of 148,000 m², in Riviera Maya, Mexico.",
+    "es": "1.1 km beachfront. 486 llaves. Superficie construida de 62,000 m² sobre una parcela de 148,000 m², en Riviera Maya, México.",
+    "ar": "1.1 km beachfront. 486 مفتاحاً. مساحة مبنية 62,000 م² على موقع 148,000 م²، في ريفييرا مايا، المكسيك.",
+    "zh": "1.1 km beachfront。486 间客房。建筑面积 62,000 平方米，用地 148,000 平方米，位于墨西哥玛雅海岸。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-all-inclusive.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "all-inclusive",
+     "es": "all-inclusive",
+     "ar": "all-inclusive",
+     "zh": "all-inclusive"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-wellness",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "wellness",
+   "title": "Aqua Sana Retreat",
+   "country": "Thailand",
+   "region": "Krabi",
+   "city": "Krabi",
+   "price_usd": 68000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 18400,
+   "land_area_m2": 92000,
+   "hectares": 9.2,
+   "hotel_keys": 124,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "Wellness programme. 124 keys. Built area 18,400 m² on a site of 92,000 m², in Krabi, Thailand.",
+    "es": "Wellness programme. 124 llaves. Superficie construida de 18,400 m² sobre una parcela de 92,000 m², en Krabi, Tailandia.",
+    "ar": "Wellness programme. 124 مفتاحاً. مساحة مبنية 18,400 م² على موقع 92,000 م²، في كرابي، تايلاند.",
+    "zh": "Wellness programme。124 间客房。建筑面积 18,400 平方米，用地 92,000 平方米，位于泰国甲米。"
+   },
+   "long_description": {
+    "en": "Wellness programme. 124 keys. Built area 18,400 m² on a site of 92,000 m², in Krabi, Thailand.",
+    "es": "Wellness programme. 124 llaves. Superficie construida de 18,400 m² sobre una parcela de 92,000 m², en Krabi, Tailandia.",
+    "ar": "Wellness programme. 124 مفتاحاً. مساحة مبنية 18,400 م² على موقع 92,000 م²، في كرابي، تايلاند.",
+    "zh": "Wellness programme。124 间客房。建筑面积 18,400 平方米，用地 92,000 平方米，位于泰国甲米。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-wellness.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "wellness",
+     "es": "wellness",
+     "ar": "wellness",
+     "zh": "wellness"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-golf",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "golf",
+   "title": "Costa Verde Golf Resort",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Vilamoura",
+   "price_usd": 142000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 41000,
+   "land_area_m2": 620000,
+   "hectares": 62.0,
+   "hotel_keys": 268,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "18-hole championship. 268 keys. Built area 41,000 m² on a site of 620,000 m², in Vilamoura, Portugal.",
+    "es": "18-hole championship. 268 llaves. Superficie construida de 41,000 m² sobre una parcela de 620,000 m², en Vilamoura, Portugal.",
+    "ar": "18-hole championship. 268 مفتاحاً. مساحة مبنية 41,000 م² على موقع 620,000 م²، في فيلامورا، البرتغال.",
+    "zh": "18-hole championship。268 间客房。建筑面积 41,000 平方米，用地 620,000 平方米，位于葡萄牙维拉莫拉。"
+   },
+   "long_description": {
+    "en": "18-hole championship. 268 keys. Built area 41,000 m² on a site of 620,000 m², in Vilamoura, Portugal.",
+    "es": "18-hole championship. 268 llaves. Superficie construida de 41,000 m² sobre una parcela de 620,000 m², en Vilamoura, Portugal.",
+    "ar": "18-hole championship. 268 مفتاحاً. مساحة مبنية 41,000 م² على موقع 620,000 م²، في فيلامورا، البرتغال.",
+    "zh": "18-hole championship。268 间客房。建筑面积 41,000 平方米，用地 620,000 平方米，位于葡萄牙维拉莫拉。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-golf.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "Golf",
+     "es": "De golf",
+     "ar": "ملاعب غولف",
+     "zh": "高尔夫"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-eco",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "eco",
+   "title": "Selva Viva Eco Resort",
+   "country": "Belize",
+   "region": "Stann Creek",
+   "city": "Placencia",
+   "price_usd": 46500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 11200,
+   "land_area_m2": 340000,
+   "hectares": 34.0,
+   "hotel_keys": 72,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Off-grid, certified. 72 keys. Built area 11,200 m² on a site of 340,000 m², in Placencia, Belize.",
+    "es": "Off-grid, certified. 72 llaves. Superficie construida de 11,200 m² sobre una parcela de 340,000 m², en Placencia, Belice.",
+    "ar": "Off-grid, certified. 72 مفتاحاً. مساحة مبنية 11,200 م² على موقع 340,000 م²، في بلاسينسيا، بليز.",
+    "zh": "Off-grid, certified。72 间客房。建筑面积 11,200 平方米，用地 340,000 平方米，位于伯利兹普拉森西亚。"
+   },
+   "long_description": {
+    "en": "Off-grid, certified. 72 keys. Built area 11,200 m² on a site of 340,000 m², in Placencia, Belize.",
+    "es": "Off-grid, certified. 72 llaves. Superficie construida de 11,200 m² sobre una parcela de 340,000 m², en Placencia, Belice.",
+    "ar": "Off-grid, certified. 72 مفتاحاً. مساحة مبنية 11,200 م² على موقع 340,000 م²، في بلاسينسيا، بليز.",
+    "zh": "Off-grid, certified。72 间客房。建筑面积 11,200 平方米，用地 340,000 平方米，位于伯利兹普拉森西亚。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-eco.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "eco",
+     "es": "eco",
+     "ar": "eco",
+     "zh": "eco"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-ski",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "ski",
+   "title": "Val Blanche Resort",
+   "country": "France",
+   "region": "Auvergne-Rhône-Alpes",
+   "city": "Tignes",
+   "price_usd": 118000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 32400,
+   "land_area_m2": 74000,
+   "hectares": 7.4,
+   "hotel_keys": 196,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Ski-in, ski-out. 196 keys. Built area 32,400 m² on a site of 74,000 m², in Tignes, France.",
+    "es": "Ski-in, ski-out. 196 llaves. Superficie construida de 32,400 m² sobre una parcela de 74,000 m², en Tignes, Francia.",
+    "ar": "Ski-in, ski-out. 196 مفتاحاً. مساحة مبنية 32,400 م² على موقع 74,000 م²، في تين، فرنسا.",
+    "zh": "Ski-in, ski-out。196 间客房。建筑面积 32,400 平方米，用地 74,000 平方米，位于法国蒂涅。"
+   },
+   "long_description": {
+    "en": "Ski-in, ski-out. 196 keys. Built area 32,400 m² on a site of 74,000 m², in Tignes, France.",
+    "es": "Ski-in, ski-out. 196 llaves. Superficie construida de 32,400 m² sobre una parcela de 74,000 m², en Tignes, Francia.",
+    "ar": "Ski-in, ski-out. 196 مفتاحاً. مساحة مبنية 32,400 م² على موقع 74,000 م²، في تين، فرنسا.",
+    "zh": "Ski-in, ski-out。196 间客房。建筑面积 32,400 平方米，用地 74,000 平方米，位于法国蒂涅。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-ski.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "ski",
+     "es": "ski",
+     "ar": "ski",
+     "zh": "ski"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-resorts-island",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "resorts",
+   "variant": "island",
+   "title": "Coral Cay Resort",
+   "country": "Maldives",
+   "region": "Baa Atoll",
+   "city": "Baa Atoll",
+   "price_usd": 246000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 14800,
+   "land_area_m2": 210000,
+   "hectares": 21.0,
+   "hotel_keys": 96,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Overwater villas. 96 keys. Built area 14,800 m² on a site of 210,000 m², in Baa Atoll, Maldives.",
+    "es": "Overwater villas. 96 llaves. Superficie construida de 14,800 m² sobre una parcela de 210,000 m², en Atolón de Baa, Maldivas.",
+    "ar": "Overwater villas. 96 مفتاحاً. مساحة مبنية 14,800 م² على موقع 210,000 م²، في جزيرة با المرجانية، جزر المالديف.",
+    "zh": "Overwater villas。96 间客房。建筑面积 14,800 平方米，用地 210,000 平方米，位于马尔代夫芭环礁。"
+   },
+   "long_description": {
+    "en": "Overwater villas. 96 keys. Built area 14,800 m² on a site of 210,000 m², in Baa Atoll, Maldives.",
+    "es": "Overwater villas. 96 llaves. Superficie construida de 14,800 m² sobre una parcela de 210,000 m², en Atolón de Baa, Maldivas.",
+    "ar": "Overwater villas. 96 مفتاحاً. مساحة مبنية 14,800 م² على موقع 210,000 م²، في جزيرة با المرجانية، جزر المالديف.",
+    "zh": "Overwater villas。96 间客房。建筑面积 14,800 平方米，用地 210,000 平方米，位于马尔代夫芭环礁。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-resorts-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Resorts",
+     "es": "Resorts",
+     "ar": "منتجعات",
+     "zh": "度假村"
+    },
+    "variant": {
+     "en": "Island",
+     "es": "En isla",
+     "ar": "في جزيرة",
+     "zh": "岛屿"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-corporate",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "corporate",
+   "title": "Marina Residences DIFC",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai",
+   "price_usd": 112000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 26800,
+   "land_area_m2": 6400,
+   "hectares": 0.6,
+   "hotel_keys": 184,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Corporate long-stay. 184 keys. Built area 26,800 m² on a site of 6,400 m², in Dubai, United Arab Emirates.",
+    "es": "Corporate long-stay. 184 llaves. Superficie construida de 26,800 m² sobre una parcela de 6,400 m², en Dubái, Emiratos Árabes Unidos.",
+    "ar": "Corporate long-stay. 184 مفتاحاً. مساحة مبنية 26,800 م² على موقع 6,400 م²، في دبي، الإمارات العربية المتحدة.",
+    "zh": "Corporate long-stay。184 间客房。建筑面积 26,800 平方米，用地 6,400 平方米，位于阿联酋迪拜。"
+   },
+   "long_description": {
+    "en": "Corporate long-stay. 184 keys. Built area 26,800 m² on a site of 6,400 m², in Dubai, United Arab Emirates.",
+    "es": "Corporate long-stay. 184 llaves. Superficie construida de 26,800 m² sobre una parcela de 6,400 m², en Dubái, Emiratos Árabes Unidos.",
+    "ar": "Corporate long-stay. 184 مفتاحاً. مساحة مبنية 26,800 م² على موقع 6,400 م²، في دبي، الإمارات العربية المتحدة.",
+    "zh": "Corporate long-stay。184 间客房。建筑面积 26,800 平方米，用地 6,400 平方米，位于阿联酋迪拜。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-corporate.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "corporate",
+     "es": "corporate",
+     "ar": "corporate",
+     "zh": "corporate"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-family",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "family",
+   "title": "Jardines Aparthotel",
+   "country": "Spain",
+   "region": "Community of Madrid",
+   "city": "Madrid",
+   "price_usd": 54000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 17200,
+   "land_area_m2": 4100,
+   "hectares": 0.4,
+   "hotel_keys": 126,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "Family serviced. 126 keys. Built area 17,200 m² on a site of 4,100 m², in Madrid, Spain.",
+    "es": "Family serviced. 126 llaves. Superficie construida de 17,200 m² sobre una parcela de 4,100 m², en Madrid, España.",
+    "ar": "Family serviced. 126 مفتاحاً. مساحة مبنية 17,200 م² على موقع 4,100 م²، في مدريد، إسبانيا.",
+    "zh": "Family serviced。126 间客房。建筑面积 17,200 平方米，用地 4,100 平方米，位于西班牙马德里。"
+   },
+   "long_description": {
+    "en": "Family serviced. 126 keys. Built area 17,200 m² on a site of 4,100 m², in Madrid, Spain.",
+    "es": "Family serviced. 126 llaves. Superficie construida de 17,200 m² sobre una parcela de 4,100 m², en Madrid, España.",
+    "ar": "Family serviced. 126 مفتاحاً. مساحة مبنية 17,200 م² على موقع 4,100 م²، في مدريد، إسبانيا.",
+    "zh": "Family serviced。126 间客房。建筑面积 17,200 平方米，用地 4,100 平方米，位于西班牙马德里。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-family.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "family",
+     "es": "family",
+     "ar": "family",
+     "zh": "family"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-beach",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "beach",
+   "title": "Costa Azul Suites",
+   "country": "Mexico",
+   "region": "Nayarit",
+   "city": "Punta Mita",
+   "price_usd": 39600000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 12400,
+   "land_area_m2": 18600,
+   "hectares": 1.9,
+   "hotel_keys": 88,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "Beachfront suites. 88 keys. Built area 12,400 m² on a site of 18,600 m², in Punta Mita, Mexico.",
+    "es": "Beachfront suites. 88 llaves. Superficie construida de 12,400 m² sobre una parcela de 18,600 m², en Punta Mita, México.",
+    "ar": "Beachfront suites. 88 مفتاحاً. مساحة مبنية 12,400 م² على موقع 18,600 م²، في بونتا ميتا، المكسيك.",
+    "zh": "Beachfront suites。88 间客房。建筑面积 12,400 平方米，用地 18,600 平方米，位于墨西哥蓬塔米塔。"
+   },
+   "long_description": {
+    "en": "Beachfront suites. 88 keys. Built area 12,400 m² on a site of 18,600 m², in Punta Mita, Mexico.",
+    "es": "Beachfront suites. 88 llaves. Superficie construida de 12,400 m² sobre una parcela de 18,600 m², en Punta Mita, México.",
+    "ar": "Beachfront suites. 88 مفتاحاً. مساحة مبنية 12,400 م² على موقع 18,600 م²، في بونتا ميتا، المكسيك.",
+    "zh": "Beachfront suites。88 间客房。建筑面积 12,400 平方米，用地 18,600 平方米，位于墨西哥蓬塔米塔。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-beach.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "beach",
+     "es": "beach",
+     "ar": "beach",
+     "zh": "beach"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-student-adjacent",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "student-adjacent",
+   "title": "Campus View Residences",
+   "country": "United Kingdom",
+   "region": "Scotland",
+   "city": "Edinburgh",
+   "price_usd": 31800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 9800,
+   "land_area_m2": 2900,
+   "hectares": 0.3,
+   "hotel_keys": 142,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Institutional lease. 142 keys. Built area 9,800 m² on a site of 2,900 m², in Edinburgh, United Kingdom.",
+    "es": "Institutional lease. 142 llaves. Superficie construida de 9,800 m² sobre una parcela de 2,900 m², en Edimburgo, Reino Unido.",
+    "ar": "Institutional lease. 142 مفتاحاً. مساحة مبنية 9,800 م² على موقع 2,900 م²، في إدنبرة، المملكة المتحدة.",
+    "zh": "Institutional lease。142 间客房。建筑面积 9,800 平方米，用地 2,900 平方米，位于英国爱丁堡。"
+   },
+   "long_description": {
+    "en": "Institutional lease. 142 keys. Built area 9,800 m² on a site of 2,900 m², in Edinburgh, United Kingdom.",
+    "es": "Institutional lease. 142 llaves. Superficie construida de 9,800 m² sobre una parcela de 2,900 m², en Edimburgo, Reino Unido.",
+    "ar": "Institutional lease. 142 مفتاحاً. مساحة مبنية 9,800 م² على موقع 2,900 م²، في إدنبرة، المملكة المتحدة.",
+    "zh": "Institutional lease。142 间客房。建筑面积 9,800 平方米，用地 2,900 平方米，位于英国爱丁堡。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-student-adjacent.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "student-adjacent",
+     "es": "student-adjacent",
+     "ar": "student-adjacent",
+     "zh": "student-adjacent"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-branded",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "branded",
+   "title": "The Wynford Residences",
+   "country": "Singapore",
+   "region": "Singapore",
+   "city": "Singapore",
+   "price_usd": 168000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 21400,
+   "land_area_m2": 3800,
+   "hectares": 0.4,
+   "hotel_keys": 96,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Branded operator. 96 keys. Built area 21,400 m² on a site of 3,800 m², in Singapore, Singapore.",
+    "es": "Branded operator. 96 llaves. Superficie construida de 21,400 m² sobre una parcela de 3,800 m², en Singapur, Singapur.",
+    "ar": "Branded operator. 96 مفتاحاً. مساحة مبنية 21,400 م² على موقع 3,800 م²، في سنغافورة، سنغافورة.",
+    "zh": "Branded operator。96 间客房。建筑面积 21,400 平方米，用地 3,800 平方米，位于新加坡新加坡。"
+   },
+   "long_description": {
+    "en": "Branded operator. 96 keys. Built area 21,400 m² on a site of 3,800 m², in Singapore, Singapore.",
+    "es": "Branded operator. 96 llaves. Superficie construida de 21,400 m² sobre una parcela de 3,800 m², en Singapur, Singapur.",
+    "ar": "Branded operator. 96 مفتاحاً. مساحة مبنية 21,400 م² على موقع 3,800 م²، في سنغافورة، سنغافورة.",
+    "zh": "Branded operator。96 间客房。建筑面积 21,400 平方米，用地 3,800 平方米，位于新加坡新加坡。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-branded.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "branded",
+     "es": "branded",
+     "ar": "branded",
+     "zh": "branded"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-serviced-residences-medical",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "serviced-residences",
+   "variant": "medical",
+   "title": "Clinica Park Residences",
+   "country": "Germany",
+   "region": "Bavaria",
+   "city": "Munich",
+   "price_usd": 42000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 11600,
+   "land_area_m2": 5200,
+   "hectares": 0.5,
+   "hotel_keys": 74,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Medical-adjacent. 74 keys. Built area 11,600 m² on a site of 5,200 m², in Munich, Germany.",
+    "es": "Medical-adjacent. 74 llaves. Superficie construida de 11,600 m² sobre una parcela de 5,200 m², en Múnich, Alemania.",
+    "ar": "Medical-adjacent. 74 مفتاحاً. مساحة مبنية 11,600 م² على موقع 5,200 م²، في ميونخ، ألمانيا.",
+    "zh": "Medical-adjacent。74 间客房。建筑面积 11,600 平方米，用地 5,200 平方米，位于德国慕尼黑。"
+   },
+   "long_description": {
+    "en": "Medical-adjacent. 74 keys. Built area 11,600 m² on a site of 5,200 m², in Munich, Germany.",
+    "es": "Medical-adjacent. 74 llaves. Superficie construida de 11,600 m² sobre una parcela de 5,200 m², en Múnich, Alemania.",
+    "ar": "Medical-adjacent. 74 مفتاحاً. مساحة مبنية 11,600 م² على موقع 5,200 م²، في ميونخ، ألمانيا.",
+    "zh": "Medical-adjacent。74 间客房。建筑面积 11,600 平方米，用地 5,200 平方米，位于德国慕尼黑。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-serviced-residences-medical.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Aparthotels & Serviced Residences",
+     "es": "Apartahoteles y serviced residences",
+     "ar": "شقق فندقية ومساكن مخدومة",
+     "zh": "公寓式酒店与服务式公寓"
+    },
+    "variant": {
+     "en": "medical",
+     "es": "medical",
+     "ar": "medical",
+     "zh": "medical"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-superyacht",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "superyacht",
+   "title": "Puerto Alcazaba Marina",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Marbella",
+   "price_usd": 210000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 8400,
+   "land_area_m2": 168000,
+   "hectares": 16.8,
+   "hotel_keys": null,
+   "berths": 412,
+   "status": "operational",
+   "short_description": {
+    "en": "412 berths, to 80 m. Built area 8,400 m² on a site of 168,000 m², in Marbella, Spain.",
+    "es": "412 berths, to 80 m. Superficie construida de 8,400 m² sobre una parcela de 168,000 m², en Marbella, España.",
+    "ar": "412 berths, to 80 m. مساحة مبنية 8,400 م² على موقع 168,000 م²، في ماربيا، إسبانيا.",
+    "zh": "412 berths, to 80 m。建筑面积 8,400 平方米，用地 168,000 平方米，位于西班牙马贝拉。"
+   },
+   "long_description": {
+    "en": "412 berths, to 80 m. Built area 8,400 m² on a site of 168,000 m², in Marbella, Spain.",
+    "es": "412 berths, to 80 m. Superficie construida de 8,400 m² sobre una parcela de 168,000 m², en Marbella, España.",
+    "ar": "412 berths, to 80 m. مساحة مبنية 8,400 م² على موقع 168,000 م²، في ماربيا، إسبانيا.",
+    "zh": "412 berths, to 80 m。建筑面积 8,400 平方米，用地 168,000 平方米，位于西班牙马贝拉。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-superyacht.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "superyacht",
+     "es": "superyacht",
+     "ar": "superyacht",
+     "zh": "superyacht"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-island-marina",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "island-marina",
+   "title": "Cayo Norte Marina",
+   "country": "Dominican Republic",
+   "region": "La Altagracia",
+   "city": "Cap Cana",
+   "price_usd": 96000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 4600,
+   "land_area_m2": 94000,
+   "hectares": 9.4,
+   "hotel_keys": null,
+   "berths": 186,
+   "status": "available",
+   "short_description": {
+    "en": "186 berths. Built area 4,600 m² on a site of 94,000 m², in Cap Cana, Dominican Republic.",
+    "es": "186 berths. Superficie construida de 4,600 m² sobre una parcela de 94,000 m², en Cap Cana, República Dominicana.",
+    "ar": "186 berths. مساحة مبنية 4,600 م² على موقع 94,000 م²، في كاب كانا، جمهورية الدومينيكان.",
+    "zh": "186 berths。建筑面积 4,600 平方米，用地 94,000 平方米，位于多米尼加共和国卡普卡纳。"
+   },
+   "long_description": {
+    "en": "186 berths. Built area 4,600 m² on a site of 94,000 m², in Cap Cana, Dominican Republic.",
+    "es": "186 berths. Superficie construida de 4,600 m² sobre una parcela de 94,000 m², en Cap Cana, República Dominicana.",
+    "ar": "186 berths. مساحة مبنية 4,600 م² على موقع 94,000 م²، في كاب كانا، جمهورية الدومينيكان.",
+    "zh": "186 berths。建筑面积 4,600 平方米，用地 94,000 平方米，位于多米尼加共和国卡普卡纳。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-island-marina.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "island-marina",
+     "es": "island-marina",
+     "ar": "island-marina",
+     "zh": "island-marina"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-beach-club",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "beach-club",
+   "title": "Bahía Beach Club",
+   "country": "Greece",
+   "region": "Cyclades",
+   "city": "Mykonos",
+   "price_usd": 34500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 2900,
+   "land_area_m2": 14000,
+   "hectares": 1.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "620 m² beach frontage. Built area 2,900 m² on a site of 14,000 m², in Mykonos, Greece.",
+    "es": "620 m² beach frontage. Superficie construida de 2,900 m² sobre una parcela de 14,000 m², en Míconos, Grecia.",
+    "ar": "620 m² beach frontage. مساحة مبنية 2,900 م² على موقع 14,000 م²، في ميكونوس، اليونان.",
+    "zh": "620 m² beach frontage。建筑面积 2,900 平方米，用地 14,000 平方米，位于希腊米科诺斯。"
+   },
+   "long_description": {
+    "en": "620 m² beach frontage. Built area 2,900 m² on a site of 14,000 m², in Mykonos, Greece.",
+    "es": "620 m² beach frontage. Superficie construida de 2,900 m² sobre una parcela de 14,000 m², en Míconos, Grecia.",
+    "ar": "620 m² beach frontage. مساحة مبنية 2,900 م² على موقع 14,000 م²، في ميكونوس، اليونان.",
+    "zh": "620 m² beach frontage。建筑面积 2,900 平方米，用地 14,000 平方米，位于希腊米科诺斯。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-beach-club.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "beach-club",
+     "es": "beach-club",
+     "ar": "beach-club",
+     "zh": "beach-club"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-river-marina",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "river-marina",
+   "title": "Douro River Marina",
+   "country": "Portugal",
+   "region": "Norte",
+   "city": "Porto",
+   "price_usd": 41200000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 3400,
+   "land_area_m2": 62000,
+   "hectares": 6.2,
+   "hotel_keys": null,
+   "berths": 204,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "204 berths. Built area 3,400 m² on a site of 62,000 m², in Porto, Portugal.",
+    "es": "204 berths. Superficie construida de 3,400 m² sobre una parcela de 62,000 m², en Oporto, Portugal.",
+    "ar": "204 berths. مساحة مبنية 3,400 م² على موقع 62,000 م²، في بورتو، البرتغال.",
+    "zh": "204 berths。建筑面积 3,400 平方米，用地 62,000 平方米，位于葡萄牙波尔图。"
+   },
+   "long_description": {
+    "en": "204 berths. Built area 3,400 m² on a site of 62,000 m², in Porto, Portugal.",
+    "es": "204 berths. Superficie construida de 3,400 m² sobre una parcela de 62,000 m², en Oporto, Portugal.",
+    "ar": "204 berths. مساحة مبنية 3,400 م² على موقع 62,000 م²، في بورتو، البرتغال.",
+    "zh": "204 berths。建筑面积 3,400 平方米，用地 62,000 平方米，位于葡萄牙波尔图。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-river-marina.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "river-marina",
+     "es": "river-marina",
+     "ar": "river-marina",
+     "zh": "river-marina"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-resort-marina",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "resort-marina",
+   "title": "Laguna Marina Resort",
+   "country": "Turkey",
+   "region": "Muğla",
+   "city": "Bodrum",
+   "price_usd": 78000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 6100,
+   "land_area_m2": 118000,
+   "hectares": 11.8,
+   "hotel_keys": null,
+   "berths": 268,
+   "status": "operational",
+   "short_description": {
+    "en": "268 berths + resort. Built area 6,100 m² on a site of 118,000 m², in Bodrum, Turkey.",
+    "es": "268 berths + resort. Superficie construida de 6,100 m² sobre una parcela de 118,000 m², en Bodrum, Turquía.",
+    "ar": "268 berths + resort. مساحة مبنية 6,100 م² على موقع 118,000 م²، في بودروم، تركيا.",
+    "zh": "268 berths + resort。建筑面积 6,100 平方米，用地 118,000 平方米，位于土耳其博德鲁姆。"
+   },
+   "long_description": {
+    "en": "268 berths + resort. Built area 6,100 m² on a site of 118,000 m², in Bodrum, Turkey.",
+    "es": "268 berths + resort. Superficie construida de 6,100 m² sobre una parcela de 118,000 m², en Bodrum, Turquía.",
+    "ar": "268 berths + resort. مساحة مبنية 6,100 م² على موقع 118,000 م²، في بودروم، تركيا.",
+    "zh": "268 berths + resort。建筑面积 6,100 平方米，用地 118,000 平方米，位于土耳其博德鲁姆。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-resort-marina.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "resort-marina",
+     "es": "resort-marina",
+     "ar": "resort-marina",
+     "zh": "resort-marina"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-marinas-beach-clubs-urban-waterfront",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "marinas-beach-clubs",
+   "variant": "urban-waterfront",
+   "title": "Waterfront Club Bahía",
+   "country": "Panama",
+   "region": "Panamá",
+   "city": "Panama City",
+   "price_usd": 52400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 4800,
+   "land_area_m2": 38000,
+   "hectares": 3.8,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "City waterfront. Built area 4,800 m² on a site of 38,000 m², in Panama City, Panama.",
+    "es": "City waterfront. Superficie construida de 4,800 m² sobre una parcela de 38,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "City waterfront. مساحة مبنية 4,800 م² على موقع 38,000 م²، في مدينة بنما، بنما.",
+    "zh": "City waterfront。建筑面积 4,800 平方米，用地 38,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "long_description": {
+    "en": "City waterfront. Built area 4,800 m² on a site of 38,000 m², in Panama City, Panama.",
+    "es": "City waterfront. Superficie construida de 4,800 m² sobre una parcela de 38,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "City waterfront. مساحة مبنية 4,800 م² على موقع 38,000 م²، في مدينة بنما، بنما.",
+    "zh": "City waterfront。建筑面积 4,800 平方米，用地 38,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-marinas-beach-clubs-urban-waterfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Marinas & Beach Clubs",
+     "es": "Marinas y beach clubs",
+     "ar": "مراسٍ وأندية شاطئية",
+     "zh": "码头与海滩俱乐部"
+    },
+    "variant": {
+     "en": "urban-waterfront",
+     "es": "urban-waterfront",
+     "ar": "urban-waterfront",
+     "zh": "urban-waterfront"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-theme-park",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "theme-park",
+   "title": "Parque Aventura Caribe",
+   "country": "Dominican Republic",
+   "region": "La Altagracia",
+   "city": "Punta Cana",
+   "price_usd": 320000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 68000,
+   "land_area_m2": 1240000,
+   "hectares": 124.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Theme park, 12 attractions. Built area 68,000 m² on a site of 1,240,000 m², in Punta Cana, Dominican Republic.",
+    "es": "Theme park, 12 attractions. Superficie construida de 68,000 m² sobre una parcela de 1,240,000 m², en Punta Cana, República Dominicana.",
+    "ar": "Theme park, 12 attractions. مساحة مبنية 68,000 م² على موقع 1,240,000 م²، في بونتا كانا، جمهورية الدومينيكان.",
+    "zh": "Theme park, 12 attractions。建筑面积 68,000 平方米，用地 1,240,000 平方米，位于多米尼加共和国蓬塔卡纳。"
+   },
+   "long_description": {
+    "en": "Theme park, 12 attractions. Built area 68,000 m² on a site of 1,240,000 m², in Punta Cana, Dominican Republic.",
+    "es": "Theme park, 12 attractions. Superficie construida de 68,000 m² sobre una parcela de 1,240,000 m², en Punta Cana, República Dominicana.",
+    "ar": "Theme park, 12 attractions. مساحة مبنية 68,000 م² على موقع 1,240,000 م²، في بونتا كانا، جمهورية الدومينيكان.",
+    "zh": "Theme park, 12 attractions。建筑面积 68,000 平方米，用地 1,240,000 平方米，位于多米尼加共和国蓬塔卡纳。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-theme-park.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "theme-park",
+     "es": "theme-park",
+     "ar": "theme-park",
+     "zh": "theme-park"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-water-park",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "water-park",
+   "title": "Aqua Mundo Park",
+   "country": "Spain",
+   "region": "Valencian Community",
+   "city": "Benidorm",
+   "price_usd": 96000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 24000,
+   "land_area_m2": 320000,
+   "hectares": 32.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "Water park. Built area 24,000 m² on a site of 320,000 m², in Benidorm, Spain.",
+    "es": "Water park. Superficie construida de 24,000 m² sobre una parcela de 320,000 m², en Benidorm, España.",
+    "ar": "Water park. مساحة مبنية 24,000 م² على موقع 320,000 م²، في بنيدورم، إسبانيا.",
+    "zh": "Water park。建筑面积 24,000 平方米，用地 320,000 平方米，位于西班牙贝尼多姆。"
+   },
+   "long_description": {
+    "en": "Water park. Built area 24,000 m² on a site of 320,000 m², in Benidorm, Spain.",
+    "es": "Water park. Superficie construida de 24,000 m² sobre una parcela de 320,000 m², en Benidorm, España.",
+    "ar": "Water park. مساحة مبنية 24,000 م² على موقع 320,000 م²، في بنيدورم، إسبانيا.",
+    "zh": "Water park。建筑面积 24,000 平方米，用地 320,000 平方米，位于西班牙贝尼多姆。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-water-park.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "water-park",
+     "es": "water-park",
+     "ar": "water-park",
+     "zh": "water-park"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-eco-park",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "eco-park",
+   "title": "Bosque Vivo Eco Park",
+   "country": "Costa Rica",
+   "region": "Alajuela",
+   "city": "La Fortuna",
+   "price_usd": 58000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 9400,
+   "land_area_m2": 2600000,
+   "hectares": 260.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "Eco-adventure park. Built area 9,400 m² on a site of 2,600,000 m², in La Fortuna, Costa Rica.",
+    "es": "Eco-adventure park. Superficie construida de 9,400 m² sobre una parcela de 2,600,000 m², en La Fortuna, Costa Rica.",
+    "ar": "Eco-adventure park. مساحة مبنية 9,400 م² على موقع 2,600,000 م²، في لا فورتونا، كوستاريكا.",
+    "zh": "Eco-adventure park。建筑面积 9,400 平方米，用地 2,600,000 平方米，位于哥斯达黎加拉福图纳。"
+   },
+   "long_description": {
+    "en": "Eco-adventure park. Built area 9,400 m² on a site of 2,600,000 m², in La Fortuna, Costa Rica.",
+    "es": "Eco-adventure park. Superficie construida de 9,400 m² sobre una parcela de 2,600,000 m², en La Fortuna, Costa Rica.",
+    "ar": "Eco-adventure park. مساحة مبنية 9,400 م² على موقع 2,600,000 م²، في لا فورتونا، كوستاريكا.",
+    "zh": "Eco-adventure park。建筑面积 9,400 平方米，用地 2,600,000 平方米，位于哥斯达黎加拉福图纳。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-eco-park.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "eco-park",
+     "es": "eco-park",
+     "ar": "eco-park",
+     "zh": "eco-park"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-cultural",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "cultural",
+   "title": "Distrito Cultural Sur",
+   "country": "Mexico",
+   "region": "Jalisco",
+   "city": "Guadalajara",
+   "price_usd": 124000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 42000,
+   "land_area_m2": 180000,
+   "hectares": 18.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Cultural district. Built area 42,000 m² on a site of 180,000 m², in Guadalajara, Mexico.",
+    "es": "Cultural district. Superficie construida de 42,000 m² sobre una parcela de 180,000 m², en Guadalajara, México.",
+    "ar": "Cultural district. مساحة مبنية 42,000 م² على موقع 180,000 م²، في غوادالاخارا، المكسيك.",
+    "zh": "Cultural district。建筑面积 42,000 平方米，用地 180,000 平方米，位于墨西哥瓜达拉哈拉。"
+   },
+   "long_description": {
+    "en": "Cultural district. Built area 42,000 m² on a site of 180,000 m², in Guadalajara, Mexico.",
+    "es": "Cultural district. Superficie construida de 42,000 m² sobre una parcela de 180,000 m², en Guadalajara, México.",
+    "ar": "Cultural district. مساحة مبنية 42,000 م² على موقع 180,000 م²، في غوادالاخارا، المكسيك.",
+    "zh": "Cultural district。建筑面积 42,000 平方米，用地 180,000 平方米，位于墨西哥瓜达拉哈拉。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-cultural.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "cultural",
+     "es": "cultural",
+     "ar": "cultural",
+     "zh": "cultural"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-marine-park",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "marine-park",
+   "title": "Océano Marine Park",
+   "country": "Bahamas",
+   "region": "New Providence",
+   "city": "Nassau",
+   "price_usd": 186000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 31000,
+   "land_area_m2": 420000,
+   "hectares": 42.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Marine attraction. Built area 31,000 m² on a site of 420,000 m², in Nassau, Bahamas.",
+    "es": "Marine attraction. Superficie construida de 31,000 m² sobre una parcela de 420,000 m², en Nassau, Bahamas.",
+    "ar": "Marine attraction. مساحة مبنية 31,000 م² على موقع 420,000 م²، في ناساو، جزر البهاما.",
+    "zh": "Marine attraction。建筑面积 31,000 平方米，用地 420,000 平方米，位于巴哈马拿骚。"
+   },
+   "long_description": {
+    "en": "Marine attraction. Built area 31,000 m² on a site of 420,000 m², in Nassau, Bahamas.",
+    "es": "Marine attraction. Superficie construida de 31,000 m² sobre una parcela de 420,000 m², en Nassau, Bahamas.",
+    "ar": "Marine attraction. مساحة مبنية 31,000 م² على موقع 420,000 م²، في ناساو، جزر البهاما.",
+    "zh": "Marine attraction。建筑面积 31,000 平方米，用地 420,000 平方米，位于巴哈马拿骚。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-marine-park.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "marine-park",
+     "es": "marine-park",
+     "ar": "marine-park",
+     "zh": "marine-park"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-parks-entertainment-resort-entertainment",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "parks-entertainment",
+   "variant": "resort-entertainment",
+   "title": "Isla Fiesta Entertainment",
+   "country": "Panama",
+   "region": "Panamá",
+   "city": "Panama City",
+   "price_usd": 78500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 18600,
+   "land_area_m2": 240000,
+   "hectares": 24.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Entertainment complex. Built area 18,600 m² on a site of 240,000 m², in Panama City, Panama.",
+    "es": "Entertainment complex. Superficie construida de 18,600 m² sobre una parcela de 240,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "Entertainment complex. مساحة مبنية 18,600 م² على موقع 240,000 م²، في مدينة بنما، بنما.",
+    "zh": "Entertainment complex。建筑面积 18,600 平方米，用地 240,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "long_description": {
+    "en": "Entertainment complex. Built area 18,600 m² on a site of 240,000 m², in Panama City, Panama.",
+    "es": "Entertainment complex. Superficie construida de 18,600 m² sobre una parcela de 240,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "Entertainment complex. مساحة مبنية 18,600 م² على موقع 240,000 م²، في مدينة بنما، بنما.",
+    "zh": "Entertainment complex。建筑面积 18,600 平方米，用地 240,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-parks-entertainment-resort-entertainment.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Parks & Entertainment Destinations",
+     "es": "Parques y destinos de entretenimiento",
+     "ar": "حدائق ووجهات ترفيهية",
+     "zh": "主题公园与娱乐目的地"
+    },
+    "variant": {
+     "en": "resort-entertainment",
+     "es": "resort-entertainment",
+     "ar": "resort-entertainment",
+     "zh": "resort-entertainment"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-waterfront",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "waterfront",
+   "title": "Puerto Nuevo District",
+   "country": "Panama",
+   "region": "Panamá",
+   "city": "Panama City",
+   "price_usd": 420000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 186000,
+   "land_area_m2": 320000,
+   "hectares": 32.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Retail, office, residential. Built area 186,000 m² on a site of 320,000 m², in Panama City, Panama.",
+    "es": "Retail, office, residential. Superficie construida de 186,000 m² sobre una parcela de 320,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "Retail, office, residential. مساحة مبنية 186,000 م² على موقع 320,000 م²، في مدينة بنما، بنما.",
+    "zh": "Retail, office, residential。建筑面积 186,000 平方米，用地 320,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "long_description": {
+    "en": "Retail, office, residential. Built area 186,000 m² on a site of 320,000 m², in Panama City, Panama.",
+    "es": "Retail, office, residential. Superficie construida de 186,000 m² sobre una parcela de 320,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "Retail, office, residential. مساحة مبنية 186,000 م² على موقع 320,000 م²، في مدينة بنما، بنما.",
+    "zh": "Retail, office, residential。建筑面积 186,000 平方米，用地 320,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-waterfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "Waterfront",
+     "es": "Waterfront",
+     "ar": "على الواجهة المائية",
+     "zh": "滨水"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-downtown",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "downtown",
+   "title": "Torre Central Complex",
+   "country": "Mexico",
+   "region": "Ciudad de México",
+   "city": "Ciudad de México",
+   "price_usd": 268000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 124000,
+   "land_area_m2": 42000,
+   "hectares": 4.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "Office + retail + hotel. Built area 124,000 m² on a site of 42,000 m², in Mexico City, Mexico.",
+    "es": "Office + retail + hotel. Superficie construida de 124,000 m² sobre una parcela de 42,000 m², en Ciudad de México, México.",
+    "ar": "Office + retail + hotel. مساحة مبنية 124,000 م² على موقع 42,000 م²، في مدينة مكسيكو، المكسيك.",
+    "zh": "Office + retail + hotel。建筑面积 124,000 平方米，用地 42,000 平方米，位于墨西哥墨西哥城。"
+   },
+   "long_description": {
+    "en": "Office + retail + hotel. Built area 124,000 m² on a site of 42,000 m², in Mexico City, Mexico.",
+    "es": "Office + retail + hotel. Superficie construida de 124,000 m² sobre una parcela de 42,000 m², en Ciudad de México, México.",
+    "ar": "Office + retail + hotel. مساحة مبنية 124,000 م² على موقع 42,000 م²، في مدينة مكسيكو، المكسيك.",
+    "zh": "Office + retail + hotel。建筑面积 124,000 平方米，用地 42,000 平方米，位于墨西哥墨西哥城。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-downtown.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "downtown",
+     "es": "downtown",
+     "ar": "downtown",
+     "zh": "downtown"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-transit",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "transit",
+   "title": "Estación Norte Quarter",
+   "country": "Spain",
+   "region": "Community of Madrid",
+   "city": "Madrid",
+   "price_usd": 194000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 96000,
+   "land_area_m2": 38000,
+   "hectares": 3.8,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "Transit-oriented. Built area 96,000 m² on a site of 38,000 m², in Madrid, Spain.",
+    "es": "Transit-oriented. Superficie construida de 96,000 m² sobre una parcela de 38,000 m², en Madrid, España.",
+    "ar": "Transit-oriented. مساحة مبنية 96,000 م² على موقع 38,000 م²، في مدريد، إسبانيا.",
+    "zh": "Transit-oriented。建筑面积 96,000 平方米，用地 38,000 平方米，位于西班牙马德里。"
+   },
+   "long_description": {
+    "en": "Transit-oriented. Built area 96,000 m² on a site of 38,000 m², in Madrid, Spain.",
+    "es": "Transit-oriented. Superficie construida de 96,000 m² sobre una parcela de 38,000 m², en Madrid, España.",
+    "ar": "Transit-oriented. مساحة مبنية 96,000 م² على موقع 38,000 م²، في مدريد، إسبانيا.",
+    "zh": "Transit-oriented。建筑面积 96,000 平方米，用地 38,000 平方米，位于西班牙马德里。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-transit.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "transit",
+     "es": "transit",
+     "ar": "transit",
+     "zh": "transit"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-resort-mixed",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "resort-mixed",
+   "title": "Bahía Blanca Village",
+   "country": "Dominican Republic",
+   "region": "Samaná",
+   "city": "Las Terrenas",
+   "price_usd": 112000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 48000,
+   "land_area_m2": 186000,
+   "hectares": 18.6,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "Resort + residences. Built area 48,000 m² on a site of 186,000 m², in Las Terrenas, Dominican Republic.",
+    "es": "Resort + residences. Superficie construida de 48,000 m² sobre una parcela de 186,000 m², en Las Terrenas, República Dominicana.",
+    "ar": "Resort + residences. مساحة مبنية 48,000 م² على موقع 186,000 م²، في لاس تيريناس، جمهورية الدومينيكان.",
+    "zh": "Resort + residences。建筑面积 48,000 平方米，用地 186,000 平方米，位于多米尼加共和国拉斯特雷纳斯。"
+   },
+   "long_description": {
+    "en": "Resort + residences. Built area 48,000 m² on a site of 186,000 m², in Las Terrenas, Dominican Republic.",
+    "es": "Resort + residences. Superficie construida de 48,000 m² sobre una parcela de 186,000 m², en Las Terrenas, República Dominicana.",
+    "ar": "Resort + residences. مساحة مبنية 48,000 م² على موقع 186,000 م²، في لاس تيريناس، جمهورية الدومينيكان.",
+    "zh": "Resort + residences。建筑面积 48,000 平方米，用地 186,000 平方米，位于多米尼加共和国拉斯特雷纳斯。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-resort-mixed.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "resort-mixed",
+     "es": "resort-mixed",
+     "ar": "resort-mixed",
+     "zh": "resort-mixed"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-industrial-conv",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "industrial-conv",
+   "title": "The Docklands Works",
+   "country": "United Kingdom",
+   "region": "England",
+   "city": "Liverpool",
+   "price_usd": 86400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 62000,
+   "land_area_m2": 74000,
+   "hectares": 7.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "Industrial conversion. Built area 62,000 m² on a site of 74,000 m², in Liverpool, United Kingdom.",
+    "es": "Industrial conversion. Superficie construida de 62,000 m² sobre una parcela de 74,000 m², en Liverpool, Reino Unido.",
+    "ar": "Industrial conversion. مساحة مبنية 62,000 م² على موقع 74,000 م²، في ليفربول، المملكة المتحدة.",
+    "zh": "Industrial conversion。建筑面积 62,000 平方米，用地 74,000 平方米，位于英国利物浦。"
+   },
+   "long_description": {
+    "en": "Industrial conversion. Built area 62,000 m² on a site of 74,000 m², in Liverpool, United Kingdom.",
+    "es": "Industrial conversion. Superficie construida de 62,000 m² sobre una parcela de 74,000 m², en Liverpool, Reino Unido.",
+    "ar": "Industrial conversion. مساحة مبنية 62,000 م² على موقع 74,000 م²، في ليفربول، المملكة المتحدة.",
+    "zh": "Industrial conversion。建筑面积 62,000 平方米，用地 74,000 平方米，位于英国利物浦。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-industrial-conv.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "industrial-conv",
+     "es": "industrial-conv",
+     "ar": "industrial-conv",
+     "zh": "industrial-conv"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-mixed-use-business-park",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "mixed-use",
+   "variant": "business-park",
+   "title": "Gateway Business Quarter",
+   "country": "United Arab Emirates",
+   "region": "Abu Dhabi",
+   "city": "Abu Dhabi",
+   "price_usd": 236000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 108000,
+   "land_area_m2": 96000,
+   "hectares": 9.6,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "Business quarter. Built area 108,000 m² on a site of 96,000 m², in Abu Dhabi, United Arab Emirates.",
+    "es": "Business quarter. Superficie construida de 108,000 m² sobre una parcela de 96,000 m², en Abu Dabi, Emiratos Árabes Unidos.",
+    "ar": "Business quarter. مساحة مبنية 108,000 م² على موقع 96,000 م²، في أبوظبي، الإمارات العربية المتحدة.",
+    "zh": "Business quarter。建筑面积 108,000 平方米，用地 96,000 平方米，位于阿联酋阿布扎比。"
+   },
+   "long_description": {
+    "en": "Business quarter. Built area 108,000 m² on a site of 96,000 m², in Abu Dhabi, United Arab Emirates.",
+    "es": "Business quarter. Superficie construida de 108,000 m² sobre una parcela de 96,000 m², en Abu Dabi, Emiratos Árabes Unidos.",
+    "ar": "Business quarter. مساحة مبنية 108,000 م² على موقع 96,000 م²، في أبوظبي، الإمارات العربية المتحدة.",
+    "zh": "Business quarter。建筑面积 108,000 平方米，用地 96,000 平方米，位于阿联酋阿布扎比。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-mixed-use-business-park.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Mixed-Use Developments",
+     "es": "Desarrollos de uso mixto",
+     "ar": "تطويرات متعددة الاستخدامات",
+     "zh": "综合体开发"
+    },
+    "variant": {
+     "en": "business-park",
+     "es": "business-park",
+     "ar": "business-park",
+     "zh": "business-park"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-hotel-70",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "hotel-70",
+   "title": "Proyecto Costa Azul",
+   "country": "Panama",
+   "region": "Panamá",
+   "city": "Panama City",
+   "price_usd": 42000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 34000,
+   "land_area_m2": 18000,
+   "hectares": 1.8,
+   "hotel_keys": 218,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "≈70% complete, halted 2023. 218 keys. Built area 34,000 m² on a site of 18,000 m², in Panama City, Panama.",
+    "es": "≈70% complete, halted 2023. 218 llaves. Superficie construida de 34,000 m² sobre una parcela de 18,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "≈70% complete, halted 2023. 218 مفتاحاً. مساحة مبنية 34,000 م² على موقع 18,000 م²، في مدينة بنما، بنما.",
+    "zh": "≈70% complete, halted 2023。218 间客房。建筑面积 34,000 平方米，用地 18,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "long_description": {
+    "en": "≈70% complete, halted 2023. 218 keys. Built area 34,000 m² on a site of 18,000 m², in Panama City, Panama.",
+    "es": "≈70% complete, halted 2023. 218 llaves. Superficie construida de 34,000 m² sobre una parcela de 18,000 m², en Ciudad de Panamá, Panamá.",
+    "ar": "≈70% complete, halted 2023. 218 مفتاحاً. مساحة مبنية 34,000 م² على موقع 18,000 م²، في مدينة بنما، بنما.",
+    "zh": "≈70% complete, halted 2023。218 间客房。建筑面积 34,000 平方米，用地 18,000 平方米，位于巴拿马巴拿马城。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-hotel-70.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "hotel-70",
+     "es": "hotel-70",
+     "ar": "hotel-70",
+     "zh": "hotel-70"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-resort-45",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "resort-45",
+   "title": "Resort Bahía Larga",
+   "country": "Dominican Republic",
+   "region": "Puerto Plata",
+   "city": "Puerto Plata",
+   "price_usd": 58000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 52000,
+   "land_area_m2": 124000,
+   "hectares": 12.4,
+   "hotel_keys": 340,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "≈45% complete. 340 keys. Built area 52,000 m² on a site of 124,000 m², in Puerto Plata, Dominican Republic.",
+    "es": "≈45% complete. 340 llaves. Superficie construida de 52,000 m² sobre una parcela de 124,000 m², en Puerto Plata, República Dominicana.",
+    "ar": "≈45% complete. 340 مفتاحاً. مساحة مبنية 52,000 م² على موقع 124,000 م²، في بويرتو بلاتا، جمهورية الدومينيكان.",
+    "zh": "≈45% complete。340 间客房。建筑面积 52,000 平方米，用地 124,000 平方米，位于多米尼加共和国银港。"
+   },
+   "long_description": {
+    "en": "≈45% complete. 340 keys. Built area 52,000 m² on a site of 124,000 m², in Puerto Plata, Dominican Republic.",
+    "es": "≈45% complete. 340 llaves. Superficie construida de 52,000 m² sobre una parcela de 124,000 m², en Puerto Plata, República Dominicana.",
+    "ar": "≈45% complete. 340 مفتاحاً. مساحة مبنية 52,000 م² على موقع 124,000 م²، في بويرتو بلاتا، جمهورية الدومينيكان.",
+    "zh": "≈45% complete。340 间客房。建筑面积 52,000 平方米，用地 124,000 平方米，位于多米尼加共和国银港。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-resort-45.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "resort-45",
+     "es": "resort-45",
+     "ar": "resort-45",
+     "zh": "resort-45"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-tower-85",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "tower-85",
+   "title": "Torre Marina Sur",
+   "country": "Mexico",
+   "region": "Quintana Roo",
+   "city": "Cancún",
+   "price_usd": 36500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 28400,
+   "land_area_m2": 9600,
+   "hectares": 1.0,
+   "hotel_keys": 164,
+   "berths": null,
+   "status": "seeking-operator",
+   "short_description": {
+    "en": "≈85% complete. 164 keys. Built area 28,400 m² on a site of 9,600 m², in Cancún, Mexico.",
+    "es": "≈85% complete. 164 llaves. Superficie construida de 28,400 m² sobre una parcela de 9,600 m², en Cancún, México.",
+    "ar": "≈85% complete. 164 مفتاحاً. مساحة مبنية 28,400 م² على موقع 9,600 م²، في كانكون، المكسيك.",
+    "zh": "≈85% complete。164 间客房。建筑面积 28,400 平方米，用地 9,600 平方米，位于墨西哥坎昆。"
+   },
+   "long_description": {
+    "en": "≈85% complete. 164 keys. Built area 28,400 m² on a site of 9,600 m², in Cancún, Mexico.",
+    "es": "≈85% complete. 164 llaves. Superficie construida de 28,400 m² sobre una parcela de 9,600 m², en Cancún, México.",
+    "ar": "≈85% complete. 164 مفتاحاً. مساحة مبنية 28,400 م² على موقع 9,600 م²، في كانكون، المكسيك.",
+    "zh": "≈85% complete。164 间客房。建筑面积 28,400 平方米，用地 9,600 平方米，位于墨西哥坎昆。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-tower-85.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "tower-85",
+     "es": "tower-85",
+     "ar": "tower-85",
+     "zh": "tower-85"
+    },
+    "status": {
+     "en": "Seeking operator",
+     "es": "Busca operador",
+     "ar": "يبحث عن مشغّل",
+     "zh": "寻找运营方"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-mixed-30",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "mixed-30",
+   "title": "Distrito Puerta Real",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Málaga",
+   "price_usd": 74000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 61000,
+   "land_area_m2": 42000,
+   "hectares": 4.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "≈30% complete. Built area 61,000 m² on a site of 42,000 m², in Málaga, Spain.",
+    "es": "≈30% complete. Superficie construida de 61,000 m² sobre una parcela de 42,000 m², en Málaga, España.",
+    "ar": "≈30% complete. مساحة مبنية 61,000 م² على موقع 42,000 م²، في مالقة، إسبانيا.",
+    "zh": "≈30% complete。建筑面积 61,000 平方米，用地 42,000 平方米，位于西班牙马拉加。"
+   },
+   "long_description": {
+    "en": "≈30% complete. Built area 61,000 m² on a site of 42,000 m², in Málaga, Spain.",
+    "es": "≈30% complete. Superficie construida de 61,000 m² sobre una parcela de 42,000 m², en Málaga, España.",
+    "ar": "≈30% complete. مساحة مبنية 61,000 م² على موقع 42,000 م²، في مالقة، إسبانيا.",
+    "zh": "≈30% complete。建筑面积 61,000 平方米，用地 42,000 平方米，位于西班牙马拉加。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-mixed-30.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "mixed-30",
+     "es": "mixed-30",
+     "ar": "mixed-30",
+     "zh": "mixed-30"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-boutique-60",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "boutique-60",
+   "title": "Hotel Miradouro",
+   "country": "Portugal",
+   "region": "Norte",
+   "city": "Porto",
+   "price_usd": 19800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 8900,
+   "land_area_m2": 3400,
+   "hectares": 0.3,
+   "hotel_keys": 62,
+   "berths": null,
+   "status": "operational",
+   "short_description": {
+    "en": "≈60% complete. 62 keys. Built area 8,900 m² on a site of 3,400 m², in Porto, Portugal.",
+    "es": "≈60% complete. 62 llaves. Superficie construida de 8,900 m² sobre una parcela de 3,400 m², en Oporto, Portugal.",
+    "ar": "≈60% complete. 62 مفتاحاً. مساحة مبنية 8,900 م² على موقع 3,400 م²، في بورتو، البرتغال.",
+    "zh": "≈60% complete。62 间客房。建筑面积 8,900 平方米，用地 3,400 平方米，位于葡萄牙波尔图。"
+   },
+   "long_description": {
+    "en": "≈60% complete. 62 keys. Built area 8,900 m² on a site of 3,400 m², in Porto, Portugal.",
+    "es": "≈60% complete. 62 llaves. Superficie construida de 8,900 m² sobre una parcela de 3,400 m², en Oporto, Portugal.",
+    "ar": "≈60% complete. 62 مفتاحاً. مساحة مبنية 8,900 م² على موقع 3,400 م²، في بورتو، البرتغال.",
+    "zh": "≈60% complete。62 间客房。建筑面积 8,900 平方米，用地 3,400 平方米，位于葡萄牙波尔图。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-boutique-60.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "boutique-60",
+     "es": "boutique-60",
+     "ar": "boutique-60",
+     "zh": "boutique-60"
+    },
+    "status": {
+     "en": "Operational",
+     "es": "En operación",
+     "ar": "قيد التشغيل",
+     "zh": "运营中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ch-halted-projects-marina-40",
+   "demo": true,
+   "category": "commercial-hospitality",
+   "subcategory": "halted-projects",
+   "variant": "marina-40",
+   "title": "Marina Vista Proyecto",
+   "country": "Turkey",
+   "region": "Muğla",
+   "city": "Marmaris",
+   "price_usd": 46200000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": 7400,
+   "land_area_m2": 86000,
+   "hectares": 8.6,
+   "hotel_keys": null,
+   "berths": 180,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "≈40% complete, 180 berths. Built area 7,400 m² on a site of 86,000 m², in Marmaris, Turkey.",
+    "es": "≈40% complete, 180 berths. Superficie construida de 7,400 m² sobre una parcela de 86,000 m², en Marmaris, Turquía.",
+    "ar": "≈40% complete, 180 berths. مساحة مبنية 7,400 م² على موقع 86,000 م²، في مرمريس، تركيا.",
+    "zh": "≈40% complete, 180 berths。建筑面积 7,400 平方米，用地 86,000 平方米，位于土耳其马尔马里斯。"
+   },
+   "long_description": {
+    "en": "≈40% complete, 180 berths. Built area 7,400 m² on a site of 86,000 m², in Marmaris, Turkey.",
+    "es": "≈40% complete, 180 berths. Superficie construida de 7,400 m² sobre una parcela de 86,000 m², en Marmaris, Turquía.",
+    "ar": "≈40% complete, 180 berths. مساحة مبنية 7,400 م² على موقع 86,000 م²، في مرمريس، تركيا.",
+    "zh": "≈40% complete, 180 berths。建筑面积 7,400 平方米，用地 86,000 平方米，位于土耳其马尔马里斯。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ch-halted-projects-marina-40.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Halted & Incomplete Projects",
+     "es": "Proyectos detenidos o incompletos",
+     "ar": "مشاريع متوقفة أو غير مكتملة",
+     "zh": "停工与未完工项目"
+    },
+    "variant": {
+     "en": "marina-40",
+     "es": "marina-40",
+     "ar": "marina-40",
+     "zh": "marina-40"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  }
+ ]
+}

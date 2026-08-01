@@ -1,0 +1,2321 @@
+{
+ "$schema": "../SCHEMA.md",
+ "version": 3,
+ "demo": true,
+ "note": "Demonstrative portfolio built per docs/BIBLIA_VISUAL_V3.md. Names, locations and figures are illustrative.",
+ "demo_note": {
+  "en": "Demonstrative portfolio for presentation.",
+  "es": "Portafolio demostrativo para presentación.",
+  "ar": "محفظة توضيحية لأغراض العرض.",
+  "zh": "用于演示的示范性资产组合。"
+ },
+ "ui": {
+  "demo_note": {
+   "en": "Demonstrative portfolio for presentation.",
+   "es": "Portafolio demostrativo para presentación.",
+   "ar": "محفظة توضيحية لأغراض العرض.",
+   "zh": "用于演示的示范性资产组合。"
+  },
+  "beds": {
+   "en": "Bedrooms",
+   "es": "Dormitorios",
+   "ar": "غرف النوم",
+   "zh": "卧室"
+  },
+  "baths": {
+   "en": "Bathrooms",
+   "es": "Baños",
+   "ar": "الحمامات",
+   "zh": "浴室"
+  },
+  "built": {
+   "en": "Built area",
+   "es": "Superficie construida",
+   "ar": "المساحة المبنية",
+   "zh": "建筑面积"
+  },
+  "land": {
+   "en": "Land",
+   "es": "Terreno",
+   "ar": "مساحة الأرض",
+   "zh": "土地面积"
+  },
+  "hectares": {
+   "en": "Area",
+   "es": "Superficie",
+   "ar": "المساحة",
+   "zh": "面积"
+  },
+  "keys": {
+   "en": "Keys",
+   "es": "Llaves",
+   "ar": "المفاتيح",
+   "zh": "客房数"
+  },
+  "berths": {
+   "en": "Berths",
+   "es": "Amarres",
+   "ar": "مراسٍ",
+   "zh": "泊位"
+  },
+  "use": {
+   "en": "Projected use",
+   "es": "Uso proyectado",
+   "ar": "الاستخدام المتوقع",
+   "zh": "规划用途"
+  },
+  "access": {
+   "en": "Access",
+   "es": "Acceso",
+   "ar": "الوصول",
+   "zh": "交通"
+  },
+  "price": {
+   "en": "Price",
+   "es": "Precio",
+   "ar": "السعر",
+   "zh": "价格"
+  },
+  "view": {
+   "en": "View details",
+   "es": "Ver ficha",
+   "ar": "عرض التفاصيل",
+   "zh": "查看详情"
+  }
+ },
+ "catalog": "land-developments",
+ "items": [
+  {
+   "id": "ld-coastal-land-beachfront-km",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "beachfront-km",
+   "title": "Costa Larga",
+   "country": "Dominican Republic",
+   "region": "Samaná",
+   "city": "Samaná",
+   "price_usd": 84000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 12400000,
+   "hectares": 1240,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Resort / residential",
+   "access": "Paved road + 42 km airport",
+   "short_description": {
+    "en": "1,240 hectares in Samaná, Dominican Republic. Projected use: Resort / residential. Access: Paved road, airport 42 km.",
+    "es": "1,240 hectáreas en Samaná, República Dominicana. Uso proyectado: Resort / residencial. Acceso: Carretera asfaltada, aeropuerto a 42 km.",
+    "ar": "1,240 هكتاراً في سامانا، جمهورية الدومينيكان. الاستخدام المتوقع: منتجع / سكني. الوصول: طريق معبّد، المطار على بعد 42 كم.",
+    "zh": "1,240 公顷，位于多米尼加共和国萨马纳。规划用途：度假村／住宅。交通：柏油公路，机场 42 公里。"
+   },
+   "long_description": {
+    "en": "1,240 hectares in Samaná, Dominican Republic. Projected use: Resort / residential. Access: Paved road, airport 42 km.",
+    "es": "1,240 hectáreas en Samaná, República Dominicana. Uso proyectado: Resort / residencial. Acceso: Carretera asfaltada, aeropuerto a 42 km.",
+    "ar": "1,240 هكتاراً في سامانا، جمهورية الدومينيكان. الاستخدام المتوقع: منتجع / سكني. الوصول: طريق معبّد، المطار على بعد 42 كم.",
+    "zh": "1,240 公顷，位于多米尼加共和国萨马纳。规划用途：度假村／住宅。交通：柏油公路，机场 42 公里。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-beachfront-km.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "beachfront-km",
+     "es": "beachfront-km",
+     "ar": "beachfront-km",
+     "zh": "beachfront-km"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-coastal-land-clifftop",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "clifftop",
+   "title": "Acantilados de Nazaré",
+   "country": "Portugal",
+   "region": "Centro",
+   "city": "Nazaré",
+   "price_usd": 26500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1860000,
+   "hectares": 186,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Boutique resort",
+   "access": "National road frontage",
+   "short_description": {
+    "en": "186 hectares in Nazaré, Portugal. Projected use: Boutique resort. Access: National road frontage.",
+    "es": "186 hectáreas en Nazaré, Portugal. Uso proyectado: Resort boutique. Acceso: Frente a carretera nacional.",
+    "ar": "186 هكتاراً في نازاريه، البرتغال. الاستخدام المتوقع: منتجع بوتيك. الوصول: واجهة على الطريق الوطني.",
+    "zh": "186 公顷，位于葡萄牙纳扎雷。规划用途：精品度假村。交通：国道临路。"
+   },
+   "long_description": {
+    "en": "186 hectares in Nazaré, Portugal. Projected use: Boutique resort. Access: National road frontage.",
+    "es": "186 hectáreas en Nazaré, Portugal. Uso proyectado: Resort boutique. Acceso: Frente a carretera nacional.",
+    "ar": "186 هكتاراً في نازاريه، البرتغال. الاستخدام المتوقع: منتجع بوتيك. الوصول: واجهة على الطريق الوطني.",
+    "zh": "186 公顷，位于葡萄牙纳扎雷。规划用途：精品度假村。交通：国道临路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-clifftop.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "Clifftop",
+     "es": "Sobre acantilado",
+     "ar": "على جرف",
+     "zh": "崖顶"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-coastal-land-bay",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "bay",
+   "title": "Bahía Escondida",
+   "country": "Mexico",
+   "region": "Oaxaca",
+   "city": "Huatulco",
+   "price_usd": 48000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 6400000,
+   "hectares": 640,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Integrated resort",
+   "access": "Highway + 28 km airport",
+   "short_description": {
+    "en": "640 hectares in Huatulco, Mexico. Projected use: Integrated resort. Access: Highway, airport 28 km.",
+    "es": "640 hectáreas en Huatulco, México. Uso proyectado: Resort integrado. Acceso: Autopista, aeropuerto a 28 km.",
+    "ar": "640 هكتاراً في هواتولكو، المكسيك. الاستخدام المتوقع: منتجع متكامل. الوصول: الطريق السريع، المطار على بعد 28 كم.",
+    "zh": "640 公顷，位于墨西哥瓦图尔科。规划用途：综合度假村。交通：高速公路，机场 28 公里。"
+   },
+   "long_description": {
+    "en": "640 hectares in Huatulco, Mexico. Projected use: Integrated resort. Access: Highway, airport 28 km.",
+    "es": "640 hectáreas en Huatulco, México. Uso proyectado: Resort integrado. Acceso: Autopista, aeropuerto a 28 km.",
+    "ar": "640 هكتاراً في هواتولكو، المكسيك. الاستخدام المتوقع: منتجع متكامل. الوصول: الطريق السريع، المطار على بعد 28 كم.",
+    "zh": "640 公顷，位于墨西哥瓦图尔科。规划用途：综合度假村。交通：高速公路，机场 28 公里。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-bay.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "bay",
+     "es": "bay",
+     "ar": "bay",
+     "zh": "bay"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-coastal-land-peninsula",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "peninsula",
+   "title": "Península Verde",
+   "country": "Panama",
+   "region": "Bocas del Toro",
+   "city": "Bocas del Toro",
+   "price_usd": 62000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 9800000,
+   "hectares": 980,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Mixed resort",
+   "access": "Marine + airstrip",
+   "short_description": {
+    "en": "980 hectares in Bocas del Toro, Panama. Projected use: Mixed resort. Access: Marine access and airstrip.",
+    "es": "980 hectáreas en Bocas del Toro, Panamá. Uso proyectado: Resort mixto. Acceso: Acceso marítimo y pista.",
+    "ar": "980 هكتاراً في بوكاس ديل تورو، بنما. الاستخدام المتوقع: منتجع مختلط. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "980 公顷，位于巴拿马博卡斯德尔托罗。规划用途：混合度假村。交通：海路与简易机场。"
+   },
+   "long_description": {
+    "en": "980 hectares in Bocas del Toro, Panama. Projected use: Mixed resort. Access: Marine access and airstrip.",
+    "es": "980 hectáreas en Bocas del Toro, Panamá. Uso proyectado: Resort mixto. Acceso: Acceso marítimo y pista.",
+    "ar": "980 هكتاراً في بوكاس ديل تورو، بنما. الاستخدام المتوقع: منتجع مختلط. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "980 公顷，位于巴拿马博卡斯德尔托罗。规划用途：混合度假村。交通：海路与简易机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-peninsula.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "peninsula",
+     "es": "peninsula",
+     "ar": "peninsula",
+     "zh": "peninsula"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-coastal-land-dune-coast",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "dune-coast",
+   "title": "Dunas del Norte",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Huelva",
+   "price_usd": 31400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 2140000,
+   "hectares": 214,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Low-density resort",
+   "access": "Coastal highway",
+   "short_description": {
+    "en": "214 hectares in Huelva, Spain. Projected use: Low-density resort. Access: Coastal highway.",
+    "es": "214 hectáreas en Huelva, España. Uso proyectado: Resort de baja densidad. Acceso: Autopista costera.",
+    "ar": "214 هكتاراً في ويلبا، إسبانيا. الاستخدام المتوقع: منتجع منخفض الكثافة. الوصول: الطريق الساحلي السريع.",
+    "zh": "214 公顷，位于西班牙韦尔瓦。规划用途：低密度度假村。交通：滨海高速。"
+   },
+   "long_description": {
+    "en": "214 hectares in Huelva, Spain. Projected use: Low-density resort. Access: Coastal highway.",
+    "es": "214 hectáreas en Huelva, España. Uso proyectado: Resort de baja densidad. Acceso: Autopista costera.",
+    "ar": "214 هكتاراً في ويلبا، إسبانيا. الاستخدام المتوقع: منتجع منخفض الكثافة. الوصول: الطريق الساحلي السريع.",
+    "zh": "214 公顷，位于西班牙韦尔瓦。规划用途：低密度度假村。交通：滨海高速。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-dune-coast.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "dune-coast",
+     "es": "dune-coast",
+     "ar": "dune-coast",
+     "zh": "dune-coast"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-coastal-land-reef-front",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "coastal-land",
+   "variant": "reef-front",
+   "title": "Arrecife Sur",
+   "country": "Belize",
+   "region": "Stann Creek",
+   "city": "Placencia",
+   "price_usd": 38900000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 4100000,
+   "hectares": 410,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Eco-resort",
+   "access": "Coastal road + marina",
+   "short_description": {
+    "en": "410 hectares in Placencia, Belize. Projected use: Eco-resort. Access: Coastal road and marina.",
+    "es": "410 hectáreas en Placencia, Belice. Uso proyectado: Eco-resort. Acceso: Carretera costera y marina.",
+    "ar": "410 هكتاراً في بلاسينسيا، بليز. الاستخدام المتوقع: منتجع بيئي. الوصول: الطريق الساحلي والمرسى.",
+    "zh": "410 公顷，位于伯利兹普拉森西亚。规划用途：生态度假村。交通：滨海公路与码头。"
+   },
+   "long_description": {
+    "en": "410 hectares in Placencia, Belize. Projected use: Eco-resort. Access: Coastal road and marina.",
+    "es": "410 hectáreas en Placencia, Belice. Uso proyectado: Eco-resort. Acceso: Carretera costera y marina.",
+    "ar": "410 هكتاراً في بلاسينسيا، بليز. الاستخدام المتوقع: منتجع بيئي. الوصول: الطريق الساحلي والمرسى.",
+    "zh": "410 公顷，位于伯利兹普拉森西亚。规划用途：生态度假村。交通：滨海公路与码头。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-coastal-land-reef-front.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Coastal Land",
+     "es": "Suelo costero",
+     "ar": "أراضٍ ساحلية",
+     "zh": "海岸地块"
+    },
+    "variant": {
+     "en": "reef-front",
+     "es": "reef-front",
+     "ar": "reef-front",
+     "zh": "reef-front"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-beach-parcel",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "beach-parcel",
+   "title": "Parcela Playa Grande",
+   "country": "Mexico",
+   "region": "Quintana Roo",
+   "city": "Tulum",
+   "price_usd": 54000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 680000,
+   "hectares": 68,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Hotel, up to 320 keys",
+   "access": "Federal highway",
+   "short_description": {
+    "en": "68 hectares in Tulum, Mexico. Projected use: Hotel, up to 320 keys. Access: Federal highway.",
+    "es": "68 hectáreas en Tulum, México. Uso proyectado: Hotel, hasta 320 llaves. Acceso: Carretera federal.",
+    "ar": "68 هكتاراً في تولوم، المكسيك. الاستخدام المتوقع: فندق حتى 320 مفتاحاً. الوصول: الطريق الاتحادي.",
+    "zh": "68 公顷，位于墨西哥图卢姆。规划用途：酒店，最多 320 间客房。交通：联邦公路。"
+   },
+   "long_description": {
+    "en": "68 hectares in Tulum, Mexico. Projected use: Hotel, up to 320 keys. Access: Federal highway.",
+    "es": "68 hectáreas en Tulum, México. Uso proyectado: Hotel, hasta 320 llaves. Acceso: Carretera federal.",
+    "ar": "68 هكتاراً في تولوم، المكسيك. الاستخدام المتوقع: فندق حتى 320 مفتاحاً. الوصول: الطريق الاتحادي.",
+    "zh": "68 公顷，位于墨西哥图卢姆。规划用途：酒店，最多 320 间客房。交通：联邦公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-beach-parcel.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "beach-parcel",
+     "es": "beach-parcel",
+     "ar": "beach-parcel",
+     "zh": "beach-parcel"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-island-parcel",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "island-parcel",
+   "title": "Cayo Hotelero",
+   "country": "Bahamas",
+   "region": "Exuma",
+   "city": "Exuma",
+   "price_usd": 72000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1240000,
+   "hectares": 124,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Resort, up to 180 keys",
+   "access": "Marine + airstrip",
+   "short_description": {
+    "en": "124 hectares in Exuma, Bahamas. Projected use: Resort, up to 180 keys. Access: Marine access and airstrip.",
+    "es": "124 hectáreas en Exuma, Bahamas. Uso proyectado: Resort, hasta 180 llaves. Acceso: Acceso marítimo y pista.",
+    "ar": "124 هكتاراً في إكزوما، جزر البهاما. الاستخدام المتوقع: منتجع حتى 180 مفتاحاً. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "124 公顷，位于巴哈马埃克苏马。规划用途：度假村，最多 180 间客房。交通：海路与简易机场。"
+   },
+   "long_description": {
+    "en": "124 hectares in Exuma, Bahamas. Projected use: Resort, up to 180 keys. Access: Marine access and airstrip.",
+    "es": "124 hectáreas en Exuma, Bahamas. Uso proyectado: Resort, hasta 180 llaves. Acceso: Acceso marítimo y pista.",
+    "ar": "124 هكتاراً في إكزوما، جزر البهاما. الاستخدام المتوقع: منتجع حتى 180 مفتاحاً. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "124 公顷，位于巴哈马埃克苏马。规划用途：度假村，最多 180 间客房。交通：海路与简易机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-island-parcel.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "island-parcel",
+     "es": "island-parcel",
+     "ar": "island-parcel",
+     "zh": "island-parcel"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-lakefront",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "lakefront",
+   "title": "Terreno Lago Azul",
+   "country": "Italy",
+   "region": "Lombardy",
+   "city": "Lake Como",
+   "price_usd": 46500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 320000,
+   "hectares": 32,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Boutique hotel",
+   "access": "Provincial road",
+   "short_description": {
+    "en": "32 hectares in Lake Como, Italy. Projected use: Boutique hotel. Access: Provincial road.",
+    "es": "32 hectáreas en Lago de Como, Italia. Uso proyectado: Hotel boutique. Acceso: Carretera provincial.",
+    "ar": "32 هكتاراً في بحيرة كومو، إيطاليا. الاستخدام المتوقع: فندق بوتيك. الوصول: طريق إقليمي.",
+    "zh": "32 公顷，位于意大利科莫湖。规划用途：精品酒店。交通：省道。"
+   },
+   "long_description": {
+    "en": "32 hectares in Lake Como, Italy. Projected use: Boutique hotel. Access: Provincial road.",
+    "es": "32 hectáreas en Lago de Como, Italia. Uso proyectado: Hotel boutique. Acceso: Carretera provincial.",
+    "ar": "32 هكتاراً في بحيرة كومو، إيطاليا. الاستخدام المتوقع: فندق بوتيك. الوصول: طريق إقليمي.",
+    "zh": "32 公顷，位于意大利科莫湖。规划用途：精品酒店。交通：省道。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-lakefront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "Lakefront",
+     "es": "Frente al lago",
+     "ar": "على البحيرة",
+     "zh": "湖畔"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-mountain",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "mountain",
+   "title": "Meseta Andina",
+   "country": "Chile",
+   "region": "Los Lagos",
+   "city": "Puerto Varas",
+   "price_usd": 28400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1860000,
+   "hectares": 186,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Mountain resort",
+   "access": "Route 5 + 34 km airport",
+   "short_description": {
+    "en": "186 hectares in Puerto Varas, Chile. Projected use: Mountain resort. Access: Route 5, airport 34 km.",
+    "es": "186 hectáreas en Puerto Varas, Chile. Uso proyectado: Resort de montaña. Acceso: Ruta 5, aeropuerto a 34 km.",
+    "ar": "186 هكتاراً في بويرتو باراس، تشيلي. الاستخدام المتوقع: منتجع جبلي. الوصول: الطريق 5، المطار على بعد 34 كم.",
+    "zh": "186 公顷，位于智利巴拉斯港。规划用途：山地度假村。交通：5 号公路，机场 34 公里。"
+   },
+   "long_description": {
+    "en": "186 hectares in Puerto Varas, Chile. Projected use: Mountain resort. Access: Route 5, airport 34 km.",
+    "es": "186 hectáreas en Puerto Varas, Chile. Uso proyectado: Resort de montaña. Acceso: Ruta 5, aeropuerto a 34 km.",
+    "ar": "186 هكتاراً في بويرتو باراس، تشيلي. الاستخدام المتوقع: منتجع جبلي. الوصول: الطريق 5، المطار على بعد 34 كم.",
+    "zh": "186 公顷，位于智利巴拉斯港。规划用途：山地度假村。交通：5 号公路，机场 34 公里。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-mountain.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "Mountain",
+     "es": "De montaña",
+     "ar": "جبلي",
+     "zh": "山地"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-desert",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "desert",
+   "title": "Reserva del Desierto",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai",
+   "price_usd": 96000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 2400000,
+   "hectares": 240,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Desert resort",
+   "access": "E611 corridor",
+   "short_description": {
+    "en": "240 hectares in Dubai, United Arab Emirates. Projected use: Desert resort. Access: E611 corridor.",
+    "es": "240 hectáreas en Dubái, Emiratos Árabes Unidos. Uso proyectado: Resort de desierto. Acceso: Corredor E611.",
+    "ar": "240 هكتاراً في دبي، الإمارات العربية المتحدة. الاستخدام المتوقع: منتجع صحراوي. الوصول: ممر E611.",
+    "zh": "240 公顷，位于阿联酋迪拜。规划用途：沙漠度假村。交通：E611 走廊。"
+   },
+   "long_description": {
+    "en": "240 hectares in Dubai, United Arab Emirates. Projected use: Desert resort. Access: E611 corridor.",
+    "es": "240 hectáreas en Dubái, Emiratos Árabes Unidos. Uso proyectado: Resort de desierto. Acceso: Corredor E611.",
+    "ar": "240 هكتاراً في دبي، الإمارات العربية المتحدة. الاستخدام المتوقع: منتجع صحراوي. الوصول: ممر E611.",
+    "zh": "240 公顷，位于阿联酋迪拜。规划用途：沙漠度假村。交通：E611 走廊。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-desert.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "Desert",
+     "es": "De desierto",
+     "ar": "صحراوي",
+     "zh": "沙漠"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-hotel-resort-land-golf-resort",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "hotel-resort-land",
+   "variant": "golf-resort",
+   "title": "Campo Verde Resort Land",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Silves",
+   "price_usd": 41800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 3100000,
+   "hectares": 310,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Golf resort",
+   "access": "A22 motorway",
+   "short_description": {
+    "en": "310 hectares in Silves, Portugal. Projected use: Golf resort. Access: A22 motorway.",
+    "es": "310 hectáreas en Silves, Portugal. Uso proyectado: Resort de golf. Acceso: Autopista A22.",
+    "ar": "310 هكتاراً في سيلفيش، البرتغال. الاستخدام المتوقع: منتجع غولف. الوصول: الطريق السريع A22.",
+    "zh": "310 公顷，位于葡萄牙锡尔维什。规划用途：高尔夫度假村。交通：A22 高速公路。"
+   },
+   "long_description": {
+    "en": "310 hectares in Silves, Portugal. Projected use: Golf resort. Access: A22 motorway.",
+    "es": "310 hectáreas en Silves, Portugal. Uso proyectado: Resort de golf. Acceso: Autopista A22.",
+    "ar": "310 هكتاراً في سيلفيش، البرتغال. الاستخدام المتوقع: منتجع غولف. الوصول: الطريق السريع A22.",
+    "zh": "310 公顷，位于葡萄牙锡尔维什。规划用途：高尔夫度假村。交通：A22 高速公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-hotel-resort-land-golf-resort.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Hotel & Resort Land",
+     "es": "Terrenos para hoteles y resorts",
+     "ar": "أراضٍ للفنادق والمنتجعات",
+     "zh": "酒店与度假村用地"
+    },
+    "variant": {
+     "en": "golf-resort",
+     "es": "golf-resort",
+     "ar": "golf-resort",
+     "zh": "golf-resort"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-new-town",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "new-town",
+   "title": "Ciudad Nueva Norte",
+   "country": "Panama",
+   "region": "Panamá Oeste",
+   "city": "Arraiján",
+   "price_usd": 186000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 18400000,
+   "hectares": 1840,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Master-planned town",
+   "access": "Pan-American Highway",
+   "short_description": {
+    "en": "1,840 hectares in Arraiján, Panama. Projected use: Master-planned town. Access: Pan-American Highway.",
+    "es": "1,840 hectáreas en Arraiján, Panamá. Uso proyectado: Ciudad con plan maestro. Acceso: Carretera Panamericana.",
+    "ar": "1,840 هكتاراً في أرايخان، بنما. الاستخدام المتوقع: مدينة مخططة. الوصول: الطريق السريع الأمريكي.",
+    "zh": "1,840 公顷，位于巴拿马阿拉伊汉。规划用途：总体规划新城。交通：泛美公路。"
+   },
+   "long_description": {
+    "en": "1,840 hectares in Arraiján, Panama. Projected use: Master-planned town. Access: Pan-American Highway.",
+    "es": "1,840 hectáreas en Arraiján, Panamá. Uso proyectado: Ciudad con plan maestro. Acceso: Carretera Panamericana.",
+    "ar": "1,840 هكتاراً في أرايخان، بنما. الاستخدام المتوقع: مدينة مخططة. الوصول: الطريق السريع الأمريكي.",
+    "zh": "1,840 公顷，位于巴拿马阿拉伊汉。规划用途：总体规划新城。交通：泛美公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-new-town.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "new-town",
+     "es": "new-town",
+     "ar": "new-town",
+     "zh": "new-town"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-coastal-master",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "coastal-master",
+   "title": "Masterplan Costa Sur",
+   "country": "Dominican Republic",
+   "region": "La Altagracia",
+   "city": "Miches",
+   "price_usd": 124000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 11200000,
+   "hectares": 1120,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Coastal masterplan",
+   "access": "Coastal highway",
+   "short_description": {
+    "en": "1,120 hectares in Miches, Dominican Republic. Projected use: Coastal masterplan. Access: Coastal highway.",
+    "es": "1,120 hectáreas en Miches, República Dominicana. Uso proyectado: Masterplan costero. Acceso: Autopista costera.",
+    "ar": "1,120 هكتاراً في ميتشيس، جمهورية الدومينيكان. الاستخدام المتوقع: مخطط ساحلي شامل. الوصول: الطريق الساحلي السريع.",
+    "zh": "1,120 公顷，位于多米尼加共和国米切斯。规划用途：海岸总体规划。交通：滨海高速。"
+   },
+   "long_description": {
+    "en": "1,120 hectares in Miches, Dominican Republic. Projected use: Coastal masterplan. Access: Coastal highway.",
+    "es": "1,120 hectáreas en Miches, República Dominicana. Uso proyectado: Masterplan costero. Acceso: Autopista costera.",
+    "ar": "1,120 هكتاراً في ميتشيس، جمهورية الدومينيكان. الاستخدام المتوقع: مخطط ساحلي شامل. الوصول: الطريق الساحلي السريع.",
+    "zh": "1,120 公顷，位于多米尼加共和国米切斯。规划用途：海岸总体规划。交通：滨海高速。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-coastal-master.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "coastal-master",
+     "es": "coastal-master",
+     "ar": "coastal-master",
+     "zh": "coastal-master"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-resort-city",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "resort-city",
+   "title": "Distrito Turístico Sur",
+   "country": "Mexico",
+   "region": "Oaxaca",
+   "city": "Puerto Escondido",
+   "price_usd": 98000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 8600000,
+   "hectares": 860,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Resort district",
+   "access": "Highway 200 + airport",
+   "short_description": {
+    "en": "860 hectares in Puerto Escondido, Mexico. Projected use: Resort district. Access: Highway 200 and airport.",
+    "es": "860 hectáreas en Puerto Escondido, México. Uso proyectado: Distrito turístico. Acceso: Carretera 200 y aeropuerto.",
+    "ar": "860 هكتاراً في بويرتو إسكونديدو، المكسيك. الاستخدام المتوقع: حي منتجعات. الوصول: الطريق 200 والمطار.",
+    "zh": "860 公顷，位于墨西哥埃斯孔迪多港。规划用途：度假区。交通：200 号公路与机场。"
+   },
+   "long_description": {
+    "en": "860 hectares in Puerto Escondido, Mexico. Projected use: Resort district. Access: Highway 200 and airport.",
+    "es": "860 hectáreas en Puerto Escondido, México. Uso proyectado: Distrito turístico. Acceso: Carretera 200 y aeropuerto.",
+    "ar": "860 هكتاراً في بويرتو إسكونديدو، المكسيك. الاستخدام المتوقع: حي منتجعات. الوصول: الطريق 200 والمطار.",
+    "zh": "860 公顷，位于墨西哥埃斯孔迪多港。规划用途：度假区。交通：200 号公路与机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-resort-city.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "resort-city",
+     "es": "resort-city",
+     "ar": "resort-city",
+     "zh": "resort-city"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-eco-master",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "eco-master",
+   "title": "Reserva Integrada Verde",
+   "country": "Costa Rica",
+   "region": "Guanacaste",
+   "city": "Liberia",
+   "price_usd": 76500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 14600000,
+   "hectares": 1460,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Eco masterplan",
+   "access": "Route 21 + airport",
+   "short_description": {
+    "en": "1,460 hectares in Liberia, Costa Rica. Projected use: Eco masterplan. Access: Route 21 and airport.",
+    "es": "1,460 hectáreas en Liberia, Costa Rica. Uso proyectado: Masterplan ecológico. Acceso: Ruta 21 y aeropuerto.",
+    "ar": "1,460 هكتاراً في ليبيريا، كوستاريكا. الاستخدام المتوقع: مخطط بيئي شامل. الوصول: الطريق 21 والمطار.",
+    "zh": "1,460 公顷，位于哥斯达黎加利比里亚。规划用途：生态总体规划。交通：21 号公路与机场。"
+   },
+   "long_description": {
+    "en": "1,460 hectares in Liberia, Costa Rica. Projected use: Eco masterplan. Access: Route 21 and airport.",
+    "es": "1,460 hectáreas en Liberia, Costa Rica. Uso proyectado: Masterplan ecológico. Acceso: Ruta 21 y aeropuerto.",
+    "ar": "1,460 هكتاراً في ليبيريا، كوستاريكا. الاستخدام المتوقع: مخطط بيئي شامل. الوصول: الطريق 21 والمطار.",
+    "zh": "1,460 公顷，位于哥斯达黎加利比里亚。规划用途：生态总体规划。交通：21 号公路与机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-eco-master.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "eco-master",
+     "es": "eco-master",
+     "ar": "eco-master",
+     "zh": "eco-master"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-island-master",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "island-master",
+   "title": "Archipiélago Plan Maestro",
+   "country": "Indonesia",
+   "region": "Riau Islands",
+   "city": "Batam",
+   "price_usd": 142000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 21000000,
+   "hectares": 2100,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Island masterplan",
+   "access": "Ferry + airstrip",
+   "short_description": {
+    "en": "2,100 hectares in Batam, Indonesia. Projected use: Island masterplan. Access: Ferry and airstrip.",
+    "es": "2,100 hectáreas en Batam, Indonesia. Uso proyectado: Masterplan insular. Acceso: Ferry y pista de aterrizaje.",
+    "ar": "2,100 هكتاراً في باتام، إندونيسيا. الاستخدام المتوقع: مخطط جزري شامل. الوصول: العبّارة ومهبط طائرات.",
+    "zh": "2,100 公顷，位于印度尼西亚巴淡。规划用途：岛屿总体规划。交通：渡轮与简易机场。"
+   },
+   "long_description": {
+    "en": "2,100 hectares in Batam, Indonesia. Projected use: Island masterplan. Access: Ferry and airstrip.",
+    "es": "2,100 hectáreas en Batam, Indonesia. Uso proyectado: Masterplan insular. Acceso: Ferry y pista de aterrizaje.",
+    "ar": "2,100 هكتاراً في باتام، إندونيسيا. الاستخدام المتوقع: مخطط جزري شامل. الوصول: العبّارة ومهبط طائرات.",
+    "zh": "2,100 公顷，位于印度尼西亚巴淡。规划用途：岛屿总体规划。交通：渡轮与简易机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-island-master.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "island-master",
+     "es": "island-master",
+     "ar": "island-master",
+     "zh": "island-master"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-masterplan-land-border-logistics",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "masterplan-land",
+   "variant": "border-logistics",
+   "title": "Corredor Frontera Norte",
+   "country": "Mexico",
+   "region": "Nuevo León",
+   "city": "Monterrey",
+   "price_usd": 64000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 6800000,
+   "hectares": 680,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Logistics masterplan",
+   "access": "Federal highway + rail",
+   "short_description": {
+    "en": "680 hectares in Monterrey, Mexico. Projected use: Logistics masterplan. Access: Federal highway and rail.",
+    "es": "680 hectáreas en Monterrey, México. Uso proyectado: Masterplan logístico. Acceso: Carretera federal y ferrocarril.",
+    "ar": "680 هكتاراً في مونتيري، المكسيك. الاستخدام المتوقع: مخطط لوجستي شامل. الوصول: الطريق الاتحادي والسكة الحديدية.",
+    "zh": "680 公顷，位于墨西哥蒙特雷。规划用途：物流总体规划。交通：联邦公路与铁路。"
+   },
+   "long_description": {
+    "en": "680 hectares in Monterrey, Mexico. Projected use: Logistics masterplan. Access: Federal highway and rail.",
+    "es": "680 hectáreas en Monterrey, México. Uso proyectado: Masterplan logístico. Acceso: Carretera federal y ferrocarril.",
+    "ar": "680 هكتاراً في مونتيري، المكسيك. الاستخدام المتوقع: مخطط لوجستي شامل. الوصول: الطريق الاتحادي والسكة الحديدية.",
+    "zh": "680 公顷，位于墨西哥蒙特雷。规划用途：物流总体规划。交通：联邦公路与铁路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-masterplan-land-border-logistics.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Masterplan Land",
+     "es": "Terrenos para masterplan",
+     "ar": "أراضٍ لمخططات شاملة",
+     "zh": "总体规划用地"
+    },
+    "variant": {
+     "en": "border-logistics",
+     "es": "border-logistics",
+     "ar": "border-logistics",
+     "zh": "border-logistics"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-downtown",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "downtown",
+   "title": "Solar Centro Histórico",
+   "country": "Spain",
+   "region": "Community of Madrid",
+   "city": "Madrid",
+   "price_usd": 58000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 42000,
+   "hectares": 4.2,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Mixed use",
+   "access": "Metro + arterial",
+   "short_description": {
+    "en": "4.2 hectares in Madrid, Spain. Projected use: Mixed use. Access: Metro and arterial road.",
+    "es": "4.2 hectáreas en Madrid, España. Uso proyectado: Uso mixto. Acceso: Metro y vía arterial.",
+    "ar": "4.2 هكتاراً في مدريد، إسبانيا. الاستخدام المتوقع: استخدام مختلط. الوصول: المترو وطريق رئيسي.",
+    "zh": "4.2 公顷，位于西班牙马德里。规划用途：综合用途。交通：地铁与主干道。"
+   },
+   "long_description": {
+    "en": "4.2 hectares in Madrid, Spain. Projected use: Mixed use. Access: Metro and arterial road.",
+    "es": "4.2 hectáreas en Madrid, España. Uso proyectado: Uso mixto. Acceso: Metro y vía arterial.",
+    "ar": "4.2 هكتاراً في مدريد، إسبانيا. الاستخدام المتوقع: استخدام مختلط. الوصول: المترو وطريق رئيسي.",
+    "zh": "4.2 公顷，位于西班牙马德里。规划用途：综合用途。交通：地铁与主干道。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-downtown.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "downtown",
+     "es": "downtown",
+     "ar": "downtown",
+     "zh": "downtown"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-waterfront-urban",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "waterfront-urban",
+   "title": "Frente Portuario",
+   "country": "Portugal",
+   "region": "Lisbon",
+   "city": "Lisbon",
+   "price_usd": 86000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 114000,
+   "hectares": 11.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Waterfront mixed",
+   "access": "Ring road + port",
+   "short_description": {
+    "en": "11.4 hectares in Lisbon, Portugal. Projected use: Waterfront mixed. Access: Ring road and port.",
+    "es": "11.4 hectáreas en Lisboa, Portugal. Uso proyectado: Uso mixto en frente marítimo. Acceso: Ronda y puerto.",
+    "ar": "11.4 هكتاراً في لشبونة، البرتغال. الاستخدام المتوقع: مختلط على الواجهة المائية. الوصول: الطريق الدائري والميناء.",
+    "zh": "11.4 公顷，位于葡萄牙里斯本。规划用途：滨水综合用途。交通：环路与港口。"
+   },
+   "long_description": {
+    "en": "11.4 hectares in Lisbon, Portugal. Projected use: Waterfront mixed. Access: Ring road and port.",
+    "es": "11.4 hectáreas en Lisboa, Portugal. Uso proyectado: Uso mixto en frente marítimo. Acceso: Ronda y puerto.",
+    "ar": "11.4 هكتاراً في لشبونة، البرتغال. الاستخدام المتوقع: مختلط على الواجهة المائية. الوصول: الطريق الدائري والميناء.",
+    "zh": "11.4 公顷，位于葡萄牙里斯本。规划用途：滨水综合用途。交通：环路与港口。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-waterfront-urban.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "waterfront-urban",
+     "es": "waterfront-urban",
+     "ar": "waterfront-urban",
+     "zh": "waterfront-urban"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-transit",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "transit",
+   "title": "Nodo Estación Sur",
+   "country": "Mexico",
+   "region": "Ciudad de México",
+   "city": "Ciudad de México",
+   "price_usd": 42500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 68000,
+   "hectares": 6.8,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Transit-oriented",
+   "access": "Metro interchange",
+   "short_description": {
+    "en": "6.8 hectares in Mexico City, Mexico. Projected use: Transit-oriented. Access: Metro interchange.",
+    "es": "6.8 hectáreas en Ciudad de México, México. Uso proyectado: Orientado al transporte. Acceso: Intercambiador de metro.",
+    "ar": "6.8 هكتاراً في مدينة مكسيكو، المكسيك. الاستخدام المتوقع: موجّه للنقل. الوصول: تقاطع مترو.",
+    "zh": "6.8 公顷，位于墨西哥墨西哥城。规划用途：公交导向开发。交通：地铁换乘枢纽。"
+   },
+   "long_description": {
+    "en": "6.8 hectares in Mexico City, Mexico. Projected use: Transit-oriented. Access: Metro interchange.",
+    "es": "6.8 hectáreas en Ciudad de México, México. Uso proyectado: Orientado al transporte. Acceso: Intercambiador de metro.",
+    "ar": "6.8 هكتاراً في مدينة مكسيكو، المكسيك. الاستخدام المتوقع: موجّه للنقل. الوصول: تقاطع مترو.",
+    "zh": "6.8 公顷，位于墨西哥墨西哥城。规划用途：公交导向开发。交通：地铁换乘枢纽。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-transit.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "transit",
+     "es": "transit",
+     "ar": "transit",
+     "zh": "transit"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-business-dist",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "business-dist",
+   "title": "Parcela Distrito Negocios",
+   "country": "United Arab Emirates",
+   "region": "Abu Dhabi",
+   "city": "Abu Dhabi",
+   "price_usd": 134000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 186000,
+   "hectares": 18.6,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Business district",
+   "access": "E10 + metro corridor",
+   "short_description": {
+    "en": "18.6 hectares in Abu Dhabi, United Arab Emirates. Projected use: Business district. Access: E10 and metro corridor.",
+    "es": "18.6 hectáreas en Abu Dabi, Emiratos Árabes Unidos. Uso proyectado: Distrito de negocios. Acceso: E10 y corredor de metro.",
+    "ar": "18.6 هكتاراً في أبوظبي، الإمارات العربية المتحدة. الاستخدام المتوقع: حي أعمال. الوصول: E10 وممر المترو.",
+    "zh": "18.6 公顷，位于阿联酋阿布扎比。规划用途：商务区。交通：E10 与地铁走廊。"
+   },
+   "long_description": {
+    "en": "18.6 hectares in Abu Dhabi, United Arab Emirates. Projected use: Business district. Access: E10 and metro corridor.",
+    "es": "18.6 hectáreas en Abu Dabi, Emiratos Árabes Unidos. Uso proyectado: Distrito de negocios. Acceso: E10 y corredor de metro.",
+    "ar": "18.6 هكتاراً في أبوظبي، الإمارات العربية المتحدة. الاستخدام المتوقع: حي أعمال. الوصول: E10 وممر المترو.",
+    "zh": "18.6 公顷，位于阿联酋阿布扎比。规划用途：商务区。交通：E10 与地铁走廊。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-business-dist.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "business-dist",
+     "es": "business-dist",
+     "ar": "business-dist",
+     "zh": "business-dist"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-regeneration",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "regeneration",
+   "title": "Zona Regeneración Este",
+   "country": "United Kingdom",
+   "region": "England",
+   "city": "Birmingham",
+   "price_usd": 38900000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 224000,
+   "hectares": 22.4,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Urban regeneration",
+   "access": "Motorway + rail",
+   "short_description": {
+    "en": "22.4 hectares in Birmingham, United Kingdom. Projected use: Urban regeneration. Access: Motorway and rail.",
+    "es": "22.4 hectáreas en Birmingham, Reino Unido. Uso proyectado: Regeneración urbana. Acceso: Autopista y ferrocarril.",
+    "ar": "22.4 هكتاراً في برمنغهام، المملكة المتحدة. الاستخدام المتوقع: تجديد حضري. الوصول: الطريق السريع والسكة الحديدية.",
+    "zh": "22.4 公顷，位于英国伯明翰。规划用途：城市更新。交通：高速公路与铁路。"
+   },
+   "long_description": {
+    "en": "22.4 hectares in Birmingham, United Kingdom. Projected use: Urban regeneration. Access: Motorway and rail.",
+    "es": "22.4 hectáreas en Birmingham, Reino Unido. Uso proyectado: Regeneración urbana. Acceso: Autopista y ferrocarril.",
+    "ar": "22.4 هكتاراً في برمنغهام، المملكة المتحدة. الاستخدام المتوقع: تجديد حضري. الوصول: الطريق السريع والسكة الحديدية.",
+    "zh": "22.4 公顷，位于英国伯明翰。规划用途：城市更新。交通：高速公路与铁路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-regeneration.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "regeneration",
+     "es": "regeneration",
+     "ar": "regeneration",
+     "zh": "regeneration"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-urban-mixed-land-suburban-growth",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "urban-mixed-land",
+   "variant": "suburban-growth",
+   "title": "Corredor Norte Residencial",
+   "country": "Colombia",
+   "region": "Cundinamarca",
+   "city": "Bogotá",
+   "price_usd": 31200000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 460000,
+   "hectares": 46.0,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Residential growth",
+   "access": "Autopista Norte",
+   "short_description": {
+    "en": "46.0 hectares in Bogotá, Colombia. Projected use: Residential growth. Access: Autopista Norte.",
+    "es": "46.0 hectáreas en Bogotá, Colombia. Uso proyectado: Crecimiento residencial. Acceso: Autopista Norte.",
+    "ar": "46.0 هكتاراً في بوغوتا، كولومبيا. الاستخدام المتوقع: نمو سكني. الوصول: أوتوبيستا نورتي.",
+    "zh": "46.0 公顷，位于哥伦比亚波哥大。规划用途：住宅增长。交通：北部高速。"
+   },
+   "long_description": {
+    "en": "46.0 hectares in Bogotá, Colombia. Projected use: Residential growth. Access: Autopista Norte.",
+    "es": "46.0 hectáreas en Bogotá, Colombia. Uso proyectado: Crecimiento residencial. Acceso: Autopista Norte.",
+    "ar": "46.0 هكتاراً في بوغوتا، كولومبيا. الاستخدام المتوقع: نمو سكني. الوصول: أوتوبيستا نورتي.",
+    "zh": "46.0 公顷，位于哥伦比亚波哥大。规划用途：住宅增长。交通：北部高速。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-urban-mixed-land-suburban-growth.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Urban & Mixed-Use Land",
+     "es": "Suelo urbano y de uso mixto",
+     "ar": "أراضٍ حضرية ومختلطة",
+     "zh": "城市与综合用地"
+    },
+    "variant": {
+     "en": "suburban-growth",
+     "es": "suburban-growth",
+     "ar": "suburban-growth",
+     "zh": "suburban-growth"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-vineyard",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "vineyard",
+   "title": "Viñedos Alto Valle",
+   "country": "Argentina",
+   "region": "Mendoza",
+   "city": "Mendoza",
+   "price_usd": 34000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 12400000,
+   "hectares": 1240,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Vineyard estate",
+   "access": "Ruta 40",
+   "short_description": {
+    "en": "1,240 hectares in Mendoza, Argentina. Projected use: Vineyard estate. Access: Route 40.",
+    "es": "1,240 hectáreas en Mendoza, Argentina. Uso proyectado: Finca con viñedo. Acceso: Ruta 40.",
+    "ar": "1,240 هكتاراً في مندوزا، الأرجنتين. الاستخدام المتوقع: ضيعة كروم. الوصول: الطريق 40.",
+    "zh": "1,240 公顷，位于阿根廷门多萨。规划用途：葡萄园地产。交通：40 号公路。"
+   },
+   "long_description": {
+    "en": "1,240 hectares in Mendoza, Argentina. Projected use: Vineyard estate. Access: Route 40.",
+    "es": "1,240 hectáreas en Mendoza, Argentina. Uso proyectado: Finca con viñedo. Acceso: Ruta 40.",
+    "ar": "1,240 هكتاراً في مندوزا، الأرجنتين. الاستخدام المتوقع: ضيعة كروم. الوصول: الطريق 40.",
+    "zh": "1,240 公顷，位于阿根廷门多萨。规划用途：葡萄园地产。交通：40 号公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-vineyard.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "With vineyard",
+     "es": "Con viñedo",
+     "ar": "مع كروم",
+     "zh": "酒庄"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-olive",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "olive",
+   "title": "Olivar de Jaén",
+   "country": "Spain",
+   "region": "Andalusia",
+   "city": "Jaén",
+   "price_usd": 22400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 8600000,
+   "hectares": 860,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Olive estate",
+   "access": "A-44 motorway",
+   "short_description": {
+    "en": "860 hectares in Jaén, Spain. Projected use: Olive estate. Access: A-44 motorway.",
+    "es": "860 hectáreas en Jaén, España. Uso proyectado: Finca de olivar. Acceso: Autovía A-44.",
+    "ar": "860 هكتاراً في خاين، إسبانيا. الاستخدام المتوقع: ضيعة زيتون. الوصول: الطريق السريع A-44.",
+    "zh": "860 公顷，位于西班牙哈恩。规划用途：橄榄园地产。交通：A-44 高速公路。"
+   },
+   "long_description": {
+    "en": "860 hectares in Jaén, Spain. Projected use: Olive estate. Access: A-44 motorway.",
+    "es": "860 hectáreas en Jaén, España. Uso proyectado: Finca de olivar. Acceso: Autovía A-44.",
+    "ar": "860 هكتاراً في خاين، إسبانيا. الاستخدام المتوقع: ضيعة زيتون. الوصول: الطريق السريع A-44.",
+    "zh": "860 公顷，位于西班牙哈恩。规划用途：橄榄园地产。交通：A-44 高速公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-olive.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "olive",
+     "es": "olive",
+     "ar": "olive",
+     "zh": "olive"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-coffee",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "coffee",
+   "title": "Finca Cafetera Alta",
+   "country": "Colombia",
+   "region": "Huila",
+   "city": "Neiva",
+   "price_usd": 18600000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 10400000,
+   "hectares": 1040,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Coffee estate",
+   "access": "National road",
+   "short_description": {
+    "en": "1,040 hectares in Neiva, Colombia. Projected use: Coffee estate. Access: National road.",
+    "es": "1,040 hectáreas en Neiva, Colombia. Uso proyectado: Finca cafetera. Acceso: Carretera nacional.",
+    "ar": "1,040 هكتاراً في نيفا، كولومبيا. الاستخدام المتوقع: ضيعة بنّ. الوصول: الطريق الوطني.",
+    "zh": "1,040 公顷，位于哥伦比亚内瓦。规划用途：咖啡庄园。交通：国道。"
+   },
+   "long_description": {
+    "en": "1,040 hectares in Neiva, Colombia. Projected use: Coffee estate. Access: National road.",
+    "es": "1,040 hectáreas en Neiva, Colombia. Uso proyectado: Finca cafetera. Acceso: Carretera nacional.",
+    "ar": "1,040 هكتاراً في نيفا، كولومبيا. الاستخدام المتوقع: ضيعة بنّ. الوصول: الطريق الوطني.",
+    "zh": "1,040 公顷，位于哥伦比亚内瓦。规划用途：咖啡庄园。交通：国道。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-coffee.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "Coffee",
+     "es": "Cafetera",
+     "ar": "بنّية",
+     "zh": "咖啡"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-cattle",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "cattle",
+   "title": "Estancia Los Llanos",
+   "country": "Uruguay",
+   "region": "Durazno",
+   "city": "Durazno",
+   "price_usd": 29800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 46000000,
+   "hectares": 4600,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Cattle estate",
+   "access": "Route 5",
+   "short_description": {
+    "en": "4,600 hectares in Durazno, Uruguay. Projected use: Cattle estate. Access: Route 5.",
+    "es": "4,600 hectáreas en Durazno, Uruguay. Uso proyectado: Estancia ganadera. Acceso: Ruta 5.",
+    "ar": "4,600 هكتاراً في دورازنو، أوروغواي. الاستخدام المتوقع: ضيعة ماشية. الوصول: الطريق 5.",
+    "zh": "4,600 公顷，位于乌拉圭杜拉斯诺。规划用途：牧场地产。交通：5 号公路。"
+   },
+   "long_description": {
+    "en": "4,600 hectares in Durazno, Uruguay. Projected use: Cattle estate. Access: Route 5.",
+    "es": "4,600 hectáreas en Durazno, Uruguay. Uso proyectado: Estancia ganadera. Acceso: Ruta 5.",
+    "ar": "4,600 هكتاراً في دورازنو، أوروغواي. الاستخدام المتوقع: ضيعة ماشية. الوصول: الطريق 5.",
+    "zh": "4,600 公顷，位于乌拉圭杜拉斯诺。规划用途：牧场地产。交通：5 号公路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-cattle.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "cattle",
+     "es": "cattle",
+     "ar": "cattle",
+     "zh": "cattle"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-agroforestry",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "agroforestry",
+   "title": "Reserva Agroforestal Sur",
+   "country": "Brazil",
+   "region": "Bahia",
+   "city": "Ilhéus",
+   "price_usd": 26400000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 32000000,
+   "hectares": 3200,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Agroforestry",
+   "access": "BR-101 + port",
+   "short_description": {
+    "en": "3,200 hectares in Ilhéus, Brazil. Projected use: Agroforestry. Access: BR-101 and port.",
+    "es": "3,200 hectáreas en Ilhéus, Brasil. Uso proyectado: Agroforestal. Acceso: BR-101 y puerto.",
+    "ar": "3,200 هكتاراً في إلياوس، البرازيل. الاستخدام المتوقع: زراعة حرجية. الوصول: BR-101 والميناء.",
+    "zh": "3,200 公顷，位于巴西伊列乌斯。规划用途：农林复合。交通：BR-101 与港口。"
+   },
+   "long_description": {
+    "en": "3,200 hectares in Ilhéus, Brazil. Projected use: Agroforestry. Access: BR-101 and port.",
+    "es": "3,200 hectáreas en Ilhéus, Brasil. Uso proyectado: Agroforestal. Acceso: BR-101 y puerto.",
+    "ar": "3,200 هكتاراً في إلياوس، البرازيل. الاستخدام المتوقع: زراعة حرجية. الوصول: BR-101 والميناء.",
+    "zh": "3,200 公顷，位于巴西伊列乌斯。规划用途：农林复合。交通：BR-101 与港口。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-agroforestry.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "agroforestry",
+     "es": "agroforestry",
+     "ar": "agroforestry",
+     "zh": "agroforestry"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-agricultural-estate-land-irrigated",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "agricultural-estate-land",
+   "variant": "irrigated",
+   "title": "Valle Irrigado Norte",
+   "country": "Mexico",
+   "region": "Sinaloa",
+   "city": "Culiacán",
+   "price_usd": 24100000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 24000000,
+   "hectares": 2400,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Irrigated cropland",
+   "access": "Federal highway + rail",
+   "short_description": {
+    "en": "2,400 hectares in Culiacán, Mexico. Projected use: Irrigated cropland. Access: Federal highway and rail.",
+    "es": "2,400 hectáreas en Culiacán, México. Uso proyectado: Cultivo de regadío. Acceso: Carretera federal y ferrocarril.",
+    "ar": "2,400 هكتاراً في كولياكان، المكسيك. الاستخدام المتوقع: أراضٍ مروية. الوصول: الطريق الاتحادي والسكة الحديدية.",
+    "zh": "2,400 公顷，位于墨西哥库利亚坎。规划用途：灌溉农田。交通：联邦公路与铁路。"
+   },
+   "long_description": {
+    "en": "2,400 hectares in Culiacán, Mexico. Projected use: Irrigated cropland. Access: Federal highway and rail.",
+    "es": "2,400 hectáreas en Culiacán, México. Uso proyectado: Cultivo de regadío. Acceso: Carretera federal y ferrocarril.",
+    "ar": "2,400 هكتاراً في كولياكان، المكسيك. الاستخدام المتوقع: أراضٍ مروية. الوصول: الطريق الاتحادي والسكة الحديدية.",
+    "zh": "2,400 公顷，位于墨西哥库利亚坎。规划用途：灌溉农田。交通：联邦公路与铁路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-agricultural-estate-land-irrigated.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Agricultural & Estate Land",
+     "es": "Grandes terrenos agrícolas y de estate",
+     "ar": "أراضٍ زراعية وضياع",
+     "zh": "农业与庄园用地"
+    },
+    "variant": {
+     "en": "irrigated",
+     "es": "irrigated",
+     "ar": "irrigated",
+     "zh": "irrigated"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-undeveloped-isl",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "undeveloped-isl",
+   "title": "Isla Sin Desarrollar Norte",
+   "country": "Panama",
+   "region": "Guna Yala",
+   "city": "Guna Yala",
+   "price_usd": 38000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 4200000,
+   "hectares": 420,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Undeveloped island",
+   "access": "Marine access only",
+   "short_description": {
+    "en": "420 hectares in Guna Yala, Panama. Projected use: Undeveloped island. Access: Marine access only.",
+    "es": "420 hectáreas en Guna Yala, Panamá. Uso proyectado: Isla sin desarrollar. Acceso: Solo acceso marítimo.",
+    "ar": "420 هكتاراً في غونا يالا، بنما. الاستخدام المتوقع: جزيرة غير مطوَّرة. الوصول: وصول بحري فقط.",
+    "zh": "420 公顷，位于巴拿马库纳雅拉。规划用途：未开发岛屿。交通：仅海路可达。"
+   },
+   "long_description": {
+    "en": "420 hectares in Guna Yala, Panama. Projected use: Undeveloped island. Access: Marine access only.",
+    "es": "420 hectáreas en Guna Yala, Panamá. Uso proyectado: Isla sin desarrollar. Acceso: Solo acceso marítimo.",
+    "ar": "420 هكتاراً في غونا يالا، بنما. الاستخدام المتوقع: جزيرة غير مطوَّرة. الوصول: وصول بحري فقط.",
+    "zh": "420 公顷，位于巴拿马库纳雅拉。规划用途：未开发岛屿。交通：仅海路可达。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-undeveloped-isl.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "undeveloped-isl",
+     "es": "undeveloped-isl",
+     "ar": "undeveloped-isl",
+     "zh": "undeveloped-isl"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-multi-island",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "multi-island",
+   "title": "Grupo Insular Esmeralda",
+   "country": "Indonesia",
+   "region": "Raja Ampat",
+   "city": "Raja Ampat",
+   "price_usd": 92000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 18600000,
+   "hectares": 1860,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "projected_use": "Island group",
+   "access": "Marine + airstrip",
+   "short_description": {
+    "en": "1,860 hectares in Raja Ampat, Indonesia. Projected use: Island group. Access: Marine access and airstrip.",
+    "es": "1,860 hectáreas en Raja Ampat, Indonesia. Uso proyectado: Grupo insular. Acceso: Acceso marítimo y pista.",
+    "ar": "1,860 هكتاراً في راجا أمبات، إندونيسيا. الاستخدام المتوقع: مجموعة جزر. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "1,860 公顷，位于印度尼西亚四王群岛。规划用途：岛屿群。交通：海路与简易机场。"
+   },
+   "long_description": {
+    "en": "1,860 hectares in Raja Ampat, Indonesia. Projected use: Island group. Access: Marine access and airstrip.",
+    "es": "1,860 hectáreas en Raja Ampat, Indonesia. Uso proyectado: Grupo insular. Acceso: Acceso marítimo y pista.",
+    "ar": "1,860 هكتاراً في راجا أمبات، إندونيسيا. الاستخدام المتوقع: مجموعة جزر. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "1,860 公顷，位于印度尼西亚四王群岛。规划用途：岛屿群。交通：海路与简易机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-multi-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "multi-island",
+     "es": "multi-island",
+     "ar": "multi-island",
+     "zh": "multi-island"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-lagoon-island",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "lagoon-island",
+   "title": "Isla Laguna Interior",
+   "country": "Belize",
+   "region": "Belize District",
+   "city": "Belize City",
+   "price_usd": 27500000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 2400000,
+   "hectares": 240,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "in-validation",
+   "projected_use": "Lagoon island",
+   "access": "Marine access",
+   "short_description": {
+    "en": "240 hectares in Belize City, Belize. Projected use: Lagoon island. Access: Marine access.",
+    "es": "240 hectáreas en Ciudad de Belice, Belice. Uso proyectado: Isla de laguna. Acceso: Acceso marítimo.",
+    "ar": "240 هكتاراً في مدينة بليز، بليز. الاستخدام المتوقع: جزيرة بحيرية. الوصول: وصول بحري.",
+    "zh": "240 公顷，位于伯利兹伯利兹城。规划用途：潟湖岛。交通：海路可达。"
+   },
+   "long_description": {
+    "en": "240 hectares in Belize City, Belize. Projected use: Lagoon island. Access: Marine access.",
+    "es": "240 hectáreas en Ciudad de Belice, Belice. Uso proyectado: Isla de laguna. Acceso: Acceso marítimo.",
+    "ar": "240 هكتاراً في مدينة بليز، بليز. الاستخدام المتوقع: جزيرة بحيرية. الوصول: وصول بحري.",
+    "zh": "240 公顷，位于伯利兹伯利兹城。规划用途：潟湖岛。交通：海路可达。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-lagoon-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "lagoon-island",
+     "es": "lagoon-island",
+     "ar": "lagoon-island",
+     "zh": "lagoon-island"
+    },
+    "status": {
+     "en": "In validation",
+     "es": "En validación",
+     "ar": "قيد التحقق",
+     "zh": "验证中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-reef-island",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "reef-island",
+   "title": "Cayo Arrecife",
+   "country": "Bahamas",
+   "region": "Exuma",
+   "city": "Exuma",
+   "price_usd": 64000000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 1800000,
+   "hectares": 180,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "projected_use": "Reef island",
+   "access": "Marine + airstrip",
+   "short_description": {
+    "en": "180 hectares in Exuma, Bahamas. Projected use: Reef island. Access: Marine access and airstrip.",
+    "es": "180 hectáreas en Exuma, Bahamas. Uso proyectado: Isla de arrecife. Acceso: Acceso marítimo y pista.",
+    "ar": "180 هكتاراً في إكزوما، جزر البهاما. الاستخدام المتوقع: جزيرة مرجانية. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "180 公顷，位于巴哈马埃克苏马。规划用途：珊瑚礁岛。交通：海路与简易机场。"
+   },
+   "long_description": {
+    "en": "180 hectares in Exuma, Bahamas. Projected use: Reef island. Access: Marine access and airstrip.",
+    "es": "180 hectáreas en Exuma, Bahamas. Uso proyectado: Isla de arrecife. Acceso: Acceso marítimo y pista.",
+    "ar": "180 هكتاراً في إكزوما، جزر البهاما. الاستخدام المتوقع: جزيرة مرجانية. الوصول: الوصول البحري ومهبط طائرات.",
+    "zh": "180 公顷，位于巴哈马埃克苏马。规划用途：珊瑚礁岛。交通：海路与简易机场。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-reef-island.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "reef-island",
+     "es": "reef-island",
+     "ar": "reef-island",
+     "zh": "reef-island"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-volcanic",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "volcanic",
+   "title": "Isla Volcánica Sur",
+   "country": "Greece",
+   "region": "South Aegean",
+   "city": "Aegean",
+   "price_usd": 46800000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 3100000,
+   "hectares": 310,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "development-ready",
+   "projected_use": "Volcanic island",
+   "access": "Marine access",
+   "short_description": {
+    "en": "310 hectares in Aegean, Greece. Projected use: Volcanic island. Access: Marine access.",
+    "es": "310 hectáreas en Egeo, Grecia. Uso proyectado: Isla volcánica. Acceso: Acceso marítimo.",
+    "ar": "310 هكتاراً في بحر إيجه، اليونان. الاستخدام المتوقع: جزيرة بركانية. الوصول: وصول بحري.",
+    "zh": "310 公顷，位于希腊爱琴海。规划用途：火山岛。交通：海路可达。"
+   },
+   "long_description": {
+    "en": "310 hectares in Aegean, Greece. Projected use: Volcanic island. Access: Marine access.",
+    "es": "310 hectáreas en Egeo, Grecia. Uso proyectado: Isla volcánica. Acceso: Acceso marítimo.",
+    "ar": "310 هكتاراً في بحر إيجه، اليونان. الاستخدام المتوقع: جزيرة بركانية. الوصول: وصول بحري.",
+    "zh": "310 公顷，位于希腊爱琴海。规划用途：火山岛。交通：海路可达。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-volcanic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "volcanic",
+     "es": "volcanic",
+     "ar": "volcanic",
+     "zh": "volcanic"
+    },
+    "status": {
+     "en": "Development ready",
+     "es": "Listo para desarrollo",
+     "ar": "جاهز للتطوير",
+     "zh": "可开发"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "ld-island-territories-mangrove",
+   "demo": true,
+   "category": "land-developments",
+   "subcategory": "island-territories",
+   "variant": "mangrove",
+   "title": "Territorio Manglar",
+   "country": "Mexico",
+   "region": "Nayarit",
+   "city": "San Blas",
+   "price_usd": 33200000,
+   "currency": "USD",
+   "bedrooms": null,
+   "bathrooms": null,
+   "built_area_m2": null,
+   "land_area_m2": 6800000,
+   "hectares": 680,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "projected_use": "Protected coastal",
+   "access": "Coastal road + marine",
+   "short_description": {
+    "en": "680 hectares in San Blas, Mexico. Projected use: Protected coastal. Access: Coastal road and marine access.",
+    "es": "680 hectáreas en San Blas, México. Uso proyectado: Costa protegida. Acceso: Carretera costera y acceso marítimo.",
+    "ar": "680 هكتاراً في سان بلاس، المكسيك. الاستخدام المتوقع: ساحل محمي. الوصول: الطريق الساحلي والوصول البحري.",
+    "zh": "680 公顷，位于墨西哥圣布拉斯。规划用途：受保护海岸。交通：滨海公路与海路。"
+   },
+   "long_description": {
+    "en": "680 hectares in San Blas, Mexico. Projected use: Protected coastal. Access: Coastal road and marine access.",
+    "es": "680 hectáreas en San Blas, México. Uso proyectado: Costa protegida. Acceso: Carretera costera y acceso marítimo.",
+    "ar": "680 هكتاراً في سان بلاس، المكسيك. الاستخدام المتوقع: ساحل محمي. الوصول: الطريق الساحلي والوصول البحري.",
+    "zh": "680 公顷，位于墨西哥圣布拉斯。规划用途：受保护海岸。交通：滨海公路与海路。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/ld-island-territories-mangrove.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Island Territories",
+     "es": "Territorios insulares",
+     "ar": "أقاليم جزرية",
+     "zh": "岛屿领地"
+    },
+    "variant": {
+     "en": "mangrove",
+     "es": "mangrove",
+     "ar": "mangrove",
+     "zh": "mangrove"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  }
+ ]
+}
