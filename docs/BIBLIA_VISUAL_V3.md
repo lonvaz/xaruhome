@@ -311,3 +311,30 @@ Sigue vigente, sin cambio:
 - y **la discrepancia se anota** en `docs/xaru-stock-media-map.csv`. Ser flexible
   no es lo mismo que ser opaco: si la foto es de Davos y la ficha dice Kitzbühel,
   se usa, pero queda escrito.
+
+
+### ENMIENDA (1-ago-2026, instrucción de Josep): se deroga el rechazo por exactitud
+
+> «no me puedes decir que una no cumple, no puedes ser tan estricto, elimina esa
+> regla de la biblia, mantén la intención de la foto sin pesar mucho si es el
+> lugar o imagen exacta»
+
+**Queda derogado** el criterio de rechazar una imagen por no corresponder al lugar
+exacto, a la variante exacta o a la tipología exacta de la ficha. Ninguna imagen
+disponible se descarta por ese motivo.
+
+Lo que se conserva —y esto no es exceso de celo, es lo que evita que la plataforma
+mienta— es lo siguiente:
+
+1. **Nada generado con inteligencia artificial.** Sigue siendo la única prohibición
+   absoluta. Los renders humanos realistas se admiten.
+2. **Coherencia de clima y bioma.** No se pone nieve donde la ficha dice Caribe.
+   No es rigor estético: una playa tropical ilustrando un terreno en los Alpes
+   no es "flexible", es incorrecto.
+3. **Trazabilidad.** Toda reutilización o discrepancia se anota en
+   `docs/xaru-stock-media-map.csv`. Ser flexible no es ser opaco.
+
+**Consecuencia operativa:** ninguna ficha se queda sin imagen esperando a la foto
+perfecta. Se adapta lo disponible por familia visual —costa con costa, montaña con
+montaña, urbano con urbano— y se registra. La plataforma es demostrativa: su
+obligación es ilustrar bien una tipología, no documentar un inmueble concreto.
