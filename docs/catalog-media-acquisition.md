@@ -336,3 +336,55 @@ no la he ejecutado**, así que no la doy por buena.
 Una descarga cada 8–10 s. Decisión de Josep, y coherente con el error de ayer:
 lanzar en paralelo quemó la cuota de la otra fuente porque **las llamadas
 rechazadas cuentan igual**.
+
+---
+
+## 1-ago-2026 — CATÁLOGO COMPLETO 144/144, VÍDEO MONTADO, AUDITORÍA LIMPIA
+
+Josep entregó **293 fotografías** en una carpeta del Mac. Con ellas se cerró todo.
+
+### Un aviso que casi cuesta caro
+Las dos primeras veces que miré esa carpeta el sistema devolvió **cero entradas**
+y llegué a decirle que estaba vacía. **Me equivoqué**: era la caché del montaje.
+Y la ruta llevaba acento y espacios, lo que además impedía leerla directamente.
+La solución: resolver el directorio con comodín (`ls -d carpeta*`) y copiar en el
+propio Mac a una ruta limpia. **Antes de afirmar que una carpeta está vacía, hay
+que forzar un segundo listado.**
+
+### Lo hecho
+- **83 fichas** cubiertas con las imágenes nuevas, asignadas por intención.
+- **2 llegaron verticales** (Sevilla, torre de Milán). En vez de descartarlas se
+  **recortaron a apaisado**, anclando el encuadre en la arquitectura y no en el
+  centro geométrico, que habría cortado a la altura de la calle.
+- **1,2 GB reducidos a 66 MB** procesando en el Mac antes de transferir.
+- **144/144 fichas con fotografía real.** Ninguna vacía.
+
+### Vídeo
+Había **6 clips codificados pero sólo 4 en uso**: dos llevaban tiempo ocupando
+espacio sin aparecer en ninguna página. Y **ninguna página pilar tenía vídeo**.
+Ahora: **5 en portada**, **1 en cada pilar**, los 6 en servicio, ninguno repetido
+en páginas contiguas. Quedamos por debajo de los 10–14 únicos que pide §5 porque
+los 6 clips nuevos no llegaron a entregarse.
+
+### Defectos encontrados y corregidos en la auditoría
+1. **7 referencias de imagen rotas** en `arch_data.py` (`15_difc_gate`,
+   `16_atlantic_aerial`, `17_ocean_cliff`, `18_london_rooftops`,
+   `19_resort_complex`, `21_concrete_lattice`, `22_land_parcels`,
+   `23_dubai_gold_night`). Servían 404 desde hacía tiempo. Cubiertas con
+   fotografía real del catálogo nuevo.
+2. **Tres `<h1>` en la portada** — el slider emitía uno por diapositiva.
+   Degradados el 2 y el 3 a `<h2>` conservando clases: el aspecto no cambia.
+3. **`property-listing-rent.html` sin H1** (usaba `<h2>` como título) y
+   **`property-listing-search.html` sin ningún encabezado de página**. Corregido
+   en el generador, para los cuatro idiomas.
+4. **Vídeo ambiental sin póster** — parpadeaba en negro al cargar. Póster
+   extraído del propio clip con ffmpeg.
+5. **Meta description en chino demasiado corta** (37 caracteres). Ampliada
+   nombrando las divisiones. En CJK cada carácter ocupa el doble de ancho, así
+   que la auditoría ahora mide **ancho visual**, no número de caracteres.
+
+### Estado de la auditoría
+16 páginas × (vídeo con póster · un solo H1 · title y description con ancho
+correcto · Open Graph · canonical · JSON-LD · 5 hreflang · alt en todas las
+imágenes · sin desbordamiento horizontal · sin errores de JavaScript · sin 404):
+**todo limpio**.
