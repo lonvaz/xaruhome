@@ -293,3 +293,21 @@ Capturas antes y después de: hero · Private Real Estate · castillos · villas
 Commits: `Audit current visual system and media inventory` → `Reposition XARU HOME hero and social metadata` → `Replace AI imagery with licensed real stock` → `Add cinematic video system across public pages` → `Expand luxury real estate demo catalog` → `Expand hospitality and development opportunities` → `Optimize responsive media and multilingual content` → `Validate visual consistency performance and mobile UX`.
 
 Pull request hacia `main`, título **Rebuild XARU HOME with real stock imagery, cinematic video and complete demo inventory**, con narrativa del hero, nuevo Open Graph, imágenes conservadas, última diapositiva en vídeo, número de imágenes sustituidas, vídeos añadidos, plataformas, propiedades creadas, categorías, hoteles y resorts, terrenos y proyectos, mejoras de filtros, móvil y rendimiento, capturas antes y después, archivos de datos creados y validaciones. **No fusionar automáticamente.**
+
+### ENMIENDA (1-ago-2026, instrucción de Josep): la intención manda sobre el sitio exacto
+
+> «no seas estricto con el lugar específico para que no nos quedemos parados, sólo
+> respeta la intención de la foto o imagen que se requiere; si no existe en el banco
+> de fotos puedes usar una genérica que respete la intención»
+
+Queda derogado el criterio de rechazar una imagen por no coincidir la ciudad o el
+país exactos. **Lo que se juzga es la intención**: que la foto muestre el tipo de
+activo, la escala y el carácter que pide la ficha.
+
+Sigue vigente, sin cambio:
+- fotografía real, nada de IA generativa;
+- coherencia climática y arquitectónica razonable (no se pone un fiordo donde la
+  ficha dice Caribe);
+- y **la discrepancia se anota** en `docs/xaru-stock-media-map.csv`. Ser flexible
+  no es lo mismo que ser opaco: si la foto es de Davos y la ficha dice Kitzbühel,
+  se usa, pero queda escrito.
