@@ -1893,3 +1893,41 @@ body.page-loaded .xr_hero_slider_wrap {
 @media (prefers-reduced-motion: reduce) {
   .xr_video_band_el { animation: none !important; }
 }
+
+/* ============ Legibilidad de las cabeceras de página interior ============
+   Auditado a ojo el 1-ago-2026 sobre la página de Capital: el título quedaba
+   comido por la cabecera fija y la miga de pan era ilegible sobre una foto de
+   torres de cristal. Dos causas: la sección no reservaba altura para el header
+   pegajoso, y el velo al 65 % no bastaba sobre imágenes claras y ocupadas. */
+
+.cs_page_header.xr_duotone_overlay {
+  /* Espacio para que el header fijo no se coma el título. */
+  padding-top: 120px;
+}
+@media (max-width: 991px) {
+  .cs_page_header.xr_duotone_overlay { padding-top: 96px; }
+}
+
+.cs_page_header.xr_duotone_overlay::before {
+  /* Más denso arriba, donde vive el texto; se abre abajo para que la
+     fotografía siga leyéndose. Sube el contraste sin apagar la imagen. */
+  background: linear-gradient(180deg,
+              rgba(28, 27, 25, 0.86) 0%,
+              rgba(28, 27, 25, 0.72) 45%,
+              rgba(139, 110, 69, 0.55) 100%);
+  opacity: 1;
+}
+
+.cs_page_header.xr_duotone_overlay .cs_page_header_title {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+.cs_page_header.xr_duotone_overlay .breadcrumb,
+.cs_page_header.xr_duotone_overlay .breadcrumb a,
+.cs_page_header.xr_duotone_overlay .cs_page_header_subtitle {
+  /* Estaba en 0.85 y 0.9 de opacidad sobre fondo ocupado: no llegaba a AA. */
+  color: #F5F1E8;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+}
+.cs_page_header.xr_duotone_overlay .breadcrumb-item.active {
+  color: rgba(245, 241, 232, 0.88);
+}
