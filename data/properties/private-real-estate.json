@@ -3684,6 +3684,726 @@
     }
    },
    "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-one-bed-tower",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "one-bed-tower",
+   "title": "The Aurelia Residences One",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai",
+   "price_usd": 2400000,
+   "currency": "USD",
+   "bedrooms": 1,
+   "bathrooms": 2,
+   "built_area_m2": 118,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A branded residence of 118 m² in Dubai, United Arab Emirates, with 1 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 118 m² en Dubái, Emiratos Árabes Unidos, con 1 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 118 م² في دبي، الإمارات العربية المتحدة، ويضم 1 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于阿联酋·迪拜的品牌住宅，建筑面积 118 平方米，1 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 118 m² in Dubai, United Arab Emirates, with 1 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 118 m² en Dubái, Emiratos Árabes Unidos, con 1 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 118 م² في دبي، الإمارات العربية المتحدة، ويضم 1 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于阿联酋·迪拜的品牌住宅，建筑面积 118 平方米，1 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-one-bed-tower.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "One-bedroom, tower",
+     "es": "Un dormitorio, en torre",
+     "ar": "غرفة نوم، برج",
+     "zh": "一居，塔楼"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-two-bed-skyline",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "two-bed-skyline",
+   "title": "Solaris Tower Two",
+   "country": "Singapore",
+   "region": "Singapore",
+   "city": "Singapore",
+   "price_usd": 4100000,
+   "currency": "USD",
+   "bedrooms": 2,
+   "bathrooms": 3,
+   "built_area_m2": 186,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A branded residence of 186 m² in Singapore, Singapore, with 2 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 186 m² en Singapur, Singapur, con 2 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 186 م² في سنغافورة، سنغافورة، ويضم 2 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于新加坡·新加坡的品牌住宅，建筑面积 186 平方米，2 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 186 m² in Singapore, Singapore, with 2 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 186 m² en Singapur, Singapur, con 2 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 186 م² في سنغافورة، سنغافورة، ويضم 2 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于新加坡·新加坡的品牌住宅，建筑面积 186 平方米，2 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-two-bed-skyline.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "Two-bedroom, skyline",
+     "es": "Dos dormitorios, con skyline",
+     "ar": "غرفتا نوم، أفق المدينة",
+     "zh": "两居，天际线"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-three-bed-duplex",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "three-bed-duplex",
+   "title": "Maison Verde Duplex",
+   "country": "United Kingdom",
+   "region": "London",
+   "city": "London",
+   "price_usd": 8900000,
+   "currency": "USD",
+   "bedrooms": 3,
+   "bathrooms": 4,
+   "built_area_m2": 312,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A branded residence of 312 m² in London, United Kingdom, with 3 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 312 m² en Londres, Reino Unido, con 3 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 312 م² في لندن، المملكة المتحدة، ويضم 3 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于英国·伦敦的品牌住宅，建筑面积 312 平方米，3 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 312 m² in London, United Kingdom, with 3 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 312 m² en Londres, Reino Unido, con 3 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 312 م² في لندن، المملكة المتحدة، ويضم 3 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于英国·伦敦的品牌住宅，建筑面积 312 平方米，3 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-three-bed-duplex.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "Three-bedroom duplex",
+     "es": "Tres dormitorios, dúplex",
+     "ar": "ثلاث غرف، دوبلكس",
+     "zh": "三居，复式"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-two-bed-beachfront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "two-bed-beachfront",
+   "title": "Costa Marfil Residences",
+   "country": "Spain",
+   "region": "Balearic Islands",
+   "city": "Palma",
+   "price_usd": 3600000,
+   "currency": "USD",
+   "bedrooms": 2,
+   "bathrooms": 3,
+   "built_area_m2": 164,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A branded residence of 164 m² in Palma, Spain, with 2 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 164 m² en Palma, España, con 2 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 164 م² في Palma، إسبانيا، ويضم 2 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于西班牙·Palma的品牌住宅，建筑面积 164 平方米，2 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 164 m² in Palma, Spain, with 2 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 164 m² en Palma, España, con 2 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 164 م² في Palma، إسبانيا، ويضم 2 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于西班牙·Palma的品牌住宅，建筑面积 164 平方米，2 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-two-bed-beachfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "Two-bedroom, beachfront",
+     "es": "Dos dormitorios, a pie de playa",
+     "ar": "غرفتا نوم، على الشاطئ",
+     "zh": "两居，海滨"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-three-bed-golf",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "three-bed-golf",
+   "title": "Fairway House Residences",
+   "country": "Portugal",
+   "region": "Algarve",
+   "city": "Quinta do Lago",
+   "price_usd": 5200000,
+   "currency": "USD",
+   "bedrooms": 3,
+   "bathrooms": 4,
+   "built_area_m2": 248,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A branded residence of 248 m² in Quinta do Lago, Portugal, with 3 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 248 m² en Quinta do Lago, Portugal, con 3 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 248 م² في كينتا دو لاغو، البرتغال، ويضم 3 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于葡萄牙·金塔杜拉戈的品牌住宅，建筑面积 248 平方米，3 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 248 m² in Quinta do Lago, Portugal, with 3 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 248 m² en Quinta do Lago, Portugal, con 3 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 248 م² في كينتا دو لاغو، البرتغال، ويضم 3 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于葡萄牙·金塔杜拉戈的品牌住宅，建筑面积 248 平方米，3 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-three-bed-golf.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "Three-bedroom, golf",
+     "es": "Tres dormitorios, en campo de golf",
+     "ar": "ثلاث غرف، ملعب غولف",
+     "zh": "三居，高尔夫"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-branded-residences-one-bed-marina",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "branded-residences",
+   "variant": "one-bed-marina",
+   "title": "Puerto Azul Residences One",
+   "country": "United Arab Emirates",
+   "region": "Dubai",
+   "city": "Dubai Marina",
+   "price_usd": 1950000,
+   "currency": "USD",
+   "bedrooms": 1,
+   "bathrooms": 2,
+   "built_area_m2": 104,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A branded residence of 104 m² in Dubai Marina, United Arab Emirates, with 1 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 104 m² en Dubai Marina, Emiratos Árabes Unidos, con 1 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 104 م² في Dubai Marina، الإمارات العربية المتحدة، ويضم 1 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于阿联酋·Dubai Marina的品牌住宅，建筑面积 104 平方米，1 间卧室，配备完整酒店服务。"
+   },
+   "long_description": {
+    "en": "A branded residence of 104 m² in Dubai Marina, United Arab Emirates, with 1 bedrooms and full hotel service.",
+    "es": "Residencia de marca de 104 m² en Dubai Marina, Emiratos Árabes Unidos, con 1 dormitorios y servicio hotelero completo.",
+    "ar": "مسكن بعلامة تجارية بمساحة 104 م² في Dubai Marina، الإمارات العربية المتحدة، ويضم 1 غرف نوم وخدمة فندقية كاملة.",
+    "zh": "位于阿联酋·Dubai Marina的品牌住宅，建筑面积 104 平方米，1 间卧室，配备完整酒店服务。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-branded-residences-one-bed-marina.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "Branded Residences",
+     "es": "Residencias de marca",
+     "ar": "مساكن ذات علامة",
+     "zh": "品牌住宅"
+    },
+    "variant": {
+     "en": "One-bedroom, marina",
+     "es": "Un dormitorio, en marina",
+     "ar": "غرفة نوم، مرسى",
+     "zh": "一居，码头"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-one-bed-historic",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "one-bed-historic",
+   "title": "Palazzo Vitale Uno",
+   "country": "Italy",
+   "region": "Lazio",
+   "city": "Rome",
+   "price_usd": 1850000,
+   "currency": "USD",
+   "bedrooms": 1,
+   "bathrooms": 1,
+   "built_area_m2": 96,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A luxury apartment of 96 m² in Rome, Italy, with 1 bedrooms.",
+    "es": "Apartamento de lujo de 96 m² en Roma, Italia, con 1 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 96 م² في روما، إيطاليا، وتضم 1 غرف نوم.",
+    "zh": "位于意大利·罗马的豪华公寓，建筑面积 96 平方米，1 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 96 m² in Rome, Italy, with 1 bedrooms.",
+    "es": "Apartamento de lujo de 96 m² en Roma, Italia, con 1 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 96 م² في روما، إيطاليا، وتضم 1 غرف نوم.",
+    "zh": "位于意大利·罗马的豪华公寓，建筑面积 96 平方米，1 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-one-bed-historic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": true,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "One-bedroom, historic building",
+     "es": "Un dormitorio, edificio histórico",
+     "ar": "غرفة نوم، مبنى تاريخي",
+     "zh": "一居，历史建筑"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-two-bed-loft",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "two-bed-loft",
+   "title": "The Foundry Loft Two",
+   "country": "United States",
+   "region": "New York",
+   "city": "New York",
+   "price_usd": 4800000,
+   "currency": "USD",
+   "bedrooms": 2,
+   "bathrooms": 2,
+   "built_area_m2": 178,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A luxury apartment of 178 m² in New York, United States, with 2 bedrooms.",
+    "es": "Apartamento de lujo de 178 m² en New York, Estados Unidos, con 2 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 178 م² في New York، الولايات المتحدة، وتضم 2 غرف نوم.",
+    "zh": "位于美国·New York的豪华公寓，建筑面积 178 平方米，2 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 178 m² in New York, United States, with 2 bedrooms.",
+    "es": "Apartamento de lujo de 178 m² en New York, Estados Unidos, con 2 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 178 م² في New York، الولايات المتحدة، وتضم 2 غرف نوم.",
+    "zh": "位于美国·New York的豪华公寓，建筑面积 178 平方米，2 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-two-bed-loft.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "Two-bedroom loft",
+     "es": "Dos dormitorios, loft",
+     "ar": "غرفتا نوم، لوفت",
+     "zh": "两居，阁楼"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-three-bed-family",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "three-bed-family",
+   "title": "Jardines del Retiro Tres",
+   "country": "Spain",
+   "region": "Madrid",
+   "city": "Madrid",
+   "price_usd": 3200000,
+   "currency": "USD",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "built_area_m2": 226,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "off-market",
+   "short_description": {
+    "en": "A luxury apartment of 226 m² in Madrid, Spain, with 3 bedrooms.",
+    "es": "Apartamento de lujo de 226 m² en Madrid, España, con 3 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 226 م² في مدريد، إسبانيا، وتضم 3 غرف نوم.",
+    "zh": "位于西班牙·马德里的豪华公寓，建筑面积 226 平方米，3 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 226 m² in Madrid, Spain, with 3 bedrooms.",
+    "es": "Apartamento de lujo de 226 m² en Madrid, España, con 3 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 226 م² في مدريد، إسبانيا، وتضم 3 غرف نوم.",
+    "zh": "位于西班牙·马德里的豪华公寓，建筑面积 226 平方米，3 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-three-bed-family.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "Three-bedroom, family",
+     "es": "Tres dormitorios, familiar",
+     "ar": "ثلاث غرف، عائلي",
+     "zh": "三居，家庭"
+    },
+    "status": {
+     "en": "Off-market",
+     "es": "Fuera de mercado",
+     "ar": "خارج السوق",
+     "zh": "场外"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-one-bed-waterfront",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "one-bed-waterfront",
+   "title": "Riva Uno",
+   "country": "Switzerland",
+   "region": "Ticino",
+   "city": "Lugano",
+   "price_usd": 2100000,
+   "currency": "USD",
+   "bedrooms": 1,
+   "bathrooms": 2,
+   "built_area_m2": 110,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "under-negotiation",
+   "short_description": {
+    "en": "A luxury apartment of 110 m² in Lugano, Switzerland, with 1 bedrooms.",
+    "es": "Apartamento de lujo de 110 m² en Lugano, Suiza, con 1 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 110 م² في Lugano، سويسرا، وتضم 1 غرف نوم.",
+    "zh": "位于瑞士·Lugano的豪华公寓，建筑面积 110 平方米，1 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 110 m² in Lugano, Switzerland, with 1 bedrooms.",
+    "es": "Apartamento de lujo de 110 m² en Lugano, Suiza, con 1 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 110 م² في Lugano، سويسرا، وتضم 1 غرف نوم.",
+    "zh": "位于瑞士·Lugano的豪华公寓，建筑面积 110 平方米，1 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-one-bed-waterfront.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "One-bedroom, waterfront",
+     "es": "Un dormitorio, frente al agua",
+     "ar": "غرفة نوم، على الماء",
+     "zh": "一居，滨水"
+    },
+    "status": {
+     "en": "Under negotiation",
+     "es": "En negociación",
+     "ar": "قيد التفاوض",
+     "zh": "洽谈中"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-two-bed-panoramic",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "two-bed-panoramic",
+   "title": "Cielo Dos",
+   "country": "Mexico",
+   "region": "Ciudad de México",
+   "city": "Ciudad de México",
+   "price_usd": 2650000,
+   "currency": "USD",
+   "bedrooms": 2,
+   "bathrooms": 2,
+   "built_area_m2": 158,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "available",
+   "short_description": {
+    "en": "A luxury apartment of 158 m² in Mexico City, Mexico, with 2 bedrooms.",
+    "es": "Apartamento de lujo de 158 m² en Ciudad de México, México, con 2 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 158 م² في مدينة مكسيكو، المكسيك، وتضم 2 غرف نوم.",
+    "zh": "位于墨西哥·墨西哥城的豪华公寓，建筑面积 158 平方米，2 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 158 m² in Mexico City, Mexico, with 2 bedrooms.",
+    "es": "Apartamento de lujo de 158 m² en Ciudad de México, México, con 2 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 158 م² في مدينة مكسيكو، المكسيك، وتضم 2 غرف نوم.",
+    "zh": "位于墨西哥·墨西哥城的豪华公寓，建筑面积 158 平方米，2 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-two-bed-panoramic.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "Two-bedroom, panoramic",
+     "es": "Dos dormitorios, panorámico",
+     "ar": "غرفتا نوم، بانورامي",
+     "zh": "两居，全景"
+    },
+    "status": {
+     "en": "Available",
+     "es": "Disponible",
+     "ar": "متاح",
+     "zh": "可售"
+    }
+   },
+   "source_media_ids": []
+  },
+  {
+   "id": "pr-city-apartments-three-bed-garden",
+   "demo": true,
+   "category": "private-real-estate",
+   "subcategory": "city-apartments",
+   "variant": "three-bed-garden",
+   "title": "Villa Jardin Tres",
+   "country": "France",
+   "region": "Provence-Alpes-Côte d'Azur",
+   "city": "Nice",
+   "price_usd": 6400000,
+   "currency": "USD",
+   "bedrooms": 3,
+   "bathrooms": 3,
+   "built_area_m2": 265,
+   "land_area_m2": null,
+   "hectares": null,
+   "hotel_keys": null,
+   "berths": null,
+   "status": "exclusive-mandate",
+   "short_description": {
+    "en": "A luxury apartment of 265 m² in Nice, France, with 3 bedrooms.",
+    "es": "Apartamento de lujo de 265 m² en Nice, Francia, con 3 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 265 م² في Nice، فرنسا، وتضم 3 غرف نوم.",
+    "zh": "位于法国·Nice的豪华公寓，建筑面积 265 平方米，3 间卧室。"
+   },
+   "long_description": {
+    "en": "A luxury apartment of 265 m² in Nice, France, with 3 bedrooms.",
+    "es": "Apartamento de lujo de 265 m² en Nice, Francia, con 3 dormitorios.",
+    "ar": "شقة فاخرة بمساحة 265 م² في Nice، فرنسا، وتضم 3 غرف نوم.",
+    "zh": "位于法国·Nice的豪华公寓，建筑面积 265 平方米，3 间卧室。"
+   },
+   "features": [],
+   "hero_image": "assets/img/xaru/catalog/pr-city-apartments-three-bed-garden.jpg",
+   "gallery": [],
+   "video": null,
+   "video_poster": null,
+   "featured": false,
+   "language_content": {
+    "category": {
+     "en": "City Apartments",
+     "es": "Apartamentos urbanos",
+     "ar": "شقق حضرية",
+     "zh": "城市公寓"
+    },
+    "variant": {
+     "en": "Three-bedroom, garden",
+     "es": "Tres dormitorios, con jardín",
+     "ar": "ثلاث غرف، حديقة",
+     "zh": "三居，花园"
+    },
+    "status": {
+     "en": "Exclusive mandate",
+     "es": "Mandato exclusivo",
+     "ar": "تفويض حصري",
+     "zh": "独家委托"
+    }
+   },
+   "source_media_ids": []
   }
  ]
 }

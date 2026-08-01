@@ -1,0 +1,190 @@
+BÚSQUEDA DE IMÁGENES — XARU HOME  ·  156 propiedades
+
+Fotografía REAL. Nada de IA. Sin marcas de agua. Horizontal, mínimo 1600 px.
+Sin gente posando. Todo es LUJO: nada por debajo del millón, y se tiene que notar.
+
+Cada línea es una búsqueda. A la derecha de la flecha va el NOMBRE EXACTO del
+fichero; sólo hay que añadirle .jpg
+
+  Villa de lujo a pie de playa → pr-villas-beachfront
+  se guarda como:                pr-villas-beachfront.jpg
+
+Si de una consigues varias, numera: pr-villas-beachfront-2.jpg, -3.jpg, -4.jpg...
+La primera va en la tarjeta del buscador; las demás, en la galería de la ficha.
+Cuantas más traigas, mejor.
+
+Déjalas todas en:  /Users/joseilc/XARU_HOME/incoming/
+
+El nombre es lo único crítico. Si coincide al carácter, entra sola en el sitio.
+
+════════════════════════════════════════════════════════════
+PRIORIDAD 1 — LAS 12 NUEVAS, HOY NO TIENEN NINGUNA IMAGEN
+════════════════════════════════════════════════════════════
+Acabo de crear estas fichas para que el filtro de dormitorios funcione de 1 a 7
+de verdad (antes la cartera empezaba en 4 y los filtros de 1, 2 y 3 no devolvían
+nada). Son de lujo pese a tener pocos dormitorios: de 1,85 a 8,9 millones.
+Aquí SÍ queremos interiores: salón, cocina abierta, dormitorio principal, terraza.
+
+Apartamento de lujo de un dormitorio en torre, interior → pr-branded-residences-one-bed-tower
+Apartamento de lujo de dos dormitorios con vistas al skyline → pr-branded-residences-two-bed-skyline
+Dúplex de lujo de tres dormitorios con escalera interior → pr-branded-residences-three-bed-duplex
+Apartamento de lujo de dos dormitorios frente a la playa → pr-branded-residences-two-bed-beachfront
+Residencia de lujo de tres dormitorios junto a campo de golf → pr-branded-residences-three-bed-golf
+Apartamento de lujo de un dormitorio con vistas a la marina → pr-branded-residences-one-bed-marina
+Apartamento de lujo de un dormitorio en edificio histórico → pr-city-apartments-one-bed-historic
+Loft de lujo de dos dormitorios con techos altos → pr-city-apartments-two-bed-loft
+Apartamento de lujo de tres dormitorios, salón amplio → pr-city-apartments-three-bed-family
+Apartamento de lujo de un dormitorio frente al agua → pr-city-apartments-one-bed-waterfront
+Apartamento de lujo de dos dormitorios con ventanal panorámico → pr-city-apartments-two-bed-panoramic
+Apartamento de lujo de tres dormitorios con terraza ajardinada → pr-city-apartments-three-bed-garden
+
+════════════════════════════════════════════════════════════
+PRIORIDAD 2 — REAL ESTATE (pr-)  ·  PRIORIDAD 3 — HOSTELERÍA (ch-) Y SUELO (ld-)
+════════════════════════════════════════════════════════════
+Estas ya tienen una imagen puesta, pero quiero sustituirlas por algo mejor y
+sumar galería. Aquí manda el exterior: plano general, aérea, entorno.
+
+Casa contemporánea de lujo en ciudad → pr-contemporary-houses-urban
+Casa contemporánea de lujo en montaña → pr-contemporary-houses-mountain
+Casa contemporánea de lujo tropical entre palmeras → pr-contemporary-houses-tropical
+Casa contemporánea de lujo a orillas de un lago → pr-contemporary-houses-lakefront
+Casa contemporánea de lujo junto a campo de golf → pr-contemporary-houses-golf
+Casa contemporánea de lujo en paisaje desértico → pr-contemporary-houses-desert
+Villa de lujo a pie de playa → pr-villas-beachfront
+Villa de lujo en montaña con nieve → pr-villas-mountain
+Villa de lujo mediterránea blanca con vistas al mar → pr-villas-mediterranean
+Villa de lujo tropical con piscina entre vegetación → pr-villas-tropical
+Villa de lujo urbana con jardín → pr-villas-urban
+Villa de lujo dentro de un resort → pr-villas-resort
+Mansión de lujo frente al agua con embarcadero → pr-mansions-waterfront
+Mansión de lujo urbana, palacete → pr-mansions-urban
+Mansión de lujo mediterránea sobre la costa → pr-mansions-mediterranean
+Mansión de lujo tropical con palmeras → pr-mansions-tropical
+Mansión histórica de lujo, palacio → pr-mansions-historic
+Mansión de lujo en urbanización cerrada → pr-mansions-gated
+Castillo medieval con foso → pr-castles-chateaux-medieval
+Château francés con jardines → pr-castles-chateaux-french-chateau
+Castillo restaurado habitable → pr-castles-chateaux-restored
+Castillo o bodega entre viñedos → pr-castles-chateaux-vineyard
+Palacio rural con parque → pr-castles-chateaux-rural-palace
+Fortaleza en altura sobre el paisaje → pr-castles-chateaux-fortress
+Hacienda colonial con patio y arcadas → pr-haciendas-colonial
+Hacienda cafetera en laderas verdes → pr-haciendas-coffee
+Hacienda ecuestre con cuadras → pr-haciendas-equestrian
+Hacienda agrícola con cultivos → pr-haciendas-agricultural
+Hacienda con viñedos → pr-haciendas-vineyard
+Hacienda tropical entre palmeras → pr-haciendas-tropical
+Finca de lujo ecuestre con caballos → pr-estates-equestrian
+Finca de lujo en montaña con praderas → pr-estates-mountain
+Finca de caza con bosque → pr-estates-hunting
+Finca con olivares → pr-estates-olive-grove
+Finca con viñedos y bodega → pr-estates-vineyard
+Finca tropical con selva → pr-estates-tropical
+Ático de lujo en torre de gran altura → pr-penthouses-dubai
+Ático de lujo frente al océano → pr-penthouses-oceanfront
+Ático de lujo con skyline de ciudad → pr-penthouses-urban
+Ático de lujo en edificio histórico → pr-penthouses-historic
+Ático dúplex de lujo con escalera → pr-penthouses-duplex
+Ático de lujo con terraza panorámica → pr-penthouses-panoramic
+Casa de playa de lujo sobre la arena → pr-waterfront-beach-house
+Casa de lujo sobre acantilado con vistas al mar → pr-waterfront-clifftop
+Casa de lujo en isla → pr-waterfront-island
+Casa de lujo frente a aguas turquesas → pr-waterfront-caribbean
+Casa de lujo frente al mar mediterráneo → pr-waterfront-mediterranean
+Casa de lujo tropical sobre el agua → pr-waterfront-asian-tropical
+Cuadras de lujo con picadero de arena → pr-equestrian-stables
+Centro hípico cubierto → pr-equestrian-riding-centre
+Instalación ecuestre de competición → pr-equestrian-competition
+Hacienda ecuestre vista aérea → pr-equestrian-hacienda
+Campo de polo con caballos → pr-equestrian-polo
+Finca ecuestre rural con praderas → pr-equestrian-rural
+Isla privada de aguas turquesas → pr-private-islands-caribbean
+Isla privada mediterránea → pr-private-islands-mediterranean
+Isla privada tropical con selva → pr-private-islands-asian-tropical
+Isla privada con resort → pr-private-islands-with-resort
+Isla privada virgen sin construir → pr-private-islands-undeveloped
+Archipiélago de islas privadas → pr-private-islands-archipelago
+Hotel de cinco estrellas urbano, fachada → ch-operating-hotels-city-5star
+Hotel resort de playa vista aérea → ch-operating-hotels-beach-resort
+Hotel de montaña con nieve → ch-operating-hotels-mountain
+Hotel histórico junto al agua → ch-operating-hotels-historic
+Hotel de negocios moderno → ch-operating-hotels-airport
+Hotel en isla frente a laguna turquesa → ch-operating-hotels-island
+Hotel boutique de diseño contemporáneo → ch-boutique-hotels-design
+Hotel boutique patrimonial con patio → ch-boutique-hotels-heritage
+Hotel boutique entre viñedos con pérgola → ch-boutique-hotels-vineyard
+Hotel boutique en selva → ch-boutique-hotels-jungle
+Hotel boutique costero con terraza al mar → ch-boutique-hotels-coastal
+Hotel boutique tipo loft industrial → ch-boutique-hotels-urban-loft
+Resort todo incluido vista aérea con piscinas → ch-resorts-all-inclusive
+Resort de bienestar con piscina entre palmeras → ch-resorts-wellness
+Resort de golf vista aérea → ch-resorts-golf
+Eco resort integrado en la naturaleza → ch-resorts-eco
+Resort de esquí en montaña nevada → ch-resorts-ski
+Resort insular con bungalós sobre el agua → ch-resorts-island
+Residencias corporativas en torre de cristal → ch-serviced-residences-corporate
+Residencias familiares de lujo con jardines → ch-serviced-residences-family
+Residencias de lujo frente a la playa → ch-serviced-residences-beach
+Residencias nuevas junto a campus → ch-serviced-residences-student-adjacent
+Residencias de marca en torres verdes → ch-serviced-residences-branded
+Residencias junto a centro médico → ch-serviced-residences-medical
+Marina de superyates vista aérea → ch-marinas-beach-clubs-superyacht
+Marina insular con veleros → ch-marinas-beach-clubs-island-marina
+Beach club con sombrillas y piscina → ch-marinas-beach-clubs-beach-club
+Marina fluvial al atardecer → ch-marinas-beach-clubs-river-marina
+Marina de resort iluminada de noche → ch-marinas-beach-clubs-resort-marina
+Frente marítimo urbano con puerto deportivo → ch-marinas-beach-clubs-urban-waterfront
+Parque temático con hotel de colores → ch-parks-entertainment-theme-park
+Parque acuático con toboganes vista aérea → ch-parks-entertainment-water-park
+Parque natural con lagunas → ch-parks-entertainment-eco-park
+Distrito cultural con palacio y puentes → ch-parks-entertainment-cultural
+Parque marino con embarcadero → ch-parks-entertainment-marine-park
+Complejo de ocio de resort con piscinas → ch-parks-entertainment-resort-entertainment
+Desarrollo de uso mixto frente al agua → ch-mixed-use-waterfront
+Desarrollo de uso mixto en centro urbano → ch-mixed-use-downtown
+Desarrollo junto a nodo de transporte → ch-mixed-use-transit
+Desarrollo mixto de resort vista aérea → ch-mixed-use-resort-mixed
+Conversión industrial en distrito de diseño → ch-mixed-use-industrial-conv
+Parque empresarial moderno → ch-mixed-use-business-park
+Hotel a medio construir con grúas → ch-halted-projects-hotel-70
+Resort a medio construir vista aérea → ch-halted-projects-resort-45
+Torre a medio construir → ch-halted-projects-tower-85
+Obra parada en fase de estructura → ch-halted-projects-mixed-30
+Edificio abandonado en ruinas cubierto de vegetación → ch-halted-projects-boutique-60
+Obra de marina a medio construir → ch-halted-projects-marina-40
+Kilómetros de playa virgen sin construir vista aérea → ld-coastal-land-beachfront-km
+Acantilados sobre el mar con terreno llano arriba → ld-coastal-land-clifftop
+Bahía resguardada con orilla sin urbanizar → ld-coastal-land-bay
+Península verde adentrándose en el mar → ld-coastal-land-peninsula
+Dunas costeras y matorral → ld-coastal-land-dune-coast
+Arrecife y agua turquesa frente a orilla virgen → ld-coastal-land-reef-front
+Parcela virgen a pie de playa con selva → ld-hotel-resort-land-beach-parcel
+Cayo o isla pequeña sin desarrollar → ld-hotel-resort-land-island-parcel
+Terreno a orillas de lago con montañas → ld-hotel-resort-land-lakefront
+Meseta o pradera de montaña edificable → ld-hotel-resort-land-mountain
+Terreno desértico con dunas → ld-hotel-resort-land-desert
+Terreno de golf ondulado vista aérea → ld-hotel-resort-land-golf-resort
+Gran extensión de suelo en borde de ciudad → ld-masterplan-land-new-town
+Tramo largo de costa sin urbanizar → ld-masterplan-land-coastal-master
+Suelo costero con primeros edificios turísticos → ld-masterplan-land-resort-city
+Bosque y humedal protegidos vista aérea → ld-masterplan-land-eco-master
+Archipiélago o isla grande vista aérea → ld-masterplan-land-island-master
+Suelo logístico junto a autopista → ld-masterplan-land-border-logistics
+Solar vacío dentro de ciudad densa → ld-urban-mixed-land-downtown
+Suelo portuario urbano a la espera → ld-urban-mixed-land-waterfront-urban
+Terreno junto a estación de tren → ld-urban-mixed-land-transit
+Parcelas vacías entre torres de oficinas → ld-urban-mixed-land-business-dist
+Suelo postindustrial degradado → ld-urban-mixed-land-regeneration
+Borde de expansión suburbana con calles nuevas → ld-urban-mixed-land-suburban-growth
+Viñedos en hilera con montañas detrás → ld-agricultural-estate-land-vineyard
+Olivares en hilera vista aérea → ld-agricultural-estate-land-olive
+Plantación de café en laderas → ld-agricultural-estate-land-coffee
+Llanuras de pasto con ganado → ld-agricultural-estate-land-cattle
+Plantación forestal y cultivos vista aérea → ld-agricultural-estate-land-agroforestry
+Campos de regadío con pivotes → ld-agricultural-estate-land-irrigated
+Isla tropical totalmente virgen → ld-island-territories-undeveloped-isl
+Grupo de islas verdes en agua clara → ld-island-territories-multi-island
+Isla o atolón que encierra una laguna → ld-island-territories-lagoon-island
+Cayo de arena rodeado de arrecife → ld-island-territories-reef-island
+Isla volcánica de roca oscura y acantilados → ld-island-territories-volcanic
+Canales de manglar vista aérea → ld-island-territories-mangrove
