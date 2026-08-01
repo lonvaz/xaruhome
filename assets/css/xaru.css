@@ -1797,10 +1797,14 @@ body.page-loaded .xr_hero_slider_wrap {
 
 /* Etiqueta de estado sobre la miniatura. Mismo tratamiento que el precio,
    en el lado opuesto, para no romper la composición de la tarjeta. */
+/* El precio de la plantilla ya ocupa la esquina superior IZQUIERDA
+   (.cs_card.cs_style_1 .cs_property_price -> left:15px; top:15px).
+   La etiqueta de estado va por tanto a la derecha: si no, se solapan.
+   Detectado en la auditoria a 1920, 1440, 768 y 390. */
 .xr_demo_flag {
   position: absolute;
   top: 16px;
-  left: 16px;
+  right: 16px;
   z-index: 2;
   padding: 4px 12px;
   border-radius: 10px;
@@ -1812,7 +1816,9 @@ body.page-loaded .xr_hero_slider_wrap {
   background-color: rgba(28, 27, 25, 0.88);
   border: 1px solid rgba(201, 168, 118, 0.6);
 }
-[dir="rtl"] .xr_demo_flag { left: auto; right: 16px; }
+/* En arabe NO se invierte: la hoja RTL no voltea el precio de la plantilla,
+   que sigue a la izquierda. Si volteasemos la etiqueta, volverian a chocar
+   (medido: precio@673 y estado@669 en la version arabe). */
 
 /* Filtros por tipología, en sustitución de los genéricos de la plantilla. */
 [data-catalog-filters] {

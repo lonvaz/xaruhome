@@ -17,7 +17,8 @@
 
   var WIDTHS = [480, 768, 1280, 1920, 2560];
   var SIZES =
-    "(max-width: 575px) 100vw, (max-width: 991px) 50vw, (max-width: 1399px) 33vw, 420px";
+    "(max-width: 575px) 92vw, (max-width: 767px) 46vw, (max-width: 991px) 44vw, "
+    + "(max-width: 1399px) 31vw, 300px";   // medido: la tarjeta ocupa ~291 px en escritorio
 
   /* ---------- utilidades ---------- */
 
