@@ -1956,3 +1956,9 @@ body.page-loaded .xr_hero_slider_wrap {
   color: var(--secondary-color); margin-bottom: 8px; }
 .xr_rel_card .xr_rel_body b { display: block; font-family: var(--primary-font);
   font-size: 18px; color: var(--primary-color); }
+
+/* Contacto — el mapa heredado se sale doce pixeles del ancho ----------------
+   La plantilla lo dimensiona con un ancho fijo mas el desplazamiento de la
+   rejilla; a 1440 px eso deja una barra de desplazamiento horizontal. */
+.cs_contact_map { max-width: 100%; overflow: hidden; }
+.cs_contact_map img { max-width: 100%; }

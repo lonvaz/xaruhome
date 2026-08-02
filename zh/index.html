@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="首页链接"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="../assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -1632,6 +1632,33 @@
         ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
     })();
     </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     
     
     
@@ -1653,8 +1680,8 @@
           <div class="col-lg-6">
             <div class="overflow-hidden" data-aos="fade-up" data-xr-parallax-anchor style="position: relative">
               <img
-                src="../assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg"
-                srcset="../assets/img/xaru/gen2/r/06_masterplan_ashima-768.jpg 768w, assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg 1280w"
+                src="/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg"
+                srcset="/assets/img/xaru/gen2/r/06_masterplan_ashima-768.jpg 768w, /assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg 1280w"
                 sizes="(max-width: 991px) 92vw, 46vw"
                 loading="lazy" decoding="async" width="1280" height="853"
                 alt="Aerial view of a master-planned development: streets, plots and finished houses laid out over the territory"
@@ -1699,8 +1726,8 @@
               </div>
               <div class="xr_img_holder" data-xr-parallax="1.1" data-aos="fade-up">
                 <img
-                  src="../assets/img/xaru/gen2/r/06b_ashima_pavilion-1280.jpg"
-                  srcset="../assets/img/xaru/gen2/r/06b_ashima_pavilion-768.jpg 768w, assets/img/xaru/gen2/r/06b_ashima_pavilion-1280.jpg 1280w"
+                  src="/assets/img/xaru/gen2/r/06b_ashima_pavilion-1280.jpg"
+                  srcset="/assets/img/xaru/gen2/r/06b_ashima_pavilion-768.jpg 768w, /assets/img/xaru/gen2/r/06b_ashima_pavilion-1280.jpg 1280w"
                   sizes="(max-width: 991px) 92vw, 46vw"
                   loading="lazy" decoding="async" width="1280" height="852"
                   alt="ASHIMA 展亭——建筑细部"
@@ -1886,8 +1913,8 @@
         <div class="row cs_gap_y_40 align-items-center">
           <div class="col-lg-5">
             <div class="cs_radius_20 overflow-hidden" data-aos="fade-up">
-              <img src="../assets/img/xaru/gen2/r/04_resort_dev-1280.jpg"
-                srcset="../assets/img/xaru/gen2/r/04_resort_dev-768.jpg 768w, assets/img/xaru/gen2/r/04_resort_dev-1280.jpg 1280w"
+              <img src="/assets/img/xaru/gen2/r/04_resort_dev-1280.jpg"
+                srcset="/assets/img/xaru/gen2/r/04_resort_dev-768.jpg 768w, /assets/img/xaru/gen2/r/04_resort_dev-1280.jpg 1280w"
                 sizes="(max-width: 991px) 92vw, 38vw"
                 loading="lazy" decoding="async" width="1280" height="853"
                 alt="Whitewashed residences and a pool terrace above the sea at a coastal resort" class="w-100" />
@@ -1980,7 +2007,7 @@
       <div class="container xr_cta_overlap">
         <div
           class="cs_cta cs_style_1 cs_bg_filed cs_center_column cs_radius_20 text-center xr_duotone_overlay position-relative"
-          data-src="../assets/img/xaru/gen2/r/14_cta_bg-1920.jpg"
+          data-src="/assets/img/xaru/gen2/r/14_cta_bg-1920.jpg"
         >
           <span class="xr_cta_triangle"></span>
           
