@@ -53,6 +53,22 @@ NAV = [
      T("Income commercial", "Comercial de renta", "التجاري المدرّ للدخل", "收益型商业"),
      T("Halted / incomplete projects", "Proyectos detenidos / incompletos", "مشاريع متوقفة / غير مكتملة", "停滞 / 未完成项目"),
      T("Confidential portfolio", "Portafolio confidencial", "محفظة سرّية", "保密资产组合")]},
+   # Acceso directo al inventario: las rutas de resultados del marketplace.
+   # Cada entrada abre la misma aplicación con su filtro base ya puesto.
+   {"slug": "real-estate/search",
+    "title": T("Search the Inventory", "Buscar en el inventario", "ابحث في المعروض", "检索资产库"),
+    "hrefs": ["real-estate/search/", "real-estate/buy/", "real-estate/rent/",
+              "real-estate/commercial/buy/", "real-estate/commercial/rent/",
+              "real-estate/land/", "real-estate/map/", "real-estate/sold/"],
+    "items": [
+     T("All assets", "Todos los activos", "كل الأصول", "全部资产"),
+     T("Residential for sale", "Residencial en venta", "سكني للبيع", "住宅出售"),
+     T("Residential to rent", "Residencial en alquiler", "سكني للإيجار", "住宅租赁"),
+     T("Commercial for sale", "Comercial en venta", "تجاري للبيع", "商业出售"),
+     T("Commercial to lease", "Comercial en alquiler", "تجاري للإيجار", "商业租赁"),
+     T("Land & large-scale sites", "Suelo y grandes superficies", "الأراضي والمواقع الكبرى", "土地与大型地块"),
+     T("Search on the map", "Buscar sobre el mapa", "البحث على الخريطة", "地图检索"),
+     T("Past operations", "Operaciones anteriores", "عمليات سابقة", "过往交易")]},
   ]},
 
  {"slug": "developments",

@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="Home page link"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -367,6 +367,17 @@
                           <a class="xr_mega_sub" href="/real-estate/commercial-hospitality/">Income commercial</a>
                           <a class="xr_mega_sub" href="/real-estate/commercial-hospitality/">Halted / incomplete projects</a>
                           <a class="xr_mega_sub" href="/real-estate/commercial-hospitality/">Confidential portfolio</a>
+                      </div>
+                      <div class="xr_mega_col">
+                        <a class="xr_mega_col_title" href="/real-estate/search/">Search the Inventory</a>
+                          <a class="xr_mega_sub" href="/real-estate/search/">All assets</a>
+                          <a class="xr_mega_sub" href="/real-estate/buy/">Residential for sale</a>
+                          <a class="xr_mega_sub" href="/real-estate/rent/">Residential to rent</a>
+                          <a class="xr_mega_sub" href="/real-estate/commercial/buy/">Commercial for sale</a>
+                          <a class="xr_mega_sub" href="/real-estate/commercial/rent/">Commercial to lease</a>
+                          <a class="xr_mega_sub" href="/real-estate/land/">Land & large-scale sites</a>
+                          <a class="xr_mega_sub" href="/real-estate/map/">Search on the map</a>
+                          <a class="xr_mega_sub" href="/real-estate/sold/">Past operations</a>
                       </div>
                         </div>
                       </div>
@@ -989,6 +1000,42 @@
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     <script>
     (function(){var s=document.getElementById("featured");if(!s)return;
       var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");

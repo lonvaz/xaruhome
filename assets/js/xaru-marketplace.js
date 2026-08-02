@@ -109,6 +109,9 @@
                 ar:"مدينة أو دولة أو نوع أو مرجع",
                 zh:"城市、国家、类型或编号"},
     keysL:     {en:"keys",es:"llaves",ar:"مفتاح",zh:"客房"},
+    featured:  {en:"Featured",es:"Destacado",ar:"مميّز",zh:"精选"},
+    premium:   {en:"Premium",es:"Premium",ar:"بريميوم",zh:"尊享"},
+    spotlight: {en:"Spotlight",es:"En foco",ar:"تحت الضوء",zh:"聚焦"},
     haL:       {en:"ha",es:"ha",ar:"هكتار",zh:"公顷"},
     sqmL:      {en:"m²",es:"m²",ar:"م²",zh:"㎡"}
   };
@@ -271,6 +274,18 @@
       '" loading="lazy" decoding="async"></picture>';
   }
 
+  /* Nombre del pais en el idioma de la pagina. El de la ciudad no se traduce. */
+  var CCN = null;
+  function ccName(cc) {
+    if (!CCN) {
+      CCN = {};
+      ((LOCS && LOCS.countries) || []).forEach(function (c) {
+        CCN[c.code] = c.name[L] || c.name.en;
+      });
+    }
+    return CCN[cc] || cc;
+  }
+
   /* ---------------------------------------------------------------- tarjeta */
   function card(x) {
     var title = x.t[L] || x.t.en;
@@ -287,7 +302,7 @@
     var href = PR + "property-details.html?id=" + encodeURIComponent(x.id);
     var badges = "";
     if (x.promo && x.promo !== "none")
-      badges += '<span class="xr_promo_badge is-' + esc(x.promo) + '">' + esc(x.promo) + "</span>";
+      badges += '<span class="xr_promo_badge is-' + esc(x.promo) + '">' + esc(t(x.promo)) + "</span>";
     if (x.ver) badges += '<span class="xr_verified_badge">' + esc(t("verifiedB")) + "</span>";
     if (x.demo) badges += '<span class="xr_demo_badge">' + esc(t("demo")) + "</span>";
 
@@ -300,7 +315,7 @@
       '<div class="xr_mp_body">' +
         '<p class="xr_mp_type">' + esc(typeName) + "</p>" +
         '<h3 class="xr_mp_title"><a href="' + esc(href) + '">' + esc(title) + "</a></h3>" +
-        '<p class="xr_mp_loc">' + esc([x.city, x.cc].filter(Boolean).join(", ")) + "</p>" +
+        '<p class="xr_mp_loc">' + esc([x.city, ccName(x.cc)].filter(Boolean).join(", ")) + "</p>" +
         (specs.length ? '<ul class="xr_mp_specs">' +
           specs.map(function (s) { return "<li><bdi>" + esc(s) + "</bdi></li>"; }).join("") + "</ul>" : "") +
         '<div class="xr_mp_foot">' +
@@ -522,7 +537,7 @@
     }
     CHIPS = {};
     if (STATE.q) chip('"' + STATE.q + '"', function () { STATE.q = ""; });
-    STATE.cc.forEach(function (c) { chip(c, function () { STATE.cc = STATE.cc.filter(function (x) { return x !== c; }); }); });
+    STATE.cc.forEach(function (c) { chip(ccName(c), function () { STATE.cc = STATE.cc.filter(function (x) { return x !== c; }); }); });
     STATE.type.forEach(function (c) { chip(c, function () { STATE.type = STATE.type.filter(function (x) { return x !== c; }); }); });
     STATE.am.forEach(function (c) { chip(c, function () { STATE.am = STATE.am.filter(function (x) { return x !== c; }); }); });
     if (STATE.priceMin != null) chip(t("price") + " ≥ " + nf(STATE.priceMin), function () { STATE.priceMin = null; });

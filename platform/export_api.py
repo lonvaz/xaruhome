@@ -11,6 +11,7 @@ Salidas:
     data/api/v1/locations.json         árbol geográfico con conteos
     data/api/v1/search-index.json      proyección ligera para la búsqueda
     data/api/v1/listings/{public_id}.json  ficha completa
+    data/api/v1/listings/{ref_heredada}.json  alias del catálogo antiguo
     data/api/v1/agents.json            directorio de agentes
     data/api/v1/agencies.json          directorio de agencias
     data/api/v1/projects.json          proyectos off-plan
@@ -20,6 +21,10 @@ Y, por compatibilidad con las páginas que ya existen:
     data/properties/{categoria}.json   forma heredada del catálogo
 """
 import json, os, sqlite3, sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from geo_world import WORLD  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -197,6 +202,14 @@ def main():
 
     # ---------------------------------------------------------- fichas
     nfich = 0
+    nalias = 0
+    country_names = {}
+    for cc, v in WORLD.items():
+        country_names[cc] = {"en": v[0], "es": v[1], "ar": v[2], "zh": v[3]}
+    # La vista pública no expone `external_reference` —es dato interno—, así que
+    # el alias se consulta aparte contra la tabla, sin tocar la frontera.
+    legacy_ref = {r["id"]: r["external_reference"] for r in cur.execute(
+        "SELECT id, external_reference FROM listings WHERE external_reference IS NOT NULL")}
     for r in rows:
         pt = tname.get(r["property_type_id"], {})
         ag = agents.get(r["agent_id"]) or {}
@@ -217,6 +230,10 @@ def main():
             "propertyType": {"slug": pt.get("slug"),
                              "name": {l: pt.get("name_" + l) or pt.get("name_en") for l in LOCALES}},
             "location": {"countryCode": r["country_code"], "city": r["city"],
+                         # El nombre del pais va en los cuatro idiomas; el de la
+                         # ciudad no se traduce nunca —es la regla de la casa—,
+                         # asi que la direccion se compone en el cliente.
+                         "country": country_names.get(r["country_code"], {}),
                          "displayAddress": r["public_display_address"],
                          "precision": r["location_precision"],
                          "lat": r["latitude"], "lon": r["longitude"]},
@@ -246,11 +263,19 @@ def main():
         }
         total += w(os.path.join(API, "listings", r["public_id"] + ".json"), doc)
         nfich += 1
+        # Alias por referencia heredada: los enlaces del catálogo antiguo
+        # (pp-samana-island, pr-villas-tropical…) siguen resolviendo. Un
+        # identificador publicado no se retira nunca; se le da destino.
+        ext = legacy_ref.get(r["id"])
+        if ext and ext != r["public_id"] and not str(ext).startswith("XH-"):
+            total += w(os.path.join(API, "listings", str(ext) + ".json"), doc)
+            nalias += 1
 
     con.close()
     print("API estática escrita en data/api/v1/")
     print("  listings en índice : %d" % len(index))
     print("  fichas             : %d" % nfich)
+    print("  alias heredados    : %d" % nalias)
     print("  países con stock   : %d" % stats["countries"])
     print("  ciudades con stock : %d" % stats["cities"])
     print("  peso total         : %.1f MB" % (total / 1048576.0))

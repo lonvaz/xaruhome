@@ -1,262 +1,482 @@
 /*
- * XARU HOME — ficha de propiedad (property-details.html?id=…)
- *
+ * XARU HOME — ficha del activo (property-details.html?id=…)
+ * =============================================================
  * POR QUE EXISTE
  * --------------
  * La plantilla traia una ficha de ejemplo: "Evergreen Estates", 70.000 dolares,
- * "217 Horizon Heights Road, NY 10022", una descripcion de una casa alquilada
- * en Filadelfia con inquilinos y ayudas para primer comprador, una calculadora
- * de hipoteca y un listado de colegios cercanos. Las 156 tarjetas del catalogo
- * apuntaban todas ahi, asi que cualquiera que pinchase una propiedad de treinta
- * millones aterrizaba en una vivienda de setenta mil dolares que no existe.
+ * una direccion de Nueva York, una calculadora de hipoteca y un listado de
+ * colegios cercanos. Todas las tarjetas del catalogo apuntaban ahi, asi que
+ * quien pinchaba una propiedad de treinta millones aterrizaba en una vivienda
+ * de setenta mil que no existe.
  *
- * Este fichero lee el ?id= de la URL, lo busca en los mismos tres paquetes JSON
- * que alimentan el catalogo y reconstruye la ficha con los datos reales:
- * titulo, ubicacion, precio, fotografia, superficies, descripcion y estado. Las
- * secciones que no aplican a esta cartera — hipoteca, colegios, plano de
- * planta, "amenities" de vivienda corriente — se retiran en lugar de dejarse
- * con datos inventados.
+ * DE DONDE SALEN LOS DATOS
+ * ------------------------
+ * De `/data/api/v1/listings/{publicId}.json`, la proyeccion que publica
+ * `platform/export_api.py` desde la base de datos, con la forma que tendra la
+ * respuesta de `GET /api/v1/listings/{id}`. El dia que exista el Listing
+ * Service, `fetchListing()` pasa a ser esa llamada y no cambia nada mas.
  *
- * Si no hay ?id= o el id no existe, la pagina se queda como esta y se avisa por
- * consola: mejor no tocar nada que dejar una ficha a medias.
+ * Para los identificadores heredados del catalogo antiguo se conserva la via
+ * de los tres paquetes JSON: nada de lo que ya funcionaba deja de funcionar.
+ *
+ * LO QUE NO SE INVENTA
+ * --------------------
+ * Hipoteca, colegios cercanos, plano de planta y agenda de visitas se retiran
+ * en lugar de rellenarse con cifras falsas. Una ficha con datos inventados es
+ * peor que una ficha corta.
  */
 (function () {
   "use strict";
 
-  /* El .cs_property_details de la plantilla cierra antes de tiempo: la
-     descripcion, la calculadora de hipoteca y el formulario "Schedule A Tour"
-     son hermanos suyos dentro del mismo .container. Se reescribe el contenedor
-     entero, no solo el primer bloque, o la ficha real quedaria con la ficha
-     inventada pegada debajo. */
   var ANCHOR = document.querySelector(".cs_property_details");
   if (!ANCHOR) return;
   var HOST = ANCHOR.parentElement || ANCHOR;
 
+  var R = "/";
+  var API = R + "data/api/v1/";
   var PACKS = ["private-real-estate", "commercial-hospitality", "land-developments"];
 
   function lang() {
     var l = (document.documentElement.getAttribute("lang") || "en").slice(0, 2);
     return ["en", "es", "ar", "zh"].indexOf(l) >= 0 ? l : "en";
   }
-  function root() {
-    var p = location.pathname.split("/").filter(Boolean);
-    return (p[0] === "es" || p[0] === "ar" || p[0] === "zh") ? "../" : "./";
-  }
-  function t(o, l) {
+  var L = lang();
+  var PR = R + (L === "en" ? "" : L + "/");
+
+  function tv(o) {
     if (!o) return "";
-    return typeof o === "string" ? o : (o[l] || o.en || "");
+    return typeof o === "string" ? o : (o[L] || o.en || "");
   }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function num(n, l) {
-    try { return Number(n).toLocaleString(l === "zh" ? "zh-CN" : l === "ar" ? "ar" : l === "es" ? "es-ES" : "en-US"); }
-    catch (e) { return String(n); }
+  function loc4() {
+    return L === "zh" ? "zh-CN" : L === "ar" ? "ar-AE" : L === "es" ? "es-ES" : "en-US";
   }
-  function price(v, l) {
-    if (!v) return UI.on_application[l];
-    return "$" + num(v, l);
+  function nf(v) {
+    try { return new Intl.NumberFormat(loc4()).format(v); } catch (e) { return String(v); }
+  }
+  function money(v, cur) {
+    if (v == null) return U("poa");
+    try {
+      return new Intl.NumberFormat(loc4(),
+        { style: "currency", currency: cur || "USD", maximumFractionDigits: 0 }).format(v);
+    } catch (e) { return (cur || "USD") + " " + nf(v); }
+  }
+  function when(iso) {
+    if (!iso) return "";
+    try {
+      return new Intl.DateTimeFormat(loc4(), { year: "numeric", month: "long", day: "numeric" })
+        .format(new Date(iso));
+    } catch (e) { return String(iso).slice(0, 10); }
   }
 
-  var UI = {
-    on_application: { en: "Price upon application", es: "Precio a consulta",
-                      ar: "السعر عند الطلب", zh: "价格面议" },
-    overview:   { en: "Overview", es: "Resumen", ar: "نظرة عامة", zh: "概览" },
-    details:    { en: "Asset details", es: "Datos del activo", ar: "بيانات الأصل", zh: "资产明细" },
-    features:   { en: "Highlights", es: "Destacados", ar: "أبرز الملامح", zh: "亮点" },
-    beds:       { en: "Bedrooms", es: "Dormitorios", ar: "غرف النوم", zh: "卧室" },
-    baths:      { en: "Bathrooms", es: "Baños", ar: "الحمامات", zh: "浴室" },
-    built:      { en: "Built area", es: "Superficie construida", ar: "المساحة المبنية", zh: "建筑面积" },
-    land:       { en: "Plot", es: "Parcela", ar: "قطعة الأرض", zh: "地块" },
-    hectares:   { en: "Land", es: "Suelo", ar: "الأرض", zh: "土地" },
-    keys:       { en: "Keys", es: "Llaves", ar: "المفاتيح", zh: "客房" },
-    berths:     { en: "Berths", es: "Amarres", ar: "المراسي", zh: "泊位" },
-    category:   { en: "Category", es: "Categoría", ar: "الفئة", zh: "类别" },
-    variant:    { en: "Type", es: "Variante", ar: "النوع", zh: "型别" },
-    location:   { en: "Location", es: "Ubicación", ar: "الموقع", zh: "位置" },
-    status:     { en: "Status", es: "Estado", ar: "الحالة", zh: "状态" },
-    enquire:    { en: "Private enquiry", es: "Consulta reservada",
-                  ar: "استفسار خاص", zh: "私人咨询" },
-    back:       { en: "Back to the portfolio", es: "Volver al portafolio",
-                  ar: "العودة إلى المحفظة", zh: "返回资产组合" },
-    related:    { en: "Similar assets", es: "Activos similares",
-                  ar: "أصول مشابهة", zh: "同类资产" }
+  /* ---------------------------------------------------------------- i18n */
+  var T = {
+    poa:        {en:"Price upon application",es:"Precio a consulta",ar:"السعر عند الطلب",zh:"价格面议"},
+    perYear:    {en:"per year",es:"al año",ar:"سنوياً",zh:"每年"},
+    perSqm:     {en:"per m²",es:"por m²",ar:"لكل م²",zh:"每平米"},
+    overview:   {en:"Overview",es:"Resumen",ar:"نظرة عامة",zh:"概览"},
+    details:    {en:"Asset details",es:"Datos del activo",ar:"بيانات الأصل",zh:"资产明细"},
+    amenities:  {en:"Amenities and provision",es:"Amenidades y dotación",ar:"المرافق والتجهيزات",zh:"设施与配套"},
+    beds:       {en:"Bedrooms",es:"Dormitorios",ar:"غرف النوم",zh:"卧室"},
+    baths:      {en:"Bathrooms",es:"Baños",ar:"الحمامات",zh:"浴室"},
+    parking:    {en:"Parking",es:"Aparcamiento",ar:"مواقف",zh:"车位"},
+    built:      {en:"Built area",es:"Superficie construida",ar:"المساحة المبنية",zh:"建筑面积"},
+    plot:       {en:"Plot",es:"Parcela",ar:"قطعة الأرض",zh:"地块"},
+    hectares:   {en:"Land",es:"Suelo",ar:"الأرض",zh:"土地"},
+    keys:       {en:"Keys",es:"Llaves",ar:"المفاتيح",zh:"客房"},
+    berths:     {en:"Berths",es:"Amarres",ar:"المراسي",zh:"泊位"},
+    reference:  {en:"Reference",es:"Referencia",ar:"المرجع",zh:"编号"},
+    category:   {en:"Category",es:"Categoría",ar:"الفئة",zh:"类别"},
+    type:       {en:"Type",es:"Tipología",ar:"النوع",zh:"物业类型"},
+    offering:   {en:"Offering",es:"Régimen",ar:"نوع العرض",zh:"交易方式"},
+    sale:       {en:"For sale",es:"En venta",ar:"للبيع",zh:"出售"},
+    rent:       {en:"To rent",es:"En alquiler",ar:"للإيجار",zh:"租赁"},
+    location:   {en:"Location",es:"Ubicación",ar:"الموقع",zh:"位置"},
+    completion: {en:"Completion",es:"Estado de obra",ar:"حالة الإنجاز",zh:"交付状态"},
+    ready:      {en:"Ready",es:"Listo",ar:"جاهز",zh:"现房"},
+    off_plan:   {en:"Off-plan",es:"Off-plan",ar:"على المخطط",zh:"期房"},
+    handover:   {en:"Handover",es:"Entrega",ar:"التسليم",zh:"交付"},
+    furnishing: {en:"Furnishing",es:"Amueblado",ar:"التأثيث",zh:"家具配置"},
+    furnished:  {en:"Furnished",es:"Amueblado",ar:"مفروش",zh:"带家具"},
+    unfurnished:{en:"Unfurnished",es:"Sin amueblar",ar:"غير مفروش",zh:"无家具"},
+    partly_furnished:{en:"Partly furnished",es:"Parcialmente amueblado",ar:"مفروش جزئياً",zh:"部分家具"},
+    ownership:  {en:"Ownership",es:"Titularidad",ar:"نوع الملكية",zh:"产权"},
+    freehold:   {en:"Freehold",es:"Pleno dominio",ar:"تملّك حر",zh:"永久产权"},
+    leasehold:  {en:"Leasehold",es:"Derecho de superficie",ar:"حق انتفاع",zh:"租赁产权"},
+    published:  {en:"Published",es:"Publicado",ar:"تاريخ النشر",zh:"发布时间"},
+    updated:    {en:"Last updated",es:"Última actualización",ar:"آخر تحديث",zh:"最近更新"},
+    trust:      {en:"Verification",es:"Verificación",ar:"التوثيق",zh:"核验"},
+    verified:   {en:"Verified listing",es:"Activo verificado",ar:"عرض موثّق",zh:"已核验房源"},
+    unverified: {en:"Verification in progress",es:"Verificación en curso",ar:"التوثيق قيد الإنجاز",zh:"核验进行中"},
+    quality:    {en:"Listing quality",es:"Calidad de la ficha",ar:"جودة العرض",zh:"房源完整度"},
+    agent:      {en:"Your adviser",es:"Su asesor",ar:"مستشارك",zh:"您的顾问"},
+    licence:    {en:"Licence",es:"Licencia",ar:"الترخيص",zh:"执照"},
+    enquire:    {en:"Private enquiry",es:"Consulta reservada",ar:"استفسار خاص",zh:"私人咨询"},
+    save:       {en:"Save this asset",es:"Guardar este activo",ar:"حفظ هذا الأصل",zh:"收藏此资产"},
+    saved:      {en:"Saved",es:"Guardado",ar:"محفوظ",zh:"已收藏"},
+    share:      {en:"Copy link",es:"Copiar enlace",ar:"نسخ الرابط",zh:"复制链接"},
+    copied:     {en:"Link copied",es:"Enlace copiado",ar:"تم نسخ الرابط",zh:"链接已复制"},
+    back:       {en:"Back to the inventory",es:"Volver al inventario",ar:"العودة إلى المعروض",zh:"返回资产库"},
+    similar:    {en:"Similar assets",es:"Activos similares",ar:"أصول مشابهة",zh:"同类资产"},
+    onMap:      {en:"On the map",es:"Sobre el mapa",ar:"على الخريطة",zh:"地图位置"},
+    precision:  {en:"Approximate position. The exact address is disclosed to qualified enquirers.",
+                 es:"Posición aproximada. La dirección exacta se facilita a interesados cualificados.",
+                 ar:"موقع تقريبي. يُفصح عن العنوان الدقيق للمستفسرين المؤهّلين.",
+                 zh:"位置为大致范围。确切地址仅向经审核的意向方披露。"},
+    demoNote:   {en:"Platform demonstration inventory — the structure, workflow and data model are the production ones; the asset is not.",
+                 es:"Inventario de demostración de la plataforma — la estructura, el flujo y el modelo de datos son los de producción; el activo no.",
+                 ar:"معروض تجريبي للمنصة — البنية وسير العمل ونموذج البيانات هي الإنتاجية، أما الأصل فلا.",
+                 zh:"平台演示资产——架构、流程与数据模型均为正式环境，资产本身则非真实。"},
+    featured:   {en:"Featured",es:"Destacado",ar:"مميّز",zh:"精选"},
+    premium:    {en:"Premium",es:"Premium",ar:"بريميوم",zh:"尊享"},
+    spotlight:  {en:"Spotlight",es:"En foco",ar:"تحت الضوء",zh:"聚焦"},
+    notFound:   {en:"This asset is not available.",es:"Este activo no está disponible.",
+                 ar:"هذا الأصل غير متاح.",zh:"该资产不可用。"}
+  };
+  function U(k) { return (T[k] && (T[k][L] || T[k].en)) || k; }
+
+  /* ---------------------------------------------------------------- imagen */
+  var WIDTHS_BY_DIR = {
+    "assets/img/xaru/catalog/": [480, 768, 1280, 1920, 2560],
+    "assets/img/xaru/gen2/":    [768, 1280, 1920]
+  };
+  function picture(rel, alt, sizes, eager) {
+    rel = String(rel || "").replace(/^\//, "");
+    var m = /^(.*\/)([^\/]+)\.jpg$/.exec(rel);
+    var attrs = ' alt="' + esc(alt) + '" class="w-100"' +
+      (eager ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"';
+    if (!m || !WIDTHS_BY_DIR[m[1]]) return '<img src="' + esc(R + rel) + '"' + attrs + ">";
+    var dir = m[1] + "r/", base = m[2], w = WIDTHS_BY_DIR[m[1]];
+    function set(ext) {
+      return w.map(function (x) { return R + dir + base + "-" + x + "." + ext + " " + x + "w"; }).join(", ");
+    }
+    return "<picture>" +
+      '<source type="image/avif" srcset="' + esc(set("avif")) + '" sizes="' + sizes + '">' +
+      '<source type="image/webp" srcset="' + esc(set("webp")) + '" sizes="' + sizes + '">' +
+      '<img src="' + esc(R + dir + base + "-1280.jpg") + '"' + attrs + "></picture>";
+  }
+
+  /* --------------------------------------------------- persistencia (favoritos)
+     Mismo adaptador que usa el marketplace: hoy navegador, mañana el
+     Engagement Service. */
+  var Store = {
+    favorites: function () {
+      try { return JSON.parse(localStorage.getItem("xaru_favorites") || "[]"); } catch (e) { return []; }
+    },
+    toggle: function (id) {
+      var f = this.favorites(), i = f.indexOf(id);
+      if (i >= 0) f.splice(i, 1); else f.push(id);
+      try { localStorage.setItem("xaru_favorites", JSON.stringify(f)); } catch (e) {}
+      return i < 0;
+    }
   };
 
-  /* La fotografia se sirve por derivadas, igual que en las tarjetas. */
-  var WIDTHS = [480, 768, 1280, 1920, 2560];
-  function picture(src, alt, R) {
-    if (!src) return "";
-    var m = /^(.*\/)([^\/]+)\.jpg$/.exec(src.replace(/^\//, ""));
-    if (!m) return '<img src="' + esc(R + src.replace(/^\//, "")) + '" alt="' + esc(alt) + '" class="w-100">';
-    var dir = m[1] + "r/", base = m[2];
-    function set(ext) {
-      return WIDTHS.map(function (w) {
-        return R + dir + base + "-" + w + "." + ext + " " + w + "w";
-      }).join(", ");
-    }
-    return (
-      "<picture>" +
-        '<source type="image/avif" srcset="' + esc(set("avif")) + '" sizes="(max-width: 991px) 94vw, 1140px">' +
-        '<source type="image/webp" srcset="' + esc(set("webp")) + '" sizes="(max-width: 991px) 94vw, 1140px">' +
-        '<img src="' + esc(R + dir + base + "-1280.jpg") + '" alt="' + esc(alt) +
-        '" class="w-100" loading="eager" decoding="async">' +
-      "</picture>"
-    );
+  /* ---------------------------------------------------------------- bloques */
+  function fact(v, label) {
+    return '<li><div class="cs_center_column text-center">' +
+      '<h2 class="cs_fs_20 cs_semibold mb-0"><bdi>' + esc(v) + "</bdi></h2>" +
+      '<span class="cs_fs_14">' + esc(label) + "</span></div></li>";
   }
-
   function row(label, value) {
     if (value === "" || value == null) return "";
-    return '<li><span class="cs_semibold">' + esc(label) + ':</span><span>' + esc(value) + "</span></li>";
+    return '<li><span class="cs_semibold">' + esc(label) + ":</span><span><bdi>" +
+      esc(value) + "</bdi></span></li>";
   }
+  function sqm(v) { return v == null ? "" : nf(v) + (L === "ar" ? " م²" : " m²"); }
 
-  function build(it, ui, l, R, siblings) {
-    var lc = it.language_content || {};
-    var title = t(lc.title, l) || it.title;
-    var place = [it.city, it.region, it.country].filter(Boolean).join(", ");
-    var cat = t(lc.category, l) || it.subcategory;
-    var vr = t(lc.variant, l) || it.variant;
-    var status = t(lc.status, l) || it.status;
-    var alt = title + " — " + cat + ", " + place;
+  function render(d, meta, similar) {
+    var title = tv(d.title);
+    var typeName = tv(d.propertyType && d.propertyType.name) || (d.propertyType || {}).slug || "";
+    // El toponimo no se traduce; el pais si. Se compone aqui en vez de usar
+    // `displayAddress`, que viene en un solo idioma desde la base.
+    var country = tv(d.location.country) || d.location.countryCode;
+    var place = [d.location.city, country].filter(Boolean).join(", ") ||
+                d.location.displayAddress || "";
+    var sp = d.spaces || {}, pr = d.price || {}, cond = d.condition || {}, tr = d.trust || {};
+    var hero = (d.media && d.media[0] && d.media[0].url) || "";
+    var priceTxt = (pr.onApplication || pr.amount == null)
+      ? U("poa")
+      : money(pr.amount, pr.currency) + (d.offeringType === "rent" ? " " + U("perYear") : "");
 
-    var feats = (it.features || []).map(function (f) { return t(f, l) || f; }).filter(Boolean);
+    /* --- distintivos ------------------------------------------------- */
+    var badges = "";
+    if (tr.promotion && tr.promotion !== "none")
+      badges += '<span class="xr_promo_badge is-' + esc(tr.promotion) + '">' +
+        esc(U(tr.promotion)) + "</span>";
+    if (tr.verified) badges += '<span class="xr_verified_badge">' + esc(U("verified")) + "</span>";
+    if (d.demo) badges += '<span class="xr_demo_badge">' + esc(d.demoLabel || "DEMO") + "</span>";
 
-    var strip = [];
-    if (it.bedrooms)      strip.push([it.bedrooms, UI.beds[l]]);
-    if (it.bathrooms)     strip.push([it.bathrooms, UI.baths[l]]);
-    if (it.built_area_m2) strip.push([num(it.built_area_m2, l) + " m²", UI.built[l]]);
-    if (it.land_area_m2)  strip.push([num(it.land_area_m2, l) + " m²", UI.land[l]]);
-    else if (it.hectares) strip.push([num(it.hectares, l) + " ha", UI.hectares[l]]);
-    if (it.hotel_keys)    strip.push([it.hotel_keys, UI.keys[l]]);
-    if (it.berths)        strip.push([it.berths, UI.berths[l]]);
+    /* --- tira de datos ----------------------------------------------- */
+    var strip = "";
+    if (sp.bedrooms)  strip += fact(nf(sp.bedrooms), U("beds"));
+    if (sp.bathrooms) strip += fact(nf(sp.bathrooms), U("baths"));
+    if (sp.builtAreaSqm) strip += fact(sqm(sp.builtAreaSqm), U("built"));
+    if (sp.plotAreaSqm)  strip += fact(sqm(sp.plotAreaSqm), U("plot"));
+    if (sp.hectares)  strip += fact(nf(sp.hectares) + (L === "ar" ? " هكتار" : " ha"), U("hectares"));
+    if (sp.hotelKeys) strip += fact(nf(sp.hotelKeys), U("keys"));
+    if (sp.berths)    strip += fact(nf(sp.berths), U("berths"));
+    if (sp.parking)   strip += fact(nf(sp.parking), U("parking"));
+    if (pr.perSqm)    strip += fact(money(pr.perSqm, pr.currency), U("perSqm"));
 
-    var related = siblings.slice(0, 3).map(function (s) {
-      var st = t((s.language_content || {}).title, l) || s.title;
-      return (
-        '<div class="col-md-4"><a class="xr_rel_card" href="property-details.html?id=' +
-        encodeURIComponent(s.id) + '">' +
-          '<span class="xr_rel_img">' + picture(s.hero_image, st, R) + "</span>" +
-          '<span class="xr_rel_body"><strong>' + esc(st) + "</strong>" +
-          "<em>" + esc([s.city, s.country].filter(Boolean).join(", ")) + "</em>" +
-          "<b>" + esc(price(s.price_usd, l)) + "</b></span>" +
-        "</a></div>"
-      );
+    /* --- amenidades, agrupadas por familia ---------------------------- */
+    var amenHtml = "";
+    if (d.amenities && d.amenities.length) {
+      var nameOf = {};
+      ((meta && meta.amenities) || []).forEach(function (a) {
+        nameOf[a.slug] = a["name_" + L] || a.name_en;
+      });
+      amenHtml = '<div class="cs_property_amenties"><h3 class="cs_fs_25 cs_semibold cs_mb_15">' +
+        esc(U("amenities")) + '</h3><ul class="cs_property_amenties_list cs_mp_0">' +
+        d.amenities.map(function (s) {
+          return "<li>" + esc(nameOf[s] || s) + "</li>";
+        }).join("") + "</ul></div>";
+    }
+
+    /* --- tabla de datos ----------------------------------------------- */
+    var handover = (cond.handover && cond.handover.year)
+      ? "Q" + cond.handover.quarter + " " + cond.handover.year : "";
+    var table =
+      row(U("reference"), d.publicId) +
+      row(U("type"), typeName) +
+      row(U("offering"), U(d.offeringType === "rent" ? "rent" : "sale")) +
+      row(U("location"), place) +
+      row(U("beds"), sp.bedrooms ? nf(sp.bedrooms) : "") +
+      row(U("baths"), sp.bathrooms ? nf(sp.bathrooms) : "") +
+      row(U("built"), sqm(sp.builtAreaSqm)) +
+      row(U("plot"), sqm(sp.plotAreaSqm)) +
+      row(U("hectares"), sp.hectares ? nf(sp.hectares) + " ha" : "") +
+      row(U("completion"), cond.completion ? U(cond.completion) : "") +
+      row(U("handover"), handover) +
+      row(U("furnishing"), (cond.furnishing && cond.furnishing !== "unknown") ? U(cond.furnishing) : "") +
+      row(U("ownership"), (cond.ownership && cond.ownership !== "unknown") ? U(cond.ownership) : "") +
+      row(U("published"), when(d.publishedAt)) +
+      row(U("updated"), when(d.updatedAt));
+
+    /* --- mapa ---------------------------------------------------------- */
+    var mapHtml = "";
+    if (d.location.lat && d.location.lon) {
+      mapHtml = '<div class="xr_pdp_block"><h3 class="cs_fs_25 cs_semibold cs_mb_15">' +
+        esc(U("onMap")) + '</h3><div class="xr_pdp_map" data-lat="' + d.location.lat +
+        '" data-lon="' + d.location.lon + '"></div>' +
+        '<p class="xr_pdp_note">' + esc(U("precision")) + "</p></div>";
+    }
+
+    /* --- similares ------------------------------------------------------ */
+    var simHtml = similar.slice(0, 3).map(function (s) {
+      var st = tv(s.t);
+      return '<div class="col-md-4"><a class="xr_rel_card" href="' + PR +
+        "property-details.html?id=" + encodeURIComponent(s.id) + '">' +
+        '<span class="xr_rel_img">' + picture(s.img, st, "(max-width:767px) 92vw, 360px") + "</span>" +
+        '<span class="xr_rel_body"><strong>' + esc(st) + "</strong>" +
+        "<em>" + esc([s.city, s.cc].filter(Boolean).join(", ")) + "</em>" +
+        "<b>" + esc((s.poa || s.p == null) ? U("poa") : money(s.p, s.cur)) + "</b></span></a></div>";
     }).join("");
+
+    var ag = d.agent || {}, og = d.agency || {};
+    var fav = Store.favorites().indexOf(d.publicId) >= 0;
 
     return (
       '<div class="cs_property_header cs_mb_40">' +
         '<div class="cs_property_header_left">' +
+          '<p class="xr_pdp_eyebrow">' + esc(typeName) + " · " +
+            esc(U(d.offeringType === "rent" ? "rent" : "sale")) + "</p>" +
           '<h1 class="cs_fs_49 cs_mb_3">' + esc(title) + "</h1>" +
           '<div class="cs_property_location_text"><span class="mb-0">' + esc(place) + "</span></div>" +
         "</div>" +
         '<div class="cs_property_header_right">' +
-          '<h3 class="cs_property_price cs_fs_39 cs_mb_8">' + esc(price(it.price_usd, l)) + "</h3>" +
-          '<p class="cs_fs_20 cs_semibold mb-0">' + esc(cat) + " · " + esc(vr) + "</p>" +
+          '<h3 class="cs_property_price cs_fs_39 cs_mb_8"><bdi>' + esc(priceTxt) + "</bdi></h3>" +
+          '<div class="xr_pdp_actions">' +
+            '<button type="button" class="xr_pdp_fav' + (fav ? " is-on" : "") +
+              '" data-fav aria-pressed="' + (fav ? "true" : "false") + '">' +
+              '<i class="fa-solid fa-heart"></i> <span>' + esc(U(fav ? "saved" : "save")) + "</span></button>" +
+            '<button type="button" class="xr_pdp_share" data-share>' +
+              '<i class="fa-solid fa-link"></i> <span>' + esc(U("share")) + "</span></button>" +
+          "</div>" +
         "</div>" +
       "</div>" +
       '<div class="cs_property_banner cs_radius_20 position-relative cs_mb_40">' +
-        picture(it.hero_image, alt, R) +
-        '<span class="cs_property_badge cs_primary_bg cs_fs_14 cs_white_color cs_medium cs_radius_20 position-absolute">' +
-        esc(status) + "</span>" +
+        picture(hero, title + " — " + typeName + ", " + place, "(max-width:991px) 94vw, 1140px", true) +
+        '<span class="xr_card_badges">' + badges + "</span>" +
       "</div>" +
-      '<ul class="cs_property_features_list cs_mp_0">' +
-        strip.map(function (s) {
-          return '<li><div class="cs_center_column text-center">' +
-                 '<h2 class="cs_fs_20 cs_semibold mb-0">' + esc(s[0]) + "</h2>" +
-                 '<span class="cs_fs_14">' + esc(s[1]) + "</span></div></li>";
-        }).join("") +
-      "</ul>" +
+      (strip ? '<ul class="cs_property_features_list cs_mp_0">' + strip + "</ul>" : "") +
       '<div class="cs_height_50 cs_height_lg_40"></div>' +
       '<div class="row cs_gap_y_40">' +
         '<div class="col-lg-8"><div class="cs_single_property_content cs_radius_20">' +
           '<div class="cs_property_desc">' +
-            '<h3 class="cs_fs_25 cs_semibold cs_mb_15">' + esc(UI.overview[l]) + "</h3>" +
-            "<p>" + esc(t(it.long_description, l) || t(it.short_description, l)) + "</p>" +
+            '<h3 class="cs_fs_25 cs_semibold cs_mb_15">' + esc(U("overview")) + "</h3>" +
+            "<p>" + esc(tv(d.description)) + "</p>" +
           "</div>" +
-          (feats.length
-            ? '<div class="cs_property_amenties"><h3 class="cs_fs_25 cs_semibold cs_mb_15">' +
-              esc(UI.features[l]) + "</h3>" +
-              '<ul class="cs_property_amenties_list cs_mp_0">' +
-              feats.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") +
-              "</ul></div>"
-            : "") +
+          amenHtml +
           '<div class="cs_property_info"><h3 class="cs_fs_25 cs_semibold cs_mb_15">' +
-            esc(UI.details[l]) + "</h3>" +
-            '<ul class="cs_property_info_list cs_mp_0">' +
-              row(UI.category[l], cat) +
-              row(UI.variant[l], vr) +
-              row(UI.location[l], place) +
-              row(UI.beds[l], it.bedrooms || "") +
-              row(UI.baths[l], it.bathrooms || "") +
-              row(UI.built[l], it.built_area_m2 ? num(it.built_area_m2, l) + " m²" : "") +
-              row(UI.land[l], it.land_area_m2 ? num(it.land_area_m2, l) + " m²" : "") +
-              row(UI.hectares[l], (!it.land_area_m2 && it.hectares) ? num(it.hectares, l) + " ha" : "") +
-              row(UI.keys[l], it.hotel_keys || "") +
-              row(UI.berths[l], it.berths || "") +
-              row(UI.status[l], status) +
-            "</ul>" +
-          "</div>" +
+            esc(U("details")) + '</h3><ul class="cs_property_info_list cs_mp_0">' + table + "</ul></div>" +
+          mapHtml +
         "</div></div>" +
         '<div class="col-lg-4"><aside class="cs_sidebar cs_style_1 cs_gray3_bg cs_radius_20">' +
-          '<div class="cs_sidebar_widget">' +
+          '<div class="cs_sidebar_widget xr_pdp_agent">' +
             '<h3 class="cs_sidebar_widget_title cs_fs_20 cs_semibold cs_mb_16"><span>' +
-            esc(UI.enquire[l]) + "</span></h3>" +
-            '<p class="cs_secondary_color">' + esc(t(ui.demo_note, l)) + "</p>" +
-            '<a href="' + R + 'private-enquiry/" class="cs_btn cs_style_1 cs_primary_bg cs_white_color cs_radius_10">' +
-            "<span>" + esc(UI.enquire[l]) + "</span></a>" +
-            '<div class="cs_height_20"></div>' +
-            '<a href="' + R + 'property-listing-search.html" class="xr_link">' + esc(UI.back[l]) + "</a>" +
+              esc(U("agent")) + "</span></h3>" +
+            (ag.name ? '<p class="xr_pdp_agent_name">' + esc(ag.name) +
+              (ag.verified ? ' <i class="fa-solid fa-circle-check" aria-hidden="true"></i>' : "") + "</p>" : "") +
+            (og.name ? '<p class="xr_pdp_agent_org">' + esc(og.name) + "</p>" : "") +
+            (ag.licence ? '<p class="xr_pdp_agent_lic">' + esc(U("licence")) + " " + esc(ag.licence) + "</p>" : "") +
+            '<a href="' + PR + 'private-enquiry/" class="cs_btn cs_style_1 cs_primary_bg cs_white_color cs_radius_10">' +
+              "<span>" + esc(U("enquire")) + "</span></a>" +
+          "</div>" +
+          '<div class="cs_sidebar_widget xr_pdp_trust">' +
+            '<h3 class="cs_sidebar_widget_title cs_fs_20 cs_semibold cs_mb_16"><span>' +
+              esc(U("trust")) + "</span></h3>" +
+            '<p class="xr_pdp_trust_state is-' + (tr.verified ? "on" : "off") + '">' +
+              '<i class="fa-solid fa-' + (tr.verified ? "shield-halved" : "hourglass-half") + '"></i> ' +
+              esc(U(tr.verified ? "verified" : "unverified")) + "</p>" +
+            (tr.qualityScore ? '<p class="xr_pdp_quality"><span>' + esc(U("quality")) +
+              "</span><b>" + nf(tr.qualityScore) + "/100</b></p>" : "") +
+            (d.demo ? '<p class="xr_pdp_demo">' + esc(U("demoNote")) + "</p>" : "") +
+            '<a href="' + PR + 'real-estate/search/" class="xr_link">' + esc(U("back")) + "</a>" +
           "</div>" +
         "</aside></div>" +
       "</div>" +
-      (related
+      (simHtml
         ? '<div class="cs_height_70 cs_height_lg_50"></div>' +
-          '<h3 class="cs_fs_25 cs_semibold cs_mb_15">' + esc(UI.related[l]) + "</h3>" +
-          '<div class="row cs_gap_y_30 xr_rel_grid">' + related + "</div>"
+          '<h3 class="cs_fs_25 cs_semibold cs_mb_15">' + esc(U("similar")) + "</h3>" +
+          '<div class="row cs_gap_y_30 xr_rel_grid">' + simHtml + "</div>"
         : "")
     );
   }
 
-  var id = new URLSearchParams(location.search).get("id");
-  var l = lang(), R = root();
-
-  Promise.all(PACKS.map(function (f) {
-    return fetch(R + "data/properties/" + f + ".json").then(function (r) {
-      if (!r.ok) throw new Error(f + ": " + r.status);
-      return r.json();
-    });
-  })).then(function (packs) {
-    var all = [], ui = packs[0].ui || {};
-    ui.demo_note = ui.demo_note || packs[0].demo_note;
-    packs.forEach(function (p) { all = all.concat(p.items || []); });
-
-    var it = id ? all.filter(function (x) { return x.id === id; })[0] : null;
-    if (!it) {
-      /* Sin ?id= o con un id que no existe, la plantilla enseñaba su ficha de
-         ejemplo de setenta mil dolares. Se manda al buscador del portafolio,
-         que es lo que la persona venia a ver. */
-      location.replace(R + "property-listing-search.html");
-      return;
+  /* ---------------------------------------------------------------- mapa */
+  function mountMap() {
+    var el = document.querySelector(".xr_pdp_map");
+    if (!el) return;
+    var lat = parseFloat(el.getAttribute("data-lat")), lon = parseFloat(el.getAttribute("data-lon"));
+    function draw() {
+      var map = window.L.map(el, { scrollWheelZoom: false }).setView([lat, lon], 11);
+      window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { maxZoom: 18, attribution: "© OpenStreetMap" }).addTo(map);
+      // Circulo, no chincheta: la posicion es de comunidad, no de portal.
+      window.L.circle([lat, lon], { radius: 1600, color: "#8B6E45", weight: 1,
+        fillColor: "#C9A876", fillOpacity: 0.22 }).addTo(map);
+      setTimeout(function () { map.invalidateSize(); }, 80);
     }
-    var siblings = all.filter(function (x) {
-      return x.subcategory === it.subcategory && x.id !== it.id;
+    if (window.L && window.L.map) return draw();
+    var css = document.createElement("link");
+    css.rel = "stylesheet"; css.href = R + "assets/vendor/leaflet/leaflet.css";
+    document.head.appendChild(css);
+    var s = document.createElement("script");
+    s.src = R + "assets/vendor/leaflet/leaflet.js";
+    s.onload = function () {
+      if (window.L && window.L.Icon && window.L.Icon.Default)
+        window.L.Icon.Default.imagePath = R + "assets/vendor/leaflet/images/";
+      draw();
+    };
+    document.head.appendChild(s);
+  }
+
+  /* ---------------------------------------------------------------- eventos */
+  function bind(id) {
+    HOST.addEventListener("click", function (e) {
+      var b = e.target.closest("button");
+      if (!b) return;
+      if (b.hasAttribute("data-fav")) {
+        var on = Store.toggle(id);
+        b.classList.toggle("is-on", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        var s1 = b.querySelector("span"); if (s1) s1.textContent = U(on ? "saved" : "save");
+        return;
+      }
+      if (b.hasAttribute("data-share")) {
+        var done = function () {
+          var s2 = b.querySelector("span"); if (s2) s2.textContent = U("copied");
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(location.href).then(done, done);
+        } else { done(); }
+      }
     });
+  }
 
-    /* Se conserva el envoltorio .cs_property_details: toda la hoja de estilos
-       de la plantilla cuelga de esa clase (cabecera a dos columnas, tira de
-       caracteristicas, posicion del distintivo). Sin ella la ficha se
-       desmontaba en una columna y el distintivo se salia del ancho. */
-    HOST.innerHTML = '<div class="cs_property_details">' +
-                     build(it, ui, l, R, siblings) + "</div>";
+  /* ---------------------------------------------------------------- carga */
+  function legacy(id) {
+    return Promise.all(PACKS.map(function (f) {
+      return fetch(R + "data/properties/" + f + ".json").then(function (r) {
+        return r.ok ? r.json() : { items: [] };
+      }).catch(function () { return { items: [] }; });
+    })).then(function (packs) {
+      var all = [];
+      packs.forEach(function (p) { all = all.concat(p.items || []); });
+      var it = all.filter(function (x) { return x.id === id; })[0];
+      if (!it) return null;
+      // El registro heredado se traduce a la forma de la API: un solo camino
+      // de render, dos origenes.
+      var lc = it.language_content || {};
+      return {
+        publicId: it.id, demo: false,
+        title: lc.title || it.title,
+        description: it.long_description || it.short_description || {},
+        businessCategory: it.subcategory, offeringType: "sale",
+        propertyType: { slug: it.variant, name: lc.variant || it.variant },
+        location: { countryCode: it.country, city: it.city,
+                    displayAddress: [it.city, it.region, it.country].filter(Boolean).join(", "),
+                    precision: "community", lat: it.lat, lon: it.lon },
+        spaces: { bedrooms: it.bedrooms, bathrooms: it.bathrooms,
+                  builtAreaSqm: it.built_area_m2, plotAreaSqm: it.land_area_m2,
+                  hectares: it.hectares, hotelKeys: it.hotel_keys, berths: it.berths },
+        price: { currency: "USD", amount: it.price_usd, onApplication: !it.price_usd },
+        condition: {}, amenities: [],
+        media: [{ kind: "photo", url: it.hero_image }],
+        trust: { verified: true, promotion: "none" },
+        agent: {}, agency: {}, publishedAt: null, updatedAt: null
+      };
+    });
+  }
 
-    var title = t((it.language_content || {}).title, l) || it.title;
-    document.title = title + " | XARU HOME";
+  function fetchListing(id) {
+    return fetch(API + "listings/" + encodeURIComponent(id) + ".json")
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .catch(function () { return legacy(id); });
+  }
+
+  var id = new URLSearchParams(location.search).get("id");
+  if (!id) { location.replace(PR + "real-estate/search/"); return; }
+
+  Promise.all([
+    fetchListing(id),
+    fetch(API + "meta.json").then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; }),
+    fetch(API + "search-index.json").then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; })
+  ]).then(function (out) {
+    var d = out[0], meta = out[1], idx = out[2];
+    if (!d) { location.replace(PR + "real-estate/search/"); return; }
+
+    var similar = [];
+    if (idx && idx.items) {
+      var slug = (d.propertyType || {}).slug;
+      similar = idx.items.filter(function (x) {
+        return x.id !== d.publicId && x.type === slug && x.cc === d.location.countryCode;
+      });
+      if (similar.length < 3) {
+        idx.items.forEach(function (x) {
+          if (similar.length >= 3) return;
+          if (x.id !== d.publicId && x.type === slug && similar.indexOf(x) < 0) similar.push(x);
+        });
+      }
+    }
+
+    HOST.innerHTML = '<div class="cs_property_details">' + render(d, meta, similar) + "</div>";
+    document.title = tv(d.title) + " | XARU HOME";
+    var md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", String(tv(d.description) || tv(d.title)).slice(0, 300));
+
+    bind(d.publicId);
+    mountMap();
 
     /* Las secciones de la plantilla que no aplican a esta cartera: hipoteca,
-       colegios cercanos, plano de planta, "propiedades relacionadas" de
-       ejemplo. Se retiran en vez de dejarse con cifras inventadas. */
+       colegios cercanos, plano de planta, agenda de visita. Se retiran en vez
+       de dejarse con cifras inventadas. */
     [".cs_property_mortgage", ".cs_property_nearby", ".cs_property_floor",
      ".cs_property_surroundings", ".cs_property_financial_info"].forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el) { el.remove(); });
@@ -265,5 +485,7 @@
     if (rel) rel.remove();
   }).catch(function (err) {
     if (window.console) console.warn("[xaru-detail]", err);
+    HOST.innerHTML = '<div class="cs_property_details"><p class="xr_mp_empty">' +
+      esc(U("notFound")) + "</p></div>";
   });
 })();

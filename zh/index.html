@@ -327,7 +327,7 @@
               <a
                 href="/"
                 aria-label="首页链接"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="../assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -367,6 +367,17 @@
                           <a class="xr_mega_sub" href="/zh/real-estate/commercial-hospitality/">收益型商业</a>
                           <a class="xr_mega_sub" href="/zh/real-estate/commercial-hospitality/">停滞 / 未完成项目</a>
                           <a class="xr_mega_sub" href="/zh/real-estate/commercial-hospitality/">保密资产组合</a>
+                      </div>
+                      <div class="xr_mega_col">
+                        <a class="xr_mega_col_title" href="/zh/real-estate/search/">检索资产库</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/search/">全部资产</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/buy/">住宅出售</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/rent/">住宅租赁</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/commercial/buy/">商业出售</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/commercial/rent/">商业租赁</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/land/">土地与大型地块</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/map/">地图检索</a>
+                          <a class="xr_mega_sub" href="/zh/real-estate/sold/">过往交易</a>
                       </div>
                         </div>
                       </div>
@@ -989,6 +1000,42 @@
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     <script>
     (function(){var s=document.getElementById("featured");if(!s)return;
       var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");

@@ -4163,11 +4163,23 @@ if __name__ == "__main__":
             _m = re.search(r'<p class="mb-0">Welcome home!.*?</p>', _h, re.S)
             if _m:
                 _h = _h[:_m.start()] + '<p class="mb-0"></p>' + _h[_m.end():]
-        if _base == "property-details.html" and "xaru-property-detail.js" not in _h:
-            _pre = "../" if _lang != "en" else ""
-            _h = _h.replace("</body>",
-                            '    <script src="%sassets/js/xaru-property-detail.js"></script>\n  </body>'
-                            % _pre, 1)
+        if _base == "property-details.html":
+            # La ficha usa los mismos bloques que el marketplace (distintivos,
+            # panel de verificacion, mapa), asi que carga su hoja. Rutas
+            # absolutas: la pagina existe en los cuatro arboles de idioma.
+            if "xaru-marketplace.css" not in _h:
+                _h = _h.replace('<link rel="stylesheet" href="/assets/css/xaru.css" />',
+                                '<link rel="stylesheet" href="/assets/css/xaru.css" />\n'
+                                '    <link rel="stylesheet" href="/assets/css/xaru-marketplace.css" />', 1)
+                if "xaru-marketplace.css" not in _h:
+                    _h = _h.replace("</head>",
+                                    '    <link rel="stylesheet" href="/assets/css/xaru-marketplace.css" />\n  </head>', 1)
+            if "xaru-property-detail.js" not in _h:
+                _h = _h.replace("</body>",
+                                '    <script src="/assets/js/xaru-property-detail.js"></script>\n  </body>', 1)
+            else:
+                _h = re.sub(r'<script src="(?:\.\./)*assets/js/xaru-property-detail\.js">',
+                            '<script src="/assets/js/xaru-property-detail.js">', _h)
         _h = ensure_h1(_h, _base)
         _h = enforce_single_h1(_h)
         if _h != _o:

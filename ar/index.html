@@ -328,7 +328,7 @@
               <a
                 href="/"
                 aria-label="رابط الصفحة الرئيسية"
-                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
+                class="cs_site_brand" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page" aria-current="page"
               >
                 <img src="../assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
               </a>
@@ -368,6 +368,17 @@
                           <a class="xr_mega_sub" href="/ar/real-estate/commercial-hospitality/">التجاري المدرّ للدخل</a>
                           <a class="xr_mega_sub" href="/ar/real-estate/commercial-hospitality/">مشاريع متوقفة / غير مكتملة</a>
                           <a class="xr_mega_sub" href="/ar/real-estate/commercial-hospitality/">محفظة سرّية</a>
+                      </div>
+                      <div class="xr_mega_col">
+                        <a class="xr_mega_col_title" href="/ar/real-estate/search/">ابحث في المعروض</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/search/">كل الأصول</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/buy/">سكني للبيع</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/rent/">سكني للإيجار</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/commercial/buy/">تجاري للبيع</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/commercial/rent/">تجاري للإيجار</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/land/">الأراضي والمواقع الكبرى</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/map/">البحث على الخريطة</a>
+                          <a class="xr_mega_sub" href="/ar/real-estate/sold/">عمليات سابقة</a>
                       </div>
                         </div>
                       </div>
@@ -990,6 +1001,42 @@
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
+    <script>
+    (function(){var s=document.getElementById("featured");if(!s)return;
+      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+      bs.forEach(function(b){b.addEventListener("click",function(){
+        var t=b.getAttribute("data-tab");
+        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+    })();
+    </script>
     <script>
     (function(){var s=document.getElementById("featured");if(!s)return;
       var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");

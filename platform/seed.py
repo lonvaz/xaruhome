@@ -28,6 +28,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from geo_world import WORLD  # noqa: E402
 from geo_terrain import allowed as terrain_allows  # noqa: E402
+from describe import describe  # noqa: E402
 
 DB = os.path.join(HERE, "xaru.db")
 SCHEMA = os.path.join(HERE, "schema.sql")
@@ -60,6 +61,26 @@ BEDROOM_BAND = {
     "whole-floor":       (3, 8, 300, 1400),
     "half-floor":        (2, 5, 180, 700),
     "whole-building":    (10, 40, 1200, 9000),
+}
+
+
+# Tipologia de cada oportunidad. Su fichero de origen trae `model: residential`,
+# que no distingue una isla de un atico: se declara aqui, activo por activo,
+# porque son trece y porque son los que el cliente ya conoce por su nombre.
+OPP_TYPE = {
+    "pp-samana-island":          "private-island",
+    "pp-villa-dubai":            "villa",
+    "pp-penthouse-london":       "penthouse",
+    "pp-villa-como":             "estate",
+    "pp-casa-tulum":             "waterfront-home",
+    "pp-villa-marbella":         "villa",
+    "ch-hotel-operational":      "hotel",
+    "ch-hotel-halted":           "halted-project",
+    "ch-resort-development":     "resort",
+    "lp-land-11m":               "masterplan-land",
+    "lp-ashima-masterplan":      "masterplan-land",
+    "cf-confidential-portfolio": "mixed-use",
+    "pa-quarry-license":         "quarry",
 }
 
 # ---------------------------------------------------------------- utilidades
@@ -137,7 +158,7 @@ LAND_TYPES = [
     ("residential-plot", "Residential plot", "Parcela residencial", "قطعة سكنية", "住宅地块"),
     ("commercial-plot", "Commercial plot", "Parcela comercial", "قطعة تجارية", "商业地块"),
     ("coastal-land", "Coastal land", "Suelo costero", "أرض ساحلية", "海岸土地"),
-    ("island-territory", "Island territory", "Territorio insular", "إقليم جزري", "岛屿territory"),
+    ("island-territory", "Island territory", "Territorio insular", "إقليم جزري", "岛屿领地"),
     ("masterplan-land", "Master-plan land", "Suelo de plan maestro", "أرض مخطط عام", "总体规划用地"),
     ("agricultural-land", "Agricultural estate land", "Suelo agrícola", "أرض زراعية", "农业用地"),
     ("hotel-resort-land", "Hotel & resort land", "Suelo hotelero", "أرض فندقية", "酒店度假用地"),
@@ -146,7 +167,7 @@ LAND_TYPES = [
     ("quarry", "Quarry & aggregates", "Cantera y áridos", "محجر", "采石场"),
     ("forestry-land", "Forestry land", "Suelo forestal", "أرض حرجية", "林地"),
     ("energy-land", "Energy & solar land", "Suelo energético", "أرض للطاقة", "能源用地"),
-    ("city-scale-land", "City-scale territory", "Territorio de escala urbana", "إقليم بحجم مدينة", "城市级territory"),
+    ("city-scale-land", "City-scale territory", "Territorio de escala urbana", "إقليم بحجم مدينة", "城市级土地"),
 ]
 
 AMENITIES = [
@@ -355,6 +376,10 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
     subtype_pt = {}
     for row in cur.execute("SELECT id, slug FROM property_types").fetchall():
         subtype_pt[row[1]] = row[0]
+    # Nombre de la tipologia en los cuatro idiomas, indexado por id, para poder
+    # componer la descripcion de lo que se importa.
+    type_names = {r[0]: {"en": r[1], "es": r[2], "ar": r[3], "zh": r[4]} for r in cur.execute(
+        "SELECT id, name_en, name_es, name_ar, name_zh FROM property_types")}
 
     def type_for(group, sub):
         guess = {
@@ -472,6 +497,10 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
             sp = o.get("specs") or {}
             group = {"private-properties": "residential",
                      "commercial-hospitality": "commercial"}.get(o["catalog"], "land")
+            opp_slug = OPP_TYPE.get(o["id"])
+            opp_pt = subtype_pt.get(opp_slug) or type_for(group, "")
+            if opp_pt and not str(opp_pt).startswith("pt_"):
+                opp_pt = "pt_" + opp_slug
             cur.execute("""INSERT INTO listings (id, public_id, tenant_id, org_id, agent_id,
                 external_reference, source_system, business_category, offering_type,
                 inventory_type, property_type_id, subtype, location_id, country_code, city,
@@ -483,17 +512,28 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
                 VALUES (%s)""" % ",".join(["?"] * 37),
                 (lid, pid(95000 + n), "tn_xaru", org_ids[n % len(org_ids)],
                  agent_ids[n % len(agent_ids)], o["id"], "migration", group, "sale", "ready",
-                 type_for(group, ""), o.get("model"), lid_city, cc, city, clat, clon,
+                 opp_pt, opp_slug, lid_city, cc, city, clat, clon,
                  "community", ", ".join(x for x in (city, country) if x),
                  sp.get("bedrooms"), sp.get("bathrooms"), sp.get("builtAreaSqm"),
                  sp.get("plotAreaSqm"), ((o.get("price") or {}).get("currency") or "USD"),
                  None, 1, "verified", "PUBLISHED", "approved", 88, "featured", mid,
                  NOW, NOW, 1, DEMO_LABEL, NOW))
             cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)", (lid, mid, 0, 1))
+            # Las oportunidades no traen texto largo en su fichero de origen.
+            # Se compone con los mismos datos de la fila, igual que el resto del
+            # inventario: nada inventado, ninguna ficha sin descripcion.
+            tnames = type_names.get(opp_pt, {})
             for loc in ("en", "es", "ar", "zh"):
                 ttl = (o.get("title") or {}).get(loc) or (o.get("title") or {}).get("en") or o["id"]
+                body = describe(
+                    loc, type_name=tnames.get(loc) or o.get("model") or "",
+                    city=city, country=(WORLD[cc][{"en": 0, "es": 1, "ar": 2, "zh": 3}[loc]]),
+                    bedrooms=sp.get("bedrooms"), bathrooms=sp.get("bathrooms"),
+                    built=sp.get("builtAreaSqm"), plot=sp.get("plotAreaSqm"),
+                    hectares=sp.get("hectares"), keys=sp.get("hotelKeys"),
+                    completion="ready", verified=True, is_demo=True)
                 cur.execute("INSERT INTO listing_translations VALUES (?,?,?,?,?,?,?)",
-                            (lid, loc, ttl, None, None,
+                            (lid, loc, ttl, body, None,
                              slugify(ttl) + "-" + pid(95000 + n)[:6], "human"))
             listings.append(lid)
             cur.execute("UPDATE locations SET listing_count = listing_count + 1 WHERE id IN (?,?)",
@@ -750,17 +790,39 @@ def main():
                      "seed", "seed", None, 1, DEMO_LABEL, NOW))
 
                 cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)", (lid, mid, 0, 1))
-                for loc, ttl in (("en", title_en),
-                                 ("es", "%s en %s" % (tes, city)),
-                                 ("ar", "%s في %s" % (tar, city)),
-                                 ("zh", "%s · %s" % (tzh, city))):
-                    cur.execute("INSERT INTO listing_translations VALUES (?,?,?,?,?,?,?)",
-                                (lid, loc, ttl, None, None,
-                                 slugify(ttl) + "-" + pid(1000 + counter)[:6], "human"))
+
+                # Amenidades primero: la descripción las menciona por familia.
+                am_slugs, am_cats = [], []
                 for a in range(3 + counter % 5):
-                    am = AMENITIES[(counter * (a + 3)) % len(AMENITIES)][0]
+                    row = AMENITIES[(counter * (a + 3)) % len(AMENITIES)]
+                    if row[0] in am_slugs:
+                        continue
+                    am_slugs.append(row[0])
+                    if row[1] not in am_cats:
+                        am_cats.append(row[1])
                     cur.execute("INSERT OR IGNORE INTO listing_amenities VALUES (?,?)",
-                                (lid, "am_" + am))
+                                (lid, "am_" + row[0]))
+
+                is_off = counter % 11 == 0
+                name_by_loc = {"en": (ten, en, title_en),
+                               "es": (tes, es, "%s en %s" % (tes, city)),
+                               "ar": (tar, ar, "%s في %s" % (tar, city)),
+                               "zh": (tzh, zh, "%s · %s" % (tzh, city))}
+                for loc in ("en", "es", "ar", "zh"):
+                    tname, cname, ttl = name_by_loc[loc]
+                    body = describe(
+                        loc, type_name=tname, city=city, country=cname,
+                        bedrooms=beds, bathrooms=baths, built=built, plot=plot,
+                        hectares=hect, keys=keys, berths=berths,
+                        completion="off_plan" if is_off else "ready",
+                        handover_q=((counter % 4) + 1) if is_off else None,
+                        handover_y=(2027 + (counter % 3)) if is_off else None,
+                        ownership="freehold", cc=cname,
+                        amenity_categories=am_cats,
+                        verified=bool(counter % 3), is_demo=True)
+                    cur.execute("INSERT INTO listing_translations VALUES (?,?,?,?,?,?,?)",
+                                (lid, loc, ttl, body, None,
+                                 slugify(ttl) + "-" + pid(1000 + counter)[:6], "human"))
                 cur.execute("INSERT INTO listing_transitions VALUES (?,?,?,?,?,?,?,?,?)",
                             (uid("trn", counter), lid, "APPROVED", "PUBLISHED", "seed",
                              "SEED_PUBLISH", "Inventario de muestra de la plataforma",
