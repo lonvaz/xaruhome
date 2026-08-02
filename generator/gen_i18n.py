@@ -1724,6 +1724,7 @@ def _shell_footer(lang):
     <script src="/assets/js/xaru-mega.js"></script>
     <script src="/assets/js/xaru-effects.js"></script>
     <script src="/assets/js/xaru-transition.js"></script>
+    <script src="/assets/js/xaru-saved-badge.js"></script>
   </body>
 </html>''' % (tagline, explore, doors, company, comp, legal)
 
@@ -4505,6 +4506,9 @@ if __name__ == "__main__":
             else:
                 _h = re.sub(r'<script src="(?:\.\./)*assets/js/xaru-property-detail\.js">',
                             '<script src="/assets/js/xaru-property-detail.js">', _h)
+        if "xaru-saved-badge.js" not in _h:
+            _h = _h.replace("</body>",
+                            '    <script src="/assets/js/xaru-saved-badge.js"></script>\n  </body>', 1)
         _h = restore_listing_h1(_h, _base, _lang)
         _h = ensure_h1(_h, _base)
         _h = enforce_single_h1(_h)

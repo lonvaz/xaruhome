@@ -2012,3 +2012,23 @@ body.page-loaded .xr_hero_slider_wrap {
   font-size: 13px; color: var(--secondary-color); margin-top: 2px;
   font-family: var(--secondary-font);
 }
+
+/* Acceso a guardados en la cabecera ------------------------------------- */
+.xr_saved_li { display: flex; align-items: center; }
+.xr_saved_link {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  color: var(--secondary-color); font-size: 16px; text-decoration: none;
+  transition: color .2s ease, background .2s ease;
+}
+.xr_saved_link:hover { color: #b4453d; background: rgba(28, 27, 25, .05); }
+.xr_saved_link.is-on { color: #b4453d; }
+.xr_saved_n {
+  position: absolute; top: 4px; inset-inline-end: 2px;
+  min-width: 17px; height: 17px; padding: 0 4px; border-radius: 999px;
+  background: #b4453d; color: #fff;
+  font-family: var(--secondary-font); font-size: 10px; font-weight: 400;
+  line-height: 17px; text-align: center; letter-spacing: 0;
+}
+.xr_saved_n[hidden] { display: none; }
+@media (max-width: 1199px) { .xr_saved_li { display: none; } }
