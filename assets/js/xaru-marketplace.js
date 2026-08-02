@@ -124,6 +124,15 @@
     listedM:   {en:"Listed %d months ago",es:"Publicado hace %d meses",
                 ar:"نُشر قبل %d أشهر",zh:"%d 个月前发布"},
     saveA:     {en:"Save",es:"Guardar",ar:"حفظ",zh:"收藏"},
+    allTypes:  {en:"All",es:"Todas",ar:"الكل",zh:"全部"},
+    createAlert:{en:"Create alert",es:"Crear alerta",ar:"إنشاء تنبيه",zh:"创建提醒"},
+    alertOn:   {en:"Alert created",es:"Alerta creada",ar:"تم إنشاء التنبيه",zh:"提醒已创建"},
+    closeF:    {en:"Close filters",es:"Cerrar filtros",ar:"إغلاق المرشحات",zh:"关闭筛选"},
+    exploreT:  {en:"Continue exploring",es:"Seguir explorando",
+                ar:"واصل الاستكشاف",zh:"继续探索"},
+    exploreByCity:{en:"By market",es:"Por plaza",ar:"حسب السوق",zh:"按市场"},
+    exploreByType:{en:"By typology",es:"Por tipología",ar:"حسب النوع",zh:"按类型"},
+    exploreByCountry:{en:"By country",es:"Por país",ar:"حسب الدولة",zh:"按国家"},
     furnish:   {en:"Furnishing",es:"Amueblado",ar:"التأثيث",zh:"家具配置"},
     anyFurn:   {en:"Any",es:"Cualquiera",ar:"الكل",zh:"不限"},
     furnished: {en:"Furnished",es:"Amueblado",ar:"مفروش",zh:"带家具"},
@@ -181,11 +190,18 @@
       return i < 0;
     },
     savedSearches: function () { return this._read("xaru_saved_searches"); },
-    saveSearch: function (name, qs, path, base) {
+    saveSearch: function (name, qs, path, base, alert) {
       var s = this.savedSearches();
-      if (s.some(function (x) { return x.qs === qs && x.path === path; })) return false;
-      s.push({ name: name, qs: qs, path: path, base: base || {},
-               at: new Date().toISOString() });
+      var hit = null;
+      s.forEach(function (x) { if (x.qs === qs && x.path === path) hit = x; });
+      if (hit) {
+        if (alert && !hit.alert) { hit.alert = true; hit.freq = hit.freq || "daily"; }
+        else { return false; }
+      } else {
+        s.push({ name: name, qs: qs, path: path, base: base || {},
+                 alert: !!alert, freq: alert ? "daily" : null,
+                 at: new Date().toISOString() });
+      }
       this._write("xaru_saved_searches", s);
       return true;
     }
@@ -560,7 +576,13 @@
           "</div>" +
         "</div>" +
       "</div>" +
+      '<div class="xr_mp_types" role="group"></div>' +
       '<div class="xr_mp_panel" hidden>' +
+        '<div class="xr_mp_panel_head">' +
+          '<h4>' + esc(t("filters")) + "</h4>" +
+          '<button type="button" class="xr_mp_close" aria-label="' + esc(t("closeF")) +
+            '">&times;</button>' +
+        "</div>" +
         '<div class="xr_mp_panel_grid">' +
           '<label>' + esc(t("beds")) + '<span class="xr_mp_range">' +
             '<input type="number" min="0" max="20" data-k="bedsMin" placeholder="' + esc(t("min")) + '">' +
@@ -603,6 +625,8 @@
       '<div class="xr_mp_head">' +
         '<p class="xr_mp_count"></p>' +
         '<div class="xr_mp_head_right">' +
+          '<button type="button" class="xr_mp_alert" aria-label="' + esc(t("createAlert")) +
+            '" title="' + esc(t("createAlert")) + '"><i class="fa-regular fa-bell"></i></button>' +
           '<button type="button" class="xr_mp_save">' + esc(t("save")) + "</button>" +
           '<select class="xr_mp_sort">' +
             '<option value="recommended">' + esc(t("recommended")) + "</option>" +
@@ -620,6 +644,7 @@
         '<div class="xr_mp_map" hidden></div>' +
       "</div>" +
       '<nav class="xr_mp_pager" aria-label="pagination"></nav>' +
+      '<div class="xr_mp_explore"></div>' +
       '<p class="xr_mp_sim">' + esc(t("simNote")) + "</p>";
   }
 
@@ -761,6 +786,8 @@
     list.hidden = STATE.view === "map";
     if (STATE.view !== "list") MapProvider.render(mapEl, res.slice(0, 300));
 
+    paintTypes(all);
+    paintExplore(all);
     chips();
     syncControls();
     paintApply(res.length);
@@ -769,6 +796,81 @@
       var n = activeFilters();
       moreN.textContent = n ? nf(n) : "";
     }
+  }
+
+  /* Fila de tipologias con su recuento, como la de un portal: se ve de un
+     vistazo donde esta el inventario y se filtra con un solo gesto. Los
+     recuentos respetan todo lo demas que haya puesto menos la propia
+     tipologia, que es como debe comportarse una faceta. */
+  function paintTypes(all) {
+    var box = HOST.querySelector(".xr_mp_types");
+    if (!box) return;
+    var sinType = {};
+    Object.keys(STATE).forEach(function (k) { sinType[k] = STATE[k]; });
+    sinType.type = [];
+    var base = query(sinType, all);
+    var n = {}, nm = {};
+    base.forEach(function (x) {
+      n[x.type] = (n[x.type] || 0) + 1;
+      nm[x.type] = (x.typeName && (x.typeName[L] || x.typeName.en)) || x.type;
+    });
+    var keys = Object.keys(n).sort(function (a, b) { return n[b] - n[a]; }).slice(0, 12);
+    box.innerHTML =
+      '<button type="button" class="xr_mp_type' + (STATE.type.length ? "" : " is-on") +
+        '" data-type="">' + esc(t("allTypes")) +
+        '<b>' + nf(base.length) + "</b></button>" +
+      keys.map(function (k) {
+        return '<button type="button" class="xr_mp_type' +
+          (STATE.type.indexOf(k) >= 0 ? " is-on" : "") + '" data-type="' + esc(k) + '">' +
+          esc(nm[k]) + "<b>" + nf(n[k]) + "</b></button>";
+      }).join("");
+  }
+
+  /* Enlaces de continuación bajo los resultados. No son relleno: son las
+     únicas rutas de este buscador que un indexador puede seguir sin ejecutar
+     JavaScript, y son las que un visitante usa cuando su búsqueda no cuajó. */
+  function paintExplore(all) {
+    var box = HOST.querySelector(".xr_mp_explore");
+    if (!box) return;
+    var route = location.pathname;
+    function group(title, items) {
+      if (!items.length) return "";
+      return '<div class="xr_mp_exgroup"><h4>' + esc(title) + "</h4><p>" +
+        items.map(function (x) {
+          return '<a href="' + esc(x.href) + '">' + esc(x.label) +
+            "<span>" + nf(x.n) + "</span></a>";
+        }).join("") + "</p></div>";
+    }
+    function top(keyf, labelf, hreff, k) {
+      var n = {}, lb = {}, hr = {};
+      all.forEach(function (x) {
+        var key = keyf(x);
+        if (!key) return;
+        n[key] = (n[key] || 0) + 1;
+        lb[key] = labelf(x);
+        hr[key] = hreff(x);
+      });
+      return Object.keys(n).sort(function (a, b) { return n[b] - n[a]; })
+        .slice(0, k).map(function (key) {
+          return { label: lb[key], href: hr[key], n: n[key] };
+        });
+    }
+    box.innerHTML = '<h3 class="xr_mp_exh">' + esc(t("exploreT")) + "</h3>" +
+      '<div class="xr_mp_exgrid">' +
+      group(t("exploreByCity"), top(
+        function (x) { return x.city && x.cc ? x.cc + "|" + x.city : null; },
+        function (x) { return x.city; },
+        function (x) { return route + "?cc=" + encodeURIComponent(x.cc) +
+                              "&city=" + encodeURIComponent(x.city); }, 8)) +
+      group(t("exploreByCountry"), top(
+        function (x) { return x.cc; },
+        function (x) { return ccName(x.cc); },
+        function (x) { return route + "?cc=" + encodeURIComponent(x.cc); }, 8)) +
+      group(t("exploreByType"), top(
+        function (x) { return x.type; },
+        function (x) { return (x.typeName && (x.typeName[L] || x.typeName.en)) || x.type; },
+        function (x) { return route + "?type=" + encodeURIComponent(x.type); }, 8)) +
+      "</div>";
   }
 
   /* Cuantos filtros hay puestos: el boton "Filtros" lo lleva encima, para que
@@ -807,6 +909,33 @@
     return bits.length ? bits.join(" · ") : t("results");
   }
 
+  /* El panel se abre como cajón lateral. Se bloquea el desplazamiento del
+     fondo —si no, mover la rueda dentro del cajón arrastra la página de
+     detrás— y se pone un velo que cierra al pulsarlo. */
+  var SCRIM = null;
+  function openPanel() {
+    var pn = HOST.querySelector(".xr_mp_panel");
+    pn.hidden = false;
+    document.body.classList.add("xr_drawer_open");
+    if (!SCRIM) {
+      SCRIM = document.createElement("div");
+      SCRIM.className = "xr_mp_scrim";
+      SCRIM.addEventListener("click", closePanel);
+      document.body.appendChild(SCRIM);
+    }
+    SCRIM.classList.add("is-on");
+    var f = pn.querySelector("input, select, button");
+    if (f) { try { f.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  function closePanel() {
+    var pn = HOST.querySelector(".xr_mp_panel");
+    if (pn) pn.hidden = true;
+    document.body.classList.remove("xr_drawer_open");
+    if (SCRIM) SCRIM.classList.remove("is-on");
+    var m = HOST.querySelector(".xr_mp_more");
+    if (m) { try { m.focus({ preventScroll: true }); } catch (e) {} }
+  }
+
   function apply(push) {
     STATE.page = STATE.page || 1;
     writeURL(!push);
@@ -827,11 +956,30 @@
       }
       if (b.classList.contains("xr_mp_more")) {
         var pn = HOST.querySelector(".xr_mp_panel");
-        pn.hidden = !pn.hidden; return;
+        if (pn.hidden) openPanel(); else closePanel();
+        return;
       }
       if (b.classList.contains("xr_mp_apply")) {
-        HOST.querySelector(".xr_mp_panel").hidden = true;
+        closePanel();
         HOST.querySelector(".xr_mp_head").scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      if (b.hasAttribute("data-type")) {
+        var ty = b.getAttribute("data-type");
+        STATE.type = ty ? [ty] : [];
+        STATE.page = 1; apply(true); return;
+      }
+      if (b.classList.contains("xr_mp_close")) {
+        closePanel(); return;
+      }
+      if (b.classList.contains("xr_mp_alert")) {
+        // Una alerta es una busqueda guardada que ademas avisa. Se crea sobre
+        // la busqueda actual y se gestiona desde el panel del comprador.
+        Store.saveSearch(niceName(), location.search || "", location.pathname,
+                         { offering: STATE.offering, category: STATE.category }, true);
+        b.classList.add("is-on");
+        b.setAttribute("title", t("alertOn"));
+        b.innerHTML = '<i class="fa-solid fa-bell"></i>';
         return;
       }
       if (b.hasAttribute("data-c")) {
@@ -931,6 +1079,12 @@
     qbox.addEventListener("input", function () {
       clearTimeout(timer);
       timer = setTimeout(function () { STATE.q = qbox.value; STATE.page = 1; apply(false); }, 260);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var pn = HOST.querySelector(".xr_mp_panel");
+      if (pn && !pn.hidden) closePanel();
     });
 
     window.addEventListener("popstate", function () { STATE = readURL(); paint(); });

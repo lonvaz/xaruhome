@@ -1,0 +1,22 @@
+const { chromium } = require('/opt/node-tools/node_modules/playwright');
+(async () => {
+  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+  const ctx = await b.newContext({ viewport:{width:414,height:860}, isMobile:true, hasTouch:true });
+  await ctx.addInitScript(()=>{try{localStorage.setItem('xaru_lang','1')}catch(e){}});
+  const p = await ctx.newPage(); const errs=[]; p.on('pageerror',e=>errs.push(e.message));
+  const base='http://127.0.0.1:8899', o={};
+  await p.goto(base+'/real-estate/buy/', {waitUntil:'domcontentloaded'});
+  await p.waitForSelector('.xr_mp_card'); await p.waitForTimeout(1200);
+  o.overflow = await p.evaluate(()=>({sw:document.documentElement.scrollWidth, cw:document.documentElement.clientWidth}));
+  await p.$eval('.xr_mp_more', e=>e.click()); await p.waitForTimeout(700);
+  o.drawerFull = await p.$eval('.xr_mp_panel', e=>{const r=e.getBoundingClientRect();
+    return {w:Math.round(r.width), vw:window.innerWidth, top:Math.round(r.top)};});
+  o.applyVisible = await p.$eval('.xr_mp_apply', e=>{const r=e.getBoundingClientRect();
+    return r.bottom<=window.innerHeight+2 && r.top>0;});
+  await p.$eval('.xr_mp_close', e=>e.click()); await p.waitForTimeout(400);
+  o.closed = await p.$eval('.xr_mp_panel', e=>e.hidden);
+  await p.screenshot({path:'n_mobile.png'});
+  o.errors = errs;
+  console.log(JSON.stringify(o,null,1));
+  await b.close();
+})();

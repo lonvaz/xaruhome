@@ -56,7 +56,10 @@ a.xr_mp_navlink:hover { border-color: var(--accent-color); color: var(--primary-
 }
 @media (max-width: 991px) { .xr_mp_bar { position: static; } }
 .xr_mp_bar_left  { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; flex: 1 1 auto; }
-.xr_mp_bar_right { display: flex; gap: 10px; align-items: center; flex: 0 0 auto; }
+.xr_mp_bar_right {
+  display: flex; gap: 10px; align-items: center; flex: 0 0 auto;
+  margin-inline-start: auto;
+}
 
 .xr_mp_seg {
   display: inline-flex; border: 1px solid var(--border-color);
@@ -1420,3 +1423,124 @@ a.xr_mp_navlink:hover { border-color: var(--accent-color); color: var(--primary-
   .xr_pdp_dock_ch .cs_btn { display: none; }
 }
 body:has(.xr_pdp_dock) { padding-bottom: 78px; }
+
+/*--------------------------------------------------------------
+  Estructura de portal: facetas de tipología, cajón de filtros
+  y enlaces de continuación. La retícula, la tipografía y el color
+  siguen siendo los nuestros; lo que se toma prestado es el orden.
+----------------------------------------------------------------*/
+
+/* fila de tipologías con recuento, bajo la barra de búsqueda */
+.xr_mp_types {
+  display: flex; gap: 8px; overflow-x: auto; padding: 14px 0 4px;
+  scrollbar-width: none;
+}
+.xr_mp_types::-webkit-scrollbar { display: none; }
+.xr_mp_type {
+  flex: 0 0 auto; display: inline-flex; align-items: baseline; gap: 8px;
+  cursor: pointer; padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--border-color); background: var(--white-color);
+  color: var(--secondary-color); font-family: var(--secondary-font); font-size: 13px;
+  white-space: nowrap;
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+.xr_mp_type:hover { border-color: var(--accent-color); color: var(--primary-color); }
+.xr_mp_type b {
+  font-weight: 400; font-size: 11px; color: var(--accent3-color);
+  font-variant-numeric: tabular-nums;
+}
+.xr_mp_type.is-on {
+  background: var(--primary-color); border-color: var(--primary-color); color: var(--accent-color);
+}
+.xr_mp_type.is-on b { color: rgba(201, 168, 118, .7); }
+
+/* campana de alerta */
+.xr_mp_alert {
+  width: var(--mp-ctrl-h); height: var(--mp-ctrl-h); cursor: pointer;
+  border: 1px solid var(--border-color); background: var(--white-color);
+  color: var(--secondary-color); border-radius: var(--mp-radius); font-size: 15px;
+  transition: border-color .18s ease, color .18s ease;
+}
+.xr_mp_alert:hover { border-color: var(--accent-color); color: var(--primary-color); }
+.xr_mp_alert.is-on { border-color: var(--accent3-color); color: var(--accent3-color); }
+
+/* -------------------------------------------------- cajón lateral de filtros */
+.xr_mp_scrim {
+  position: fixed; inset: 0; z-index: 1400; opacity: 0; pointer-events: none;
+  background: rgba(28, 27, 25, .42); backdrop-filter: blur(2px);
+  transition: opacity .28s ease;
+}
+.xr_mp_scrim.is-on { opacity: 1; pointer-events: auto; }
+body.xr_drawer_open { overflow: hidden !important; }
+
+.xr_mp_panel {
+  position: fixed; z-index: 1401; top: 0; bottom: 0; inset-inline-end: 0;
+  width: min(440px, 100vw); margin: 0; border: 0; border-radius: 0;
+  padding: 0 26px 0; background: var(--white-color);
+  box-shadow: -24px 0 60px -40px rgba(28, 27, 25, .8);
+  display: flex; flex-direction: column;
+  overflow-y: auto; max-height: none;
+  animation: xr_drawer_in .3s cubic-bezier(.2, .7, .3, 1);
+}
+[dir="rtl"] .xr_mp_panel { animation-name: xr_drawer_in_rtl; }
+@keyframes xr_drawer_in { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes xr_drawer_in_rtl { from { transform: translateX(-100%); } to { transform: none; } }
+
+.xr_mp_panel_head {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 0 -26px 22px; padding: 20px 26px;
+  background: var(--white-color); border-bottom: 1px solid var(--border-color);
+}
+.xr_mp_panel_head h4 {
+  margin: 0; font-family: var(--primary-font); font-size: 22px;
+  font-weight: 500; color: var(--primary-color);
+}
+.xr_mp_close {
+  width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--border-color); background: transparent;
+  color: var(--secondary-color); font-size: 24px; line-height: 1;
+  transition: border-color .18s ease, color .18s ease;
+}
+.xr_mp_close:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+.xr_mp_panel_grid { grid-template-columns: 1fr; gap: 20px; }
+.xr_mp_panel_foot {
+  position: sticky; bottom: 0; z-index: 2;
+  margin: 24px -26px 0; padding: 18px 26px;
+  background: var(--white-color); border-top: 1px solid var(--border-color);
+  display: flex; gap: 12px; align-items: center; justify-content: space-between;
+}
+.xr_mp_apply { flex: 1 1 auto; }
+@media (max-width: 575px) {
+  .xr_mp_panel { width: 100vw; padding-inline: 20px; }
+  .xr_mp_panel_head, .xr_mp_panel_foot { margin-inline: -20px; padding-inline: 20px; }
+}
+
+/* ------------------------------------------- enlaces de continuación (SEO) */
+.xr_mp_explore {
+  margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border-color);
+}
+.xr_mp_exh {
+  margin: 0 0 22px; font-family: var(--primary-font); font-size: 24px;
+  font-weight: 500; color: var(--primary-color);
+}
+.xr_mp_exgrid {
+  display: grid; gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.xr_mp_exgroup h4 {
+  margin: 0 0 12px; font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent3-color); font-weight: 400;
+}
+.xr_mp_exgroup p { margin: 0; display: flex; flex-direction: column; gap: 2px; }
+.xr_mp_exgroup a {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; text-decoration: none; font-size: 14px;
+  color: var(--secondary-color); border-bottom: 1px solid transparent;
+  transition: color .16s ease, border-color .16s ease;
+}
+.xr_mp_exgroup a:hover { color: var(--primary-color); border-bottom-color: var(--border-color); }
+.xr_mp_exgroup a span {
+  font-size: 12px; color: var(--accent3-color); font-variant-numeric: tabular-nums;
+}
