@@ -74,10 +74,17 @@
     advisers:   {en:"advisers",es:"asesores",ar:"مستشار",zh:"位顾问"},
     noMatch:    {en:"No match",es:"Sin coincidencias",ar:"لا نتائج",zh:"无匹配"},
     allIn:      {en:"Everything in",es:"Todo en",ar:"كل ما في",zh:"全部位于"},
-    simNote:    {en:"Simulation mode — the inventory below is platform demo data.",
-                 es:"Modo simulación — el inventario de abajo es de muestra de la plataforma.",
-                 ar:"وضع المحاكاة — المعروض أدناه بيانات تجريبية للمنصة.",
-                 zh:"模拟模式——以下资产为平台演示数据。"}
+    simNote:    {en:"Sample inventory shown while the live portfolio is being loaded.",
+                 es:"Inventario de muestra mientras se carga el portafolio real.",
+                 ar:"معروض تجريبي ريثما تُحمَّل المحفظة الفعلية.",
+                 zh:"正式资产组合载入期间显示样例资产。"},
+    anyType:    {en:"Any property type",es:"Cualquier tipología",
+                 ar:"أي نوع عقار",zh:"不限物业类型"},
+    priceMin:   {en:"Min price",es:"Precio mín.",ar:"أدنى سعر",zh:"最低价"},
+    priceMax:   {en:"Max price",es:"Precio máx.",ar:"أعلى سعر",zh:"最高价"},
+    beds:       {en:"Beds",es:"Dorm.",ar:"غرف",zh:"卧室"},
+    anyBeds:    {en:"Any beds",es:"Cualquier nº",ar:"أي عدد",zh:"不限卧室"},
+    plus:       {en:"+",es:"+",ar:"+",zh:"+"}
   };
   function t(k) { return (T[k] && (T[k][L] || T[k].en)) || k; }
 
@@ -98,7 +105,7 @@
     { k: "offplan",   route: "real-estate/buy/?completion=off_plan" }
   ];
 
-  var LOCS = null, STATS = null, OP = "buy", PICK = null;
+  var LOCS = null, STATS = null, IDX = [], OP = "buy", PICK = null;
 
   function shell() {
     return '' +
@@ -118,7 +125,20 @@
               'aria-expanded="false" aria-controls="xr_mph_list">' +
             '<ul class="xr_mph_list" id="xr_mph_list" role="listbox" hidden></ul>' +
           "</div>" +
+          '<select class="xr_mph_type" aria-label="' + esc(t("anyType")) + '">' +
+            '<option value="">' + esc(t("anyType")) + "</option></select>" +
           '<button type="button" class="xr_mph_go">' + esc(t("search")) + "</button>" +
+        "</div>" +
+        '<div class="xr_mph_row2">' +
+          '<select class="xr_mph_beds" aria-label="' + esc(t("anyBeds")) + '">' +
+            '<option value="">' + esc(t("anyBeds")) + "</option>" +
+            [1, 2, 3, 4, 5, 6, 8].map(function (n) {
+              return '<option value="' + n + '">' + n + "+ " + esc(t("beds")) + "</option>";
+            }).join("") + "</select>" +
+          '<input type="number" class="xr_mph_pmin" min="0" step="100000" ' +
+            'placeholder="' + esc(t("priceMin")) + '" aria-label="' + esc(t("priceMin")) + '">' +
+          '<input type="number" class="xr_mph_pmax" min="0" step="100000" ' +
+            'placeholder="' + esc(t("priceMax")) + '" aria-label="' + esc(t("priceMax")) + '">' +
         "</div>" +
         '<div class="xr_mph_foot">' +
           '<a class="xr_mph_maplink" href="' + PR + 'real-estate/map/">' +
@@ -147,22 +167,49 @@
         .forEach(function (c) { out.push({ kind: "country", c: c }); });
       return out;
     }
+    // Se puntua para que lo que empieza por lo tecleado suba antes que lo que
+    // solo lo contiene, y el pais antes que la ciudad cuando ambos empatan.
+    var hits = [];
     cs.forEach(function (c) {
-      var cn = c.name[L] || c.name.en;
-      var hitC = norm(cn).indexOf(q) === 0 || norm(c.name.en).indexOf(q) === 0 ||
-                 norm(c.code) === q;
-      var cities = (c.cities || []).filter(function (t2) { return norm(t2.name).indexOf(q) >= 0; });
-      if (hitC) {
-        out.push({ kind: "country", c: c });
-        (c.cities || []).slice(0, 4).forEach(function (t2) {
-          out.push({ kind: "city", c: c, t: t2 });
+      var names = ["en", "es", "ar", "zh"].map(function (k) { return norm(c.name[k] || ""); });
+      names.push(norm(c.code));
+      var best = -1;
+      names.forEach(function (nm) {
+        var i = nm.indexOf(q);
+        if (i < 0) return;
+        var sc = (i === 0 ? 0 : 1);
+        if (best < 0 || sc < best) best = sc;
+      });
+      var cities = (c.cities || []).map(function (t2) {
+        return { t: t2, i: norm(t2.name).indexOf(q) };
+      }).filter(function (x) { return x.i >= 0; })
+        .sort(function (a, b) { return (a.i - b.i) || (b.t.count - a.t.count); });
+
+      if (best >= 0) {
+        hits.push({ s: best, kind: "country", c: c });
+        (c.cities || []).slice(0, 4).forEach(function (t2, j) {
+          hits.push({ s: best + 0.1 + j * 0.01, kind: "city", c: c, t: t2 });
         });
       } else if (cities.length) {
-        out.push({ kind: "country", c: c, dim: true });
-        cities.slice(0, 5).forEach(function (t2) { out.push({ kind: "city", c: c, t: t2 }); });
+        hits.push({ s: 2, kind: "country", c: c, dim: true });
+        cities.slice(0, 5).forEach(function (x, j) {
+          hits.push({ s: 2 + 0.1 + j * 0.01, kind: "city", c: c, t: x.t });
+        });
       }
     });
-    return out.slice(0, 12);
+    // Se ordenan los paises primero y las ciudades quedan pegadas al suyo: una
+    // lista jerarquica en la que Dublin aparece dos lineas por debajo de
+    // Irlanda, no al final entre todas las ciudades del mundo.
+    var heads = hits.filter(function (h) { return h.kind === "country"; })
+      .sort(function (a, b) { return (a.s - b.s) || (b.c.count - a.c.count); });
+    var out2 = [];
+    heads.forEach(function (h) {
+      out2.push(h);
+      hits.forEach(function (x) {
+        if (x.kind === "city" && x.c.code === h.c.code) out2.push(x);
+      });
+    });
+    return out2.slice(0, 12);
   }
 
   function paintList(items) {
@@ -234,13 +281,64 @@
         qs.push("q=" + encodeURIComponent(free));
       }
     }
+    var ty = HOST.querySelector(".xr_mph_type");
+    if (ty && ty.value) qs.push("type=" + encodeURIComponent(ty.value));
+    var bd = HOST.querySelector(".xr_mph_beds");
+    if (bd && bd.value) qs.push("bedsMin=" + encodeURIComponent(bd.value));
+    var pmin = HOST.querySelector(".xr_mph_pmin");
+    if (pmin && pmin.value) qs.push("priceMin=" + encodeURIComponent(pmin.value));
+    var pmax = HOST.querySelector(".xr_mph_pmax");
+    if (pmax && pmax.value) qs.push("priceMax=" + encodeURIComponent(pmax.value));
     location.href = PR + op.route + (qs.length ? "?" + qs.join("&") : "");
+  }
+
+  /* Las tipologias del desplegable no son un catalogo teorico: son las que
+     tienen inventario en la operacion elegida, con su recuento. Cambiar de
+     Comprar a Suelo cambia la lista. */
+  function fillTypes() {
+    var sel = HOST.querySelector(".xr_mph_type");
+    if (!sel || !IDX.length) return;
+    var op = OPS.filter(function (o) { return o.k === OP; })[0] || OPS[0];
+    var want = op.k === "land" ? { cat: "land" }
+      : op.k === "commercial" ? { cat: "commercial", off: "sale" }
+      : { cat: "residential", off: op.k === "rent" ? "rent" : "sale" };
+    var n = {}, nm = {};
+    IDX.forEach(function (x) {
+      if (want.cat && x.cat !== want.cat) return;
+      if (want.off && x.off !== want.off) return;
+      n[x.type] = (n[x.type] || 0) + 1;
+      nm[x.type] = (x.typeName && (x.typeName[L] || x.typeName.en)) || x.type;
+    });
+    var keys = Object.keys(n).sort(function (a, b) { return n[b] - n[a]; });
+    var cur = sel.value;
+    sel.innerHTML = '<option value="">' + esc(t("anyType")) + "</option>" +
+      keys.map(function (k) {
+        return '<option value="' + esc(k) + '">' + esc(nm[k]) + " (" + nf(n[k]) + ")</option>";
+      }).join("");
+    if (keys.indexOf(cur) >= 0) sel.value = cur;
   }
 
   function paintStats() {
     if (!STATS) return;
-    var pairs = [[STATS.listings, "assets"], [STATS.countries, "countries"],
-                 [STATS.cities, "cities"], [STATS.agents, "advisers"]];
+    // El contador no es un dato de folleto: dice cuantos activos hay en la
+    // operacion que el visitante acaba de elegir, y cuantos paises y ciudades
+    // los sostienen.
+    var op = OPS.filter(function (o) { return o.k === OP; })[0] || OPS[0];
+    var want = op.k === "land" ? { cat: "land" }
+      : op.k === "commercial" ? { cat: "commercial" }
+      : { cat: "residential", off: op.k === "rent" ? "rent" : "sale" };
+    var sub = IDX.filter(function (x) {
+      if (want.cat && x.cat !== want.cat) return false;
+      if (want.off && x.off !== want.off) return false;
+      return true;
+    });
+    var ccs = {}, cts = {};
+    sub.forEach(function (x) { ccs[x.cc] = 1; if (x.city) cts[x.city] = 1; });
+    var pairs = sub.length
+      ? [[sub.length, "assets"], [Object.keys(ccs).length, "countries"],
+         [Object.keys(cts).length, "cities"], [STATS.agents, "advisers"]]
+      : [[STATS.listings, "assets"], [STATS.countries, "countries"],
+         [STATS.cities, "cities"], [STATS.agents, "advisers"]];
     HOST.querySelector(".xr_mph_stats").innerHTML =
       pairs.map(function (p) {
         return '<div class="xr_mph_stat"><b>' + nf(p[0]) + "</b><span>" +
@@ -290,6 +388,8 @@
           b.classList.toggle("is-on", on);
           b.setAttribute("aria-selected", on ? "true" : "false");
         });
+        fillTypes();
+        paintStats();
         return;
       }
       if (e.target.closest(".xr_mph_go")) { go(); return; }
@@ -326,11 +426,14 @@
     fetch(API + "locations.json").then(function (r) { return r.ok ? r.json() : null; })
       .catch(function () { return null; }),
     fetch(API + "stats.json").then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; })
+      .catch(function () { return null; }),
+    fetch(API + "search-index.json").then(function (r) { return r.ok ? r.json() : { items: [] }; })
+      .catch(function () { return { items: [] }; })
   ]).then(function (out) {
-    LOCS = out[0]; STATS = out[1];
+    LOCS = out[0]; STATS = out[1]; IDX = (out[2] && out[2].items) || [];
     HOST.innerHTML = shell();
     bind();
+    fillTypes();
     paintStats();
     paintMarkets();
   }).catch(function (err) {

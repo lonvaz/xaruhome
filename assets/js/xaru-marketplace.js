@@ -89,7 +89,7 @@
     rent:      {en:"Rent",es:"Alquilar",ar:"إيجار",zh:"租赁"},
     poa:       {en:"Price upon application",es:"Precio a consulta",ar:"السعر عند الطلب",zh:"价格面议"},
     perYear:   {en:"/ year",es:"/ año",ar:"/ سنة",zh:"/ 年"},
-    demo:      {en:"Platform demo",es:"Muestra de plataforma",ar:"عرض تجريبي",zh:"平台演示"},
+    demo:      {en:"Sample",es:"Muestra",ar:"عيّنة",zh:"样例"},
     verifiedB: {en:"Verified",es:"Verificado",ar:"موثّق",zh:"已核验"},
     fav:       {en:"Save",es:"Guardar",ar:"حفظ",zh:"收藏"},
     share:     {en:"Share",es:"Compartir",ar:"مشاركة",zh:"分享"},
@@ -99,10 +99,10 @@
     page:      {en:"Page",es:"Página",ar:"صفحة",zh:"第"},
     prev:      {en:"Previous",es:"Anterior",ar:"السابق",zh:"上一页"},
     next:      {en:"Next",es:"Siguiente",ar:"التالي",zh:"下一页"},
-    simNote:   {en:"Simulation mode — inventory is platform demo data and actions are stored on this device.",
-                es:"Modo simulación — el inventario es de muestra y las acciones se guardan en este dispositivo.",
-                ar:"وضع المحاكاة — المعروض بيانات تجريبية وتُحفظ الإجراءات على هذا الجهاز.",
-                zh:"模拟模式——资产为平台演示数据，操作保存在本设备。"},
+    simNote:   {en:"Sample inventory shown while the live portfolio is being loaded. Saved items are kept on this device.",
+                es:"Inventario de muestra mientras se carga el portafolio real. Lo que guarde queda en este dispositivo.",
+                ar:"معروض تجريبي ريثما تُحمَّل المحفظة الفعلية. وما تحفظه يبقى على هذا الجهاز.",
+                zh:"正式资产组合载入期间显示样例资产。您的收藏保存在本设备。"},
     searchHere:{en:"Search this area",es:"Buscar en esta zona",ar:"ابحث في هذه المنطقة",zh:"搜索此区域"},
     qPlace:    {en:"City, country, typology or reference",
                 es:"Ciudad, país, tipología o referencia",
@@ -113,7 +113,36 @@
     premium:   {en:"Premium",es:"Premium",ar:"بريميوم",zh:"尊享"},
     spotlight: {en:"Spotlight",es:"En foco",ar:"تحت الضوء",zh:"聚焦"},
     haL:       {en:"ha",es:"ha",ar:"هكتار",zh:"公顷"},
-    sqmL:      {en:"m²",es:"m²",ar:"م²",zh:"㎡"}
+    sqmL:      {en:"m²",es:"m²",ar:"م²",zh:"㎡"},
+    photos:    {en:"photos",es:"fotos",ar:"صورة",zh:"张"},
+    planL:     {en:"Floor plan",es:"Plano",ar:"مخطط",zh:"户型图"},
+    tourL:     {en:"360° tour",es:"Tour 360°",ar:"جولة 360°",zh:"360°看房"},
+    dropL:     {en:"price drop",es:"de bajada",ar:"انخفاض",zh:"降价"},
+    listedToday:{en:"Listed today",es:"Publicado hoy",ar:"نُشر اليوم",zh:"今日发布"},
+    listedD:   {en:"Listed %d days ago",es:"Publicado hace %d días",
+                ar:"نُشر قبل %d يوماً",zh:"%d 天前发布"},
+    listedM:   {en:"Listed %d months ago",es:"Publicado hace %d meses",
+                ar:"نُشر قبل %d أشهر",zh:"%d 个月前发布"},
+    saveA:     {en:"Save",es:"Guardar",ar:"حفظ",zh:"收藏"},
+    furnish:   {en:"Furnishing",es:"Amueblado",ar:"التأثيث",zh:"家具配置"},
+    anyFurn:   {en:"Any",es:"Cualquiera",ar:"الكل",zh:"不限"},
+    furnished: {en:"Furnished",es:"Amueblado",ar:"مفروش",zh:"带家具"},
+    unfurnished:{en:"Unfurnished",es:"Sin amueblar",ar:"غير مفروش",zh:"无家具"},
+    partly_furnished:{en:"Partly furnished",es:"Parcialmente amueblado",
+                      ar:"مفروش جزئياً",zh:"部分家具"},
+    ppsqm:     {en:"Price per m²",es:"Precio por m²",ar:"السعر لكل م²",zh:"每平米单价"},
+    kw:        {en:"Keywords",es:"Palabras clave",ar:"كلمات مفتاحية",zh:"关键词"},
+    kwPlace:   {en:"e.g. beachfront, private pool",es:"p. ej. frente al mar, piscina privada",
+                ar:"مثل: على الشاطئ، مسبح خاص",zh:"例如：海滨、私人泳池"},
+    extras:    {en:"Listing includes",es:"El anuncio incluye",
+                ar:"يتضمن العرض",zh:"房源包含"},
+    hasPlan:   {en:"Floor plan",es:"Plano de planta",ar:"مخطط الطابق",zh:"户型图"},
+    hasTour:   {en:"360° tour",es:"Recorrido 360°",ar:"جولة 360°",zh:"360°看房"},
+    hasDrop:   {en:"Price reduced",es:"Precio rebajado",ar:"سعر مخفَّض",zh:"已降价"},
+    anyState:  {en:"Any status",es:"Cualquier estado",ar:"أي حالة",zh:"不限状态"},
+    showN:     {en:"Show %s assets",es:"Mostrar %s activos",
+                ar:"عرض %s أصل",zh:"显示 %s 项资产"},
+    showNone:  {en:"No matches",es:"Sin coincidencias",ar:"لا نتائج",zh:"无匹配"}
   };
   function t(k) { return (T[k] && (T[k][L] || T[k].en)) || k; }
 
@@ -167,7 +196,8 @@
   var STATE = {};
 
   var LIST_KEYS = ["type", "cc", "city", "am"];
-  var NUM_KEYS = ["bedsMin", "bedsMax", "bathsMin", "priceMin", "priceMax", "areaMin", "areaMax", "page"];
+  var NUM_KEYS = ["bedsMin", "bedsMax", "bathsMin", "priceMin", "priceMax",
+                  "areaMin", "areaMax", "ppsqmMin", "ppsqmMax", "page"];
 
   function readURL() {
     var p = new URLSearchParams(location.search);
@@ -180,7 +210,12 @@
       og: p.get("og") || "",
       view: p.get("view") || HOST.getAttribute("data-view") || "list",
       verified: p.get("verified") === "1",
-      completion: p.get("completion") || ""
+      completion: p.get("completion") || "",
+      furn: p.get("furn") || "",
+      kw: p.get("kw") || "",
+      plan: p.get("plan") === "1",
+      tour: p.get("tour") === "1",
+      drop: p.get("drop") === "1"
     };
     LIST_KEYS.forEach(function (k) {
       s[k] = (p.get(k) || "").split(",").filter(Boolean);
@@ -205,6 +240,11 @@
     });
     if (STATE.verified) p.set("verified", "1");
     if (STATE.completion) p.set("completion", STATE.completion);
+    if (STATE.furn) p.set("furn", STATE.furn);
+    if (STATE.kw) p.set("kw", STATE.kw);
+    if (STATE.plan) p.set("plan", "1");
+    if (STATE.tour) p.set("tour", "1");
+    if (STATE.drop) p.set("drop", "1");
     if (STATE.ag) p.set("ag", STATE.ag);
     if (STATE.og) p.set("og", STATE.og);
     if (STATE.sort !== "recommended") p.set("sort", STATE.sort);
@@ -228,6 +268,22 @@
       if (state.og && x.og !== state.og) return false;
       if (state.verified && !x.ver) return false;
       if (state.completion && x.comp !== state.completion) return false;
+      if (state.furn && x.furn !== state.furn) return false;
+      if (state.plan && !x.plan) return false;
+      if (state.tour && !x.tour) return false;
+      if (state.drop && !x.drop) return false;
+      if (state.ppsqmMin != null && !(x.ppa != null && x.ppa >= state.ppsqmMin)) return false;
+      if (state.ppsqmMax != null && !(x.ppa != null && x.ppa <= state.ppsqmMax)) return false;
+      if (state.kw) {
+        // Las palabras clave buscan en la descripcion larga y en las
+        // amenidades, no solo en el titulo: quien escribe "piscina privada"
+        // busca la amenidad, no el nombre del activo.
+        var kws = norm(state.kw).split(/[\s,]+/).filter(Boolean);
+        var bag = norm([x.t[L] || x.t.en, x.city,
+                        (x.typeName && (x.typeName[L] || x.typeName.en)),
+                        (x.am || []).join(" ")].filter(Boolean).join(" "));
+        if (!kws.every(function (w) { return bag.indexOf(w) >= 0; })) return false;
+      }
       if (state.bedsMin != null && !(x.bd >= state.bedsMin)) return false;
       if (state.bedsMax != null && !(x.bd && x.bd <= state.bedsMax)) return false;
       if (state.bathsMin != null && !(x.ba >= state.bathsMin)) return false;
@@ -292,6 +348,17 @@
     return (m && m.ogName) || slug;
   }
 
+  /* Antiguedad del anuncio: "publicado hace 12 dias" dice mas del mercado que
+     una fecha. Por encima de sesenta dias se cuenta en meses. */
+  function listedAgo(iso) {
+    if (!iso) return "";
+    var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+    if (isNaN(d) || d < 0) return "";
+    if (d === 0) return t("listedToday");
+    if (d < 60) return t("listedD").replace("%d", nf(d));
+    return t("listedM").replace("%d", nf(Math.round(d / 30)));
+  }
+
   /* Nombre legible de la tipologia; el chip mostraba el slug en crudo. */
   var TYN = null;
   function typeLabel(slug) {
@@ -330,29 +397,58 @@
     if (x.keys) specs.push(nf(x.keys) + " " + t("keysL"));
     var fav = Store.favorites().indexOf(x.id) >= 0;
     var href = PR + "property-details.html?id=" + encodeURIComponent(x.id);
-    var badges = "";
+
+    /* Distintivos de confianza arriba a la izquierda; el corazon, arriba a la
+       derecha y sobre la foto, que es donde la mano lo busca. */
+    var flags = "";
+    if (x.ver) flags += '<span class="xr_verified_badge">' +
+      '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> ' + esc(t("verifiedB")) + "</span>";
     if (x.promo && x.promo !== "none")
-      badges += '<span class="xr_promo_badge is-' + esc(x.promo) + '">' + esc(t(x.promo)) + "</span>";
-    if (x.ver) badges += '<span class="xr_verified_badge">' + esc(t("verifiedB")) + "</span>";
-    if (x.demo) badges += '<span class="xr_demo_badge">' + esc(t("demo")) + "</span>";
+      flags += '<span class="xr_promo_badge is-' + esc(x.promo) + '">' + esc(t(x.promo)) + "</span>";
+    if (x.drop) flags += '<span class="xr_drop_badge"><i class="fa-solid fa-arrow-down" ' +
+      'aria-hidden="true"></i> ' + nf(x.drop) + "% " + esc(t("dropL")) + "</span>";
+
+    /* Lo que trae el anuncio, abajo sobre la foto: numero de fotos, plano y
+       recorrido. Son las tres senales que deciden entre dos anuncios iguales. */
+    var kit = '<span class="xr_kit_item"><i class="fa-solid fa-camera" aria-hidden="true"></i> ' +
+      nf(x.nph || 1) + "</span>";
+    if (x.plan) kit += '<span class="xr_kit_item" title="' + esc(t("planL")) +
+      '"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i></span>';
+    if (x.tour) kit += '<span class="xr_kit_item" title="' + esc(t("tourL")) +
+      '"><i class="fa-solid fa-street-view" aria-hidden="true"></i></span>';
+
+    var tel = x.tel ? '<a class="xr_mp_contact" href="tel:' +
+      esc(String(x.tel).replace(/[^+\d]/g, "")) + '" rel="nofollow">' +
+      '<i class="fa-solid fa-phone" aria-hidden="true"></i> ' + esc(t("call")) + "</a>" : "";
+    var wa = x.wa ? '<a class="xr_mp_contact is-wa" target="_blank" rel="noopener nofollow" ' +
+      'href="https://wa.me/' + esc(String(x.wa).replace(/[^\d]/g, "")) +
+      "?text=" + encodeURIComponent(title + " — " + location.origin + href) + '">' +
+      '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>' : "";
+
+    var ago = listedAgo(x.pub);
 
     return '<article class="xr_mp_card" data-id="' + esc(x.id) + '">' +
-      '<a class="xr_mp_media" href="' + esc(href) + '" aria-label="' + esc(title) + '">' +
-        picture(x.img, title) +
+      '<div class="xr_mp_media">' +
+        '<a href="' + esc(href) + '" aria-label="' + esc(title) + '">' +
+          picture(x.img, title) + "</a>" +
         '<span class="xr_mp_price">' + esc(price) + "</span>" +
-        '<span class="xr_card_badges">' + badges + "</span>" +
-      "</a>" +
+        '<span class="xr_card_badges">' + flags + "</span>" +
+        '<span class="xr_mp_kit">' + kit + "</span>" +
+        '<button type="button" class="xr_mp_fav' + (fav ? " is-on" : "") +
+          '" data-fav="' + esc(x.id) + '" aria-pressed="' + (fav ? "true" : "false") +
+          '" aria-label="' + esc(t("saveA")) + '"><i class="fa-solid fa-heart"></i></button>' +
+        (x.demo ? '<span class="xr_demo_tag">' + esc(t("demo")) + "</span>" : "") +
+      "</div>" +
       '<div class="xr_mp_body">' +
         '<p class="xr_mp_type">' + esc(typeName) + "</p>" +
         '<h3 class="xr_mp_title"><a href="' + esc(href) + '">' + esc(title) + "</a></h3>" +
         '<p class="xr_mp_loc">' + esc([x.city, ccName(x.cc)].filter(Boolean).join(", ")) + "</p>" +
         (specs.length ? '<ul class="xr_mp_specs">' +
-          specs.map(function (s) { return "<li><bdi>" + esc(s) + "</bdi></li>"; }).join("") + "</ul>" : "") +
+          specs.map(function (v) { return "<li><bdi>" + esc(v) + "</bdi></li>"; }).join("") + "</ul>" : "") +
         '<div class="xr_mp_foot">' +
-          '<span class="xr_mp_agent">' + esc(x.ogName || "") + "</span>" +
-          '<button type="button" class="xr_mp_fav' + (fav ? " is-on" : "") +
-          '" data-fav="' + esc(x.id) + '" aria-pressed="' + (fav ? "true" : "false") +
-          '" aria-label="' + esc(t("fav")) + '"><i class="fa-solid fa-heart"></i></button>' +
+          '<span class="xr_mp_agent">' + esc(x.ogName || "") +
+            (ago ? '<em>' + esc(ago) + "</em>" : "") + "</span>" +
+          (tel || wa ? '<span class="xr_mp_contacts">' + tel + wa + "</span>" : "") +
         "</div>" +
       "</div>" +
     "</article>";
@@ -448,7 +544,13 @@
           '<input type="search" class="xr_mp_q" name="q" placeholder="' + esc(t("qPlace")) + '">' +
           '<select class="xr_mp_sel" data-k="cc"></select>' +
           '<select class="xr_mp_sel" data-k="type"></select>' +
-          '<button type="button" class="xr_mp_more">' + esc(t("filters")) + "</button>" +
+          '<div class="xr_mp_seg" data-seg="completion">' +
+            '<button type="button" data-c="">' + esc(t("anyState")) + "</button>" +
+            '<button type="button" data-c="ready">' + esc(t("ready")) + "</button>" +
+            '<button type="button" data-c="off_plan">' + esc(t("offplan")) + "</button>" +
+          "</div>" +
+          '<button type="button" class="xr_mp_more">' + esc(t("filters")) +
+            '<b class="xr_mp_more_n"></b></button>' +
         "</div>" +
         '<div class="xr_mp_bar_right">' +
           '<div class="xr_mp_seg" data-seg="view">' +
@@ -475,11 +577,27 @@
             '<select data-k="completion"><option value="">—</option>' +
             '<option value="ready">' + esc(t("ready")) + "</option>" +
             '<option value="off_plan">' + esc(t("offplan")) + "</option></select></label>" +
+          '<label>' + esc(t("ppsqm")) + '<span class="xr_mp_range">' +
+            '<input type="number" min="0" step="500" data-k="ppsqmMin" placeholder="' + esc(t("min")) + '">' +
+            '<input type="number" min="0" step="500" data-k="ppsqmMax" placeholder="' + esc(t("max")) + '"></span></label>' +
+          '<label>' + esc(t("furnish")) +
+            '<select data-k="furn"><option value="">' + esc(t("anyFurn")) + "</option>" +
+            '<option value="furnished">' + esc(t("furnished")) + "</option>" +
+            '<option value="unfurnished">' + esc(t("unfurnished")) + "</option>" +
+            '<option value="partly_furnished">' + esc(t("partly_furnished")) + "</option></select></label>" +
+          '<label>' + esc(t("kw")) +
+            '<input type="text" data-k="kw" placeholder="' + esc(t("kwPlace")) + '"></label>' +
           '<label class="xr_mp_check"><input type="checkbox" data-k="verified"> ' + esc(t("verified")) + "</label>" +
+        "</div>" +
+        '<div class="xr_mp_extras"><p>' + esc(t("extras")) + "</p>" +
+          '<label class="xr_mp_amchip"><input type="checkbox" data-k="plan"> ' + esc(t("hasPlan")) + "</label>" +
+          '<label class="xr_mp_amchip"><input type="checkbox" data-k="tour"> ' + esc(t("hasTour")) + "</label>" +
+          '<label class="xr_mp_amchip"><input type="checkbox" data-k="drop"> ' + esc(t("hasDrop")) + "</label>" +
         "</div>" +
         '<div class="xr_mp_amen"></div>' +
         '<div class="xr_mp_panel_foot">' +
           '<button type="button" class="xr_mp_reset">' + esc(t("reset")) + "</button>" +
+          '<button type="button" class="xr_mp_apply"></button>' +
         "</div>" +
       "</div>" +
       '<div class="xr_mp_head">' +
@@ -553,6 +671,17 @@
     if (comp) comp.value = STATE.completion || "";
     var ver = HOST.querySelector('[data-k="verified"]');
     if (ver) ver.checked = !!STATE.verified;
+    ["furn", "kw"].forEach(function (k) {
+      var el = HOST.querySelector('[data-k="' + k + '"]');
+      if (el) el.value = STATE[k] || "";
+    });
+    ["plan", "tour", "drop"].forEach(function (k) {
+      var el = HOST.querySelector('[data-k="' + k + '"]');
+      if (el) el.checked = !!STATE[k];
+    });
+    HOST.querySelectorAll('[data-seg="completion"] button').forEach(function (b) {
+      b.classList.toggle("is-on", (b.getAttribute("data-c") || "") === (STATE.completion || ""));
+    });
     HOST.querySelectorAll("[data-am]").forEach(function (el) {
       el.checked = STATE.am.indexOf(el.getAttribute("data-am")) >= 0;
     });
@@ -577,7 +706,17 @@
     if (STATE.ag) chip(agLabel(STATE.ag), function () { STATE.ag = ""; });
     if (STATE.og) chip(ogLabel(STATE.og), function () { STATE.og = ""; });
     if (STATE.verified) chip(t("verified"), function () { STATE.verified = false; });
-    if (STATE.completion) chip(STATE.completion, function () { STATE.completion = ""; });
+    if (STATE.completion) chip(t(STATE.completion === "off_plan" ? "offplan" : "ready"),
+                              function () { STATE.completion = ""; });
+    if (STATE.furn) chip(t(STATE.furn), function () { STATE.furn = ""; });
+    if (STATE.kw) chip(t("kw") + ": " + STATE.kw, function () { STATE.kw = ""; });
+    if (STATE.plan) chip(t("hasPlan"), function () { STATE.plan = false; });
+    if (STATE.tour) chip(t("hasTour"), function () { STATE.tour = false; });
+    if (STATE.drop) chip(t("hasDrop"), function () { STATE.drop = false; });
+    if (STATE.ppsqmMin != null) chip(t("ppsqm") + " ≥ " + nf(STATE.ppsqmMin),
+                                     function () { STATE.ppsqmMin = null; });
+    if (STATE.ppsqmMax != null) chip(t("ppsqm") + " ≤ " + nf(STATE.ppsqmMax),
+                                     function () { STATE.ppsqmMax = null; });
     HOST.querySelector(".xr_mp_chips").innerHTML = out.join("");
   }
   var CHIPS = {};
@@ -624,6 +763,33 @@
 
     chips();
     syncControls();
+    paintApply(res.length);
+    var moreN = HOST.querySelector(".xr_mp_more_n");
+    if (moreN) {
+      var n = activeFilters();
+      moreN.textContent = n ? nf(n) : "";
+    }
+  }
+
+  /* Cuantos filtros hay puestos: el boton "Filtros" lo lleva encima, para que
+     se vea que hay algo activo sin tener que abrir el panel. */
+  function activeFilters() {
+    var n = 0;
+    LIST_KEYS.forEach(function (k) { if (STATE[k].length) n++; });
+    NUM_KEYS.forEach(function (k) { if (k !== "page" && STATE[k] != null) n++; });
+    ["furn", "kw", "completion"].forEach(function (k) { if (STATE[k]) n++; });
+    ["verified", "plan", "tour", "drop"].forEach(function (k) { if (STATE[k]) n++; });
+    return n;
+  }
+
+  /* El boton del panel lleva el recuento en vivo: se sabe cuantos activos
+     quedan antes de cerrar, que es justo la duda que hace abrir y cerrar tres
+     veces seguidas. */
+  function paintApply(n) {
+    var b = HOST.querySelector(".xr_mp_apply");
+    if (!b) return;
+    b.textContent = n ? t("showN").replace("%s", nf(n)) : t("showNone");
+    b.disabled = !n;
   }
 
   /* Nombre legible de la busqueda guardada: la ruta y los filtros puestos,
@@ -660,14 +826,26 @@
         STATE.page = 1; apply(true); return;
       }
       if (b.classList.contains("xr_mp_more")) {
-        var p = HOST.querySelector(".xr_mp_panel");
-        p.hidden = !p.hidden; return;
+        var pn = HOST.querySelector(".xr_mp_panel");
+        pn.hidden = !pn.hidden; return;
+      }
+      if (b.classList.contains("xr_mp_apply")) {
+        HOST.querySelector(".xr_mp_panel").hidden = true;
+        HOST.querySelector(".xr_mp_head").scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      if (b.hasAttribute("data-c")) {
+        STATE.completion = b.getAttribute("data-c") || "";
+        STATE.page = 1; apply(true); return;
       }
       if (b.classList.contains("xr_mp_reset")) {
         STATE = readURL();
         LIST_KEYS.forEach(function (k) { STATE[k] = []; });
         NUM_KEYS.forEach(function (k) { STATE[k] = null; });
-        STATE.q = ""; STATE.verified = false; STATE.completion = ""; STATE.page = 1;
+        STATE.q = ""; STATE.verified = false; STATE.completion = "";
+        STATE.furn = ""; STATE.kw = "";
+        STATE.plan = false; STATE.tour = false; STATE.drop = false;
+        STATE.page = 1;
         apply(true); return;
       }
       if (b.hasAttribute("data-page")) {
@@ -712,8 +890,13 @@
         STATE.page = 1; return apply(true);
       }
       var k2 = el.getAttribute("data-k");
-      if (k2 === "verified") { STATE.verified = el.checked; STATE.page = 1; return apply(true); }
-      if (k2 === "completion") { STATE.completion = el.value; STATE.page = 1; return apply(true); }
+      if (k2 === "verified" || k2 === "plan" || k2 === "tour" || k2 === "drop") {
+        STATE[k2] = el.checked; STATE.page = 1; return apply(true);
+      }
+      if (k2 === "completion" || k2 === "furn") {
+        STATE[k2] = el.value; STATE.page = 1; return apply(true);
+      }
+      if (k2 === "kw") { STATE.kw = el.value; STATE.page = 1; return apply(true); }
       if (k2 && NUM_KEYS.indexOf(k2) >= 0) {
         var v = parseFloat(el.value);
         STATE[k2] = isNaN(v) ? null : v;
@@ -725,6 +908,14 @@
     HOST.addEventListener("input", function (e) {
       var el = e.target;
       var k = el.getAttribute && el.getAttribute("data-k");
+      if (k === "kw") {
+        clearTimeout(numTimer);
+        numTimer = setTimeout(function () {
+          if (STATE.kw === el.value) return;
+          STATE.kw = el.value; STATE.page = 1; apply(false);
+        }, 420);
+        return;
+      }
       if (!k || NUM_KEYS.indexOf(k) < 0) return;
       clearTimeout(numTimer);
       numTimer = setTimeout(function () {

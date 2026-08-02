@@ -16,6 +16,7 @@ Salidas:
     data/api/v1/agencies.json          directorio de agencias
     data/api/v1/projects.json          proyectos off-plan
     data/api/v1/stats.json             contadores para la portada
+    data/api/v1/market.json            medianas por ciudad y tipologia
     data/api/v1/b2b.json               operación de cada oficina (leads enmascarados)
     data/api/v1/admin.json             cola de moderación y estado del ciclo de vida
 
@@ -97,6 +98,30 @@ def main():
     for r in cur.execute("SELECT listing_id, amenity_id FROM listing_amenities"):
         amen_by_listing.setdefault(r["listing_id"], []).append(r["amenity_id"][3:])
     media = {r["id"]: r["storage_key"] for r in cur.execute("SELECT id, storage_key FROM media")}
+    media_kind = {r["id"]: r["kind"] for r in cur.execute("SELECT id, kind FROM media")}
+
+    # Galeria por activo, en orden, separando foto de plano y de recorrido.
+    gallery, has_plan, has_tour = {}, set(), set()
+    for r in cur.execute("SELECT listing_id, media_id, sort_order FROM listing_media "
+                         "ORDER BY listing_id, sort_order"):
+        k = media_kind.get(r["media_id"], "photo")
+        if k == "floorplan":
+            has_plan.add(r["listing_id"]); continue
+        if k == "tour360":
+            has_tour.add(r["listing_id"]); continue
+        gallery.setdefault(r["listing_id"], []).append(media.get(r["media_id"], ""))
+
+    # Bajada de precio: se compara el primer precio registrado con el vigente.
+    # Solo se publica si de verdad bajo; una subida no se anuncia como reclamo.
+    drop = {}
+    hist = {}
+    for r in cur.execute("SELECT listing_id, price_minor, changed_at FROM listing_price_history "
+                         "ORDER BY listing_id, changed_at"):
+        hist.setdefault(r["listing_id"], []).append(
+            {"amount": (r["price_minor"] or 0) // 100, "at": r["changed_at"]})
+    for lid, hs in hist.items():
+        if len(hs) >= 2 and hs[0]["amount"] and hs[-1]["amount"] < hs[0]["amount"]:
+            drop[lid] = round((hs[0]["amount"] - hs[-1]["amount"]) * 100.0 / hs[0]["amount"], 1)
     tname = {r["id"]: dict(r) for r in cur.execute("SELECT * FROM property_types")}
     agents = {r["id"]: dict(r) for r in cur.execute("SELECT * FROM agents")}
     orgs = {r["id"]: dict(r) for r in cur.execute("SELECT * FROM organizations")}
@@ -126,9 +151,15 @@ def main():
             "comp": r["completion_status"], "ver": r["verification_status"] == "verified",
             "q": r["quality_score"], "promo": r["promotion_tier"],
             "img": media.get(r["hero_media_id"], ""),
+            "nph": len(gallery.get(r["id"], [])) or 1,
+            "plan": r["id"] in has_plan,
+            "tour": r["id"] in has_tour,
+            "drop": drop.get(r["id"]),
+            "furn": r["furnishing"],
             "pub": r["published_at"], "st": r["lifecycle_status"],
             "am": amen_by_listing.get(r["id"], []),
             "ag": ag.get("slug"), "agName": ag.get("display_name"),
+            "tel": ag.get("phone"), "wa": ag.get("whatsapp"),
             "og": og.get("slug"), "ogName": og.get("trade_name"),
             "demo": bool(r["is_demo"]),
         })
@@ -228,6 +259,55 @@ def main():
                      "demo": bool(p["is_demo"])})
     total += w(os.path.join(API, "projects.json"), {"count": len(prjs), "items": prjs})
 
+
+
+    # ------------------------------------------------- referencias de mercado
+    # Para poder decir "cuesta un 26% mas que la media de la zona" hace falta
+    # una media de la zona. Se calcula sobre el propio inventario publicado,
+    # agrupando por (ciudad, tipologia) y por (pais, tipologia) como respaldo
+    # cuando la ciudad tiene poca muestra. Se publica el tamano de la muestra
+    # junto a la media: una media sobre dos activos no es una media, y quien
+    # lee la ficha tiene derecho a saberlo.
+    def _agg(rows, keyf):
+        acc = {}
+        for r in rows:
+            if r["price_minor"] is None or r["price_on_application"]:
+                continue
+            k = keyf(r)
+            if not k:
+                continue
+            a = acc.setdefault(k, {"p": [], "a": [], "ppm": []})
+            a["p"].append(r["price_minor"] // 100)
+            if r["built_area_sqm"]:
+                a["a"].append(r["built_area_sqm"])
+                a["ppm"].append((r["price_minor"] // 100) / r["built_area_sqm"])
+        out = {}
+        for k, a in acc.items():
+            if len(a["p"]) < 3:
+                continue
+            def med(v):
+                v = sorted(v)
+                return v[len(v) // 2] if v else None
+            out[k] = {"n": len(a["p"]), "price": int(med(a["p"])),
+                      "area": int(med(a["a"])) if a["a"] else None,
+                      "pricePerSqm": int(med(a["ppm"])) if a["ppm"] else None}
+        return out
+
+    # Cuatro cortes, del mas especifico al mas general. La ficha usa el primero
+    # que tenga muestra suficiente y dice cual es: "frente a 34 villas en
+    # España" es una afirmacion comprobable; "frente a la media" no lo es.
+    by_city_type = _agg(rows, lambda r: "%s|%s|%s" % (r["country_code"], r["city"], r["subtype"])
+                        if r["city"] else None)
+    by_country_type = _agg(rows, lambda r: "%s|%s" % (r["country_code"], r["subtype"]))
+    by_country_cat = _agg(rows, lambda r: "%s|%s" % (r["country_code"], r["business_category"]))
+    by_type = _agg(rows, lambda r: r["subtype"])
+    total += w(os.path.join(API, "market.json"),
+               {"mode": "simulation",
+                "note": "Medianas calculadas sobre el inventario publicado. Se "
+                        "indica el tamano de la muestra; por debajo de tres "
+                        "activos no se publica referencia.",
+                "byCityType": by_city_type, "byCountryType": by_country_type,
+                "byCountryCategory": by_country_cat, "byType": by_type})
 
     # ---------------------------------------------------------- panel B2B
     # Vista de operación de una oficina: inventario por estado, cartera de
@@ -410,10 +490,17 @@ def main():
                           "ownership": r["ownership_type"],
                           "handover": {"quarter": r["handover_quarter"], "year": r["handover_year"]}},
             "amenities": amen_by_listing.get(r["id"], []),
-            "media": [{"kind": "photo", "url": media.get(r["hero_media_id"], "")}],
+            "media": [{"kind": "photo", "url": u}
+                      for u in (gallery.get(r["id"]) or [media.get(r["hero_media_id"], "")])],
+            "hasFloorPlan": r["id"] in has_plan,
+            "hasVirtualTour": r["id"] in has_tour,
+            "priceHistory": hist.get(r["id"], []),
+            "priceDropPercent": drop.get(r["id"]),
             "trust": {"verified": r["verification_status"] == "verified",
                       "qualityScore": r["quality_score"], "promotion": r["promotion_tier"]},
             "agent": {"slug": ag.get("slug"), "name": ag.get("display_name"),
+                      "phone": ag.get("phone"), "whatsapp": ag.get("whatsapp"),
+                      "email": ag.get("email"),
                       "licence": ag.get("licence_number"),
                       "verified": ag.get("verification_status") == "verified"},
             "agency": {"slug": og.get("slug"), "name": og.get("trade_name"),

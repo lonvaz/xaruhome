@@ -365,16 +365,29 @@ def photo_pool():
 
 
 def pick_photo(pool, families, n):
+    return pick_gallery(pool, families, n, 1)[0]
+
+
+def pick_gallery(pool, families, n, k):
+    """k fotos distintas de la misma familia, empezando en un punto estable.
+
+    Una ficha con una sola foto no es una ficha: el comprador quiere recorrer
+    la casa. Todas salen del mismo banco licenciado y de la misma familia
+    tipologica, asi que la galeria es coherente con lo que anuncia el titulo.
+    """
     cands = []
     for fam in families:
-        cands += [v[0] for k, v in pool.items() if k.startswith(fam)]
+        cands += [v[0] for key, v in pool.items() if key.startswith(fam)]
     if not cands:
         cands = [v[0] for v in pool.values()]
-    return cands[n % len(cands)]
+    k = max(1, min(k, len(cands)))
+    start = n % len(cands)
+    return [cands[(start + i) % len(cands)] for i in range(k)]
 
 
 # ---------------------------------------------------------------- inventario heredado
-def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings):
+def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings,
+                    pool_ref=None):
     """Importa lo que ya existía en el sitio: los 156 activos del catálogo y las
     13 oportunidades. Nada se pierde. Los seis activos `pp-` vuelven a estar
     publicados como inventario de muestra de la plataforma — que es lo que son —
@@ -384,6 +397,7 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
     packs = ["private-real-estate", "commercial-hospitality", "land-developments"]
     fam = {"private-real-estate": "residential", "commercial-hospitality": "commercial",
            "land-developments": "land"}
+    pool_ref = pool_ref or [photo_pool()]
     subtype_pt = {}
     for row in cur.execute("SELECT id, slug FROM property_types").fetchall():
         subtype_pt[row[1]] = row[0]
@@ -467,7 +481,19 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
                  int(price * 100 / built) if (price and built) else None,
                  "unknown", "ready", "freehold", "verified",
                  "PUBLISHED", "approved", 84, "none", mid, NOW, NOW, 1, DEMO_LABEL, NOW))
-            cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)", (lid, mid, 0, 1))
+            gal = [g for g in (a.get("gallery") or []) if isinstance(g, str)]
+            if len(gal) < 4:
+                # La galeria venia vacia en el catalogo heredado. Se completa con
+                # fotos de la misma subcategoria, que es de donde salio la de
+                # portada, manteniendo esa como primera.
+                # `fam` ya nombra el mapa pack->grupo en esta funcion.
+                fams = [a["id"].rsplit("-", 1)[0], a.get("subcategory") or ""]
+                extra = pick_gallery(pool_ref[0], [f for f in fams if f], n, 8)
+                gal = [a["hero_image"]] + [g for g in extra if g != a["hero_image"]]
+            gal = gal[:9]
+            for gi, gp in enumerate(gal[:9]):
+                cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                            (lid, media_id_for(gp), gi, 1 if gi == 0 else 0))
             for loc in ("en", "es", "ar", "zh"):
                 ttl = a.get("title") or a["id"]
                 cur.execute("INSERT INTO listing_translations VALUES (?,?,?,?,?,?,?)",
@@ -529,7 +555,9 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
                  sp.get("plotAreaSqm"), ((o.get("price") or {}).get("currency") or "USD"),
                  None, 1, "verified", "PUBLISHED", "approved", 88, "featured", mid,
                  NOW, NOW, 1, DEMO_LABEL, NOW))
-            cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)", (lid, mid, 0, 1))
+            for gi, gp in enumerate((o.get("images") or [])[:9]):
+                cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                            (lid, media_id_for(gp), gi, 1 if gi == 0 else 0))
             # Las oportunidades no traen texto largo en su fichero de origen.
             # Se compone con los mismos datos de la fila, igual que el resto del
             # inventario: nada inventado, ninguna ficha sin descripcion.
@@ -669,14 +697,18 @@ def main():
     pool = photo_pool()
     media_seen = {}
 
-    def media_id_for(path):
-        if path not in media_seen:
+    def media_id_for(path, kind="photo"):
+        """Un id de medio por (fichero, tipo). El plano y el recorrido apuntan
+        al mismo archivo que la foto: lo que se declara es que el activo tiene
+        plano y tour, no un render distinto que no existe."""
+        key = (path, kind)
+        if key not in media_seen:
             mid = uid("med", len(media_seen) + 1)
-            media_seen[path] = mid
+            media_seen[key] = mid
             cur.execute("INSERT INTO media VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                        (mid, "tn_xaru", "photo", path, None, None, None, None,
+                        (mid, "tn_xaru", kind, path, None, None, None, None,
                          "licensed_stock", "approved", NOW))
-        return media_seen[path]
+        return media_seen[key]
 
     all_types = ([("residential", t) for t in RESIDENTIAL_TYPES]
                  + [("commercial", t) for t in COMMERCIAL_TYPES]
@@ -788,7 +820,9 @@ def main():
                      "USD", None if poa else price * 100, poa,
                      "yearly" if offering == "rent" else None,
                      None, price_per, counter % 5 == 0, counter % 7 == 0,
-                     None, "vacant", ["furnished", "unfurnished", "partly_furnished"][counter % 3],
+                     None, "vacant",
+                     ["furnished", "unfurnished", "partly_furnished"][
+                         ((counter * 2654435761) % (1 << 32) >> 9) % 3],
                      "excellent",
                      "off_plan" if counter % 11 == 0 else "ready",
                      (counter % 4) + 1 if counter % 11 == 0 else None,
@@ -800,7 +834,32 @@ def main():
                      mid, iso(counter % 240), iso(counter % 60), None, None, None, None,
                      "seed", "seed", None, 1, DEMO_LABEL, NOW))
 
-                cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)", (lid, mid, 0, 1))
+                # Galeria: entre cuatro y nueve fotos por activo. Y en una parte
+                # del inventario, plano de planta y recorrido 360: son dos de las
+                # senales que mas pesan cuando alguien compara dos anuncios.
+                gal = pick_gallery(pool, PHOTO_FAMILY[tslug], counter, 4 + counter % 6)
+                for gi, gp in enumerate(gal):
+                    cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                                (lid, media_id_for(gp), gi, 1 if gi == 0 else 0))
+                hm = (counter * 2654435761) % (1 << 32)
+                if (hm >> 5) % 100 < 27:
+                    cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                                (lid, media_id_for(gal[0], kind="floorplan"), 90, 0))
+                if (hm >> 13) % 100 < 16:
+                    cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                                (lid, media_id_for(gal[-1], kind="tour360"), 91, 0))
+
+                # Historial de precio: una parte del inventario lleva una bajada
+                # real registrada. Es lo que permite decir "ha bajado un 8%" sin
+                # inventarlo en el momento de pintar.
+                if price and not poa and ((counter * 2654435761) % (1 << 32) >> 19) % 100 < 12:
+                    was = int(price * (1.06 + (counter % 9) / 100.0))
+                    cur.execute("INSERT INTO listing_price_history VALUES (?,?,?,?,?,?)",
+                                (uid("pph", counter), lid, "USD", was * 100,
+                                 iso(30 + counter % 90), "agent"))
+                    cur.execute("INSERT INTO listing_price_history VALUES (?,?,?,?,?,?)",
+                                (uid("ppn", counter), lid, "USD", price * 100,
+                                 iso(counter % 25), "agent"))
 
                 # Amenidades primero: la descripción las menciona por familia.
                 am_slugs, am_cats = [], []
@@ -848,7 +907,8 @@ def main():
                             (lid_city, "loc_" + cc.lower()))
 
     # ---- inventario que ya existía en el sitio: no se pierde nada
-    legacy = import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings)
+    legacy = import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings,
+                             pool_ref=[pool])
 
     # ---- proyectos off-plan
     for i, did in enumerate(dev_ids):

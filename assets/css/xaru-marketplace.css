@@ -1111,3 +1111,123 @@ a.xr_mp_navlink:hover { border-color: var(--accent-color); color: var(--primary-
 @media (max-width: 575px) {
   .xr_cs_barlbl { flex: 0 0 120px; font-size: 12px; }
 }
+
+/*--------------------------------------------------------------
+  Tarjeta del listado — señales de confianza
+----------------------------------------------------------------*/
+.xr_mp_media > a { display: block; width: 100%; height: 100%; }
+.xr_card_badges { align-items: flex-start; inset-inline-start: 12px; right: auto; }
+[dir="rtl"] .xr_card_badges { align-items: flex-end; }
+.xr_card_badges span { display: inline-flex; align-items: center; gap: 5px; }
+.xr_verified_badge i { font-size: 10px; }
+
+.xr_drop_badge {
+  background: rgba(180, 69, 61, .95); color: #fff;
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px; line-height: 1;
+}
+.xr_drop_badge i { font-size: 9px; }
+
+.xr_mp_kit {
+  position: absolute; inset-inline-end: 12px; bottom: 12px; z-index: 2;
+  display: flex; gap: 6px; pointer-events: none;
+}
+.xr_kit_item {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 9px; border-radius: 4px; font-size: 11px; line-height: 1.4;
+  background: rgba(28, 27, 25, .72); color: #f0ebe0; backdrop-filter: blur(6px);
+}
+
+/* El corazón vive sobre la foto, que es donde la mano lo busca. */
+.xr_mp_media .xr_mp_fav {
+  position: absolute; inset-inline-end: 12px; top: 12px; z-index: 3;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255, 255, 255, .92); border: 0; color: #9a938a;
+  backdrop-filter: blur(6px); cursor: pointer; font-size: 15px;
+  box-shadow: 0 4px 14px -6px rgba(28, 27, 25, .5);
+  transition: color .2s ease, transform .2s ease, background .2s ease;
+}
+.xr_mp_media .xr_mp_fav:hover { color: #b4453d; background: #fff; }
+.xr_mp_media .xr_mp_fav.is-on { color: #b4453d; }
+.xr_mp_media .xr_mp_fav:active { transform: scale(.88); }
+
+/* Rótulo de inventario de muestra: presente y legible, pero discreto y fuera
+   del bloque de confianza, para no competir con "Verificado". */
+.xr_demo_tag {
+  position: absolute; inset-inline-start: 12px; top: 12px; z-index: 2;
+  padding: 3px 8px; border-radius: 3px; font-size: 9.5px; line-height: 1.5;
+  letter-spacing: .1em; text-transform: uppercase;
+  background: rgba(250, 248, 242, .82); color: #6b6357;
+  border: 1px solid rgba(107, 99, 87, .18); backdrop-filter: blur(4px);
+}
+.xr_card_badges { top: 44px; }
+
+.xr_mp_foot { flex-wrap: wrap; gap: 10px; }
+.xr_mp_agent { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.xr_mp_agent em {
+  font-style: normal; font-size: 11px; letter-spacing: 0;
+  text-transform: none; color: var(--accent3-color);
+}
+.xr_mp_contacts { display: flex; gap: 6px; margin-inline-start: auto; }
+.xr_mp_contact {
+  display: inline-flex; align-items: center; gap: 5px; text-decoration: none;
+  padding: 7px 12px; border-radius: 4px; font-size: 12px;
+  border: 1px solid var(--border-color); background: var(--white-color);
+  color: var(--secondary-color);
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+.xr_mp_contact:hover { border-color: var(--accent-color); color: var(--primary-color); }
+.xr_mp_contact.is-wa:hover { border-color: #25d366; color: #128c4a; }
+
+/* Filtros: contador en el botón, extras y aplicar con recuento en vivo */
+.xr_mp_more { display: inline-flex; align-items: center; gap: 8px; }
+.xr_mp_more_n:not(:empty) {
+  min-width: 20px; padding: 1px 6px; border-radius: 999px; line-height: 1.6;
+  background: var(--accent-color); color: var(--primary-color);
+  font-size: 11px; letter-spacing: 0;
+}
+.xr_mp_more:hover .xr_mp_more_n:not(:empty) { background: var(--accent2-color); color: #fff; }
+
+.xr_mp_extras { margin-top: 20px; }
+.xr_mp_extras > p {
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--secondary-color); margin: 0 0 10px;
+}
+.xr_mp_panel_foot { justify-content: space-between; align-items: center; }
+.xr_mp_apply {
+  height: 46px; padding: 0 26px; cursor: pointer; border: 0;
+  border-radius: var(--mp-radius);
+  background: var(--primary-color); color: var(--accent-color);
+  font-family: var(--secondary-font); font-size: 13px;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: background .2s ease;
+}
+.xr_mp_apply:hover:not(:disabled) { background: var(--accent3-color); color: #fff; }
+.xr_mp_apply:disabled { opacity: .45; cursor: not-allowed; }
+
+/* El panel acompaña al desplazamiento: con nueve grupos de filtros, el botón
+   de aplicar quedaba fuera de pantalla justo cuando hacía falta. */
+@media (min-width: 992px) {
+  .xr_mp_panel { max-height: calc(100vh - 200px); overflow-y: auto; }
+  .xr_mp_panel_foot {
+    position: sticky; bottom: -22px; margin: 18px -22px -20px; padding: 16px 22px;
+    background: var(--gray3-color); border-top: 1px solid var(--border-color);
+  }
+}
+
+/* Segunda fila del buscador del home: dormitorios y rango de precio */
+.xr_mph_row2 { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.xr_mph_type, .xr_mph_beds, .xr_mph_pmin, .xr_mph_pmax {
+  height: 52px; padding: 0 16px; font-size: 15px; outline: none;
+  border: 1px solid var(--border-color); border-radius: 4px;
+  background: var(--gray3-color); color: var(--primary-color);
+  font-family: var(--secondary-font);
+}
+.xr_mph_type { flex: 0 1 240px; min-width: 0; height: 58px; }
+.xr_mph_beds { flex: 0 1 180px; }
+.xr_mph_pmin, .xr_mph_pmax { flex: 1 1 150px; min-width: 0; }
+.xr_mph_type:focus, .xr_mph_beds:focus, .xr_mph_pmin:focus, .xr_mph_pmax:focus {
+  background: var(--white-color); border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(201, 168, 118, .18);
+}
+@media (max-width: 767px) { .xr_mph_type { flex: 1 1 100%; height: 52px; } }

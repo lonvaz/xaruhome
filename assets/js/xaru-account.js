@@ -110,10 +110,10 @@
     verifiedL:  {en:"Verified",es:"Verificado",ar:"موثّق",zh:"已核验"},
     yes:        {en:"Yes",es:"Sí",ar:"نعم",zh:"是"},
     no:         {en:"No",es:"No",ar:"لا",zh:"否"},
-    localNote:  {en:"Everything on this page is stored on this device only. Nothing is sent anywhere, and it does not travel with you to another browser.",
-                 es:"Todo lo de esta página se guarda solo en este dispositivo. No se envía a ningún sitio y no le acompaña a otro navegador.",
-                 ar:"كل ما في هذه الصفحة يُحفظ على هذا الجهاز فقط. لا يُرسل إلى أي جهة ولا ينتقل معك إلى متصفح آخر.",
-                 zh:"本页所有内容仅保存在本设备。不会发送至任何地方，也不会随您切换浏览器。"},
+    localNote:  {en:"Saved on this device. Sign-in to carry your saved assets and alerts between devices is coming with the client portal.",
+                 es:"Guardado en este dispositivo. El acceso con cuenta, para llevar sus activos y alertas entre dispositivos, llega con el portal de cliente.",
+                 ar:"محفوظ على هذا الجهاز. وتسجيل الدخول لنقل أصولك وتنبيهاتك بين الأجهزة يأتي مع بوابة العملاء.",
+                 zh:"保存在本设备。可在多设备间同步收藏与提醒的账户登录，将随客户门户一同推出。"},
     loading:    {en:"Loading…",es:"Cargando…",ar:"جارٍ التحميل…",zh:"加载中…"},
     results:    {en:"results now",es:"resultados ahora",ar:"نتيجة الآن",zh:"当前结果"}
   };
