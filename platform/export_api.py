@@ -16,6 +16,8 @@ Salidas:
     data/api/v1/agencies.json          directorio de agencias
     data/api/v1/projects.json          proyectos off-plan
     data/api/v1/stats.json             contadores para la portada
+    data/api/v1/b2b.json               operación de cada oficina (leads enmascarados)
+    data/api/v1/admin.json             cola de moderación y estado del ciclo de vida
 
 Y, por compatibilidad con las páginas que ya existen:
     data/properties/{categoria}.json   forma heredada del catálogo
@@ -225,6 +227,117 @@ def main():
                                                     for m in miles]},
                      "demo": bool(p["is_demo"])})
     total += w(os.path.join(API, "projects.json"), {"count": len(prjs), "items": prjs})
+
+
+    # ---------------------------------------------------------- panel B2B
+    # Vista de operación de una oficina: inventario por estado, cartera de
+    # leads con su SLA, consumo de créditos y cuota del plan. Los datos de
+    # contacto de los leads se recortan igual que en producción — nombre y
+    # canal sí, correo y teléfono enmascarados — porque esta proyección se
+    # publica como fichero y la privacidad no depende de quién la lea.
+    def mask(v, keep=2):
+        v = str(v or "")
+        if "@" in v:
+            a, _, b = v.partition("@")
+            return (a[:keep] + "…@" + b) if a else v
+        d = "".join(ch for ch in v if ch.isdigit())
+        return ("··· " + d[-3:]) if len(d) >= 3 else "···"
+
+    stage_order = ["new", "contacted", "qualified", "viewing", "offer", "won", "lost"]
+    b2b = []
+    for o in orgs.values():
+        if o["kind"] not in ("agency", "developer"):
+            continue
+        by_state = {r["lifecycle_status"]: r["n"] for r in cur.execute(
+            "SELECT lifecycle_status, COUNT(*) n FROM listings WHERE org_id=? "
+            "GROUP BY lifecycle_status", (o["id"],))}
+        leads = [{"publicId": r["public_id"],
+                  "listing": r["listing_id"],
+                  "name": r["contact_name"],
+                  "email": mask(r["contact_email"]),
+                  "phone": mask(r["contact_phone"]),
+                  "channel": r["channel"], "stage": r["stage"],
+                  "priority": r["priority"],
+                  "budgetMin": (r["budget_min_minor"] or 0) // 100 or None,
+                  "budgetMax": (r["budget_max_minor"] or 0) // 100 or None,
+                  "currency": r["budget_currency"],
+                  "slaDueAt": r["sla_due_at"],
+                  "firstResponseAt": r["first_response_at"],
+                  "createdAt": r["created_at"]}
+                 for r in cur.execute(
+                     "SELECT * FROM leads WHERE org_id=? ORDER BY created_at DESC LIMIT 40",
+                     (o["id"],))]
+        credits = [{"type": r["entry_type"], "credits": r["credits"],
+                    "reference": r["reference"], "at": r["occurred_at"]}
+                   for r in cur.execute(
+                       "SELECT * FROM credit_ledger WHERE org_id=? ORDER BY occurred_at DESC",
+                       (o["id"],))]
+        sub = cur.execute("SELECT * FROM subscriptions WHERE org_id=?", (o["id"],)).fetchone()
+        plan = cur.execute("SELECT * FROM plans WHERE code=?",
+                           (sub["plan_code"],)).fetchone() if sub else None
+        b2b.append({
+            "slug": o["slug"], "name": o["trade_name"], "kind": o["kind"],
+            "inventoryByState": by_state,
+            "inventoryTotal": sum(by_state.values()),
+            "quota": o["listing_quota"],
+            "plan": {"code": sub["plan_code"] if sub else None,
+                     "name": plan["name"] if plan else None,
+                     "status": sub["status"] if sub else None,
+                     "renewsAt": sub["renews_at"] if sub else None,
+                     "seats": sub["seats"] if sub else None,
+                     "priceMonthly": (plan["price_minor"] // 100) if plan else None,
+                     "currency": plan["currency"] if plan else None,
+                     "listingQuota": plan["listing_quota"] if plan else None,
+                     "features": (plan["features"] or "").split(",") if plan else []},
+            "credits": credits,
+            "creditBalance": sum(c["credits"] for c in credits),
+            "leads": leads,
+            "leadsByStage": {st: sum(1 for l in leads if l["stage"] == st) for st in stage_order},
+        })
+    total += w(os.path.join(API, "b2b.json"),
+               {"count": len(b2b), "mode": "simulation", "stages": stage_order, "items": b2b})
+
+    # ---------------------------------------------------------- panel admin
+    # Cola de moderación con su SLA, taxonomías y geografía. Solo lectura: el
+    # panel enseña la operación, no la ejecuta, porque ejecutarla exige un
+    # servidor con identidad y traza de auditoría. El botón que faltaría es el
+    # de decidir, y decidir sin auditoría no se simula.
+    titles_en = {lid: tr.get(lid, {}).get("en") for lid in tr}
+    cases = []
+    for r in [x for x in cur.execute("SELECT * FROM moderation_cases ORDER BY sla_due_at")]:
+        li = cur.execute("SELECT public_id, city, country_code, org_id, subtype, "
+                         "lifecycle_status, moderation_status, quality_score "
+                         "FROM listings WHERE id=?", (r["listing_id"],)).fetchone()
+        og = orgs.get(li["org_id"]) if li else None
+        cases.append({"listing": li["public_id"] if li else None,
+                      "title": titles_en.get(r["listing_id"]),
+                      "city": li["city"] if li else None,
+                      "country": li["country_code"] if li else None,
+                      "org": og["trade_name"] if og else None,
+                      "type": li["subtype"] if li else None,
+                      "state": li["lifecycle_status"] if li else None,
+                      "moderation": li["moderation_status"] if li else None,
+                      "quality": li["quality_score"] if li else None,
+                      "openedAt": r["opened_at"], "slaDueAt": r["sla_due_at"],
+                      "priority": r["priority"], "status": r["status"],
+                      "risk": r["risk_score"],
+                      "failedRules": (r["failed_rules"] or "").split(",") if r["failed_rules"] else [],
+                      "assignee": r["assignee"]})
+    states = {r["lifecycle_status"]: r["n"] for r in cur.execute(
+        "SELECT lifecycle_status, COUNT(*) n FROM listings GROUP BY lifecycle_status")}
+    transitions = [{"listing": r["listing_id"], "from": r["from_status"], "to": r["to_status"],
+                    "actor": r["actor"], "at": r["occurred_at"]}
+                   for r in cur.execute(
+                       "SELECT * FROM listing_transitions ORDER BY occurred_at DESC LIMIT 40")]
+    total += w(os.path.join(API, "admin.json"), {
+        "mode": "simulation", "readOnly": True,
+        "queue": cases, "queueCount": len(cases),
+        "lifecycleStates": states,
+        "transitions": transitions,
+        "taxonomies": {"propertyTypes": len(types), "amenities": len(amen),
+                       "countries": len(countries),
+                       "cities": sum(len(c["cities"]) for c in countries)},
+    })
 
     # ---------------------------------------------------------- estadísticas
     def one(q, *a):

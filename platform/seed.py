@@ -908,14 +908,79 @@ def main():
                     (uid("alr", i + 1), ss, bid, ["instant", "daily", "weekly"][i % 3],
                      "email", None, 1, NOW))
 
+    # ---- inventario en tramitacion --------------------------------------
+    # Una cola de moderacion en la que todo esta aprobado no es una cola. Estos
+    # registros NO tocan lo publicado: se anaden aparte, en los estados previos
+    # a la publicacion, para que el ciclo de vida y el panel de administracion
+    # tengan trabajo real que enseñar. La vista publica no los muestra, asi que
+    # el inventario visible no cambia ni en uno.
+    # Los diecisiete estados del ciclo de vida estan en el CHECK del esquema;
+    # aqui se usan los seis que preceden o suceden a la publicacion.
+    PENDING_STATES = [
+        ("DRAFT", "pending", None),
+        ("HUMAN_REVIEW", "pending", "photo_quality"),
+        ("AUTOMATED_REVIEW", "pending", "duplicate_check,price_outlier"),
+        ("REJECTED", "rejected", "permit_missing"),
+        ("EXPIRED", "approved", None),
+        ("PAUSED", "approved", None),
+    ]
+    pending_ids = []
+    src = cur.execute("SELECT * FROM listings WHERE lifecycle_status='PUBLISHED' "
+                      "ORDER BY public_id LIMIT 200").fetchall()
+    cols = [d[0] for d in cur.description]
+    for i in range(60):
+        base = dict(zip(cols, src[(i * 7) % len(src)]))
+        state, mod, rules = PENDING_STATES[i % len(PENDING_STATES)]
+        nid = uid("lstq", i + 1)
+        base["id"] = nid
+        base["public_id"] = pid(700000 + i)
+        base["external_reference"] = "XH-Q%05d" % i
+        base["lifecycle_status"] = state
+        base["moderation_status"] = mod
+        base["quality_score"] = 34 + (i * 7) % 45
+        base["published_at"] = (None if state in ("DRAFT", "HUMAN_REVIEW", "AUTOMATED_REVIEW")
+                                else base["published_at"])
+        base["created_at"] = iso(i % 21)
+        base["updated_at"] = iso(i % 9)
+        cur.execute("INSERT INTO listings (%s) VALUES (%s)"
+                    % (",".join(cols), ",".join(["?"] * len(cols))),
+                    tuple(base[c] for c in cols))
+        cur.execute("INSERT INTO listing_media VALUES (?,?,?,?)",
+                    (nid, base["hero_media_id"], 0, 1))
+        for loc in ("en", "es", "ar", "zh"):
+            row = cur.execute("SELECT title, description FROM listing_translations "
+                              "WHERE listing_id=? AND locale=?",
+                              (dict(zip(cols, src[(i * 7) % len(src)]))["id"], loc)).fetchone()
+            cur.execute("INSERT INTO listing_translations VALUES (?,?,?,?,?,?,?)",
+                        (nid, loc, (row[0] if row else "Draft listing"),
+                         (row[1] if row else None), None,
+                         slugify(row[0] if row else "draft") + "-q" + str(i), "machine"))
+        pending_ids.append((nid, state, rules))
+
     # ---- operación
-    for i in range(28):
-        cid = uid("mod", i + 1)
+    # La cola se arma sobre lo que de verdad espera decisión, no sobre activos
+    # ya publicados: 42 casos con su regla incumplida y su SLA.
+    ci = 0
+    for (nid, state, rules) in pending_ids:
+        if state not in ("HUMAN_REVIEW", "AUTOMATED_REVIEW", "REJECTED"):
+            continue
+        ci += 1
         cur.execute("INSERT INTO moderation_cases VALUES (?,?,?,?,?,?,?,?,?)",
-                    (cid, listings[(i * 97) % len(listings)], iso(i % 14),
+                    (uid("mod", ci), nid, iso(ci % 12),
+                     ["normal", "high", "urgent"][ci % 3],
+                     iso(-(1 + ci % 3)),
+                     "decided" if state == "REJECTED" else
+                     ("in_review" if ci % 3 == 0 else "open"),
+                     round(0.08 * (ci % 9), 2),
+                     rules or "photo_quality",
+                     ("moderator%02d" % (ci % 4)) if ci % 3 == 0 else None))
+    for i in range(12):
+        ci += 1
+        cur.execute("INSERT INTO moderation_cases VALUES (?,?,?,?,?,?,?,?,?)",
+                    (uid("mod", ci), listings[(i * 97) % len(listings)], iso(i % 14),
                      ["normal", "high", "urgent"][i % 3], iso(-1),
-                     ["open", "in_review", "decided"][i % 3], 0.12 * (i % 6),
-                     "photo_quality,duplicate_check", None))
+                     "decided", round(0.12 * (i % 6), 2),
+                     "photo_quality,duplicate_check", "moderator01"))
     cur.execute("INSERT INTO plans VALUES (?,?,?,?,?,?,?,?)",
                 ("professional", "Professional", "USD", 49900, "month", 500, 25, "featured,api,crm"))
     cur.execute("INSERT INTO plans VALUES (?,?,?,?,?,?,?,?)",

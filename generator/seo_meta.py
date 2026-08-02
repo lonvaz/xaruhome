@@ -527,6 +527,12 @@ SLUG_LABEL = {
                                                  "ar": "المطوّرون", "zh": "开发商"},
  "real-estate/new-projects":                    {"en": "New Projects", "es": "Proyectos nuevos",
                                                  "ar": "المشاريع الجديدة", "zh": "新项目"},
+ "real-estate/account":                         {"en": "Your Account", "es": "Su cuenta",
+                                                 "ar": "حسابك", "zh": "您的账户"},
+ "real-estate/office":                          {"en": "Office Operation", "es": "Operación de la oficina",
+                                                 "ar": "تشغيل المكتب", "zh": "分支机构运营"},
+ "real-estate/administration":                  {"en": "Moderation & Lifecycle", "es": "Moderación y ciclo de vida",
+                                                 "ar": "المراجعة ودورة الحياة", "zh": "审核与生命周期"},
  "real-estate/buy":                             {"en": "Residential for Sale", "es": "Residencial en venta",
                                                  "ar": "سكني للبيع", "zh": "住宅出售"},
  "real-estate/rent":                            {"en": "Residential to Rent", "es": "Residencial en alquiler",
@@ -565,6 +571,38 @@ SLUG_LABEL = {
 
 # ---------------------------------------------------------------- title + description, 34 slugs x 4 languages
 SHELL_SEO = {
+
+ # ---- paneles (Biblia de Real Estate §5.7-§5.9) -----------------------
+ "real-estate/account": {
+  "en": ("Saved Properties, Searches & Alerts | XARU HOME",
+         "Saved assets in folders, the searches you run again, alerts on them, recently viewed and up to four assets compared side by side. Stored on your device."),
+  "es": ("Propiedades, búsquedas y alertas guardadas | XARU HOME",
+         "Activos guardados en carpetas, las búsquedas que repite, alertas sobre ellas, vistos recientemente y hasta cuatro activos comparados. Se guarda en su dispositivo."),
+  "ar": ("العقارات وعمليات البحث والتنبيهات المحفوظة | XARU HOME",
+         "أصول محفوظة في مجلدات، وعمليات البحث التي تكرّرها، والتنبيهات عليها، وما شوهد مؤخراً، وحتى أربعة أصول للمقارنة. يُحفظ على جهازك."),
+  "zh": ("收藏的房源、搜索与提醒 | XARU HOME",
+         "分文件夹整理的收藏资产、反复运行的搜索、其上的提醒、最近浏览记录，以及最多四项资产的并排对比。全部存于您的设备。"),
+ },
+ "real-estate/office": {
+  "en": ("Partner Console — Inventory, Leads & Credits | XARU HOME",
+         "Inventory by lifecycle state against the plan quota, the lead pipeline with response deadlines, credit consumption and the ten-step listing wizard."),
+  "es": ("Consola del socio — Inventario, leads y créditos | XARU HOME",
+         "Inventario por estado del ciclo de vida contra la cuota del plan, pipeline de leads con plazos de respuesta, consumo de créditos y asistente de alta en diez pasos."),
+  "ar": ("لوحة الشريك — المعروض والعملاء والأرصدة | XARU HOME",
+         "المعروض حسب حالة دورة الحياة في مقابل حصة الخطة، ومسار العملاء بمواعيد الاستجابة، واستهلاك الأرصدة، ومعالج الإدراج بعشر خطوات."),
+  "zh": ("合作方控制台 — 资产、线索与额度 | XARU HOME",
+         "按生命周期状态统计的资产及套餐配额、附响应时限的线索漏斗、额度消耗，以及十步发布向导。"),
+ },
+ "real-estate/administration": {
+  "en": ("Moderation Queue & Listing Lifecycle | XARU HOME",
+         "The moderation queue with failed rules and deadlines, the inventory across seventeen lifecycle states, live transitions and the taxonomies underneath."),
+  "es": ("Cola de moderación y ciclo de vida | XARU HOME",
+         "La cola de moderación con reglas incumplidas y plazos, el inventario entre diecisiete estados del ciclo de vida, transiciones en vivo y las taxonomías."),
+  "ar": ("قائمة المراجعة ودورة حياة العروض | XARU HOME",
+         "قائمة المراجعة مع القواعد المخالفة والمُهل، والمعروض عبر سبع عشرة حالة لدورة الحياة، والانتقالات الحيّة والتصنيفات."),
+  "zh": ("审核队列与房源生命周期 | XARU HOME",
+         "附未通过规则与时限的审核队列、横跨十七个生命周期状态的资产分布、实时状态迁移及底层分类体系。"),
+ },
 
  # ---- off-plan (Biblia de Real Estate §5.5) ---------------------------
  "real-estate/new-projects": {
@@ -1263,6 +1301,8 @@ SITEMAP_PRIORITY = {
  "real-estate/land": "0.8", "real-estate/map": "0.7",
  "real-estate/agents": "0.7", "real-estate/agencies": "0.7", "real-estate/developers": "0.7",
  "real-estate/new-projects": "0.8",
+ "real-estate/account": "0.4", "real-estate/office": "0.4",
+ "real-estate/administration": "0.3",
 }
 
 def sitemap_entries():

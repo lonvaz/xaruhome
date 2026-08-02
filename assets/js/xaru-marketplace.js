@@ -152,10 +152,11 @@
       return i < 0;
     },
     savedSearches: function () { return this._read("xaru_saved_searches"); },
-    saveSearch: function (name, qs) {
+    saveSearch: function (name, qs, path, base) {
       var s = this.savedSearches();
-      if (s.some(function (x) { return x.qs === qs; })) return false;
-      s.push({ name: name, qs: qs, at: new Date().toISOString() });
+      if (s.some(function (x) { return x.qs === qs && x.path === path; })) return false;
+      s.push({ name: name, qs: qs, path: path, base: base || {},
+               at: new Date().toISOString() });
       this._write("xaru_saved_searches", s);
       return true;
     }
@@ -625,6 +626,21 @@
     syncControls();
   }
 
+  /* Nombre legible de la busqueda guardada: la ruta y los filtros puestos,
+     no el <title> de la pagina, que es siempre el mismo. */
+  function niceName() {
+    var bits = [];
+    if (STATE.offering) bits.push(t(STATE.offering));
+    if (STATE.category) bits.push(STATE.category);
+    STATE.cc.forEach(function (c) { bits.push(ccName(c)); });
+    STATE.city.forEach(function (c) { bits.push(c); });
+    STATE.type.forEach(function (c) { bits.push(typeLabel(c)); });
+    if (STATE.priceMin != null) bits.push("≥ " + nf(STATE.priceMin));
+    if (STATE.priceMax != null) bits.push("≤ " + nf(STATE.priceMax));
+    if (STATE.q) bits.push('"' + STATE.q + '"');
+    return bits.length ? bits.join(" · ") : t("results");
+  }
+
   function apply(push) {
     STATE.page = STATE.page || 1;
     writeURL(!push);
@@ -672,7 +688,9 @@
         return;
       }
       if (b.classList.contains("xr_mp_save")) {
-        var ok = Store.saveSearch(document.title, location.search || "?");
+        var ok = Store.saveSearch(niceName(), location.search || "",
+                                  location.pathname,
+                                  { offering: STATE.offering, category: STATE.category });
         b.textContent = ok ? t("saved") : t("saved");
         b.disabled = true;
         return;

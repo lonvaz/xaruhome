@@ -2906,6 +2906,73 @@ def build_projects():
             n += 1
     print("proyectos off-plan ->", n, "paginas")
 
+# ================================================================ Paneles (Biblia §5.7–§5.9)
+PANELS = {
+ "account": dict(
+   slug="real-estate/account", mount='<div class="xr_ac" data-account></div>',
+   js="xaru-account.js", img="29_private_market.jpg",
+   eyebrow=ARCH.T("Your account", "Su cuenta", "حسابك", "您的账户"),
+   title=ARCH.T("Saved assets and searches", "Activos y búsquedas guardadas",
+                "الأصول وعمليات البحث المحفوظة", "收藏的资产与搜索"),
+   lead=ARCH.T(
+     "Everything you have kept in one place: saved assets sorted into folders, the searches you run again, the alerts on them, what you looked at recently, and up to four assets side by side. It lives on this device and is not sent anywhere.",
+     "Todo lo que ha guardado en un solo lugar: activos ordenados en carpetas, las búsquedas que repite, las alertas sobre ellas, lo que ha mirado recientemente y hasta cuatro activos lado a lado. Vive en este dispositivo y no se envía a ningún sitio.",
+     "كل ما احتفظت به في مكان واحد: أصول مرتّبة في مجلدات، وعمليات البحث التي تكرّرها، والتنبيهات عليها، وما شاهدته مؤخراً، وحتى أربعة أصول جنباً إلى جنب. يبقى على هذا الجهاز ولا يُرسل إلى أي جهة.",
+     "您保留的一切集中于此：分文件夹整理的收藏资产、反复运行的搜索、其上的提醒、最近浏览的内容，以及最多四项资产的并排对比。全部存于本设备，不发送至任何地方。")),
+ "b2b": dict(
+   slug="real-estate/office", mount='<div class="xr_cs" data-console="b2b"></div>',
+   js="xaru-console.js", img="18_business_district.jpg",
+   eyebrow=ARCH.T("Partner console", "Consola del socio", "لوحة الشريك", "合作方控制台"),
+   title=ARCH.T("Office operation", "Operación de la oficina",
+                "تشغيل المكتب", "分支机构运营"),
+   lead=ARCH.T(
+     "What an office sees of its own operation: inventory by lifecycle state against the plan quota, the lead pipeline with its response deadlines, credit consumption, and the ten-step listing wizard that validates before anything reaches review.",
+     "Lo que una oficina ve de su propia operación: inventario por estado del ciclo de vida contra la cuota del plan, el pipeline de leads con sus plazos de respuesta, el consumo de créditos y el asistente de alta en diez pasos que valida antes de que nada llegue a revisión.",
+     "ما يراه المكتب من تشغيله: المعروض حسب حالة دورة الحياة في مقابل حصة الخطة، ومسار العملاء المحتملين بمواعيد الاستجابة، واستهلاك الأرصدة، ومعالج الإدراج بعشر خطوات الذي يتحقّق قبل أن يصل أي شيء إلى المراجعة.",
+     "分支机构对自身运营的视图：按生命周期状态统计的资产及套餐配额、附响应时限的线索漏斗、额度消耗，以及在任何内容进入审核前完成校验的十步发布向导。")),
+ "admin": dict(
+   slug="real-estate/administration", mount='<div class="xr_cs" data-console="admin"></div>',
+   js="xaru-console.js", img="21_concrete_lattice.jpg",
+   eyebrow=ARCH.T("Platform control", "Control de plataforma",
+                  "التحكم بالمنصة", "平台管控"),
+   title=ARCH.T("Moderation and lifecycle", "Moderación y ciclo de vida",
+                "المراجعة ودورة الحياة", "审核与生命周期"),
+   lead=ARCH.T(
+     "The moderation queue with the rule each record failed and the deadline it is running against, the distribution of the whole inventory across the seventeen lifecycle states, the transitions as they happen, and the taxonomies underneath. Read-only: deciding requires an authenticated identity and an audit trail.",
+     "La cola de moderación con la regla que cada registro incumple y el plazo contra el que corre, la distribución de todo el inventario entre los diecisiete estados del ciclo de vida, las transiciones según ocurren y las taxonomías que hay debajo. Solo lectura: decidir exige identidad autenticada y traza de auditoría.",
+     "قائمة المراجعة مع القاعدة التي خالفها كل سجل والمهلة التي يجري في مقابلها، وتوزيع المعروض كله على حالات دورة الحياة السبع عشرة، والانتقالات لحظة وقوعها، والتصنيفات في الأسفل. للقراءة فقط: فالقرار يتطلب هوية موثّقة وأثر تدقيق.",
+     "审核队列附每条记录未通过的规则及其所对应的时限、全部资产在十七个生命周期状态间的分布、实时发生的状态迁移，以及底层分类体系。仅供查看：作出决定需经认证的身份与审计轨迹。")),
+}
+
+def build_panel(lang, key):
+    d = PANELS[key]
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    title = "%s — XARU HOME" % _t(d["title"], lang)
+    desc = _t(d["lead"], lang)
+    trail = [(RE, "real-estate"), (d["title"], d["slug"])]
+    hero = _page_header(lang, _t(d["eyebrow"], lang), _t(d["title"], lang),
+                        _crumbs(lang, trail), d["img"])
+    body = hero + '''
+    <section>
+      <div class="cs_height_80 cs_height_lg_50"></div>
+      <div class="container"><div class="row"><div class="col-lg-9">
+        <p class="xr_pillar_intro" data-aos="fade-up">%s</p>
+      </div></div></div>
+      <div class="cs_height_45 cs_height_lg_30"></div>
+      <div class="container">%s</div>
+      <div class="cs_height_130 cs_height_lg_70"></div>
+    </section>''' % (_t(d["lead"], lang), d["mount"])
+    return _write_shell(lang, d["slug"], title, desc, body,
+                        css=("xaru-marketplace.css",), js=(d["js"],))
+
+def build_panels():
+    n = 0
+    for L in ("en", "es", "ar", "zh"):
+        for key in PANELS:
+            build_panel(L, key)
+            n += 1
+    print("paneles ->", n, "paginas")
+
 def build_catalog_page(lang, catalog_key, slug, trail):
     home = HOME[lang]
     meta = F2.CATALOG[catalog_key]
@@ -4321,6 +4388,8 @@ if __name__ == "__main__":
     build_directories()
     # Biblia §5.5: proyectos off-plan con sus planes de pago
     build_projects()
+    # Biblia §5.7-§5.9: paneles de comprador, oficina y administracion
+    build_panels()
     # Phase 2 homepage: 12-block re-order (all four languages)
     for L in ("en", "es", "ar", "zh"):
         inject_home(L)

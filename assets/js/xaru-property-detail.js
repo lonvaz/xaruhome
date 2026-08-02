@@ -398,6 +398,17 @@
     });
   }
 
+  /* Historial de vistos: lo escribe la ficha, lo lee el panel del comprador.
+     Veinte entradas, sin duplicados, la mas reciente primero. */
+  function remember(id) {
+    try {
+      var v = JSON.parse(localStorage.getItem("xaru_viewed") || "[]");
+      v = v.filter(function (e) { return e && e.id !== id; });
+      v.unshift({ id: id, at: new Date().toISOString() });
+      localStorage.setItem("xaru_viewed", JSON.stringify(v.slice(0, 20)));
+    } catch (e) {}
+  }
+
   /* ---------------------------------------------------------------- carga */
   function legacy(id) {
     return Promise.all(PACKS.map(function (f) {
@@ -473,6 +484,7 @@
 
     bind(d.publicId);
     mountMap();
+    remember(d.publicId);
 
     /* Las secciones de la plantilla que no aplican a esta cartera: hipoteca,
        colegios cercanos, plano de planta, agenda de visita. Se retiran en vez
