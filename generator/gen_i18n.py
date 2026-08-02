@@ -2555,10 +2555,40 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
         c.hidden=!ok;
         c.style.display=ok?"":"none";if(ok)n++;});
         if(now)now.textContent=n;
+        /* "Mostrando 0 de 0" no informa de nada y deja un hueco delante del
+           aviso. Cuando no hay nada que contar, la linea se retira y habla el
+           aviso, que si dice algo. */
+        var cl=root.querySelector(".xr_catalog_count");if(cl)cl.style.display=n?"":"none";
         var e=root.querySelector(".xr_no_results");if(e)e.style.display=n?"none":"block";}
-      sels.forEach(function(s){s.addEventListener("change",apply);});
+      /* ESTADO EN LA URL — misma convencion que el marketplace.
+         Antes este filtro solo existia en memoria: no se podia enlazar a una
+         vista filtrada, asi que los enlaces del menu que prometian un corte
+         concreto ("Reposicionamiento") no tenian forma de pedirlo y acababan
+         recargando la misma pagina sin filtrar. Con el estado en la URL, el
+         menu enlaza, el enlace se puede compartir y volver atras funciona. */
+      function readURL(){var p=new URLSearchParams(location.search);var hit=false;
+        sels.forEach(function(s){var v=p.get(s.getAttribute("data-f"));
+          if(v===null)return;
+          /* Solo se acepta un valor que exista en el desplegable: una URL
+             manipulada no debe dejar la pagina en un estado imposible. */
+          var ok=[].slice.call(s.options).some(function(o){return o.value===v;});
+          if(ok){s.value=v;hit=true;}});
+        return hit;}
+      function writeURL(){var p=new URLSearchParams(location.search);
+        sels.forEach(function(s){var k=s.getAttribute("data-f");
+          if(s.value)p.set(k,s.value);else p.delete(k);});
+        var q=p.toString();
+        history.replaceState(null,"",location.pathname+(q?"?"+q:"")+location.hash);}
+      sels.forEach(function(s){s.addEventListener("change",function(){writeURL();apply();});});
       var r=root.querySelector(".xr_filter_reset");
-      if(r)r.addEventListener("click",function(){sels.forEach(function(s){s.value="";});apply();});
+      if(r)r.addEventListener("click",function(){sels.forEach(function(s){s.value="";});writeURL();apply();});
+      /* Si la URL trae filtro, se aplica al cargar y se lleva la vista al
+         catalogo: quien llega desde el menu debe ver el resultado, no la
+         cabecera de la pagina. */
+      if(readURL()){apply();
+        requestAnimationFrame(function(){
+          var y=root.getBoundingClientRect().top+window.pageYOffset-90;
+          window.scrollTo(window.__xaruLenis?{top:y,behavior:"auto"}:{top:y});});}
     })();
     </script>'''
     return '''    <div class="container xr_catalog" id="%s">
@@ -2567,14 +2597,17 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
         %s
         <button type="button" class="xr_filter_reset">%s</button>
       </div>
-      <p class="xr_catalog_count">%s</p>
+      <p class="xr_catalog_count"%s>%s</p>
       <div class="cs_height_40 cs_height_lg_30"></div>
       <div class="row cs_gap_y_30">
         %s
       </div>
       <p class="xr_no_results"%s>%s</p>
     </div>%s''' % (bid, _t(F2.UI["filters"], lang), "\n        ".join(selects),
-                   _t(F2.UI["reset"], lang), countline, cards,
+                   _t(F2.UI["reset"], lang),
+                   # Sin inventario activo no se escribe "0 de 0": no dice nada
+                   # y separa el aviso del filtro con un hueco vacio.
+                   '' if items else ' style="display:none"', countline, cards,
                    '' if not items else ' style="display:none"',
                    # Si no queda inventario activo el vacio es real, no un filtro
                    # mal puesto: se explica y se ofrece la salida (Biblia §36).
@@ -3020,6 +3053,82 @@ def build_panels():
             n += 1
     print("paneles ->", n, "paginas")
 
+# Inventario vivo de cada pilar: que tipologias le corresponden y a que ruta de
+# resultados lleva el "ver todos". Es la misma aplicacion del marketplace en
+# modo escaparate, no un segundo buscador: comparte consulta, orden y ficha.
+LIVE_BAND = {
+    "private-properties": {
+        "types": "villa,mansion,castle,hacienda,estate,private-island,"
+                 "branded-residence,waterfront-home,equestrian,chalet,bungalow",
+        "offering": "sale", "category": "residential", "route": "real-estate/buy/",
+        "title": ARCH.T("Available now", "Disponible ahora",
+                        "متاح الآن", "当前在售"),
+        "lead": ARCH.T("Live inventory in this category, from the same search "
+                       "that powers the whole portal.",
+                       "Inventario activo de esta categoría, desde el mismo "
+                       "buscador que mueve todo el portal.",
+                       "المعروض النشط في هذه الفئة، من المحرك نفسه الذي يشغّل "
+                       "المنصة بأكملها.",
+                       "本类别的在售资产，来自驱动整个平台的同一检索引擎。")},
+    "commercial-hospitality": {
+        "types": "hotel,resort,serviced-residence,entertainment,marina,halted-project",
+        "offering": "sale", "category": "commercial",
+        "route": "real-estate/commercial/buy/",
+        "title": ARCH.T("Available now", "Disponible ahora",
+                        "متاح الآن", "当前在售"),
+        "lead": ARCH.T("Live inventory in this category, from the same search "
+                       "that powers the whole portal.",
+                       "Inventario activo de esta categoría, desde el mismo "
+                       "buscador que mueve todo el portal.",
+                       "المعروض النشط في هذه الفئة، من المحرك نفسه الذي يشغّل "
+                       "المنصة بأكملها.",
+                       "本类别的在售资产，来自驱动整个平台的同一检索引擎。")},
+}
+
+
+MANDATES_TITLE = ARCH.T("Under XARU mandate", "Bajo mandato de XARU",
+                        "بتفويض من XARU", "XARU 受托资产")
+MANDATES_LEAD = ARCH.T(
+    "Assets XARU holds directly. Closed operations stay on the record and come "
+    "back with the status filter.",
+    "Activos que XARU lleva directamente. Las operaciones cerradas siguen en el "
+    "expediente y vuelven con el filtro de estado.",
+    "أصول تديرها XARU مباشرة. تبقى الصفقات المُنجزة في السجل وتظهر عبر مرشّح الحالة.",
+    "由 XARU 直接持有的资产。已成交的操作保留在记录中，可通过状态筛选调出。")
+
+
+def live_band(lang, catalog_key, home):
+    """Escaparate de inventario real sobre la pagina del pilar.
+
+    Sin esto, la portada de Propiedades Privadas abria con "0 de 0" y ni una
+    ficha: su catalogo curado son seis operaciones ya cerradas y el vendido no
+    es resultado por defecto. Mientras tanto el inventario tenia treinta villas,
+    veintidos mansiones, once castillos y diecisiete islas. La pagina no estaba
+    vacia: estaba desconectada.
+
+    Los mandatos curados no se tocan —siguen abajo, con su filtro de estado para
+    recuperarlos—. Lo que se añade es lo que faltaba: la obra que hay hoy.
+    """
+    b = LIVE_BAND.get(catalog_key)
+    if not b:
+        return ""
+    href = "%s%s?type=%s" % (home, b["route"], b["types"])
+    return '''    <div class="container">
+        <div class="row"><div class="col-lg-9">
+          <h2 class="cs_section_title cs_fs_38" data-aos="fade-up">%s</h2>
+          <p class="xr_pillar_lead">%s</p>
+        </div></div>
+      </div>
+      <div class="cs_height_30"></div>
+      <div class="container">
+        <div data-marketplace data-preview="6" data-type="%s"
+             data-offering="%s" data-category="%s" data-href="%s"></div>
+      </div>
+      <div class="cs_height_70 cs_height_lg_40"></div>''' % (
+        _t(b["title"], lang), _t(b["lead"], lang),
+        b["types"], b["offering"], b["category"], href)
+
+
 def build_catalog_page(lang, catalog_key, slug, trail):
     home = HOME[lang]
     meta = F2.CATALOG[catalog_key]
@@ -3040,8 +3149,27 @@ def build_catalog_page(lang, catalog_key, slug, trail):
                 '\n      <div class="container"><a href="%sreal-estate/sold/" class="xr_link">%s'
                 '<i class="fa-solid fa-angle-right"></i></a></div>'
                 % (home, _t(F2.SOLD["link_from_catalog"], lang)))
-    body = hero + "\n" + intro + "\n" + block + tail + '\n      <div class="cs_height_150 cs_height_lg_80"></div>\n    </section>'
-    return _write_shell(lang, slug, title, desc, body)
+    # Encabezado del bloque curado. Sin el, tras el escaparate de inventario
+    # vivo aparecia una barra de filtros con "0 de 0" y un aviso de que no hay
+    # mandatos activos, sin decir de que hablaba: parecia que el buscador de
+    # arriba se hubiera roto. Son dos cosas distintas y ahora se nombran.
+    curated = ""
+    if catalog_key in LIVE_BAND:
+        curated = ('    <div class="container">\n'
+                   '        <div class="row"><div class="col-lg-9">\n'
+                   '          <h2 class="cs_section_title cs_fs_38" data-aos="fade-up">%s</h2>\n'
+                   '          <p class="xr_pillar_lead">%s</p>\n'
+                   '        </div></div>\n'
+                   '      </div>\n'
+                   '      <div class="cs_height_30"></div>\n'
+                   % (_t(MANDATES_TITLE, lang), _t(MANDATES_LEAD, lang)))
+    body = (hero + "\n" + intro + "\n" + live_band(lang, catalog_key, home) + "\n"
+            + curated + block + tail
+            + '\n      <div class="cs_height_150 cs_height_lg_80"></div>\n    </section>')
+    live = catalog_key in LIVE_BAND
+    return _write_shell(lang, slug, title, desc, body,
+                        css=("xaru-marketplace.css",) if live else (),
+                        js=("xaru-marketplace.js",) if live else ())
 
 # ---------------------------------------------------------------- ficha (detail) pages
 def _fact(label_t, value, lang):
@@ -3343,13 +3471,21 @@ def build_pillar(lang, slug, embed_catalog=None):
       <h2 class="cs_section_title cs_fs_38 mb-0" data-aos="fade-up">%s</h2></div>
       <div class="cs_height_40 cs_height_lg_30"></div>
 %s
+%s
       <div class="cs_height_120 cs_height_lg_75"></div>
     </section>''' % (_t(F2.CATALOG[embed_catalog]["eyebrow"], lang),
                      _t(F2.UI["explore_assets"], lang),
+                     live_band(lang, embed_catalog, home),
                      catalog_block(lang, embed_catalog, home, block_id="pcat_" + _slug2(embed_catalog)))
-    css = ("xaru-marketplace.css",) if slug == "real-estate" else ()
-    js = ("xaru-mp-home.js",) if slug == "real-estate" else ()
-    return _write_shell(lang, slug, title, desc, body, css=css, js=js)
+    # El escaparate de inventario vivo es el propio marketplace en modo
+    # preview, asi que la pagina que lo lleva necesita su hoja y su script.
+    css = ("xaru-marketplace.css",) if (slug == "real-estate" or embed_catalog in LIVE_BAND) else ()
+    js = []
+    if slug == "real-estate":
+        js.append("xaru-mp-home.js")
+    if embed_catalog in LIVE_BAND:
+        js.append("xaru-marketplace.js")
+    return _write_shell(lang, slug, title, desc, body, css=css, js=tuple(js))
 
 def _pillar_cta(lang, heading):
     home = HOME[lang]

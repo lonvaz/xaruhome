@@ -23,7 +23,7 @@ Salidas:
 Y, por compatibilidad con las páginas que ya existen:
     data/properties/{categoria}.json   forma heredada del catálogo
 """
-import json, os, sqlite3, sys
+import json, os, re, sqlite3, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -41,6 +41,30 @@ def w(path, obj):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
     return os.path.getsize(path)
+
+
+def image_widths():
+    """Anchos que EXISTEN de verdad para cada imagen, leidos del disco.
+
+    El navegador construia el srcset con una tabla fija por directorio
+    —480/768/1280/1920/2560 para todo el catalogo— pero 144 de los 156 masters
+    miden 1600 px de ancho y el generador de derivadas, con buen criterio, nunca
+    inventa resolucion por encima del original. Resultado: en una pantalla
+    grande o retina el navegador elegia el candidato de 1920 o 2560, pedia un
+    fichero que no existia y la foto quedaba rota. En un portatil a 1440 px no
+    se reproduce nunca, que es por lo que habia pasado desapercibido.
+
+    Publicando aqui la lista real, el srcset deja de prometer lo que no hay."""
+    out = {}
+    for d in ("assets/img/xaru/catalog/r", "assets/img/xaru/gen2/r"):
+        full = os.path.join(ROOT, d)
+        if not os.path.isdir(full):
+            continue
+        for fn in os.listdir(full):
+            m = re.match(r"^(.+)-(\d+)\.jpg$", fn)
+            if m:
+                out.setdefault(m.group(1), set()).add(int(m.group(2)))
+    return {k: sorted(v) for k, v in sorted(out.items())}
 
 
 def main():
@@ -68,6 +92,7 @@ def main():
         "offeringTypes": ["sale", "rent"],
         "businessCategories": ["residential", "commercial", "land"],
         "currencies": ["USD", "EUR", "AED", "GBP"],
+        "imageWidths": image_widths(),
     })
 
     # ---------------------------------------------------------- geografía

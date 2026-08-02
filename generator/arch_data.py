@@ -33,6 +33,7 @@ NAV = [
   "cols": [
    {"slug": "real-estate/private-properties",
     "title": T("Private Properties", "Propiedades Privadas", "العقارات الخاصة", "私人房产"),
+    "hrefs": ["real-estate/buy/?type=villa,mansion", "real-estate/search/?type=castle,hacienda,estate", "real-estate/search/?type=private-island,island-territory", "real-estate/buy/?type=branded-residence", "real-estate/new-projects/", "private-enquiry/", "opportunities/submit/"],
     "items": [
      T("Villas & mansions", "Villas y mansiones", "الفيلات والقصور", "别墅与豪宅"),
      T("Castles, haciendas & estates", "Castillos, haciendas y fincas", "القلاع والضياع والحوزات", "城堡、庄园与地产"),
@@ -43,6 +44,7 @@ NAV = [
      T("Sell your property", "Venda su propiedad", "بيع عقارك", "出售您的房产")]},
    {"slug": "real-estate/commercial-hospitality", "wide": True,
     "title": T("Commercial & Hospitality", "Comercial y Hostelería", "التجاري والضيافة", "商业与酒店"),
+    "hrefs": ["real-estate/search/?type=hotel", "real-estate/commercial-hospitality/?operating=halted", "real-estate/commercial/buy/?type=resort", "real-estate/search/?type=serviced-residence", "real-estate/commercial/buy/?type=entertainment", "real-estate/search/?type=marina", "real-estate/commercial/buy/?type=retail,office,showroom,business-centre,warehouse", "real-estate/commercial/buy/?type=halted-project", "opportunities/cf-confidential-portfolio/"],
     "items": [
      T("Operational hotels", "Hoteles en operación", "فنادق تشغيلية", "运营中酒店"),
      T("Repositioning", "Reposicionamiento", "إعادة التموضع", "重新定位"),
@@ -82,6 +84,7 @@ NAV = [
   "cols": [
    {"slug": "developments/land-master-developments", "wide": True,
     "title": T("Land & Master Developments", "Suelo y Desarrollos Maestros", "الأراضي والتطويرات الكبرى", "土地与总体开发"),
+    "hrefs": ["real-estate/land/?type=city-scale-land,masterplan-land", "real-estate/land/?type=coastal-land", "real-estate/land/?type=hotel-resort-land", "real-estate/land/?type=urban-mixed-land", "real-estate/land/?type=residential-plot", "real-estate/commercial/buy/?type=entertainment", "developments/land-master-developments/#s03", "developments/land-master-developments/#s03", "opportunities/lp-ashima-masterplan/"],
     "items": [
      T("Large land", "Grandes extensiones", "أراضٍ واسعة", "大宗土地"),
      T("Coastal land", "Suelo costero", "أراضٍ ساحلية", "滨海土地"),
@@ -94,6 +97,7 @@ NAV = [
      T("Signature projects / ASHIMA", "Proyectos emblemáticos / ASHIMA", "مشاريع مميّزة / ASHIMA", "标志性项目 / ASHIMA")]},
    {"slug": "developments/project-structuring", "wide": True,
     "title": T("Project Structuring & Development", "Estructuración y Desarrollo de Proyectos", "هيكلة وتطوير المشاريع", "项目架构与开发"),
+    "hrefs": ["developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s04", "developments/project-structuring/#s01"],
     "items": [
      T("Feasibility", "Viabilidad", "الجدوى", "可行性"),
      T("Legal & fiduciary structuring", "Estructuración jurídica y fiduciaria", "الهيكلة القانونية والائتمانية", "法律与信托架构"),
@@ -117,6 +121,7 @@ NAV = [
   "cols": [
    {"slug": "capital/strategic-partnerships", "wide": True,
     "title": T("Capital & Strategic Partnerships", "Capital y Alianzas Estratégicas", "رأس المال والشراكات الاستراتيجية", "资本与战略合作"),
+    "hrefs": ["capital/strategic-partnerships/#s03", "capital/strategic-partnerships/#s03", "capital/strategic-partnerships/#s03", "capital/strategic-partnerships/#s03", "capital/strategic-partnerships/#s03", "capital/strategic-partnerships/#s04", "capital/strategic-partnerships/#s02", "capital/strategic-partnerships/#s04", "capital/strategic-partnerships/#s04", "capital/strategic-partnerships/#s04"],
     "items": [
      T("Projects seeking capital", "Proyectos que buscan capital", "مشاريع تبحث عن رأس مال", "寻求资本的项目"),
      T("Capital seeking projects", "Capital que busca proyectos", "رأس مال يبحث عن مشاريع", "寻求项目的资本"),
@@ -130,6 +135,7 @@ NAV = [
      T("Transaction management", "Gestión de transacciones", "إدارة الصفقات", "交易管理")]},
    {"slug": "capital/deal-room",
     "title": T("Private Deal Room", "Sala de Operaciones Privada", "غرفة الصفقات الخاصة", "私人交易室"),
+    "hrefs": ["private-enquiry/"],
     "items": [
      T("Request private access", "Solicitar acceso privado", "طلب وصول خاص", "申请私人访问")]},
   ]},
@@ -145,6 +151,7 @@ NAV = [
   "cols": [
    {"slug": "business-infrastructure/trade-financial", "wide": True,
     "title": T("Trade & Financial Infrastructure", "Comercio e Infraestructura Financiera", "التجارة والبنية المالية", "贸易与金融基础设施"),
+    "hrefs": ["real-estate/land/?type=mining-concession,quarry", "real-estate/land/?type=agricultural-land", "real-estate/search/?category=commercial", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04", "business-infrastructure/trade-financial/#s04"],
     "items": [
      T("Commodities, mining & quarry licenses", "Commodities, minería y canteras", "السلع والتعدين ورخص المحاجر", "大宗商品、矿业与采石许可"),
      T("Agricultural & productive", "Agrícolas y productivos", "الزراعية والإنتاجية", "农业与生产性资产"),
@@ -158,6 +165,7 @@ NAV = [
      T("Integrations & APIs", "Integraciones y APIs", "التكاملات وواجهات API", "集成与 API")]},
    {"slug": "business-infrastructure/corporate-services", "wide": True,
     "title": T("Corporate Services & Relocation", "Servicios Corporativos y Relocalización", "الخدمات المؤسسية والانتقال", "企业服务与迁居"),
+    "hrefs": ["business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s04", "business-infrastructure/corporate-services/#s03", "business-infrastructure/corporate-services/#s03", "business-infrastructure/corporate-services/#s03", "business-infrastructure/corporate-services/#s04"],
     "items": [
      T("Company formation", "Constitución de empresas", "تأسيس الشركات", "公司设立"),
      T("Corporate governance", "Gobierno corporativo", "الحوكمة المؤسسية", "公司治理"),

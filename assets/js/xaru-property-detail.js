@@ -221,24 +221,39 @@
   function U(k) { return (T[k] && (T[k][L] || T[k].en)) || k; }
 
   /* ---------------------------------------------------------------- imagen */
+  /* Escalera de reserva: solo los anchos que existen para todo el directorio.
+     La lista real por imagen llega en meta.json (imageWidths) y la rellena
+     export_api.py leyendo el disco. Se anunciaban 1920 y 2560 para el catalogo
+     entero cuando 144 de los 156 masters miden 1600 px y esas derivadas no
+     existen —el generador no inventa resolucion—; en pantalla grande o retina
+     el navegador pedia el candidato grande y la foto salia rota. */
   var WIDTHS_BY_DIR = {
-    "assets/img/xaru/catalog/": [480, 768, 1280, 1920, 2560],
+    "assets/img/xaru/catalog/": [480, 768, 1280],
     "assets/img/xaru/gen2/":    [768, 1280, 1920]
   };
+  var IMGW = null;   /* meta.imageWidths, en cuanto llega */
+  function widthsFor(dir, base) {
+    var t = IMGW && IMGW[base];
+    return (t && t.length) ? t : WIDTHS_BY_DIR[dir];
+  }
+  function fallbackW(w) {
+    for (var i = 0; i < w.length; i++) { if (w[i] >= 1280) return w[i]; }
+    return w[w.length - 1];
+  }
   function picture(rel, alt, sizes, eager) {
     rel = String(rel || "").replace(/^\//, "");
     var m = /^(.*\/)([^\/]+)\.jpg$/.exec(rel);
     var attrs = ' alt="' + esc(alt) + '" class="w-100"' +
       (eager ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"';
     if (!m || !WIDTHS_BY_DIR[m[1]]) return '<img src="' + esc(R + rel) + '"' + attrs + ">";
-    var dir = m[1] + "r/", base = m[2], w = WIDTHS_BY_DIR[m[1]];
+    var dir = m[1] + "r/", base = m[2], w = widthsFor(m[1], base);
     function set(ext) {
       return w.map(function (x) { return R + dir + base + "-" + x + "." + ext + " " + x + "w"; }).join(", ");
     }
     return "<picture>" +
       '<source type="image/avif" srcset="' + esc(set("avif")) + '" sizes="' + sizes + '">' +
       '<source type="image/webp" srcset="' + esc(set("webp")) + '" sizes="' + sizes + '">' +
-      '<img src="' + esc(R + dir + base + "-1280.jpg") + '"' + attrs + "></picture>";
+      '<img src="' + esc(R + dir + base + "-" + fallbackW(w) + ".jpg") + '"' + attrs + "></picture>";
   }
 
   /* --------------------------------------------------- persistencia (favoritos)
@@ -867,6 +882,8 @@
       .catch(function () { return null; })
   ]).then(function (out) {
     var d = out[0], meta = out[1], idx = out[2], market = out[3], locs = out[4];
+    /* Antes de pintar nada: los anchos reales de cada foto. */
+    if (meta && meta.imageWidths) IMGW = meta.imageWidths;
     ((locs && locs.countries) || []).forEach(function (c) {
       CCN[c.code] = c.name[L] || c.name.en;
     });

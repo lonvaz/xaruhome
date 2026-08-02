@@ -1553,3 +1553,15 @@ body.xr_drawer_open { overflow: hidden !important; }
 .xr_mp_exgroup a span {
   font-size: 12px; color: var(--accent3-color); font-variant-numeric: tabular-nums;
 }
+
+/* -------------------------------------------- escaparate en página de pilar
+   El marketplace montado con data-preview: seis fichas y un enlace al buscador
+   completo. Hereda la retícula de .xr_mp_list; solo cambia el remate. */
+.xr_mp_preview_more {
+  margin: 28px 0 0; text-align: center;
+}
+.xr_mp_preview_more .xr_link { font-size: 15px; }
+.xr_mp_preview_more .xr_link i { margin-inline-start: 8px; }
+@media (min-width: 992px) {
+  .xr_mp_preview { grid-template-columns: repeat(3, 1fr); }
+}

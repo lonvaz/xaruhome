@@ -24,6 +24,9 @@
   "use strict";
 
   var HOST = document.querySelector("[data-marketplace]");
+  /* data-preview="6" convierte el montaje en escaparate: seis fichas y un
+     enlace a la busqueda completa, sin barra ni paginacion. */
+  var PREVIEW = HOST ? (parseInt(HOST.getAttribute("data-preview") || "0", 10) || 0) : 0;
   if (!HOST) return;
 
   var API = "data/api/v1/";
@@ -44,6 +47,12 @@
 
   var T = {
     results:   {en:"assets",es:"activos",ar:"أصل",zh:"项资产"},
+    seeAll:    {en:"See all {n} assets",es:"Ver los {n} activos",
+                ar:"عرض كل الأصول ({n})",zh:"查看全部 {n} 项资产"},
+    prevEmpty: {en:"No live inventory in this category right now.",
+                es:"Ahora mismo no hay inventario activo en esta categoría.",
+                ar:"لا يوجد معروض نشط في هذه الفئة حالياً.",
+                zh:"该类别目前没有在售资产。"},
     of:        {en:"of",es:"de",ar:"من",zh:"共"},
     showing:   {en:"Showing",es:"Mostrando",ar:"عرض",zh:"显示"},
     sort:      {en:"Sort",es:"Ordenar",ar:"ترتيب",zh:"排序"},
@@ -233,8 +242,11 @@
       tour: p.get("tour") === "1",
       drop: p.get("drop") === "1"
     };
+    /* Los filtros de lista pueden venir fijados por el propio montaje, igual
+       que offering y category: asi una pagina de pilar declara su tipologia en
+       el HTML y no hace falta una segunda logica de consulta para ella. */
     LIST_KEYS.forEach(function (k) {
-      s[k] = (p.get(k) || "").split(",").filter(Boolean);
+      s[k] = (p.get(k) || HOST.getAttribute("data-" + k) || "").split(",").filter(Boolean);
     });
     NUM_KEYS.forEach(function (k) {
       var v = parseFloat(p.get(k));
@@ -333,15 +345,34 @@
   }
 
   /* ---------------------------------------------------------------- imagen */
+  /* Escalera de reserva. Son los anchos que existen para TODA imagen del
+     directorio; se usa solo si meta.json no trajera la lista real. Nunca debe
+     prometer mas de lo seguro: un candidato de srcset que no existe se ve como
+     una foto rota, no como una foto peor. */
   var WIDTHS_BY_DIR = {
-    "assets/img/xaru/catalog/": [480, 768, 1280, 1920, 2560],
+    "assets/img/xaru/catalog/": [480, 768, 1280],
     "assets/img/xaru/gen2/":    [768, 1280, 1920]
   };
+  /* Anchos reales por imagen, publicados por la API tras leer el disco. Antes
+     se anunciaban 1920 y 2560 para todo el catalogo, pero 144 de los 156
+     masters miden 1600 y esas derivadas nunca se generaron —con razon: no se
+     inventa resolucion—. En pantalla grande o retina el navegador pedia el
+     candidato grande, recibia un 404 y la propiedad aparecia sin foto. */
+  function widthsFor(dir, base) {
+    var t = META && META.imageWidths && META.imageWidths[base];
+    return (t && t.length) ? t : WIDTHS_BY_DIR[dir];
+  }
+  /* Ancho de reserva: el primero que llegue a 768, y si ninguno llega, el mayor
+     que haya. Siempre un fichero que existe. */
+  function fallbackW(w) {
+    for (var i = 0; i < w.length; i++) { if (w[i] >= 768) return w[i]; }
+    return w[w.length - 1];
+  }
   var SIZES = "(max-width:575px) 92vw, (max-width:991px) 46vw, (max-width:1399px) 31vw, 380px";
   function picture(rel, alt) {
     var m = /^(.*\/)([^\/]+)\.jpg$/.exec(rel || "");
     if (!m) return '<img src="' + esc(R + (rel || "")) + '" alt="' + esc(alt) + '" loading="lazy">';
-    var dir = m[1], w = WIDTHS_BY_DIR[dir];
+    var dir = m[1], w = widthsFor(dir, m[2]);
     if (!w) return '<img src="' + esc(R + rel) + '" alt="' + esc(alt) + '" loading="lazy">';
     function set(ext) {
       return w.map(function (x) { return R + dir + "r/" + m[2] + "-" + x + "." + ext + " " + x + "w"; }).join(", ");
@@ -349,7 +380,9 @@
     return "<picture>" +
       '<source type="image/avif" srcset="' + esc(set("avif")) + '" sizes="' + SIZES + '">' +
       '<source type="image/webp" srcset="' + esc(set("webp")) + '" sizes="' + SIZES + '">' +
-      '<img src="' + esc(R + dir + "r/" + m[2] + "-768.jpg") + '" alt="' + esc(alt) +
+      /* El <img> de reserva se toma de la propia escalera, no de un 768 fijo:
+         si algun master no llegara a ese ancho, el fijo seria otro 404. */
+      '<img src="' + esc(R + dir + "r/" + m[2] + "-" + fallbackW(w) + ".jpg") + '" alt="' + esc(alt) +
       '" loading="lazy" decoding="async"></picture>';
   }
 
@@ -746,6 +779,33 @@
   }
   var CHIPS = {};
 
+  /* MODO ESCAPARATE
+     -----------------------------------------------------------------
+     Una pagina de pilar no necesita la aplicacion entera: necesita enseñar que
+     hay obra y llevar al buscador. Antes no enseñaba nada —la portada de
+     Propiedades Privadas decia "0 de 0" y no pintaba una sola ficha mientras el
+     inventario tenia treinta villas, veintidos mansiones y once castillos— y
+     los enlaces del menu recargaban esa misma pagina vacia.
+
+     Esto no es un segundo buscador: usa el mismo query(), el mismo orden y la
+     misma ficha que el marketplace. Solo cambia cuanto enseña y que en vez de
+     paginar, remata con un enlace a la busqueda completa. Una sola logica. */
+  function paintPreview() {
+    var res = sortItems(query(STATE, DATA.items), STATE.sort);
+    var href = HOST.getAttribute("data-href") || "";
+    if (!res.length) {
+      HOST.innerHTML = '<div class="xr_mp_empty"><p>' + esc(t("prevEmpty")) + "</p></div>";
+      return;
+    }
+    HOST.innerHTML =
+      '<div class="xr_mp_list xr_mp_preview">' +
+        res.slice(0, PREVIEW).map(card).join("") +
+      "</div>" +
+      (href ? '<p class="xr_mp_preview_more"><a class="xr_link" href="' + esc(href) + '">' +
+                esc(t("seeAll").replace("{n}", nf(res.length))) +
+                '<i class="fa-solid fa-angle-right"></i></a></p>' : "");
+  }
+
   function paint() {
     var all = DATA.items;
     var res = sortItems(query(STATE, all), STATE.sort);
@@ -1108,6 +1168,7 @@
     fetch(R + API + "locations.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
   ]).then(function (out) {
     DATA = out[0]; META = out[1]; LOCS = out[2];
+    if (PREVIEW) { STATE = readURL(); paintPreview(); return; }
     HOST.innerHTML = shell();
     STATE = readURL();
     fillSelects(DATA.items);
