@@ -27,6 +27,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from geo_world import WORLD  # noqa: E402
+from geo_terrain import allowed as terrain_allows  # noqa: E402
 
 DB = os.path.join(HERE, "xaru.db")
 SCHEMA = os.path.join(HERE, "schema.sql")
@@ -35,6 +36,31 @@ RNG = random.Random(20260802)          # determinista: dos siembras iguales
 
 DEMO_LABEL = "PLATFORM DEMO"
 
+
+
+# Bandas coherentes por tipologia residencial: (dorm_min, dorm_max, m2_min, m2_max).
+# Sin esto el sembrador producia aticos de un dormitorio a treinta millones y
+# compounds de dos, que es exactamente lo que descalifica a un portal.
+BEDROOM_BAND = {
+    "apartment":         (1, 4, 65, 320),
+    "duplex":            (2, 5, 130, 480),
+    "penthouse":         (3, 6, 220, 900),
+    "townhouse":         (3, 5, 150, 420),
+    "bungalow":          (2, 4, 110, 300),
+    "villa":             (4, 8, 320, 1600),
+    "mansion":           (6, 12, 800, 3600),
+    "compound":          (8, 20, 1200, 6000),
+    "castle":            (10, 30, 1500, 8000),
+    "estate":            (6, 14, 700, 4200),
+    "hacienda":          (5, 12, 600, 3200),
+    "equestrian":        (5, 10, 500, 2400),
+    "branded-residence": (2, 5, 140, 620),
+    "chalet":            (3, 7, 200, 900),
+    "waterfront-home":   (3, 7, 250, 1100),
+    "whole-floor":       (3, 8, 300, 1400),
+    "half-floor":        (2, 5, 180, 700),
+    "whole-building":    (10, 40, 1200, 9000),
+}
 
 # ---------------------------------------------------------------- utilidades
 def uid(prefix, n):
@@ -615,7 +641,16 @@ def main():
             lid_city, clat, clon, creg = loc_of_city[(cc, city)]
             for k in range(per_city):
                 counter += 1
-                group, (tslug, ten, tes, tar, tzh) = all_types[(counter * 7) % len(all_types)]
+                # La tipologia tiene que ser posible en esta plaza. Se avanza
+                # por la lista hasta dar con una que el territorio admita: una
+                # isla privada solo cae en costa, un chalet solo en montaña, y
+                # una planta entera de oficinas solo en una plaza con peso.
+                idx = (counter * 7) % len(all_types)
+                for _step in range(len(all_types)):
+                    group, ty = all_types[(idx + _step) % len(all_types)]
+                    if terrain_allows(cc, city, ty[0], tier, region):
+                        break
+                (tslug, ten, tes, tar, tzh) = ty
                 offering = "rent" if (counter % 9 == 0) else "sale"
                 if group == "land":
                     offering = "sale"
@@ -628,11 +663,24 @@ def main():
                 beds = baths = None
                 built = plot = hect = keys = berths = None
                 if group == "residential":
-                    beds = [1, 2, 3, 4, 5, 6, 7, 8][(counter * 3) % 8]
-                    baths = max(1, beds - (counter % 2))
-                    built = 90 + (counter * 37) % 1400
-                    if tslug in ("villa", "mansion", "estate", "castle", "hacienda", "equestrian"):
-                        plot = built * (4 + counter % 12)
+                    # Dormitorios, banos y superficie coherentes con la
+                    # tipologia. Una isla privada no se describe por
+                    # dormitorios, y una mansion de 27 millones no tiene dos.
+                    if tslug == "private-island":
+                        built = None
+                        hect = round(4 + (counter * 11) % 900, 1)
+                    else:
+                        lo, hi, amin, amax = BEDROOM_BAND.get(tslug, (2, 5, 110, 480))
+                        # El contador avanza con paso fijo por tipologia, asi
+                        # que un modulo directo daba el mismo valor a todos los
+                        # activos del mismo tipo. Se mezcla antes de repartir.
+                        h = (counter * 2654435761) % (1 << 32)
+                        beds = lo + (h >> 7) % max(1, hi - lo + 1)
+                        baths = max(1, min(beds, (beds + 1) - ((h >> 3) % 2)))
+                        built = amin + (h >> 11) % max(1, amax - amin)
+                        if tslug in ("villa", "mansion", "estate", "castle",
+                                     "hacienda", "equestrian", "compound"):
+                            plot = built * (4 + counter % 12)
                 elif group == "commercial":
                     built = 400 + (counter * 91) % 24000
                     if tslug in ("hotel", "resort", "serviced-residence"):

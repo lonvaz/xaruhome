@@ -1536,7 +1536,7 @@ def build_en(name):
 SHELL_DIR = {"en": "", "es": "es/", "ar": "ar/", "zh": "zh/"}
 HTMLLANG  = {"en": "en", "es": "es", "ar": "ar", "zh": "zh-CN"}
 
-def _shell_head(lang, slug, title, desc):
+def _shell_head(lang, slug, title, desc, css=()):
     # Phase 6: title/description come from the SEO source of truth when the slug
     # has a curated entry; the generator-supplied strings are the fallback.
     title, desc = seo_meta.shell_meta(lang, slug, title, desc)
@@ -1553,7 +1553,9 @@ def _shell_head(lang, slug, title, desc):
         '<link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/%s/" />' % slug,
         '<link rel="alternate" hreflang="x-default" href="https://xaruhome.com/%s/" />' % slug,
     ])
-    rtl = '\n    <link rel="stylesheet" href="/assets/css/xaru-rtl.css" />' if lang == "ar" else ""
+    rtl = "".join('\n    <link rel="stylesheet" href="/assets/css/%s" />' % c for c in css)
+    if lang == "ar":
+        rtl += '\n    <link rel="stylesheet" href="/assets/css/xaru-rtl.css" />'
     return '''<!DOCTYPE html>
 <html lang="%s"%s>
   <head>
@@ -1822,7 +1824,7 @@ def video_band(vid, caption=""):
            '    </section>')
     return tpl % (vid, vid, vid, cap)
 
-def _write_shell(lang, slug, title, desc, body):
+def _write_shell(lang, slug, title, desc, body, css=(), js=()):
     # §5: banda de video propia de cada pagina pilar de primer nivel.
     # Se inyecta aqui porque las puertas (developments, capital,
     # business-infrastructure, company) tienen constructores propios y no
@@ -1838,9 +1840,13 @@ def _write_shell(lang, slug, title, desc, body):
             body = body[:_j] + "\n" + video_band(_v) + body[_j:]
         else:
             body = body + "\n" + video_band(_v)
-    head = _shell_head(lang, slug, title, desc)
+    head = _shell_head(lang, slug, title, desc, css=css)
+    foot = _shell_footer(lang)
+    if js:
+        foot = foot.replace("  </body>", "".join(
+            '    <script src="/assets/js/%s"></script>\n' % f for f in js) + "  </body>", 1)
     html = head + "\n  <body>\n" + _preloader() + "\n" + _shell_header(lang) + "\n" + \
-           body + "\n" + _shell_footer(lang)
+           body + "\n" + foot
     out = "/home/claude/work/site/xaru/%s%s/index.html" % (SHELL_DIR[lang], slug)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
@@ -2602,6 +2608,130 @@ def build_sold_page(lang):
     </section>''' % (_t(F2.SOLD["page_lead"], lang), cards)
     return _write_shell(lang, slug, title, desc, body)
 
+# ================================================================ Marketplace (Biblia §5.1)
+# Rutas de resultados con paridad de portal: comprar, alquilar, comercial,
+# suelo, mapa y busqueda libre. Cada ruta es la misma aplicacion
+# (assets/js/xaru-marketplace.js) con el filtro base fijado en el montaje, de
+# modo que la URL es canonica y compartible, y el dia que exista el Search
+# Service no cambia ni una sola de estas paginas.
+
+MARKET_ROUTES = [
+    # slug, offering, category, view, imagen de cabecera
+    ("real-estate/search",         "",      "",            "list",  "31_page_header.jpg"),
+    ("real-estate/buy",            "sale",  "residential", "list",  "09_villa_como.jpg"),
+    ("real-estate/rent",           "rent",  "residential", "list",  "11_villa_marbella.jpg"),
+    ("real-estate/commercial/buy", "sale",  "commercial",  "list",  "05_hotel_project.jpg"),
+    ("real-estate/commercial/rent","rent",  "commercial",  "list",  "18_business_district.jpg"),
+    ("real-estate/land",           "sale",  "land",        "list",  "22_land_parcels.jpg"),
+    ("real-estate/map",            "",      "",            "split", "16_atlantic_aerial.jpg"),
+]
+
+MARKET_COPY = {
+"real-estate/search": dict(
+  eyebrow=ARCH.T("Inventory", "Inventario", "المعروض", "资产库"),
+  title=ARCH.T("Search the inventory", "Buscar en el inventario", "ابحث في المعروض", "检索资产库"),
+  lead=ARCH.T(
+    "Every asset under mandate, in one place: residential, commercial, hospitality and land, across the markets where the firm operates. Filter by country, city, typology, price and surface; the address bar carries the search, so any result set can be sent to a client exactly as you see it.",
+    "Todos los activos bajo mandato, en un solo lugar: residencial, comercial, hostelería y suelo, en los mercados donde opera la firma. Filtre por país, ciudad, tipología, precio y superficie; la barra de direcciones lleva la búsqueda, de modo que cualquier conjunto de resultados puede enviarse a un cliente tal como usted lo ve.",
+    "جميع الأصول تحت التفويض في مكان واحد: سكني وتجاري وضيافة وأراضٍ، في الأسواق التي تعمل بها الشركة. رشّح حسب الدولة والمدينة والنوع والسعر والمساحة؛ ويحمل شريط العنوان البحث، فأي مجموعة نتائج يمكن إرسالها إلى العميل كما تراها تماماً.",
+    "所有受托资产集中于此：住宅、商业、酒店与土地，覆盖本公司经营的各个市场。可按国家、城市、类型、价格与面积筛选；地址栏即承载搜索条件，任何结果集都可原样发送给客户。")),
+"real-estate/buy": dict(
+  eyebrow=ARCH.T("Residential — sale", "Residencial — venta", "سكني — للبيع", "住宅 — 出售"),
+  title=ARCH.T("Residential for sale", "Residencial en venta", "سكني للبيع", "住宅出售"),
+  lead=ARCH.T(
+    "Private residences under sale mandate: villas, penthouses, estates, private islands and restored heritage houses. Each record carries its verification status, its typology and the office that holds the mandate.",
+    "Residencias privadas bajo mandato de venta: villas, áticos, fincas, islas privadas y casas históricas rehabilitadas. Cada registro lleva su estado de verificación, su tipología y la oficina que tiene el mandato.",
+    "مساكن خاصة تحت تفويض بيع: فلل وبنتهاوس وضياع وجزر خاصة وبيوت تراثية مُرمَّمة. يحمل كل سجل حالة التوثيق والنوع والمكتب صاحب التفويض.",
+    "受托出售的私人住宅：别墅、顶层公寓、庄园、私人岛屿与修复的历史宅邸。每条记录均标注核验状态、物业类型及持有委托的分支机构。")),
+"real-estate/rent": dict(
+  eyebrow=ARCH.T("Residential — lease", "Residencial — alquiler", "سكني — للإيجار", "住宅 — 租赁"),
+  title=ARCH.T("Residential to rent", "Residencial en alquiler", "سكني للإيجار", "住宅租赁"),
+  lead=ARCH.T(
+    "Long-let and seasonal residences, quoted per year. Relocation cases are handled by the same desk that manages the corporate structuring, so a lease and a residency file move together.",
+    "Residencias de larga duración y de temporada, cotizadas por año. Los casos de relocalización los lleva la misma mesa que gestiona la estructuración corporativa, de modo que un arrendamiento y un expediente de residencia avanzan juntos.",
+    "مساكن للإيجار الطويل والموسمي، مُسعَّرة سنوياً. تتولى حالات الانتقال المكتب نفسه الذي يدير الهيكلة المؤسسية، فيتقدم عقد الإيجار وملف الإقامة معاً.",
+    "长租与季节性住宅，按年报价。搬迁安置由负责公司架构的同一团队处理，租约与居留申请同步推进。")),
+"real-estate/commercial/buy": dict(
+  eyebrow=ARCH.T("Commercial — sale", "Comercial — venta", "تجاري — للبيع", "商业 — 出售"),
+  title=ARCH.T("Commercial and hospitality for sale", "Comercial y hostelería en venta", "تجاري وضيافة للبيع", "商业与酒店出售"),
+  lead=ARCH.T(
+    "Operating hotels, resorts, office and retail assets, logistics and industrial plant. Where the asset trades as a business rather than as bricks, the record states the keys, the operator and the completion status.",
+    "Hoteles y resorts en explotación, activos de oficinas y retail, plataformas logísticas e instalaciones industriales. Cuando el activo se transmite como negocio y no como ladrillo, el registro indica las llaves, el operador y el estado de obra.",
+    "فنادق ومنتجعات عاملة وأصول مكتبية وتجزئة ومنشآت لوجستية وصناعية. وحين يُتداول الأصل كنشاط تشغيلي لا كعقار، يوضّح السجل عدد المفاتيح والمشغّل وحالة الإنجاز.",
+    "在营酒店与度假村、写字楼与零售资产、物流与工业设施。当资产以经营性业务而非单纯不动产交易时，记录会列明客房数、运营方与交付状态。")),
+"real-estate/commercial/rent": dict(
+  eyebrow=ARCH.T("Commercial — lease", "Comercial — alquiler", "تجاري — للإيجار", "商业 — 租赁"),
+  title=ARCH.T("Commercial space to lease", "Espacio comercial en alquiler", "مساحات تجارية للإيجار", "商业空间租赁"),
+  lead=ARCH.T(
+    "Offices, retail units, warehouses and light industrial space, quoted per year. Fit-out, licensing and the corporate vehicle behind the tenancy are handled inside the same file.",
+    "Oficinas, locales, naves y espacio industrial ligero, cotizados por año. La implantación, las licencias y el vehículo societario que firma el arrendamiento se llevan dentro del mismo expediente.",
+    "مكاتب ومحال ومستودعات ومساحات صناعية خفيفة، مُسعَّرة سنوياً. ويُدار التجهيز والتراخيص والكيان المؤسسي المستأجر ضمن الملف نفسه.",
+    "写字楼、商铺、仓库与轻工业空间，按年报价。装修、执照及承租主体的公司架构在同一档案内一并处理。")),
+"real-estate/land": dict(
+  eyebrow=ARCH.T("Land", "Suelo", "الأراضي", "土地"),
+  title=ARCH.T("Land and large-scale sites", "Suelo y grandes superficies", "الأراضي والمواقع واسعة النطاق", "土地与大型地块"),
+  lead=ARCH.T(
+    "Development land, coastal and island holdings, agricultural and forestry estates, mining concessions and quarries, energy sites and parcels sized for entire new towns. Surface is stated in hectares where the parcel is measured that way.",
+    "Suelo finalista, fincas costeras e insulares, explotaciones agrícolas y forestales, concesiones mineras y canteras, suelo energético y parcelas dimensionadas para ciudades enteras. La superficie se indica en hectáreas cuando la parcela se mide así.",
+    "أراضٍ للتطوير، وممتلكات ساحلية وجزرية، وضياع زراعية وحرجية، وامتيازات تعدين ومحاجر، ومواقع طاقة، وقطع بحجم مدن كاملة. وتُذكر المساحة بالهكتار حيث تُقاس القطعة بهذه الوحدة.",
+    "开发用地、海岸与岛屿地产、农林庄园、采矿权与采石场、能源用地，以及可容纳整座新城的地块。按公顷计量的地块以公顷标示面积。")),
+"real-estate/map": dict(
+  eyebrow=ARCH.T("Map", "Mapa", "الخريطة", "地图"),
+  title=ARCH.T("The inventory on the map", "El inventario sobre el mapa", "المعروض على الخريطة", "地图上的资产库"),
+  lead=ARCH.T(
+    "The same inventory read geographically. Pan and zoom to work a market, and switch between map, split and list without losing the filters you already set.",
+    "El mismo inventario leído geográficamente. Desplace y acerque para trabajar un mercado, y cambie entre mapa, vista dividida y lista sin perder los filtros que ya haya puesto.",
+    "المعروض نفسه مقروءاً جغرافياً. حرّك الخريطة وقرّبها لتعمل على سوق بعينه، وبدّل بين الخريطة والعرض المقسّم والقائمة دون أن تفقد ما ضبطته من مرشحات.",
+    "同一资产库的地理视图。平移与缩放以聚焦某一市场，并可在地图、分屏与列表之间切换而不丢失已设定的筛选条件。")),
+}
+
+MARKET_LINKS = ARCH.T("Other views", "Otras vistas", "عروض أخرى", "其他视图")
+
+def _market_nav(lang, current):
+    home = HOME[lang]
+    out = []
+    for (slug, _o, _c, _v, _i) in MARKET_ROUTES:
+        lbl = _t(MARKET_COPY[slug]["eyebrow"], lang)
+        if slug == current:
+            out.append('<span class="xr_mp_navlink is-on">%s</span>' % lbl)
+        else:
+            out.append('<a class="xr_mp_navlink" href="%s%s/">%s</a>' % (home, slug, lbl))
+    return ('<nav class="xr_mp_nav" aria-label="%s">%s</nav>'
+            % (_t(MARKET_LINKS, lang), "".join(out)))
+
+def build_marketplace(lang, route):
+    """Una ruta de resultados. El montaje declara el filtro base; todo lo
+    demas —orden, paginacion, mapa, facetas— lo resuelve el cliente contra
+    /data/api/v1/search-index.json, que es la proyeccion de la base de datos."""
+    slug, offering, category, view, img = route
+    copy = MARKET_COPY[slug]
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    title = "%s — XARU HOME" % _t(copy["title"], lang)
+    desc = _t(copy["lead"], lang)
+    trail = [(RE, "real-estate")]
+    if slug.startswith("real-estate/commercial/"):
+        trail.append((ARCH.T("Commercial", "Comercial", "تجاري", "商业"),
+                      "real-estate/commercial-hospitality"))
+    trail.append((copy["title"], slug))
+    hero = _page_header(lang, _t(copy["eyebrow"], lang), _t(copy["title"], lang),
+                        _crumbs(lang, trail), img)
+    mount = ('<div class="xr_mp" data-marketplace data-offering="%s" data-category="%s" '
+             'data-view="%s"></div>' % (offering, category, view))
+    body = hero + '''
+    <section>
+      <div class="cs_height_70 cs_height_lg_45"></div>
+      <div class="container"><div class="row"><div class="col-lg-9">
+        <p class="xr_pillar_intro" data-aos="fade-up">%s</p>
+      </div></div></div>
+      <div class="cs_height_30"></div>
+      <div class="container">%s</div>
+      <div class="cs_height_40 cs_height_lg_25"></div>
+      <div class="container">%s</div>
+      <div class="cs_height_120 cs_height_lg_70"></div>
+    </section>''' % (_t(copy["lead"], lang), _market_nav(lang, slug), mount)
+    return _write_shell(lang, slug, title, desc, body,
+                        css=("xaru-marketplace.css",), js=("xaru-marketplace.js",))
+
 def build_catalog_page(lang, catalog_key, slug, trail):
     home = HOME[lang]
     meta = F2.CATALOG[catalog_key]
@@ -3268,6 +3398,9 @@ def build_catalogs_fichas_pillars():
         build_catalog_page(L, "land-projects", "opportunities",
                            [(OPPL, "opportunities")])
         build_sold_page(L)
+        # marketplace routes (Biblia §5.1)
+        for _r in MARKET_ROUTES:
+            build_marketplace(L, _r)
         # pillars (override generic shells; commercial & land embed their catalog)
         build_pillar(L, "real-estate", embed_catalog="private-properties")
         build_pillar(L, "real-estate/commercial-hospitality", embed_catalog="commercial-hospitality")

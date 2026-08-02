@@ -516,6 +516,21 @@ SLUG_LABEL = {
                                                  "ar": "العقارات", "zh": "房地产"},
  "real-estate/sold":                            {"en": "Past Operations", "es": "Operaciones anteriores",
                                                  "ar": "عمليات سابقة", "zh": "过往交易"},
+ # ---- rutas del marketplace (Biblia §5.1) -----------------------------
+ "real-estate/search":                          {"en": "Search the Inventory", "es": "Buscar en el inventario",
+                                                 "ar": "ابحث في المعروض", "zh": "检索资产库"},
+ "real-estate/buy":                             {"en": "Residential for Sale", "es": "Residencial en venta",
+                                                 "ar": "سكني للبيع", "zh": "住宅出售"},
+ "real-estate/rent":                            {"en": "Residential to Rent", "es": "Residencial en alquiler",
+                                                 "ar": "سكني للإيجار", "zh": "住宅租赁"},
+ "real-estate/commercial/buy":                  {"en": "Commercial for Sale", "es": "Comercial en venta",
+                                                 "ar": "تجاري للبيع", "zh": "商业出售"},
+ "real-estate/commercial/rent":                 {"en": "Commercial to Lease", "es": "Comercial en alquiler",
+                                                 "ar": "تجاري للإيجار", "zh": "商业租赁"},
+ "real-estate/land":                            {"en": "Land & Large-Scale Sites", "es": "Suelo y grandes superficies",
+                                                 "ar": "الأراضي والمواقع الكبرى", "zh": "土地与大型地块"},
+ "real-estate/map":                             {"en": "Inventory Map", "es": "Mapa del inventario",
+                                                 "ar": "خريطة المعروض", "zh": "资产地图"},
  "real-estate/commercial-hospitality":          {"en": "Commercial & Hospitality", "es": "Comercial y Hostelería",
                                                  "ar": "التجاري والضيافة", "zh": "商业与酒店"},
  "real-estate/commercial-hospitality/ch-hotel-halted":      {"en": "Halted Hotel Project", "es": "Proyecto hotelero detenido",
@@ -542,6 +557,78 @@ SLUG_LABEL = {
 
 # ---------------------------------------------------------------- title + description, 34 slugs x 4 languages
 SHELL_SEO = {
+
+ # ---- rutas del marketplace (Biblia de Real Estate §5.1) --------------
+ "real-estate/search": {
+  "en": ("Search Luxury Property Worldwide | XARU HOME",
+         "Search the full XARU HOME inventory: residential, commercial, hospitality and land in the markets where the firm operates. Filter by country, city, typology, price and surface."),
+  "es": ("Buscar propiedades de lujo en el mundo | XARU HOME",
+         "Busque en todo el inventario de XARU HOME: residencial, comercial, hostelería y suelo en los mercados donde opera la firma. Filtre por país, ciudad, tipología, precio y superficie."),
+  "ar": ("ابحث عن عقارات فاخرة حول العالم | XARU HOME",
+         "ابحث في كامل معروض XARU HOME: سكني وتجاري وضيافة وأراضٍ في الأسواق التي تعمل بها الشركة. رشّح حسب الدولة والمدينة والنوع والسعر والمساحة."),
+  "zh": ("全球奢华房产检索 | XARU HOME",
+         "检索 XARU HOME 全部资产：住宅、商业、酒店与土地，覆盖本公司经营的各个市场。可按国家、城市、类型、价格与面积筛选。"),
+ },
+ "real-estate/buy": {
+  "en": ("Luxury Homes for Sale Worldwide | XARU HOME",
+         "Villas, penthouses, estates, private islands and heritage houses for sale worldwide. Every record carries its verification status, typology and the office holding the mandate."),
+  "es": ("Viviendas de lujo en venta en el mundo | XARU HOME",
+         "Villas, áticos, fincas, islas privadas y casas históricas en venta en todo el mundo. Cada registro lleva su estado de verificación, tipología y la oficina que tiene el mandato."),
+  "ar": ("منازل فاخرة للبيع حول العالم | XARU HOME",
+         "فلل وبنتهاوس وحوزات وجزر خاصة وبيوت تراثية للبيع حول العالم. يحمل كل سجل حالة التوثيق والنوع والمكتب صاحب التفويض."),
+  "zh": ("全球奢华住宅在售 | XARU HOME",
+         "全球在售的别墅、顶层公寓、庄园、私人岛屿与历史宅邸。每条记录均标注核验状态、物业类型及持有委托的分支机构。"),
+ },
+ "real-estate/rent": {
+  "en": ("Luxury Homes to Rent Worldwide | XARU HOME",
+         "Long-let and seasonal residences quoted per year. Relocation cases are handled by the same desk that manages the corporate structuring behind the move."),
+  "es": ("Viviendas de lujo en alquiler en el mundo | XARU HOME",
+         "Residencias de larga duración y de temporada, cotizadas por año. Los casos de relocalización los lleva la misma mesa que gestiona la estructuración corporativa."),
+  "ar": ("منازل فاخرة للإيجار حول العالم | XARU HOME",
+         "مساكن للإيجار الطويل والموسمي مُسعَّرة سنوياً. تتولى حالات الانتقال المكتب نفسه الذي يدير الهيكلة المؤسسية وراء الانتقال."),
+  "zh": ("全球奢华住宅租赁 | XARU HOME",
+         "长租与季节性住宅，按年报价。搬迁安置由负责相应公司架构的同一团队处理。"),
+ },
+ "real-estate/commercial/buy": {
+  "en": ("Hotels, Offices & Commercial Assets for Sale | XARU HOME",
+         "Operating hotels, resorts, offices, retail, logistics and industrial plant for sale. Where the asset trades as a business, the record states keys, operator and completion."),
+  "es": ("Hoteles, oficinas y activos comerciales en venta | XARU HOME",
+         "Hoteles en explotación, resorts, oficinas, retail, logística e industria en venta. Cuando el activo se transmite como negocio, el registro indica llaves, operador y estado de obra."),
+  "ar": ("فنادق ومكاتب وأصول تجارية للبيع | XARU HOME",
+         "فنادق عاملة ومنتجعات ومكاتب وتجزئة ولوجستيات ومنشآت صناعية للبيع. وحين يُتداول الأصل كنشاط تشغيلي، يوضّح السجل المفاتيح والمشغّل وحالة الإنجاز."),
+  "zh": ("酒店、写字楼与商业资产在售 | XARU HOME",
+         "在营酒店、度假村、写字楼、零售、物流与工业设施在售。当资产以经营性业务交易时，记录会列明客房数、运营方与交付状态。"),
+ },
+ "real-estate/commercial/rent": {
+  "en": ("Offices, Retail & Warehouse Space to Lease | XARU HOME",
+         "Offices, retail units, warehouses and light industrial space quoted per year. Fit-out, licensing and the corporate vehicle behind the tenancy sit in the same file."),
+  "es": ("Oficinas, locales y naves en alquiler | XARU HOME",
+         "Oficinas, locales, naves y espacio industrial ligero cotizados por año. Implantación, licencias y el vehículo societario del arrendamiento van en el mismo expediente."),
+  "ar": ("مكاتب ومحال ومستودعات للإيجار | XARU HOME",
+         "مكاتب ومحال ومستودعات ومساحات صناعية خفيفة مُسعَّرة سنوياً. ويُدار التجهيز والتراخيص والكيان المؤسسي المستأجر ضمن الملف نفسه."),
+  "zh": ("写字楼、商铺与仓储空间租赁 | XARU HOME",
+         "写字楼、商铺、仓库与轻工业空间，按年报价。装修、执照及承租主体的公司架构在同一档案内处理。"),
+ },
+ "real-estate/land": {
+  "en": ("Development Land, Islands & Mining Concessions | XARU HOME",
+         "Development land, coastal and island holdings, agricultural and forestry estates, mining concessions, quarries, energy sites and parcels sized for entire new towns."),
+  "es": ("Suelo, islas y concesiones mineras | XARU HOME",
+         "Suelo finalista, fincas costeras e insulares, explotaciones agrícolas y forestales, concesiones mineras, canteras, suelo energético y parcelas para ciudades enteras."),
+  "ar": ("أراضي التطوير والجزر وامتيازات التعدين | XARU HOME",
+         "أراضٍ للتطوير وممتلكات ساحلية وجزرية وضياع زراعية وحرجية وامتيازات تعدين ومحاجر ومواقع طاقة وقطع بحجم مدن كاملة."),
+  "zh": ("开发用地、岛屿与采矿权 | XARU HOME",
+         "开发用地、海岸与岛屿地产、农林庄园、采矿权与采石场、能源用地，以及可容纳整座新城的地块。"),
+ },
+ "real-estate/map": {
+  "en": ("Property Map — Search by Location | XARU HOME",
+         "The XARU HOME inventory read geographically. Pan and zoom to work a market, and switch between map, split and list without losing the filters already set."),
+  "es": ("Mapa de propiedades — Buscar por ubicación | XARU HOME",
+         "El inventario de XARU HOME leído geográficamente. Desplace y acerque para trabajar un mercado, y cambie entre mapa, vista dividida y lista sin perder los filtros."),
+  "ar": ("خريطة العقارات — البحث حسب الموقع | XARU HOME",
+         "معروض XARU HOME مقروءاً جغرافياً. حرّك الخريطة وقرّبها لتعمل على سوق بعينه، وبدّل بين الخريطة والعرض المقسّم والقائمة دون فقدان المرشحات."),
+  "zh": ("房产地图 — 按位置检索 | XARU HOME",
+         "XARU HOME 资产库的地理视图。平移与缩放以聚焦某一市场，并可在地图、分屏与列表之间切换而不丢失已设定的筛选条件。"),
+ },
 
  # ---- inventario historico (Biblia de Real Estate §1.2, §20.5) ---------
  "real-estate/sold": {
@@ -1118,6 +1205,10 @@ SITEMAP_PRIORITY = {
  "real-estate": "0.9", "developments": "0.9", "capital": "0.9",
  "business-infrastructure": "0.9", "company": "0.8", "insights": "0.8",
  "opportunities": "0.9", "private-enquiry": "0.7", "opportunities/submit": "0.7",
+ # rutas de resultados: son la puerta de entrada real al inventario
+ "real-estate/search": "0.9", "real-estate/buy": "0.9", "real-estate/rent": "0.8",
+ "real-estate/commercial/buy": "0.8", "real-estate/commercial/rent": "0.7",
+ "real-estate/land": "0.8", "real-estate/map": "0.7",
 }
 
 def sitemap_entries():
