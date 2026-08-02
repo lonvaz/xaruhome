@@ -555,9 +555,20 @@ def import_existing(cur, loc_of_city, org_ids, agent_ids, media_id_for, listings
                  sp.get("plotAreaSqm"), ((o.get("price") or {}).get("currency") or "USD"),
                  None, 1, "verified", "PUBLISHED", "approved", 88, "featured", mid,
                  NOW, NOW, 1, DEMO_LABEL, NOW))
-            for gi, gp in enumerate((o.get("images") or [])[:9]):
+            # Las trece oportunidades traen una sola imagen. Son las primeras
+            # que ve cualquiera que entre por "comprar", asi que su galeria se
+            # completa con fotos de su misma tipologia, igual que el resto.
+            ogal = [g for g in (o.get("images") or []) if isinstance(g, str)]
+            if len(ogal) < 4 and ogal:
+                fams_o = PHOTO_FAMILY.get(opp_slug) or [o["catalog"]]
+                oextra = pick_gallery(pool_ref[0], fams_o, n, 8)
+                ogal = [ogal[0]] + [g for g in oextra if g not in ogal]
+            for gi, gp in enumerate(ogal[:8]):
                 cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
                             (lid, media_id_for(gp), gi, 1 if gi == 0 else 0))
+            if n % 3 == 0:
+                cur.execute("INSERT OR IGNORE INTO listing_media VALUES (?,?,?,?)",
+                            (lid, media_id_for(ogal[0], kind="floorplan"), 90, 0))
             # Las oportunidades no traen texto largo en su fichero de origen.
             # Se compone con los mismos datos de la fila, igual que el resto del
             # inventario: nada inventado, ninguna ficha sin descripcion.

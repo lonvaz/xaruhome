@@ -172,6 +172,7 @@
     medianPpsqm:{en:"Median price per m²",es:"Precio mediano por m²",
                  ar:"السعر الوسيط لكل م²",zh:"中位每平米单价"},
     thisAsset:  {en:"This asset",es:"Este activo",ar:"هذا الأصل",zh:"本资产"},
+    assetCol:   {en:"Asset",es:"Activo",ar:"الأصل",zh:"资产"},
     noBench:    {en:"Not enough comparable assets to publish a reference yet.",
                  es:"Todavía no hay activos comparables suficientes para publicar una referencia.",
                  ar:"لا توجد أصول مماثلة كافية لنشر مرجع بعد.",
@@ -441,7 +442,7 @@
       (rows
         ? '<p class="xr_pdp_sub">' + esc(U("compsIntro")) + "</p>" +
           '<div class="xr_prj_tablewrap"><table class="xr_prj_table"><thead><tr>' +
-          "<th>" + esc(U("navGallery")).slice(0, 0) + esc(U("thisAsset")) + "</th>" +
+          "<th>" + esc(U("assetCol")) + "</th>" +
           "<th>" + esc(U("location")) + "</th><th>" + esc(U("built")) + "</th>" +
           "<th>" + esc(U("perSqm")) + "</th><th>" + esc(U("price")) + "</th>" +
           "</tr></thead><tbody>" + rows + "</tbody></table></div>"
