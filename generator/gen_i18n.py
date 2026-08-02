@@ -170,10 +170,10 @@ ES = [
  (">Private Islands</span", ">Islas privadas</span"),
  ("Explore Opportunities", "Explorar oportunidades"),
  ("Private Enquiry", "Consulta privada"),
- ("<h1>A Private Island <br />in Saman&aacute; Bay.</h1>", "<h1>Una isla privada <br />en la bahía de Samaná.</h1>"),
- ("Kilometers of pristine beachfront — Dominican Republic · Price upon application",
-  "Kilómetros de costa virgen — República Dominicana · Precio a consultar"),
- ("Land &amp; Developments", "Suelo y desarrollos"),
+ ("<h2>A Private Island &mdash; <br />Isola del Faro.</h2>", "<h2>Una isla privada &mdash; <br />Isola del Faro.</h2>"),
+ ("Whole island under a single title &middot; $42,000,000",
+  "Isla completa bajo un único título &middot; $42,000,000"),
+ ("View the Asset", "Ver el activo"),
  ("<h1>Master Developments, <br />From Land to Legacy.</h1>", "<h1>Desarrollos maestros, <br />del suelo al legado.</h1>"),
  ("ASHIMA — Ancestral Odyssey · Oaxaca, M&eacute;xico", "ASHIMA — Odisea ancestral · Oaxaca, México"),
  ("Discover the Project", "Descubrir el proyecto"),
@@ -369,10 +369,10 @@ AR = [
  (">Private Islands</span", ">جزر خاصة</span"),
  ("Explore Opportunities", "استكشف الفرص"),
  ("Private Enquiry", "استفسار خاص"),
- ("<h1>A Private Island <br />in Saman&aacute; Bay.</h1>", "<h1>جزيرة خاصة <br />في خليج سامانا.</h1>"),
- ("Kilometers of pristine beachfront — Dominican Republic · Price upon application",
-  "كيلومترات من الشاطئ البِكر — جمهورية الدومينيكان · السعر عند الطلب"),
- ("Land &amp; Developments", "الأراضي والمشاريع"),
+ ("<h2>A Private Island &mdash; <br />Isola del Faro.</h2>", "<h2>جزيرة خاصة &mdash; <br /><span dir=\"ltr\">Isola del Faro.</span></h2>"),
+ ("Whole island under a single title &middot; $42,000,000",
+  "جزيرة كاملة بسند ملكية واحد &middot; <span dir=\"ltr\">$42,000,000</span>"),
+ ("View the Asset", "عرض الأصل"),
  ("<h1>Master Developments, <br />From Land to Legacy.</h1>", "<h1>مشاريع كبرى، <br />من الأرض إلى الإرث.</h1>"),
  ("ASHIMA — Ancestral Odyssey · Oaxaca, M&eacute;xico", "ASHIMA — رحلة الأجداد · واخاكا، المكسيك"),
  ("Discover the Project", "اكتشف المشروع"),
@@ -557,10 +557,10 @@ ZH = [
  (">Private Islands</span", ">私人岛屿</span"),
  ("Explore Opportunities", "探索机遇"),
  ("Private Enquiry", "私人咨询"),
- ("<h1>A Private Island <br />in Saman&aacute; Bay.</h1>", "<h1>萨马纳湾的 <br />一座私人岛屿。</h1>"),
- ("Kilometers of pristine beachfront — Dominican Republic · Price upon application",
-  "绵延数公里的原生海岸线——多米尼加共和国 · 价格面议"),
- ("Land &amp; Developments", "土地与开发"),
+ ("<h2>A Private Island &mdash; <br />Isola del Faro.</h2>", "<h2>私人岛屿 &mdash; <br />Isola del Faro。</h2>"),
+ ("Whole island under a single title &middot; $42,000,000",
+  "整岛单一产权 &middot; $42,000,000"),
+ ("View the Asset", "查看资产"),
  ("<h1>Master Developments, <br />From Land to Legacy.</h1>", "<h1>大型开发项目， <br />从土地到传世之作。</h1>"),
  ("ASHIMA — Ancestral Odyssey · Oaxaca, M&eacute;xico", "ASHIMA — 先祖之旅 · 墨西哥瓦哈卡"),
  ("Discover the Project", "了解该项目"),
@@ -749,7 +749,7 @@ SHARED_ES = [
  ('aria-label="Submit Request"', 'aria-label="Enviar solicitud"'),
  # hero background slides (index) — descriptive keyword alt equivalents
  ('aria-label="Global luxury real estate — aerial coastline, XARU HOME"', 'aria-label="Inmobiliaria de lujo global — costa desde el aire, XARU HOME"'),
- ('aria-label="Private island for sale in Samaná Bay, Dominican Republic"', 'aria-label="Isla privada en venta en la bahía de Samaná, República Dominicana"'),
+ ('aria-label="Isola del Faro, a private island held in a single title"', 'aria-label="Isola del Faro, isla privada reunida en un único título"'),
  ('aria-label="Master development land — ASHIMA, Oaxaca, Mexico"', 'aria-label="Suelo para desarrollo maestro — ASHIMA, Oaxaca, México"'),
 ]
 SHARED_AR = [
@@ -774,7 +774,7 @@ SHARED_AR = [
  ('aria-label="Submit Request"', 'aria-label="إرسال الطلب"'),
  # hero background slides (index) — descriptive keyword alt equivalents
  ('aria-label="Global luxury real estate — aerial coastline, XARU HOME"', 'aria-label="عقارات فاخرة عالمية — ساحل من الأعلى، XARU HOME"'),
- ('aria-label="Private island for sale in Samaná Bay, Dominican Republic"', 'aria-label="جزيرة خاصة للبيع في خليج سامانا، جمهورية الدومينيكان"'),
+ ('aria-label="Isola del Faro, a private island held in a single title"', 'aria-label="Isola del Faro، جزيرة خاصة بسند ملكية واحد"'),
  ('aria-label="Master development land — ASHIMA, Oaxaca, Mexico"', 'aria-label="أرض لتطوير رئيسي — ASHIMA، واخاكا، المكسيك"'),
 ]
 
@@ -800,7 +800,7 @@ SHARED_ZH = [
  ('aria-label="Submit Request"', 'aria-label="提交请求"'),
  # hero background slides (index) — descriptive keyword alt equivalents
  ('aria-label="Global luxury real estate — aerial coastline, XARU HOME"', 'aria-label="全球奢华房产——海岸鸟瞰，XARU HOME"'),
- ('aria-label="Private island for sale in Samaná Bay, Dominican Republic"', 'aria-label="萨马纳湾私人岛屿在售，多米尼加共和国"'),
+ ('aria-label="Isola del Faro, a private island held in a single title"', 'aria-label="Isola del Faro，单一产权私人岛屿"'),
  ('aria-label="Master development land — ASHIMA, Oaxaca, Mexico"', 'aria-label="大型开发用地——ASHIMA，墨西哥瓦哈卡"'),
 ]
 
@@ -834,6 +834,36 @@ _DEAD_LINKS = {
 # fijas de la plantilla y pasan a renderizar el catalogo demostrativo completo
 # (144 activos) desde data/properties/*.json, con <picture> AVIF/WebP/JPEG,
 # srcset en 5 anchos, carga diferida y filtros por tipologia.
+# Titulo de primer nivel para las paginas de listado. Auditoria 1-ago-2026:
+# property-listing-rent.html usaba un <h2> como titulo de pagina y
+# property-listing-search.html no tenia ningun encabezado de pagina. Ambas
+# quedaban sin H1, que es un fallo de SEO real, no cosmetico.
+CATALOG_H1 = {
+ "property-listing-search.html": {
+   "en": "Search the XARU HOME portfolio",
+   "es": "Buscar en el portafolio de XARU HOME",
+   "ar": "ابحث في محفظة XARU HOME",
+   "zh": "检索 XARU HOME 资产组合"},
+}
+
+
+# ---------------------------------------------------------------- imagenes de seccion
+# Las fotos de assets/img/xaru/gen2 hacen doble papel: fondo de cabecera a
+# pantalla completa y foto de tarjeta a ~440 px. Servir el master de 1920 en los
+# dos sitios era lo que ponia la portada en 11,7 MB. GEN2_BG devuelve las dos
+# declaraciones CSS -- JPEG plano como suelo y luego image-set con WebP -- al
+# ancho que de verdad ocupa la imagen. tools_derivatives_gen2.py genera las piezas.
+def gen2_bg(name, w=1280):
+    base = name[:-4] if name.endswith(".jpg") else name
+    r = "/assets/img/xaru/gen2/r/%s-%d" % (base, w)
+    return ("background-image:url('%s.jpg');"
+            "background-image:image-set(url('%s.webp') type('image/webp'),"
+            "url('%s.jpg') type('image/jpeg'))" % (r, r, r))
+
+def gen2_src(name, w=1280, ext="jpg"):
+    base = name[:-4] if name.endswith(".jpg") else name
+    return "/assets/img/xaru/gen2/r/%s-%d.%s" % (base, w, ext)
+
 CATALOG_PAGE = {
     "property-listing-buy.html":    "private-real-estate",
     "property-listing-rent.html":   "commercial-hospitality",
@@ -852,10 +882,217 @@ def _match_div(h, start):
             depth += 1
     return -1
 
-def inject_catalog(h, fname):
+# Paginas sin ningun H1. La plantilla usaba <h3> para el titulo del formulario
+# (login, registro, recuperar clave) y en blog-details el unico titulo estaba en
+# la barra lateral. Una pagina sin H1 no le dice a nadie —ni a un buscador ni a
+# un lector de pantalla— de que trata. Se promociona el encabezado principal
+# conservando sus clases: no cambia un pixel.
+H1_PROMOTE = {
+    "login.html":           r'<h3 class="cs_contact_form_heading[^"]*"[^>]*>',
+    "register.html":        r'<h3 class="cs_contact_form_heading[^"]*"[^>]*>',
+    "forgot-password.html": r'<h3 class="cs_contact_form_heading[^"]*"[^>]*>',
+    # En blog-details el titulo del articulo es el unico <h2> SIN clase; los
+    # demas son de barra lateral ("Categories", "Latest posts") o de seccion.
+    "blog-details.html":    r'<h2>',
+}
+
+def ensure_h1(h, fname):
+    """Si la pagina no tiene H1, promociona su encabezado principal."""
+    if re.search(r'<h1[\s>]', h):
+        return h
+    pat = H1_PROMOTE.get(fname)
+    if not pat:
+        return h
+    m = re.search(pat, h)
+    if not m:
+        return h
+    tag = m.group(0)
+    lvl = tag[2]                       # 2 o 3
+    close = "</h%s>" % lvl
+    j = h.find(close, m.end())
+    if j < 0:
+        return h
+    nuevo = "<h1" + tag[3:]
+    return h[:m.start()] + nuevo + h[m.end():j] + "</h1>" + h[j+len(close):]
+
+def enforce_single_h1(h):
+    """Deja un unico <h1> por pagina degradando los siguientes a <h2>.
+    Conserva los atributos, de modo que el aspecto es identico; lo que cambia
+    es la jerarquia que leen los buscadores y los lectores de pantalla."""
+    out = []
+    pos = 0
+    n = 0
+    for m in re.finditer(r'<h1([^>]*)>(.*?)</h1>', h, re.S):
+        n += 1
+        if n == 1:
+            continue
+        out.append((m.start(), m.end(), m.group(1), m.group(2)))
+    for st, en, attrs, inner in reversed(out):
+        h = h[:st] + '<h2%s>%s</h2>' % (attrs, inner) + h[en:]
+    return h
+
+LISTING_HEAD = {
+ "property-listing-search.html": (
+   ARCH.T("The portfolio", "El portafolio", "المحفظة", "作品集"),
+   ARCH.T("Search the XARU HOME portfolio", "Busque en el portafolio de XARU HOME",
+     "ابحث في محفظة XARU HOME", "检索 XARU HOME 资产组合"),
+   "07_villa_dubai.jpg"),
+ "property-listing-buy.html": (
+   ARCH.T("Private real estate", "Inmobiliario privado", "العقارات الخاصة", "私人房产"),
+   ARCH.T("Private Islands & Luxury Property for Sale", "Islas privadas y propiedad de lujo en venta",
+     "جزر خاصة وعقارات فاخرة للبيع", "私人岛屿与豪华房产出售"),
+   "09_villa_como.jpg"),
+ "property-listing-rent.html": (
+   ARCH.T("Commercial & hospitality", "Comercial y hosteleria", "التجاري والضيافة", "商业与酒店"),
+   ARCH.T("Residences for Lease", "Residencias en alquiler", "مساكن للإيجار", "租赁住宅"),
+   "05_hotel_project.jpg"),
+}
+
+LISTING_COUNT = ARCH.T("assets in the portfolio", "activos en el portafolio",
+                  "أصل ضمن المحفظة", "项资产在册")
+
+# ---------------------------------------------------------------- imagenes de plantilla
+# La plantilla venia con su propio banco de fotos de relleno: casas de barrio
+# residencial estadounidense, una cabana roja noruega, un plano de planta
+# renderizado, un retrato de banco de imagenes. Nada de eso es XARU y estaba
+# saliendo en contacto, faq, error y en la ficha estatica. Se sustituye por
+# fotografia real de la casa, y los bloques que no tienen equivalente —
+# planos de planta, galeria de ejemplo, retrato del autor — se retiran.
+TEMPLATE_IMG = {
+    "page-heading.jpg":    ("31_page_header.jpg",   1920),
+    "contact-bg.jpg":      ("32_contact_panel.jpg", 1920),
+    "city-dubai.jpg":      ("24_capital_district.jpg", 1280),
+    "hero-bg-7.jpg":       ("07_villa_dubai.jpg",   1920),
+    "property-banner.jpg": ("09_villa_como.jpg",    1280),
+    "property-img-1.jpg":  ("10_casa_tulum.jpg",    1280),
+    "property-img-2.jpg":  ("11_villa_marbella.jpg", 1280),
+    "property-img-3.jpg":  ("05_hotel_project.jpg", 1280),
+    "property-img-4.jpg":  ("02_island_rd.jpg",     1280),
+    "property-img-5.jpg":  ("19_resort_complex.jpg", 1280),
+    "property-img-6.jpg":  ("27_hotel_halted.jpg",  1280),
+    "post-img-1.jpg":      ("03_land_mega.jpg",     1280),
+    "post-img-2.jpg":      ("06_masterplan_ashima.jpg", 1280),
+    "post-img-3.jpg":      ("25_trade_port.jpg",    1280),
+    "post-img-4.jpg":      ("22_land_parcels.jpg",  1280),
+    "post-img-5.jpg":      ("17_ocean_cliff.jpg",   1280),
+    "post-img-6.jpg":      ("16_atlantic_aerial.jpg", 1280),
+    "team-img-5.jpg":      ("26_corporate_services.jpg", 768),
+}
+
+def purge_template_images(h, lang="en"):
+    pre = "" if lang == "en" else "../"
+    for old, (new, w) in TEMPLATE_IMG.items():
+        base = new[:-4]
+        rep = "%sassets/img/xaru/gen2/r/%s-%d.jpg" % (pre, base, w)
+        h = h.replace("%sassets/img/%s" % (pre, old), rep)
+        if lang == "en":
+            h = h.replace("/assets/img/%s" % old, "/assets/img/xaru/gen2/r/%s-%d.jpg" % (base, w))
+    # Planos de planta y retrato de autor: no hay equivalente real, se van.
+    for sel in ('<img[^>]*floor-plan[^>]*>', '<img[^>]*post-author[^>]*>',
+                '<img[^>]*illustartion\.svg[^>]*>'):
+        h = re.sub(sel, '', h)
+    return h
+
+def fix_listing_page(h, fname, lang="en"):
+    """Repara las tres paginas de listado heredadas de la plantilla.
+
+    Traian tres defectos visibles: (a) una cabecera falsa con un buscador de
+    juguete -- Comprar/Alquilar, Apartamento, un desplegable de ciudades -- que
+    ademas se solapaba sobre la foto a 1440 px; (b) el rotulo fijo "40 Real
+    Estate Properties for Sell in London", que no era ni el numero ni la ciudad
+    ni el idioma de esta casa; y (c) decenas de puntos de montaje del catalogo
+    duplicados por regeneraciones antiguas, de los que el JS solo rellena el
+    primero y el resto quedaban como un hueco en blanco.
+
+    Es idempotente: cada arreglo comprueba antes si ya esta hecho.
+    """
+    if fname not in LISTING_HEAD:
+        return h
+    eyebrow, title, img = LISTING_HEAD[fname]
+
+    # (c) un solo punto de montaje de filtros y de nota
+    fmount = '<div class="xr_cat_filters" data-catalog-filters></div>'
+    nmount = '<p class="xr_cat_note cs_secondary_color" data-catalog-note></p>'
+    if h.count(fmount) > 1:
+        first = h.find(fmount)
+        head, tail = h[:first + len(fmount)], h[first + len(fmount):]
+        tail = tail.replace(fmount, "")
+        h = head + tail
+    if h.count(nmount) > 1:
+        first = h.find(nmount)
+        head, tail = h[:first + len(nmount)], h[first + len(nmount):]
+        tail = tail.replace(nmount, "")
+        h = head + tail
+
+    # (a) cabecera propia en lugar del buscador de juguete
+    if 'xr_listing_header' not in h:
+        m = re.search(r'<div class="cs_hero cs_style_7">', h)
+        if m:
+            end = _match_div(h, m.start())
+            if end > 0:
+                crumbs = ('<li class="breadcrumb-item"><a href="%s">%s</a></li>'
+                          '<li class="breadcrumb-item active">%s</li>'
+                          % (HOME[lang], _t(ARCH.CRUMB_HOME, lang), _t(title, lang)))
+                band = (
+                  '<section class="cs_page_header cs_style_1 cs_center cs_bg_filed xr_duotone_overlay '
+                  'position-relative xr_listing_header" data-src="%s" style="%s">\n'
+                  '      <div class="container">\n'
+                  '        <div class="cs_page_header_content text-center">\n'
+                  '          <span class="cs_page_header_subtitle cs_fs_14" style="letter-spacing:3px;'
+                  'text-transform:uppercase;color:rgba(245,241,232,.9)">%s</span>\n'
+                  '          <h1 class="cs_page_header_title cs_fs_49 mb-0" data-aos="fade-up">%s</h1>\n'
+                  '          <ol class="breadcrumb cs_center mb-0">%s</ol>\n'
+                  '        </div>\n'
+                  '      </div>\n'
+                  '    </section>'
+                  % (gen2_src(img, 1920), gen2_bg(img, 1920),
+                     _t(eyebrow, lang), _t(title, lang), crumbs))
+                h = h[:m.start()] + band + h[end:]
+
+    # (b) contador vivo en lugar del rotulo fijo de la plantilla
+    m = re.search(r'<p class="cs_primary_color cs_primary_font mb-0">.*?</p>', h, re.S)
+    if m and 'data-catalog-count' not in m.group(0):
+        h = (h[:m.start()]
+             + '<p class="cs_primary_color cs_primary_font mb-0">'
+               '<span class="cs_fs_20 cs_semibold me-1" data-catalog-count>156</span>%s</p>'
+               % _t(LISTING_COUNT, lang)
+             + h[m.end():])
+
+    # El titulo de la pagina vive ahora en la banda de cabecera. Los que
+    # inject_catalog dejo sueltos dentro del cuerpo son repeticiones del mismo
+    # texto, una debajo de otra: se retiran.
+    # Se buscan en los cuatro idiomas: las paginas traducidas heredaron el
+    # titulo en ingles de una generacion antigua y ahi se quedo congelado.
+    for _L in ("en", "es", "ar", "zh"):
+        h = re.sub(r'<h[12] class="cs_section_title cs_fs_49 cs_mb_10"[^>]*>%s</h[12]>\s*'
+                   % re.escape(_t(title, _L)), '', h)
+
+    # Los bloques "Property Type" y "Offer Type" de la plantilla ofrecian
+    # Apartamento / Casa / Oficina / Comprar / Alquilar: ni una sola de esas
+    # casillas tocaba el listado, y la tipologia ya se elige con las pastillas
+    # de arriba. Un control que no hace nada es peor que no tenerlo.
+    for _dead in ("Property Type", "Offer Type"):
+        _m = re.search(r'<div class="cs_sidebar_widget">\s*<h3[^>]*>\s*<span>\s*%s\s*</span>'
+                       % re.escape(_dead), h)
+        if _m:
+            _end = _match_div(h, _m.start())
+            if _end > 0:
+                h = h[:_m.start()] + h[_end:]
+
+    # el desplegable "Sort by" de la plantilla no ordenaba nada
+    h = re.sub(r'<div class="cs_property_sort_wrapper">.*?</div>\s*</div>\s*</div>',
+               '</div>', h, count=1, flags=re.S)
+    return h
+
+def inject_catalog(h, fname, lang="en"):
     """Sustituye la rejilla estatica por el punto de montaje del catalogo."""
     feed = CATALOG_PAGE.get(fname)
     if not feed:
+        return h
+    # Idempotencia: build_en reescribe los ficheros en su sitio, asi que
+    # regenerar dos veces volvia a inyectar el H1 y la pagina acababa con
+    # dos. Si el montaje ya esta puesto, no se toca nada.
+    if 'data-catalog=' in h:
         return h
     m = re.search(r'<div class="row cs_gap_y_45[^"]*"[^>]*>', h)
     if not m:
@@ -865,7 +1102,14 @@ def inject_catalog(h, fname):
     if end < 0:
         return h
 
+    # H1 de pagina donde falta (search) y promocion de h2 a h1 (rent).
+    h1 = ""
+    t = CATALOG_H1.get(fname)
+    if t:
+        h1 = ('<h1 class="cs_section_title cs_fs_49 cs_mb_10" data-aos="fade-up">%s</h1>\n'
+              '              ' % _t(t, lang))
     mount = (
+        h1 +
         '<div class="xr_cat_filters" data-catalog-filters></div>\n'
         '              <p class="xr_cat_note cs_secondary_color" data-catalog-note></p>\n'
         '              <div class="row cs_gap_y_45" data-catalog="%s"></div>' % feed
@@ -874,6 +1118,17 @@ def inject_catalog(h, fname):
 
     # La paginacion de la plantilla ya no aplica: el filtrado es por tipologia.
     h = re.sub(r'<ul class="cs_pagination_box cs_mp_0">.*?</ul>', '', h, count=1, flags=re.S)
+
+    # rent: el titulo de pagina venia como h2. Se promociona a h1 conservando
+    # las clases, asi que el aspecto no cambia en absoluto.
+    if fname == "property-listing-rent.html" and "<h1" not in h:
+        h = h.replace('<h2 class="cs_section_title cs_fs_49 mb-0"',
+                      '<h1 class="cs_section_title cs_fs_49 mb-0"', 1)
+        i = h.find('<h1 class="cs_section_title cs_fs_49 mb-0"')
+        if i >= 0:
+            j = h.find('</h2>', i)
+            if j >= 0:
+                h = h[:j] + '</h1>' + h[j+5:]
 
     if 'xaru-catalog.js' not in h:
         h = h.replace('</body>',
@@ -1145,7 +1400,7 @@ def finish(h, lang, fname):
     h = inject_mega(h, lang)
     h = inject_mega_js(h)
     # catalogo demostrativo (antes del reescrito de assets/)
-    h = inject_catalog(h, fname)
+    h = inject_catalog(h, fname, lang)
     # asset paths -> ../assets/
     h = re.sub(r'(["\'(])assets/', r'\1../assets/', h)
     # dead template links -> their live equivalent, then language-folder rewrite
@@ -1167,6 +1422,8 @@ def finish(h, lang, fname):
                    h, count=1)
         h = h.replace('<div class="swiper xr_hero_slider">',
                       '<div class="swiper xr_hero_slider" dir="rtl">')
+    h = ensure_h1(h, fname)
+    h = enforce_single_h1(h)
     out = "/home/claude/work/site/xaru/%s/%s" % (lang, fname)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
@@ -1193,7 +1450,7 @@ def build_en(name):
     h = inject_mega(h, "en")
     h = inject_mega_js(h)
     h = inject_head_extras(h)
-    h = inject_catalog(h, fname)
+    h = inject_catalog(h, fname, "en")
     # clean root-relative home links (logo, breadcrumb) + accessible active nav
     h = fix_dead_links(h)
     h = rewrite_home_links(h, "en")
@@ -1204,6 +1461,8 @@ def build_en(name):
     block = alternates_en(fname)
     ld = seo_meta.jsonld_for("en", fname)
     h = h.replace("</head>", "    " + block + "\n" + ld + "  </head>", 1)
+    h = ensure_h1(h, fname)
+    h = enforce_single_h1(h)
     with open(p, "w", encoding="utf-8") as f:
         f.write(h)
     print("en ->", p, len(h), "bytes")
@@ -1385,7 +1644,7 @@ def _shell_hero(lang, shell):
         crumbs.append('<li class="breadcrumb-item"><a href="%s%s/">%s</a></li>'
                       % (HOME[lang], pslug, _t(plabel, lang)))
     crumbs.append('<li class="breadcrumb-item active">%s</li>' % _t(shell["label"], lang))
-    return '''    <section class="cs_page_header cs_style_1 cs_center cs_bg_filed xr_duotone_overlay position-relative" data-src="/assets/img/xaru/gen2/%s">
+    return '''    <section class="cs_page_header cs_style_1 cs_center cs_bg_filed xr_duotone_overlay position-relative" data-src="%s">
       <div class="container">
         <div class="cs_page_header_content text-center">
           <span class="cs_page_header_subtitle cs_fs_14" style="letter-spacing:3px;text-transform:uppercase;color:rgba(245,241,232,.9)">%s</span>
@@ -1395,7 +1654,7 @@ def _shell_hero(lang, shell):
           </ol>
         </div>
       </div>
-    </section>''' % (img, eyebrow, _t(shell["label"], lang), "\n            ".join(crumbs))
+    </section>''' % (gen2_src(img, 1920), eyebrow, _t(shell["label"], lang), "\n            ".join(crumbs))
 
 def _shell_intro(lang, shell):
     return '''    <section>
@@ -1462,7 +1721,58 @@ def _preloader():
       </div>
     </div>'''
 
+# ---------------------------------------------------------------- video en paginas pilar
+# Biblia V3 §5: minimo 1 video en cada pagina pilar, y prohibido repetir el mismo
+# video en todas. Con seis clips disponibles se reparte asi; ninguna pagina
+# comparte clip con su vecina inmediata.
+PILLAR_VIDEO = {
+    "real-estate":             "xaru-private-villa-cliffside",
+    "developments":            "xaru-land-development-coastal",
+    "capital":                 "xaru-capital-london-construction",
+    "business-infrastructure": "xaru-hospitality-resort-beachfront",
+    "company":                 "xaru-hero-coastal-territory",
+}
+
+def strip_video_bands(h):
+    """Elimina bandas de video ya inyectadas para que reinyectar sea idempotente."""
+    return re.sub(r'\s*<section class="xr_video_band_wrap">.*?</section>', "", h, flags=re.S)
+
+def video_band(vid, caption=""):
+    """Banda de video a todo ancho. Carga diferida: las fuentes van en data-src
+    y las activa xaru-effects.js cuando la banda entra en pantalla."""
+    if not vid:
+        return ""
+    cap = ('<p class="xr_video_band_cap">%s</p>' % caption) if caption else ""
+    tpl = ('    <section class="xr_video_band_wrap">\n'
+           '      <div class="container">\n'
+           '        <div class="xr_video_band">\n'
+           '          <video class="xr_video_band_el" muted loop playsinline preload="none"\n'
+           '                 poster="/assets/img/xaru/video-posters/%s.jpg"\n'
+           '                 aria-hidden="true" data-xr-lazyvideo="1">\n'
+           '            <source data-src="/assets/video/%s.webm" type="video/webm" />\n'
+           '            <source data-src="/assets/video/%s.mp4" type="video/mp4" />\n'
+           '          </video>\n'
+           '        </div>%s\n'
+           '      </div>\n'
+           '    </section>')
+    return tpl % (vid, vid, vid, cap)
+
 def _write_shell(lang, slug, title, desc, body):
+    # §5: banda de video propia de cada pagina pilar de primer nivel.
+    # Se inyecta aqui porque las puertas (developments, capital,
+    # business-infrastructure, company) tienen constructores propios y no
+    # pasan por build_pillar. El guard evita duplicarla si ya venia puesta.
+    _v = None                               # banda retirada: rompia el diseno
+    body = strip_video_bands(body)
+    if _v:
+        # Detras del hero, nunca delante: un video sin titulo encima de la
+        # pagina no dice nada y parte la lectura.
+        _j = body.find("</section>")
+        if _j >= 0:
+            _j += len("</section>")
+            body = body[:_j] + "\n" + video_band(_v) + body[_j:]
+        else:
+            body = body + "\n" + video_band(_v)
     head = _shell_head(lang, slug, title, desc)
     html = head + "\n  <body>\n" + _preloader() + "\n" + _shell_header(lang) + "\n" + \
            body + "\n" + _shell_footer(lang)
@@ -2029,7 +2339,9 @@ def _img_note(lang, kind="ref"):
 
 def opp_card(lang, o, home, facets=()):
     da = " ".join('data-f-%s="%s"' % (k, _slug2(_facet_val(o, k))) for k in facets)
-    img = _asset(o["images"][0])
+    # La ficha muestra la foto a ~700 px de ancho: sirve la derivada de 1280,
+    # no el master de 1920 (mismo encuadre, un tercio del peso).
+    img = gen2_bg(o["images"][0].split("/")[-1], 1280)
     url = "%s%s/" % (home, ficha_url(o))
     badge = status_badge(lang, o["status"])
     sec = ""
@@ -2038,7 +2350,7 @@ def opp_card(lang, o, home, facets=()):
     return '''<div class="col-lg-4 col-md-6 xr_opp_col" %s data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
-              <div class="xr_px_img" style="background-image:url('%s')"></div>
+              <div class="xr_px_img" style="%s"></div>
               <div class="xr_badge_stack">%s%s</div>
             </div>
             <div class="xr_land_card_body">
@@ -2122,7 +2434,7 @@ CAT_IMG = {"private-properties": "09_villa_como.jpg",
 
 def _page_header(lang, eyebrow, title, crumbs, img):
     cr = "\n            ".join(crumbs)
-    return '''    <section class="cs_page_header cs_style_1 cs_center cs_bg_filed xr_duotone_overlay position-relative" data-src="/assets/img/xaru/gen2/%s" style="background-image:url('/assets/img/xaru/gen2/%s')">
+    return '''    <section class="cs_page_header cs_style_1 cs_center cs_bg_filed xr_duotone_overlay position-relative" data-src="%s" style="%s">
       <div class="container">
         <div class="cs_page_header_content text-center">
           <span class="cs_page_header_subtitle cs_fs_14" style="letter-spacing:3px;text-transform:uppercase;color:rgba(245,241,232,.9)">%s</span>
@@ -2132,7 +2444,7 @@ def _page_header(lang, eyebrow, title, crumbs, img):
           </ol>
         </div>
       </div>
-    </section>''' % (img, img, eyebrow, title, cr)
+    </section>''' % (gen2_src(img, 1920), gen2_bg(img, 1920), eyebrow, title, cr)
 
 def _crumbs(lang, trail):
     home = HOME[lang]
@@ -2236,7 +2548,8 @@ def build_ficha(lang, o):
     trail = [(cat_label, cat_slug), (o["title"], slug)]
     hero = _page_header(lang, _t(cat_label, lang), _t(o["title"], lang),
                         _crumbs(lang, trail), _asset(o["images"][0]).split("/")[-1])
-    img = _asset(o["images"][0])
+    # La ficha muestra la foto a ~700 px: derivada de 1280, no el master de 1920.
+    img = gen2_bg(o["images"][0].split("/")[-1], 1280)
     badges = status_badge(lang, o["status"]) + "".join(
         status_badge(lang, s, "xr_badge_sm") for s in o.get("secondaryStatus", []))
 
@@ -2255,7 +2568,7 @@ def build_ficha(lang, o):
       <div class="cs_height_90 cs_height_lg_60"></div>
       <div class="container"><div class="row cs_gap_y_40">
         <div class="col-lg-7">
-          <div class="xr_px_img xr_ficha_img" style="background-image:url('%s')"></div>
+          <div class="xr_px_img xr_ficha_img" style="%s"></div>
           %s
         </div>
         <div class="col-lg-5">
@@ -2293,7 +2606,7 @@ def build_ficha(lang, o):
       <div class="cs_height_90 cs_height_lg_60"></div>
       <div class="container"><div class="row cs_gap_y_40">
         <div class="col-lg-7">
-          <div class="xr_px_img xr_ficha_img" style="background-image:url('%s')"></div>
+          <div class="xr_px_img xr_ficha_img" style="%s"></div>
           %s
         </div>
         <div class="col-lg-5">
@@ -2392,6 +2705,9 @@ def build_pillar(lang, slug, embed_catalog=None):
       </div></div></div>
     </section>''' % (_t(intro_t, lang), _t(intro_sub_t, lang))
     body = _shell_hero(lang, shell) + "\n" + intro
+    # §5: banda de video propia de la pagina pilar, detras de la introduccion.
+    # _write_shell la retirara y recolocara si hiciera falta (idempotente).
+    # banda retirada de los pilares (rompia el diseno); ver docs
     # sections 01..11 with real copy; 12 = generic CTA
     for (num, heading) in ARCH.PILLAR_SECTIONS:
         if num == "12":
@@ -2531,10 +2847,10 @@ def home_blocks(lang):
                     <source data-src="/assets/video/%s.mp4" type="video/mp4" />
                   </video>''' % (vid, vid, vid))
         return ('''<div class="col-lg-4" data-aos="fade-up"><a class="xr_market_card" href="%s%s">
-          <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/%s')">%s</div>
+          <div class="xr_px_img" style="%s">%s</div>
           <div class="xr_market_body"><h3>%s</h3><p>%s</p>
           <span class="xr_link">%s<i class="fa-solid fa-angle-right"></i></span></div></a></div>'''
-          % (home, route, img, vhtml, _t(t, lang), _t(b, lang), _t(F2.UI["view_division"], lang)))
+          % (home, route, gen2_bg(img, 1280), vhtml, _t(t, lang), _t(b, lang), _t(F2.UI["view_division"], lang)))
     MARKET_VIDEO = ["xaru-coastal-residence-aerial", "xaru-hospitality-resort-beachfront", "xaru-land-development-coastal"]
     mcards = "".join(_mcard(t, b, route, img, MARKET_VIDEO[i] if i < len(MARKET_VIDEO) else None)
                      for i, (t, b, route, img) in enumerate(H["markets"]))
@@ -2663,10 +2979,10 @@ def home_blocks(lang):
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>''' % (_home_head("09", _t(H["presence_eyebrow"], lang), _t(H["presence_title"], lang)),
                      _t(H["presence_lead"], lang), _t(F2.PHASE0, lang),
-                     _t(F2.T("Office cities, entity details, team size and network figures are confirmed in Phase 0.",
-                             "Ciudades de oficinas, detalles de entidades, tamaño del equipo y cifras de red se confirman en la Fase 0.",
-                             "مدن المكاتب وتفاصيل الكيانات وحجم الفريق وأرقام الشبكة تُؤكَّد في المرحلة 0.",
-                             "办公城市、实体细节、团队规模与网络数字于第0阶段确认。"), lang), pitems,
+                     _t(F2.T("Office cities, entity details, team size and network figures are published once verified.",
+                             "Ciudades de oficinas, detalles de entidades, tamaño del equipo y cifras de red se publican una vez verificados.",
+                             "مدن المكاتب وتفاصيل الكيانات وحجم الفريق وأرقام الشبكة تُنشر بعد التحقق.",
+                             "办公城市、实体细节、团队规模与网络数字经核实后公布。"), lang), pitems,
                      home,
                      _t(F2.T("The Company — offices, entities, team & network",
                              "La Compañía — oficinas, entidades, equipo y red",
@@ -2722,7 +3038,11 @@ def home_blocks(lang):
       <div class="cs_height_150 cs_height_lg_80"></div>
     </section>''' % (_t(H["desk_eyebrow"], lang), _t(H["desk_title"], lang), home, _t(H["desk_cta"], lang))
 
-    return {"after_hero": b2 + "\n" + b3 + "\n" + b4 + "\n" + b5 + "\n" + b6,
+    # §5: quinto video de portada — Projects, Capital & Expansion.
+    # Va detras del bloque de mercados, como banda editorial a todo ancho.
+    return {"after_hero": b2 + "\n" + b3 + "\n"
+                          + video_band("xaru-capital-london-construction") + "\n"
+                          + b4 + "\n" + b5 + "\n" + b6,
             "after_projects": b7 + "\n" + b8 + "\n" + b9 + "\n" + b10 + "\n" + b11,
             "before_about": b12}
 
@@ -2751,6 +3071,7 @@ def inject_home(lang):
     h = h.replace('<b class="xr_sec_num" style="color:#fff">09</b>', '')  # contact
     h = h.replace('<b class="xr_sec_num">06</b>', '<b class="xr_sec_num">07</b>')  # projects -> 07
     blocks = home_blocks(lang)
+    h = strip_video_bands(h)                # idempotencia en la portada
     h = h.replace("<!-- End Hero Section -->",
                   "<!-- End Hero Section -->\n" + blocks["after_hero"], 1)
     h = h.replace("<!-- End Projects Section -->",
@@ -2937,7 +3258,7 @@ def build_company(lang):
         <div class="cs_height_30"></div>
         <div class="row cs_gap_y_40 align-items-center">
           <div class="col-lg-7" data-aos="fade-up">
-            <div class="xr_px_img xr_ficha_img" style="background-image:url('/assets/img/xaru/gen2/06_masterplan_ashima.jpg')"></div>
+            <div class="xr_px_img xr_ficha_img" style="background-image:url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg') type('image/jpeg'))"></div>
             %s
           </div>
           <div class="col-lg-5">
@@ -3051,7 +3372,7 @@ def build_insights_hub(lang):
         a = F5A.ARTICLES[key]
         arts.append('''<div class="col-lg-6" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
-            <div class="xr_land_card_img"><div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/%s')"></div></div>
+            <div class="xr_land_card_img"><div class="xr_px_img" style="%s"></div></div>
             <div class="xr_land_card_body">
               <p class="xr_land_card_meta mb-2">%s</p>
               <h3>%s</h3>
@@ -3061,7 +3382,7 @@ def build_insights_hub(lang):
               </div>
             </div>
           </div>
-        </div>''' % (a["img"], _art_meta(lang, a), _t(a["title"], lang),
+        </div>''' % (gen2_bg(a["img"], 1280), _art_meta(lang, a), _t(a["title"], lang),
                      _t(a["excerpt"], lang), home, key, _t(I["read"], lang)))
 
     body = _shell_hero(lang, shell) + '''
@@ -3186,6 +3507,95 @@ def build_phase5():
 # ================================================================ Phase 6 — sitemap + llms.txt
 SITE_ROOT = "/home/claude/work/site/xaru"
 LASTMOD = "2026-07-31"
+
+# ---------------------------------------------------------------- portal heredado -> fuera
+# La plantilla traia un area de cliente completa: "Property Agents" con seis
+# personas inventadas, telefonos (555) y correos @xaruhome.com que no existen,
+# mas el panel de "Amanda Jones" con Lorem ipsum. Estaba publicado y ademas en
+# el sitemap en cuatro idiomas. XARU no opera como agencia con cartera de
+# agentes, asi que no se maquilla: se saca de circulacion.
+_PORTAL_RE = re.compile(r'[ \t]*<!-- xr-portal-redirect -->.*?<!-- /xr-portal-redirect -->\s*\n?', re.S)
+PORTAL_PAGES = ("agents-list.html", "profile.html", "client-list.html",
+                "add-property.html", "edit-property.html", "my-property.html",
+                "favourite-property.html", "profile-settings.html")
+
+def _strip_body(h, target, label):
+    """Deja solo la cabecera y un enlace. Estas paginas ya no se sirven: dejar
+    su cuerpo intacto significaba seguir publicando agentes inventados,
+    testimonios repetidos y telefonos (555) que cualquier rastreador que
+    ignore el meta refresh se lleva igual. El original queda en el historial."""
+    m = re.search(r'<body[^>]*>', h)
+    if not m:
+        return h
+    end = h.find("</body>")
+    if end < 0:
+        return h
+    body = ('\n    <main style="font-family:system-ui,sans-serif;padding:80px 24px;text-align:center">\n'
+            '      <p><a href="%s">%s</a></p>\n'
+            '    </main>\n  ' % (target, label))
+    return h[:m.end()] + body + h[end:]
+
+LEGACY_REDIRECT = {
+    # about-us.html es la pagina institucional de la plantilla: bajo la copia
+    # buena de XARU traia tres testimonios inventados con la MISMA frase
+    # repetida y cinco estrellas, y los cuatro agentes ficticios. La pagina
+    # real de compania es /company/, escrita en la fase 5.
+    "about-us.html": "company/",
+    # single-property-v1.html es una landing oscura de plantilla: "$0B+ vendido",
+    # "0K+ clientes satisfechos", planos de planta y folletos de un apartamento
+    # de 980.000 dolares. Nada de eso es de esta casa.
+    "single-property-v1.html": "property-listing-search.html",
+}
+
+def redirect_legacy():
+    n = 0
+    for lang in ("en", "es", "ar", "zh"):
+        pref = "" if lang == "en" else lang + "/"
+        for fname, dest in LEGACY_REDIRECT.items():
+            p = "/home/claude/work/site/xaru/%s%s" % (pref, fname)
+            if not os.path.exists(p):
+                continue
+            target = HOME[lang] + dest
+            with open(p, encoding="utf-8") as f:
+                h = f.read()
+            h = _PORTAL_RE.sub("", h)
+            h = re.sub(r'[ \t]*<link rel="canonical"[^>]*>\s*\n?', '', h)
+            tag = ('    <!-- xr-portal-redirect -->\n'
+                   '    <meta http-equiv="refresh" content="0; url=%s" />\n'
+                   '    <link rel="canonical" href="https://xaruhome.com%s" />\n'
+                   '    <!-- /xr-portal-redirect -->\n' % (target, target))
+            h = h.replace("</head>", tag + "  </head>", 1)
+            h = _strip_body(h, target, "XARU HOME")
+            with open(p, "w", encoding="utf-8") as f:
+                f.write(h)
+            n += 1
+    print("paginas heredadas redirigidas ->", n)
+
+def redirect_portal():
+    n = 0
+    for lang in ("en", "es", "ar", "zh"):
+        pref = "" if lang == "en" else lang + "/"
+        target = HOME[lang]
+        for fname in PORTAL_PAGES:
+            p = "/home/claude/work/site/xaru/%s%s" % (pref, fname)
+            if not os.path.exists(p):
+                continue
+            with open(p, encoding="utf-8") as f:
+                h = f.read()
+            h = _PORTAL_RE.sub("", h)
+            h = re.sub(r'[ \t]*<link rel="canonical"[^>]*>\s*\n?', '', h)
+            h = re.sub(r'[ \t]*<meta name="robots"[^>]*>\s*\n?', '', h)
+            tag = ('    <!-- xr-portal-redirect -->\n'
+                   '    <meta name="robots" content="noindex,nofollow" />\n'
+                   '    <meta http-equiv="refresh" content="0; url=%s" />\n'
+                   '    <link rel="canonical" href="https://xaruhome.com/" />\n'
+                   '    <!-- /xr-portal-redirect -->\n' % target)
+            h = h.replace("</head>", tag + "  </head>", 1)
+            h = _strip_body(h, target, "XARU HOME")
+            with open(p, "w", encoding="utf-8") as f:
+                f.write(h)
+            n += 1
+    print("portal heredado retirado ->", n, "paginas")
 
 def build_utility():
     """Legacy portal / auth / error templates: unique title + description +
@@ -3393,6 +3803,61 @@ if __name__ == "__main__":
     build_phase5()
     # Phase 6 SEO close-out: utility pages, full sitemap + llms.txt
     build_utility()
+    redirect_portal()
+    redirect_legacy()
     build_sitemap()
     build_llms()
+    # ---- pasada final de jerarquia de encabezados ----------------------
+    # Algunas paginas de la plantilla (login, registro, recuperar clave,
+    # detalle de blog) no pasan por los constructores anteriores, asi que la
+    # correccion se aplica al final sobre TODO lo generado. Es idempotente.
+    import glob as _glob
+    _root = "/home/claude/work/site/xaru"
+    _files = (_glob.glob(_root + "/*.html") + _glob.glob(_root + "/*/*.html")
+              + _glob.glob(_root + "/*/*/*.html") + _glob.glob(_root + "/*/*/*/*.html"))
+    _n = 0
+    for _f in _files:
+        with open(_f, encoding="utf-8") as _fh:
+            _h = _fh.read()
+        _o = _h
+        _base = os.path.basename(_f)
+        _lang = "en"
+        _rel = _f[len(_root) + 1:]
+        for _L in ("es", "ar", "zh"):
+            if _rel.startswith(_L + "/"):
+                _lang = _L
+        _h = purge_template_images(_h, _lang)
+        _h = fix_listing_page(_h, _base, _lang)
+        # La ficha de activo se monta desde datos (?id=). El script debe estar
+        # en las cuatro versiones de idioma, no solo en la inglesa.
+        if _base == "property-details.html":
+            # La copia de ejemplo de la plantilla — "Evergreen Estates",
+            # 70.000 dolares, una casa alquilada en Filadelfia — se queda en el
+            # HTML estatico y la ve cualquiera que llegue sin JavaScript, y
+            # tambien los rastreadores. Se sustituye por el texto real que la
+            # ficha usara al montarse.
+            # El nombre de ejemplo aparece traducido en cada idioma
+            # ("Fincas Evergreen", "إيفرغرين"…): se barren todas las variantes.
+            for _dummy in ("Evergreen Estates", "Fincas Evergreen", "Evergreen"):
+                _h = _h.replace(_dummy, "XARU HOME")
+            _h = _h.replace("217 Horizon Heights Road, Silverstone Towers, NY 10022",
+                            "Location shown on the asset record")
+            _h = re.sub(r'\$(?:70|50),000', "Price upon application", _h)
+            _h = re.sub(r'Est\. Payment \$[\d,]+/mo\*', "", _h)
+            _h = _h.replace("Appartment", "Asset").replace("Built in 2010", "")
+            _m = re.search(r'<p class="mb-0">Welcome home!.*?</p>', _h, re.S)
+            if _m:
+                _h = _h[:_m.start()] + '<p class="mb-0"></p>' + _h[_m.end():]
+        if _base == "property-details.html" and "xaru-property-detail.js" not in _h:
+            _pre = "../" if _lang != "en" else ""
+            _h = _h.replace("</body>",
+                            '    <script src="%sassets/js/xaru-property-detail.js"></script>\n  </body>'
+                            % _pre, 1)
+        _h = ensure_h1(_h, _base)
+        _h = enforce_single_h1(_h)
+        if _h != _o:
+            with open(_f, "w", encoding="utf-8") as _fh:
+                _fh.write(_h)
+            _n += 1
+    print("jerarquia de encabezados -> %d paginas corregidas" % _n)
     print("done")
