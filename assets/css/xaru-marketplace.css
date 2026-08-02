@@ -597,11 +597,11 @@ a.xr_mp_navlink:hover { border-color: var(--accent-color); color: var(--primary-
   font-family: var(--primary-font); font-size: 30px; letter-spacing: .04em;
 }
 .xr_pf_id { flex: 1 1 280px; min-width: 0; }
-.xr_pf_id h1 {
+.xr_pf_name {
   margin: 0 0 4px; font-family: var(--primary-font); font-size: 34px;
-  font-weight: 500; color: var(--primary-color);
+  font-weight: 500; color: var(--primary-color); line-height: 1.2;
 }
-.xr_pf_id h1 i { color: #175c3f; font-size: 18px; }
+.xr_pf_name i { color: #175c3f; font-size: 18px; }
 .xr_pf_id p { margin: 0; font-size: 14px; color: var(--secondary-color); }
 .xr_pf_id p a { color: var(--accent3-color); text-decoration: none; }
 .xr_pf_id p a:hover { text-decoration: underline; }

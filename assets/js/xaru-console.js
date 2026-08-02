@@ -101,6 +101,7 @@
     credits:    {en:"Credits",es:"Créditos",ar:"الأرصدة",zh:"额度"},
     listing:    {en:"Listing",es:"Activo",ar:"العرض",zh:"房源"},
     risk:       {en:"Risk",es:"Riesgo",ar:"المخاطر",zh:"风险"},
+    priority:   {en:"Priority",es:"Prioridad",ar:"الأولوية",zh:"优先级"},
     rules:      {en:"Failed rules",es:"Reglas incumplidas",ar:"القواعد المخالفة",zh:"未通过规则"},
     assignee:   {en:"Assignee",es:"Asignado a",ar:"المُسنَد إليه",zh:"负责人"},
     unassigned: {en:"Unassigned",es:"Sin asignar",ar:"غير مُسنَد",zh:"未分配"},
@@ -426,7 +427,7 @@
           esc(t("overdueL")) + "</span></div>" +
       "</div>" +
       '<p class="xr_cs_note">' + esc(t("readOnly")) + "</p>" +
-      table([t("listing"), t("state"), "SLA", t("risk"), t("rules"),
+      table([t("listing"), t("state"), t("priority"), t("risk"), t("rules"),
              t("sla"), t("assignee"), ""], rows);
   }
 

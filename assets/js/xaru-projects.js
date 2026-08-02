@@ -175,7 +175,7 @@
     HOST.innerHTML =
       '<div class="xr_pf_head is-org">' +
         '<div class="xr_pf_id">' +
-          "<h1>" + esc(p.name) + "</h1>" +
+          '<p class="xr_pf_name">' + esc(p.name) + "</p>" +
           "<p>" + esc(t("developer")) + ': <a href="' + esc(devHref) + '">' +
             esc(p.developer) + "</a></p>" +
         "</div>" +

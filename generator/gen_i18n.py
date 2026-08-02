@@ -894,6 +894,32 @@ def _match_div(h, start):
 # la barra lateral. Una pagina sin H1 no le dice a nadie —ni a un buscador ni a
 # un lector de pantalla— de que trata. Se promociona el encabezado principal
 # conservando sus clases: no cambia un pixel.
+# La version arabe de property-listing-buy perdio su <h1> en la cadena de
+# reemplazos de traduccion: quedaba con el subtitulo como unico encabezado.
+# Se repone con el mismo texto que llevan las otras tres.
+PLIST_H1 = {
+    "property-listing-buy.html": {
+        "en": "Private Islands &amp; Luxury Property for Sale",
+        "es": "Islas privadas y propiedades de lujo en venta",
+        "ar": "\u062c\u0632\u0631 \u062e\u0627\u0635\u0629 \u0648\u0639\u0642\u0627\u0631\u0627\u062a \u0641\u0627\u062e\u0631\u0629 \u0644\u0644\u0628\u064a\u0639",
+        "zh": "\u79c1\u4eba\u5c9b\u5c7f\u4e0e\u5962\u534e\u623f\u4ea7\u5728\u552e",
+    },
+}
+
+def restore_listing_h1(h, fname, lang):
+    """Repone el H1 de una pagina de listado si la traduccion se lo comio."""
+    if fname not in PLIST_H1 or re.search(r'<h1[\s>]', h):
+        return h
+    txt = PLIST_H1[fname].get(lang)
+    if not txt:
+        return h
+    m = re.search(r'<h2 class="cs_section_subtitle', h)
+    if not m:
+        return h
+    tag = ('<h1 class="cs_section_title cs_fs_49 cs_mb_10" data-aos="fade-up">%s</h1>\n          '
+           % txt)
+    return h[:m.start()] + tag + h[m.start():]
+
 H1_PROMOTE = {
     "login.html":           r'<h3 class="cs_contact_form_heading[^"]*"[^>]*>',
     "register.html":        r'<h3 class="cs_contact_form_heading[^"]*"[^>]*>',
@@ -2793,11 +2819,18 @@ def build_directory(lang, kind):
     return _write_shell(lang, d["slug"], title, desc, body,
                         css=("xaru-marketplace.css",), js=("xaru-directory.js",))
 
+DIR_ROLE = {
+ "agents":     ARCH.T("Adviser", "Asesor", "\u0645\u0633\u062a\u0634\u0627\u0631", "\u987e\u95ee"),
+ "agencies":   ARCH.T("Office", "Oficina", "\u0645\u0643\u062a\u0628", "\u5206\u652f\u673a\u6784"),
+ "developers": ARCH.T("Developer", "Promotora", "\u0645\u0637\u0648\u0651\u0631", "\u5f00\u53d1\u5546"),
+}
+
 def build_profile(lang, kind, slug, name):
     d = DIR_KINDS[kind]
     RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
     page_slug = d["one"] + "/" + slug
-    title = "%s — XARU HOME" % name
+    role = _t(DIR_ROLE[kind], lang)
+    title = "%s — %s | XARU HOME" % (name, role)
     desc = "%s — %s, XARU HOME." % (name, _t(d["title"], lang))
     trail = [(RE, "real-estate"), (d["title"], d["slug"]),
              (ARCH.T(name, name, name, name), page_slug)]
@@ -2871,10 +2904,13 @@ def build_projects_index(lang):
     return _write_shell(lang, slug, title, desc, body,
                         css=("xaru-marketplace.css",), js=("xaru-projects.js",))
 
+PRJ_ROLE = ARCH.T("Off-plan project", "Proyecto off-plan",
+                  "\u0645\u0634\u0631\u0648\u0639 \u0639\u0644\u0649 \u0627\u0644\u0645\u062e\u0637\u0637", "\u671f\u623f\u9879\u76ee")
+
 def build_project_page(lang, slug, name):
     RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
     page_slug = "real-estate/project/" + slug
-    title = "%s — XARU HOME" % name
+    title = "%s — %s | XARU HOME" % (name, _t(PRJ_ROLE, lang))
     desc = "%s — %s. XARU HOME." % (name, _t(PRJ_TITLE, lang))
     trail = [(RE, "real-estate"), (PRJ_TITLE, "real-estate/new-projects"),
              (ARCH.T(name, name, name, name), page_slug)]
@@ -4163,6 +4199,7 @@ def redirect_legacy():
             n += 1
     print("paginas heredadas redirigidas ->", n)
 
+
 def redirect_portal():
     n = 0
     for lang in ("en", "es", "ar", "zh"):
@@ -4468,6 +4505,7 @@ if __name__ == "__main__":
             else:
                 _h = re.sub(r'<script src="(?:\.\./)*assets/js/xaru-property-detail\.js">',
                             '<script src="/assets/js/xaru-property-detail.js">', _h)
+        _h = restore_listing_h1(_h, _base, _lang)
         _h = ensure_h1(_h, _base)
         _h = enforce_single_h1(_h)
         if _h != _o:

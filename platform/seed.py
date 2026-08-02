@@ -88,12 +88,23 @@ def uid(prefix, n):
     return "%s_%012d" % (prefix, n)
 
 
+# Letras que la descomposicion Unicode no separa en base + acento: no llevan
+# marca combinante, son caracteres propios. Sin esta tabla, "Sorensen" salia
+# como "g-sorensen" en unos sitios y "g-s%C3%B8rensen" en otros, y el enlace
+# se rompia.
+_FOLD = {
+    "\u00f8": "o", "\u00e6": "ae", "\u00df": "ss", "\u00f0": "d", "\u00fe": "th",
+    "\u0142": "l", "\u0111": "d", "\u0127": "h", "\u0131": "i", "\u0153": "oe",
+    "\u00e5": "a", "\u0119": "e", "\u0105": "a", "\u017c": "z", "\u017a": "z",
+}
+
 def slugify(s):
-    s = unicodedata.normalize("NFD", str(s))
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
+    s = "".join(_FOLD.get(c, c) for c in str(s).lower())
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     out = []
     for c in s:
-        out.append(c if c.isalnum() else "-")
+        out.append(c if (c.isalnum() and c.isascii()) else "-")
     return "-".join(x for x in "".join(out).split("-") if x)
 
 
@@ -960,19 +971,28 @@ def main():
     # ---- operación
     # La cola se arma sobre lo que de verdad espera decisión, no sobre activos
     # ya publicados: 42 casos con su regla incumplida y su SLA.
+    # La cola se ordena por vencimiento, asi que si todos los casos comparten
+    # SLA la primera pantalla sale monotona: treinta filas identicas. Se
+    # reparten el plazo, la regla y la prioridad, y un tercio va vencido, que
+    # es lo que hace util una cola.
+    RULE_MIX = ["photo_quality", "duplicate_check", "price_outlier",
+                "permit_missing", "photo_quality,duplicate_check",
+                "price_outlier,permit_missing"]
     ci = 0
     for (nid, state, rules) in pending_ids:
         if state not in ("HUMAN_REVIEW", "AUTOMATED_REVIEW", "REJECTED"):
             continue
         ci += 1
+        # dias hasta el vencimiento: negativo = vencido
+        due = [-2, -1, 0, 1, 1, 2, 3, 5][ci % 8]
         cur.execute("INSERT INTO moderation_cases VALUES (?,?,?,?,?,?,?,?,?)",
-                    (uid("mod", ci), nid, iso(ci % 12),
-                     ["normal", "high", "urgent"][ci % 3],
-                     iso(-(1 + ci % 3)),
+                    (uid("mod", ci), nid, iso(2 + ci % 12),
+                     ["urgent", "high", "normal", "normal", "high"][ci % 5],
+                     iso(-due),
                      "decided" if state == "REJECTED" else
-                     ("in_review" if ci % 3 == 0 else "open"),
-                     round(0.08 * (ci % 9), 2),
-                     rules or "photo_quality",
+                     ("in_review" if ci % 4 == 0 else "open"),
+                     round(0.06 + 0.09 * (ci % 10), 2),
+                     rules if (ci % 3 == 0 and rules) else RULE_MIX[ci % len(RULE_MIX)],
                      ("moderator%02d" % (ci % 4)) if ci % 3 == 0 else None))
     for i in range(12):
         ci += 1

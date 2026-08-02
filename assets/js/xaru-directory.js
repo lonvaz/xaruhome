@@ -250,8 +250,8 @@
     return '<div class="xr_pf_head">' +
         '<span class="xr_pf_avatar">' + monogram(a.name) + "</span>" +
         '<div class="xr_pf_id">' +
-          "<h1>" + esc(a.name) + (a.verified ?
-            ' <i class="fa-solid fa-circle-check" title="' + esc(t("verified")) + '"></i>' : "") + "</h1>" +
+          '<p class="xr_pf_name">' + esc(a.name) + (a.verified ?
+            ' <i class="fa-solid fa-circle-check" title="' + esc(t("verified")) + '"></i>' : "") + "</p>" +
           "<p>" + esc(a.title || "") +
             (a.agency ? " · " + '<a href="' + PR + "real-estate/agency/" +
               encodeURIComponent(a.agencySlug) + '/">' + esc(a.agency) + "</a>" : "") + "</p>" +
@@ -289,8 +289,8 @@
 
     return '<div class="xr_pf_head is-org">' +
         '<div class="xr_pf_id">' +
-          "<h1>" + esc(o.name) + (o.verified ?
-            ' <i class="fa-solid fa-circle-check" title="' + esc(t("verified")) + '"></i>' : "") + "</h1>" +
+          '<p class="xr_pf_name">' + esc(o.name) + (o.verified ?
+            ' <i class="fa-solid fa-circle-check" title="' + esc(t("verified")) + '"></i>' : "") + "</p>" +
           "<p>" + esc(o.legalName || "") + "</p>" +
           '<p class="xr_pf_lic">' + esc(t("licence")) + " " + esc(o.licence || "") + "</p>" +
         "</div>" +
