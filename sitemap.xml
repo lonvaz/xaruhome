@@ -162,46 +162,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://xaruhome.com/single-property-v1.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/single-property-v1.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/es/single-property-v1.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/single-property-v1.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/ar/single-property-v1.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/single-property-v1.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/zh/single-property-v1.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/single-property-v1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/single-property-v1.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xaruhome.com/property-details.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/property-details.html" />
     <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/property-details.html" />
@@ -240,46 +200,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/property-details.html" />
     <lastmod>2026-07-31</lastmod>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/about-us.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/about-us.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/es/about-us.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/about-us.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/ar/about-us.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/about-us.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xaruhome.com/zh/about-us.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/about-us.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/about-us.html" />
-    <lastmod>2026-07-31</lastmod>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://xaruhome.com/contact.html</loc>
