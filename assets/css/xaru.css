@@ -1988,3 +1988,27 @@ body.page-loaded .xr_hero_slider_wrap {
   border-radius: 16px; padding: 40px 32px; text-align: center;
 }
 .xr_empty_state p { max-width: 620px; margin: 0 auto 24px; color: var(--secondary-color); }
+
+/* Tarjetas del inventario de plataforma ---------------------------------
+   El precio vive arriba a la izquierda; los distintivos bajan a la esquina
+   opuesta para no pisarlo, y se apilan hacia abajo. */
+.xr_card_badges {
+  position: absolute; right: 12px; top: 12px; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  pointer-events: none;
+}
+.xr_card_badges span {
+  font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px; backdrop-filter: blur(6px);
+  font-family: var(--secondary-font); line-height: 1;
+}
+.xr_verified_badge { background: rgba(23, 92, 63, .92); color: #eaf5ef; }
+.xr_demo_badge     { background: rgba(28, 27, 25, .78); color: #d8d2c6;
+                     border: 1px solid rgba(216,210,198,.3); }
+.xr_promo_badge.is-featured { background: rgba(201, 168, 118, .95); color: #1c1b19; }
+.xr_promo_badge.is-premium  { background: rgba(139, 110, 69, .95);  color: #f5f1e8; }
+.xr_promo_badge.is-spotlight{ background: rgba(28, 27, 25, .95);    color: #c9a876; }
+.xr_card_type {
+  font-size: 13px; color: var(--secondary-color); margin-top: 2px;
+  font-family: var(--secondary-font);
+}

@@ -79,11 +79,22 @@
 
   // hero_image llega como assets/img/xaru/catalog/<id>.jpg
   // las derivadas viven en assets/img/xaru/catalog/r/<id>-<w>.<ext>
+  /* Cada banco de imágenes tiene sus propios anchos derivados: el catálogo
+     llega a 2560 y las fotos de sección a 1920. Pedir un ancho que no existe
+     era un 404 por tarjeta. Se deduce del directorio de origen. */
+  var WIDTHS_BY_DIR = {
+    "assets/img/xaru/catalog/": [480, 768, 1280, 1920, 2560],
+    "assets/img/xaru/gen2/":    [768, 1280, 1920]
+  };
+
   function srcset(rel, ext, R) {
-    var m = rel.match(/([^\/]+)\.jpg$/);
+    var m = rel.match(/^(.*\/)([^\/]+)\.jpg$/);
     if (!m) return null;
-    var base = R + "assets/img/xaru/catalog/r/" + m[1];
-    return WIDTHS.map(function (w) {
+    var dir = m[1].replace(/^\//, "");
+    var widths = WIDTHS_BY_DIR[dir];
+    if (!widths) return null;
+    var base = R + dir + "r/" + m[2];
+    return widths.map(function (w) {
       return base + "-" + w + "." + ext + " " + w + "w";
     }).join(", ");
   }
@@ -363,6 +374,125 @@
     }
   }
 
+
+  /* ---------- inventario de la plataforma (API estática) ---------- */
+
+  var API_UI = {
+    beds:  {en:"Bedrooms",es:"Dormitorios",ar:"غرف",zh:"卧室"},
+    baths: {en:"Bathrooms",es:"Baños",ar:"حمامات",zh:"浴室"},
+    built: {en:"Built area",es:"Construidos",ar:"مساحة",zh:"建筑面积"},
+    keys:  {en:"Keys",es:"Llaves",ar:"مفاتيح",zh:"客房"},
+    berths:{en:"Berths",es:"Amarres",ar:"مراسي",zh:"泊位"},
+    ha:    {en:"hectares",es:"hectáreas",ar:"هكتار",zh:"公顷"},
+    poa:   {en:"Price upon application",es:"Precio a consulta",ar:"السعر عند الطلب",zh:"价格面议"},
+    demo:  {en:"Platform demo",es:"Muestra de plataforma",ar:"عرض تجريبي",zh:"平台演示"},
+    verified:{en:"Verified",es:"Verificado",ar:"موثّق",zh:"已核验"},
+    rent:  {en:"/ year",es:"/ año",ar:"/ سنة",zh:"/ 年"}
+  };
+
+  function money(v, cur, l) {
+    try { return new Intl.NumberFormat(l === "zh" ? "zh-CN" : l === "ar" ? "ar-AE" : l === "es" ? "es-ES" : "en-US",
+      { style: "currency", currency: cur || "USD", maximumFractionDigits: 0 }).format(v); }
+    catch (e) { return (cur || "USD") + " " + v; }
+  }
+
+  function apiCard(it, l, R) {
+    var title = it.t[l] || it.t.en;
+    var loc = [it.city, it.cc].filter(Boolean).join(", ");
+    var price = it.poa ? (API_UI.poa[l] || API_UI.poa.en)
+      : money(it.p, it.cur, l) + (it.off === "rent" ? " " + (API_UI.rent[l] || "") : "");
+    var feats = [
+      it.bd ? metric(t(API_UI.beds, l), it.bd) : "",
+      it.ba ? metric(t(API_UI.baths, l), it.ba) : "",
+      it.area ? metric("m²", num(it.area, l)) : "",
+      it.keys ? metric(t(API_UI.keys, l), it.keys) : "",
+      it.berths ? metric(t(API_UI.berths, l), it.berths) : "",
+      (!it.area && it.ha) ? metric(t(API_UI.ha, l), num(it.ha, l)) : ""
+    ].filter(Boolean).join("");
+    var detail = R + "property-details.html?id=" + encodeURIComponent(it.id);
+    var badges = "";
+    if (it.promo && it.promo !== "none")
+      badges += '<span class="xr_promo_badge is-' + esc(it.promo) + '">' + esc(it.promo) + "</span>";
+    if (it.ver) badges += '<span class="xr_verified_badge">' + esc(t(API_UI.verified, l)) + "</span>";
+    if (it.demo) badges += '<span class="xr_demo_badge">' + esc(t(API_UI.demo, l)) + "</span>";
+
+    return (
+      '<div class="col-md-6 col-xl-4 xr_cat_item" ' +
+      'data-subcategory="' + esc(it.type) + '" data-variant="' + esc(it.cat) + '" ' +
+      'data-price="' + Number(it.p || 0) + '" data-beds="' + Number(it.bd || 0) + '" ' +
+      'data-baths="' + Number(it.ba || 0) + '" data-country="' + esc(it.cc || "") + '" ' +
+      'data-area="' + Number(it.area || 0) + '" data-off="' + esc(it.off) + '" ' +
+      'data-cat="' + esc(it.cat) + '" data-lat="' + (it.lat || "") + '" data-lon="' + (it.lon || "") + '" ' +
+      'data-search="' + esc(norm([title, it.city, it.cc, it.typeName[l] || it.typeName.en,
+                                  it.agName, it.ogName].filter(Boolean).join(" "))) + '">' +
+        '<div class="cs_card cs_style_1">' +
+          '<a href="' + esc(detail) + '" aria-label="' + esc(title) +
+          '" class="cs_card_thumbnail cs_radius_20 cs_mb_17 position-relative">' +
+            picture(it.img, title, "cs_card_img_front", R) +
+            '<span class="cs_property_price cs_primary_bg cs_fs_20 cs_white_color cs_semibold ' +
+            'cs_primary_font cs_radius_10 position-absolute">' + esc(price) + "</span>" +
+            '<span class="xr_badge_stack xr_card_badges">' + badges + "</span>" +
+          "</a>" +
+          '<div class="cs_card_info">' +
+            '<ul class="cs_card_meta cs_mp_0">' + feats + "</ul>" +
+            '<h3 class="cs_card_title cs_fs_20 cs_semibold cs_mb_5">' +
+            '<a href="' + esc(detail) + '">' + esc(title) + "</a></h3>" +
+            '<p class="cs_card_subtitle cs_mb_0">' + esc(loc) + "</p>" +
+            '<p class="xr_card_type cs_mb_0">' + esc(it.typeName[l] || it.typeName.en) + "</p>" +
+          "</div>" +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function renderApi(host, data, l, R) {
+    var items = data.items || [];
+    var limit = parseInt(host.getAttribute("data-limit") || "0", 10);
+    var only = host.getAttribute("data-offering");      // sale | rent
+    var cat = host.getAttribute("data-category");       // residential | commercial | land
+    if (only) items = items.filter(function (x) { return x.off === only; });
+    if (cat) items = items.filter(function (x) { return x.cat === cat; });
+    if (limit > 0) items = items.slice(0, limit);
+    host.innerHTML = items.map(function (x) { return apiCard(x, l, R); }).join("");
+
+    var fmount = document.querySelector("[data-catalog-filters]");
+    if (fmount) apiFilters(items, l, fmount);
+    bindSidebar();
+    applyFilters();
+    var note = document.querySelector("[data-catalog-note]");
+    if (note) note.textContent = (data.mode === "simulation")
+      ? { en: "Platform demo inventory — test records of the XARU HOME platform.",
+          es: "Inventario de muestra de la plataforma — registros de prueba de XARU HOME.",
+          ar: "مخزون تجريبي للمنصة — سجلات اختبارية لـ XARU HOME.",
+          zh: "平台演示资产——XARU HOME 平台测试记录。" }[l] : "";
+    host.dispatchEvent(new CustomEvent("xaru:catalog-ready",
+      { bubbles: true, detail: { count: items.length } }));
+  }
+
+  function apiFilters(items, l, mount) {
+    var seen = {}, order = [];
+    items.forEach(function (it) {
+      if (!seen[it.type]) { seen[it.type] = it.typeName[l] || it.typeName.en; order.push(it.type); }
+    });
+    order.sort(function (a, b) { return seen[a].localeCompare(seen[b]); });
+    var all = { en: "All", es: "Todos", ar: "الكل", zh: "全部" }[l];
+    var html = '<button type="button" class="xr_cat_filter is-active" data-f="*">' + esc(all) + "</button>";
+    order.forEach(function (k) {
+      html += '<button type="button" class="xr_cat_filter" data-f="' + esc(k) + '">' +
+        esc(seen[k]) + "</button>";
+    });
+    mount.innerHTML = html;
+    mount.addEventListener("click", function (e) {
+      var b = e.target.closest(".xr_cat_filter");
+      if (!b) return;
+      mount.querySelectorAll(".xr_cat_filter").forEach(function (x) {
+        x.classList.toggle("is-active", x === b);
+      });
+      STATE.typology = b.getAttribute("data-f");
+      applyFilters();
+    });
+  }
+
   /* ---------- arranque ---------- */
 
   function render(host) {
@@ -370,6 +500,21 @@
     var R = root();
     var files = (host.getAttribute("data-catalog") || "private-real-estate")
       .split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+
+    /* La plataforma sirve su inventario desde la API estática generada por
+       platform/export_api.py, que tiene la forma exacta de la API real. El
+       catálogo antiguo por paquetes sigue funcionando: se elige con el valor
+       del atributo data-catalog. */
+    var useApi = files.length === 1 && files[0] === "api";
+    if (useApi) {
+      return fetch(R + "data/api/v1/search-index.json")
+        .then(function (r) { if (!r.ok) throw new Error("api " + r.status); return r.json(); })
+        .then(function (d) { return renderApi(host, d, l, R); })
+        .catch(function (err) {
+          if (window.console) console.warn("[xaru-catalog]", err);
+          host.removeAttribute("data-catalog");
+        });
+    }
 
     Promise.all(files.map(function (f) {
       return fetch(R + "data/properties/" + f + ".json").then(function (r) {

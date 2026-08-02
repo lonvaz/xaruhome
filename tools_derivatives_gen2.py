@@ -25,7 +25,8 @@ if __name__ == "__main__":
             # resolucion: se escribe el master tal cual bajo ese nombre. Asi la
             # URL existe siempre y ninguna pagina se queda sin fondo por un 404.
             rs = im if w >= W else im.resize((w, round(H * w / W)), Image.LANCZOS)
-            for ext, kw in (("webp", dict(quality=78, method=6)),
+            for ext, kw in (("avif", dict(quality=58)),
+                            ("webp", dict(quality=78, method=6)),
                             ("jpg",  dict(quality=80, optimize=True, progressive=True))):
                 out = "%s/%s-%d.%s" % (OUT, base, w, ext)
                 rs.save(out, **kw)

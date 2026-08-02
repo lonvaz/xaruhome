@@ -864,10 +864,17 @@ def gen2_src(name, w=1280, ext="jpg"):
     base = name[:-4] if name.endswith(".jpg") else name
     return "/assets/img/xaru/gen2/r/%s-%d.%s" % (base, w, ext)
 
+# El listado ya no lee los tres paquetes estáticos: consume la API de la
+# plataforma (data/api/v1/search-index.json), con 900+ activos en 130 países.
+# El valor "api" activa ese camino en xaru-catalog.js.
 CATALOG_PAGE = {
-    "property-listing-buy.html":    "private-real-estate",
-    "property-listing-rent.html":   "commercial-hospitality",
-    "property-listing-search.html": "private-real-estate,commercial-hospitality,land-developments",
+    "property-listing-buy.html":    "api",
+    "property-listing-rent.html":   "api",
+    "property-listing-search.html": "api",
+}
+CATALOG_SCOPE = {
+    "property-listing-buy.html":  ' data-offering="sale"',
+    "property-listing-rent.html": ' data-offering="rent"',
 }
 
 def _match_div(h, start):
@@ -1006,6 +1013,18 @@ def strip_index_html(h, lang="en"):
                else 'href="%s"' % (m.group(2) or "/"), h)
     h = re.sub(r'href="([^"]*/)index\.html(#[^"]*)?"',
                lambda m: 'href="%s%s"' % (m.group(1), m.group(2) or ""), h)
+    return h
+
+def migrate_catalog_mount(h, fname):
+    """El punto de montaje del catálogo quedó congelado por la guardia de
+    idempotencia de inject_catalog. Aquí se reescribe al inventario de la
+    plataforma sin volver a inyectar nada."""
+    feed = CATALOG_PAGE.get(fname)
+    if not feed:
+        return h
+    scope = CATALOG_SCOPE.get(fname, "")
+    h = re.sub(r'<div class="row cs_gap_y_45" data-catalog="[^"]*"[^>]*>',
+               '<div class="row cs_gap_y_45" data-catalog="%s"%s>' % (feed, scope), h)
     return h
 
 def purge_dead_links(h):
@@ -1157,7 +1176,8 @@ def inject_catalog(h, fname, lang="en"):
         h1 +
         '<div class="xr_cat_filters" data-catalog-filters></div>\n'
         '              <p class="xr_cat_note cs_secondary_color" data-catalog-note></p>\n'
-        '              <div class="row cs_gap_y_45" data-catalog="%s"></div>' % feed
+        '              <div class="row cs_gap_y_45" data-catalog="%s"%s></div>'
+        % (feed, CATALOG_SCOPE.get(fname, ""))
     )
     h = h[:b] + mount + h[end:]
 
@@ -3985,6 +4005,7 @@ if __name__ == "__main__":
         for _L in ("es", "ar", "zh"):
             if _rel.startswith(_L + "/"):
                 _lang = _L
+        _h = migrate_catalog_mount(_h, _base)
         _h = purge_dead_links(_h)
         _h = strip_index_html(_h, _lang)
         _h = purge_template_images(_h, _lang)
