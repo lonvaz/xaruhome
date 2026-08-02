@@ -21,9 +21,10 @@ if __name__ == "__main__":
         im = Image.open(p).convert("RGB")
         W, H = im.size
         for w in WIDTHS:
-            if w > W:
-                continue
-            rs = im.resize((w, round(H * w / W)), Image.LANCZOS) if w != W else im
+            # Si el master es mas estrecho que el ancho pedido no se inventa
+            # resolucion: se escribe el master tal cual bajo ese nombre. Asi la
+            # URL existe siempre y ninguna pagina se queda sin fondo por un 404.
+            rs = im if w >= W else im.resize((w, round(H * w / W)), Image.LANCZOS)
             for ext, kw in (("webp", dict(quality=78, method=6)),
                             ("jpg",  dict(quality=80, optimize=True, progressive=True))):
                 out = "%s/%s-%d.%s" % (OUT, base, w, ext)
