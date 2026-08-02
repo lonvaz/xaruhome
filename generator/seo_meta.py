@@ -519,6 +519,14 @@ SLUG_LABEL = {
  # ---- rutas del marketplace (Biblia §5.1) -----------------------------
  "real-estate/search":                          {"en": "Search the Inventory", "es": "Buscar en el inventario",
                                                  "ar": "ابحث في المعروض", "zh": "检索资产库"},
+ "real-estate/agents":                          {"en": "Advisers", "es": "Asesores",
+                                                 "ar": "المستشارون", "zh": "顾问团队"},
+ "real-estate/agencies":                        {"en": "Offices", "es": "Oficinas",
+                                                 "ar": "المكاتب", "zh": "分支机构"},
+ "real-estate/developers":                      {"en": "Developers", "es": "Promotoras",
+                                                 "ar": "المطوّرون", "zh": "开发商"},
+ "real-estate/new-projects":                    {"en": "New Projects", "es": "Proyectos nuevos",
+                                                 "ar": "المشاريع الجديدة", "zh": "新项目"},
  "real-estate/buy":                             {"en": "Residential for Sale", "es": "Residencial en venta",
                                                  "ar": "سكني للبيع", "zh": "住宅出售"},
  "real-estate/rent":                            {"en": "Residential to Rent", "es": "Residencial en alquiler",
@@ -557,6 +565,50 @@ SLUG_LABEL = {
 
 # ---------------------------------------------------------------- title + description, 34 slugs x 4 languages
 SHELL_SEO = {
+
+ # ---- off-plan (Biblia de Real Estate §5.5) ---------------------------
+ "real-estate/new-projects": {
+  "en": ("Off-Plan Projects & Payment Plans | XARU HOME",
+         "Off-plan projects with the developer who committed, the handover date, the construction stage actually reached and how the payment is staged against it."),
+  "es": ("Proyectos off-plan y planes de pago | XARU HOME",
+         "Proyectos off-plan con la promotora que se ha comprometido, la fecha de entrega, el punto real de la obra y cómo se escalona el pago contra ella."),
+  "ar": ("مشاريع على المخطط وخطط السداد | XARU HOME",
+         "مشاريع على المخطط مع المطوّر الملتزِم وموعد التسليم ومرحلة الإنشاء المبلوغة فعلاً وكيفية جدولة السداد في مقابلها."),
+  "zh": ("期房项目与付款计划 | XARU HOME",
+         "期房项目，附作出承诺的开发商、交付日期、工程实际进展阶段，以及付款如何与之对应分期。"),
+ },
+
+ # ---- directorios (Biblia de Real Estate §5.6) ------------------------
+ "real-estate/agents": {
+  "en": ("Property Advisers Worldwide | XARU HOME",
+         "The XARU HOME advisers: the office that holds each mandate, the licence on file and the markets each adviser actually covers. No anonymous inbox."),
+  "es": ("Asesores inmobiliarios en el mundo | XARU HOME",
+         "Los asesores de XARU HOME: la oficina que lleva cada mandato, la licencia registrada y las plazas que cada asesor cubre de verdad. Ningún buzón anónimo."),
+  "ar": ("مستشارو العقارات حول العالم | XARU HOME",
+         "مستشارو XARU HOME: المكتب صاحب كل تفويض، والترخيص المسجّل، والأسواق التي يغطيها كل مستشار فعلاً. ولا بريد مجهول."),
+  "zh": ("全球房地产顾问 | XARU HOME",
+         "XARU HOME 的顾问团队：持有各项委托的分支机构、备案执照，以及每位顾问真正覆盖的市场。绝无匿名信箱。"),
+ },
+ "real-estate/agencies": {
+  "en": ("Our Offices & Licensed Entities | XARU HOME",
+         "The offices that hold the mandates, each with its legal entity, its licence and the inventory registered under it — what makes a mandate enforceable."),
+  "es": ("Nuestras oficinas y entidades licenciadas | XARU HOME",
+         "Las oficinas que llevan los mandatos, cada una con su entidad legal, su licencia y el inventario registrado a su nombre — lo que hace exigible un mandato."),
+  "ar": ("مكاتبنا وكياناتنا المرخّصة | XARU HOME",
+         "المكاتب التي تحمل التفويضات، لكلٍّ كيانه القانوني وترخيصه والمعروض المسجّل باسمه — وهو ما يجعل التفويض واجب النفاذ."),
+  "zh": ("我们的分支机构与持牌主体 | XARU HOME",
+         "持有委托的各分支机构，均附其法律主体、执照及名下登记的资产——这正是委托具备可执行力的依据。"),
+ },
+ "real-estate/developers": {
+  "en": ("Property Developers & Off-Plan Projects | XARU HOME",
+         "The developers behind the off-plan projects on the platform, with registered projects, committed handover and the payment plan on offer."),
+  "es": ("Promotoras y proyectos off-plan | XARU HOME",
+         "Las promotoras detrás de los proyectos off-plan de la plataforma, con proyectos registrados, entrega comprometida y el plan de pago que ofrecen."),
+  "ar": ("المطوّرون ومشاريع البيع على المخطط | XARU HOME",
+         "المطوّرون وراء مشاريع «على المخطط» في المنصة، مع المشاريع المسجّلة وموعد التسليم الملتزَم به وخطة السداد المعروضة."),
+  "zh": ("开发商与期房项目 | XARU HOME",
+         "平台上期房项目背后的开发商，附已登记项目、承诺交付时间与提供的付款计划。"),
+ },
 
  # ---- rutas del marketplace (Biblia de Real Estate §5.1) --------------
  "real-estate/search": {
@@ -1209,6 +1261,8 @@ SITEMAP_PRIORITY = {
  "real-estate/search": "0.9", "real-estate/buy": "0.9", "real-estate/rent": "0.8",
  "real-estate/commercial/buy": "0.8", "real-estate/commercial/rent": "0.7",
  "real-estate/land": "0.8", "real-estate/map": "0.7",
+ "real-estate/agents": "0.7", "real-estate/agencies": "0.7", "real-estate/developers": "0.7",
+ "real-estate/new-projects": "0.8",
 }
 
 def sitemap_entries():

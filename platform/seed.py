@@ -928,6 +928,31 @@ def main():
         cur.execute("INSERT INTO credit_ledger VALUES (?,?,?,?,?,?,?)",
                     (uid("cl", i * 2 + 2), oid, "consumption", -1200, "seed", "seed-use-%d" % i, NOW))
 
+    # ---- perfil del agente derivado de su cartera --------------------------
+    # Especialidades, zonas y tiempo de respuesta no se inventan: salen de lo
+    # que cada asesor lleva realmente. Un perfil vacio en un directorio es peor
+    # que no tener directorio.
+    for aid in agent_ids:
+        specs = [r[0] for r in cur.execute(
+            "SELECT subtype, COUNT(*) c FROM listings WHERE agent_id=? AND subtype IS NOT NULL "
+            "GROUP BY subtype ORDER BY c DESC LIMIT 4", (aid,))]
+        areas = [r[0] for r in cur.execute(
+            "SELECT country_code, COUNT(*) c FROM listings WHERE agent_id=? "
+            "GROUP BY country_code ORDER BY c DESC LIMIT 5", (aid,))]
+        n = cur.execute("SELECT COUNT(*) FROM listings WHERE agent_id=?", (aid,)).fetchone()[0]
+        h = sum(ord(ch) for ch in aid)
+        cur.execute("""UPDATE agents SET specialities=?, service_areas=?,
+                       response_minutes_p50=?, rating_avg=?, rating_count=?,
+                       phone=?, whatsapp=?
+                       WHERE id=?""",
+                    (",".join(specs), ",".join(areas),
+                     18 + (h % 5) * 12,
+                     round(4.2 + (h % 8) / 10.0, 1),
+                     max(3, n // 3),
+                     "+971 4 000 %04d" % (h % 10000),
+                     "+971 50 000 %04d" % (h % 10000),
+                     aid))
+
     con.commit()
 
     stats = {}

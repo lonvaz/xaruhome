@@ -2732,6 +2732,180 @@ def build_marketplace(lang, route):
     return _write_shell(lang, slug, title, desc, body,
                         css=("xaru-marketplace.css",), js=("xaru-marketplace.js",))
 
+# ================================================================ Directorios (Biblia §5.6)
+# Tres directorios y una ficha por entidad. Las fichas se generan como paginas
+# reales —no como parametros de consulta— porque un perfil de asesor o de
+# oficina es una URL que se comparte, se indexa y se traduce a los cuatro
+# idiomas. Son 33 entidades: 132 paginas, y el buscador de cada directorio
+# opera en cliente sobre el mismo JSON que alimenta al resto.
+
+DIR_KINDS = {
+ "agents": dict(
+   slug="real-estate/agents", one="real-estate/agent",
+   eyebrow=ARCH.T("The desk", "La mesa", "المكتب", "团队"),
+   title=ARCH.T("Advisers", "Asesores", "المستشارون", "顾问团队"),
+   lead=ARCH.T(
+     "Every asset under mandate has a named adviser behind it, with the office that holds the mandate, the licence on file and the markets that adviser actually covers. Nothing is routed to an anonymous inbox.",
+     "Cada activo bajo mandato tiene detrás un asesor con nombre, la oficina que lleva el mandato, la licencia registrada y las plazas que ese asesor cubre de verdad. Nada se dirige a un buzón anónimo.",
+     "خلف كل أصل تحت التفويض مستشار باسمه، والمكتب صاحب التفويض، والترخيص المسجّل، والأسواق التي يغطيها فعلاً. ولا شيء يُوجَّه إلى بريد مجهول.",
+     "每一项受托资产背后都有具名顾问、持有委托的分支机构、备案执照，以及该顾问真正覆盖的市场。任何咨询都不会流向匿名信箱。"),
+   img="26_corporate_services.jpg"),
+ "agencies": dict(
+   slug="real-estate/agencies", one="real-estate/agency",
+   eyebrow=ARCH.T("The structure", "La estructura", "البنية", "架构"),
+   title=ARCH.T("Offices", "Oficinas", "المكاتب", "分支机构"),
+   lead=ARCH.T(
+     "The offices that hold the mandates, each with its legal entity, its licence and the inventory registered under it. Where an asset sits inside the structure is not a detail — it is what makes the mandate enforceable.",
+     "Las oficinas que llevan los mandatos, cada una con su entidad legal, su licencia y el inventario registrado a su nombre. Dónde queda un activo dentro de la estructura no es un detalle: es lo que hace exigible el mandato.",
+     "المكاتب التي تحمل التفويضات، لكلٍّ كيانه القانوني وترخيصه والمعروض المسجّل باسمه. وموقع الأصل داخل البنية ليس تفصيلاً: هو ما يجعل التفويض واجب النفاذ.",
+     "持有委托的各分支机构，均附其法律主体、执照及名下登记的资产。资产在架构中的归属并非细节——它决定了委托是否具备可执行力。"),
+   img="15_difc_gate.jpg"),
+ "developers": dict(
+   slug="real-estate/developers", one="real-estate/developer",
+   eyebrow=ARCH.T("Who builds", "Quién construye", "من يبني", "开发方"),
+   title=ARCH.T("Developers", "Promotoras", "المطوّرون", "开发商"),
+   lead=ARCH.T(
+     "The developers behind the off-plan projects on the platform, with the projects they have registered, the handover they have committed to and the payment plan on offer. Off-plan is a promise; the promiser has a name here.",
+     "Las promotoras detrás de los proyectos off-plan de la plataforma, con los proyectos que tienen registrados, la entrega a la que se han comprometido y el plan de pago que ofrecen. El off-plan es una promesa; aquí quien promete tiene nombre.",
+     "المطوّرون وراء مشاريع «على المخطط» في المنصة، مع مشاريعهم المسجّلة وموعد التسليم الذي التزموا به وخطة السداد المعروضة. البيع على المخطط وعد؛ وهنا لصاحب الوعد اسم.",
+     "平台上期房项目背后的开发商，附其已登记的项目、承诺的交付时间与提供的付款计划。期房是一份承诺——在这里，承诺方有名有姓。"),
+   img="24_capital_district.jpg"),
+}
+
+def build_directory(lang, kind):
+    d = DIR_KINDS[kind]
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    title = "%s — XARU HOME" % _t(d["title"], lang)
+    desc = _t(d["lead"], lang)
+    trail = [(RE, "real-estate"), (d["title"], d["slug"])]
+    hero = _page_header(lang, _t(d["eyebrow"], lang), _t(d["title"], lang),
+                        _crumbs(lang, trail), d["img"])
+    body = hero + '''
+    <section>
+      <div class="cs_height_80 cs_height_lg_50"></div>
+      <div class="container"><div class="row"><div class="col-lg-9">
+        <p class="xr_pillar_intro" data-aos="fade-up">%s</p>
+      </div></div></div>
+      <div class="cs_height_45 cs_height_lg_30"></div>
+      <div class="container"><div class="xr_dir" data-directory="%s"></div></div>
+      <div class="cs_height_130 cs_height_lg_70"></div>
+    </section>''' % (_t(d["lead"], lang), kind)
+    return _write_shell(lang, d["slug"], title, desc, body,
+                        css=("xaru-marketplace.css",), js=("xaru-directory.js",))
+
+def build_profile(lang, kind, slug, name):
+    d = DIR_KINDS[kind]
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    page_slug = d["one"] + "/" + slug
+    title = "%s — XARU HOME" % name
+    desc = "%s — %s, XARU HOME." % (name, _t(d["title"], lang))
+    trail = [(RE, "real-estate"), (d["title"], d["slug"]),
+             (ARCH.T(name, name, name, name), page_slug)]
+    hero = _page_header(lang, _t(d["eyebrow"], lang), name,
+                        _crumbs(lang, trail), d["img"])
+    body = hero + '''
+    <section>
+      <div class="cs_height_80 cs_height_lg_50"></div>
+      <div class="container"><div class="xr_pf" data-profile="%s" data-slug="%s"></div></div>
+      <div class="cs_height_130 cs_height_lg_70"></div>
+    </section>''' % (kind, slug)
+    return _write_shell(lang, page_slug, title, desc, body,
+                        css=("xaru-marketplace.css",), js=("xaru-directory.js",))
+
+def directory_entities():
+    """Entidades publicadas, leidas de la propia API estatica."""
+    base = "/home/claude/work/site/xaru/data/api/v1/"
+    out = {"agents": [], "agencies": [], "developers": []}
+    try:
+        with open(base + "agents.json", encoding="utf-8") as f:
+            for a in json.load(f)["items"]:
+                out["agents"].append((a["slug"], a["name"]))
+        with open(base + "agencies.json", encoding="utf-8") as f:
+            for o in json.load(f)["items"]:
+                k = "developers" if o["kind"] == "developer" else "agencies"
+                out[k].append((o["slug"], o["name"]))
+    except Exception as e:
+        print("directorios: sin API estatica (%s)" % e)
+    return out
+
+def build_directories():
+    ents = directory_entities()
+    n = 0
+    for L in ("en", "es", "ar", "zh"):
+        for kind in ("agents", "agencies", "developers"):
+            build_directory(L, kind)
+            n += 1
+            for (slug, name) in ents[kind]:
+                build_profile(L, kind, slug, name)
+                n += 1
+    print("directorios y perfiles ->", n, "paginas")
+    return ents
+
+# ================================================================ Off-plan (Biblia §5.5)
+PRJ_EYEBROW = ARCH.T("Under construction", "En construcción", "قيد الإنشاء", "在建")
+PRJ_TITLE = ARCH.T("New projects", "Proyectos nuevos", "المشاريع الجديدة", "新项目")
+PRJ_LEAD = ARCH.T(
+  "Off-plan is a promise about a building that does not exist yet, so what matters is not the render: it is who has committed, to what date, at what stage the work actually stands, and how the money is staged against it. Every project here declares all four.",
+  "El off-plan es una promesa sobre un edificio que aún no existe, así que lo que importa no es el render: es quién se ha comprometido, a qué fecha, en qué punto está la obra de verdad y cómo se escalona el dinero contra ella. Cada proyecto declara aquí las cuatro cosas.",
+  "البيع على المخطط وعدٌ بشأن مبنى لم يقم بعد، فالمهم ليس الصورة التخيّلية: بل من التزم، ولأي تاريخ، وأين تقف الأشغال فعلاً، وكيف يُجدوَل المال في مقابلها. وكل مشروع هنا يعلن الأربعة.",
+  "期房是关于一栋尚未建成的建筑的承诺，因此关键不在效果图，而在于：谁作出了承诺、承诺哪个日期、工程实际进展到哪一步，以及资金如何与之对应分期。此处每个项目都会申报这四项。")
+
+def build_projects_index(lang):
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    slug = "real-estate/new-projects"
+    title = "%s — XARU HOME" % _t(PRJ_TITLE, lang)
+    desc = _t(PRJ_LEAD, lang)
+    trail = [(RE, "real-estate"), (PRJ_TITLE, slug)]
+    hero = _page_header(lang, _t(PRJ_EYEBROW, lang), _t(PRJ_TITLE, lang),
+                        _crumbs(lang, trail), "04_resort_dev.jpg")
+    body = hero + '''
+    <section>
+      <div class="cs_height_80 cs_height_lg_50"></div>
+      <div class="container"><div class="row"><div class="col-lg-9">
+        <p class="xr_pillar_intro" data-aos="fade-up">%s</p>
+      </div></div></div>
+      <div class="cs_height_45 cs_height_lg_30"></div>
+      <div class="container"><div class="xr_prj" data-projects></div></div>
+      <div class="cs_height_130 cs_height_lg_70"></div>
+    </section>''' % _t(PRJ_LEAD, lang)
+    return _write_shell(lang, slug, title, desc, body,
+                        css=("xaru-marketplace.css",), js=("xaru-projects.js",))
+
+def build_project_page(lang, slug, name):
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    page_slug = "real-estate/project/" + slug
+    title = "%s — XARU HOME" % name
+    desc = "%s — %s. XARU HOME." % (name, _t(PRJ_TITLE, lang))
+    trail = [(RE, "real-estate"), (PRJ_TITLE, "real-estate/new-projects"),
+             (ARCH.T(name, name, name, name), page_slug)]
+    hero = _page_header(lang, _t(PRJ_EYEBROW, lang), name,
+                        _crumbs(lang, trail), "06_masterplan_ashima.jpg")
+    body = hero + '''
+    <section>
+      <div class="cs_height_80 cs_height_lg_50"></div>
+      <div class="container"><div class="xr_prj" data-project data-slug="%s"></div></div>
+      <div class="cs_height_130 cs_height_lg_70"></div>
+    </section>''' % slug
+    return _write_shell(lang, page_slug, title, desc, body,
+                        css=("xaru-marketplace.css",), js=("xaru-projects.js",))
+
+def build_projects():
+    base = "/home/claude/work/site/xaru/data/api/v1/projects.json"
+    items = []
+    try:
+        with open(base, encoding="utf-8") as f:
+            items = [(p["slug"], p["name"]) for p in json.load(f)["items"]]
+    except Exception as e:
+        print("proyectos: sin API estatica (%s)" % e)
+    n = 0
+    for L in ("en", "es", "ar", "zh"):
+        build_projects_index(L)
+        n += 1
+        for (slug, name) in items:
+            build_project_page(L, slug, name)
+            n += 1
+    print("proyectos off-plan ->", n, "paginas")
+
 def build_catalog_page(lang, catalog_key, slug, trail):
     home = HOME[lang]
     meta = F2.CATALOG[catalog_key]
@@ -4143,6 +4317,10 @@ if __name__ == "__main__":
     build_all_shells()
     # Phase 2 property core: catalogs, fichas, pillars (override shells)
     build_catalogs_fichas_pillars()
+    # Biblia §5.6: directorios y perfiles de asesores, oficinas y promotoras
+    build_directories()
+    # Biblia §5.5: proyectos off-plan con sus planes de pago
+    build_projects()
     # Phase 2 homepage: 12-block re-order (all four languages)
     for L in ("en", "es", "ar", "zh"):
         inject_home(L)

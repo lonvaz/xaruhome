@@ -175,6 +175,8 @@
       offering: p.get("offering") || HOST.getAttribute("data-offering") || "",
       category: p.get("category") || HOST.getAttribute("data-category") || "",
       sort: p.get("sort") || "recommended",
+      ag: p.get("ag") || "",
+      og: p.get("og") || "",
       view: p.get("view") || HOST.getAttribute("data-view") || "list",
       verified: p.get("verified") === "1",
       completion: p.get("completion") || ""
@@ -202,6 +204,8 @@
     });
     if (STATE.verified) p.set("verified", "1");
     if (STATE.completion) p.set("completion", STATE.completion);
+    if (STATE.ag) p.set("ag", STATE.ag);
+    if (STATE.og) p.set("og", STATE.og);
     if (STATE.sort !== "recommended") p.set("sort", STATE.sort);
     if (STATE.view !== "list") p.set("view", STATE.view);
     var url = location.pathname + (p.toString() ? "?" + p.toString() : "");
@@ -219,6 +223,8 @@
       if (state.type.length && state.type.indexOf(x.type) < 0) return false;
       if (state.cc.length && state.cc.indexOf(x.cc) < 0) return false;
       if (state.city.length && state.city.indexOf(x.city) < 0) return false;
+      if (state.ag && x.ag !== state.ag) return false;
+      if (state.og && x.og !== state.og) return false;
       if (state.verified && !x.ver) return false;
       if (state.completion && x.comp !== state.completion) return false;
       if (state.bedsMin != null && !(x.bd >= state.bedsMin)) return false;
@@ -272,6 +278,17 @@
       '<source type="image/webp" srcset="' + esc(set("webp")) + '" sizes="' + SIZES + '">' +
       '<img src="' + esc(R + dir + "r/" + m[2] + "-768.jpg") + '" alt="' + esc(alt) +
       '" loading="lazy" decoding="async"></picture>';
+  }
+
+  /* Nombre del asesor y de la oficina a partir del propio indice: los enlaces
+     "ver la cartera completa" de los perfiles llegan con ?ag= u ?og=. */
+  function agLabel(slug) {
+    var m = (DATA && DATA.items || []).filter(function (x) { return x.ag === slug; })[0];
+    return (m && m.agName) || slug;
+  }
+  function ogLabel(slug) {
+    var m = (DATA && DATA.items || []).filter(function (x) { return x.og === slug; })[0];
+    return (m && m.ogName) || slug;
   }
 
   /* Nombre legible de la tipologia; el chip mostraba el slug en crudo. */
@@ -556,6 +573,8 @@
     if (STATE.priceMin != null) chip(t("price") + " ≥ " + nf(STATE.priceMin), function () { STATE.priceMin = null; });
     if (STATE.priceMax != null) chip(t("price") + " ≤ " + nf(STATE.priceMax), function () { STATE.priceMax = null; });
     if (STATE.bedsMin != null) chip(t("beds") + " ≥ " + STATE.bedsMin, function () { STATE.bedsMin = null; });
+    if (STATE.ag) chip(agLabel(STATE.ag), function () { STATE.ag = ""; });
+    if (STATE.og) chip(ogLabel(STATE.og), function () { STATE.og = ""; });
     if (STATE.verified) chip(t("verified"), function () { STATE.verified = false; });
     if (STATE.completion) chip(STATE.completion, function () { STATE.completion = ""; });
     HOST.querySelector(".xr_mp_chips").innerHTML = out.join("");

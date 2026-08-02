@@ -144,6 +144,13 @@ def main():
                     "languages": (a["languages"] or "").split(","), "agency": og.get("trade_name"),
                     "agencySlug": og.get("slug"), "licence": a["licence_number"],
                     "verified": a["verification_status"] == "verified", "listings": n,
+                    "phone": a["phone"], "whatsapp": a["whatsapp"], "email": a["email"],
+                    "photo": media.get(a["photo_media_id"], ""),
+                    "bio": a["bio"],
+                    "specialities": (a["specialities"] or "").split(",") if a["specialities"] else [],
+                    "serviceAreas": (a["service_areas"] or "").split(",") if a["service_areas"] else [],
+                    "responseMinutes": a["response_minutes_p50"],
+                    "rating": a["rating_avg"], "ratingCount": a["rating_count"],
                     "demo": bool(a["is_demo"])})
     total += w(os.path.join(API, "agents.json"), {"count": len(ags), "items": ags})
 
@@ -156,8 +163,39 @@ def main():
         ogs.append({"slug": o["slug"], "name": o["trade_name"], "legalName": o["legal_name"],
                     "kind": o["kind"], "country": o["country_code"], "city": o["city"],
                     "licence": o["licence_number"], "verified": o["verification_status"] == "verified",
-                    "listings": n, "demo": bool(o["is_demo"])})
+                    "listings": n, "website": o["website"], "phone": o["phone"],
+                    "email": o["email"], "description": o["description"],
+                    "plan": o["plan_code"], "quota": o["listing_quota"],
+                    "demo": bool(o["is_demo"])})
     total += w(os.path.join(API, "agencies.json"), {"count": len(ogs), "items": ogs})
+
+    # Etiquetas de hito y nombres de tipo de unidad en los cuatro idiomas. La
+    # base guarda la version del promotor; aqui se traduce lo que es vocabulario
+    # comun del sector. Lo que no esta en la tabla se deja tal cual llego.
+    MILE_L = {
+        "reservation":         {"en": "Reservation", "es": "Reserva",
+                                "ar": "الحجز", "zh": "预订"},
+        "during construction": {"en": "During construction", "es": "Durante la obra",
+                                "ar": "أثناء الإنشاء", "zh": "施工期间"},
+        "on handover":         {"en": "On handover", "es": "En la entrega",
+                                "ar": "عند التسليم", "zh": "交付时"},
+        "post-handover":       {"en": "Post-handover", "es": "Tras la entrega",
+                                "ar": "بعد التسليم", "zh": "交付后"},
+    }
+    UNIT_L = {
+        "studio":    {"en": "Studio", "es": "Estudio", "ar": "استوديو", "zh": "开间"},
+        "1 bedroom": {"en": "1 bedroom", "es": "1 dormitorio", "ar": "غرفة نوم واحدة", "zh": "一居"},
+        "2 bedroom": {"en": "2 bedroom", "es": "2 dormitorios", "ar": "غرفتا نوم", "zh": "两居"},
+        "3 bedroom": {"en": "3 bedroom", "es": "3 dormitorios", "ar": "ثلاث غرف نوم", "zh": "三居"},
+        "4 bedroom": {"en": "4 bedroom", "es": "4 dormitorios", "ar": "أربع غرف نوم", "zh": "四居"},
+        "penthouse": {"en": "Penthouse", "es": "Ático", "ar": "بنتهاوس", "zh": "顶层公寓"},
+        "townhouse": {"en": "Townhouse", "es": "Adosado", "ar": "تاون هاوس", "zh": "联排别墅"},
+        "villa":     {"en": "Villa", "es": "Villa", "ar": "فيلا", "zh": "别墅"},
+    }
+
+    def i18n(table, txt):
+        d = table.get(str(txt or "").strip().lower())
+        return d if d else {lo: txt for lo in LOCALES}
 
     prjs = []
     for p in [r for r in cur.execute("SELECT * FROM projects")]:
@@ -177,11 +215,14 @@ def main():
                      "priceTo": (p["price_max_minor"] or 0) // 100,
                      "currency": p["currency"], "unitsTotal": p["units_total"],
                      "unitsAvailable": p["units_available"],
-                     "unitTypes": [{"name": u["name"], "bedrooms": u["bedrooms"],
+                     "unitTypes": [{"name": u["name"], "nameI18n": i18n(UNIT_L, u["name"]),
+                                    "bedrooms": u["bedrooms"],
                                     "areaMin": u["area_min_sqm"], "areaMax": u["area_max_sqm"],
                                     "priceFrom": (u["price_min_minor"] or 0) // 100}
                                    for u in units],
-                     "paymentPlan": {"name": plan["name"] if plan else None, "milestones": miles},
+                     "paymentPlan": {"name": plan["name"] if plan else None,
+                                     "milestones": [dict(m, labelI18n=i18n(MILE_L, m["label"]))
+                                                    for m in miles]},
                      "demo": bool(p["is_demo"])})
     total += w(os.path.join(API, "projects.json"), {"count": len(prjs), "items": prjs})
 
