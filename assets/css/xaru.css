@@ -1940,3 +1940,19 @@ body.page-loaded .xr_hero_slider_wrap {
 .cs_page_header.xr_listing_header { padding-top: 150px; padding-bottom: 90px; }
 .cs_page_header.xr_listing_header .cs_page_header_title { margin-bottom: 14px; }
 .cs_page_header.xr_listing_header .breadcrumb { margin-top: 6px; }
+
+/* Fichas de activo — tarjetas "Activos similares" ------------------------
+   Se montan desde JS, asi que necesitan su propio bloque: sin el, el titulo,
+   la ubicacion y el precio salian pegados en una sola linea corrida. */
+.xr_rel_grid .xr_rel_card { display: block; text-decoration: none; color: inherit; }
+.xr_rel_card .xr_rel_img { display: block; overflow: hidden; border-radius: 16px; }
+.xr_rel_card .xr_rel_img img { display: block; width: 100%; height: 230px; object-fit: cover;
+  transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+.xr_rel_card:hover .xr_rel_img img { transform: scale(1.05); }
+.xr_rel_card .xr_rel_body { display: block; padding: 16px 2px 0; }
+.xr_rel_card .xr_rel_body strong { display: block; font-family: var(--primary-font);
+  font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+.xr_rel_card .xr_rel_body em { display: block; font-style: normal; font-size: 14px;
+  color: var(--secondary-color); margin-bottom: 8px; }
+.xr_rel_card .xr_rel_body b { display: block; font-family: var(--primary-font);
+  font-size: 18px; color: var(--primary-color); }
