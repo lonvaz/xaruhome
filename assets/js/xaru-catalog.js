@@ -129,7 +129,9 @@
       'data-variant="' + esc(item.variant) + '" ' +
       'data-price="' + Number(item.price_usd || 0) + '" ' +
       'data-beds="' + Number(item.bedrooms || 0) + '" ' +
-      'data-baths="' + Number(item.bathrooms || 0) + '">' +
+      'data-baths="' + Number(item.bathrooms || 0) + '" ' +
+      'data-country="' + esc(item.country || "") + '" ' +
+      'data-area="' + Number(item.built_area_m2 || 0) + '">' +
         '<div class="cs_card cs_style_1">' +
           '<a href="' + esc(detail) + '" aria-label="' + esc(title) +
           '" class="cs_card_thumbnail cs_radius_20 cs_mb_17 position-relative">' +
@@ -189,18 +191,23 @@
    * para que hagan lo que dicen que hacen. Si la página no los trae, no pasa
    * nada — todo es opcional.                                               */
 
-  var STATE = { typology: "*", beds: [], baths: [], min: 0, max: Infinity };
+  var STATE = { typology: "*", beds: [], baths: [], min: 0, max: Infinity,
+               country: "", amin: 0, amax: Infinity };
 
   function applyFilters() {
     document.querySelectorAll(".xr_cat_item").forEach(function (el) {
       var beds = +el.getAttribute("data-beds");
       var baths = +el.getAttribute("data-baths");
       var p = +el.getAttribute("data-price");
+      var ar = +el.getAttribute("data-area");
+      var co = el.getAttribute("data-country") || "";
       var ok =
         (STATE.typology === "*" || el.getAttribute("data-subcategory") === STATE.typology) &&
         (!STATE.beds.length || STATE.beds.some(function (n) { return n === 5 ? beds > 4 : beds === n; })) &&
         (!STATE.baths.length || STATE.baths.some(function (n) { return n === 5 ? baths > 4 : baths === n; })) &&
-        p >= STATE.min && p <= STATE.max;
+        p >= STATE.min && p <= STATE.max &&
+        (!STATE.country || co === STATE.country) &&
+        (!ar || (ar >= STATE.amin && ar <= STATE.amax));
       el.hidden = !ok;
     });
     var vis = document.querySelectorAll(".xr_cat_item:not([hidden])").length;
@@ -258,6 +265,52 @@
         });
       });
     });
+
+    /* Selector de ubicacion. La plantilla venia con Nueva York, Londres, Paris…
+       — una lista inventada que no tocaba nada. Se rellena con los paises que
+       de verdad hay en el catalogo y se conecta al filtro. */
+    var loc = document.querySelector('select[name="property-location"]');
+    if (loc) {
+      var seenC = {}, list = [];
+      document.querySelectorAll(".xr_cat_item").forEach(function (el) {
+        var c = el.getAttribute("data-country");
+        if (c && !seenC[c]) { seenC[c] = 1; list.push(c); }
+      });
+      list.sort();
+      var anyLbl = { en: "Any location", es: "Cualquier ubicación",
+                     ar: "أي موقع", zh: "任意地点" }[lang()] || "Any location";
+      loc.innerHTML = '<option value="">' + esc(anyLbl) + "</option>" +
+        list.map(function (c) {
+          return '<option value="' + esc(c) + '">' + esc(c) + "</option>";
+        }).join("");
+      loc.addEventListener("change", function () {
+        STATE.country = loc.value || "";
+        applyFilters();
+      });
+    }
+
+    /* Superficie. La plantilla la pedia en pies cuadrados; la cartera esta en
+       metros cuadrados construidos, asi que se reetiqueta y se conecta. */
+    var areaInputs = Array.prototype.slice.call(
+      document.querySelectorAll('input[name="min-area"], input[name="max-area"]'));
+    if (areaInputs.length >= 2) {
+      areaInputs[0].placeholder = "min m²";
+      areaInputs[1].placeholder = "max m²";
+      areaInputs.slice(0, 2).forEach(function (inp, i) {
+        inp.addEventListener("input", function () {
+          var v = parseFloat((inp.value || "").replace(/[^0-9.]/g, ""));
+          if (i === 0) STATE.amin = isNaN(v) ? 0 : v;
+          else STATE.amax = isNaN(v) ? Infinity : v;
+          applyFilters();
+        });
+      });
+      var ah = document.querySelector('input[name="min-area"]');
+      var hd = ah && ah.closest(".cs_sidebar_widget");
+      hd = hd && hd.querySelector(".cs_sidebar_widget_title span");
+      if (hd) hd.textContent = { en: "Built area (m²)", es: "Superficie construida (m²)",
+                                 ar: "المساحة المبنية (م²)", zh: "建筑面积（平方米）" }[lang()]
+                               || "Built area (m²)";
+    }
 
     var priceInputs = Array.prototype.slice.call(
       document.querySelectorAll('input[placeholder^="$"]'));

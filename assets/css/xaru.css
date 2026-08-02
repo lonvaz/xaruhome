@@ -1933,3 +1933,10 @@ body.page-loaded .xr_hero_slider_wrap {
 .cs_page_header.xr_duotone_overlay .breadcrumb-item.active {
   color: rgba(245, 241, 232, 0.88);
 }
+
+/* Cabecera de las paginas de listado -------------------------------------
+   La banda heredada dejaba la miga de pan pegada a los trazos descendentes
+   del titular. Se le da aire arriba y abajo y se separa la miga. */
+.cs_page_header.xr_listing_header { padding-top: 150px; padding-bottom: 90px; }
+.cs_page_header.xr_listing_header .cs_page_header_title { margin-bottom: 14px; }
+.cs_page_header.xr_listing_header .breadcrumb { margin-top: 6px; }
