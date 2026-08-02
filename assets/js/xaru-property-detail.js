@@ -306,6 +306,8 @@
     v.className = "xr_viewer";
     v.setAttribute("role", "dialog");
     v.setAttribute("aria-modal", "true");
+    v.setAttribute("data-lenis-prevent", "");
+    try { if (window.__xaruLenis) window.__xaruLenis.stop(); } catch (e) {}
     var idx = i;
     function draw() {
       v.innerHTML = '<button type="button" class="xr_viewer_x" aria-label="' + esc(U("close")) +
@@ -321,6 +323,7 @@
       v.remove();
       document.removeEventListener("keydown", key);
       document.body.style.overflow = "";
+      try { if (window.__xaruLenis) window.__xaruLenis.start(); } catch (e) {}
     }
     function key(e) {
       if (e.key === "Escape") close();

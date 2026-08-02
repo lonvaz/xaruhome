@@ -1288,6 +1288,9 @@ a.xr_mp_navlink:hover { border-color: var(--accent-color); color: var(--primary-
   position: fixed; inset: 0; z-index: 9999; display: flex;
   align-items: center; justify-content: center;
   background: rgba(15, 14, 13, .95); padding: 40px;
+  /* Misma razón que en el cajón: mientras se mira una foto a pantalla completa
+     la ficha de detrás no debe desplazarse. */
+  overscroll-behavior: contain;
 }
 .xr_viewer figure { margin: 0; max-width: 92vw; max-height: 86vh; }
 .xr_viewer img { max-width: 92vw; max-height: 86vh; object-fit: contain; display: block; }
@@ -1480,6 +1483,12 @@ body.xr_drawer_open { overflow: hidden !important; }
   box-shadow: -24px 0 60px -40px rgba(28, 27, 25, .8);
   display: flex; flex-direction: column;
   overflow-y: auto; max-height: none;
+  /* El cajón se desplaza solo a sí mismo. Sin esto, al llegar al final de la
+     lista de filtros el resto del gesto de la rueda pasa al documento y la
+     página de detrás se mueve por debajo del cajón: se pierde el sitio en el
+     que se estaba leyendo y al cerrar el panel los resultados aparecen en otra
+     posición. `contain` corta esa cadena en el borde del panel. */
+  overscroll-behavior: contain;
   animation: xr_drawer_in .3s cubic-bezier(.2, .7, .3, 1);
 }
 [dir="rtl"] .xr_mp_panel { animation-name: xr_drawer_in_rtl; }

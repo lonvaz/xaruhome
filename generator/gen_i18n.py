@@ -1295,12 +1295,22 @@ def rewrite_home_links(h, lang):
 def mark_active_nav(h, lang, fname):
     """Add aria-current="page" (accessible active state) to the menu item for the
     current page. On inner pages that item is the matching nav link; on the home
-    page the active state rests on the logo/home brand. Additive only."""
+    page the active state rests on the logo/home brand.
+
+    Idempotente a propósito. La portada no se genera de cero: se lee el
+    index.html ya publicado y se le aplican parches. Marcar el estado activo con
+    un replace a secas dejaba intacto el ancla del propio replace, así que cada
+    compilación añadía otro aria-current sobre los anteriores; se acumularon 112
+    en la portada de cada idioma. Ahora se limpia lo que hubiera antes de poner
+    el atributo, de modo que compilar dos veces da el mismo resultado que una."""
     if fname == "index.html":
+        h = re.sub(r'(class="cs_site_brand")(\s+aria-current="page")+', r'\1', h)
         return h.replace('class="cs_site_brand"',
                          'class="cs_site_brand" aria-current="page"', 1)
     def add_active(m):
         block = m.group(0)
+        block = re.sub(r'(<li><a href="%s")(\s+aria-current="page"\s+class="cs_current_page")+'
+                       % re.escape(fname), r'\1', block)
         block = re.sub(r'(<li><a href="%s")' % re.escape(fname),
                        r'\1 aria-current="page" class="cs_current_page"', block, count=1)
         return block
@@ -3479,12 +3489,20 @@ def home_blocks(lang):
 
     # Block 4 — featured opportunities tabs
     tabbtns, tabpanes = [], []
+    # Biblia §1.2: los vendidos no son inventario destacado. Si al retirarlos una
+    # pestana se queda sin nada, se dice, no se rellena.
+    pools = {key: [o for o in _tab_filter(key) if not is_sold(o)] for key, _ in H["tabs"]}
+    # La pestana abierta por defecto es la primera QUE TENGA OBRA, no la primera
+    # de la lista. El orden de las pestanas no se toca —es el del relato— pero
+    # abrir el bloque de destacados sobre un "no hay mandatos activos" es la peor
+    # carta de presentacion posible para una portada: el visitante lee que no hay
+    # nada antes de ver que si lo hay en las otras cuatro. Si ninguna tuviera
+    # obra, se abre la primera y el estado vacio hace su trabajo.
+    first = next((i for i, (k, _) in enumerate(H["tabs"]) if pools[k]), 0)
     for i, (key, lbl) in enumerate(H["tabs"]):
-        act = " is-active" if i == 0 else ""
+        act = " is-active" if i == first else ""
         tabbtns.append('<button type="button" class="xr_tab_btn%s" data-tab="%s">%s</button>' % (act, key, _t(lbl, lang)))
-        # Biblia §1.2: los vendidos no son inventario destacado. Si al retirarlos
-        # una pestana se queda sin nada, se dice, no se rellena.
-        pool = [o for o in _tab_filter(key) if not is_sold(o)]
+        pool = pools[key]
         if pool:
             cards = "\n        ".join(opp_card(lang, o, home) for o in pool)
         else:
@@ -3510,16 +3528,27 @@ def home_blocks(lang):
         <a href="%sopportunities/" class="xr_link">%s<i class="fa-solid fa-angle-right"></i></a>
       </div>
       <div class="cs_height_150 cs_height_lg_80"></div>
-    </section>
-    <script>
-    (function(){var s=document.getElementById("featured");if(!s)return;
-      var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
-      bs.forEach(function(b){b.addEventListener("click",function(){
-        var t=b.getAttribute("data-tab");
-        bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
-        ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
-    })();
-    </script>''' % (_home_head("04", _t(H["featured_eyebrow"], lang), _t(H["featured_title"], lang)),
+      <!-- El script va DENTRO de la seccion, y no detras, a proposito.
+           inject_home() es idempotente porque borra la inyeccion anterior con un
+           patron que va del comentario "XR Block NN" hasta el cierre de su
+           seccion. Cuando este script quedaba fuera, el borrado no lo alcanzaba:
+           cada compilacion quitaba la seccion y anadia una copia nueva del
+           script sobre las anteriores. Se llegaron a acumular 110 copias del
+           mismo listener en la portada de cada idioma. Dentro, la limpieza lo
+           arrastra con el resto del bloque.
+           Ojo: en este comentario no puede aparecer la etiqueta de cierre de
+           seccion escrita literalmente, porque el patron de borrado se detendria
+           aqui y dejaria suelto el resto del comentario. -->
+      <script>
+      (function(){var s=document.getElementById("featured");if(!s)return;
+        var bs=s.querySelectorAll(".xr_tab_btn"),ps=s.querySelectorAll(".xr_tab_pane");
+        bs.forEach(function(b){b.addEventListener("click",function(){
+          var t=b.getAttribute("data-tab");
+          bs.forEach(function(x){x.classList.remove("is-active");});b.classList.add("is-active");
+          ps.forEach(function(p){p.classList.toggle("is-active",p.getAttribute("data-pane")===t);});});});
+      })();
+      </script>
+    </section>''' % (_home_head("04", _t(H["featured_eyebrow"], lang), _t(H["featured_title"], lang)),
                     "".join(tabbtns), "\n        ".join(tabpanes), home, _t(F2.UI["view_catalog"], lang))
 
     # Block 5 — capability strip
@@ -3681,6 +3710,14 @@ def inject_home(lang):
         h = f.read()
     if "XR Block 02 Journey" in h:  # idempotent: strip prior injection
         h = re.sub(r'\s*<!-- XR Block \d+.*?</section>', '', h, flags=re.S)
+    # Barrido de una vez: las compilaciones anteriores dejaron sueltas, fuera de
+    # toda sección, tantas copias del listener de pestañas como veces se hubiera
+    # compilado el sitio. El borrado de arriba ya no las alcanza porque ya no
+    # pertenecen a ningún bloque. Esta línea las retira todas; a partir del
+    # próximo build no encontrará ninguna, porque el script ya nace dentro de su
+    # <section> y se va con ella.
+    h = re.sub(r'\s*<script>\s*\(function\(\)\{var s=document\.getElementById\("featured"\).*?</script>',
+               '', h, flags=re.S)
     # remove superseded sections
     for (s, e) in [
         ("<!-- Start Land & Large-Scale Developments Section -->", "<!-- End Land & Large-Scale Developments Section -->"),

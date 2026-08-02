@@ -325,6 +325,10 @@
       smooth: true,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
+    /* Lenis intercepta la rueda del raton en toda la pagina. Cualquier capa
+       propia que necesite desplazarse por dentro —el cajon de filtros, el
+       visor de fotos— tiene que poder detenerlo, asi que se expone. */
+    window.__xaruLenis = lenis;
 
     function raf(time) {
       lenis.raf(time);

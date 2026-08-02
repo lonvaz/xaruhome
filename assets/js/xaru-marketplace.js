@@ -577,7 +577,7 @@
         "</div>" +
       "</div>" +
       '<div class="xr_mp_types" role="group"></div>' +
-      '<div class="xr_mp_panel" hidden>' +
+      '<div class="xr_mp_panel" hidden data-lenis-prevent>' +
         '<div class="xr_mp_panel_head">' +
           '<h4>' + esc(t("filters")) + "</h4>" +
           '<button type="button" class="xr_mp_close" aria-label="' + esc(t("closeF")) +
@@ -913,10 +913,18 @@
      fondo —si no, mover la rueda dentro del cajón arrastra la página de
      detrás— y se pone un velo que cierra al pulsarlo. */
   var SCRIM = null;
+  function lenisStop() {
+    try { if (window.__xaruLenis) window.__xaruLenis.stop(); } catch (e) {}
+  }
+  function lenisStart() {
+    try { if (window.__xaruLenis) window.__xaruLenis.start(); } catch (e) {}
+  }
+
   function openPanel() {
     var pn = HOST.querySelector(".xr_mp_panel");
     pn.hidden = false;
     document.body.classList.add("xr_drawer_open");
+    lenisStop();
     if (!SCRIM) {
       SCRIM = document.createElement("div");
       SCRIM.className = "xr_mp_scrim";
@@ -931,6 +939,7 @@
     var pn = HOST.querySelector(".xr_mp_panel");
     if (pn) pn.hidden = true;
     document.body.classList.remove("xr_drawer_open");
+    lenisStart();
     if (SCRIM) SCRIM.classList.remove("is-on");
     var m = HOST.querySelector(".xr_mp_more");
     if (m) { try { m.focus({ preventScroll: true }); } catch (e) {} }

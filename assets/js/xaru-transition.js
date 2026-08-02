@@ -29,17 +29,30 @@
 
   var MS = 480;
 
-  /* Superficies del marketplace: dentro de ellas, nunca hay cortina. */
-  var PORTAL = [
-    "[data-marketplace]", "[data-mp-home]", "[data-directory]", "[data-profile]",
-    "[data-projects]", "[data-project]", "[data-account]", "[data-console]",
-    ".cs_property_details", ".xr_pdp_dock", ".xr_pdp_nav", ".xr_mp_nav"
-  ].join(",");
+  /* LA REGLA
+     --------
+     La cortina marca el paso de un pilar a otro: las seis puertas de primer
+     nivel y la portada. Nada más. Cualquier botón interno —dentro de Real
+     Estate o de cualquier otra puerta— navega sin cortina, porque ahí no se
+     está cambiando de sección, se está trabajando dentro de una.
 
-  /* Destinos que son inventario: tampoco, se venga de donde se venga. */
-  function isInventory(path) {
-    return /property-details\.html/i.test(path) ||
-      /\/real-estate\/(buy|rent|land|map|search|commercial|account|office|administration|agent|agency|developer|project|agents|agencies|developers|new-projects)(\/|$)/i.test(path);
+     Es una lista blanca, no una lista de exclusiones. La versión anterior
+     excluía casos uno a uno y siempre se escapaba alguno: /real-estate/sold/,
+     /real-estate/private-properties/ y /real-estate/commercial-hospitality/
+     seguían disparándola porque no estaban en la lista de excepciones. Con una
+     lista blanca, lo que no está declarado sencillamente no la activa. */
+  var DOORS = [
+    "", "real-estate", "developments", "capital",
+    "business-infrastructure", "company", "insights"
+  ];
+
+  function isDoor(pathname) {
+    var parts = pathname.split("/").filter(Boolean);
+    /* Se descarta el prefijo de idioma: /es/capital/ es la misma puerta. */
+    if (parts.length && ["es", "ar", "zh"].indexOf(parts[0]) >= 0) parts.shift();
+    /* Una puerta es exactamente un segmento, o ninguno (la portada). */
+    if (parts.length > 1) return false;
+    return DOORS.indexOf(parts[0] || "") >= 0;
   }
 
   function clear() { overlay.classList.remove("active"); }
@@ -77,9 +90,11 @@
         link.closest(".cs_tabs") ||
         link.closest(".cs_lightgallery")) return;
 
-    /* Las dos reglas nuevas: ni dentro del portal, ni hacia el inventario. */
-    if (link.closest(PORTAL)) return;
-    if (isInventory(url.pathname)) return;
+    /* La regla: solo de pilar a pilar. Si el destino no es una puerta, no hay
+       cortina; y si se sale de la puerta en la que ya se está, tampoco, porque
+       eso es moverse dentro de la misma sección. */
+    if (!isDoor(url.pathname)) return;
+    if (url.pathname === location.pathname) return;
 
     e.preventDefault();
     overlay.classList.add("active");
