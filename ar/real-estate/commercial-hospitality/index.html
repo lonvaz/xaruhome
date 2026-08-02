@@ -508,7 +508,7 @@
       <p class="xr_catalog_count">عرض <b class="xr_count_now">3</b> من 3 فرص</p>
       <div class="cs_height_40 cs_height_lg_30"></div>
       <div class="row cs_gap_y_30">
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="quintana-roo" data-f-operating="operational" data-f-structure="asset-management-contract" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="quintana-roo" data-f-operating="operational" data-f-structure="asset-management-contract" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/05_hotel_project-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/05_hotel_project-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/05_hotel_project-1280.jpg') type('image/jpeg'))"></div>
@@ -525,7 +525,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="panam" data-f-operating="halted" data-f-structure="recapitalisation-jv" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="panam" data-f-operating="halted" data-f-structure="recapitalisation-jv" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/27_hotel_halted-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/27_hotel_halted-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/27_hotel_halted-1280.jpg') type('image/jpeg'))"></div>
@@ -542,7 +542,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="la-altagracia" data-f-operating="development" data-f-structure="development-operator-agreement" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="la-altagracia" data-f-operating="development" data-f-structure="development-operator-agreement" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/04_resort_dev-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/04_resort_dev-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/04_resort_dev-1280.jpg') type('image/jpeg'))"></div>
@@ -571,6 +571,11 @@
       function apply(){var n=0;cols.forEach(function(c){var ok=true;
         sels.forEach(function(s){var k=s.getAttribute("data-f"),v=s.value;
           if(v&&c.getAttribute("data-f-"+k)!==v)ok=false;});
+        /* Sin filtro de estado elegido, el vendido no entra: es inventario
+           historico, no resultado por defecto. */
+        var st=root.querySelector('.xr_filter_select[data-f="status"]');
+        if(!st&&c.getAttribute("data-sold")==="1")ok=false;
+        c.hidden=!ok;
         c.style.display=ok?"":"none";if(ok)n++;});
         if(now)now.textContent=n;
         var e=root.querySelector(".xr_no_results");if(e)e.style.display=n?"none":"block";}
@@ -756,9 +761,9 @@
           <div class="cs_footer_text">XARU HOME — علامة من NEXARU GLOBAL. مرخّصة في الإمارات العربية المتحدة.</div>
           <div class="cs_footer_bottom_menu">
             <div class="cs_social_links xr_social_squares">
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              
+              
+              
             </div>
           </div>
         </div>

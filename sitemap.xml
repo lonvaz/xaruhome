@@ -1641,4 +1641,44 @@
     <lastmod>2026-07-31</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://xaruhome.com/real-estate/sold/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/real-estate/sold/" />
+    <lastmod>2026-07-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xaruhome.com/es/real-estate/sold/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/real-estate/sold/" />
+    <lastmod>2026-07-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xaruhome.com/ar/real-estate/sold/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/real-estate/sold/" />
+    <lastmod>2026-07-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xaruhome.com/zh/real-estate/sold/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xaruhome.com/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://xaruhome.com/es/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://xaruhome.com/ar/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://xaruhome.com/zh/real-estate/sold/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xaruhome.com/real-estate/sold/" />
+    <lastmod>2026-07-31</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

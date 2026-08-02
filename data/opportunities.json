@@ -148,6 +148,12 @@
    "es": "Cerrado",
    "ar": "مغلق",
    "zh": "已成交"
+  },
+  "sold": {
+   "en": "Sold",
+   "es": "Vendido",
+   "ar": "مُباع",
+   "zh": "已售"
   }
  },
  "opportunities": [
@@ -155,7 +161,7 @@
    "id": "pp-samana-island",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "exclusive-mandate",
+   "status": "sold",
    "title": {
     "en": "Private Island, Samaná Bay",
     "es": "Isla privada, Bahía de Samaná",
@@ -170,7 +176,8 @@
    "price": {
     "display": "Price upon application",
     "currency": "USD",
-    "poa": true
+    "poa": true,
+    "historical": true
    },
    "specs": {
     "bedrooms": null,
@@ -182,20 +189,23 @@
    "images": [
     "assets/img/xaru/gen2/02_island_rd.jpg"
    ],
-   "mandate": "exclusive",
    "confidential": false,
    "tags": [
     "island",
     "trophy",
     "one-of-one",
     "coastal"
-   ]
+   ],
+   "previousStatus": "exclusive-mandate",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "pp-villa-dubai",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "available",
+   "status": "sold",
    "title": {
     "en": "Signature Villa, Dubai",
     "es": "Villa de autor, Dubái",
@@ -210,7 +220,8 @@
    "price": {
     "display": "AED 95,000,000",
     "currency": "AED",
-    "poa": false
+    "poa": false,
+    "historical": true
    },
    "specs": {
     "bedrooms": 7,
@@ -222,19 +233,22 @@
    "images": [
     "assets/img/xaru/gen2/07_villa_dubai.jpg"
    ],
-   "mandate": "open",
    "confidential": false,
    "tags": [
     "villa",
     "waterfront",
     "branded"
-   ]
+   ],
+   "previousStatus": "available",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "pp-penthouse-london",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "exclusive-mandate",
+   "status": "sold",
    "title": {
     "en": "Penthouse, Central London",
     "es": "Ático, Londres centro",
@@ -249,7 +263,8 @@
    "price": {
     "display": "Price upon application",
     "currency": "GBP",
-    "poa": true
+    "poa": true,
+    "historical": true
    },
    "specs": {
     "bedrooms": 4,
@@ -261,19 +276,22 @@
    "images": [
     "assets/img/xaru/gen2/08_penthouse_london.jpg"
    ],
-   "mandate": "exclusive",
    "confidential": false,
    "tags": [
     "penthouse",
     "branded-residence",
     "prime-central"
-   ]
+   ],
+   "previousStatus": "exclusive-mandate",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "pp-villa-como",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "off-market",
+   "status": "sold",
    "title": {
     "en": "Lakefront Estate, Lake Como",
     "es": "Finca junto al lago, Lago de Como",
@@ -288,7 +306,8 @@
    "price": {
     "display": "Price upon application",
     "currency": "EUR",
-    "poa": true
+    "poa": true,
+    "historical": true
    },
    "specs": {
     "bedrooms": 8,
@@ -300,20 +319,23 @@
    "images": [
     "assets/img/xaru/gen2/09_villa_como.jpg"
    ],
-   "mandate": "exclusive",
    "confidential": true,
    "tags": [
     "estate",
     "historic",
     "lakefront",
     "off-market"
-   ]
+   ],
+   "previousStatus": "off-market",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "pp-casa-tulum",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "available",
+   "status": "sold",
    "title": {
     "en": "Beachfront Residence, Tulum",
     "es": "Residencia frente al mar, Tulum",
@@ -328,7 +350,8 @@
    "price": {
     "display": "USD 6,900,000",
     "currency": "USD",
-    "poa": false
+    "poa": false,
+    "historical": true
    },
    "specs": {
     "bedrooms": 5,
@@ -340,18 +363,21 @@
    "images": [
     "assets/img/xaru/gen2/10_casa_tulum.jpg"
    ],
-   "mandate": "open",
    "confidential": false,
    "tags": [
     "beachfront",
     "new-residential"
-   ]
+   ],
+   "previousStatus": "available",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "pp-villa-marbella",
    "catalog": "private-properties",
    "model": "residential",
-   "status": "under-negotiation",
+   "status": "sold",
    "title": {
     "en": "Villa, Marbella Golden Mile",
     "es": "Villa, Milla de Oro de Marbella",
@@ -366,7 +392,8 @@
    "price": {
     "display": "EUR 18,500,000",
     "currency": "EUR",
-    "poa": false
+    "poa": false,
+    "historical": true
    },
    "specs": {
     "bedrooms": 6,
@@ -378,12 +405,15 @@
    "images": [
     "assets/img/xaru/gen2/11_villa_marbella.jpg"
    ],
-   "mandate": "open",
    "confidential": false,
    "tags": [
     "villa",
     "golden-mile"
-   ]
+   ],
+   "previousStatus": "under-negotiation",
+   "soldAt": "2026-08-02T00:00:00Z",
+   "soldAtIsTechnical": true,
+   "closingPriceDisclosed": false
   },
   {
    "id": "ch-hotel-operational",

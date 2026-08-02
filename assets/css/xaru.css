@@ -1962,3 +1962,29 @@ body.page-loaded .xr_hero_slider_wrap {
    rejilla; a 1440 px eso deja una barra de desplazamiento horizontal. */
 .cs_contact_map { max-width: 100%; overflow: hidden; }
 .cs_contact_map img { max-width: 100%; }
+
+/* Inventario vendido — Biblia de Real Estate §1.2 ------------------------
+   Un activo vendido no puede parecer disponible. La insignia se separa
+   cromaticamente de "vivo" (verde) y de "en mandato" (oro): gris de archivo. */
+.xr_status_badge.is-sold {
+  background: rgba(28, 27, 25, .88);
+  color: #d8d2c6;
+  border: 1px solid rgba(216, 210, 198, .28);
+  letter-spacing: 1.4px;
+}
+.xr_sold_note {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: rgba(28, 27, 25, .05);
+  border-left: 2px solid var(--accent-color, #c9a876);
+  padding: 14px 16px; margin: 18px 0 0;
+  font-size: 14px; line-height: 1.6; color: var(--secondary-color);
+}
+.xr_sold_note i { margin-top: 3px; color: var(--accent-color, #c9a876); }
+/* Una tarjeta vendida no compite visualmente con el inventario activo. */
+.xr_opp_col[data-sold="1"] .xr_land_card_img .xr_px_img { filter: saturate(.72); }
+/* Vacio explicado, nunca un hueco mudo (§36). */
+.xr_empty_state {
+  border: 1px solid rgba(28, 27, 25, .12);
+  border-radius: 16px; padding: 40px 32px; text-align: center;
+}
+.xr_empty_state p { max-width: 620px; margin: 0 auto 24px; color: var(--secondary-color); }

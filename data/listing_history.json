@@ -1,0 +1,72 @@
+{
+ "$schema": "append-only",
+ "note": "Registro inmutable de transiciones de estado. Nunca se edita una entrada existente.",
+ "events": [
+  {
+   "aggregateId": "pp-samana-island",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "exclusive-mandate",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  },
+  {
+   "aggregateId": "pp-villa-dubai",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "available",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  },
+  {
+   "aggregateId": "pp-penthouse-london",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "exclusive-mandate",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  },
+  {
+   "aggregateId": "pp-villa-como",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "off-market",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  },
+  {
+   "aggregateId": "pp-casa-tulum",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "available",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  },
+  {
+   "aggregateId": "pp-villa-marbella",
+   "aggregateType": "opportunity",
+   "eventType": "listing.sold.v1",
+   "occurredAt": "2026-08-02T00:00:00Z",
+   "actor": "migration:biblia-real-estate-v3",
+   "reason": "MIGRATION_TEST_INVENTORY_TO_SOLD",
+   "from": "under-negotiation",
+   "to": "sold",
+   "note": "Inventario de prueba retirado del activo por mandato §1.2. occurredAt es la fecha tecnica de migracion, no la fecha de cierre. No se declara precio de cierre."
+  }
+ ]
+}

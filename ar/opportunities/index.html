@@ -439,7 +439,7 @@
       <p class="xr_catalog_count">عرض <b class="xr_count_now">4</b> من 4 فرص</p>
       <div class="cs_height_40 cs_height_lg_30"></div>
       <div class="row cs_gap_y_30">
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="oaxaca" data-f-phase="master-plan" data-f-opp_type="development-ready" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="oaxaca" data-f-phase="master-plan" data-f-opp_type="development-ready" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/03_land_mega-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/03_land_mega-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/03_land_mega-1280.jpg') type('image/jpeg'))"></div>
@@ -456,7 +456,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="oaxaca" data-f-phase="concept" data-f-opp_type="in-validation" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="oaxaca" data-f-phase="concept" data-f-opp_type="in-validation" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/06_masterplan_ashima-1280.jpg') type('image/jpeg'))"></div>
@@ -473,7 +473,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="undisclosed" data-f-phase="x" data-f-opp_type="off-market" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="undisclosed" data-f-phase="x" data-f-opp_type="off-market" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/29_private_market-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/29_private_market-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/29_private_market-1280.jpg') type('image/jpeg'))"></div>
@@ -490,7 +490,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="caribbean" data-f-phase="production" data-f-opp_type="in-validation" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 xr_opp_col" data-f-region="caribbean" data-f-phase="production" data-f-opp_type="in-validation" data-f-status="active" data-aos="fade-up">
           <div class="xr_land_card xr_opp_card">
             <div class="xr_land_card_img">
               <div class="xr_px_img" style="background-image:url('/assets/img/xaru/gen2/r/28_quarry_aggregates-1280.jpg');background-image:image-set(url('/assets/img/xaru/gen2/r/28_quarry_aggregates-1280.webp') type('image/webp'),url('/assets/img/xaru/gen2/r/28_quarry_aggregates-1280.jpg') type('image/jpeg'))"></div>
@@ -519,6 +519,11 @@
       function apply(){var n=0;cols.forEach(function(c){var ok=true;
         sels.forEach(function(s){var k=s.getAttribute("data-f"),v=s.value;
           if(v&&c.getAttribute("data-f-"+k)!==v)ok=false;});
+        /* Sin filtro de estado elegido, el vendido no entra: es inventario
+           historico, no resultado por defecto. */
+        var st=root.querySelector('.xr_filter_select[data-f="status"]');
+        if(!st&&c.getAttribute("data-sold")==="1")ok=false;
+        c.hidden=!ok;
         c.style.display=ok?"":"none";if(ok)n++;});
         if(now)now.textContent=n;
         var e=root.querySelector(".xr_no_results");if(e)e.style.display=n?"none":"block";}
@@ -566,9 +571,9 @@
           <div class="cs_footer_text">XARU HOME — علامة من NEXARU GLOBAL. مرخّصة في الإمارات العربية المتحدة.</div>
           <div class="cs_footer_bottom_menu">
             <div class="cs_social_links xr_social_squares">
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              
+              
+              
             </div>
           </div>
         </div>

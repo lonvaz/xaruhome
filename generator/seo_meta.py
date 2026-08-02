@@ -514,6 +514,8 @@ SLUG_LABEL = {
                                                  "ar": "استفسار خاص", "zh": "私人咨询"},
  "real-estate":                                 {"en": "Real Estate", "es": "Inmobiliario",
                                                  "ar": "العقارات", "zh": "房地产"},
+ "real-estate/sold":                            {"en": "Past Operations", "es": "Operaciones anteriores",
+                                                 "ar": "عمليات سابقة", "zh": "过往交易"},
  "real-estate/commercial-hospitality":          {"en": "Commercial & Hospitality", "es": "Comercial y Hostelería",
                                                  "ar": "التجاري والضيافة", "zh": "商业与酒店"},
  "real-estate/commercial-hospitality/ch-hotel-halted":      {"en": "Halted Hotel Project", "es": "Proyecto hotelero detenido",
@@ -540,6 +542,18 @@ SLUG_LABEL = {
 
 # ---------------------------------------------------------------- title + description, 34 slugs x 4 languages
 SHELL_SEO = {
+
+ # ---- inventario historico (Biblia de Real Estate §1.2, §20.5) ---------
+ "real-estate/sold": {
+  "en": ("Past Operations — Track Record | XARU HOME",
+         "Assets that have completed their cycle with XARU HOME. Kept out of the active portfolio and published as a record, not as an offer."),
+  "es": ("Operaciones anteriores — Trayectoria | XARU HOME",
+         "Activos que han completado su ciclo con XARU HOME. Fuera del portafolio activo, publicados como historial, no como oferta."),
+  "ar": ("عمليات سابقة — السجل | XARU HOME",
+         "أصول أتمّت دورتها مع XARU HOME. تبقى خارج المحفظة النشطة وتُنشر كسجل، لا كعرض."),
+  "zh": ("过往交易 — 业绩记录 | XARU HOME",
+         "已与 XARU HOME 完成周期的资产。不计入在售资产组合，作为记录公布而非报价。"),
+ },
 
  # ---- doors & divisions ------------------------------------------------
  "real-estate": {

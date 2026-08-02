@@ -117,6 +117,37 @@ CATALOG = {
  },
 }
 
+# ---------------------------------------------------------------- inventario vendido
+# Biblia de Real Estate §1.2: el inventario de prueba sale del activo, se marca
+# Vendido y deja de aceptar contacto comercial. Estos textos son los que hacen
+# que esa retirada sea legible para quien llega desde fuera.
+SOLD = {
+ "facet_label":  T("Status", "Estado", "الحالة", "状态"),
+ "facet_active": T("Active inventory", "Inventario activo", "المعروض النشط", "在售资产"),
+ "facet_sold":   T("Sold", "Vendido", "مُباع", "已售"),
+ "find_similar": T("Find similar properties", "Buscar propiedades similares",
+                   "ابحث عن عقارات مشابهة", "查找相似房产"),
+ "advisory":     T("Request advisory", "Solicitar asesoría", "طلب استشارة", "申请顾问服务"),
+ "historic_note": T("Past operation. This record is kept for reference: the asset is no longer available and no closing price is disclosed.",
+                    "Operación anterior. La ficha se conserva como referencia: el activo ya no está disponible y no se declara precio de cierre.",
+                    "عملية سابقة. يُحتفظ بهذا السجل للاطلاع: الأصل لم يعد متاحًا ولا يُفصح عن سعر الإغلاق.",
+                    "过往交易。此记录仅供参考：该资产已不再可售，且不披露成交价格。"),
+ "page_eyebrow": T("Track record", "Trayectoria", "السجل", "过往业绩"),
+ "page_title":   T("Past Operations", "Operaciones anteriores", "عمليات سابقة", "过往交易"),
+ "page_lead":    T("Assets that have completed their cycle with XARU HOME. They are kept out of the active portfolio and out of every default result — published here because the record matters, not because they are for sale.",
+                   "Activos que han completado su ciclo con XARU HOME. Quedan fuera del portafolio activo y de todos los resultados por defecto — se publican aquí porque el historial importa, no porque estén en venta.",
+                   "أصول أتمّت دورتها مع XARU HOME. تبقى خارج المحفظة النشطة وخارج كل النتائج الافتراضية — تُنشر هنا لأن السجل مهم، لا لأنها معروضة للبيع.",
+                   "已与 XARU HOME 完成周期的资产。它们不计入在售资产组合，也不出现在任何默认结果中——在此公布是因为记录重要，而非因为它们在售。"),
+ "link_from_catalog": T("See past operations", "Ver operaciones anteriores",
+                        "عرض العمليات السابقة", "查看过往交易"),
+ "price_withheld": T("Closing price not disclosed", "Precio de cierre no revelado",
+                     "لا يُفصح عن سعر الإغلاق", "成交价格不予披露"),
+ "empty_private": T("No active mandates are published in this category right now. The portfolio below is open, and past operations are on the record.",
+                    "Ahora mismo no hay mandatos activos publicados en esta categoría. El portafolio de abajo está abierto, y las operaciones anteriores quedan registradas.",
+                    "لا توجد تفويضات نشطة منشورة في هذه الفئة حاليًا. المحفظة أدناه متاحة، والعمليات السابقة مسجَّلة.",
+                    "目前该类别下没有已发布的在册委托。下方资产组合开放查阅，过往交易亦有记录。"),
+}
+
 FACET_LABEL = {
  "location": FICHA["location"], "region": FICHA["region"], "lifestyle": T("Lifestyle","Estilo de vida","نمط الحياة","生活方式"),
  "bedrooms": FICHA["bedrooms"], "operating": FICHA["operating"], "structure": FICHA["structure"],

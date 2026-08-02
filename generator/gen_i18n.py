@@ -979,6 +979,51 @@ TEMPLATE_IMG = {
     "team-img-5.jpg":      ("26_corporate_services.jpg", 768),
 }
 
+# ---------------------------------------------------------------- enlaces muertos
+# Biblia de Real Estate §0.5 y §1.1: ningun CTA visible puede estar fingido, y
+# los iconos sociales con href="#" son exactamente eso — un objetivo de foco
+# que no lleva a ninguna parte, repetido 519 veces en 169 paginas. Mientras no
+# haya URLs reales se retiran de la interfaz publica, que es la salida que la
+# propia Biblia autoriza. En cuanto existan, se rellenan aqui y vuelven solas.
+SOCIAL_URLS = {
+    # "linkedin":  "https://www.linkedin.com/company/...",
+    # "instagram": "https://www.instagram.com/...",
+    # "youtube":   "https://www.youtube.com/@...",
+}
+_SOCIAL_ICON = {"linkedin": "linkedin-in", "instagram": "instagram", "youtube": "youtube",
+                "twitter": "twitter", "facebook": "facebook-f"}
+
+def strip_index_html(h, lang="en"):
+    """Biblia §20.2 y §26.3: ninguna URL publica lleva `index.html`.
+
+    `_redirects` ya devuelve un 301 para quien llega con la extension, pero el
+    propio sitio se enlazaba 278 veces a `index.html#ancla`. Cada uno de esos
+    clics era un salto de mas y una URL duplicada para el rastreador.
+    """
+    h = re.sub(r'href="index\.html(#[^"]*)?"', lambda m: 'href="%s"' % (m.group(1) or "/"), h)
+    h = re.sub(r'href="(\.\./)*index\.html(#[^"]*)?"',
+               lambda m: 'href="%s"' % ((m.group(1) or "") + (m.group(2) or "")) if m.group(1)
+               else 'href="%s"' % (m.group(2) or "/"), h)
+    h = re.sub(r'href="([^"]*/)index\.html(#[^"]*)?"',
+               lambda m: 'href="%s%s"' % (m.group(1), m.group(2) or ""), h)
+    return h
+
+def purge_dead_links(h):
+    """Resuelve o retira todo href="#" del HTML publico."""
+    def repl(m):
+        tag = m.group(0)
+        lbl = re.search(r'aria-label="([^"]*)"', tag)
+        icon = re.search(r'fa-brands fa-([a-z-]+)', tag)
+        key = (lbl.group(1).lower() if lbl else
+               (icon.group(1) if icon else ""))
+        for k, url in SOCIAL_URLS.items():
+            if key.startswith(k) or _SOCIAL_ICON.get(k) == key:
+                return tag.replace('href="#"', 'href="%s" target="_blank" rel="noopener"' % url)
+        return ""          # sin URL real, fuera de la interfaz
+    # <a href="#" …>…</a> completo, incluido su contenido
+    h = re.sub(r'<a\b[^>]*href="#"[^>]*>.*?</a>', repl, h, flags=re.S)
+    return h
+
 def purge_template_images(h, lang="en"):
     pre = "" if lang == "en" else "../"
     for old, (new, w) in TEMPLATE_IMG.items():
@@ -2242,6 +2287,7 @@ STATUS_MOD = {
  "seeking-capital": "is-warn", "seeking-buyer": "is-warn", "seeking-developer": "is-warn",
  "seeking-operator": "is-warn", "halted-restructuring": "is-warn", "in-validation": "is-warn",
  "under-construction": "is-warn", "off-market": "is-off", "closed": "is-off",
+ "sold": "is-sold",
 }
 OP_STATE = {
  "operational": F2.T("Operational", "Operativo", "تشغيلي", "运营中"),
@@ -2272,7 +2318,18 @@ def _loc_str(o, lang):
     parts = [x for x in [L.get("city"), L.get("country")] if x]
     return " · ".join(parts)
 
+SOLD_STATES = ("sold",)
+
+def is_sold(o):
+    return o.get("status") in SOLD_STATES
+
 def _price_str(o, lang):
+    # Biblia §1.2: en un activo vendido no se puede afirmar precio de cierre si
+    # no hay dato verificable. El importe publicado era el de salida, no el de
+    # cierre: mostrarlo bajo una insignia "Vendido" seria afirmar una cifra que
+    # nadie ha confirmado. Se retira.
+    if o.get("status") in SOLD_STATES and not o.get("closingPriceDisclosed"):
+        return _t(F2.SOLD["price_withheld"], lang)
     d = o["price"].get("display", "")
     if d == "Undisclosed":
         return _t(F2.T("Undisclosed", "Sin revelar", "غير مُفصَح عنه", "未披露"), lang)
@@ -2337,8 +2394,12 @@ def _img_note(lang, kind="ref"):
     txt = ARCH.MEDIA_GEO_NOTE if kind == "geo" else ARCH.MEDIA_REF_NOTE
     return '<p class="xr_img_note">%s</p>' % _t(txt, lang)
 
-def opp_card(lang, o, home, facets=()):
+def opp_card(lang, o, home, facets=(), sold=False):
     da = " ".join('data-f-%s="%s"' % (k, _slug2(_facet_val(o, k))) for k in facets)
+    # El estado es una faceta mas, y la unica por la que se recuperan los vendidos.
+    da += ' data-f-status="%s"' % ("sold" if sold else "active")
+    if sold:
+        da += ' data-sold="1" hidden'
     # La ficha muestra la foto a ~700 px de ancho: sirve la derivada de 1280,
     # no el master de 1920 (mismo encuadre, un tercio del peso).
     img = gen2_bg(o["images"][0].split("/")[-1], 1280)
@@ -2371,6 +2432,10 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
     facets = meta["facets"]
     if items is None:
         items = [o for o in OPPS if o["catalog"] == catalog_key]
+    # Biblia §1.2: el inventario vendido sale de los resultados por defecto y del
+    # contador. Sigue estando: se recupera con el filtro explicito de estado.
+    sold = [o for o in items if is_sold(o)]
+    items = [o for o in items if not is_sold(o)]
     bid = block_id or ("cat_" + _slug2(catalog_key))
     selects = []
     for k in facets:
@@ -2391,7 +2456,22 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
         selects.append('<div class="xr_filter_field"><label>%s</label>'
                        '<select class="xr_filter_select" data-f="%s"><option value="">%s</option>%s</select></div>'
                        % (_t(F2.FACET_LABEL[k], lang), k, _t(F2.UI["all"], lang), opts))
+    if sold:
+        # Biblia §1.2: los vendidos deben poder encontrarse con un filtro
+        # explicito. Por defecto se sirve el inventario activo.
+        selects.append(
+            '<div class="xr_filter_field"><label>%s</label>'
+            '<select class="xr_filter_select" data-f="status">'
+            '<option value="active">%s</option>'
+            '<option value="sold">%s</option>'
+            '<option value="">%s</option>'
+            '</select></div>'
+            % (_t(F2.SOLD["facet_label"], lang), _t(F2.SOLD["facet_active"], lang),
+               _t(F2.SOLD["facet_sold"], lang), _t(F2.UI["all"], lang)))
     cards = "\n        ".join(opp_card(lang, o, home, facets) for o in items)
+    if sold:
+        cards += "\n        " + "\n        ".join(
+            opp_card(lang, o, home, facets, sold=True) for o in sold)
     count = len(items)
     countline = '%s <b class="xr_count_now">%d</b> %s %d %s' % (
         _t(F2.UI["showing"], lang), count, _t(F2.UI["of"], lang), count, _t(F2.UI["results"], lang))
@@ -2405,6 +2485,11 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
       function apply(){var n=0;cols.forEach(function(c){var ok=true;
         sels.forEach(function(s){var k=s.getAttribute("data-f"),v=s.value;
           if(v&&c.getAttribute("data-f-"+k)!==v)ok=false;});
+        /* Sin filtro de estado elegido, el vendido no entra: es inventario
+           historico, no resultado por defecto. */
+        var st=root.querySelector('.xr_filter_select[data-f="status"]');
+        if(!st&&c.getAttribute("data-sold")==="1")ok=false;
+        c.hidden=!ok;
         c.style.display=ok?"":"none";if(ok)n++;});
         if(now)now.textContent=n;
         var e=root.querySelector(".xr_no_results");if(e)e.style.display=n?"none":"block";}
@@ -2424,9 +2509,14 @@ def catalog_block(lang, catalog_key, home, items=None, block_id=None):
       <div class="row cs_gap_y_30">
         %s
       </div>
-      <p class="xr_no_results" style="display:none">%s</p>
+      <p class="xr_no_results"%s>%s</p>
     </div>%s''' % (bid, _t(F2.UI["filters"], lang), "\n        ".join(selects),
-                   _t(F2.UI["reset"], lang), countline, cards, _t(F2.UI["no_results"], lang), js)
+                   _t(F2.UI["reset"], lang), countline, cards,
+                   '' if not items else ' style="display:none"',
+                   # Si no queda inventario activo el vacio es real, no un filtro
+                   # mal puesto: se explica y se ofrece la salida (Biblia §36).
+                   _t(F2.SOLD["empty_private"], lang) if not items else _t(F2.UI["no_results"], lang),
+                   js)
 
 CAT_IMG = {"private-properties": "09_villa_como.jpg",
            "commercial-hospitality": "05_hotel_project.jpg",
@@ -2455,6 +2545,43 @@ def _crumbs(lang, trail):
     out.append('<li class="breadcrumb-item active">%s</li>' % _t(trail[-1][0], lang))
     return out
 
+# ---------------------------------------------------------------- operaciones anteriores
+def build_sold_page(lang):
+    """Biblia §1.2 y §5.1: seccion editorial de operaciones anteriores.
+
+    Los activos vendidos salen del inventario activo y de los resultados por
+    defecto, pero no del sitio: aqui quedan reunidos, con su insignia, sin
+    precio de cierre y sin canal de contacto comercial.
+    """
+    home = HOME[lang]
+    RE = ARCH.T("Real Estate", "Inmobiliario", "العقارات", "房地产")
+    slug = "real-estate/sold"
+    title = "%s — XARU HOME" % _t(F2.SOLD["page_title"], lang)
+    desc = _t(F2.SOLD["page_lead"], lang)
+    trail = [(RE, "real-estate"), (F2.SOLD["page_title"], slug)]
+    hero = _page_header(lang, _t(F2.SOLD["page_eyebrow"], lang),
+                        _t(F2.SOLD["page_title"], lang),
+                        _crumbs(lang, trail), CAT_IMG["private-properties"])
+    sold = [o for o in OPPS if is_sold(o)]
+    cards = "\n        ".join(
+        opp_card(lang, o, home).replace(' data-f-status="active"', ' data-f-status="sold"')
+        for o in sold)
+    body = hero + '''
+    <section>
+      <div class="cs_height_90 cs_height_lg_60"></div>
+      <div class="container"><div class="row"><div class="col-lg-9">
+        <p class="xr_pillar_intro" data-aos="fade-up">%s</p>
+      </div></div></div>
+      <div class="cs_height_50 cs_height_lg_30"></div>
+      <div class="container xr_catalog">
+        <div class="row cs_gap_y_30">
+        %s
+        </div>
+      </div>
+      <div class="cs_height_150 cs_height_lg_80"></div>
+    </section>''' % (_t(F2.SOLD["page_lead"], lang), cards)
+    return _write_shell(lang, slug, title, desc, body)
+
 def build_catalog_page(lang, catalog_key, slug, trail):
     home = HOME[lang]
     meta = F2.CATALOG[catalog_key]
@@ -2469,7 +2596,13 @@ def build_catalog_page(lang, catalog_key, slug, trail):
       </div></div></div>
       <div class="cs_height_50 cs_height_lg_30"></div>''' % _t(meta["lead"], lang)
     block = catalog_block(lang, catalog_key, home)
-    body = hero + "\n" + intro + "\n" + block + '\n      <div class="cs_height_150 cs_height_lg_80"></div>\n    </section>'
+    tail = ""
+    if any(is_sold(o) for o in OPPS if o["catalog"] == catalog_key):
+        tail = ('\n      <div class="cs_height_40"></div>'
+                '\n      <div class="container"><a href="%sreal-estate/sold/" class="xr_link">%s'
+                '<i class="fa-solid fa-angle-right"></i></a></div>'
+                % (home, _t(F2.SOLD["link_from_catalog"], lang)))
+    body = hero + "\n" + intro + "\n" + block + tail + '\n      <div class="cs_height_150 cs_height_lg_80"></div>\n    </section>'
     return _write_shell(lang, slug, title, desc, body)
 
 # ---------------------------------------------------------------- ficha (detail) pages
@@ -2601,6 +2734,16 @@ def build_ficha(lang, o):
         if m == "productive-asset":
             nda = '<p class="xr_nda_line"><i class="fa-solid fa-lock"></i> %s</p>' % _t(F2.UI["nda_line"], lang)
             cta = '''<a href="%scapital/deal-room/" class="cs_btn cs_style_1 cs_primary_bg cs_white_color cs_radius_20"><span>%s</span></a>''' % (home, _t(F2.UI["request_access"], lang))
+        # Un activo vendido no se contacta: se ofrece buscar similares y, si
+        # procede, asesoria. El aviso deja claro que es una ficha historica y
+        # que no se declara precio de cierre.
+        if is_sold(o):
+            nda = ('<p class="xr_sold_note"><i class="fa-solid fa-circle-info"></i> %s</p>'
+                   % _t(F2.SOLD["historic_note"], lang)) + nda
+            cta = ('''<a href="%s%s/" class="cs_btn cs_style_1 cs_primary_bg cs_white_color cs_radius_20"><span>%s</span></a>'''
+                   % (home, cat_slug, _t(F2.SOLD["find_similar"], lang))
+                   + ''' <a href="%sprivate-enquiry/" class="cs_btn cs_style_1 xr_btn_ghost cs_radius_20"><span>%s</span></a>'''
+                   % (home, _t(F2.SOLD["advisory"], lang)))
         body = hero + ('''
     <section>
       <div class="cs_height_90 cs_height_lg_60"></div>
@@ -2870,7 +3013,20 @@ def home_blocks(lang):
     for i, (key, lbl) in enumerate(H["tabs"]):
         act = " is-active" if i == 0 else ""
         tabbtns.append('<button type="button" class="xr_tab_btn%s" data-tab="%s">%s</button>' % (act, key, _t(lbl, lang)))
-        cards = "\n        ".join(opp_card(lang, o, home) for o in _tab_filter(key))
+        # Biblia §1.2: los vendidos no son inventario destacado. Si al retirarlos
+        # una pestana se queda sin nada, se dice, no se rellena.
+        pool = [o for o in _tab_filter(key) if not is_sold(o)]
+        if pool:
+            cards = "\n        ".join(opp_card(lang, o, home) for o in pool)
+        else:
+            cards = ('<div class="col-12"><div class="xr_empty_state">'
+                     '<p>%s</p>'
+                     '<a href="%sproperty-listing-search.html" class="cs_btn cs_style_1 cs_primary_bg cs_white_color cs_radius_20"><span>%s</span></a> '
+                     '<a href="%sreal-estate/sold/" class="xr_link">%s<i class="fa-solid fa-angle-right"></i></a>'
+                     '</div></div>'
+                     % (_t(F2.SOLD["empty_private"], lang), home,
+                        _t(F2.UI["view_all"], lang) if "view_all" in F2.UI else _t(F2.SOLD["find_similar"], lang),
+                        home, _t(F2.SOLD["link_from_catalog"], lang)))
         tabpanes.append('<div class="xr_tab_pane%s" data-pane="%s"><div class="row cs_gap_y_30">%s</div></div>' % (act, key, cards))
     b4 = '''    <!-- XR Block 04 Featured -->
     <section id="featured" class="xr_block">
@@ -3091,6 +3247,7 @@ def build_catalogs_fichas_pillars():
                            [(RE, "real-estate"), (F2.CATALOG["private-properties"]["title"], "real-estate/private-properties")])
         build_catalog_page(L, "land-projects", "opportunities",
                            [(OPPL, "opportunities")])
+        build_sold_page(L)
         # pillars (override generic shells; commercial & land embed their catalog)
         build_pillar(L, "real-estate", embed_catalog="private-properties")
         build_pillar(L, "real-estate/commercial-hospitality", embed_catalog="commercial-hospitality")
@@ -3813,8 +3970,10 @@ if __name__ == "__main__":
     # correccion se aplica al final sobre TODO lo generado. Es idempotente.
     import glob as _glob
     _root = "/home/claude/work/site/xaru"
-    _files = (_glob.glob(_root + "/*.html") + _glob.glob(_root + "/*/*.html")
-              + _glob.glob(_root + "/*/*/*.html") + _glob.glob(_root + "/*/*/*/*.html"))
+    # El glob por niveles dejaba fuera las fichas de real estate en es/ar/zh,
+    # que estan a cinco niveles: 27 paginas nunca recibieron ninguna de las
+    # correcciones de esta pasada. Se hace recursivo.
+    _files = _glob.glob(_root + "/**/*.html", recursive=True)
     _n = 0
     for _f in _files:
         with open(_f, encoding="utf-8") as _fh:
@@ -3826,6 +3985,8 @@ if __name__ == "__main__":
         for _L in ("es", "ar", "zh"):
             if _rel.startswith(_L + "/"):
                 _lang = _L
+        _h = purge_dead_links(_h)
+        _h = strip_index_html(_h, _lang)
         _h = purge_template_images(_h, _lang)
         _h = fix_listing_page(_h, _base, _lang)
         # La ficha de activo se monta desde datos (?id=). El script debe estar

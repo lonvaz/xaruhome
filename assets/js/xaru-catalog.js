@@ -42,6 +42,17 @@
     return field[l] || field.en || "";
   }
 
+  /* El JSON-LD de todas las portadas declara un SearchAction hacia
+     property-listing-search.html?q={search_term_string}. Hasta ahora la pagina
+     ignoraba el parametro: el buscador que Google anunciaba no existia. Se
+     normaliza sin diacriticos para que "atico dubai" y "Ático Dubái"
+     encuentren lo mismo. */
+  function norm(s) {
+    s = String(s || "").toLowerCase();
+    try { s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
+    return s.replace(/\s+/g, " ").trim();
+  }
+
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -131,7 +142,11 @@
       'data-beds="' + Number(item.bedrooms || 0) + '" ' +
       'data-baths="' + Number(item.bathrooms || 0) + '" ' +
       'data-country="' + esc(item.country || "") + '" ' +
-      'data-area="' + Number(item.built_area_m2 || 0) + '">' +
+      'data-area="' + Number(item.built_area_m2 || 0) + '" ' +
+      'data-search="' + esc(norm([title, item.city, item.region, item.country,
+                                  t((item.language_content||{}).category, l),
+                                  t((item.language_content||{}).variant, l)]
+                                 .filter(Boolean).join(" "))) + '">' +
         '<div class="cs_card cs_style_1">' +
           '<a href="' + esc(detail) + '" aria-label="' + esc(title) +
           '" class="cs_card_thumbnail cs_radius_20 cs_mb_17 position-relative">' +
@@ -192,7 +207,7 @@
    * nada — todo es opcional.                                               */
 
   var STATE = { typology: "*", beds: [], baths: [], min: 0, max: Infinity,
-               country: "", amin: 0, amax: Infinity };
+               country: "", amin: 0, amax: Infinity, q: [] };
 
   function applyFilters() {
     document.querySelectorAll(".xr_cat_item").forEach(function (el) {
@@ -201,13 +216,15 @@
       var p = +el.getAttribute("data-price");
       var ar = +el.getAttribute("data-area");
       var co = el.getAttribute("data-country") || "";
+      var hay = (el.getAttribute("data-search") || "");
       var ok =
         (STATE.typology === "*" || el.getAttribute("data-subcategory") === STATE.typology) &&
         (!STATE.beds.length || STATE.beds.some(function (n) { return n === 5 ? beds > 4 : beds === n; })) &&
         (!STATE.baths.length || STATE.baths.some(function (n) { return n === 5 ? baths > 4 : baths === n; })) &&
         p >= STATE.min && p <= STATE.max &&
         (!STATE.country || co === STATE.country) &&
-        (!ar || (ar >= STATE.amin && ar <= STATE.amax));
+        (!ar || (ar >= STATE.amin && ar <= STATE.amax)) &&
+        (!STATE.q.length || STATE.q.every(function (w) { return hay.indexOf(w) >= 0; }));
       el.hidden = !ok;
     });
     var vis = document.querySelectorAll(".xr_cat_item:not([hidden])").length;
@@ -269,6 +286,22 @@
     /* Selector de ubicacion. La plantilla venia con Nueva York, Londres, Paris…
        — una lista inventada que no tocaba nada. Se rellena con los paises que
        de verdad hay en el catalogo y se conecta al filtro. */
+    /* ?q= del SearchAction: se lee, se aplica y se refleja en el campo de
+       busqueda si la plantilla trae uno, para que el usuario vea que su
+       termino esta activo y pueda borrarlo. */
+    var q = "";
+    try { q = norm(new URLSearchParams(location.search).get("q") || ""); } catch (e) {}
+    if (q) {
+      STATE.q = q.split(" ").filter(Boolean);
+      var box = document.querySelector('input[type="search"], input[name="q"], input[name="keyword"]');
+      if (box) {
+        box.value = new URLSearchParams(location.search).get("q");
+        box.addEventListener("input", function () {
+          STATE.q = norm(box.value).split(" ").filter(Boolean); applyFilters();
+        });
+      }
+    }
+
     var loc = document.querySelector('select[name="property-location"]');
     if (loc) {
       var seenC = {}, list = [];
