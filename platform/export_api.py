@@ -69,8 +69,14 @@ def main():
 
     # ---------------------------------------------------------- geografía
     countries = []
-    for r in cur.execute("SELECT * FROM locations WHERE level='country' AND listing_count>0 "
-                         "ORDER BY listing_count DESC, name_en"):
+    # El cursor se materializa antes de entrar al bucle: reutilizar el mismo
+    # cursor dentro reinicia la iteracion y solo salia el primer pais. Lo mismo
+    # ocurria con los proyectos. Un fallo silencioso: el fichero se escribia
+    # bien formado, con un unico registro dentro.
+    _countries = [r for r in cur.execute(
+        "SELECT * FROM locations WHERE level='country' AND listing_count>0 "
+        "ORDER BY listing_count DESC, name_en")]
+    for r in _countries:
         cities = [{"id": c["id"], "slug": c["slug"], "name": c["name_en"],
                    "lat": c["latitude"], "lon": c["longitude"], "count": c["listing_count"]}
                   for c in cur.execute("SELECT * FROM locations WHERE parent_id=? AND listing_count>0 "
@@ -154,7 +160,7 @@ def main():
     total += w(os.path.join(API, "agencies.json"), {"count": len(ogs), "items": ogs})
 
     prjs = []
-    for p in cur.execute("SELECT * FROM projects"):
+    for p in [r for r in cur.execute("SELECT * FROM projects")]:
         d = cur.execute("SELECT name, slug FROM developers WHERE id=?", (p["developer_id"],)).fetchone()
         units = [dict(u) for u in cur.execute("SELECT * FROM unit_types WHERE project_id=?", (p["id"],))]
         plan = cur.execute("SELECT id, name FROM payment_plans WHERE project_id=?", (p["id"],)).fetchone()

@@ -274,6 +274,18 @@
       '" loading="lazy" decoding="async"></picture>';
   }
 
+  /* Nombre legible de la tipologia; el chip mostraba el slug en crudo. */
+  var TYN = null;
+  function typeLabel(slug) {
+    if (!TYN) {
+      TYN = {};
+      ((DATA && DATA.items) || []).forEach(function (x) {
+        if (x.typeName) TYN[x.type] = x.typeName[L] || x.typeName.en;
+      });
+    }
+    return TYN[slug] || slug;
+  }
+
   /* Nombre del pais en el idioma de la pagina. El de la ciudad no se traduce. */
   var CCN = null;
   function ccName(cc) {
@@ -538,7 +550,8 @@
     CHIPS = {};
     if (STATE.q) chip('"' + STATE.q + '"', function () { STATE.q = ""; });
     STATE.cc.forEach(function (c) { chip(ccName(c), function () { STATE.cc = STATE.cc.filter(function (x) { return x !== c; }); }); });
-    STATE.type.forEach(function (c) { chip(c, function () { STATE.type = STATE.type.filter(function (x) { return x !== c; }); }); });
+    STATE.city.forEach(function (c) { chip(c, function () { STATE.city = STATE.city.filter(function (x) { return x !== c; }); }); });
+    STATE.type.forEach(function (c) { chip(typeLabel(c), function () { STATE.type = STATE.type.filter(function (x) { return x !== c; }); }); });
     STATE.am.forEach(function (c) { chip(c, function () { STATE.am = STATE.am.filter(function (x) { return x !== c; }); }); });
     if (STATE.priceMin != null) chip(t("price") + " ≥ " + nf(STATE.priceMin), function () { STATE.priceMin = null; });
     if (STATE.priceMax != null) chip(t("price") + " ≤ " + nf(STATE.priceMax), function () { STATE.priceMax = null; });

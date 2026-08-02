@@ -2982,6 +2982,43 @@ def _label_for(slug, lang):
             return _t(sh["label"], lang)
     return ""
 
+# ---------------------------------------------------------------- entrada al marketplace
+MPH_EYEBROW = ARCH.T("The inventory", "El inventario", "المعروض", "资产库")
+MPH_TITLE = ARCH.T("Open the inventory", "Abrir el inventario",
+                   "افتح المعروض", "进入资产库")
+MPH_LEAD = ARCH.T(
+  "Choose the operation, name the market and the search opens with the filter already set. "
+  "The address bar carries it, so the result set travels to a client exactly as you saw it.",
+  "Elija la operación, nombre la plaza y la búsqueda se abre con el filtro ya puesto. "
+  "La barra de direcciones lo lleva, de modo que el resultado viaja a un cliente tal como usted lo vio.",
+  "اختر نوع العملية وسمِّ السوق، فتُفتح النتائج والمرشح مضبوط سلفاً. "
+  "ويحمله شريط العنوان، فتصل النتيجة إلى العميل كما رأيتها تماماً.",
+  "选择交易方式、指定市场，搜索即以设定好的筛选条件打开。条件由地址栏承载，"
+  "结果可原样传递给客户。")
+
+def marketplace_entry(lang):
+    """Banda de entrada al inventario, encima de la seccion editorial.
+
+    No sustituye nada: el pilar de Real Estate conserva sus once secciones y su
+    catalogo. Esto se antepone porque es lo que viene a hacer quien llega
+    buscando un activo, y porque sin ello el inventario quedaba a dos clics de
+    profundidad dentro del menu.
+    """
+    return '''    <section class="xr_mph_band">
+      <div class="cs_height_90 cs_height_lg_60"></div>
+      <div class="container">
+        <span class="xr_eyebrow_serif" data-aos="fade-up">%s</span>
+        <h2 class="cs_section_title cs_fs_38 mb-0" data-aos="fade-up">%s</h2>
+        <div class="cs_height_20"></div>
+        <div class="row"><div class="col-lg-8">
+          <p class="xr_pillar_lead" style="max-width:760px">%s</p>
+        </div></div>
+        <div class="cs_height_35 cs_height_lg_25"></div>
+        <div class="xr_mph" data-mp-home></div>
+      </div>
+      <div class="cs_height_110 cs_height_lg_70"></div>
+    </section>''' % (_t(MPH_EYEBROW, lang), _t(MPH_TITLE, lang), _t(MPH_LEAD, lang))
+
 def build_pillar(lang, slug, embed_catalog=None):
     home = HOME[lang]
     shell = next(s for s in ARCH.SHELLS if s["slug"] == slug)
@@ -2998,6 +3035,8 @@ def build_pillar(lang, slug, embed_catalog=None):
       </div></div></div>
     </section>''' % (_t(intro_t, lang), _t(intro_sub_t, lang))
     body = _shell_hero(lang, shell) + "\n" + intro
+    if slug == "real-estate":
+        body += "\n" + marketplace_entry(lang)
     # §5: banda de video propia de la pagina pilar, detras de la introduccion.
     # _write_shell la retirara y recolocara si hiciera falta (idempotente).
     # banda retirada de los pilares (rompia el diseno); ver docs
@@ -3020,7 +3059,9 @@ def build_pillar(lang, slug, embed_catalog=None):
     </section>''' % (_t(F2.CATALOG[embed_catalog]["eyebrow"], lang),
                      _t(F2.UI["explore_assets"], lang),
                      catalog_block(lang, embed_catalog, home, block_id="pcat_" + _slug2(embed_catalog)))
-    return _write_shell(lang, slug, title, desc, body)
+    css = ("xaru-marketplace.css",) if slug == "real-estate" else ()
+    js = ("xaru-mp-home.js",) if slug == "real-estate" else ()
+    return _write_shell(lang, slug, title, desc, body, css=css, js=js)
 
 def _pillar_cta(lang, heading):
     home = HOME[lang]
