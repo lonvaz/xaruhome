@@ -1277,6 +1277,28 @@ def alternates_en(fname):
       '    <link rel="alternate" hreflang="x-default" href="https://xaruhome.com/%s" />' % p,
     ]))
 
+# ---------------------------------------------------------------- logotipo
+# El logo pasa a ser el relieve dorado sobre fondo transparente. Las paginas
+# generadas ya lo llevan desde la cabecera, el pie y la precarga, pero la
+# portada no se genera de cero: se parchea sobre la plantilla, y ahi los cuatro
+# logos siguen siendo los planos. Se cambian por nombre de fichero, conservando
+# el prefijo de ruta, que en la portada inglesa es relativo y en las demas sube
+# un nivel. Es idempotente porque despues del cambio los nombres viejos ya no
+# aparecen.
+LOGO_3D = {
+    "wordmark_gold_360.png":  "logo3d_lockup_h_168.png",   # cabecera, hueco ancho
+    "lockup_white_360.png":   "logo3d_lockup_v_510.png",   # pie, columna estrecha
+    "monogram_gold_160.png":  "logo3d_simbolo_252.png",    # precarga
+    "monogram_white_160.png": "logo3d_simbolo_252.png",    # banda oscura de activos
+}
+
+
+def swap_logos(h):
+    for viejo, nuevo in LOGO_3D.items():
+        h = h.replace(viejo, nuevo)
+    return h
+
+
 # ---------------------------------------------------------------- home links + active nav
 def rewrite_home_links(h, lang):
     """Point every internal 'home' link (header logo, visible breadcrumb 'back to
@@ -1347,7 +1369,7 @@ def jsonld_block(lang):
         "parentOrganization": {"@type": "Organization", "name": "NEXARU GLOBAL"},
         "description": LD_DESC[lang],
         "url": LD_URL[lang],
-        "logo": "https://xaruhome.com/assets/img/xaru/monogram_gold_160.png",
+        "logo": "https://xaruhome.com/assets/img/xaru/logo3d_lockup_v_1024.png",
         "image": "https://xaruhome.com/assets/img/xaru/og-cover.jpg",
         "areaServed": [{"@type": "Country", "name": c} for c in LD_AREA],
         "knowsLanguage": ["en", "es", "ar", "zh"],
@@ -1509,6 +1531,7 @@ def finish(h, lang, fname):
     h = fixlinks(h)
     # clean root-relative home links (logo, breadcrumb) + accessible active nav
     h = rewrite_home_links(h, lang)
+    h = swap_logos(h)
     h = mark_active_nav(h, lang, fname)
     # html tag / dir / rtl css
     if lang == "es":
@@ -1555,6 +1578,7 @@ def build_en(name):
     # clean root-relative home links (logo, breadcrumb) + accessible active nav
     h = fix_dead_links(h)
     h = rewrite_home_links(h, "en")
+    h = swap_logos(h)
     h = mark_active_nav(h, "en", fname)
     # hreflang / canonical + JSON-LD: rebuild fresh for every page (idempotent)
     h = strip_alts(h)
@@ -1635,7 +1659,7 @@ def _shell_header(lang):
           <div class="cs_main_header_in">
             <div class="cs_main_header_left">
               <a href="%s" aria-label="Home page link" class="cs_site_brand">
-                <img src="/assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
+                <img src="/assets/img/xaru/logo3d_lockup_h_168.png" alt="XARU HOME" width="473" height="168" />
               </a>
             </div>
             <div class="cs_main_header_center">
@@ -1684,7 +1708,7 @@ def _shell_footer(lang):
           <div class="row cs_gap_y_30">
             <div class="col-xl-5 col-lg-4">
               <div class="cs_footer_widget cs_text_widget">
-                <div class="cs_logo"><img src="/assets/img/xaru/lockup_white_360.png" alt="XARU HOME" /></div>
+                <div class="cs_logo"><img src="/assets/img/xaru/logo3d_lockup_v_510.png" alt="XARU HOME" width="510" height="588" /></div>
                 <p class="cs_gray_color cs_mb_23" style="max-width: 340px">%s</p>
               </div>
             </div>
@@ -1820,7 +1844,7 @@ def _preloader():
     return '''    <div class="cs_preloader">
       <div class="xr_preloader_layer"></div>
       <div class="cs_preloader_in cs_center_column text-center">
-        <img src="/assets/img/xaru/monogram_gold_160.png" alt="XARU HOME monogram" class="xr_preloader_logo cs_mb_24" />
+        <img src="/assets/img/xaru/logo3d_simbolo_252.png" alt="XARU HOME" width="252" height="366" class="xr_preloader_logo cs_mb_24" />
         <p class="cs_fs_20 cs_primary_font mb-0 xr_text_rotater" data-text="XARU HOME | Global Luxury | Loading">XARU HOME</p>
       </div>
     </div>'''
