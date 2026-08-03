@@ -1,0 +1,25 @@
+# Compilados de Python. Estaban versionados por descuido: son binarios que
+# cambian con cada ejecución y con cada versión del intérprete, así que
+# ensucian todos los diffs sin aportar nada.
+__pycache__/
+*.py[cod]
+
+# Entornos locales
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Herramientas y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+
+# Salidas de auditoría y capturas de trabajo. Se generan a demanda; guardarlas
+# obliga a todo el equipo a descargarlas.
+audit_out*.txt
+audit_report.json
+*.tmp

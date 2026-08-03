@@ -1,0 +1,2002 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "XARU HOME — API de inventario",
+  "version": "1.0.0",
+  "description": "Contrato de datos del portal XARU HOME.\n\nHoy se sirve como ficheros JSON estaticos desde el mismo CDN que el sitio. La FORMA es la del servicio definitivo, no la de un apaño: cuando existan los microservicios, el front no cambia de contrato, solo de URL base.\n\nLa unica excepcion es la busqueda. Hoy el front descarga search-index.json entero y filtra en memoria dentro de query(), en assets/js/xaru-marketplace.js. Ese es el punto exacto —y el unico— que pasa a ser POST /search/listings.\n\nEste documento se GENERA de los payloads reales con platform/gen_openapi.py. No se edita a mano."
+ },
+ "servers": [
+  {
+   "url": "https://xaruhome.com/data/api/v1",
+   "description": "Hoy: estatico sobre CDN"
+  },
+  {
+   "url": "https://api.xaruhome.com/v1",
+   "description": "Manana: microservicios"
+  }
+ ],
+ "paths": {
+  "/meta.json": {
+   "get": {
+    "summary": "Taxonomias y catalogos maestros",
+    "description": "Tipos de propiedad, amenidades, categorias de negocio, monedas y los anchos de imagen disponibles por fichero. Es lo primero que carga cualquier vista.",
+    "operationId": "meta",
+    "responses": {
+     "200": {
+      "description": "Taxonomias y catalogos maestros",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "version": {
+           "type": "string"
+          },
+          "mode": {
+           "type": "string"
+          },
+          "notice": {
+           "type": "object",
+           "properties": {
+            "en": {
+             "type": "string"
+            },
+            "es": {
+             "type": "string"
+            },
+            "ar": {
+             "type": "string"
+            },
+            "zh": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "en",
+            "es",
+            "ar",
+            "zh"
+           ]
+          },
+          "propertyTypes": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "business_category": {
+              "type": "string"
+             },
+             "name_en": {
+              "type": "string"
+             },
+             "name_es": {
+              "type": "string"
+             },
+             "name_ar": {
+              "type": "string"
+             },
+             "name_zh": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "business_category",
+             "name_ar",
+             "name_en",
+             "name_es",
+             "name_zh",
+             "slug"
+            ]
+           }
+          },
+          "amenities": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "category": {
+              "type": "string"
+             },
+             "name_en": {
+              "type": "string"
+             },
+             "name_es": {
+              "type": "string"
+             },
+             "name_ar": {
+              "type": "string"
+             },
+             "name_zh": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "category",
+             "name_ar",
+             "name_en",
+             "name_es",
+             "name_zh",
+             "slug"
+            ]
+           }
+          },
+          "offeringTypes": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "businessCategories": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "currencies": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "imageWidths": {
+           "type": "object",
+           "additionalProperties": {
+            "type": "array",
+            "items": {
+             "type": "integer"
+            }
+           },
+           "description": "Mapa indexado por clave (188 entradas en el volcado actual)"
+          }
+         },
+         "required": [
+          "version",
+          "mode",
+          "notice",
+          "propertyTypes",
+          "amenities",
+          "offeringTypes",
+          "businessCategories",
+          "currencies",
+          "imageWidths"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/locations.json": {
+   "get": {
+    "summary": "Arbol geografico",
+    "description": "Paises y ciudades con inventario, con su recuento. Alimenta los selectores y el autocompletado jerarquico.",
+    "operationId": "locations",
+    "responses": {
+     "200": {
+      "description": "Arbol geografico",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "countries": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "code": {
+              "type": "string"
+             },
+             "slug": {
+              "type": "string"
+             },
+             "name": {
+              "type": "object",
+              "properties": {
+               "en": {
+                "type": "string"
+               },
+               "es": {
+                "type": "string"
+               },
+               "ar": {
+                "type": "string"
+               },
+               "zh": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "en",
+               "es",
+               "ar",
+               "zh"
+              ]
+             },
+             "count": {
+              "type": "integer"
+             },
+             "cities": {
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "id": {
+                 "type": "string"
+                },
+                "slug": {
+                 "type": "string"
+                },
+                "name": {
+                 "type": "string"
+                },
+                "lat": {
+                 "type": "number"
+                },
+                "lon": {
+                 "type": "number"
+                },
+                "count": {
+                 "type": "integer"
+                }
+               },
+               "required": [
+                "count",
+                "id",
+                "name",
+                "slug"
+               ]
+              }
+             }
+            },
+            "required": [
+             "cities",
+             "code",
+             "count",
+             "id",
+             "name",
+             "slug"
+            ]
+           }
+          }
+         },
+         "required": [
+          "countries"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/search-index.json": {
+   "get": {
+    "summary": "Indice de busqueda",
+    "description": "Todo el inventario publicado en forma compacta. Hoy el front lo descarga entero y filtra en memoria; manana este endpoint desaparece y lo sustituye POST /search/listings.",
+    "operationId": "search_index",
+    "responses": {
+     "200": {
+      "description": "Indice de busqueda",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "mode": {
+           "type": "string"
+          },
+          "items": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "t": {
+              "type": "object",
+              "properties": {
+               "en": {
+                "type": "string"
+               },
+               "es": {
+                "type": "string"
+               },
+               "ar": {
+                "type": "string"
+               },
+               "zh": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "en",
+               "es",
+               "ar",
+               "zh"
+              ]
+             },
+             "cat": {
+              "type": "string"
+             },
+             "off": {
+              "type": "string"
+             },
+             "type": {
+              "type": "string"
+             },
+             "typeName": {
+              "type": "object",
+              "properties": {
+               "en": {
+                "type": "string"
+               },
+               "es": {
+                "type": "string"
+               },
+               "ar": {
+                "type": "string"
+               },
+               "zh": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "en",
+               "es",
+               "ar",
+               "zh"
+              ]
+             },
+             "cc": {
+              "type": "string"
+             },
+             "city": {
+              "type": "string"
+             },
+             "lat": {
+              "type": "number"
+             },
+             "lon": {
+              "type": "number"
+             },
+             "bd": {
+              "nullable": true
+             },
+             "ba": {
+              "nullable": true
+             },
+             "area": {
+              "nullable": true
+             },
+             "plot": {
+              "type": "number"
+             },
+             "ha": {
+              "nullable": true
+             },
+             "keys": {
+              "nullable": true
+             },
+             "berths": {
+              "nullable": true
+             },
+             "cur": {
+              "type": "string"
+             },
+             "p": {
+              "nullable": true
+             },
+             "poa": {
+              "type": "boolean"
+             },
+             "freq": {
+              "nullable": true
+             },
+             "ppa": {
+              "nullable": true
+             },
+             "comp": {
+              "type": "string"
+             },
+             "ver": {
+              "type": "boolean"
+             },
+             "q": {
+              "type": "integer"
+             },
+             "promo": {
+              "type": "string"
+             },
+             "img": {
+              "type": "string"
+             },
+             "nph": {
+              "type": "integer"
+             },
+             "plan": {
+              "type": "boolean"
+             },
+             "tour": {
+              "type": "boolean"
+             },
+             "drop": {
+              "nullable": true
+             },
+             "furn": {
+              "type": "string"
+             },
+             "pub": {
+              "type": "string"
+             },
+             "st": {
+              "type": "string"
+             },
+             "am": {
+              "type": "array",
+              "items": {}
+             },
+             "ag": {
+              "type": "string"
+             },
+             "agName": {
+              "type": "string"
+             },
+             "tel": {
+              "type": "string"
+             },
+             "wa": {
+              "type": "string"
+             },
+             "og": {
+              "type": "string"
+             },
+             "ogName": {
+              "type": "string"
+             },
+             "demo": {
+              "type": "boolean"
+             }
+            },
+            "required": [
+             "ag",
+             "agName",
+             "am",
+             "cat",
+             "cc",
+             "city",
+             "comp",
+             "cur",
+             "demo",
+             "furn",
+             "id",
+             "img",
+             "lat",
+             "lon",
+             "nph",
+             "off",
+             "og",
+             "ogName",
+             "plan",
+             "poa",
+             "promo",
+             "pub",
+             "q",
+             "st",
+             "t",
+             "tel",
+             "tour",
+             "type",
+             "typeName",
+             "ver",
+             "wa"
+            ]
+           }
+          }
+         },
+         "required": [
+          "count",
+          "mode",
+          "items"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/agents.json": {
+   "get": {
+    "summary": "Directorio de asesores",
+    "description": "Perfil publico y cartera de cada asesor.",
+    "operationId": "agents",
+    "responses": {
+     "200": {
+      "description": "Directorio de asesores",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "items": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "title": {
+              "type": "string"
+             },
+             "languages": {
+              "type": "array",
+              "items": {
+               "type": "string"
+              }
+             },
+             "agency": {
+              "type": "string"
+             },
+             "agencySlug": {
+              "type": "string"
+             },
+             "licence": {
+              "type": "string"
+             },
+             "verified": {
+              "type": "boolean"
+             },
+             "listings": {
+              "type": "integer"
+             },
+             "phone": {
+              "type": "string"
+             },
+             "whatsapp": {
+              "type": "string"
+             },
+             "email": {
+              "type": "string"
+             },
+             "photo": {
+              "type": "string"
+             },
+             "bio": {
+              "type": "string"
+             },
+             "specialities": {
+              "type": "array",
+              "items": {
+               "type": "string"
+              }
+             },
+             "serviceAreas": {
+              "type": "array",
+              "items": {
+               "type": "string"
+              }
+             },
+             "responseMinutes": {
+              "type": "integer"
+             },
+             "rating": {
+              "type": "number"
+             },
+             "ratingCount": {
+              "type": "integer"
+             },
+             "demo": {
+              "type": "boolean"
+             }
+            },
+            "required": [
+             "agency",
+             "agencySlug",
+             "bio",
+             "demo",
+             "email",
+             "languages",
+             "licence",
+             "listings",
+             "name",
+             "phone",
+             "photo",
+             "rating",
+             "ratingCount",
+             "responseMinutes",
+             "serviceAreas",
+             "slug",
+             "specialities",
+             "title",
+             "verified",
+             "whatsapp"
+            ]
+           }
+          }
+         },
+         "required": [
+          "count",
+          "items"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/agencies.json": {
+   "get": {
+    "summary": "Directorio de agencias",
+    "description": "Oficinas y su inventario asociado.",
+    "operationId": "agencies",
+    "responses": {
+     "200": {
+      "description": "Directorio de agencias",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "items": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "legalName": {
+              "type": "string"
+             },
+             "kind": {
+              "type": "string"
+             },
+             "country": {
+              "type": "string"
+             },
+             "city": {
+              "type": "string"
+             },
+             "licence": {
+              "type": "string"
+             },
+             "verified": {
+              "type": "boolean"
+             },
+             "listings": {
+              "type": "integer"
+             },
+             "website": {
+              "type": "string"
+             },
+             "phone": {
+              "nullable": true
+             },
+             "email": {
+              "type": "string"
+             },
+             "description": {
+              "type": "string"
+             },
+             "plan": {
+              "type": "string"
+             },
+             "quota": {
+              "type": "integer"
+             },
+             "demo": {
+              "type": "boolean"
+             }
+            },
+            "required": [
+             "country",
+             "demo",
+             "description",
+             "kind",
+             "legalName",
+             "licence",
+             "listings",
+             "name",
+             "plan",
+             "quota",
+             "slug",
+             "verified"
+            ]
+           }
+          }
+         },
+         "required": [
+          "count",
+          "items"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/projects.json": {
+   "get": {
+    "summary": "Promociones sobre plano",
+    "description": "Proyectos en desarrollo con sus unidades.",
+    "operationId": "projects",
+    "responses": {
+     "200": {
+      "description": "Promociones sobre plano",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "items": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "status": {
+              "type": "string"
+             },
+             "developer": {
+              "type": "string"
+             },
+             "developerSlug": {
+              "type": "string"
+             },
+             "handover": {
+              "type": "object",
+              "properties": {
+               "quarter": {
+                "type": "integer"
+               },
+               "year": {
+                "type": "integer"
+               }
+              },
+              "required": [
+               "quarter",
+               "year"
+              ]
+             },
+             "progress": {
+              "type": "integer"
+             },
+             "progressSource": {
+              "type": "string"
+             },
+             "priceFrom": {
+              "type": "integer"
+             },
+             "priceTo": {
+              "type": "integer"
+             },
+             "currency": {
+              "type": "string"
+             },
+             "unitsTotal": {
+              "type": "integer"
+             },
+             "unitsAvailable": {
+              "type": "integer"
+             },
+             "unitTypes": {
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "name": {
+                 "type": "string"
+                },
+                "nameI18n": {
+                 "type": "object",
+                 "properties": {
+                  "en": {
+                   "type": "string"
+                  },
+                  "es": {
+                   "type": "string"
+                  },
+                  "ar": {
+                   "type": "string"
+                  },
+                  "zh": {
+                   "type": "string"
+                  }
+                 },
+                 "required": [
+                  "en",
+                  "es",
+                  "ar",
+                  "zh"
+                 ]
+                },
+                "bedrooms": {
+                 "type": "number"
+                },
+                "areaMin": {
+                 "type": "number"
+                },
+                "areaMax": {
+                 "type": "number"
+                },
+                "priceFrom": {
+                 "type": "integer"
+                }
+               },
+               "required": [
+                "areaMax",
+                "areaMin",
+                "bedrooms",
+                "name",
+                "nameI18n",
+                "priceFrom"
+               ]
+              }
+             },
+             "paymentPlan": {
+              "type": "object",
+              "properties": {
+               "name": {
+                "type": "string"
+               },
+               "milestones": {
+                "type": "array",
+                "items": {
+                 "type": "object",
+                 "properties": {
+                  "label": {
+                   "type": "string"
+                  },
+                  "percent": {
+                   "type": "number"
+                  },
+                  "trigger_event": {
+                   "type": "string"
+                  },
+                  "labelI18n": {
+                   "type": "object",
+                   "properties": {
+                    "en": {
+                     "type": "string"
+                    },
+                    "es": {
+                     "type": "string"
+                    },
+                    "ar": {
+                     "type": "string"
+                    },
+                    "zh": {
+                     "type": "string"
+                    }
+                   },
+                   "required": [
+                    "en",
+                    "es",
+                    "ar",
+                    "zh"
+                   ]
+                  }
+                 },
+                 "required": [
+                  "label",
+                  "labelI18n",
+                  "percent",
+                  "trigger_event"
+                 ]
+                }
+               }
+              },
+              "required": [
+               "name",
+               "milestones"
+              ]
+             },
+             "demo": {
+              "type": "boolean"
+             }
+            },
+            "required": [
+             "currency",
+             "demo",
+             "developer",
+             "developerSlug",
+             "handover",
+             "name",
+             "paymentPlan",
+             "priceFrom",
+             "priceTo",
+             "progress",
+             "progressSource",
+             "slug",
+             "status",
+             "unitTypes",
+             "unitsAvailable",
+             "unitsTotal"
+            ]
+           }
+          }
+         },
+         "required": [
+          "count",
+          "items"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/market.json": {
+   "get": {
+    "summary": "Estadistica de mercado",
+    "description": "Medianas de precio por ciudad, pais, tipologia y categoria. Alimenta los bloques de precios y tendencias de la ficha.",
+    "operationId": "market",
+    "responses": {
+     "200": {
+      "description": "Estadistica de mercado",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "mode": {
+           "type": "string"
+          },
+          "note": {
+           "type": "string"
+          },
+          "byCityType": {
+           "type": "object",
+           "properties": {},
+           "required": []
+          },
+          "byCountryType": {
+           "type": "object",
+           "properties": {
+            "CH|mixed-use": {
+             "type": "object",
+             "properties": {
+              "n": {
+               "type": "integer"
+              },
+              "price": {
+               "type": "integer"
+              },
+              "area": {
+               "type": "integer"
+              },
+              "pricePerSqm": {
+               "type": "integer"
+              }
+             },
+             "required": [
+              "n",
+              "price",
+              "area",
+              "pricePerSqm"
+             ]
+            },
+            "CN|office": {
+             "type": "object",
+             "properties": {
+              "n": {
+               "type": "integer"
+              },
+              "price": {
+               "type": "integer"
+              },
+              "area": {
+               "type": "integer"
+              },
+              "pricePerSqm": {
+               "type": "integer"
+              }
+             },
+             "required": [
+              "n",
+              "price",
+              "area",
+              "pricePerSqm"
+             ]
+            }
+           },
+           "required": [
+            "CH|mixed-use",
+            "CN|office"
+           ]
+          },
+          "byCountryCategory": {
+           "type": "object",
+           "additionalProperties": {
+            "type": "object",
+            "properties": {
+             "n": {
+              "type": "integer"
+             },
+             "price": {
+              "type": "integer"
+             },
+             "area": {
+              "type": "integer"
+             },
+             "pricePerSqm": {
+              "type": "integer"
+             }
+            },
+            "required": [
+             "n",
+             "price"
+            ]
+           },
+           "description": "Mapa indexado por clave (109 entradas en el volcado actual)"
+          },
+          "byType": {
+           "type": "object",
+           "additionalProperties": {
+            "type": "object",
+            "properties": {
+             "n": {
+              "type": "integer"
+             },
+             "price": {
+              "type": "integer"
+             },
+             "area": {
+              "type": "integer"
+             },
+             "pricePerSqm": {
+              "type": "integer"
+             }
+            },
+            "required": [
+             "n",
+             "price"
+            ]
+           },
+           "description": "Mapa indexado por clave (67 entradas en el volcado actual)"
+          }
+         },
+         "required": [
+          "mode",
+          "note",
+          "byCityType",
+          "byCountryType",
+          "byCountryCategory",
+          "byType"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/stats.json": {
+   "get": {
+    "summary": "Contadores globales",
+    "description": "Totales de inventario, geografia y red comercial.",
+    "operationId": "stats",
+    "responses": {
+     "200": {
+      "description": "Contadores globales",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": {
+          "oneOf": [
+           {
+            "type": "integer"
+           },
+           {
+            "type": "string"
+           }
+          ]
+         },
+         "description": "Mapa indexado por clave (14 entradas en el volcado actual)"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/b2b.json": {
+   "get": {
+    "summary": "Embudo profesional",
+    "description": "Oportunidades por etapa para el panel B2B.",
+    "operationId": "b2b",
+    "responses": {
+     "200": {
+      "description": "Embudo profesional",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "mode": {
+           "type": "string"
+          },
+          "stages": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "items": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "slug": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "kind": {
+              "type": "string"
+             },
+             "inventoryByState": {
+              "type": "object",
+              "properties": {
+               "PAUSED": {
+                "type": "integer"
+               },
+               "PUBLISHED": {
+                "type": "integer"
+               },
+               "REJECTED": {
+                "type": "integer"
+               }
+              },
+              "required": [
+               "PAUSED",
+               "PUBLISHED",
+               "REJECTED"
+              ]
+             },
+             "inventoryTotal": {
+              "type": "integer"
+             },
+             "quota": {
+              "type": "integer"
+             },
+             "plan": {
+              "type": "object",
+              "properties": {
+               "code": {
+                "type": "string"
+               },
+               "name": {
+                "type": "string"
+               },
+               "status": {
+                "type": "string"
+               },
+               "renewsAt": {
+                "type": "string"
+               },
+               "seats": {
+                "type": "integer"
+               },
+               "priceMonthly": {
+                "type": "integer"
+               },
+               "currency": {
+                "type": "string"
+               },
+               "listingQuota": {
+                "type": "integer"
+               },
+               "features": {
+                "type": "array",
+                "items": {
+                 "type": "string"
+                }
+               }
+              },
+              "required": [
+               "code",
+               "name",
+               "status",
+               "renewsAt",
+               "seats",
+               "priceMonthly",
+               "currency",
+               "listingQuota",
+               "features"
+              ]
+             },
+             "credits": {
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "type": {
+                 "type": "string"
+                },
+                "credits": {
+                 "type": "integer"
+                },
+                "reference": {
+                 "type": "string"
+                },
+                "at": {
+                 "type": "string"
+                }
+               },
+               "required": [
+                "at",
+                "credits",
+                "reference",
+                "type"
+               ]
+              }
+             },
+             "creditBalance": {
+              "type": "integer"
+             },
+             "leads": {
+              "type": "array",
+              "items": {
+               "type": "object",
+               "additionalProperties": {
+                "oneOf": [
+                 {
+                  "type": "integer"
+                 },
+                 {
+                  "type": "string"
+                 }
+                ]
+               },
+               "description": "Mapa indexado por clave (14 entradas en el volcado actual)",
+               "properties": {},
+               "required": []
+              }
+             },
+             "leadsByStage": {
+              "type": "object",
+              "properties": {
+               "new": {
+                "type": "integer"
+               },
+               "contacted": {
+                "type": "integer"
+               },
+               "qualified": {
+                "type": "integer"
+               },
+               "viewing": {
+                "type": "integer"
+               },
+               "offer": {
+                "type": "integer"
+               },
+               "won": {
+                "type": "integer"
+               },
+               "lost": {
+                "type": "integer"
+               }
+              },
+              "required": [
+               "new",
+               "contacted",
+               "qualified",
+               "viewing",
+               "offer",
+               "won",
+               "lost"
+              ]
+             }
+            },
+            "required": [
+             "creditBalance",
+             "credits",
+             "inventoryByState",
+             "inventoryTotal",
+             "kind",
+             "leads",
+             "leadsByStage",
+             "name",
+             "plan",
+             "quota",
+             "slug"
+            ]
+           }
+          }
+         },
+         "required": [
+          "count",
+          "mode",
+          "stages",
+          "items"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/admin.json": {
+   "get": {
+    "summary": "Consola de operacion",
+    "description": "Cola de revision, estados del ciclo de vida y transiciones permitidas. Solo lectura mientras la plataforma este en simulacion.",
+    "operationId": "admin",
+    "responses": {
+     "200": {
+      "description": "Consola de operacion",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "mode": {
+           "type": "string"
+          },
+          "readOnly": {
+           "type": "boolean"
+          },
+          "queue": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "listing": {
+              "type": "string"
+             },
+             "title": {
+              "type": "string"
+             },
+             "city": {
+              "type": "string"
+             },
+             "country": {
+              "type": "string"
+             },
+             "org": {
+              "type": "string"
+             },
+             "type": {
+              "type": "string"
+             },
+             "state": {
+              "type": "string"
+             },
+             "moderation": {
+              "type": "string"
+             },
+             "quality": {
+              "type": "integer"
+             },
+             "openedAt": {
+              "type": "string"
+             },
+             "slaDueAt": {
+              "type": "string"
+             },
+             "priority": {
+              "type": "string"
+             },
+             "status": {
+              "type": "string"
+             },
+             "risk": {
+              "type": "number"
+             },
+             "failedRules": {
+              "type": "array",
+              "items": {
+               "type": "string"
+              }
+             },
+             "assignee": {
+              "nullable": true
+             }
+            },
+            "required": [
+             "city",
+             "country",
+             "failedRules",
+             "listing",
+             "moderation",
+             "openedAt",
+             "org",
+             "priority",
+             "quality",
+             "risk",
+             "slaDueAt",
+             "state",
+             "status",
+             "title",
+             "type"
+            ]
+           }
+          },
+          "queueCount": {
+           "type": "integer"
+          },
+          "lifecycleStates": {
+           "type": "object",
+           "properties": {
+            "AUTOMATED_REVIEW": {
+             "type": "integer"
+            },
+            "DRAFT": {
+             "type": "integer"
+            },
+            "EXPIRED": {
+             "type": "integer"
+            },
+            "HUMAN_REVIEW": {
+             "type": "integer"
+            },
+            "PAUSED": {
+             "type": "integer"
+            },
+            "PUBLISHED": {
+             "type": "integer"
+            },
+            "REJECTED": {
+             "type": "integer"
+            }
+           },
+           "required": [
+            "AUTOMATED_REVIEW",
+            "DRAFT",
+            "EXPIRED",
+            "HUMAN_REVIEW",
+            "PAUSED",
+            "PUBLISHED",
+            "REJECTED"
+           ]
+          },
+          "transitions": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "listing": {
+              "type": "string"
+             },
+             "from": {
+              "type": "string"
+             },
+             "to": {
+              "type": "string"
+             },
+             "actor": {
+              "type": "string"
+             },
+             "at": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "actor",
+             "at",
+             "from",
+             "listing",
+             "to"
+            ]
+           }
+          },
+          "taxonomies": {
+           "type": "object",
+           "properties": {
+            "propertyTypes": {
+             "type": "integer"
+            },
+            "amenities": {
+             "type": "integer"
+            },
+            "countries": {
+             "type": "integer"
+            },
+            "cities": {
+             "type": "integer"
+            }
+           },
+           "required": [
+            "propertyTypes",
+            "amenities",
+            "countries",
+            "cities"
+           ]
+          }
+         },
+         "required": [
+          "mode",
+          "readOnly",
+          "queue",
+          "queueCount",
+          "lifecycleStates",
+          "transitions",
+          "taxonomies"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/listings/{publicId}.json": {
+   "get": {
+    "summary": "Ficha completa de un activo",
+    "description": "Todo lo que necesita la pagina de detalle: precio e historico, medios, espacios, amenidades, asesor, agencia y estado.",
+    "operationId": "listing",
+    "parameters": [
+     {
+      "name": "publicId",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string"
+      },
+      "description": "Identificador publico del activo"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Ficha completa de un activo",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "publicId": {
+           "type": "string"
+          },
+          "mode": {
+           "type": "string"
+          },
+          "demo": {
+           "type": "boolean"
+          },
+          "demoLabel": {
+           "type": "string"
+          },
+          "title": {
+           "type": "object",
+           "properties": {
+            "en": {
+             "type": "string"
+            },
+            "es": {
+             "type": "string"
+            },
+            "ar": {
+             "type": "string"
+            },
+            "zh": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "en",
+            "es",
+            "ar",
+            "zh"
+           ]
+          },
+          "description": {
+           "type": "object",
+           "properties": {
+            "en": {
+             "type": "string"
+            },
+            "es": {
+             "type": "string"
+            },
+            "ar": {
+             "type": "string"
+            },
+            "zh": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "en",
+            "es",
+            "ar",
+            "zh"
+           ]
+          },
+          "businessCategory": {
+           "type": "string"
+          },
+          "offeringType": {
+           "type": "string"
+          },
+          "inventoryType": {
+           "type": "string"
+          },
+          "propertyType": {
+           "type": "object",
+           "properties": {
+            "slug": {
+             "type": "string"
+            },
+            "name": {
+             "type": "object",
+             "properties": {
+              "en": {
+               "type": "string"
+              },
+              "es": {
+               "type": "string"
+              },
+              "ar": {
+               "type": "string"
+              },
+              "zh": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "en",
+              "es",
+              "ar",
+              "zh"
+             ]
+            }
+           },
+           "required": [
+            "slug",
+            "name"
+           ]
+          },
+          "location": {
+           "type": "object",
+           "properties": {
+            "countryCode": {
+             "type": "string"
+            },
+            "city": {
+             "type": "string"
+            },
+            "country": {
+             "type": "object",
+             "properties": {
+              "en": {
+               "type": "string"
+              },
+              "es": {
+               "type": "string"
+              },
+              "ar": {
+               "type": "string"
+              },
+              "zh": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "en",
+              "es",
+              "ar",
+              "zh"
+             ]
+            },
+            "displayAddress": {
+             "type": "string"
+            },
+            "precision": {
+             "type": "string"
+            },
+            "lat": {
+             "type": "number"
+            },
+            "lon": {
+             "type": "number"
+            }
+           },
+           "required": [
+            "countryCode",
+            "city",
+            "country",
+            "displayAddress",
+            "precision",
+            "lat",
+            "lon"
+           ]
+          },
+          "spaces": {
+           "type": "object",
+           "properties": {
+            "bedrooms": {
+             "type": "number"
+            },
+            "bathrooms": {
+             "type": "number"
+            },
+            "parking": {
+             "type": "integer"
+            },
+            "builtAreaSqm": {
+             "type": "number"
+            },
+            "plotAreaSqm": {
+             "nullable": true
+            },
+            "hectares": {
+             "nullable": true
+            },
+            "hotelKeys": {
+             "nullable": true
+            },
+            "berths": {
+             "nullable": true
+            }
+           },
+           "required": [
+            "bedrooms",
+            "bathrooms",
+            "parking",
+            "builtAreaSqm"
+           ]
+          },
+          "price": {
+           "type": "object",
+           "properties": {
+            "currency": {
+             "type": "string"
+            },
+            "amount": {
+             "type": "integer"
+            },
+            "onApplication": {
+             "type": "boolean"
+            },
+            "frequency": {
+             "type": "string"
+            },
+            "perSqm": {
+             "type": "integer"
+            }
+           },
+           "required": [
+            "currency",
+            "amount",
+            "onApplication",
+            "frequency",
+            "perSqm"
+           ]
+          },
+          "condition": {
+           "type": "object",
+           "properties": {
+            "furnishing": {
+             "type": "string"
+            },
+            "completion": {
+             "type": "string"
+            },
+            "ownership": {
+             "type": "string"
+            },
+            "handover": {
+             "type": "object",
+             "properties": {
+              "quarter": {
+               "nullable": true
+              },
+              "year": {
+               "nullable": true
+              }
+             },
+             "required": []
+            }
+           },
+           "required": [
+            "furnishing",
+            "completion",
+            "ownership",
+            "handover"
+           ]
+          },
+          "amenities": {
+           "type": "array",
+           "items": {
+            "type": "string"
+           }
+          },
+          "media": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "kind": {
+              "type": "string"
+             },
+             "url": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "kind",
+             "url"
+            ]
+           }
+          },
+          "hasFloorPlan": {
+           "type": "boolean"
+          },
+          "hasVirtualTour": {
+           "type": "boolean"
+          },
+          "priceHistory": {
+           "type": "array",
+           "items": {}
+          },
+          "priceDropPercent": {
+           "nullable": true
+          },
+          "trust": {
+           "type": "object",
+           "properties": {
+            "verified": {
+             "type": "boolean"
+            },
+            "qualityScore": {
+             "type": "integer"
+            },
+            "promotion": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "verified",
+            "qualityScore",
+            "promotion"
+           ]
+          },
+          "agent": {
+           "type": "object",
+           "properties": {
+            "slug": {
+             "type": "string"
+            },
+            "name": {
+             "type": "string"
+            },
+            "phone": {
+             "type": "string"
+            },
+            "whatsapp": {
+             "type": "string"
+            },
+            "email": {
+             "type": "string"
+            },
+            "licence": {
+             "type": "string"
+            },
+            "verified": {
+             "type": "boolean"
+            }
+           },
+           "required": [
+            "slug",
+            "name",
+            "phone",
+            "whatsapp",
+            "email",
+            "licence",
+            "verified"
+           ]
+          },
+          "agency": {
+           "type": "object",
+           "properties": {
+            "slug": {
+             "type": "string"
+            },
+            "name": {
+             "type": "string"
+            },
+            "licence": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "slug",
+            "name",
+            "licence"
+           ]
+          },
+          "status": {
+           "type": "string"
+          },
+          "publishedAt": {
+           "type": "string"
+          },
+          "updatedAt": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "agency",
+          "agent",
+          "amenities",
+          "businessCategory",
+          "condition",
+          "demo",
+          "demoLabel",
+          "description",
+          "hasFloorPlan",
+          "hasVirtualTour",
+          "inventoryType",
+          "location",
+          "media",
+          "mode",
+          "offeringType",
+          "price",
+          "priceHistory",
+          "propertyType",
+          "publicId",
+          "publishedAt",
+          "spaces",
+          "status",
+          "title",
+          "trust",
+          "updatedAt"
+         ]
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "No existe o no esta publicado"
+     }
+    }
+   }
+  }
+ }
+}

@@ -11,9 +11,25 @@ Builds /es/index.html and /ar/index.html from the English root index.html.
 """
 import re, os, json
 
-SRC = "/home/claude/work/site/xaru/index.html"
-OUT = {"es": "/home/claude/work/site/xaru/es/index.html",
-       "ar": "/home/claude/work/site/xaru/ar/index.html"}
+# ---------------------------------------------------------------- raiz del sitio
+# El generador vivia con la ruta de UNA maquina escrita a mano en diecisiete
+# sitios. Eso hacia el repositorio incompartible: cualquiera que lo clonase en
+# otra carpeta veia como el generador intentaba escribir en un directorio que no
+# existe. La raiz se deduce ahora de la posicion de este propio fichero
+# —generator/ cuelga de la raiz— y se puede forzar con la variable de entorno
+# XARU_ROOT si algun dia el arbol cambia.
+SITE = os.environ.get("XARU_ROOT") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def ruta(*partes):
+    """Une con la raiz del sitio. Todo lo que el generador lee o escribe pasa
+    por aqui, para que no vuelva a colarse una ruta absoluta."""
+    return os.path.join(SITE, *[str(x).strip("/") for x in partes if x not in (None, "")])
+
+
+SRC = ruta("index.html")
+OUT = {"es": ruta("es/index.html"),
+       "ar": ruta("ar/index.html")}
 
 with open(SRC, encoding="utf-8") as f:
     BASE = f.read()
@@ -1495,7 +1511,7 @@ def build_index(lang):
 # ---------------------------------------------------------------- build (inner pages)
 def build_page(lang, name):
     fname = name + ".html"
-    src = "/home/claude/work/site/xaru/%s" % fname
+    src = ruta(fname)
     with open(src, encoding="utf-8") as f:
         h = f.read()
     page = PAGES[name]
@@ -1550,7 +1566,7 @@ def finish(h, lang, fname):
                       '<div class="swiper xr_hero_slider" dir="rtl">')
     h = ensure_h1(h, fname)
     h = enforce_single_h1(h)
-    out = "/home/claude/work/site/xaru/%s/%s" % (lang, fname)
+    out = ruta(lang, fname)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(h)
@@ -1563,7 +1579,7 @@ def build_en(name):
     hreflang block in place. Asset paths / body copy stay English & untouched.
     Runs AFTER the translated pages are built from the pristine source."""
     fname = name + ".html"
-    p = "/home/claude/work/site/xaru/%s" % fname
+    p = ruta(fname)
     with open(p, encoding="utf-8") as f:
         h = f.read()
     # head meta (title/desc/og/twitter/og:url) via the Phase-6 SEO source of truth
@@ -1910,7 +1926,7 @@ def _write_shell(lang, slug, title, desc, body, css=(), js=()):
             '    <script src="/assets/js/%s"></script>\n' % f for f in js) + "  </body>", 1)
     html = head + "\n  <body>\n" + _preloader() + "\n" + _shell_header(lang) + "\n" + \
            body + "\n" + foot
-    out = "/home/claude/work/site/xaru/%s%s/index.html" % (SHELL_DIR[lang], slug)
+    out = ruta(SHELL_DIR[lang], slug, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
@@ -2353,7 +2369,7 @@ F2.PILLARS.update(F4.PILLARS)
 # Phase 5 — institutional trust (Company + Insights hub + foundational articles)
 import f5_copy as F5C      # noqa: E402
 import f5_articles as F5A  # noqa: E402
-with open("/home/claude/work/site/xaru/data/opportunities.json", encoding="utf-8") as _f:
+with open(ruta("data/opportunities.json"), encoding="utf-8") as _f:
     OPP = json.load(_f)
 OPPS = OPP["opportunities"]
 STATUSES = OPP["statuses"]
@@ -2917,7 +2933,7 @@ def build_profile(lang, kind, slug, name):
 
 def directory_entities():
     """Entidades publicadas, leidas de la propia API estatica."""
-    base = "/home/claude/work/site/xaru/data/api/v1/"
+    base = ruta("data/api/v1") + "/"
     out = {"agents": [], "agencies": [], "developers": []}
     try:
         with open(base + "agents.json", encoding="utf-8") as f:
@@ -2996,7 +3012,7 @@ def build_project_page(lang, slug, name):
                         css=("xaru-marketplace.css",), js=("xaru-projects.js",))
 
 def build_projects():
-    base = "/home/claude/work/site/xaru/data/api/v1/projects.json"
+    base = ruta("data/api/v1/projects.json")
     items = []
     try:
         with open(base, encoding="utf-8") as f:
@@ -3866,8 +3882,7 @@ def _rm_section(h, start, end):
     return re.sub(re.escape(start) + r".*?" + re.escape(end), "", h, flags=re.S)
 
 def inject_home(lang):
-    path = "/home/claude/work/site/xaru/index.html" if lang == "en" \
-        else "/home/claude/work/site/xaru/%s/index.html" % lang
+    path = ruta("index.html") if lang == "en" else ruta(lang, "index.html")
     with open(path, encoding="utf-8") as f:
         h = f.read()
     if "XR Block 02 Journey" in h:  # idempotent: strip prior injection
@@ -4306,7 +4321,7 @@ def redirect_blogs():
         pref = "" if lang == "en" else lang + "/"
         target = HOME[lang] + "insights/"
         for fname in ("blog.html", "blog-details.html"):
-            p = "/home/claude/work/site/xaru/%s%s" % (pref, fname)
+            p = ruta(pref, fname)
             if not os.path.exists(p):
                 continue
             with open(p, encoding="utf-8") as f:
@@ -4333,7 +4348,7 @@ def build_phase5():
     print("phase5 done")
 
 # ================================================================ Phase 6 — sitemap + llms.txt
-SITE_ROOT = "/home/claude/work/site/xaru"
+SITE_ROOT = SITE
 LASTMOD = "2026-07-31"
 
 # ---------------------------------------------------------------- portal heredado -> fuera
@@ -4380,7 +4395,7 @@ def redirect_legacy():
     for lang in ("en", "es", "ar", "zh"):
         pref = "" if lang == "en" else lang + "/"
         for fname, dest in LEGACY_REDIRECT.items():
-            p = "/home/claude/work/site/xaru/%s%s" % (pref, fname)
+            p = ruta(pref, fname)
             if not os.path.exists(p):
                 continue
             target = HOME[lang] + dest
@@ -4406,7 +4421,7 @@ def redirect_portal():
         pref = "" if lang == "en" else lang + "/"
         target = HOME[lang]
         for fname in PORTAL_PAGES:
-            p = "/home/claude/work/site/xaru/%s%s" % (pref, fname)
+            p = ruta(pref, fname)
             if not os.path.exists(p):
                 continue
             with open(p, encoding="utf-8") as f:
@@ -4647,7 +4662,7 @@ if __name__ == "__main__":
     # detalle de blog) no pasan por los constructores anteriores, asi que la
     # correccion se aplica al final sobre TODO lo generado. Es idempotente.
     import glob as _glob
-    _root = "/home/claude/work/site/xaru"
+    _root = SITE
     # El glob por niveles dejaba fuera las fichas de real estate en es/ar/zh,
     # que estan a cinco niveles: 27 paginas nunca recibieron ninguna de las
     # correcciones de esta pasada. Se hace recursivo.

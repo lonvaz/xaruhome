@@ -41,9 +41,16 @@ import cv2
 import numpy as np
 from PIL import Image
 
-BRAND = '/home/claude/work/brand/xaru/'
-OUT = '/home/claude/work/logo3d/plano/'
-RENDER = '/root/.claude/uploads/75132e92-c788-52fb-8fe7-d53929193804/53e5506d-logo_xau.png'
+import os
+
+# Rutas relativas al repositorio: los masters de marca viven ahora en brand/
+# y las piezas generadas van a assets/img/xaru/. La referencia en relieve que
+# origino las proporciones no se versiona —es un render de trabajo—; sus
+# medidas quedan escritas como constantes mas abajo, que es lo que importa.
+RAIZ = os.path.dirname(os.path.abspath(__file__))
+BRAND = os.path.join(RAIZ, 'brand') + os.sep
+OUT = os.path.join(RAIZ, 'assets', 'img', 'xaru') + os.sep
+RENDER = os.environ.get('XARU_RENDER_REF', '')
 
 # Medidas leidas del render de Josep (bloque horizontal)
 XARU_REL, AIRE_REL, BAJADA_REL = 0.610, 0.291, 0.064
