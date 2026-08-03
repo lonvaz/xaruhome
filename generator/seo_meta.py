@@ -261,10 +261,7 @@ def get_faq_pairs(lang):
 # ======================================================================
 ORG_ID     = "https://xaruhome.com/#organization"
 WEBSITE_ID = "https://xaruhome.com/#website"
-# El logo que se declara a buscadores y redes es el bloque vertical en
-# relieve, a 1024 px: los validadores piden un lado minimo de 112 px y las
-# fichas de resultados lo reescalan, asi que conviene holgado.
-LOGO       = "https://xaruhome.com/assets/img/xaru/logo3d_lockup_v_1024.png"
+LOGO       = "https://xaruhome.com/assets/img/xaru/monogram_gold_160.png"
 COVER      = "https://xaruhome.com/assets/img/xaru/og-cover.jpg"
 
 ORG_DESC = {
