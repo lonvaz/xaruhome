@@ -1277,6 +1277,30 @@ def alternates_en(fname):
       '    <link rel="alternate" hreflang="x-default" href="https://xaruhome.com/%s" />' % p,
     ]))
 
+# ---------------------------------------------------------------- logotipo
+# La cabecera pasa a llevar la marca COMPLETA —simbolo + XARU + HOME en
+# horizontal— en lugar de solo el texto. Plano y con el oro de marca de siempre,
+# #AC8D60: se probo el beige claro del render y sobre la cabecera crema da 1,81
+# de contraste, por debajo del 3 que necesita un elemento grafico para leerse.
+# El oro da 2,77 sobre crema y 5,52 sobre oscuro, y es el color que la marca ya
+# tenia.
+#
+# Las proporciones del bloque horizontal salen del render que paso Josep: XARU
+# mide el 61,0% del alto del simbolo, el aire entre ambos es el 29,1% de ese
+# alto y el simbolo baja un 6,4% respecto a la base de XARU.
+#
+# La portada y las paginas de plantilla no se generan de cero, se parchean, asi
+# que aqui se cambian por nombre de fichero conservando el prefijo de ruta. Es
+# idempotente: despues del cambio el nombre viejo ya no aparece.
+LOGO_CABECERA = {"wordmark_gold_360.png": "lockup_h_gold_168.png"}
+
+
+def swap_logos(h):
+    for viejo, nuevo in LOGO_CABECERA.items():
+        h = h.replace(viejo, nuevo)
+    return h
+
+
 # ---------------------------------------------------------------- home links + active nav
 def rewrite_home_links(h, lang):
     """Point every internal 'home' link (header logo, visible breadcrumb 'back to
@@ -1509,6 +1533,7 @@ def finish(h, lang, fname):
     h = fixlinks(h)
     # clean root-relative home links (logo, breadcrumb) + accessible active nav
     h = rewrite_home_links(h, lang)
+    h = swap_logos(h)
     h = mark_active_nav(h, lang, fname)
     # html tag / dir / rtl css
     if lang == "es":
@@ -1555,6 +1580,7 @@ def build_en(name):
     # clean root-relative home links (logo, breadcrumb) + accessible active nav
     h = fix_dead_links(h)
     h = rewrite_home_links(h, "en")
+    h = swap_logos(h)
     h = mark_active_nav(h, "en", fname)
     # hreflang / canonical + JSON-LD: rebuild fresh for every page (idempotent)
     h = strip_alts(h)
@@ -1635,7 +1661,7 @@ def _shell_header(lang):
           <div class="cs_main_header_in">
             <div class="cs_main_header_left">
               <a href="%s" aria-label="Home page link" class="cs_site_brand">
-                <img src="/assets/img/xaru/wordmark_gold_360.png" alt="XARU HOME" />
+                <img src="/assets/img/xaru/lockup_h_gold_168.png" alt="XARU HOME" width="440" height="168" />
               </a>
             </div>
             <div class="cs_main_header_center">
